@@ -24,7 +24,7 @@ You created your own extension based on open3e? Great! Please let us know! Just 
 # Installation
 There is a [Video Tutorial](https://youtu.be/u_fkwtIARug) (German languge) available from CRYDTEAM - thank you very much for it! Find the according web site [here](https://crydteam.de/2025/04/27/viessmann-vx3-in-homeassistant/). The final 1/3 is related to Home Assistant, but the first part shows the complete installation process of open3e and hardware very vividly.
 
-Hint: An installation guide is available also in [German language](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).
+For a **detailed step-by-step installation guide** (German language) see [Wiki, chapt. 030](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).
 
 <br>
 
@@ -59,7 +59,7 @@ In advance of first time starting the client and after every firmware update, ru
     
     open3e_depictSystem [-s]
     
-to scan the system and generate devices.json and Open3Edatapoints_678.py files.<br>
+to scan the system and generate devices.json and Open3Edatapoints_6yz.py files.<br>
 Use `open3e` with cmd line argument `-cnfg devices.json` afterwards.<br>
 Pls. make sure to use same working directory for `open3e` as used for running `open3e_depictSystem`.<br>
 By using the optional switch `-s` data files for simulation get created. 
