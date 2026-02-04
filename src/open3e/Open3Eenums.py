@@ -2377,4 +2377,14 @@ E3Enums = {
         0: "Not Active",
         1: "Active",
     },
+
+    # see https://github.com/open3e/open3e/issues/259
+    "SensorStates": {
+        0: "no_error",
+        1: "interruption",
+        2: "short_circuit",
+        3: "electrical_fault",
+        4: "not_available",
+        5: "invalidates",
+    }
 }
