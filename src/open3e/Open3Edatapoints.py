@@ -1616,12 +1616,12 @@ dataIdentifiers = {
         3008 : O3EInt16(2, "FanDuctHeaterOnDuration"),
         3009 : RawCodec(4, "FanDuctHeaterOnTimer"),
         3013 : RawCodec(2, "MixerHybridThreeWayValvePositionPercent"),
-        3014 : O3EComplexType(9, "OutdoorMiddleCoilTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
-        3015 : O3EComplexType(9, "HeatSinkTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
-        3016 : O3EComplexType(9, "HeatingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
-        3017 : O3EComplexType(9, "CoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
-        3018 : O3EComplexType(9, "HeatingCoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
-        3019 : O3EComplexType(9, "CompressorOutletTargetTemperature", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]), # 250xH Unit °C
+        3014 : O3EComplexType(9, "OutdoorMiddleCoilTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EEnum(1, "SensorStatus", "SensorStates")]),
+        3015 : O3EComplexType(9, "HeatSinkTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EEnum(1, "SensorStatus", "SensorStates")]),
+        3016 : O3EComplexType(9, "HeatingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EEnum(1, "SensorStatus", "SensorStates")]),
+        3017 : O3EComplexType(9, "CoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EEnum(1, "SensorStatus", "SensorStates")]),
+        3018 : O3EComplexType(9, "HeatingCoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EEnum(1, "SensorStatus", "SensorStates")]),
+        3019 : O3EComplexType(9, "CompressorOutletTargetTemperature", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EEnum(1, "SensorStatus", "SensorStates")]), # 250xH Unit °C
         3029 : O3EByteVal(1, "DomesticHotWaterEfficiencyMode"),# 0 = Eco, 1 = N/A, 2 = Comfort
         3030 : RawCodec(2, "DomesticHotWaterEfficiencyModeAvailability"),
         3031 : RawCodec(2, "ExternalHeater"),
