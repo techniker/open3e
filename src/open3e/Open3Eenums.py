@@ -2386,5 +2386,5 @@ E3Enums = {
         3: "electrical_fault",
         4: "not_available",
         5: "invalidates",
-    }
+    },
 }
