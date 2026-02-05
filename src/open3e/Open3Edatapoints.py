@@ -21,6 +21,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "general", 
+    "Version": "20260205",
     "dids" : 
     {
         256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress"), O3EEnum(1, "BusType", "BusTypes"), O3EEnum(1, "DeviceProperty","Devices"), O3EEnum(1, "DeviceFunction","Devices"), O3ESoftVers(8, "SW-Version"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")]),
@@ -73,10 +74,13 @@ dataIdentifiers = {
         337 : O3EComplexType(9, "MixerFourCircuitRoomTemperatureSensor",[O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Error")]),
         354 : O3EByteVal(1, "PrimaryHeatExchangerBaseHeater"),
         355 : O3EComplexType(9, "SecondaryHeatExchangerLiquidTemperatureSensor",[O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Error")]),
+        356 : O3EInt16(2, "MainPowerSupplyValue"),  # Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#vitodens-300-w
         360 : O3EComplexType(9, "DomesticHotWaterOutletSensor",[O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Error")]),
         364 : O3EComplexType(6, "Flame", [O3EByteVal(1, "State"), RawCodec(2, "Unknown"), O3EInt16(2, "IonizationCurrent", scale = 100), RawCodec(1,"Unknown2")]),
         365 : O3EComplexType(42, "FlameStatistical", [RawCodec(38, "Unknown1"), O3EInt16(2, "BurnerStarts", scale = 1), RawCodec(2, "Unknown2")]),
         373 : O3EInt16(2, "FanTargetSpeed", scale=1),
+        374 : O3EInt16(2, "FanCurrentSpeed", scale=1),	  # Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#vitodens-300-w
+        376 : O3EComplexType(9, "MassFlowSensor", [O3EInt16(2, "CurrentValue", scale = 100), O3EInt16(2, "Min", scale=100),O3EInt16(2, "Max" ,scale=100), O3EInt16(2, "DeltaT"), O3EByteVal(1,"State")]), # Unit: vermutlich l/sekunde, K; Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#vitodens-300-w
         377 : O3EUtf8(16, "ViessmannIdentificationNumber"),
         378 : O3EComplexType(4, "PointOfCommonCouplingPhaseOne", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)]),
         379 : O3EComplexType(4, "PointOfCommonCouplingPhaseTwo", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)]),
@@ -590,7 +594,7 @@ dataIdentifiers = {
         1472 : RawCodec(31, "SensorActuatorTestGroupHeatingCircuit"),
         1473 : RawCodec(31, "SensorActuatorTestGroupSolar"),
         1492 : RawCodec(4, "SolarCircuitPumpHysteresis"),
-        1493 : RawCodec(16, "HeatEnginePerformanceStatistics"),
+        1493 : O3EComplexType(16, "HeatEnginePerformanceStatistics", [O3EInt32(4, "HoursLoadClassOne"), O3EInt32(4,"HoursLoadClassTwo"),O3EInt32(4,"HoursLoadClassThree"),O3EInt32(4,"HoursLoadClassFour")]), # 0-25%, 25-50%, 50-75% and 75-100% _68c.py; Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#miscellaneous
         1494 : O3ESoftVers(8, "OemProductVersion"),
         1503 : RawCodec(1, "MinimumLoadPercent"),
         1504 : O3EEnum(1, "TimeSettingSource", "TimeSettingSources"),
@@ -1411,7 +1415,7 @@ dataIdentifiers = {
         2590 : RawCodec(8, "HeatPumpCommonSettingsHeating"),
         2591 : RawCodec(8, "HeatPumpCommonSettingsCooling"),
         2592 : RawCodec(4, "ExpansionValveTheoreticalSetpoint"),
-        2593 : RawCodec(181, "ProductMatrix"),
+        2593 : O3EList(181, "ProductMatrix", [O3EInt8(1, "Count"), O3EComplexType(18, "ListEntries", [RawCodec(2, "Unknown"), O3EUtf8(16, "VIN")])]),   # Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#miscellaneous
         2594 : RawCodec(124, "ElectricalPreHeaterMonthMatrix"),
         2595 : RawCodec(96, "ElectricalPreHeaterYearMatrix"),
         2598 : O3EByteVal(1, "VentilationFanAssignmentAvailable"),
@@ -1626,10 +1630,10 @@ dataIdentifiers = {
         3029 : O3EByteVal(1, "DomesticHotWaterEfficiencyMode"),# 0 = Eco, 1 = N/A, 2 = Comfort
         3030 : RawCodec(2, "DomesticHotWaterEfficiencyModeAvailability"),
         3031 : RawCodec(2, "ExternalHeater"),
-        3032 : RawCodec(2, "PrimaryEnergyFactorElectricity"),
+        3032 : O3EInt16(2, "PrimaryEnergyFactorElectricity", scale=100), # Unit kWh/kWh; Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#miscellaneous
         3034 : O3EComplexType(9, "DomesticHotWaterReturnTemperaturTankLoadSystem", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EEnum(1, "SensorStatus", "SensorStates")]),
         3035 : O3EComplexType(9, "DomesticHotWaterFlowTemperaturTankLoadSystem", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EEnum(1, "SensorStatus", "SensorStates")]),
-        3036 : RawCodec(2, "PrimaryEnergyFactorExternalHeater"),
+        3036 : O3EInt16(2, "PrimaryEnergyFactorExternalHeater", scale =100), # Unit kWh/kWh; Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#miscellaneous
         3037 : RawCodec(57, "ElectricityPriceTimeScheduleMonday"),
         3038 : RawCodec(57, "ElectricityPriceTimeScheduleTuesday"),
         3039 : RawCodec(57, "ElectricityPriceTimeScheduleWednesday"),
@@ -1693,5 +1697,7 @@ dataIdentifiers = {
         3336 : O3EComplexType(8, "HeatingCoolingHysteresisHeatingCircuitTwo", [O3EInt16(2, "TurnOnHysteresis_Heating", scale=10.0, signed=False), O3EInt16(2, "TurnOffHysteresis_Heating", scale=10.0, signed=False), O3EInt16(2, "TurnOnHysteresis_Cooling", scale=10.0, signed=False), O3EInt16(2, "TurnOffHysteresis_Cooling", scale=10.0, signed=False)]),
         3337 : O3EComplexType(8, "HeatingCoolingHysteresisHeatingCircuitThree", [O3EInt16(2, "TurnOnHysteresis_Heating", scale=10.0, signed=False), O3EInt16(2, "TurnOffHysteresis_Heating", scale=10.0, signed=False), O3EInt16(2, "TurnOnHysteresis_Cooling", scale=10.0, signed=False), O3EInt16(2, "TurnOffHysteresis_Cooling", scale=10.0, signed=False)]),
         3338 : O3EComplexType(8, "HeatingCoolingHysteresisHeatingCircuitFour", [O3EInt16(2, "TurnOnHysteresis_Heating", scale=10.0, signed=False), O3EInt16(2, "TurnOffHysteresis_Heating", scale=10.0, signed=False), O3EInt16(2, "TurnOnHysteresis_Cooling", scale=10.0, signed=False), O3EInt16(2, "TurnOffHysteresis_Cooling", scale=10.0, signed=False)]),
+        3366 : O3EComplexType(16, "ElectricalActivePowerStatusReport", [O3EInt32(4,"15MinPower"), O3EInt32(4, "15MinEnergy", scale=10), O3EInt32(4, "Unknown1"), O3EInt32(4, "Unknown2")]), # §14a EnWG Unit W,Wh; Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#miscellaneous
+        3384 : O3EComplexType(4, "ElectricalActivePowerConsumptionLimitationDefaultValue", [O3EInt16(2, "Default", scale =1), O3EInt16(2, "CurrentValue", scale = 1)]), #250xx Unit W; Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#miscellaneous
     }
 }
