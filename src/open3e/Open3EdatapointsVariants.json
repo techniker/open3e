@@ -1,4 +1,326 @@
 {
+  "627": {
+    "12": {
+      "codec": "O3EUtf8",
+      "len": 12,
+      "id": "CentralHeatingOneCircuitName",
+      "args": {}
+    }
+  },
+  "628": {
+    "12": {
+      "codec": "O3EUtf8",
+      "len": 12,
+      "id": "CentralHeatingTwoCircuitName",
+      "args": {}
+    }
+  },
+  "629": {
+    "12": {
+      "codec": "O3EUtf8",
+      "len": 12,
+      "id": "CentralHeatingThreeCircuitName",
+      "args": {}
+    }
+  },
+  "630": {
+    "12": {
+      "codec": "O3EUtf8",
+      "len": 12,
+      "id": "CentralHeatingFourCircuitName",
+      "args": {}
+    }
+  },
+  "1006": {
+    "3": {
+      "codec": "O3EComplexType",
+      "len": 3,
+      "id": "TargetQuickMode",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "SetModeOneTimesHotWater",
+            "args": {}
+          },
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "State",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1007": {
+    "3": {
+      "codec": "O3EComplexType",
+      "len": 3,
+      "id": "CurrentQuickMode",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "ModeOneTimesHotWater",
+            "args": {}
+          },
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "State",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1008": {
+    "3": {
+      "codec": "O3EComplexType",
+      "len": 3,
+      "id": "MixerOneCircuitTargetQuickMode",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "SetModeParty",
+            "args": {}
+          },
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "State",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1009": {
+    "3": {
+      "codec": "O3EComplexType",
+      "len": 3,
+      "id": "MixerTwoCircuitTargetQuickMode",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "SetModeParty",
+            "args": {}
+          },
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "State",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1010": {
+    "3": {
+      "codec": "O3EComplexType",
+      "len": 3,
+      "id": "MixerThreeCircuitTargetQuickMode",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "SetModeParty",
+            "args": {}
+          },
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "State",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1011": {
+    "3": {
+      "codec": "O3EComplexType",
+      "len": 3,
+      "id": "MixerFourCircuitTargetQuickMode",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "SetModeParty",
+            "args": {}
+          },
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "State",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1024": {
+    "3": {
+      "codec": "O3EComplexType",
+      "len": 3,
+      "id": "MixerOneCircuitCurrentQuickMode",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "ModeParty",
+            "args": {}
+          },
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "State",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1025": {
+    "3": {
+      "codec": "O3EComplexType",
+      "len": 3,
+      "id": "MixerTwoCircuitCurrentQuickMode",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "ModeParty",
+            "args": {}
+          },
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "State",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1026": {
+    "3": {
+      "codec": "O3EComplexType",
+      "len": 3,
+      "id": "MixerThreeCircuitCurrentQuickMode",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "ModeParty",
+            "args": {}
+          },
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "State",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1027": {
+    "3": {
+      "codec": "O3EComplexType",
+      "len": 3,
+      "id": "MixerFourCircuitCurrentQuickMode",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "ModeParty",
+            "args": {}
+          },
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "State",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
   "1603": {
     "12": {
       "codec": "O3EComplexType",
@@ -1364,5 +1686,103 @@
       }
     }
   },
-  "Version": "20260114"
+  "2086": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeOneDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "Version": "20260205"
 }

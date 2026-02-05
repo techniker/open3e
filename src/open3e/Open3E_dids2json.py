@@ -34,7 +34,7 @@ from open3e.Open3Ecodecs import *
 
 
 def main():
-    dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers["dids"])
+    dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers)
     variants = dict(open3e.Open3EdatapointsVariants.dataIdentifiers)
 
     didsDict = {}
@@ -43,17 +43,15 @@ def main():
     print('This tool converts data points for use in the ioBroker adapter ioBroker.e3oncan. It is not used by open3e.')
     print('Start conversion of data points "open3e.Open3Edatapoints.py" and "open3e.Open3EdatapointsVariants.py" to json format.')
 
-    didsListVersion = date.today().strftime("%Y%m%d")
-
     cntDps = 0
     cntVars = 0
     cntWrt = 0
 
-    for dp in dataIdentifiers:
-        didsDict[dp] = dataIdentifiers[dp].getCodecInfo()
+    for dp in dataIdentifiers["dids"]:
+        didsDict[dp] = dataIdentifiers["dids"][dp].getCodecInfo()
         cntDps += 1
 
-    didsDict['Version'] = didsListVersion
+    didsDict['Version'] = dataIdentifiers['Version']
 
     with open('Open3Edatapoints.json', 'w') as json_file:
         json.dump(didsDict, json_file, indent=2)

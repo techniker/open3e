@@ -535,8 +535,11 @@ class O3EArray(udsoncan.DidCodec):
     
     def getCodecInfo(self):
         argsSubTypes = []
+        len = 0
         for subType in self.subTypes:
             argsSubTypes.append(subType.getCodecInfo())
+            len += subType.__len__()
+        assert self.string_len == len
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"subTypes":argsSubTypes, "arrayLength":self.len}})
 
     def getCodecString(self):
@@ -582,8 +585,11 @@ class O3EComplexType(udsoncan.DidCodec):
     
     def getCodecInfo(self):
         argsSubTypes = []
+        len = 0
         for subType in self.subTypes:
             argsSubTypes.append(subType.getCodecInfo())
+            len += subType.__len__()
+        assert self.string_len == len
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"subTypes":argsSubTypes}})
 
     def getCodecString(self):
