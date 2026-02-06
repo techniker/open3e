@@ -66,7 +66,7 @@ dataIdentifiers = {
             },
         1941 : { 85: O3EComplexType(85, "RoomTwentyProperty", [O3EUtf8(39, "Roomname"), RawCodec(4, "Unknown1"), O3EEnum(1, "Roomtype", "Roomtypes"), RawCodec(1, "Unknown2"), O3EEnum(1, "TemperatureControl", "TemperatureControlLevels"), RawCodec(29, "Unknown3"),  O3EEnum(1, "WindowDetection", "WindowDetectionState"), RawCodec(9, "Unknown4")]),
             },
-        2086 : { 68: O3EComplexType(68, "ZigBeeOneDeviceCurrentValues", [RawCodec(2, "Unknown1"), O3EInt8(1, "Battery Level"), RawCodec(38, "Unknown2"), O3EInt8(1, "Valve Type"), O3EInt8(1, "temperature", scale = 10),O3EInt8(1, "Current Status (Heating/Cooling/Standby)"), RawCodec(4, "Unknown3"),O3EBool(1,"ViCare thermostatic radiator valve - display turned"),RawCodec(5, "Unknown4"),O3EBool(1,"ViCare thermostatic radiator valve - child lock active"),O3EInt8(1, "ViCare thermostatic radiator valve - set temperature by hand"),RawCodec(12, "Unknown5")])},
+        2086 : { 68: O3EComplexType(68, "ZigBeeOneDeviceCurrentValues", [RawCodec(2, "Unknown1"), O3EInt8(1, "Battery Level"), RawCodec(38, "Unknown2"), O3EInt8(1, "Valve Type"), O3EInt8(1, "temperature", scale = 10),O3EInt8(1, "Current Status (Heating/Cooling/Standby)"), RawCodec(4, "Unknown3"),O3EBool(1,"ViCare thermostatic radiator valve - display turned"),RawCodec(5, "Unknown4"),O3EBool(1,"ViCare thermostatic radiator valve - child lock active"),O3EInt8(1, "ViCare thermostatic radiator valve - set temperature by hand"),RawCodec(12, "Unknown5")]),
             },
         2089 : { 68: O3EComplexType(68, "ZigBeeTwoDeviceCurrentValues", [RawCodec(2, "Unknown1"), O3EInt8(1, "Battery Level"), RawCodec(38, "Unknown2"), O3EInt8(1, "Valve Type"), O3EInt8(1, "temperature", scale = 10),O3EInt8(1, "Current Status (Heating/Cooling/Standby)"), RawCodec(4, "Unknown3"),O3EBool(1,"ViCare thermostatic radiator valve - display turned"),RawCodec(5, "Unknown4"),O3EBool(1,"ViCare thermostatic radiator valve - child lock active"),O3EInt8(1, "ViCare thermostatic radiator valve - set temperature by hand"),RawCodec(12, "Unknown5")]),
             },
@@ -146,4 +146,5 @@ dataIdentifiers = {
             },
         2319 : { 68: O3EComplexType(68, "ZigBeeFourtyDeviceCurrentValues", [RawCodec(2, "Unknown1"), O3EInt8(1, "Battery Level"), RawCodec(38, "Unknown2"), O3EInt8(1, "Valve Type"), O3EInt8(1, "temperature", scale = 10),O3EInt8(1, "Current Status (Heating/Cooling/Standby)"), RawCodec(4, "Unknown3"),O3EBool(1,"ViCare thermostatic radiator valve - display turned"),RawCodec(5, "Unknown4"),O3EBool(1,"ViCare thermostatic radiator valve - child lock active"),O3EInt8(1, "ViCare thermostatic radiator valve - set temperature by hand"),RawCodec(12, "Unknown5")]),
             },
+    }
 }

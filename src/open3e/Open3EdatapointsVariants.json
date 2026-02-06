@@ -1784,5 +1784,3827 @@
       }
     }
   },
+  "2089": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeTwoDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2092": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeThreeDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2095": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeFourDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2098": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeFiveDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2101": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeSixDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2104": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeSevenDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2107": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeEightDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2110": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeNineDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2113": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeTenDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2116": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeElevenDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2119": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeTwelveDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2122": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeThirteenDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2125": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeFourteenDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2128": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeFifteenDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2131": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeSixteenDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2134": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeSeventeenDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2137": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeEighteenDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2140": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeNineteenDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2143": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeTwentyDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2262": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeTwentyOneDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2265": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeTwentyTwoDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2268": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeTwentyThreeDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2271": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeTwentyFourDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2274": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeTwentyFiveDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2277": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeTwentySixDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2280": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeTwentySevenDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2283": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeTwentyEightDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2286": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeTwentyNineDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2289": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeThirtyDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2292": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeThirtyOneDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2295": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeThirtyTwoDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2298": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeThirtyThreeDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2301": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeThirtyFourDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2304": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeThirtyFiveDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2307": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeThirtySixDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2310": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeThirtySevenDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2313": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeThirtyEightDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2316": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeThirtyNineDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "2319": {
+    "68": {
+      "codec": "O3EComplexType",
+      "len": 68,
+      "id": "ZigBeeFourtyDeviceCurrentValues",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Battery Level",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 38,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Valve Type",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "temperature",
+            "args": {
+              "scale": 10,
+              "signed": false
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "Current Status (Heating/Cooling/Standby)",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - display turned",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 5,
+            "id": "Unknown4",
+            "args": {}
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - child lock active",
+            "args": {}
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "args": {
+              "scale": 1.0,
+              "signed": false
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 12,
+            "id": "Unknown5",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
   "Version": "20260205"
 }
