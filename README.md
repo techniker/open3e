@@ -57,7 +57,7 @@ https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-op
 # Depict System
 In advance of first time starting the client and after every firmware update, run 
     
-    open3e_depictSystem [-s]
+    open3e_depictSystem -s
     
 to scan the system and generate devices.json and Open3Edatapoints_6yz.py files.<br>
 Use `open3e` with cmd line argument `-cnfg devices.json` afterwards.<br>
