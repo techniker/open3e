@@ -295,7 +295,7 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
-### 0.6.0 (2026-mm-dd)
+### 0.6.0 (2026-02-07)
 * Introduced list of data points (Open3EdatapointsVariants.py) with lengths different from common data points. Via open3e_depictSystem open3e can handle those device specific data points.
 
 ### 0.5.10 (2025-12-10)
