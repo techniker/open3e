@@ -571,10 +571,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -622,10 +624,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -673,10 +677,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -730,10 +736,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -781,10 +789,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -832,10 +842,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -883,10 +895,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -934,10 +948,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -985,10 +1001,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1036,10 +1054,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1087,10 +1107,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1138,10 +1160,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1189,10 +1213,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1240,10 +1266,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1291,10 +1319,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1342,10 +1372,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1393,10 +1425,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1444,10 +1478,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1495,10 +1531,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1546,10 +1584,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1597,10 +1637,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1648,10 +1690,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1699,10 +1743,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -1801,10 +1847,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -2107,10 +2155,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -2382,6 +2432,15 @@
       ]
     }
   },
+  "356": {
+    "codec": "O3EInt16",
+    "len": 2,
+    "id": "MainPowerSupplyValue",
+    "args": {
+      "scale": 10.0,
+      "signed": false
+    }
+  },
   "360": {
     "codec": "O3EComplexType",
     "len": 9,
@@ -2506,6 +2565,66 @@
     "args": {
       "scale": 1,
       "signed": false
+    }
+  },
+  "374": {
+    "codec": "O3EInt16",
+    "len": 2,
+    "id": "FanCurrentSpeed",
+    "args": {
+      "scale": 1,
+      "signed": false
+    }
+  },
+  "376": {
+    "codec": "O3EComplexType",
+    "len": 9,
+    "id": "MassFlowSensor",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentValue",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Min",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Max",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "DeltaT",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "State",
+          "args": {}
+        }
+      ]
     }
   },
   "377": {
@@ -10398,10 +10517,13 @@
     }
   },
   "1214": {
-    "codec": "RawCodec",
+    "codec": "O3EInt16",
     "len": 2,
     "id": "ElectricalPowerOutput",
-    "args": {}
+    "args": {
+      "scale": 10.0,
+      "signed": true
+    }
   },
   "1215": {
     "codec": "RawCodec",
@@ -18412,10 +18534,67 @@
     "args": {}
   },
   "1348": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 12,
     "id": "FuelCellGasConsumption",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Today",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Week",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentMonth",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "PastMonth",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentYear",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "PastYear",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        }
+      ]
+    }
   },
   "1349": {
     "codec": "RawCodec",
@@ -18514,10 +18693,13 @@
     "args": {}
   },
   "1367": {
-    "codec": "RawCodec",
+    "codec": "O3EInt16",
     "len": 2,
     "id": "FuelCellThermalPower",
-    "args": {}
+    "args": {
+      "scale": 10.0,
+      "signed": true
+    }
   },
   "1371": {
     "codec": "RawCodec",
@@ -19809,16 +19991,106 @@
     "args": {}
   },
   "1435": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 9,
-    "id": "FuelCellFlowTemperatureSensor",
-    "args": {}
+    "id": "FluelCellFlowTemperatueSensor",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Error",
+          "args": {}
+        }
+      ]
+    }
   },
   "1436": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 9,
     "id": "FuelCellReturnTemperatureSensor",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Error",
+          "args": {}
+        }
+      ]
+    }
   },
   "1439": {
     "codec": "RawCodec",
@@ -19917,10 +20189,49 @@
     "args": {}
   },
   "1493": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 16,
     "id": "HeatEnginePerformanceStatistics",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "HoursLoadClassOne",
+          "args": {
+            "scale": 1.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "HoursLoadClassTwo",
+          "args": {
+            "scale": 1.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "HoursLoadClassThree",
+          "args": {
+            "scale": 1.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "HoursLoadClassFour",
+          "args": {
+            "scale": 1.0,
+            "signed": false
+          }
+        }
+      ]
+    }
   },
   "1494": {
     "codec": "O3ESoftVers",
@@ -20087,10 +20398,55 @@
     "args": {}
   },
   "1573": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 9,
     "id": "SystemReturnTemperatureSensor",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Error",
+          "args": {}
+        }
+      ]
+    }
   },
   "1577": {
     "codec": "RawCodec",
@@ -20189,10 +20545,55 @@
     "args": {}
   },
   "1596": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 9,
     "id": "IncreasedReturnTemperatureSensor",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Error",
+          "args": {}
+        }
+      ]
+    }
   },
   "1598": {
     "codec": "RawCodec",
@@ -20327,28 +20728,216 @@
     "args": {}
   },
   "1608": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 9,
     "id": "DifferentialTemperatureControllerHeatSourceTemperatureSensor",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
+        }
+      ]
+    }
   },
   "1609": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 9,
     "id": "DifferentialTemperatureControllerHeatSinkTemperatureSensor",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
+        }
+      ]
+    }
   },
   "1610": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 9,
     "id": "HeatingSupportBufferTemperatureSensor",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
+        }
+      ]
+    }
   },
   "1611": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 9,
     "id": "PreheatingReferenceTemperatureSensor",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
+        }
+      ]
+    }
   },
   "1612": {
     "codec": "O3EComplexType",
@@ -20609,10 +21198,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -21008,10 +21599,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -21059,10 +21652,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -21110,10 +21705,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -21161,10 +21758,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -21212,10 +21811,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -21341,10 +21942,13 @@
     "args": {}
   },
   "1795": {
-    "codec": "RawCodec",
+    "codec": "O3EInt8",
     "len": 1,
     "id": "FuelCellRuntimePrediction",
-    "args": {}
+    "args": {
+      "scale": 1.0,
+      "signed": false
+    }
   },
   "1796": {
     "codec": "RawCodec",
@@ -21359,10 +21963,13 @@
     "args": {}
   },
   "1798": {
-    "codec": "RawCodec",
+    "codec": "O3EInt8",
     "len": 1,
     "id": "FuelCellHoursTillNextStart",
-    "args": {}
+    "args": {
+      "scale": 1.0,
+      "signed": false
+    }
   },
   "1799": {
     "codec": "O3EInt16",
@@ -23507,16 +24114,87 @@
     "args": {}
   },
   "2084": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeOneDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2085": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeOneDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2086": {
     "codec": "RawCodec",
@@ -23525,16 +24203,87 @@
     "args": {}
   },
   "2087": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeTwoDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2088": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeTwoDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2089": {
     "codec": "RawCodec",
@@ -23543,16 +24292,87 @@
     "args": {}
   },
   "2090": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeThreeDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2091": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeThreeDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2092": {
     "codec": "RawCodec",
@@ -23561,16 +24381,87 @@
     "args": {}
   },
   "2093": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeFourDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2094": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeFourDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2095": {
     "codec": "RawCodec",
@@ -23579,16 +24470,87 @@
     "args": {}
   },
   "2096": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeFiveDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2097": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeFiveDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2098": {
     "codec": "RawCodec",
@@ -23597,16 +24559,87 @@
     "args": {}
   },
   "2099": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeSixDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2100": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeSixDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2101": {
     "codec": "RawCodec",
@@ -23615,16 +24648,87 @@
     "args": {}
   },
   "2102": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeSevenDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2103": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeSevenDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2104": {
     "codec": "RawCodec",
@@ -23633,16 +24737,87 @@
     "args": {}
   },
   "2105": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeEightDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2106": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeEightDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2107": {
     "codec": "RawCodec",
@@ -23651,16 +24826,87 @@
     "args": {}
   },
   "2108": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeNineDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2109": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeNineDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2110": {
     "codec": "RawCodec",
@@ -23669,16 +24915,87 @@
     "args": {}
   },
   "2111": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeTenDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2112": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeTenDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2113": {
     "codec": "RawCodec",
@@ -23687,16 +25004,87 @@
     "args": {}
   },
   "2114": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeElevenDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2115": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeElevenDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2116": {
     "codec": "RawCodec",
@@ -23705,16 +25093,87 @@
     "args": {}
   },
   "2117": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeTwelveDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2118": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeTwelveDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2119": {
     "codec": "RawCodec",
@@ -23723,16 +25182,87 @@
     "args": {}
   },
   "2120": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeThirteenDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2121": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeThirteenDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2122": {
     "codec": "RawCodec",
@@ -23741,16 +25271,87 @@
     "args": {}
   },
   "2123": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeFourteenDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2124": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeFourteenDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2125": {
     "codec": "RawCodec",
@@ -23759,16 +25360,87 @@
     "args": {}
   },
   "2126": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeFifteenDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2127": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeFifteenDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2128": {
     "codec": "RawCodec",
@@ -23777,16 +25449,87 @@
     "args": {}
   },
   "2129": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeSixteenDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2130": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeSixteenDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2131": {
     "codec": "RawCodec",
@@ -23795,16 +25538,87 @@
     "args": {}
   },
   "2132": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeSeventeenDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2133": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeSeventeenDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2134": {
     "codec": "RawCodec",
@@ -23813,16 +25627,87 @@
     "args": {}
   },
   "2135": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeEighteenDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2136": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeEighteenDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2137": {
     "codec": "RawCodec",
@@ -23831,16 +25716,87 @@
     "args": {}
   },
   "2138": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeNineteenDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2139": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeNineteenDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2140": {
     "codec": "RawCodec",
@@ -23849,16 +25805,87 @@
     "args": {}
   },
   "2141": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeTwentyDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2142": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeTwentyDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2143": {
     "codec": "RawCodec",
@@ -24305,10 +26332,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -24449,16 +26478,87 @@
     "args": {}
   },
   "2260": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeTwentyOneDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2261": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeTwentyOneDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2262": {
     "codec": "RawCodec",
@@ -24467,16 +26567,87 @@
     "args": {}
   },
   "2263": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeTwentyTwoDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2264": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeTwentyTwoDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2265": {
     "codec": "RawCodec",
@@ -24485,16 +26656,87 @@
     "args": {}
   },
   "2266": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeTwentyThreeDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2267": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeTwentyThreeDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2268": {
     "codec": "RawCodec",
@@ -24503,16 +26745,87 @@
     "args": {}
   },
   "2269": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeTwentyFourDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2270": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeTwentyFourDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2271": {
     "codec": "RawCodec",
@@ -24521,16 +26834,87 @@
     "args": {}
   },
   "2272": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeTwentyFiveDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2273": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeTwentyFiveDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2274": {
     "codec": "RawCodec",
@@ -24539,16 +26923,87 @@
     "args": {}
   },
   "2275": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeTwentySixDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2276": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeTwentySixDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2277": {
     "codec": "RawCodec",
@@ -24557,16 +27012,87 @@
     "args": {}
   },
   "2278": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeTwentySevenDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2279": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeTwentySevenDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2280": {
     "codec": "RawCodec",
@@ -24575,16 +27101,87 @@
     "args": {}
   },
   "2281": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeTwentyEightDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2282": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeTwentyEightDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2283": {
     "codec": "RawCodec",
@@ -24593,16 +27190,87 @@
     "args": {}
   },
   "2284": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeTwentyNineDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2285": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeTwentyNineDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2286": {
     "codec": "RawCodec",
@@ -24611,16 +27279,87 @@
     "args": {}
   },
   "2287": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeThirtyDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2288": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeThirtyDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2289": {
     "codec": "RawCodec",
@@ -24629,16 +27368,87 @@
     "args": {}
   },
   "2290": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeThirtyOneDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2291": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeThirtyOneDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2292": {
     "codec": "RawCodec",
@@ -24647,16 +27457,87 @@
     "args": {}
   },
   "2293": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeThirtyTwoDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2294": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeThirtyTwoDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2295": {
     "codec": "RawCodec",
@@ -24665,16 +27546,87 @@
     "args": {}
   },
   "2296": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeThirtyThreeDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2297": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeThirtyThreeDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2298": {
     "codec": "RawCodec",
@@ -24683,16 +27635,87 @@
     "args": {}
   },
   "2299": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeThirtyFourDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2300": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeThirtyFourDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2301": {
     "codec": "RawCodec",
@@ -24701,16 +27724,87 @@
     "args": {}
   },
   "2302": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeThirtyFiveDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2303": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeThirtyFiveDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2304": {
     "codec": "RawCodec",
@@ -24719,16 +27813,87 @@
     "args": {}
   },
   "2305": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeThirtySixDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2306": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeThirtySixDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2307": {
     "codec": "RawCodec",
@@ -24737,16 +27902,87 @@
     "args": {}
   },
   "2308": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeThirtySevenDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2309": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeThirtySevenDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2310": {
     "codec": "RawCodec",
@@ -24755,16 +27991,87 @@
     "args": {}
   },
   "2311": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeThirtyEightDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2312": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeThirtyEightDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2313": {
     "codec": "RawCodec",
@@ -24773,16 +28080,87 @@
     "args": {}
   },
   "2314": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeThirtyNineDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2315": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeThirtyNineDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2316": {
     "codec": "RawCodec",
@@ -24791,16 +28169,87 @@
     "args": {}
   },
   "2317": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 84,
     "id": "ZigBeeFourtyDeviceProperty",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Serialnumber",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "SerialnumberPostfix",
+          "args": {}
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 39,
+          "id": "Devicename",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceType"
+          }
+        },
+        {
+          "codec": "O3ESoftVers",
+          "len": 8,
+          "id": "Firmware-Version",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 26,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2318": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 13,
     "id": "ZigBeeFourtyDeviceSetpoint",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Prefix",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumFlowTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 9,
+          "id": "Unused",
+          "args": {}
+        }
+      ]
+    }
   },
   "2319": {
     "codec": "RawCodec",
@@ -24947,10 +28396,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -24998,10 +28449,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -29821,10 +33274,43 @@
     "args": {}
   },
   "2593": {
-    "codec": "RawCodec",
+    "codec": "O3EList",
     "len": 181,
     "id": "ProductMatrix",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Count",
+          "args": {
+            "scale": 1.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EComplexType",
+          "len": 18,
+          "id": "ListEntries",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "RawCodec",
+                "len": 2,
+                "id": "Unknown",
+                "args": {}
+              },
+              {
+                "codec": "O3EUtf8",
+                "len": 16,
+                "id": "VIN",
+                "args": {}
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
   "2594": {
     "codec": "RawCodec",
@@ -31819,10 +35305,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -31870,10 +35358,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -31921,10 +35411,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -31972,10 +35464,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -32023,10 +35517,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -32074,10 +35570,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -32101,10 +35599,13 @@
     "args": {}
   },
   "3032": {
-    "codec": "RawCodec",
+    "codec": "O3EInt16",
     "len": 2,
     "id": "PrimaryEnergyFactorElectricity",
-    "args": {}
+    "args": {
+      "scale": 100,
+      "signed": false
+    }
   },
   "3034": {
     "codec": "O3EComplexType",
@@ -32149,10 +35650,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -32200,19 +35703,24 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
   },
   "3036": {
-    "codec": "RawCodec",
+    "codec": "O3EInt16",
     "len": 2,
     "id": "PrimaryEnergyFactorExternalHeater",
-    "args": {}
+    "args": {
+      "scale": 100,
+      "signed": false
+    }
   },
   "3037": {
     "codec": "RawCodec",
@@ -32620,10 +36128,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -32671,10 +36181,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -33382,10 +36894,12 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown",
-          "args": {}
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates"
+          }
         }
       ]
     }
@@ -33570,5 +37084,77 @@
       ]
     }
   },
-  "Version": "20251102"
+  "3366": {
+    "codec": "O3EComplexType",
+    "len": 16,
+    "id": "ElectricalActivePowerStatusReport",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "15MinPower",
+          "args": {
+            "scale": 1.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "15MinEnergy",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Unknown1",
+          "args": {
+            "scale": 1.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Unknown2",
+          "args": {
+            "scale": 1.0,
+            "signed": false
+          }
+        }
+      ]
+    }
+  },
+  "3384": {
+    "codec": "O3EComplexType",
+    "len": 4,
+    "id": "ElectricalActivePowerConsumptionLimitationDefaultValue",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Default",
+          "args": {
+            "scale": 1,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentValue",
+          "args": {
+            "scale": 1,
+            "signed": false
+          }
+        }
+      ]
+    }
+  },
+  "Version": "20260207"
 }

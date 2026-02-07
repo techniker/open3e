@@ -2,7 +2,7 @@
     "0x680": {
         "256": {"BusAddress": 1, "BusType": {"ID": 2, "Text": "CanInternal"}, "DeviceProperty": {"ID": 31, "Text": "HPMUMASTER"}, "DeviceFunction": {"ID": 9, "Text": "ADIO"}, "SW-Version": "20.509.2305.192", "HW-Version": "2.612.101.4", "VIN": "1234567801234567"},
         "262": {"Count": 1, "ListEntries": [{"Service": {"ID": 37, "Text": "LagDeviceDtcReported"}, "DateTime": {"DateTime": "2023-11-03 15:36:17", "Timestamp": 1699022177000}, "Unknown": 839}]},
-        "268": {"Actual": 39.6, "Minimum": 19.3, "Maximum": 63.4, "Average": 38.2, "Unknown": 0},
+        "268": {"Actual": 39.6, "Minimum": 19.3, "Maximum": 63.4, "Average": 38.2, "SensorStatus": {"ID": 0, "Text": "no_error"}},
         "381": {"State": 1, "TargetValue": 95.0, "Actual": 100.0, "Unknown": "00"},
         "505": "\"18.11.2023\"",
         "507": "\"2023-11-18 18:05:45\"",

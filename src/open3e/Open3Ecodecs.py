@@ -17,7 +17,6 @@
 import udsoncan 
 from typing import Optional, Any
 import datetime
-import json
 import open3e.Open3Eenums
 
 flag_rawmode = True
@@ -47,6 +46,9 @@ class RawCodec(udsoncan.DidCodec):
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
 
+    def getCodecString(self):
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}")')
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -75,6 +77,9 @@ class O3EInt(udsoncan.DidCodec):
 
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"scale":self.scale, "signed":self.signed}})
+
+    def getCodecString(self):
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}", scale={self.scale}, signed={self.signed})')
 
     def __len__(self) -> int:
         return self.string_len
@@ -118,6 +123,9 @@ class O3EByteVal(udsoncan.DidCodec):
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
 
+    def getCodecString(self):
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}")')
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -147,6 +155,9 @@ class O3EBool(udsoncan.DidCodec):
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
 
+    def getCodecString(self):
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}")')
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -168,6 +179,9 @@ class O3EUtf8(udsoncan.DidCodec):
        
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
+
+    def getCodecString(self):
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}")')
 
     def __len__(self) -> int:
         return self.string_len
@@ -194,6 +208,9 @@ class O3ESoftVers(udsoncan.DidCodec):  # also working with hardware version
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
 
+    def getCodecString(self):
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}")')
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -219,6 +236,9 @@ class O3EMacAddr(udsoncan.DidCodec):
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
 
+    def getCodecString(self):
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}")')
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -243,6 +263,9 @@ class O3EIp4Addr(udsoncan.DidCodec):  # also working with Ip6
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
 
+    def getCodecString(self):
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}")')
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -263,6 +286,9 @@ class O3ESdate(udsoncan.DidCodec):
 
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
+
+    def getCodecString(self):
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}")')
 
     def __len__(self) -> int:
         return self.string_len
@@ -300,6 +326,9 @@ class O3EDateTime(udsoncan.DidCodec):
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"timeformat":self.timeformat}})
 
+    def getCodecString(self):
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}", "{self.timeformat}")')
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -327,6 +356,9 @@ class O3EStime(udsoncan.DidCodec):
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
 
+    def getCodecString(self):
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}")')
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -348,6 +380,9 @@ class O3EUtc(udsoncan.DidCodec):
 
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
+
+    def getCodecString(self):
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}")')
 
     def __len__(self) -> int:
         return self.string_len
@@ -389,6 +424,9 @@ class O3EEnum(udsoncan.DidCodec):
         
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"listStr":self.listStr}})
+
+    def getCodecString(self):
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}", "{self.listStr}")')
 
     def __len__(self) -> int:
         return self.string_len
@@ -460,6 +498,13 @@ class O3EList(udsoncan.DidCodec):
             argsSubTypes.append(subType.getCodecInfo())
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"subTypes":argsSubTypes}})
 
+    def getCodecString(self):
+        argsSubTypes = []
+        for subType in self.subTypes:
+            argsSubTypes.append(subType.getCodecString())
+        argsSubTypesStr = str(argsSubTypes).replace("'","")
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}", {argsSubTypesStr})')
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -490,9 +535,19 @@ class O3EArray(udsoncan.DidCodec):
     
     def getCodecInfo(self):
         argsSubTypes = []
+        len = 0
         for subType in self.subTypes:
             argsSubTypes.append(subType.getCodecInfo())
+            len += subType.__len__()
+        assert self.string_len == len
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"subTypes":argsSubTypes, "arrayLength":self.len}})
+
+    def getCodecString(self):
+        argsSubTypes = []
+        for subType in self.subTypes:
+            argsSubTypes.append(subType.getCodecString())
+        argsSubTypesStr = str(argsSubTypes).replace("'","")
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}", {argsSubTypesStr})')
 
     def __len__(self) -> int:
         return self.string_len
@@ -530,9 +585,19 @@ class O3EComplexType(udsoncan.DidCodec):
     
     def getCodecInfo(self):
         argsSubTypes = []
+        len = 0
         for subType in self.subTypes:
             argsSubTypes.append(subType.getCodecInfo())
+            len += subType.__len__()
+        assert self.string_len == len
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"subTypes":argsSubTypes}})
+
+    def getCodecString(self):
+        argsSubTypes = []
+        for subType in self.subTypes:
+            argsSubTypes.append(subType.getCodecString())
+        argsSubTypesStr = str(argsSubTypes).replace("'","")
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}", {argsSubTypesStr})')
 
     def __len__(self) -> int:
         return self.string_len

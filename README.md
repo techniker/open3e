@@ -1,4 +1,4 @@
-**_New: Complex addressing mode available for MQTT commands (listener mode)_**
+**_New: Handling of data points with length different from common data point via open3e_depictSystem_**
 
 <BR>
 
@@ -24,7 +24,7 @@ You created your own extension based on open3e? Great! Please let us know! Just 
 # Installation
 There is a [Video Tutorial](https://youtu.be/u_fkwtIARug) (German languge) available from CRYDTEAM - thank you very much for it! Find the according web site [here](https://crydteam.de/2025/04/27/viessmann-vx3-in-homeassistant/). The final 1/3 is related to Home Assistant, but the first part shows the complete installation process of open3e and hardware very vividly.
 
-Hint: An installation guide is available also in [German language](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).
+For a **detailed step-by-step installation guide** (German language) see [Wiki, chapt. 030](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).
 
 <br>
 
@@ -57,9 +57,9 @@ https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-op
 # Depict System
 In advance of first time starting the client and after every firmware update, run 
     
-    open3e_depictSystem [-s]
+    open3e_depictSystem -s
     
-to scan the system and generate devices.json and Open3Edatapoints_678.py files.<br>
+to scan the system and generate devices.json and Open3Edatapoints_6yz.py files.<br>
 Use `open3e` with cmd line argument `-cnfg devices.json` afterwards.<br>
 Pls. make sure to use same working directory for `open3e` as used for running `open3e_depictSystem`.<br>
 By using the optional switch `-s` data files for simulation get created. 
@@ -280,8 +280,8 @@ Use
 ```
 open3e_dids2json
 ```
-to convert common list of data points (Open3Edatapoints.py) to json format.
-A white list of writable data points is also created by this tool.
+to convert common list of data points (Open3Edatapoints.py, Open3EdatapointsVariants.py) to json format.
+This tool converts data points for use in the ioBroker adapter ioBroker.e3oncan. It is not used by open3e.
 
 # For developers
 
@@ -294,6 +294,9 @@ If you want to work on the codebase you can clone the repository and work in "ed
 **Hint: If you get an error like "A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build." you are running an old pip version. Editable mode requires pip version >= 21.1.**
 
 # Changelog
+
+### 0.6.0 (2026-02-07)
+* Introduced list of data points (Open3EdatapointsVariants.py) with lengths different from common data points. Via open3e_depictSystem open3e can handle those device specific data points.
 
 ### 0.5.10 (2025-12-10)
 * Added support for data points 511-520
