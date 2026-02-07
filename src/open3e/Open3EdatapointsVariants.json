@@ -1702,7 +1702,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -1717,7 +1717,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "ValveType",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -1726,7 +1726,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -1735,7 +1735,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -1748,10 +1748,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -1760,15 +1762,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -1800,7 +1804,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -1824,7 +1828,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -1833,7 +1837,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -1846,10 +1850,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -1858,15 +1864,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -1898,7 +1906,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -1922,7 +1930,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -1931,7 +1939,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -1944,10 +1952,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -1956,15 +1966,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -1996,7 +2008,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2020,7 +2032,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -2029,7 +2041,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2042,10 +2054,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -2054,15 +2068,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2094,7 +2110,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2118,7 +2134,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -2127,7 +2143,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2140,10 +2156,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -2152,15 +2170,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2192,7 +2212,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2216,7 +2236,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -2225,7 +2245,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2238,10 +2258,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -2250,15 +2272,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2290,7 +2314,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2314,7 +2338,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -2323,7 +2347,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2336,10 +2360,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -2348,15 +2374,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2388,7 +2416,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2412,7 +2440,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -2421,7 +2449,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2434,10 +2462,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -2446,15 +2476,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2486,7 +2518,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2510,7 +2542,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -2519,7 +2551,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2532,10 +2564,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -2544,15 +2578,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2584,7 +2620,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2608,7 +2644,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -2617,7 +2653,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2630,10 +2666,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -2642,15 +2680,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2682,7 +2722,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2706,7 +2746,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -2715,7 +2755,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2728,10 +2768,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -2740,15 +2782,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2780,7 +2824,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2804,7 +2848,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -2813,7 +2857,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2826,10 +2870,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -2838,15 +2884,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2878,7 +2926,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2902,7 +2950,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -2911,7 +2959,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2924,10 +2972,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -2936,15 +2986,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -2976,7 +3028,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3000,7 +3052,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -3009,7 +3061,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3022,10 +3074,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -3034,15 +3088,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3074,7 +3130,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3098,7 +3154,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -3107,7 +3163,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3120,10 +3176,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -3132,15 +3190,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3172,7 +3232,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3196,7 +3256,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -3205,7 +3265,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3218,10 +3278,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -3230,15 +3292,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3270,7 +3334,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3294,7 +3358,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -3303,7 +3367,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3316,10 +3380,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -3328,15 +3394,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3368,7 +3436,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3392,7 +3460,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -3401,7 +3469,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3414,10 +3482,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -3426,15 +3496,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3466,7 +3538,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3490,7 +3562,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -3499,7 +3571,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3512,10 +3584,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -3524,15 +3598,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3564,7 +3640,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3588,7 +3664,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -3597,7 +3673,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3610,10 +3686,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -3622,15 +3700,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3662,7 +3742,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3686,7 +3766,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -3695,7 +3775,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3708,10 +3788,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -3720,15 +3802,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3760,7 +3844,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3784,7 +3868,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -3793,7 +3877,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3806,10 +3890,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -3818,15 +3904,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3858,7 +3946,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3882,7 +3970,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -3891,7 +3979,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3904,10 +3992,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -3916,15 +4006,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3956,7 +4048,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -3980,7 +4072,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -3989,7 +4081,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4002,10 +4094,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -4014,15 +4108,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4054,7 +4150,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4078,7 +4174,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -4087,7 +4183,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4100,10 +4196,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -4112,15 +4210,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4152,7 +4252,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4176,7 +4276,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -4185,7 +4285,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4198,10 +4298,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -4210,15 +4312,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4250,7 +4354,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4274,7 +4378,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -4283,7 +4387,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4296,10 +4400,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -4308,15 +4414,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4348,7 +4456,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4372,7 +4480,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -4381,7 +4489,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4394,10 +4502,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -4406,15 +4516,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4446,7 +4558,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4470,7 +4582,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -4479,7 +4591,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4492,10 +4604,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -4504,15 +4618,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4544,7 +4660,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4568,7 +4684,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -4577,7 +4693,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4590,10 +4706,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -4602,15 +4720,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4642,7 +4762,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4666,7 +4786,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -4675,7 +4795,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4688,10 +4808,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -4700,15 +4822,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4740,7 +4864,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4764,7 +4888,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -4773,7 +4897,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4786,10 +4910,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -4798,15 +4924,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4838,7 +4966,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4862,7 +4990,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -4871,7 +4999,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4884,10 +5012,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -4896,15 +5026,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4936,7 +5068,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4960,7 +5092,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -4969,7 +5101,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -4982,10 +5114,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -4994,15 +5128,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5034,7 +5170,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5058,7 +5194,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -5067,7 +5203,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5080,10 +5216,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -5092,15 +5230,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5132,7 +5272,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5156,7 +5296,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -5165,7 +5305,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5178,10 +5318,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -5190,15 +5332,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5230,7 +5374,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5254,7 +5398,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -5263,7 +5407,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5276,10 +5420,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -5288,15 +5434,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5328,7 +5476,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5352,7 +5500,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -5361,7 +5509,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5374,10 +5522,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -5386,15 +5536,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5426,7 +5578,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5450,7 +5602,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -5459,7 +5611,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5472,10 +5624,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -5484,15 +5638,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5524,7 +5680,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Battery Level",
+            "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5548,7 +5704,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "temperature",
+            "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false
@@ -5557,7 +5713,7 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Current Status (Heating/Cooling/Standby)",
+            "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5570,10 +5726,12 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - display turned",
-            "args": {}
+            "id": "DeviceDisplayTurned",
+            "args": {
+              "listStr": "DeviceDisplayModeStates"
+            }
           },
           {
             "codec": "RawCodec",
@@ -5582,15 +5740,17 @@
             "args": {}
           },
           {
-            "codec": "O3EBool",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - child lock active",
-            "args": {}
+            "id": "DeviceChildLockActive",
+            "args": {
+              "listStr": "DeviceChildLockStates"
+            }
           },
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ViCare thermostatic radiator valve - set temperature by hand",
+            "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
               "signed": false
@@ -5606,5 +5766,5 @@
       }
     }
   },
-  "Version": "20260205"
+  "Version": "20260207"
 }
