@@ -1,4 +1,4 @@
-**_New: Handling of data points with length different from common data point via open3e_depictSystem_**
+**_New: List of data points now available as [table](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md)**
 
 <BR>
 
@@ -74,6 +74,8 @@ New naming will also be used for paramter `{device}`within MQTT topics (see belo
 Further information is available [here](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments).
 
 The depicting scans take several minutes (usually 10..20) - please be patient!
+
+Infos about data points are available [here](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md).
 
 # Usage
 
