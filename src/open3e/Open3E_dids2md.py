@@ -31,7 +31,7 @@ import open3e.Open3EdatapointsVariants
 
 from open3e.Open3Ecodecs import *
 
-DoI_default = [256, 266, 268, 356, 1006]                            # Frequently used Dids
+DoI_default = [256, 266, 268, 269, 356, 927, 1006]                            # Frequently used Dids
 
 md_indent = '- '                                                    # Indentation of sub codecs
 meta_codecs = ['O3EList','O3EComplexType']                          # List of meta codecs, show in italic
@@ -39,7 +39,21 @@ ignored_ids = ['ListEntries']                                       # List of id
 enums = dict(open3e.Open3Eenums.E3Enums)                            # Enumerations known to open3e
 enums_excluded = ['Errors','Warnings','States','Infos','Country']   # Do NOT list the entries of enumerations for those keys
 
-table_header =  '|  Did | ID   | Codec | Length | Unit | Description | Further info |\n| ---: | :--- | :--- | ---: | :---: | :--- | :--- |\n'
+table_header =  '|  Did | ID   | Codec | Length | Unit | Further info |\n| ---: | :--- | :--- | ---: | :---: | :--- |\n'
+
+def addMouseOver(txt, mouse_over):
+    if len(txt) > 0 and txt[0] == '[' and '##' in txt:
+        # txt already contains a mouse over. Add another one
+        md = txt.replace('## "',f'## "{mouse_over} ')
+    else:
+        md = f'[{txt}](## "{mouse_over}")'
+    return md
+
+def getDescStr(codecs):
+    if 'args' in codecs and 'desc' in codecs['args']:
+        return codecs['args']['desc']
+    else:
+        return ''
 
 def getIdStr(id, codecs, prefix):
     if prefix == '':
@@ -47,7 +61,12 @@ def getIdStr(id, codecs, prefix):
     else:
         id_str = id
     if codecs['codec'] == 'O3EEnum' and codecs['args']['listStr'] in enums and not (codecs['args']['listStr'] in enums_excluded):
-        id_str = f'[{id_str}](## "{json.dumps(enums[codecs['args']['listStr']],indent=None).replace('"','')}")'
+        # Add list if enums as mouse over
+        id_str = addMouseOver(id_str, json.dumps(enums[codecs['args']['listStr']],indent=None).replace('"',''))
+    desc = getDescStr(codecs)
+    if desc != '':
+        # Add description as mouse over
+        id_str = addMouseOver(id_str, desc)
     return id_str
 
 def getCodecStr(codec_str):
@@ -58,13 +77,10 @@ def getCodecStr(codec_str):
 
 def getUniStr(codecs):
     if 'args' in codecs and 'unit' in codecs['args']:
-        return codecs['args']['unit']
-    else:
-        return ''
-
-def getDescStr(codecs):
-    if 'args' in codecs and 'desc' in codecs['args']:
-        return codecs['args']['desc']
+        md = codecs['args']['unit']
+        if md == '°C':
+            md = f'[°C](## "°C or °F (system configuration)")'
+        return md
     else:
         return ''
 
@@ -78,7 +94,7 @@ def codec2md(codecs, prefix=''):
     md = ''
     if not (codecs['id'] in ignored_ids):
         # skip json helper ids
-        md += F'{prefix}{getIdStr(codecs['id'], codecs, prefix)}|{getCodecStr(codecs['codec'])}|{str(codecs['len'])}|{getUniStr(codecs)}|{getDescStr(codecs)}|{getInfoStr(codecs)}'
+        md += F'{prefix}{getIdStr(codecs['id'], codecs, prefix)}|{getCodecStr(codecs['codec'])}|{str(codecs['len'])}|{getUniStr(codecs)}|{getInfoStr(codecs)}'
     if 'subTypes' in codecs['args']:
         for codec in codecs['args']['subTypes']:
             if not (codec['id'] in ignored_ids):
@@ -127,10 +143,12 @@ def main():
     md += '- Version of variant data points: ' + didsDictVars['Version'] + '\n\n'
 
     md += '## Frequently used data points\n'
+    md += 'A list of all presently known data points is available [below](#all-presently-known-data-points)\n'
     md += table_header
 
     for did in DoI_default:
-        md += did2md(did, didsDict[did])
+        if did in didsDict:
+            md += did2md(did, didsDict[did])
         if did in didsDictVars:
             for variant in didsDictVars[did]:
                 md += did2md(did, didsDictVars[did][variant])

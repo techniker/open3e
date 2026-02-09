@@ -21,7 +21,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "general", 
-    "Version": "20260207",
+    "Version": "20260209",
     "dids" : 
     {
         256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress"), O3EEnum(1, "BusType", "BusTypes"), O3EEnum(1, "DeviceProperty","Devices"), O3EEnum(1, "DeviceFunction","Devices"), O3ESoftVers(8, "SW-Version"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")]),
@@ -35,8 +35,8 @@ dataIdentifiers = {
         264 : O3EList(124, "WarningDtcHistory", [O3EByteVal(2, "Count"), O3EByteVal(2, "GrandTotal"), O3EComplexType(12, "ListEntries",[O3EEnum(2,"Warning","Warnings"), O3EDateTime(8, "DateTime"),O3EByteVal(2, "Unknown")] )]),
         265 : O3EList(122, "ErrorDtcList", [O3EByteVal(2, "Count"), O3EComplexType(12, "ListEntries",[O3EEnum(2,"Error","Errors"), O3EDateTime(8, "DateTime"), O3EByteVal(2, "Unknown")] )]),
         266 : O3EList(124, "ErrorDtcHistory", [O3EByteVal(2, "Count"), O3EByteVal(2, "GrandTotal"), O3EComplexType(12, "ListEntries",[O3EEnum(2,"Error","Errors"), O3EDateTime(8, "DateTime"), O3EByteVal(2, "Unknown")] )]),         
-        268 : O3EComplexType(9, "FlowTemperatureSensor", [O3EInt16(2, "Actual", signed=True, unit="°C"), O3EInt16(2, "Minimum", signed=True, unit="°C"), O3EInt16(2, "Maximum", signed=True, unit="°C"), O3EInt16(2, "Average", signed=True, unit="°C"), O3EEnum(1, "SensorStatus", "SensorStates")],desc="Flow temperature in the primary circuit after the heat generator.",info="[Link](https://github.com/open3e/open3e/discussions/161)"),
-        269 : O3EComplexType(9, "ReturnTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EEnum(1, "SensorStatus", "SensorStates")]),
+        268 : O3EComplexType(9, "FlowTemperatureSensor", [O3EInt16(2, "Actual", signed=True, unit="°C"), O3EInt16(2, "Minimum", signed=True, unit="°C"), O3EInt16(2, "Maximum", signed=True, unit="°C"), O3EInt16(2, "Average", signed=True, unit="°C"), O3EEnum(1, "SensorStatus", "SensorStates", desc="Actual state of sensor")],desc="Flow temperature in the primary circuit downstream from the heat generator.",info="[Link](#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)"),
+        269 : O3EComplexType(9, "ReturnTemperatureSensor", [O3EInt16(2, "Actual", signed=True, unit="°C"), O3EInt16(2, "Minimum", signed=True, unit="°C"), O3EInt16(2, "Maximum", signed=True, unit="°C"), O3EInt16(2, "Average", signed=True, unit="°C"), O3EEnum(1, "SensorStatus", "SensorStates")],desc="Flow temperature in the primary circuit upstream from the heat generator.",info="[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)"),
         271 : O3EComplexType(9, "DomesticHotWaterSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EEnum(1, "SensorStatus", "SensorStates")]),
         272 : RawCodec(10, "DomesticHotWaterFlowSensor"),
         273 : O3EComplexType(9, "SolarRoofTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EEnum(1, "SensorStatus", "SensorStates")]),
@@ -306,7 +306,7 @@ dataIdentifiers = {
         923 : RawCodec(8, "RealTimeClockStatus"),
         924 : O3EByteVal(1, "StartUpWizard"),
         925 : RawCodec(5, "FillingVenting"),
-        927 : O3EEnum(1, "BuildingType", "BuildingTypes"),
+        927 : O3EEnum(1, "BuildingType", "BuildingTypes", desc="Type of building"),
         928 : O3EUtf8(16, "ElectronicTraceabilityNumber"),
         929 : O3EEnum(1, "GasType", "GasTypes"),
         930 : RawCodec(10, "ExternalTargetCentralHeatingFlowSetpointMetaData"),
