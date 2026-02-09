@@ -20,7 +20,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- - Error|O3EEnum|2|||
 | |- - DateTime|O3EDateTime|8|||
 | |- - Unknown|O3EByteVal|2|||
-**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator.")|*O3EComplexType*|9||[Link](#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator.")|*O3EComplexType*|9||[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")||
@@ -105,7 +105,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- - Error|O3EEnum|2|||
 | |- - DateTime|O3EDateTime|8|||
 | |- - Unknown|O3EByteVal|2|||
-**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator.")|*O3EComplexType*|9||[Link](#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator.")|*O3EComplexType*|9||[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")||
