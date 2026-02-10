@@ -34,6 +34,21 @@ from open3e.Open3Ecodecs import *
 with open('Open3Edatapoints_writables.json', 'r') as file:
     dids_writable = json.load(file)
 
+def collectComments(fn):
+    # Collect all comments in file named fn and return a dict
+    # Only works with dids in a single line
+    # did is expected in columns 8 to 12
+    comments = {}
+    with open(fn, 'r') as f:
+        for line in f:
+            try:
+                did = int(line[8:12])
+                p = line.find('#',14)
+                if p>0:
+                    comments[did] = line[p:-1]  # remove \n
+            except:
+                pass
+    return comments
 
 def main():
 
@@ -43,12 +58,17 @@ def main():
     didsDict = {}
     didsDictVars = {}
 
+    comments = collectComments('Open3Edatapoints.py')
+    commentsVariants = collectComments('Open3EdatapointsVariants.py')
+
     for dp in dataIdentifiers["dids"]:
         codecStr = dataIdentifiers['dids'][dp].getCodecString()
         if str(dp) in dids_writable:
             codecStr = codecStr[:-1]+', "acc"="rw"),'
         else:
             codecStr = codecStr[:-1]+', "acc"="ro"),'
+        if dp in comments:
+            codecStr += '    '+comments[dp]
 
         print(f"        {dp} : {codecStr}")
 
