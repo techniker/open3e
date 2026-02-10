@@ -39,7 +39,10 @@ ignored_ids = ['ListEntries']                                       # List of id
 enums = dict(open3e.Open3Eenums.E3Enums)                            # Enumerations known to open3e
 enums_excluded = ['Errors','Warnings','States','Infos','Country']   # Do NOT list the entries of enumerations for those keys
 
-table_header =  '|  Did | ID   | Codec | Length | Unit | Further info |\n| ---: | :--- | :--- | ---: | :---: | :--- |\n'
+with open('Open3Edatapoints_writables.json', 'r') as file:
+    dids_writable = json.load(file)
+
+table_header =  '|  Did | ID   | Codec | Length | Unit | Access | Further info |\n| ---: | :--- | :--- | ---: | :---: | :---: | :--- |\n'
 
 def addMouseOver(txt, mouse_over):
     if len(txt) > 0 and txt[0] == '[' and '##' in txt:
@@ -89,22 +92,28 @@ def getInfoStr(codecs):
         return codecs['args']['info']
     else:
         return ''
+    
+def getAccesStr(did):
+    if str(did) in dids_writable:
+        return '**rw**'
+    else:
+        return 'ro'
 
-def codec2md(codecs, prefix=''):
+def codec2md(codecs, prefix='', accessStr=''):
     md = ''
     if not (codecs['id'] in ignored_ids):
         # skip json helper ids
-        md += F'{prefix}{getIdStr(codecs['id'], codecs, prefix)}|{getCodecStr(codecs['codec'])}|{str(codecs['len'])}|{getUniStr(codecs)}|{getInfoStr(codecs)}'
+        md += F'{prefix}{getIdStr(codecs['id'], codecs, prefix)}|{getCodecStr(codecs['codec'])}|{str(codecs['len'])}|{getUniStr(codecs)}|{accessStr}|{getInfoStr(codecs)}'
     if 'subTypes' in codecs['args']:
         for codec in codecs['args']['subTypes']:
             if not (codec['id'] in ignored_ids):
-                md += f'|\n| |{codec2md(codec, prefix+md_indent)}'
+                md += f'|\n| |{codec2md(codec, prefix+md_indent, '')}'
             else:
-                md += f'{codec2md(codec, prefix+md_indent)}'
+                md += f'{codec2md(codec, prefix+md_indent, '')}'
     return md
 
 def did2md(did, codecs):
-    return f'**{str(did)}**|{codec2md(codecs, '')}|\n'
+    return f'**{str(did)}**|{codec2md(codecs, '', getAccesStr(did))}|\n'
 
 def main():
     dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers)
@@ -141,6 +150,11 @@ def main():
     md += '# Open3E - List of data points\n'
     md += '- Version of general data points: ' + didsDict['Version'] + '\n'
     md += '- Version of variant data points: ' + didsDictVars['Version'] + '\n\n'
+
+    md += '### Remarks:\n'
+    md += '* Information on write access to data points (column Access) is based on documents of Viessmann\n'
+    md += '  * ro => data point is read only\n'
+    md += '  * rw => data point is read and write. However, device my reject or ignore write access anyway\n'
 
     md += '## Frequently used data points\n'
     md += 'A list of all presently known data points is available [below](#all-presently-known-data-points)\n'
