@@ -4,7 +4,10 @@
       "codec": "O3EUtf8",
       "len": 12,
       "id": "CentralHeatingOneCircuitName",
-      "args": {}
+      "args": {
+        "desc": "",
+        "info": ""
+      }
     }
   },
   "628": {
@@ -12,7 +15,10 @@
       "codec": "O3EUtf8",
       "len": 12,
       "id": "CentralHeatingTwoCircuitName",
-      "args": {}
+      "args": {
+        "desc": "",
+        "info": ""
+      }
     }
   },
   "629": {
@@ -20,7 +26,10 @@
       "codec": "O3EUtf8",
       "len": 12,
       "id": "CentralHeatingThreeCircuitName",
-      "args": {}
+      "args": {
+        "desc": "",
+        "info": ""
+      }
     }
   },
   "630": {
@@ -28,7 +37,10 @@
       "codec": "O3EUtf8",
       "len": 12,
       "id": "CentralHeatingFourCircuitName",
-      "args": {}
+      "args": {
+        "desc": "",
+        "info": ""
+      }
     }
   },
   "1006": {
@@ -42,13 +54,21 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "SetModeOneTimesHotWater",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -56,7 +76,9 @@
             "id": "Unknown",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -71,13 +93,21 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "ModeOneTimesHotWater",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -85,7 +115,9 @@
             "id": "Unknown",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -100,13 +132,21 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "SetModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -114,7 +154,9 @@
             "id": "Unknown",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -129,13 +171,21 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "SetModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -143,7 +193,9 @@
             "id": "Unknown",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -158,13 +210,21 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "SetModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -172,7 +232,9 @@
             "id": "Unknown",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -187,13 +249,21 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "SetModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -201,7 +271,9 @@
             "id": "Unknown",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -216,13 +288,21 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "ModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -230,7 +310,9 @@
             "id": "Unknown",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -245,13 +327,21 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "ModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -259,7 +349,9 @@
             "id": "Unknown",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -274,13 +366,21 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "ModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -288,7 +388,9 @@
             "id": "Unknown",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -303,13 +405,21 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "ModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -317,7 +427,9 @@
             "id": "Unknown",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -334,7 +446,10 @@
             "id": "ActivePower",
             "args": {
               "scale": 1.0,
-              "signed": true
+              "signed": true,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -343,7 +458,10 @@
             "id": "ReactivePower",
             "args": {
               "scale": 1.0,
-              "signed": true
+              "signed": true,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -352,7 +470,10 @@
             "id": "ActivePowerDup",
             "args": {
               "scale": 1.0,
-              "signed": true
+              "signed": true,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -361,7 +482,10 @@
             "id": "PadZeros",
             "args": {
               "scale": 1.0,
-              "signed": true
+              "signed": true,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -370,7 +494,10 @@
             "id": "ReactivePowerDup",
             "args": {
               "scale": 1.0,
-              "signed": true
+              "signed": true,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -379,10 +506,15 @@
             "id": "PadOnes",
             "args": {
               "scale": 1.0,
-              "signed": true
+              "signed": true,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -397,7 +529,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -410,7 +545,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -424,7 +561,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -438,7 +577,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -447,7 +588,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -462,7 +605,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -475,7 +621,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -489,7 +637,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -503,7 +653,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -512,7 +664,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -527,7 +681,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -540,7 +697,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -554,7 +713,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -568,7 +729,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -577,7 +740,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -592,7 +757,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -605,7 +773,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -619,7 +789,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -633,7 +805,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -642,7 +816,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -657,7 +833,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -670,7 +849,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -684,7 +865,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -698,7 +881,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -707,7 +892,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -722,7 +909,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -735,7 +925,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -749,7 +941,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -763,7 +957,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -772,7 +968,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -787,7 +985,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -800,7 +1001,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -814,7 +1017,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -828,7 +1033,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -837,7 +1044,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -852,7 +1061,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -865,7 +1077,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -879,7 +1093,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -893,7 +1109,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -902,7 +1120,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -917,7 +1137,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -930,7 +1153,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -944,7 +1169,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -958,7 +1185,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -967,7 +1196,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -982,7 +1213,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -995,7 +1229,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1009,7 +1245,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1023,7 +1261,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1032,7 +1272,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -1047,7 +1289,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -1060,7 +1305,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1074,7 +1321,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1088,7 +1337,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1097,7 +1348,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -1112,7 +1365,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -1125,7 +1381,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1139,7 +1397,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1153,7 +1413,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1162,7 +1424,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -1177,7 +1441,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -1190,7 +1457,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1204,7 +1473,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1218,7 +1489,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1227,7 +1500,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -1242,7 +1517,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -1255,7 +1533,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1269,7 +1549,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1283,7 +1565,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1292,7 +1576,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -1307,7 +1593,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -1320,7 +1609,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1334,7 +1625,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1348,7 +1641,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1357,7 +1652,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -1372,7 +1669,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -1385,7 +1685,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1399,7 +1701,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1413,7 +1717,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1422,7 +1728,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -1437,7 +1745,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -1450,7 +1761,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1464,7 +1777,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1478,7 +1793,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1487,7 +1804,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -1502,7 +1821,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -1515,7 +1837,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1529,7 +1853,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1543,7 +1869,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1552,7 +1880,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -1567,7 +1897,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -1580,7 +1913,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1594,7 +1929,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1608,7 +1945,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1617,7 +1956,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -1632,7 +1973,10 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": ""
+            }
           },
           {
             "codec": "RawCodec",
@@ -1645,7 +1989,9 @@
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1659,7 +2005,9 @@
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1673,7 +2021,9 @@
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionState",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1682,7 +2032,9 @@
             "id": "Unknown4",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -1705,7 +2057,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1720,7 +2075,10 @@
             "id": "ValveType",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1729,7 +2087,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1738,7 +2099,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1752,7 +2116,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1766,7 +2132,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1775,7 +2143,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1784,7 +2155,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -1807,7 +2180,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1822,7 +2198,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1831,7 +2210,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1840,7 +2222,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1854,7 +2239,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1868,7 +2255,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1877,7 +2266,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1886,7 +2278,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -1909,7 +2303,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1924,7 +2321,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1933,7 +2333,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1942,7 +2345,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1956,7 +2362,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1970,7 +2378,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1979,7 +2389,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -1988,7 +2401,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -2011,7 +2426,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2026,7 +2444,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2035,7 +2456,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2044,7 +2468,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2058,7 +2485,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2072,7 +2501,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2081,7 +2512,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2090,7 +2524,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -2113,7 +2549,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2128,7 +2567,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2137,7 +2579,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2146,7 +2591,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2160,7 +2608,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2174,7 +2624,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2183,7 +2635,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2192,7 +2647,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -2215,7 +2672,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2230,7 +2690,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2239,7 +2702,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2248,7 +2714,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2262,7 +2731,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2276,7 +2747,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2285,7 +2758,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2294,7 +2770,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -2317,7 +2795,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2332,7 +2813,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2341,7 +2825,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2350,7 +2837,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2364,7 +2854,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2378,7 +2870,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2387,7 +2881,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2396,7 +2893,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -2419,7 +2918,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2434,7 +2936,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2443,7 +2948,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2452,7 +2960,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2466,7 +2977,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2480,7 +2993,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2489,7 +3004,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2498,7 +3016,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -2521,7 +3041,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2536,7 +3059,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2545,7 +3071,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2554,7 +3083,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2568,7 +3100,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2582,7 +3116,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2591,7 +3127,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2600,7 +3139,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -2623,7 +3164,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2638,7 +3182,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2647,7 +3194,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2656,7 +3206,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2670,7 +3223,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2684,7 +3239,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2693,7 +3250,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2702,7 +3262,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -2725,7 +3287,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2740,7 +3305,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2749,7 +3317,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2758,7 +3329,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2772,7 +3346,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2786,7 +3362,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2795,7 +3373,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2804,7 +3385,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -2827,7 +3410,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2842,7 +3428,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2851,7 +3440,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2860,7 +3452,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2874,7 +3469,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2888,7 +3485,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2897,7 +3496,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2906,7 +3508,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -2929,7 +3533,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2944,7 +3551,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2953,7 +3563,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2962,7 +3575,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2976,7 +3592,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2990,7 +3608,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -2999,7 +3619,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3008,7 +3631,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -3031,7 +3656,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3046,7 +3674,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3055,7 +3686,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3064,7 +3698,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3078,7 +3715,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3092,7 +3731,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3101,7 +3742,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3110,7 +3754,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -3133,7 +3779,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3148,7 +3797,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3157,7 +3809,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3166,7 +3821,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3180,7 +3838,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3194,7 +3854,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3203,7 +3865,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3212,7 +3877,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -3235,7 +3902,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3250,7 +3920,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3259,7 +3932,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3268,7 +3944,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3282,7 +3961,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3296,7 +3977,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3305,7 +3988,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3314,7 +4000,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -3337,7 +4025,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3352,7 +4043,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3361,7 +4055,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3370,7 +4067,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3384,7 +4084,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3398,7 +4100,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3407,7 +4111,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3416,7 +4123,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -3439,7 +4148,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3454,7 +4166,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3463,7 +4178,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3472,7 +4190,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3486,7 +4207,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3500,7 +4223,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3509,7 +4234,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3518,7 +4246,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -3541,7 +4271,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3556,7 +4289,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3565,7 +4301,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3574,7 +4313,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3588,7 +4330,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3602,7 +4346,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3611,7 +4357,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3620,7 +4369,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -3643,7 +4394,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3658,7 +4412,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3667,7 +4424,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3676,7 +4436,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3690,7 +4453,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3704,7 +4469,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3713,7 +4480,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3722,7 +4492,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -3745,7 +4517,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3760,7 +4535,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3769,7 +4547,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3778,7 +4559,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3792,7 +4576,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3806,7 +4592,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3815,7 +4603,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3824,7 +4615,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -3847,7 +4640,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3862,7 +4658,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3871,7 +4670,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3880,7 +4682,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3894,7 +4699,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3908,7 +4715,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3917,7 +4726,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3926,7 +4738,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -3949,7 +4763,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3964,7 +4781,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3973,7 +4793,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3982,7 +4805,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -3996,7 +4822,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4010,7 +4838,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4019,7 +4849,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4028,7 +4861,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -4051,7 +4886,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4066,7 +4904,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4075,7 +4916,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4084,7 +4928,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4098,7 +4945,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4112,7 +4961,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4121,7 +4972,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4130,7 +4984,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -4153,7 +5009,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4168,7 +5027,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4177,7 +5039,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4186,7 +5051,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4200,7 +5068,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4214,7 +5084,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4223,7 +5095,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4232,7 +5107,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -4255,7 +5132,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4270,7 +5150,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4279,7 +5162,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4288,7 +5174,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4302,7 +5191,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4316,7 +5207,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4325,7 +5218,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4334,7 +5230,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -4357,7 +5255,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4372,7 +5273,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4381,7 +5285,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4390,7 +5297,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4404,7 +5314,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4418,7 +5330,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4427,7 +5341,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4436,7 +5353,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -4459,7 +5378,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4474,7 +5396,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4483,7 +5408,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4492,7 +5420,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4506,7 +5437,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4520,7 +5453,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4529,7 +5464,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4538,7 +5476,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -4561,7 +5501,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4576,7 +5519,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4585,7 +5531,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4594,7 +5543,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4608,7 +5560,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4622,7 +5576,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4631,7 +5587,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4640,7 +5599,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -4663,7 +5624,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4678,7 +5642,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4687,7 +5654,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4696,7 +5666,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4710,7 +5683,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4724,7 +5699,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4733,7 +5710,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4742,7 +5722,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -4765,7 +5747,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4780,7 +5765,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4789,7 +5777,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4798,7 +5789,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4812,7 +5806,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4826,7 +5822,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4835,7 +5833,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4844,7 +5845,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -4867,7 +5870,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4882,7 +5888,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4891,7 +5900,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4900,7 +5912,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4914,7 +5929,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4928,7 +5945,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4937,7 +5956,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4946,7 +5968,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -4969,7 +5993,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4984,7 +6011,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -4993,7 +6023,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5002,7 +6035,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5016,7 +6052,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5030,7 +6068,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5039,7 +6079,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5048,7 +6091,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -5071,7 +6116,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5086,7 +6134,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5095,7 +6146,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5104,7 +6158,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5118,7 +6175,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5132,7 +6191,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5141,7 +6202,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5150,7 +6214,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -5173,7 +6239,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5188,7 +6257,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5197,7 +6269,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5206,7 +6281,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5220,7 +6298,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5234,7 +6314,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5243,7 +6325,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5252,7 +6337,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -5275,7 +6362,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5290,7 +6380,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5299,7 +6392,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5308,7 +6404,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5322,7 +6421,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5336,7 +6437,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5345,7 +6448,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5354,7 +6460,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -5377,7 +6485,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5392,7 +6503,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5401,7 +6515,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5410,7 +6527,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5424,7 +6544,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5438,7 +6560,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5447,7 +6571,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5456,7 +6583,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -5479,7 +6608,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5494,7 +6626,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5503,7 +6638,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5512,7 +6650,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5526,7 +6667,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5540,7 +6683,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5549,7 +6694,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5558,7 +6706,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -5581,7 +6731,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5596,7 +6749,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5605,7 +6761,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5614,7 +6773,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5628,7 +6790,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5642,7 +6806,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5651,7 +6817,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5660,7 +6829,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
@@ -5683,7 +6854,10 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5698,7 +6872,10 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5707,7 +6884,10 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5716,7 +6896,10 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5730,7 +6913,9 @@
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5744,7 +6929,9 @@
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5753,7 +6940,10 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": ""
             }
           },
           {
@@ -5762,7 +6952,9 @@
             "id": "Unknown5",
             "args": {}
           }
-        ]
+        ],
+        "desc": "",
+        "info": ""
       }
     }
   },
