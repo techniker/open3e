@@ -31,8 +31,11 @@ import open3e.Open3EdatapointsVariants
 
 from open3e.Open3Ecodecs import *
 
-with open('Open3Edatapoints_writables.json', 'r') as file:
-    dids_writable = json.load(file)
+try:
+    with open('Open3Edatapoints_writables.json', 'r') as file:
+        dids_writable = json.load(file)
+except:
+    dids_writable = {}
 
 def collectComments(fn):
     # Collect all comments in file named fn and return a dict
@@ -50,27 +53,30 @@ def collectComments(fn):
                 pass
     return comments
 
-def main():
-
-    dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers)
-    variants = dict(open3e.Open3EdatapointsVariants.dataIdentifiers)
-
-    didsDict = {}
-    didsDictVars = {}
-
-    comments = collectComments('Open3Edatapoints.py')
-    commentsVariants = collectComments('Open3EdatapointsVariants.py')
-
-    for dp in dataIdentifiers["dids"]:
-        codecStr = dataIdentifiers['dids'][dp].getCodecString()
-        if str(dp) in dids_writable:
-            codecStr = codecStr[:-1]+', "acc"="rw"),'
-        else:
-            codecStr = codecStr[:-1]+', "acc"="ro"),'
+def dids2string(dids,comments):
+    # Collect all data points
+    # return a string containing one line of text per data point
+    didsStr = ''
+    for dp in dids:
+        codecStr = dids[dp].getCodecString()
+        if codecStr.find('acc="') == -1:
+            # Access info not yet included. Add it:
+            if str(dp) in dids_writable:
+                codecStr = f'{codecStr[:-1]}, acc="rw")'
+            else:
+                codecStr = f'{codecStr[:-1]}, acc="ro")'
+        codecStr += ',' # Add final comma of this list element
         if dp in comments:
+            # Add comment
             codecStr += '    '+comments[dp]
+        # Data point completed, add to the string:
+        didsStr += f"        {dp} : {codecStr}\n"
+    return didsStr
 
-        print(f"        {dp} : {codecStr}")
+def main():
+    dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers)
+    comments = collectComments('Open3Edatapoints.py')
+    print(dids2string(dataIdentifiers["dids"],comments))
 
 if __name__ == "__main__":
     main()

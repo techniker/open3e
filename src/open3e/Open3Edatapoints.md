@@ -1,6 +1,6 @@
 # Open3E - List of data points
-- Version of general data points: 20260209
-- Version of variant data points: 20260207
+- Version of general data points: 20260211
+- Version of variant data points: 20260211
 
 ### Remarks:
 * Information on write access to data points (column Access) is based on documents of Viessmann
@@ -2955,7 +2955,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1885**|**RoomOneSetpoints**|RawCodec|30||**rw**||
 **1886**|**RoomOneCurrentValues**|RawCodec|46||ro||
@@ -2967,7 +2967,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1888**|**RoomTwoSetpoints**|RawCodec|30||**rw**||
 **1889**|**RoomTwoCurrentValues**|RawCodec|46||ro||
@@ -2979,7 +2979,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1891**|**RoomThreeSetpoints**|RawCodec|30||**rw**||
 **1892**|**RoomThreeCurrentValues**|RawCodec|46||ro||
@@ -2991,7 +2991,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1894**|**RoomFourSetpoints**|RawCodec|30||**rw**||
 **1895**|**RoomFourCurrentValues**|RawCodec|46||ro||
@@ -3003,7 +3003,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1897**|**RoomFiveSetpoints**|RawCodec|30||**rw**||
 **1898**|**RoomFiveCurrentValues**|RawCodec|46||ro||
@@ -3015,7 +3015,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1900**|**RoomSixSetpoints**|RawCodec|30||**rw**||
 **1901**|**RoomSixCurrentValues**|RawCodec|46||ro||
@@ -3027,7 +3027,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1903**|**RoomSevenSetpoints**|RawCodec|30||**rw**||
 **1904**|**RoomSevenCurrentValues**|RawCodec|46||ro||
@@ -3039,7 +3039,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1906**|**RoomEightSetpoints**|RawCodec|30||**rw**||
 **1907**|**RoomEightCurrentValues**|RawCodec|46||ro||
@@ -3051,7 +3051,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1909**|**RoomNineSetpoints**|RawCodec|30||**rw**||
 **1910**|**RoomNineCurrentValues**|RawCodec|46||ro||
@@ -3063,7 +3063,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1912**|**RoomTenSetpoints**|RawCodec|30||**rw**||
 **1913**|**RoomTenCurrentValues**|RawCodec|46||ro||
@@ -3081,7 +3081,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1921**|**RoomThirteenSetpoints**|RawCodec|30||**rw**||
 **1922**|**RoomThirteenCurrentValues**|RawCodec|46||ro||
@@ -3093,7 +3093,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1924**|**RoomFourteenSetpoints**|RawCodec|30||**rw**||
 **1925**|**RoomFourteenCurrentValues**|RawCodec|46||ro||
@@ -3105,7 +3105,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1927**|**RoomFifteenSetpoints**|RawCodec|30||**rw**||
 **1928**|**RoomFifteenCurrentValues**|RawCodec|46||ro||
@@ -3117,7 +3117,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1930**|**RoomSixteenSetpoints**|RawCodec|30||**rw**||
 **1931**|**RoomSixteenCurrentValues**|RawCodec|46||ro||
@@ -3129,7 +3129,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1933**|**RoomSeventeenSetpoints**|RawCodec|30||**rw**||
 **1934**|**RoomSeventeenCurrentValues**|RawCodec|46||ro||
@@ -3141,7 +3141,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1936**|**RoomEighteenSetpoints**|RawCodec|30||**rw**||
 **1937**|**RoomEighteenCurrentValues**|RawCodec|46||ro||
@@ -3153,7 +3153,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1939**|**RoomNineteenSetpoints**|RawCodec|30||**rw**||
 **1940**|**RoomNineteenCurrentValues**|RawCodec|46||ro||
@@ -3165,7 +3165,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown2|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|29||||
-| |- WindowDetection|O3EEnum|1||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|9||||
 **1942**|**RoomTwentySetpoints**|RawCodec|30||**rw**||
 **1943**|**RoomTwentyCurrentValues**|RawCodec|46||ro||

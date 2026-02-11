@@ -39,9 +39,6 @@ ignored_ids = ['ListEntries']                                       # List of id
 enums = dict(open3e.Open3Eenums.E3Enums)                            # Enumerations known to open3e
 enums_excluded = ['Errors','Warnings','States','Infos','Country']   # Do NOT list the entries of enumerations for those keys
 
-with open('Open3Edatapoints_writables.json', 'r') as file:
-    dids_writable = json.load(file)
-
 table_header =  '|  Did | ID   | Codec | Length | Unit | Access | Further info |\n| ---: | :--- | :--- | ---: | :---: | :---: | :--- |\n'
 
 def addMouseOver(txt, mouse_over):
@@ -93,11 +90,14 @@ def getInfoStr(codecs):
     else:
         return ''
     
-def getAccesStr(did):
-    if str(did) in dids_writable:
-        return '**rw**'
+def getAccesStr(codecs):
+    if 'args' in codecs and 'acc' in codecs['args']:
+        if codecs['args']['acc'] == 'rw':
+            return '**rw**'
+        else:
+            return 'ro'
     else:
-        return 'ro'
+        return '**??**'
 
 def codec2md(codecs, prefix='', accessStr=''):
     md = ''
@@ -113,7 +113,7 @@ def codec2md(codecs, prefix='', accessStr=''):
     return md
 
 def did2md(did, codecs):
-    return f'**{str(did)}**|{codec2md(codecs, '', getAccesStr(did))}|\n'
+    return f'**{str(did)}**|{codec2md(codecs, '', getAccesStr(codecs))}|\n'
 
 def main():
     dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers)

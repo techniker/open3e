@@ -6,7 +6,8 @@
       "id": "CentralHeatingOneCircuitName",
       "args": {
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -17,7 +18,8 @@
       "id": "CentralHeatingTwoCircuitName",
       "args": {
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -28,7 +30,8 @@
       "id": "CentralHeatingThreeCircuitName",
       "args": {
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -39,7 +42,8 @@
       "id": "CentralHeatingFourCircuitName",
       "args": {
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -57,7 +61,8 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -67,18 +72,22 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "rw"
       }
     }
   },
@@ -96,7 +105,8 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -106,18 +116,22 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -135,7 +149,8 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -145,18 +160,22 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "rw"
       }
     }
   },
@@ -174,7 +193,8 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -184,18 +204,22 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "rw"
       }
     }
   },
@@ -213,7 +237,8 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -223,18 +248,22 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "rw"
       }
     }
   },
@@ -252,7 +281,8 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -262,18 +292,22 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "rw"
       }
     }
   },
@@ -291,7 +325,8 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -301,18 +336,22 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -330,7 +369,8 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -340,18 +380,22 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -369,7 +413,8 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -379,18 +424,22 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -408,7 +457,8 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -418,18 +468,22 @@
             "args": {
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -449,7 +503,8 @@
               "signed": true,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -461,7 +516,8 @@
               "signed": true,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -473,7 +529,8 @@
               "signed": true,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -485,7 +542,8 @@
               "signed": true,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -497,7 +555,8 @@
               "signed": true,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -509,12 +568,14 @@
               "signed": true,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -531,14 +592,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -547,14 +611,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -563,34 +630,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -607,14 +681,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -623,14 +700,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -639,34 +719,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -683,14 +770,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -699,14 +789,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -715,34 +808,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -759,14 +859,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -775,14 +878,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -791,34 +897,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -835,14 +948,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -851,14 +967,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -867,34 +986,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -911,14 +1037,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -927,14 +1056,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -943,34 +1075,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -987,14 +1126,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1003,14 +1145,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1019,34 +1164,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1063,14 +1215,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1079,14 +1234,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1095,34 +1253,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1139,14 +1304,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1155,14 +1323,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1171,34 +1342,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1215,14 +1393,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1231,14 +1412,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1247,34 +1431,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1291,14 +1482,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1307,14 +1501,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1323,34 +1520,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1367,14 +1571,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1383,14 +1590,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1399,34 +1609,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1443,14 +1660,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1459,14 +1679,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1475,34 +1698,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1519,14 +1749,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1535,14 +1768,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1551,34 +1787,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1595,14 +1838,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1611,14 +1857,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1627,34 +1876,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1671,14 +1927,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1687,14 +1946,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1703,34 +1965,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1747,14 +2016,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1763,14 +2035,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1779,34 +2054,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1823,14 +2105,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1839,14 +2124,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1855,34 +2143,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1899,14 +2194,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1915,14 +2213,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1931,34 +2232,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1975,14 +2283,17 @@
             "id": "Roomname",
             "args": {
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -1991,14 +2302,17 @@
             "args": {
               "listStr": "Roomtypes",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2007,34 +2321,41 @@
             "args": {
               "listStr": "TemperatureControlLevels",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState",
+              "listStr": "WindowDetectionStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2049,7 +2370,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2060,14 +2383,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2078,7 +2404,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2090,7 +2417,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2102,14 +2430,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2118,14 +2449,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2134,7 +2468,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2146,18 +2481,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2172,7 +2511,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2183,14 +2524,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2201,7 +2545,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2213,7 +2558,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2225,14 +2571,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2241,14 +2590,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2257,7 +2609,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2269,18 +2622,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2295,7 +2652,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2306,14 +2665,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2324,7 +2686,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2336,7 +2699,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2348,14 +2712,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2364,14 +2731,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2380,7 +2750,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2392,18 +2763,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2418,7 +2793,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2429,14 +2806,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2447,7 +2827,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2459,7 +2840,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2471,14 +2853,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2487,14 +2872,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2503,7 +2891,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2515,18 +2904,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2541,7 +2934,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2552,14 +2947,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2570,7 +2968,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2582,7 +2981,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2594,14 +2994,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2610,14 +3013,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2626,7 +3032,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2638,18 +3045,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2664,7 +3075,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2675,14 +3088,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2693,7 +3109,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2705,7 +3122,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2717,14 +3135,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2733,14 +3154,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2749,7 +3173,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2761,18 +3186,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2787,7 +3216,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2798,14 +3229,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2816,7 +3250,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2828,7 +3263,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2840,14 +3276,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2856,14 +3295,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2872,7 +3314,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2884,18 +3327,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2910,7 +3357,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2921,14 +3370,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2939,7 +3391,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2951,7 +3404,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2963,14 +3417,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2979,14 +3436,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -2995,7 +3455,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3007,18 +3468,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3033,7 +3498,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3044,14 +3511,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3062,7 +3532,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3074,7 +3545,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3086,14 +3558,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3102,14 +3577,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3118,7 +3596,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3130,18 +3609,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3156,7 +3639,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3167,14 +3652,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3185,7 +3673,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3197,7 +3686,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3209,14 +3699,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3225,14 +3718,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3241,7 +3737,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3253,18 +3750,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3279,7 +3780,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3290,14 +3793,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3308,7 +3814,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3320,7 +3827,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3332,14 +3840,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3348,14 +3859,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3364,7 +3878,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3376,18 +3891,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3402,7 +3921,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3413,14 +3934,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3431,7 +3955,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3443,7 +3968,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3455,14 +3981,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3471,14 +4000,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3487,7 +4019,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3499,18 +4032,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3525,7 +4062,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3536,14 +4075,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3554,7 +4096,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3566,7 +4109,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3578,14 +4122,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3594,14 +4141,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3610,7 +4160,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3622,18 +4173,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3648,7 +4203,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3659,14 +4216,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3677,7 +4237,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3689,7 +4250,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3701,14 +4263,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3717,14 +4282,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3733,7 +4301,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3745,18 +4314,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3771,7 +4344,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3782,14 +4357,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3800,7 +4378,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3812,7 +4391,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3824,14 +4404,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3840,14 +4423,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3856,7 +4442,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3868,18 +4455,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3894,7 +4485,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3905,14 +4498,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3923,7 +4519,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3935,7 +4532,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3947,14 +4545,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3963,14 +4564,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -3979,7 +4583,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3991,18 +4596,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4017,7 +4626,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4028,14 +4639,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4046,7 +4660,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4058,7 +4673,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4070,14 +4686,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4086,14 +4705,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4102,7 +4724,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4114,18 +4737,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4140,7 +4767,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4151,14 +4780,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4169,7 +4801,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4181,7 +4814,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4193,14 +4827,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4209,14 +4846,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4225,7 +4865,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4237,18 +4878,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4263,7 +4908,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4274,14 +4921,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4292,7 +4942,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4304,7 +4955,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4316,14 +4968,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4332,14 +4987,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4348,7 +5006,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4360,18 +5019,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4386,7 +5049,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4397,14 +5062,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4415,7 +5083,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4427,7 +5096,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4439,14 +5109,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4455,14 +5128,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4471,7 +5147,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4483,18 +5160,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4509,7 +5190,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4520,14 +5203,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4538,7 +5224,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4550,7 +5237,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4562,14 +5250,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4578,14 +5269,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4594,7 +5288,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4606,18 +5301,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4632,7 +5331,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4643,14 +5344,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4661,7 +5365,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4673,7 +5378,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4685,14 +5391,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4701,14 +5410,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4717,7 +5429,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4729,18 +5442,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4755,7 +5472,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4766,14 +5485,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4784,7 +5506,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4796,7 +5519,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4808,14 +5532,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4824,14 +5551,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4840,7 +5570,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4852,18 +5583,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4878,7 +5613,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4889,14 +5626,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4907,7 +5647,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4919,7 +5660,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4931,14 +5673,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4947,14 +5692,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -4963,7 +5711,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4975,18 +5724,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5001,7 +5754,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5012,14 +5767,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5030,7 +5788,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5042,7 +5801,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5054,14 +5814,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5070,14 +5833,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5086,7 +5852,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5098,18 +5865,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5124,7 +5895,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5135,14 +5908,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5153,7 +5929,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5165,7 +5942,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5177,14 +5955,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5193,14 +5974,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5209,7 +5993,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5221,18 +6006,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5247,7 +6036,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5258,14 +6049,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5276,7 +6070,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5288,7 +6083,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5300,14 +6096,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5316,14 +6115,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5332,7 +6134,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5344,18 +6147,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5370,7 +6177,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5381,14 +6190,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5399,7 +6211,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5411,7 +6224,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5423,14 +6237,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5439,14 +6256,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5455,7 +6275,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5467,18 +6288,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5493,7 +6318,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5504,14 +6331,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5522,7 +6352,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5534,7 +6365,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5546,14 +6378,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5562,14 +6397,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5578,7 +6416,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5590,18 +6429,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5616,7 +6459,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5627,14 +6472,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5645,7 +6493,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5657,7 +6506,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5669,14 +6519,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5685,14 +6538,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5701,7 +6557,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5713,18 +6570,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5739,7 +6600,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5750,14 +6613,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5768,7 +6634,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5780,7 +6647,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5792,14 +6660,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5808,14 +6679,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5824,7 +6698,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5836,18 +6711,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5862,7 +6741,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5873,14 +6754,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5891,7 +6775,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5903,7 +6788,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5915,14 +6801,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5931,14 +6820,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -5947,7 +6839,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5959,18 +6852,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5985,7 +6882,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5996,14 +6895,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6014,7 +6916,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6026,7 +6929,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6038,14 +6942,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6054,14 +6961,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6070,7 +6980,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6082,18 +6993,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -6108,7 +7023,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6119,14 +7036,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6137,7 +7057,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6149,7 +7070,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6161,14 +7083,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6177,14 +7102,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6193,7 +7121,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6205,18 +7134,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -6231,7 +7164,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6242,14 +7177,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6260,7 +7198,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6272,7 +7211,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6284,14 +7224,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6300,14 +7243,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6316,7 +7262,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6328,18 +7275,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -6354,7 +7305,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6365,14 +7318,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6383,7 +7339,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6395,7 +7352,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6407,14 +7365,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6423,14 +7384,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6439,7 +7403,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6451,18 +7416,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -6477,7 +7446,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6488,14 +7459,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6506,7 +7480,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6518,7 +7493,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6530,14 +7506,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6546,14 +7525,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6562,7 +7544,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6574,18 +7557,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -6600,7 +7587,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6611,14 +7600,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6629,7 +7621,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6641,7 +7634,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6653,14 +7647,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6669,14 +7666,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6685,7 +7685,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6697,18 +7698,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -6723,7 +7728,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6734,14 +7741,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6752,7 +7762,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6764,7 +7775,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6776,14 +7788,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6792,14 +7807,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6808,7 +7826,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6820,18 +7839,22 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -6846,7 +7869,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6857,14 +7882,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -6875,7 +7903,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6887,7 +7916,8 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6899,14 +7929,17 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6915,14 +7948,17 @@
             "args": {
               "listStr": "DeviceDisplayModeStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
@@ -6931,7 +7967,8 @@
             "args": {
               "listStr": "DeviceChildLockStates",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -6943,20 +7980,24 @@
               "signed": false,
               "unit": "",
               "desc": "",
-              "info": ""
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
         ],
         "desc": "",
-        "info": ""
+        "info": "",
+        "acc": "ro"
       }
     }
   },
-  "Version": "20260207"
+  "Version": "20260211"
 }
