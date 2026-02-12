@@ -31,8 +31,16 @@ import open3e.Open3EdatapointsVariants
 
 from open3e.Open3Ecodecs import *
 
-DoI_default = [256, 266, 268, 269, 356, 927, 1006]                            # Frequently used Dids
-
+DoI_default = [256,257,258,259,260,261,262,263,264,265,266,268,     # Frequently used Dids
+               269,271,274,282,284,318,320,321,322,324,325,355,
+               381,389,391,396,491,531,902,954,987,1043,1190,1286,
+               1287,1288,1289,1290,1294,1311,1315,1316,1333,1337,
+               1339,1391,1392,1393,1415,1552,1590,1603,1607,1643,
+               1664,1684,1690,1770,1771,1772,1773,1774,1775,1776,
+               1799,1801,1802,1815,1816,1817,1828,1830,1831,1832,
+               1833,1834,1836,1841,1842,2144,2214,2256,2320,2333,
+               2334,2346,2351,2352,2369,2486,2487,2488,2494,2495,
+               2496,2539,2569,2735,2806,3016]
 md_indent = '- '                                                    # Indentation of sub codecs
 meta_codecs = ['O3EList','O3EComplexType']                          # List of meta codecs, show in italic
 ignored_ids = ['ListEntries']                                       # List of ids to be ignored (helper ids for json format)
@@ -115,7 +123,24 @@ def codec2md(codecs, prefix='', accessStr=''):
 def did2md(did, codecs):
     return f'**{str(did)}**|{codec2md(codecs, '', getAccesStr(codecs))}|\n'
 
+def printListOfDoI(DoI):
+    dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers)
+    cntDoI = 0
+    print('List of Default-DoI:')
+    for did in DoI:
+        if did in dataIdentifiers['dids']:
+            print(f'{did}: {dataIdentifiers['dids'][did].getCodecInfo()['id']}')
+            cntDoI += 1
+    print(f'{cntDoI} elements.')
+    return
+
 def main():
+
+    # # Print list of default DoI:
+    # import sys
+    # printListOfDoI(DoI_default)
+    # sys.exit(0)
+
     dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers)
     variants = dict(open3e.Open3EdatapointsVariants.dataIdentifiers)
 

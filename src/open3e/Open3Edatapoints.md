@@ -18,6 +18,52 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- SW-Version|O3ESoftVers|8||||
 | |- HW-Version|O3ESoftVers|8||||
 | |- VIN|O3EUtf8|16||||
+**257**|**StatusDtcList**|*O3EList*|122||ro||
+| |- Count|O3EByteVal|2||||
+| |- - State|O3EEnum|2||||
+| |- - DateTime|O3EDateTime|8||||
+| |- - Unknown|O3EByteVal|2||||
+**258**|**StatusDtcHistory**|*O3EList*|122||ro||
+| |- Count|O3EByteVal|2||||
+| |- - State|O3EEnum|2||||
+| |- - DateTime|O3EDateTime|8||||
+| |- - Unknown|O3EByteVal|2||||
+**259**|**InfoDtcList**|*O3EList*|122||ro||
+| |- Count|O3EByteVal|2||||
+| |- - Info|O3EEnum|2||||
+| |- - DateTime|O3EDateTime|8||||
+| |- - Unknown|O3EByteVal|2||||
+**260**|**InfoDtcHistory**|*O3EList*|122||ro||
+| |- Count|O3EByteVal|2||||
+| |- - Info|O3EEnum|2||||
+| |- - DateTime|O3EDateTime|8||||
+| |- - Unknown|O3EByteVal|2||||
+**261**|**ServiceDtcList**|*O3EList*|122||ro||
+| |- Count|O3EByteVal|2||||
+| |- - [Service](## "{0: NoServiceRequired, 1: HoursTillServiceExpired, 2: ReplaceSacrificialAnode, 4: RefillWaterSystem, 5: RegularMaintenanceActive, 6: OverhaulActive, 7: DurationOfLife, 8: BurnerOperatingHoursTillServiceExpired, 9: ServiceFuelCellSixMonthsTillServiceExpired, 10: ServiceFuelCellFiveMonthsTillServiceExpired, 11: ServiceFuelCellFourMonthsTillServiceExpired, 12: ServiceFuelCellThreeMonthsTillServiceExpired, 13: ServiceFuelCellTwoMonthTillServiceExpired, 14: ServiceFuelCellFourtyfiveDaysTillServiceExpired, 15: ServiceFuelCellOneMonthTillServiceExpired, 16: ServiceFuelCellSixMonthsTillOverhaulExpired, 17: ServiceFuelCellFiveMonthsTillOverhaulExpired, 18: ServiceFuelCellFourMonthsTillOverhaulExpired, 19: ServiceFuelCellThreeMonthsTillOverhaulExpired, 20: ServiceFuelCellTwoMonthTillOverhaulExpired, 21: ServiceFuelCellFourtyfiveDaysTillOverhaulExpired, 22: ServiceFuelCellOneMonthTillOverhaulExpired, 23: ServiceFuelCellSixMonthsTillEndOfLife, 24: ServiceFuelCellFiveMonthsTillEndOfLife, 25: ServiceFuelCellFourMonthsTillEndOfLife, 26: ServiceFuelCellThreeMonthsTillEndOfLife, 27: ServiceFuelCellTwoMonthTillEndOfLife, 28: ServiceFuelCellFourtyfiveDaysTillEndOfLife, 29: ServiceFuelCellOneMonthTillEndOfLife, 30: BalancingInProgress, 31: BackupPowerFunctionActive, 32: BatteryLow, 33: BatteryDeviceTurnedOff, 34: MaintenanceIntervalHydraulicFilterExpired, 35: MaintenanceIntervalVentilationFilterExpired, 36: ContaminationAirFilter, 37: LagDeviceDtcReported, 65533: ViewedServiceList, 65534: ServiceDoneSuccessful}")|O3EEnum|2||||
+| |- - DateTime|O3EDateTime|8||||
+| |- - Unknown|O3EByteVal|2||||
+**262**|**ServiceDtcHistory**|*O3EList*|122||ro||
+| |- Count|O3EByteVal|2||||
+| |- - [Service](## "{0: NoServiceRequired, 1: HoursTillServiceExpired, 2: ReplaceSacrificialAnode, 4: RefillWaterSystem, 5: RegularMaintenanceActive, 6: OverhaulActive, 7: DurationOfLife, 8: BurnerOperatingHoursTillServiceExpired, 9: ServiceFuelCellSixMonthsTillServiceExpired, 10: ServiceFuelCellFiveMonthsTillServiceExpired, 11: ServiceFuelCellFourMonthsTillServiceExpired, 12: ServiceFuelCellThreeMonthsTillServiceExpired, 13: ServiceFuelCellTwoMonthTillServiceExpired, 14: ServiceFuelCellFourtyfiveDaysTillServiceExpired, 15: ServiceFuelCellOneMonthTillServiceExpired, 16: ServiceFuelCellSixMonthsTillOverhaulExpired, 17: ServiceFuelCellFiveMonthsTillOverhaulExpired, 18: ServiceFuelCellFourMonthsTillOverhaulExpired, 19: ServiceFuelCellThreeMonthsTillOverhaulExpired, 20: ServiceFuelCellTwoMonthTillOverhaulExpired, 21: ServiceFuelCellFourtyfiveDaysTillOverhaulExpired, 22: ServiceFuelCellOneMonthTillOverhaulExpired, 23: ServiceFuelCellSixMonthsTillEndOfLife, 24: ServiceFuelCellFiveMonthsTillEndOfLife, 25: ServiceFuelCellFourMonthsTillEndOfLife, 26: ServiceFuelCellThreeMonthsTillEndOfLife, 27: ServiceFuelCellTwoMonthTillEndOfLife, 28: ServiceFuelCellFourtyfiveDaysTillEndOfLife, 29: ServiceFuelCellOneMonthTillEndOfLife, 30: BalancingInProgress, 31: BackupPowerFunctionActive, 32: BatteryLow, 33: BatteryDeviceTurnedOff, 34: MaintenanceIntervalHydraulicFilterExpired, 35: MaintenanceIntervalVentilationFilterExpired, 36: ContaminationAirFilter, 37: LagDeviceDtcReported, 65533: ViewedServiceList, 65534: ServiceDoneSuccessful}")|O3EEnum|2||||
+| |- - DateTime|O3EDateTime|8||||
+| |- - Unknown|O3EByteVal|2||||
+**263**|**WarningDtcList**|*O3EList*|122||ro||
+| |- Count|O3EByteVal|2||||
+| |- - Warning|O3EEnum|2||||
+| |- - DateTime|O3EDateTime|8||||
+| |- - Unknown|O3EByteVal|2||||
+**264**|**WarningDtcHistory**|*O3EList*|124||ro||
+| |- Count|O3EByteVal|2||||
+| |- GrandTotal|O3EByteVal|2||||
+| |- - Warning|O3EEnum|2||||
+| |- - DateTime|O3EDateTime|8||||
+| |- - Unknown|O3EByteVal|2||||
+**265**|**ErrorDtcList**|*O3EList*|122||ro||
+| |- Count|O3EByteVal|2||||
+| |- - Error|O3EEnum|2||||
+| |- - DateTime|O3EDateTime|8||||
+| |- - Unknown|O3EByteVal|2||||
 **266**|**ErrorDtcHistory**|*O3EList*|124||ro||
 | |- Count|O3EByteVal|2||||
 | |- GrandTotal|O3EByteVal|2||||
@@ -36,16 +82,689 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**356**|**MainPowerSupplyValue**|O3EInt16|2||ro||
-**927**|[**BuildingType**](## "Type of building {0: OneFamily, 1: MultiFamilyOnlyHeating, 2: MultiFamilyHeatingDomesticHotWater, 3: TownHouse}")|O3EEnum|1||ro||
-**1006**|**TargetQuickMode**|*O3EComplexType*|4||**rw**||
-| |- OpMode|O3EByteVal|1||||
-| |- Required|O3EBool|1||||
-| |- Unknown|RawCodec|2||||
-**1006**|**TargetQuickMode**|*O3EComplexType*|3||**rw**||
-| |- SetModeOneTimesHotWater|O3EByteVal|1||||
+**271**|**DomesticHotWaterSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+**274**|**OutsideTemperatureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+**282**|**HydraulicSeparatorTemperatureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+**284**|**MixerOneCircuitFlowTemperatureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+**318**|**WaterPressureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+**320**|**PrimaryHeatExchangerLiquidTemperatureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+**321**|**CompressorInletTemperatureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+**322**|**CompressorInletPressureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- Unknown|O3EByteVal|1||||
+**324**|**CompressorOutletTemperatureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+**325**|**CompressorOutletPressureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- Unknown|O3EByteVal|1||||
+**355**|**SecondaryHeatExchangerLiquidTemperatureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- Error|O3EByteVal|1||||
+**381**|**CentralHeatingPump**|*O3EComplexType*|4||ro||
 | |- State|O3EByteVal|1||||
+| |- TargetValue|O3EInt8|1||||
+| |- Actual|O3EInt8|1||||
 | |- Unknown|RawCodec|1||||
+**389**|**ElectronicExpansionValveOneCurrentPositionPercent**|O3EInt8|1||ro||
+**391**|**ElectronicExpansionValveTwoCurrentPositionPercent**|O3EInt8|1||ro||
+**396**|**DomesticHotWaterTemperatureSetpoint**|O3EInt16|2||**rw**||
+**491**|**DomesticHotWaterCirculationPump**|*O3EComplexType*|2||**rw**||
+| |- State|O3EByteVal|1||||
+| |- Unknown|O3EByteVal|1||||
+**531**|**DomesticHotWaterOperationState**|*O3EComplexType*|2||**rw**||
+| |- Mode|O3EByteVal|1||||
+| |- State|O3EByteVal|1||||
+**902**|**MalfunctionIdentification**|O3EByteVal|1||ro||
+**954**|**BusTopologyMatrix**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
+**987**|**MixerOneCircuitFlowTemperatureTargetSetpoint**|O3EInt16|2||**rw**||
+**1043**|**AllengraSensor**|*O3EComplexType*|5||ro||
+| |- Actual|O3EInt16|2||||
+| |- Temperature|O3EInt16|2||||
+| |- Unknown|RawCodec|1||||
+**1190**|**ThermalPower**|*O3EComplexType*|4||ro||
+| |- Power|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
+**1286**|**BusTopologyMatrixTwo**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
+**1287**|**BusTopologyMatrixThree**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
+**1288**|**BusTopologyMatrixFour**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
+**1289**|**BusTopologyMatrixFive**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
+**1290**|**DomesticHotWaterShiftLoadPump**|RawCodec|4||ro||
+**1294**|**EnergyConsumptionCentralHeatingMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+**1311**|**EnergyConsumptionDomesticHotWaterMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+**1315**|**GeneratedCentralHeatingOutputMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+**1316**|**EnergyConsumptionCentralHeatingYearMatrix**|*O3EComplexType*|96||ro||
+| |- CurrentYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+| |- LastYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+**1333**|**EnergyConsumptionDomesticHotWaterYearMatrix**|*O3EComplexType*|96||ro||
+| |- CurrentYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+| |- LastYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+**1337**|**GeneratedCentralHeatingOutputYearMatrix**|*O3EComplexType*|96||ro||
+| |- CurrentYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+| |- LastYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+**1339**|**MalfunctionHeatingUnitBlocked**|O3EByteVal|1||ro||
+**1391**|**GeneratedDomesticHotWaterOutput**|*O3EComplexType*|24||ro||
+| |- Today|O3EInt32|4||||
+| |- Past7Days|O3EInt32|4||||
+| |- CurrentMonth|O3EInt32|4||||
+| |- PastMonth|O3EInt32|4||||
+| |- CurrentYear|O3EInt32|4||||
+| |- PastYear|O3EInt32|4||||
+**1392**|**GeneratedDomesticHotWaterOutputMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+**1393**|**GeneratedDomesticHotWaterOutputYearMatrix**|*O3EComplexType*|96||ro||
+| |- CurrentYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+| |- LastYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+**1415**|**MixerOneCircuitOperationState**|*O3EComplexType*|2||**rw**||
+| |- [Mode](## "{0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
+| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+**1552**|**ElectricalEnergyStorageOperationState**|RawCodec|7||**rw**||
+**1590**|**ElectricalEnergySystemOperationState**|RawCodec|6||**rw**||
+**1603**|**PointOfCommonCouplingPower**|*O3EComplexType*|4||ro||
+| |- ActivePower|O3EInt16|2||||
+| |- ReactivePower|O3EInt16|2||||
+**1603**|**PointOfCommonCouplingPower**|*O3EComplexType*|12||ro||
+| |- ActivePower|O3EInt16|2||||
+| |- ReactivePower|O3EInt16|2||||
+| |- ActivePowerDup|O3EInt16|2||||
+| |- PadZeros|O3EInt16|2||||
+| |- ReactivePowerDup|O3EInt16|2||||
+| |- PadOnes|O3EInt16|2||||
+**1607**|**MalfunctionUnitBlocked**|O3EByteVal|1||ro||
+**1643**|**MixerOneCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
+**1664**|**ElectricalEnergyStorageStateOfCharge**|O3EInt8|1||ro||
+**1684**|**AmbientTemperatureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+**1690**|**ElectricalEnergySystemPhotovoltaicStatus**|*O3EComplexType*|17||ro||
+| |- ActivePower cumulated|O3EInt16|2||||
+| |- RectivePower cumulated|O3EInt16|2||||
+| |- ActivePower String C|O3EInt16|2||||
+| |- RectivePower String C|O3EInt16|2||||
+| |- ActivePower String B|O3EInt16|2||||
+| |- RectivePower String B|O3EInt16|2||||
+| |- ActivePower String A|O3EInt16|2||||
+| |- RectivePower String A|O3EInt16|2||||
+| |- OpMode|O3EInt8|1||||
+**1770**|**SecondaryOutletTemperatureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+**1771**|**EngineRoomTemperatureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+**1772**|**CompressorOilTemperatureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+**1773**|**RefrigerantCircuitFourWayValve**|O3EByteVal|1||ro||
+**1774**|**CompressorCrankCaseHeater**|O3EByteVal|1||ro||
+**1775**|**PrimaryCircuitFanOne**|O3EByteVal|1||ro||
+**1776**|**PrimaryCircuitFanTwo**|O3EByteVal|1||ro||
+**1799**|**PrimaryCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
+**1801**|**ElectricalEnergyStorageEnergyTransferStatistic**|*O3EComplexType*|40||ro||
+| |- BatteryChargeToday|O3EInt32|4||||
+| |- BatteryChargeWeek|O3EInt32|4||||
+| |- BatteryChargeMonth|O3EInt32|4||||
+| |- BatteryChargeYear|O3EInt32|4||||
+| |- BatteryChargeTotal|O3EInt32|4||||
+| |- BatteryDischargeToday|O3EInt32|4||||
+| |- BatteryDischargeWeek|O3EInt32|4||||
+| |- BatteryDischargeMonth|O3EInt32|4||||
+| |- BatteryDischargeYear|O3EInt32|4||||
+| |- BatteryDischargeTotal|O3EInt32|4||||
+**1802**|**EnergyProductionPhotovoltaic**|*O3EComplexType*|80||ro||
+| |- PhotovoltaicProductionToday|O3EInt32|4||||
+| |- PhotovoltaicProductionWeek|O3EInt32|4||||
+| |- PhotovoltaicProductionMonth|O3EInt32|4||||
+| |- PhotovoltaicProductionYear|O3EInt32|4||||
+| |- PhotovoltaicProductionTotal|O3EInt32|4||||
+| |- PhotovoltaicProductionToday1|O3EInt32|4||||
+| |- PhotovoltaicProductionWeek1|O3EInt32|4||||
+| |- PhotovoltaicProductionMonth1|O3EInt32|4||||
+| |- PhotovoltaicProductionYear1|O3EInt32|4||||
+| |- PhotovoltaicProductionTotal1|O3EInt32|4||||
+| |- PhotovoltaicProductionToday2|O3EInt32|4||||
+| |- PhotovoltaicProductionWeek2|O3EInt32|4||||
+| |- PhotovoltaicProductionMonth2|O3EInt32|4||||
+| |- PhotovoltaicProductionYear2|O3EInt32|4||||
+| |- PhotovoltaicProductionTotal2|O3EInt32|4||||
+| |- PhotovoltaicProductionToday3|O3EInt32|4||||
+| |- PhotovoltaicProductionWeek3|O3EInt32|4||||
+| |- PhotovoltaicProductionMonth3|O3EInt32|4||||
+| |- PhotovoltaicProductionYear3|O3EInt32|4||||
+| |- PhotovoltaicProductionTotal3|O3EInt32|4||||
+**1815**|**ElectricalHeaterPhaseOne**|O3EInt8|1||ro||
+**1816**|**ElectricalHeaterPhaseTwo**|O3EInt8|1||ro||
+**1817**|**ElectricalHeaterPhaseThree**|O3EInt8|1||ro||
+**1828**|**InverterElectricalEnergyStorageCurrentMaximumlChargePower**|*O3EComplexType*|4||ro||
+| |- Power|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
+**1830**|**InverterElectricalEnergyStorageCurrentMaximumlDishargePower**|*O3EComplexType*|4||ro||
+| |- Power|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
+**1831**|**PhotovoltaicCurrentStringPower**|*O3EComplexType*|12||ro||
+| |- String1|O3EInt32|4||||
+| |- String2|O3EInt32|4||||
+| |- String3|O3EInt32|4||||
+**1832**|**PhotovoltaicStringCurrent**|*O3EComplexType*|12||ro||
+| |- String1|O3EInt32|4||||
+| |- String2|O3EInt32|4||||
+| |- String3|O3EInt32|4||||
+**1833**|**PhotovoltaicStringVoltage**|*O3EComplexType*|12||ro||
+| |- String1|O3EInt32|4||||
+| |- String2|O3EInt32|4||||
+| |- String3|O3EInt32|4||||
+**1834**|**ElectricalEnergyStorageStateOfEnergy**|*O3EComplexType*|4||ro||
+| |- StateOfEnergy|O3EInt16|2||||
+| |- Unknown|O3EInt16|2||||
+**1836**|**ElectricalEnergyStorageCurrentPower**|O3EInt32|4||ro||
+**1841**|**PointOfCommonCouplingOverview**|RawCodec|32||ro||
+**1842**|**SecondaryCircuitFourThreeWayValve**|*O3EComplexType*|2||ro||
+| |- Setpoint|O3EInt8|1||||
+| |- CurrentPosition|O3EInt8|1||||
+**2144**|**PointOfCommonCouplingAcActiveCurrent**|RawCodec|16||ro||
+**2214**|**BackupBoxConfiguration**|*O3EComplexType*|2||**rw**||
+| |- DischargeLimit|O3EInt8|1||||
+| |- Unknown|O3EInt8|1||||
+**2256**|**DesiredThermalEnergyDefrost**|O3EInt16|2||ro||
+**2320**|**DomesticHotWaterStatus**|O3EByteVal|1||ro||
+**2333**|**EconomizerLiquidTemperatureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+**2334**|**EvaporatorVaporTemperatureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+**2346**|**CompressorSpeedPercent**|O3EInt8|1||ro||
+**2351**|**HeatPumpCompressor**|*O3EComplexType*|2||ro||
+| |- PowerState|O3EByteVal|1||||
+| |- ErrorState|O3EByteVal|1||||
+**2352**|**AdditionalElectricHeater**|*O3EComplexType*|2||ro||
+| |- PowerState|O3EByteVal|1||||
+| |- ErrorState|O3EByteVal|1||||
+**2369**|**HeatPumpCompressorStatistical**|*O3EComplexType*|14||ro||
+| |- Unknown1|RawCodec|6||||
+| |- starts|O3EInt16|2||||
+| |- Unknown2|RawCodec|2||||
+| |- hours|O3EInt16|2||||
+| |- Unknown3|RawCodec|2||||
+**2486**|**CurrentElectricalPowerConsumptionRefrigerantCircuit**|O3EInt32|4||ro||
+**2487**|**CurrentElectricalPowerConsumptionElectricHeater**|O3EInt32|4||ro||
+**2488**|**CurrentElectricalPowerConsumptionSystem**|O3EInt32|4||ro||
+**2494**|**CurrentThermalCapacityRefrigerantCircuit**|O3EInt32|4||ro||
+**2495**|**CurrentThermalCapacityElectricHeater**|O3EInt32|4||ro||
+**2496**|**CurrentThermalCapacitySystem**|O3EInt32|4||ro||
+**2539**|**AlternatingCurrentEnergyStatistic**|RawCodec|40||ro||
+**2569**|**CompressorSpeedRps**|O3EInt16|2||ro||
+**2735**|**FourThreeWayValveValveCurrentPosition**|O3EByteVal|1||ro||
+**2806**|**RefrigerationCircuitOperationMode**|*O3EComplexType*|2||ro||
+| |- Mode|O3EByteVal|1||||
+| |- State|O3EByteVal|1||||
+**3016**|**HeatingBufferTemperatureSensor**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2||||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 ## All presently known data points
 |  Did | ID   | Codec | Length | Unit | Access | Further info |
 | ---: | :--- | :--- | ---: | :---: | :---: | :--- |
