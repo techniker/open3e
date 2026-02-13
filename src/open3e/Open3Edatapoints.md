@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20260211
+- Version of general data points: 20260213
 - Version of variant data points: 20260211
 
 ### Remarks:
@@ -10,65 +10,65 @@
 A list of all presently known data points is available [below](#all-presently-known-data-points)
 |  Did | ID   | Codec | Length | Unit | Access | Further info |
 | ---: | :--- | :--- | ---: | :---: | :---: | :--- |
-**256**|**BusIdentification**|*O3EComplexType*|36||ro||
+**256**|[**BusIdentification**](## "Device infos")|*O3EComplexType*|36||ro||
 | |- BusAddress|O3EByteVal|1||||
 | |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
 | |- [DeviceProperty](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT}")|O3EEnum|1||||
 | |- [DeviceFunction](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT}")|O3EEnum|1||||
-| |- SW-Version|O3ESoftVers|8||||
+| |- [SW-Version](## "??.???.YYcw.ver")|O3ESoftVers|8||||
 | |- HW-Version|O3ESoftVers|8||||
 | |- VIN|O3EUtf8|16||||
-**257**|**StatusDtcList**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**257**|[**StatusDtcList**](## "List of active status messages")|*O3EList*|122||ro||
+| |- Count|O3EByteVal|2|||Number of entries listed|
 | |- - State|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**258**|**StatusDtcHistory**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**258**|[**StatusDtcHistory**](## "History of status messages")|*O3EList*|122||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - State|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**259**|**InfoDtcList**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**259**|[**InfoDtcList**](## "List of active info messages")|*O3EList*|122||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Info|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**260**|**InfoDtcHistory**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**260**|[**InfoDtcHistory**](## "History of info messages")|*O3EList*|122||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Info|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**261**|**ServiceDtcList**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**261**|[**ServiceDtcList**](## "List of active service messages")|*O3EList*|122||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - [Service](## "{0: NoServiceRequired, 1: HoursTillServiceExpired, 2: ReplaceSacrificialAnode, 4: RefillWaterSystem, 5: RegularMaintenanceActive, 6: OverhaulActive, 7: DurationOfLife, 8: BurnerOperatingHoursTillServiceExpired, 9: ServiceFuelCellSixMonthsTillServiceExpired, 10: ServiceFuelCellFiveMonthsTillServiceExpired, 11: ServiceFuelCellFourMonthsTillServiceExpired, 12: ServiceFuelCellThreeMonthsTillServiceExpired, 13: ServiceFuelCellTwoMonthTillServiceExpired, 14: ServiceFuelCellFourtyfiveDaysTillServiceExpired, 15: ServiceFuelCellOneMonthTillServiceExpired, 16: ServiceFuelCellSixMonthsTillOverhaulExpired, 17: ServiceFuelCellFiveMonthsTillOverhaulExpired, 18: ServiceFuelCellFourMonthsTillOverhaulExpired, 19: ServiceFuelCellThreeMonthsTillOverhaulExpired, 20: ServiceFuelCellTwoMonthTillOverhaulExpired, 21: ServiceFuelCellFourtyfiveDaysTillOverhaulExpired, 22: ServiceFuelCellOneMonthTillOverhaulExpired, 23: ServiceFuelCellSixMonthsTillEndOfLife, 24: ServiceFuelCellFiveMonthsTillEndOfLife, 25: ServiceFuelCellFourMonthsTillEndOfLife, 26: ServiceFuelCellThreeMonthsTillEndOfLife, 27: ServiceFuelCellTwoMonthTillEndOfLife, 28: ServiceFuelCellFourtyfiveDaysTillEndOfLife, 29: ServiceFuelCellOneMonthTillEndOfLife, 30: BalancingInProgress, 31: BackupPowerFunctionActive, 32: BatteryLow, 33: BatteryDeviceTurnedOff, 34: MaintenanceIntervalHydraulicFilterExpired, 35: MaintenanceIntervalVentilationFilterExpired, 36: ContaminationAirFilter, 37: LagDeviceDtcReported, 65533: ViewedServiceList, 65534: ServiceDoneSuccessful}")|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**262**|**ServiceDtcHistory**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**262**|[**ServiceDtcHistory**](## "History of service messages")|*O3EList*|122||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - [Service](## "{0: NoServiceRequired, 1: HoursTillServiceExpired, 2: ReplaceSacrificialAnode, 4: RefillWaterSystem, 5: RegularMaintenanceActive, 6: OverhaulActive, 7: DurationOfLife, 8: BurnerOperatingHoursTillServiceExpired, 9: ServiceFuelCellSixMonthsTillServiceExpired, 10: ServiceFuelCellFiveMonthsTillServiceExpired, 11: ServiceFuelCellFourMonthsTillServiceExpired, 12: ServiceFuelCellThreeMonthsTillServiceExpired, 13: ServiceFuelCellTwoMonthTillServiceExpired, 14: ServiceFuelCellFourtyfiveDaysTillServiceExpired, 15: ServiceFuelCellOneMonthTillServiceExpired, 16: ServiceFuelCellSixMonthsTillOverhaulExpired, 17: ServiceFuelCellFiveMonthsTillOverhaulExpired, 18: ServiceFuelCellFourMonthsTillOverhaulExpired, 19: ServiceFuelCellThreeMonthsTillOverhaulExpired, 20: ServiceFuelCellTwoMonthTillOverhaulExpired, 21: ServiceFuelCellFourtyfiveDaysTillOverhaulExpired, 22: ServiceFuelCellOneMonthTillOverhaulExpired, 23: ServiceFuelCellSixMonthsTillEndOfLife, 24: ServiceFuelCellFiveMonthsTillEndOfLife, 25: ServiceFuelCellFourMonthsTillEndOfLife, 26: ServiceFuelCellThreeMonthsTillEndOfLife, 27: ServiceFuelCellTwoMonthTillEndOfLife, 28: ServiceFuelCellFourtyfiveDaysTillEndOfLife, 29: ServiceFuelCellOneMonthTillEndOfLife, 30: BalancingInProgress, 31: BackupPowerFunctionActive, 32: BatteryLow, 33: BatteryDeviceTurnedOff, 34: MaintenanceIntervalHydraulicFilterExpired, 35: MaintenanceIntervalVentilationFilterExpired, 36: ContaminationAirFilter, 37: LagDeviceDtcReported, 65533: ViewedServiceList, 65534: ServiceDoneSuccessful}")|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**263**|**WarningDtcList**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**263**|[**WarningDtcList**](## "List of active warning messages")|*O3EList*|122||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Warning|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**264**|**WarningDtcHistory**|*O3EList*|124||ro||
-| |- Count|O3EByteVal|2||||
-| |- GrandTotal|O3EByteVal|2||||
+**264**|[**WarningDtcHistory**](## "History of warning messages")|*O3EList*|124||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
+| |- [GrandTotal](## "Total number of entries")|O3EByteVal|2||||
 | |- - Warning|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**265**|**ErrorDtcList**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**265**|[**ErrorDtcList**](## "List of active error messages")|*O3EList*|122||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Error|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**266**|**ErrorDtcHistory**|*O3EList*|124||ro||
-| |- Count|O3EByteVal|2||||
-| |- GrandTotal|O3EByteVal|2||||
+**266**|[**ErrorDtcHistory**](## "History of error messages")|*O3EList*|124||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
+| |- [GrandTotal](## "Total number of entries")|O3EByteVal|2||||
 | |- - Error|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
 **268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator.")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -88,83 +88,89 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Maximum|O3EInt16|2||||
 | |- Average|O3EInt16|2||||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**274**|**OutsideTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**274**|[**OutsideTemperatureSensor**](## "Outside temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**282**|**HydraulicSeparatorTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**282**|[**HydraulicSeparatorTemperatureSensor**](## "Actual flow temperature of the hydraulic switch")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**284**|**MixerOneCircuitFlowTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**284**|[**MixerOneCircuitFlowTemperatureSensor**](## "Heating circuit 1: Actual flow temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**318**|**WaterPressureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**318**|[**WaterPressureSensor**](## "Actual pressure heat generator circulation")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|hPa|||
+| |- Minimum|O3EInt16|2|hPa|||
+| |- Maximum|O3EInt16|2|hPa|||
+| |- Average|O3EInt16|2|hPa|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**320**|**PrimaryHeatExchangerLiquidTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**320**|[**PrimaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature primary heat exchanger inlet")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**321**|**CompressorInletTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**321**|[**CompressorInletTemperatureSensor**](## "Actual temperature compressor inlet")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|hPa|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**322**|**CompressorInletPressureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**322**|[**CompressorInletPressureSensor**](## "Actual pressure compressor inlet")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|hPa|||
+| |- Minimum|O3EInt16|2|hPa|||
+| |- Maximum|O3EInt16|2|hPa|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Unknown|O3EByteVal|1||||
-**324**|**CompressorOutletTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**325**|**CompressorOutletPressureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**325**|**CompressorOutletPressureSensor**|*O3EComplexType*|9||ro|Actual pressure compressor outlet|
+| |- Actual|O3EInt16|2|hPa|||
+| |- Minimum|O3EInt16|2|hPa|||
+| |- Maximum|O3EInt16|2|hPa|||
+| |- Average|O3EInt16|2|hPa|||
 | |- Unknown|O3EByteVal|1||||
-**355**|**SecondaryHeatExchangerLiquidTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**355**|[**SecondaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature secondary heat exchanger outlet")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Error|O3EByteVal|1||||
-**381**|**CentralHeatingPump**|*O3EComplexType*|4||ro||
+**381**|[**CentralHeatingPump**](## "Status of the primary circuit pump")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/discussions/212)|
 | |- State|O3EByteVal|1||||
 | |- TargetValue|O3EInt8|1||||
 | |- Actual|O3EInt8|1||||
 | |- Unknown|RawCodec|1||||
-**389**|**ElectronicExpansionValveOneCurrentPositionPercent**|O3EInt8|1||ro||
-**391**|**ElectronicExpansionValveTwoCurrentPositionPercent**|O3EInt8|1||ro||
-**396**|**DomesticHotWaterTemperatureSetpoint**|O3EInt16|2||**rw**||
-**491**|**DomesticHotWaterCirculationPump**|*O3EComplexType*|2||**rw**||
+**389**|[**ElectronicExpansionValveOneCurrentPositionPercent**](## "Actual position expansion valve one (secondary heat exchanger outlet)")|O3EInt8|1|%|ro||
+**391**|[**ElectronicExpansionValveTwoCurrentPositionPercent**](## "Actual position expansion valve two (evaporator outlet)")|O3EInt8|1|%|ro||
+**396**|[**DomesticHotWaterTemperatureSetpoint**](## "Teperature setpoint domestic hot water")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+**491**|[**DomesticHotWaterCirculationPump**](## "Request for domestic hot water circulation pump")|*O3EComplexType*|2||**rw**||
 | |- State|O3EByteVal|1||||
 | |- Unknown|O3EByteVal|1||||
+**497**|[**DomesticHotWaterCirculationPumpMode**](## "Operation Mode of domestic hot water circulation pump")|*O3EComplexType*|5||**rw**|[See page 22f](https://static.viessmann-climatesolutions.com/resources/technical_documents/DE/de/VSA/6179923VSA00001_1.pdf?)|
+| |- Mode|O3EByteVal|1||||
+| |- HygenieActive|O3EByteVal|1||||
+| |- HeatingActive|O3EByteVal|1||||
+| |- CyclesPerHour|O3EByteVal|1||||
+| |- Cycles|O3EByteVal|1||||
 **531**|**DomesticHotWaterOperationState**|*O3EComplexType*|2||**rw**||
 | |- Mode|O3EByteVal|1||||
 | |- State|O3EByteVal|1||||
-**902**|**MalfunctionIdentification**|O3EByteVal|1||ro||
-**954**|**BusTopologyMatrix**|*O3EList*|181||ro||
-| |- Count|O3EInt8|1||||
+**902**|[**MalfunctionIdentification**](## "Indicates whether faults are present")|O3EByteVal|1||ro||
+**954**|[**BusTopologyMatrix**](## "Matrix of CAN bus topology")|*O3EList*|181||ro||
+| |- [Count](## "Number of list entries")|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
 | |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
@@ -173,7 +179,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- - SW-Version|O3ESoftVers|8||||
 | |- - HW-Version|O3ESoftVers|8||||
 | |- - VIN|O3EUtf8|16||||
-**987**|**MixerOneCircuitFlowTemperatureTargetSetpoint**|O3EInt16|2||**rw**||
+**987**|[**MixerOneCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 1")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 **1043**|**AllengraSensor**|*O3EComplexType*|5||ro||
 | |- Actual|O3EInt16|2||||
 | |- Temperature|O3EInt16|2||||
@@ -768,65 +774,65 @@ A list of all presently known data points is available [below](#all-presently-kn
 ## All presently known data points
 |  Did | ID   | Codec | Length | Unit | Access | Further info |
 | ---: | :--- | :--- | ---: | :---: | :---: | :--- |
-**256**|**BusIdentification**|*O3EComplexType*|36||ro||
+**256**|[**BusIdentification**](## "Device infos")|*O3EComplexType*|36||ro||
 | |- BusAddress|O3EByteVal|1||||
 | |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
 | |- [DeviceProperty](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT}")|O3EEnum|1||||
 | |- [DeviceFunction](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT}")|O3EEnum|1||||
-| |- SW-Version|O3ESoftVers|8||||
+| |- [SW-Version](## "??.???.YYcw.ver")|O3ESoftVers|8||||
 | |- HW-Version|O3ESoftVers|8||||
 | |- VIN|O3EUtf8|16||||
-**257**|**StatusDtcList**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**257**|[**StatusDtcList**](## "List of active status messages")|*O3EList*|122||ro||
+| |- Count|O3EByteVal|2|||Number of entries listed|
 | |- - State|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**258**|**StatusDtcHistory**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**258**|[**StatusDtcHistory**](## "History of status messages")|*O3EList*|122||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - State|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**259**|**InfoDtcList**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**259**|[**InfoDtcList**](## "List of active info messages")|*O3EList*|122||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Info|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**260**|**InfoDtcHistory**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**260**|[**InfoDtcHistory**](## "History of info messages")|*O3EList*|122||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Info|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**261**|**ServiceDtcList**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**261**|[**ServiceDtcList**](## "List of active service messages")|*O3EList*|122||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - [Service](## "{0: NoServiceRequired, 1: HoursTillServiceExpired, 2: ReplaceSacrificialAnode, 4: RefillWaterSystem, 5: RegularMaintenanceActive, 6: OverhaulActive, 7: DurationOfLife, 8: BurnerOperatingHoursTillServiceExpired, 9: ServiceFuelCellSixMonthsTillServiceExpired, 10: ServiceFuelCellFiveMonthsTillServiceExpired, 11: ServiceFuelCellFourMonthsTillServiceExpired, 12: ServiceFuelCellThreeMonthsTillServiceExpired, 13: ServiceFuelCellTwoMonthTillServiceExpired, 14: ServiceFuelCellFourtyfiveDaysTillServiceExpired, 15: ServiceFuelCellOneMonthTillServiceExpired, 16: ServiceFuelCellSixMonthsTillOverhaulExpired, 17: ServiceFuelCellFiveMonthsTillOverhaulExpired, 18: ServiceFuelCellFourMonthsTillOverhaulExpired, 19: ServiceFuelCellThreeMonthsTillOverhaulExpired, 20: ServiceFuelCellTwoMonthTillOverhaulExpired, 21: ServiceFuelCellFourtyfiveDaysTillOverhaulExpired, 22: ServiceFuelCellOneMonthTillOverhaulExpired, 23: ServiceFuelCellSixMonthsTillEndOfLife, 24: ServiceFuelCellFiveMonthsTillEndOfLife, 25: ServiceFuelCellFourMonthsTillEndOfLife, 26: ServiceFuelCellThreeMonthsTillEndOfLife, 27: ServiceFuelCellTwoMonthTillEndOfLife, 28: ServiceFuelCellFourtyfiveDaysTillEndOfLife, 29: ServiceFuelCellOneMonthTillEndOfLife, 30: BalancingInProgress, 31: BackupPowerFunctionActive, 32: BatteryLow, 33: BatteryDeviceTurnedOff, 34: MaintenanceIntervalHydraulicFilterExpired, 35: MaintenanceIntervalVentilationFilterExpired, 36: ContaminationAirFilter, 37: LagDeviceDtcReported, 65533: ViewedServiceList, 65534: ServiceDoneSuccessful}")|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**262**|**ServiceDtcHistory**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**262**|[**ServiceDtcHistory**](## "History of service messages")|*O3EList*|122||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - [Service](## "{0: NoServiceRequired, 1: HoursTillServiceExpired, 2: ReplaceSacrificialAnode, 4: RefillWaterSystem, 5: RegularMaintenanceActive, 6: OverhaulActive, 7: DurationOfLife, 8: BurnerOperatingHoursTillServiceExpired, 9: ServiceFuelCellSixMonthsTillServiceExpired, 10: ServiceFuelCellFiveMonthsTillServiceExpired, 11: ServiceFuelCellFourMonthsTillServiceExpired, 12: ServiceFuelCellThreeMonthsTillServiceExpired, 13: ServiceFuelCellTwoMonthTillServiceExpired, 14: ServiceFuelCellFourtyfiveDaysTillServiceExpired, 15: ServiceFuelCellOneMonthTillServiceExpired, 16: ServiceFuelCellSixMonthsTillOverhaulExpired, 17: ServiceFuelCellFiveMonthsTillOverhaulExpired, 18: ServiceFuelCellFourMonthsTillOverhaulExpired, 19: ServiceFuelCellThreeMonthsTillOverhaulExpired, 20: ServiceFuelCellTwoMonthTillOverhaulExpired, 21: ServiceFuelCellFourtyfiveDaysTillOverhaulExpired, 22: ServiceFuelCellOneMonthTillOverhaulExpired, 23: ServiceFuelCellSixMonthsTillEndOfLife, 24: ServiceFuelCellFiveMonthsTillEndOfLife, 25: ServiceFuelCellFourMonthsTillEndOfLife, 26: ServiceFuelCellThreeMonthsTillEndOfLife, 27: ServiceFuelCellTwoMonthTillEndOfLife, 28: ServiceFuelCellFourtyfiveDaysTillEndOfLife, 29: ServiceFuelCellOneMonthTillEndOfLife, 30: BalancingInProgress, 31: BackupPowerFunctionActive, 32: BatteryLow, 33: BatteryDeviceTurnedOff, 34: MaintenanceIntervalHydraulicFilterExpired, 35: MaintenanceIntervalVentilationFilterExpired, 36: ContaminationAirFilter, 37: LagDeviceDtcReported, 65533: ViewedServiceList, 65534: ServiceDoneSuccessful}")|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**263**|**WarningDtcList**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**263**|[**WarningDtcList**](## "List of active warning messages")|*O3EList*|122||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Warning|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**264**|**WarningDtcHistory**|*O3EList*|124||ro||
-| |- Count|O3EByteVal|2||||
-| |- GrandTotal|O3EByteVal|2||||
+**264**|[**WarningDtcHistory**](## "History of warning messages")|*O3EList*|124||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
+| |- [GrandTotal](## "Total number of entries")|O3EByteVal|2||||
 | |- - Warning|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**265**|**ErrorDtcList**|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2||||
+**265**|[**ErrorDtcList**](## "List of active error messages")|*O3EList*|122||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Error|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-**266**|**ErrorDtcHistory**|*O3EList*|124||ro||
-| |- Count|O3EByteVal|2||||
-| |- GrandTotal|O3EByteVal|2||||
+**266**|[**ErrorDtcHistory**](## "History of error messages")|*O3EList*|124||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
+| |- [GrandTotal](## "Total number of entries")|O3EByteVal|2||||
 | |- - Error|O3EEnum|2||||
-| |- - DateTime|O3EDateTime|8||||
+| |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
 **268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator.")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -847,143 +853,143 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Average|O3EInt16|2||||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 **272**|**DomesticHotWaterFlowSensor**|RawCodec|10||ro||
-**273**|**SolarRoofTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**273**|[**SolarRoofTemperatureSensor**](## "Actual collector temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**274**|**OutsideTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**274**|[**OutsideTemperatureSensor**](## "Outside temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**275**|**SolarBottomTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**275**|[**SolarBottomTemperatureSensor**](## "Actual collector return temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**277**|**BufferBottomTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**277**|[**BufferBottomTemperatureSensor**](## "Actual buffer bottom temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**278**|**BufferMidBottomTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**278**|[**BufferMidBottomTemperatureSensor**](## "Actual buffer mid bottom temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**279**|**BufferMidTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**279**|[**BufferMidTemperatureSensor**](## "Actual buffer mid temperature value")|*O3EComplexType*|9||ro||
+| |- [Actual](## "°C")|O3EInt16|2||||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**281**|**BufferTopTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**281**|[**BufferTopTemperatureSensor**](## "Actual buffer top temperature value")|*O3EComplexType*|9||ro||
+| |- [Actual](## "°C")|O3EInt16|2||||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**282**|**HydraulicSeparatorTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**282**|[**HydraulicSeparatorTemperatureSensor**](## "Actual flow temperature of the hydraulic switch")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**283**|**HydraulicSeparatorReturnTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**283**|[**HydraulicSeparatorReturnTemperatureSensor**](## "Actual return temperature of the hydraulic switch")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**284**|**MixerOneCircuitFlowTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**284**|[**MixerOneCircuitFlowTemperatureSensor**](## "Heating circuit 1: Actual flow temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**285**|**MixerOneCircuitReturnTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**285**|[**MixerOneCircuitReturnTemperatureSensor**](## "Heating circuit 1: Actual return temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**286**|**MixerTwoCircuitFlowTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**286**|[**MixerTwoCircuitFlowTemperatureSensor**](## "Heating circuit 2: Actual flow temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**287**|**MixerTwoCircuitReturnTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**287**|[**MixerTwoCircuitReturnTemperatureSensor**](## "Heating circuit 2: Actual return temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**288**|**MixerThreeCircuitFlowTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**288**|[**MixerThreeCircuitFlowTemperatureSensor**](## "Heating circuit 3: Actual flow temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**289**|**MixerThreeCircuitReturnTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**289**|[**MixerThreeCircuitReturnTemperatureSensor**](## "Heating circuit 3: Actual return temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**290**|**MixerFourCircuitFlowTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**290**|[**MixerFourCircuitFlowTemperatureSensor**](## "Heating circuit 4: Actual flow temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**291**|**MixerFourCircuitReturnTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**291**|[**MixerFourCircuitReturnTemperatureSensor**](## "Heating circuit 4: Actual return temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**318**|**WaterPressureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**318**|[**WaterPressureSensor**](## "Actual pressure heat generator circulation")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|hPa|||
+| |- Minimum|O3EInt16|2|hPa|||
+| |- Maximum|O3EInt16|2|hPa|||
+| |- Average|O3EInt16|2|hPa|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**320**|**PrimaryHeatExchangerLiquidTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**320**|[**PrimaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature primary heat exchanger inlet")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**321**|**CompressorInletTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**321**|[**CompressorInletTemperatureSensor**](## "Actual temperature compressor inlet")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|hPa|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**322**|**CompressorInletPressureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**322**|[**CompressorInletPressureSensor**](## "Actual pressure compressor inlet")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|hPa|||
+| |- Minimum|O3EInt16|2|hPa|||
+| |- Maximum|O3EInt16|2|hPa|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Unknown|O3EByteVal|1||||
-**324**|**CompressorOutletTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**325**|**CompressorOutletPressureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**325**|**CompressorOutletPressureSensor**|*O3EComplexType*|9||ro|Actual pressure compressor outlet|
+| |- Actual|O3EInt16|2|hPa|||
+| |- Minimum|O3EInt16|2|hPa|||
+| |- Maximum|O3EInt16|2|hPa|||
+| |- Average|O3EInt16|2|hPa|||
 | |- Unknown|O3EByteVal|1||||
 **327**|**OutdoorAirTemperatureSensor**|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2||||
@@ -1041,11 +1047,11 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Average|O3EInt16|2||||
 | |- Error|O3EByteVal|1||||
 **354**|**PrimaryHeatExchangerBaseHeater**|O3EByteVal|1||ro||
-**355**|**SecondaryHeatExchangerLiquidTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**355**|[**SecondaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature secondary heat exchanger outlet")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Error|O3EByteVal|1||||
 **356**|**MainPowerSupplyValue**|O3EInt16|2||ro||
 **360**|**DomesticHotWaterOutletSensor**|*O3EComplexType*|9||ro||
@@ -1081,7 +1087,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 **380**|**PointOfCommonCouplingPhaseThree**|*O3EComplexType*|4||ro||
 | |- ActivePower|O3EInt16|2||||
 | |- ReactivePower|O3EInt16|2||||
-**381**|**CentralHeatingPump**|*O3EComplexType*|4||ro||
+**381**|[**CentralHeatingPump**](## "Status of the primary circuit pump")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/discussions/212)|
 | |- State|O3EByteVal|1||||
 | |- TargetValue|O3EInt8|1||||
 | |- Actual|O3EInt8|1||||
@@ -1093,13 +1099,13 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- TimeZone|O3EByteVal|1||||
 | |- Unknown|O3EByteVal|1||||
 **386**|**DiverterValveTargetPosition**|O3EByteVal|1||**rw**||
-**388**|**ElectronicExpansionValveOneTargetPositionPercent**|O3EInt8|1||**rw**||
-**389**|**ElectronicExpansionValveOneCurrentPositionPercent**|O3EInt8|1||ro||
-**390**|**ElectronicExpansionValveTwoTargetPositionPercent**|O3EInt8|1||**rw**||
-**391**|**ElectronicExpansionValveTwoCurrentPositionPercent**|O3EInt8|1||ro||
+**388**|[**ElectronicExpansionValveOneTargetPositionPercent**](## "Target position expansion valve one (secondary heat exchanger outlet)")|O3EInt8|1|%|**rw**||
+**389**|[**ElectronicExpansionValveOneCurrentPositionPercent**](## "Actual position expansion valve one (secondary heat exchanger outlet)")|O3EInt8|1|%|ro||
+**390**|[**ElectronicExpansionValveTwoTargetPositionPercent**](## "Target position expansion valve two (evaporator outlet)")|O3EInt8|1|%|**rw**||
+**391**|[**ElectronicExpansionValveTwoCurrentPositionPercent**](## "Actual position expansion valve two (evaporator outlet)")|O3EInt8|1|%|ro||
 **392**|**DomesticHotWaterPump**|RawCodec|4||ro||
-**395**|**CentralHeatingTemperatureSetpoint**|O3EInt16|2||**rw**||
-**396**|**DomesticHotWaterTemperatureSetpoint**|O3EInt16|2||**rw**||
+**395**|[**CentralHeatingTemperatureSetpoint**](## "Teperature setpoint central heating")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+**396**|[**DomesticHotWaterTemperatureSetpoint**](## "Teperature setpoint domestic hot water")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 **401**|**MixerOneCircuitPump**|*O3EComplexType*|5||ro||
 | |- TargetPowerState|O3EByteVal|1||||
 | |- TargetValue|O3EInt8|1||||
@@ -1259,10 +1265,10 @@ A list of all presently known data points is available [below](#all-presently-kn
 **478**|**MixerFourCircuitThreeWayValvePositionPercent**|*O3EComplexType*|2||ro||
 | |- Setpoint|O3EInt8|1||||
 | |- Actual|O3EInt8|1||||
-**491**|**DomesticHotWaterCirculationPump**|*O3EComplexType*|2||**rw**||
+**491**|[**DomesticHotWaterCirculationPump**](## "Request for domestic hot water circulation pump")|*O3EComplexType*|2||**rw**||
 | |- State|O3EByteVal|1||||
 | |- Unknown|O3EByteVal|1||||
-**497**|**DomesticHotWaterCirculationPumpMode**|*O3EComplexType*|5||**rw**||
+**497**|[**DomesticHotWaterCirculationPumpMode**](## "Operation Mode of domestic hot water circulation pump")|*O3EComplexType*|5||**rw**|[See page 22f](https://static.viessmann-climatesolutions.com/resources/technical_documents/DE/de/VSA/6179923VSA00001_1.pdf?)|
 | |- Mode|O3EByteVal|1||||
 | |- HygenieActive|O3EByteVal|1||||
 | |- HeatingActive|O3EByteVal|1||||
@@ -1871,7 +1877,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 **898**|**RemainingFloorDryingDays**|O3EByteVal|1||ro||
 **900**|**GatewayRemoteSignalStrength**|O3EByteVal|1||ro||
 **901**|**ServiceManagerIsRequired**|O3EByteVal|1||ro||
-**902**|**MalfunctionIdentification**|O3EByteVal|1||ro||
+**902**|[**MalfunctionIdentification**](## "Indicates whether faults are present")|O3EByteVal|1||ro||
 **903**|**DisplaySettings**|RawCodec|4||ro||
 **905**|**ElectricalPostHeater**|RawCodec|4||ro||
 **906**|**ExhaustFlap**|RawCodec|3||ro||
@@ -1974,8 +1980,8 @@ A list of all presently known data points is available [below](#all-presently-kn
 **951**|**SolarCircuitExtendedFunctions**|RawCodec|8||ro||
 **952**|**HydraulicMatrix**|RawCodec|51||ro||
 **953**|**SolarEnergyYield**|RawCodec|24||ro||
-**954**|**BusTopologyMatrix**|*O3EList*|181||ro||
-| |- Count|O3EInt8|1||||
+**954**|[**BusTopologyMatrix**](## "Matrix of CAN bus topology")|*O3EList*|181||ro||
+| |- [Count](## "Number of list entries")|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
 | |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
@@ -1989,10 +1995,10 @@ A list of all presently known data points is available [below](#all-presently-kn
 **962**|**BootLoaderVersion**|O3ESoftVers|8||ro||
 **963**|**SparePartNumber**|O3EUtf8|16||ro||
 **964**|[**ActiveDiagnosticSession**](## "{0: NotSet, 1: Default, 2: ProgrammingSession, 3: ExtendedDiagnosticSession, 4: SafetySystemDiagnosticSession, 64: ManufacturerProgramming, 65: ManufacturerDiagnostic, 96: SystemSupplier(VEG)Programming, 97: SystemSupplier(VEG)Diagnostic}")|O3EEnum|1||ro||
-**987**|**MixerOneCircuitFlowTemperatureTargetSetpoint**|O3EInt16|2||**rw**||
-**988**|**MixerTwoCircuitFlowTemperatureTargetSetpoint**|O3EInt16|2||**rw**||
-**989**|**MixerThreeCircuitFlowTemperatureTargetSetpoint**|O3EInt16|2||**rw**||
-**990**|**MixerFourCircuitFlowTemperatureTargetSetpoint**|O3EInt16|2||**rw**||
+**987**|[**MixerOneCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 1")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+**988**|[**MixerTwoCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 2")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+**989**|[**MixerThreeCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 3")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+**990**|[**MixerFourCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 4")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 **1004**|[**CentralHeatingRegulationMode**](## "{0: Nothing, 1: ConstantControlled, 4: WeatherByOutsideSensorControlled, 7: WeatherByOutsideSensorAndRoomCorrectionControlled, 10: ConstantControlledWithExternalThermostat, 13: WeatherByOutsideAndZones, 15: WeatherByOutsideSensorAndAutomaticAdaptationControlled}")|O3EEnum|1||ro||
 **1006**|**TargetQuickMode**|*O3EComplexType*|4||**rw**||
 | |- OpMode|O3EByteVal|1||||
