@@ -21,7 +21,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "general", 
-    "Version": "20260213",
+    "Version": "20260215",
     "dids" : 
     {
         256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress", unit="", desc="", info=""), O3EEnum(1, "BusType", "BusTypes", desc="", info=""), O3EEnum(1, "DeviceProperty", "Devices", desc="", info=""), O3EEnum(1, "DeviceFunction", "Devices", desc="", info=""), O3ESoftVers(8, "SW-Version", desc="??.???.YYcw.ver", info=""), O3ESoftVers(8, "HW-Version", desc="", info=""), O3EUtf8(16, "VIN", desc="", info="")], desc="Device infos", info="", acc="ro"),
@@ -328,8 +328,8 @@ dataIdentifiers = {
         989 : O3EInt16(2, "MixerThreeCircuitFlowTemperatureTargetSetpoint", scale=10.0, signed=True, unit="°C", desc="Temperature setpoint heating curcuit 3", info="", acc="rw"),
         990 : O3EInt16(2, "MixerFourCircuitFlowTemperatureTargetSetpoint", scale=10.0, signed=True, unit="°C", desc="Temperature setpoint heating curcuit 4", info="", acc="rw"),
         1004 : O3EEnum(1, "CentralHeatingRegulationMode", "RegulationTypes", desc="", info="", acc="ro"),
-        1006 : O3EComplexType(4, "TargetQuickMode", [O3EByteVal(1, "OpMode", unit="", desc="", info=""), O3EBool(1, "Required", desc="", info=""), RawCodec(2, "Unknown")], desc="", info="", acc="rw"),    # MyHomeMyData, ref. https://community.viessmann.de/viessmann/attachments/viessmann/customers-heatpump-hybrid/74546/1/6196307%20Kundendatenpunktliste%20Vitocal%20(1).pdf
-        1007 : O3EComplexType(4, "CurrentQuickMode", [O3EByteVal(1, "OpMode", unit="", desc="", info=""), O3EBool(1, "Required", desc="", info=""), RawCodec(2, "Unknown")], desc="", info="", acc="ro"),    # MyHomeMyData, ref. did 1006
+        1006 : O3EComplexType(4, "TargetQuickMode", [O3EByteVal(1, "OpMode", unit="", desc="", info=""), O3EBool(1, "Required", desc="", info=""), RawCodec(2, "Unknown")], desc="External request for one-time charging of domestic hot water (0: off, 2: one-time request)", info="[Link](https://github.com/open3e/open3e/discussions/318)", acc="rw"),    # MyHomeMyData, ref. https://community.viessmann.de/viessmann/attachments/viessmann/customers-heatpump-hybrid/74546/1/6196307%20Kundendatenpunktliste%20Vitocal%20(1).pdf
+        1007 : O3EComplexType(4, "CurrentQuickMode", [O3EByteVal(1, "OpMode", unit="", desc="", info=""), O3EBool(1, "Required", desc="", info=""), RawCodec(2, "Unknown")], desc="State of external request for one-time charging of domestic hot water (0: off, 2: on)", info="[Link](https://github.com/open3e/open3e/discussions/318)", acc="ro"),    # MyHomeMyData, ref. did 1006
         1008 : RawCodec(4, "MixerOneCircuitTargetQuickMode", acc="rw"),
         1009 : RawCodec(4, "MixerTwoCircuitTargetQuickMode", acc="rw"),
         1010 : RawCodec(4, "MixerThreeCircuitTargetQuickMode", acc="rw"),
@@ -1017,7 +1017,7 @@ dataIdentifiers = {
         2211 : RawCodec(57, "ApartmentOneSupplyChannelFourTimeScheduleFriday", acc="rw"),
         2212 : RawCodec(57, "ApartmentOneSupplyChannelFourTimeScheduleSaturday", acc="rw"),
         2213 : RawCodec(57, "ApartmentOneSupplyChannelFourTimeScheduleSunday", acc="rw"),
-        2214 : O3EComplexType(2, "BackupBoxConfiguration", [O3EInt8(1, "DischargeLimit", scale=1, signed=False, unit="", desc="", info=""), O3EInt8(1, "Unknown", scale=1, signed=False, unit="", desc="", info="")], desc="", info="", acc="rw"),
+        2214 : O3EComplexType(2, "BackupBoxConfiguration", [O3EInt8(1, "DischargeLimit", scale=1, signed=False, unit="%", desc="Discharge limit of battery", info=""), O3EInt8(1, "Unknown", scale=1, signed=False, unit="", desc="", info="")], desc="Configuration for Backup Box", info="", acc="rw"),
         2217 : RawCodec(1, "InputDemandSideManagementlReceiver", acc="ro"),
         2218 : RawCodec(4, "RemoteLimitValueDemandSideManagement", acc="ro"),
         2219 : RawCodec(1, "BatteryCalibration", acc="ro"),
@@ -1051,7 +1051,7 @@ dataIdentifiers = {
         2253 : O3EByteVal(1, "DeviceDigitalInputSevenValue", unit="", desc="", info="", acc="ro"),
         2254 : RawCodec(1, "PowerGridCodeSettingConfiguration", acc="ro"),
         2255 : O3EInt16(2, "MinimumSecondaryReturnTemperatureRefrigerantCircuit", scale=10.0, signed=True, unit="", desc="", info="", acc="ro"),
-        2256 : O3EInt16(2, "DesiredThermalEnergyDefrost", scale=10.0, signed=False, unit="", desc="", info="", acc="ro"),
+        2256 : O3EInt16(2, "DesiredThermalEnergyDefrost", scale=10.0, signed=False, unit="Wh", desc="Target value of thermal energy to perform next defrosting", info="", acc="ro"),
         2257 : O3EInt16(2, "DomesticHotWaterTemperatureSetpointOffset", scale=10.0, signed=True, unit="", desc="", info="", acc="rw"),
         2259 : O3EByteVal(1, "RefrigerationCircuitStatus", unit="", desc="", info="", acc="ro"),
         2260 : O3EComplexType(84, "ZigBeeTwentyOneDeviceProperty", [RawCodec(8, "Serialnumber"), RawCodec(1, "SerialnumberPostfix"), O3EUtf8(39, "Devicename", desc="", info=""), RawCodec(1, "Unknown1"), O3EEnum(1, "ViCareDevice", "ViCareDeviceType", desc="", info=""), O3ESoftVers(8, "Firmware-Version", desc="", info=""), RawCodec(26, "Unknown2")], desc="", info="", acc="ro"),
@@ -1114,7 +1114,7 @@ dataIdentifiers = {
         2317 : O3EComplexType(84, "ZigBeeFourtyDeviceProperty", [RawCodec(8, "Serialnumber"), RawCodec(1, "SerialnumberPostfix"), O3EUtf8(39, "Devicename", desc="", info=""), RawCodec(1, "Unknown1"), O3EEnum(1, "ViCareDevice", "ViCareDeviceType", desc="", info=""), O3ESoftVers(8, "Firmware-Version", desc="", info=""), RawCodec(26, "Unknown2")], desc="", info="", acc="ro"),
         2318 : O3EComplexType(13, "ZigBeeFourtyDeviceSetpoint", [RawCodec(2, "Prefix"), O3EInt16(2, "MaximumFlowTemperature", scale=10, signed=False, unit="", desc="", info=""), RawCodec(9, "Unused")], desc="", info="", acc="rw"),
         2319 : RawCodec(57, "ZigBeeFourtyDeviceCurrentValues", acc="ro"),
-        2320 : O3EByteVal(1, "DomesticHotWaterStatus", unit="", desc="", info="", acc="ro"),    # 0 = Idle, 1 = Active, 2 = Postrun
+        2320 : O3EEnum(1, "DomesticHotWaterStatus", "DomesticHotWaterPreparationStates", desc="Status of domestic hot water preparation", info="", acc="ro"),    # 0 = Idle, 1 = Active, 2 = Postrun
         2321 : RawCodec(91, "ZigBeeApartmentOneDecoupleList", acc="ro"),
         2327 : O3EComplexType(4, "VentilationTargetVolumeFlow", [O3EInt16(2, "ActualFlow", scale=1.0, signed=False, unit="", desc="", info=""), O3EInt16(2, "Unknown", scale=1.0, signed=False, unit="", desc="", info="")], desc="", info="", acc="rw"),
         2328 : O3EComplexType(4, "VentilationCurrentVolumeFlow", [O3EInt16(2, "TargetFlow", scale=1.0, signed=False, unit="", desc="", info=""), O3EInt16(2, "Unknown", scale=1.0, signed=False, unit="", desc="", info="")], desc="", info="", acc="ro"),
@@ -1122,8 +1122,8 @@ dataIdentifiers = {
         2330 : O3EEnum(1, "GenericDigitalInputConfigurationOnBoardTwo", "DigitalInputConfigurations", desc="", info="", acc="ro"),
         2331 : O3EEnum(1, "GenericDigitalInputConfigurationOnBoardThree", "DigitalInputConfigurations", desc="", info="", acc="ro"),
         2332 : O3EEnum(1, "GenericDigitalInputConfigurationOnBoardFour", "DigitalInputConfigurations", desc="", info="", acc="ro"),
-        2333 : O3EComplexType(9, "EconomizerLiquidTemperatureSensor", [O3EInt16(2, "Actual", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Minimum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Maximum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Average", scale=10.0, signed=True, unit="", desc="", info=""), O3EEnum(1, "SensorStatus", "SensorStates", desc="", info="")], desc="", info="", acc="ro"),
-        2334 : O3EComplexType(9, "EvaporatorVaporTemperatureSensor", [O3EInt16(2, "Actual", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Minimum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Maximum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Average", scale=10.0, signed=True, unit="", desc="", info=""), O3EEnum(1, "SensorStatus", "SensorStates", desc="", info="")], desc="", info="", acc="ro"),
+        2333 : O3EComplexType(9, "EconomizerLiquidTemperatureSensor", [O3EInt16(2, "Actual", scale=10.0, signed=True, unit="°C", desc="", info=""), O3EInt16(2, "Minimum", scale=10.0, signed=True, unit="°C", desc="", info=""), O3EInt16(2, "Maximum", scale=10.0, signed=True, unit="°C", desc="", info=""), O3EInt16(2, "Average", scale=10.0, signed=True, unit="°C", desc="", info=""), O3EEnum(1, "SensorStatus", "SensorStates", desc="", info="")], desc="Actual temperature economizer inlet", info="[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)", acc="ro"),
+        2334 : O3EComplexType(9, "EvaporatorVaporTemperatureSensor", [O3EInt16(2, "Actual", scale=10.0, signed=True, unit="°C", desc="", info=""), O3EInt16(2, "Minimum", scale=10.0, signed=True, unit="°C", desc="", info=""), O3EInt16(2, "Maximum", scale=10.0, signed=True, unit="°C", desc="", info=""), O3EInt16(2, "Average", scale=10.0, signed=True, unit="°C", desc="", info=""), O3EEnum(1, "SensorStatus", "SensorStates", desc="", info="")], desc="Actual temperature avaporator inlet", info="[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)", acc="ro"),
         2335 : RawCodec(8, "BatteryModuleCoulombCounters", acc="ro"),
         2336 : O3EComplexType(9, "ControllerBoardTemperatureSensor", [O3EInt16(2, "Sensor1", scale=10, signed=False, unit="", desc="", info=""), O3EInt16(2, "Sensor2", scale=10, signed=False, unit="", desc="", info=""), RawCodec(5, "Unknown")], desc="", info="", acc="ro"),
         2337 : RawCodec(1, "UltraLowNitroOxideStatusActive", acc="ro"),
@@ -1134,18 +1134,18 @@ dataIdentifiers = {
         2342 : O3EInt32(4, "NominalThermalCapacityHeating", scale=1, signed=True, unit="", desc="", info="", acc="ro"),    # Unit: Watts
         2343 : O3EInt32(4, "NominalThermalCapacityCooling", scale=1, signed=True, unit="", desc="", info="", acc="ro"),    # Unit: Watts
         2344 : RawCodec(1, "CombustionAirInterlockSettings", acc="ro"),
-        2345 : O3EInt8(1, "CompressorSetpointPercent", scale=1.0, signed=False, unit="", desc="", info="", acc="rw"),
-        2346 : O3EInt8(1, "CompressorSpeedPercent", scale=1.0, signed=False, unit="", desc="", info="", acc="ro"),
+        2345 : O3EInt8(1, "CompressorSetpointPercent", scale=1.0, signed=False, unit="%", desc="Setpoint of speed of heat pump compressor", info="", acc="rw"),
+        2346 : O3EInt8(1, "CompressorSpeedPercent", scale=1.0, signed=False, unit="%", desc="Actual speed of heat pump compressor", info="[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)", acc="ro"),
         2348 : RawCodec(8, "PhotovoltaicsActivePowerLimitationEnergyManagementSystem", acc="ro"),
         2349 : RawCodec(8, "PhotovoltaicsActivePowerLimitationFallbackEnergyManagementSystem", acc="ro"),
         2350 : O3EByteVal(1, "EnergyManagmentSystemResultingControlState", unit="", desc="", info="", acc="ro"),
-        2351 : O3EComplexType(2, "HeatPumpCompressor", [O3EByteVal(1, "PowerState", unit="", desc="", info=""), O3EByteVal(1, "ErrorState", unit="", desc="", info="")], desc="", info="", acc="ro"),
-        2352 : O3EComplexType(2, "AdditionalElectricHeater", [O3EByteVal(1, "PowerState", unit="", desc="", info=""), O3EByteVal(1, "ErrorState", unit="", desc="", info="")], desc="", info="", acc="ro"),
+        2351 : O3EComplexType(2, "HeatPumpCompressor", [O3EEnum(1, "PowerState", "PowerStates", desc="", info=""), O3EByteVal(1, "ErrorState", unit="", desc="", info="")], desc="Actual state of the heat pump compressor", info="", acc="ro"),
+        2352 : O3EComplexType(2, "AdditionalElectricHeater", [O3EEnum(1, "PowerState", "PowerStates", desc="", info=""), O3EByteVal(1, "ErrorState", unit="", desc="", info="")], desc="Actual state of the electric auxiliary heating", info="", acc="ro"),
         2353 : O3EComplexType(4, "TargetDemandHeatProducer", [O3EByteVal(1, "StateHeating", unit="", desc="", info=""), O3EInt16(2, "FlowTemperature", scale=10.0, signed=True, unit="", desc="", info=""), O3EByteVal(1, "Modulation", unit="", desc="", info="")], desc="", info="", acc="rw"),
         2355 : O3EComplexType(4, "MinimumVentilationSupplyAirTemperature", [O3EInt16(2, "Sensor1", scale=10, signed=False, unit="", desc="", info=""), O3EInt16(2, "Sensor2", scale=10, signed=False, unit="", desc="", info="")], desc="", info="", acc="ro"),
         2356 : O3EInt8(1, "CurrentSystemHeatingCoolingLevel", scale=1.0, signed=False, unit="", desc="", info="", acc="ro"),
-        2369 : O3EComplexType(14, "HeatPumpCompressorStatistical", [RawCodec(6, "Unknown1"), O3EInt16(2, "starts", scale=1, signed=False, unit="", desc="", info=""), RawCodec(2, "Unknown2"), O3EInt16(2, "hours", scale=1, signed=False, unit="", desc="", info=""), RawCodec(2, "Unknown3")], desc="", info="", acc="ro"),
-        2370 : O3EComplexType(11, "AdditionalElectricHeaterStatistical", [RawCodec(3, "Unknown1"), O3EInt16(2, "starts", scale=1, signed=False, unit="", desc="", info=""), RawCodec(2, "Unknown2"), O3EInt16(2, "hours", scale=1, signed=False, unit="", desc="", info=""), RawCodec(2, "Unknown3")], desc="", info="", acc="ro"),
+        2369 : O3EComplexType(14, "HeatPumpCompressorStatistical", [RawCodec(6, "Unknown1"), O3EInt16(2, "starts", scale=1, signed=False, unit="", desc="Number of starts", info=""), RawCodec(2, "Unknown2"), O3EInt16(2, "hours", scale=1, signed=False, unit="h", desc="Operating hours", info=""), RawCodec(2, "Unknown3")], desc="Statistics for heat pump compressor starts", info="", acc="ro"),
+        2370 : O3EComplexType(11, "AdditionalElectricHeaterStatistical", [RawCodec(3, "Unknown1"), O3EInt16(2, "starts", scale=1, signed=False, unit="", desc="Number of starts", info=""), RawCodec(2, "Unknown2"), O3EInt16(2, "hours", scale=1, signed=False, unit="h", desc="Operating hours", info=""), RawCodec(2, "Unknown3")], desc="", info="", acc="ro"),
         2371 : O3EComplexType(2, "VentilationControlMode", [O3EByteVal(1, "Mode", unit="", desc="", info=""), RawCodec(1, "Unknown")], desc="", info="", acc="ro"),
         2372 : O3EComplexType(2, "VentilationControllerOperationState", [RawCodec(1, "Unknown1"), RawCodec(1, "Unknown2")], desc="", info="", acc="rw"),
         2373 : RawCodec(2, "VentilationAirVolumeFlowBalancingOffset", acc="rw"),
@@ -1223,16 +1223,16 @@ dataIdentifiers = {
         2481 : RawCodec(5, "MixerThreeCircuitRoomAirHumiditySensor", acc="ro"),
         2482 : RawCodec(5, "MixerFourCircuitRoomAirHumiditySensor", acc="ro"),
         2484 : RawCodec(8, "ElectricalPowerRangeMetaData", acc="ro"),
-        2486 : O3EInt32(4, "CurrentElectricalPowerConsumptionRefrigerantCircuit", scale=1, signed=True, unit="", desc="", info="", acc="ro"),
-        2487 : O3EInt32(4, "CurrentElectricalPowerConsumptionElectricHeater", scale=1, signed=True, unit="", desc="", info="", acc="ro"),
-        2488 : O3EInt32(4, "CurrentElectricalPowerConsumptionSystem", scale=1, signed=True, unit="", desc="", info="", acc="ro"),
+        2486 : O3EInt32(4, "CurrentElectricalPowerConsumptionRefrigerantCircuit", scale=1, signed=True, unit="W", desc="Actual electrical power consumption of the refrigeration circuit", info="", acc="ro"),
+        2487 : O3EInt32(4, "CurrentElectricalPowerConsumptionElectricHeater", scale=1, signed=True, unit="W", desc="Actual electrical power consumption of the auxiliary heater", info="", acc="ro"),
+        2488 : O3EInt32(4, "CurrentElectricalPowerConsumptionSystem", scale=1, signed=True, unit="", desc="W", info="Actual total electrical power consumption of the system", acc="ro"),
         2489 : RawCodec(3, "FrostProtectionStatus", acc="ro"),
         2490 : RawCodec(1, "StartUpWizardState", acc="ro"),
         2491 : RawCodec(1, "DomesticHotWaterDemandInput", acc="ro"),
         2493 : RawCodec(2, "VentilationBypassPosition", acc="ro"),
-        2494 : O3EInt32(4, "CurrentThermalCapacityRefrigerantCircuit", scale=1, signed=True, unit="", desc="", info="", acc="ro"),    # Unit: Watts
-        2495 : O3EInt32(4, "CurrentThermalCapacityElectricHeater", scale=1, signed=True, unit="", desc="", info="", acc="ro"),    # Unit: Watts
-        2496 : O3EInt32(4, "CurrentThermalCapacitySystem", scale=1, signed=True, unit="", desc="", info="", acc="ro"),    # Unit: Watts
+        2494 : O3EInt32(4, "CurrentThermalCapacityRefrigerantCircuit", scale=1, signed=True, unit="W", desc="Actual thermal power output of the refrigeration circuit", info="", acc="ro"),    # Unit: Watts
+        2495 : O3EInt32(4, "CurrentThermalCapacityElectricHeater", scale=1, signed=True, unit="W", desc="Actual thermal power output of the auxiliary heater", info="", acc="ro"),    # Unit: Watts
+        2496 : O3EInt32(4, "CurrentThermalCapacitySystem", scale=1, signed=True, unit="W", desc="Actual thermal power output of the system", info="", acc="ro"),    # Unit: Watts
         2497 : RawCodec(3, "ResetStatisticalValuesDate", acc="ro"),
         2498 : O3EByteVal(1, "CentralHeatingPumpType", unit="", desc="", info="", acc="ro"),
         2499 : O3EByteVal(1, "MixerOneCircuitPumpType", unit="", desc="", info="", acc="ro"),
@@ -1280,7 +1280,7 @@ dataIdentifiers = {
         2566 : O3EInt32(4, "VentilationSupplyFanRuntime", scale=1.0, signed=False, unit="", desc="", info="", acc="ro"),
         2567 : O3EInt32(4, "VentilationExhaustFanRuntime", scale=1.0, signed=False, unit="", desc="", info="", acc="ro"),
         2568 : O3EInt8(1, "RefrigerantType", scale=1.0, signed=False, unit="", desc="", info="", acc="ro"),
-        2569 : O3EInt16(2, "CompressorSpeedRps", scale=10, signed=False, unit="", desc="", info="", acc="ro"),
+        2569 : O3EInt16(2, "CompressorSpeedRps", scale=10, signed=False, unit="rps", desc="Actual speed of the heat pump compressor", info="", acc="ro"),
         2570 : O3EInt16(2, "CompressorModulType", scale=10.0, signed=False, unit="", desc="", info="", acc="ro"),
         2571 : O3EInt16(2, "CompressorSuctionSuperheat", scale=10.0, signed=False, unit="", desc="", info="", acc="ro"),
         2572 : RawCodec(4, "ActualCompressorInletMassflow", acc="ro"),
@@ -1341,7 +1341,7 @@ dataIdentifiers = {
         2638 : RawCodec(4, "SupportedCountryCodes", acc="ro"),
         2643 : O3EInt16(2, "MaximumRechargePower", scale=1, signed=False, unit="", desc="", info="", acc="ro"),    # Unit Watt, Discussion #181
         2733 : RawCodec(3, "InstallationConfirmation", acc="ro"),
-        2735 : O3EByteVal(1, "FourThreeWayValveValveCurrentPosition", unit="", desc="", info="", acc="ro"),    # 0 = Central Heating / Cooling, 1 = Internal Buffer, 2 = Domestic Hot Water, 3 = Central Heating / Cooling + Internal Buffer, 4 = Domestic Hot Water + Internal Buffer
+        2735 : O3EEnum(1, "FourThreeWayValveValveCurrentPosition", "FourThreeWayValveModes", desc="Current position of the four/three-way valve", info="", acc="ro"),    # 0 = Central Heating / Cooling, 1 = Internal Buffer, 2 = Domestic Hot Water, 3 = Central Heating / Cooling + Internal Buffer, 4 = Domestic Hot Water + Internal Buffer
         2741 : RawCodec(3, "ComfortEnsuringMode", acc="ro"),
         2742 : O3EInt8(1, "DiagnosticHydraulicFilterInterval", scale=1.0, signed=False, unit="", desc="", info="", acc="ro"),
         2743 : O3EInt8(1, "DiagnosticElectricalHeaterSafetyTemperatureLimiter", scale=1.0, signed=False, unit="", desc="", info="", acc="ro"),
@@ -1388,7 +1388,7 @@ dataIdentifiers = {
         2802 : RawCodec(6, "InverterSelfTestStatus", acc="ro"),
         2804 : RawCodec(151, "InverterSelfTestResultTwo", acc="ro"),
         2805 : RawCodec(151, "InverterSelfTestResultThree", acc="ro"),
-        2806 : O3EComplexType(2, "RefrigerationCircuitOperationMode", [O3EByteVal(1, "Mode", unit="", desc="", info=""), O3EByteVal(1, "State", unit="", desc="", info="")], desc="", info="", acc="ro"),
+        2806 : O3EComplexType(2, "RefrigerationCircuitOperationMode", [O3EByteVal(1, "Mode", unit="", desc="", info=""), O3EEnum(1, "State", "RefrigerationCircuitOperationModes", desc="", info="")], desc="Actual operating mode of the refrigeration circuit", info="", acc="ro"),
         2807 : RawCodec(9, "InverterHousingTemperature", acc="ro"),
         2808 : RawCodec(9, "InverterInternalPowerModuleTemperature", acc="ro"),
         2809 : RawCodec(1, "PumpMinSpeedConfiguration", acc="ro"),
@@ -1506,7 +1506,7 @@ dataIdentifiers = {
         3013 : RawCodec(2, "MixerHybridThreeWayValvePositionPercent", acc="ro"),
         3014 : O3EComplexType(9, "OutdoorMiddleCoilTemperatureSensor", [O3EInt16(2, "Actual", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Minimum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Maximum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Average", scale=10.0, signed=True, unit="", desc="", info=""), O3EEnum(1, "SensorStatus", "SensorStates", desc="", info="")], desc="", info="", acc="ro"),
         3015 : O3EComplexType(9, "HeatSinkTemperatureSensor", [O3EInt16(2, "Actual", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Minimum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Maximum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Average", scale=10.0, signed=True, unit="", desc="", info=""), O3EEnum(1, "SensorStatus", "SensorStates", desc="", info="")], desc="", info="", acc="ro"),
-        3016 : O3EComplexType(9, "HeatingBufferTemperatureSensor", [O3EInt16(2, "Actual", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Minimum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Maximum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Average", scale=10.0, signed=True, unit="", desc="", info=""), O3EEnum(1, "SensorStatus", "SensorStates", desc="", info="")], desc="", info="", acc="ro"),
+        3016 : O3EComplexType(9, "HeatingBufferTemperatureSensor", [O3EInt16(2, "Actual", scale=10.0, signed=True, unit="°C", desc="", info=""), O3EInt16(2, "Minimum", scale=10.0, signed=True, unit="°C", desc="", info=""), O3EInt16(2, "Maximum", scale=10.0, signed=True, unit="°C", desc="", info=""), O3EInt16(2, "Average", scale=10.0, signed=True, unit="°C", desc="", info=""), O3EEnum(1, "SensorStatus", "SensorStates", desc="", info="")], desc="Actual temperature of the heating buffer", info="", acc="ro"),
         3017 : O3EComplexType(9, "CoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Minimum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Maximum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Average", scale=10.0, signed=True, unit="", desc="", info=""), O3EEnum(1, "SensorStatus", "SensorStates", desc="", info="")], desc="", info="", acc="ro"),
         3018 : O3EComplexType(9, "HeatingCoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Minimum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Maximum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Average", scale=10.0, signed=True, unit="", desc="", info=""), O3EEnum(1, "SensorStatus", "SensorStates", desc="", info="")], desc="", info="", acc="ro"),
         3019 : O3EComplexType(9, "CompressorOutletTargetTemperature", [O3EInt16(2, "Actual", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Minimum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Maximum", scale=10.0, signed=True, unit="", desc="", info=""), O3EInt16(2, "Average", scale=10.0, signed=True, unit="", desc="", info=""), O3EEnum(1, "SensorStatus", "SensorStates", desc="", info="")], desc="", info="", acc="rw"),    # 250xH Unit °C
