@@ -8,8 +8,8 @@
   * rw => data point is read and write. However, device my reject or ignore write access anyway
 ## Frequently used data points
 A list of all presently known data points is available [below](#all-presently-known-data-points)
-|  Did | ID   | Codec | Length | Unit | Access | Further info |
-| ---: | :--- | :--- | ---: | :---: | :---: | :--- |
+|  Did | ID   | Codec | Length | Unit  |   Access | Further info |
+| ---: | :--- | :---  | ---:   | :---: |  :---:  | :---         |
 **256**|[**BusIdentification**](## "Device infos")|*O3EComplexType*|36||ro||
 | |- BusAddress|O3EByteVal|1||||
 | |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
@@ -770,8 +770,8 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 ## All presently known data points
-|  Did | ID   | Codec | Length | Unit | Access | Further info |
-| ---: | :--- | :--- | ---: | :---: | :---: | :--- |
+|  Did | ID   | Codec | Length | Unit  |   Access | Further info |
+| ---: | :--- | :---  | ---:   | :---: |  :---:  | :---         |
 **256**|[**BusIdentification**](## "Device infos")|*O3EComplexType*|36||ro||
 | |- BusAddress|O3EByteVal|1||||
 | |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
