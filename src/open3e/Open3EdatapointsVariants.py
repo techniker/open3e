@@ -7,15 +7,15 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "variants", 
-    "Version": "20260211",
+    "Version": "20260215",
     "dids" : 
     {
          627 : { 12: O3EUtf8(12, "CentralHeatingOneCircuitName", acc="ro")},
          628 : { 12: O3EUtf8(12, "CentralHeatingTwoCircuitName", acc="ro")},
          629 : { 12: O3EUtf8(12, "CentralHeatingThreeCircuitName", acc="ro")},
          630 : { 12: O3EUtf8(12, "CentralHeatingFourCircuitName", acc="ro")},
-        1006 : { 3: O3EComplexType(3, "TargetQuickMode", [O3EByteVal(1, "SetModeOneTimesHotWater"), O3EByteVal(1, "State"), RawCodec(1, "Unknown")], acc="rw")},
-        1007 : { 3: O3EComplexType(3, "CurrentQuickMode", [O3EByteVal(1, "ModeOneTimesHotWater"), O3EByteVal(1, "State"), RawCodec(1, "Unknown")], acc="ro")},
+        1006 : { 3: O3EComplexType(3, "TargetQuickMode", [O3EByteVal(1, "SetModeOneTimesHotWater"), O3EByteVal(1, "State"), RawCodec(1, "Unknown")], desc="External request for one-time charging of domestic hot water (0: off, 2: one-time request)", info="[Link](https://github.com/open3e/open3e/discussions/318)", acc="rw")},
+        1007 : { 3: O3EComplexType(3, "CurrentQuickMode", [O3EByteVal(1, "ModeOneTimesHotWater"), O3EByteVal(1, "State"), RawCodec(1, "Unknown")], desc="State of external request for one-time charging of domestic hot water (0: off, 2: on)", info="[Link](https://github.com/open3e/open3e/discussions/318)", acc="ro")},
         1008 : { 3: O3EComplexType(3, "MixerOneCircuitTargetQuickMode", [O3EByteVal(1, "SetModeParty"), O3EByteVal(1, "State"), RawCodec(1, "Unknown")], acc="rw")},
         1009 : { 3: O3EComplexType(3, "MixerTwoCircuitTargetQuickMode", [O3EByteVal(1, "SetModeParty"), O3EByteVal(1, "State"), RawCodec(1, "Unknown")], acc="rw")},
         1010 : { 3: O3EComplexType(3, "MixerThreeCircuitTargetQuickMode", [O3EByteVal(1, "SetModeParty"), O3EByteVal(1, "State"), RawCodec(1, "Unknown")], acc="rw")},

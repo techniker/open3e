@@ -1,6 +1,6 @@
 # Open3E - List of data points
-- Version of general data points: 20260213
-- Version of variant data points: 20260211
+- Version of general data points: 20260215
+- Version of variant data points: 20260215
 
 ### Remarks:
 * Information on write access to data points (column Access) is based on documents of Viessmann
@@ -722,54 +722,52 @@ A list of all presently known data points is available [below](#all-presently-kn
 **1842**|**SecondaryCircuitFourThreeWayValve**|*O3EComplexType*|2||ro||
 | |- Setpoint|O3EInt8|1||||
 | |- CurrentPosition|O3EInt8|1||||
-**2144**|**PointOfCommonCouplingAcActiveCurrent**|RawCodec|16||ro||
-**2214**|**BackupBoxConfiguration**|*O3EComplexType*|2||**rw**||
-| |- DischargeLimit|O3EInt8|1||||
+**2214**|[**BackupBoxConfiguration**](## "Configuration for Backup Box")|*O3EComplexType*|2||**rw**||
+| |- [DischargeLimit](## "Discharge limit of battery")|O3EInt8|1|%|||
 | |- Unknown|O3EInt8|1||||
-**2256**|**DesiredThermalEnergyDefrost**|O3EInt16|2||ro||
-**2320**|**DomesticHotWaterStatus**|O3EByteVal|1||ro||
-**2333**|**EconomizerLiquidTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**2256**|[**DesiredThermalEnergyDefrost**](## "Target value of thermal energy to perform next defrosting")|O3EInt16|2|Wh|ro||
+**2320**|[**DomesticHotWaterStatus**](## "Status of domestic hot water preparation {0: Idle, 1: Active, 2: Postrun}")|O3EEnum|1||ro||
+**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**2334**|**EvaporatorVaporTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**2334**|[**EvaporatorVaporTemperatureSensor**](## "Actual temperature avaporator inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**2346**|**CompressorSpeedPercent**|O3EInt8|1||ro||
-**2351**|**HeatPumpCompressor**|*O3EComplexType*|2||ro||
-| |- PowerState|O3EByteVal|1||||
+**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+**2351**|[**HeatPumpCompressor**](## "Actual state of the heat pump compressor")|*O3EComplexType*|2||ro||
+| |- [PowerState](## "{0: Off, 1: On, 2: Out of range}")|O3EEnum|1||||
 | |- ErrorState|O3EByteVal|1||||
-**2352**|**AdditionalElectricHeater**|*O3EComplexType*|2||ro||
-| |- PowerState|O3EByteVal|1||||
+**2352**|[**AdditionalElectricHeater**](## "Actual state of the electric auxiliary heating")|*O3EComplexType*|2||ro||
+| |- [PowerState](## "{0: Off, 1: On, 2: Out of range}")|O3EEnum|1||||
 | |- ErrorState|O3EByteVal|1||||
-**2369**|**HeatPumpCompressorStatistical**|*O3EComplexType*|14||ro||
+**2369**|[**HeatPumpCompressorStatistical**](## "Statistics for heat pump compressor starts")|*O3EComplexType*|14||ro||
 | |- Unknown1|RawCodec|6||||
-| |- starts|O3EInt16|2||||
+| |- [starts](## "Number of starts")|O3EInt16|2||||
 | |- Unknown2|RawCodec|2||||
-| |- hours|O3EInt16|2||||
+| |- [hours](## "Operating hours")|O3EInt16|2|h|||
 | |- Unknown3|RawCodec|2||||
-**2486**|**CurrentElectricalPowerConsumptionRefrigerantCircuit**|O3EInt32|4||ro||
-**2487**|**CurrentElectricalPowerConsumptionElectricHeater**|O3EInt32|4||ro||
-**2488**|**CurrentElectricalPowerConsumptionSystem**|O3EInt32|4||ro||
-**2494**|**CurrentThermalCapacityRefrigerantCircuit**|O3EInt32|4||ro||
-**2495**|**CurrentThermalCapacityElectricHeater**|O3EInt32|4||ro||
-**2496**|**CurrentThermalCapacitySystem**|O3EInt32|4||ro||
-**2539**|**AlternatingCurrentEnergyStatistic**|RawCodec|40||ro||
-**2569**|**CompressorSpeedRps**|O3EInt16|2||ro||
-**2735**|**FourThreeWayValveValveCurrentPosition**|O3EByteVal|1||ro||
-**2806**|**RefrigerationCircuitOperationMode**|*O3EComplexType*|2||ro||
+**2486**|[**CurrentElectricalPowerConsumptionRefrigerantCircuit**](## "Actual electrical power consumption of the refrigeration circuit")|O3EInt32|4|W|ro||
+**2487**|[**CurrentElectricalPowerConsumptionElectricHeater**](## "Actual electrical power consumption of the auxiliary heater")|O3EInt32|4|W|ro||
+**2488**|[**CurrentElectricalPowerConsumptionSystem**](## "W")|O3EInt32|4||ro|Actual total electrical power consumption of the system|
+**2494**|[**CurrentThermalCapacityRefrigerantCircuit**](## "Actual thermal power output of the refrigeration circuit")|O3EInt32|4|W|ro||
+**2495**|[**CurrentThermalCapacityElectricHeater**](## "Actual thermal power output of the auxiliary heater")|O3EInt32|4|W|ro||
+**2496**|[**CurrentThermalCapacitySystem**](## "Actual thermal power output of the system")|O3EInt32|4|W|ro||
+**2569**|[**CompressorSpeedRps**](## "Actual speed of the heat pump compressor")|O3EInt16|2|rps|ro||
+**2735**|[**FourThreeWayValveValveCurrentPosition**](## "Current position of the four/three-way valve {0: Heating/Cooling, 1: Internal Buffer, 2: Domestic Hot Water, 3: Heating/Cooling and Internal Buffer, 4: Domestic Hot Water and Internal Buffer}")|O3EEnum|1||ro||
+**2806**|[**RefrigerationCircuitOperationMode**](## "Actual operating mode of the refrigeration circuit")|*O3EComplexType*|2||ro||
 | |- Mode|O3EByteVal|1||||
-| |- State|O3EByteVal|1||||
-**3016**|**HeatingBufferTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+| |- [State](## "{0: Off, 1: ShutDown, 2: Heating, 3: Cooling, 4: Manual, 5: De-icing, 6: Grid-lock}")|O3EEnum|1||||
+**3016**|[**HeatingBufferTemperatureSensor**](## "Actual temperature of the heating buffer")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 ## All presently known data points
 |  Did | ID   | Codec | Length | Unit | Access | Further info |
@@ -2000,19 +1998,19 @@ A list of all presently known data points is available [below](#all-presently-kn
 **989**|[**MixerThreeCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 3")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 **990**|[**MixerFourCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 4")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 **1004**|[**CentralHeatingRegulationMode**](## "{0: Nothing, 1: ConstantControlled, 4: WeatherByOutsideSensorControlled, 7: WeatherByOutsideSensorAndRoomCorrectionControlled, 10: ConstantControlledWithExternalThermostat, 13: WeatherByOutsideAndZones, 15: WeatherByOutsideSensorAndAutomaticAdaptationControlled}")|O3EEnum|1||ro||
-**1006**|**TargetQuickMode**|*O3EComplexType*|4||**rw**||
+**1006**|[**TargetQuickMode**](## "External request for one-time charging of domestic hot water (0: off, 2: one-time request)")|*O3EComplexType*|4||**rw**|[Link](https://github.com/open3e/open3e/discussions/318)|
 | |- OpMode|O3EByteVal|1||||
 | |- Required|O3EBool|1||||
 | |- Unknown|RawCodec|2||||
-**1006**|**TargetQuickMode**|*O3EComplexType*|3||**rw**||
+**1006**|[**TargetQuickMode**](## "External request for one-time charging of domestic hot water (0: off, 2: one-time request)")|*O3EComplexType*|3||**rw**|[Link](https://github.com/open3e/open3e/discussions/318)|
 | |- SetModeOneTimesHotWater|O3EByteVal|1||||
 | |- State|O3EByteVal|1||||
 | |- Unknown|RawCodec|1||||
-**1007**|**CurrentQuickMode**|*O3EComplexType*|4||ro||
+**1007**|[**CurrentQuickMode**](## "State of external request for one-time charging of domestic hot water (0: off, 2: on)")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/discussions/318)|
 | |- OpMode|O3EByteVal|1||||
 | |- Required|O3EBool|1||||
 | |- Unknown|RawCodec|2||||
-**1007**|**CurrentQuickMode**|*O3EComplexType*|3||ro||
+**1007**|[**CurrentQuickMode**](## "State of external request for one-time charging of domestic hot water (0: off, 2: on)")|*O3EComplexType*|3||ro|[Link](https://github.com/open3e/open3e/discussions/318)|
 | |- ModeOneTimesHotWater|O3EByteVal|1||||
 | |- State|O3EByteVal|1||||
 | |- Unknown|RawCodec|1||||
@@ -4596,8 +4594,8 @@ A list of all presently known data points is available [below](#all-presently-kn
 **2211**|**ApartmentOneSupplyChannelFourTimeScheduleFriday**|RawCodec|57||**rw**||
 **2212**|**ApartmentOneSupplyChannelFourTimeScheduleSaturday**|RawCodec|57||**rw**||
 **2213**|**ApartmentOneSupplyChannelFourTimeScheduleSunday**|RawCodec|57||**rw**||
-**2214**|**BackupBoxConfiguration**|*O3EComplexType*|2||**rw**||
-| |- DischargeLimit|O3EInt8|1||||
+**2214**|[**BackupBoxConfiguration**](## "Configuration for Backup Box")|*O3EComplexType*|2||**rw**||
+| |- [DischargeLimit](## "Discharge limit of battery")|O3EInt8|1|%|||
 | |- Unknown|O3EInt8|1||||
 **2217**|**InputDemandSideManagementlReceiver**|RawCodec|1||ro||
 **2218**|**RemoteLimitValueDemandSideManagement**|RawCodec|4||ro||
@@ -4640,7 +4638,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 **2253**|**DeviceDigitalInputSevenValue**|O3EByteVal|1||ro||
 **2254**|**PowerGridCodeSettingConfiguration**|RawCodec|1||ro||
 **2255**|**MinimumSecondaryReturnTemperatureRefrigerantCircuit**|O3EInt16|2||ro||
-**2256**|**DesiredThermalEnergyDefrost**|O3EInt16|2||ro||
+**2256**|[**DesiredThermalEnergyDefrost**](## "Target value of thermal energy to perform next defrosting")|O3EInt16|2|Wh|ro||
 **2257**|**DomesticHotWaterTemperatureSetpointOffset**|O3EInt16|2||**rw**||
 **2259**|**RefrigerationCircuitStatus**|O3EByteVal|1||ro||
 **2260**|**ZigBeeTwentyOneDeviceProperty**|*O3EComplexType*|84||ro||
@@ -5163,7 +5161,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- DeviceTemperatureSetpoint|O3EInt8|1||||
 | |- Unknown5|RawCodec|12||||
-**2320**|**DomesticHotWaterStatus**|O3EByteVal|1||ro||
+**2320**|[**DomesticHotWaterStatus**](## "Status of domestic hot water preparation {0: Idle, 1: Active, 2: Postrun}")|O3EEnum|1||ro||
 **2321**|**ZigBeeApartmentOneDecoupleList**|RawCodec|91||ro||
 **2327**|**VentilationTargetVolumeFlow**|*O3EComplexType*|4||**rw**||
 | |- ActualFlow|O3EInt16|2||||
@@ -5175,17 +5173,17 @@ A list of all presently known data points is available [below](#all-presently-kn
 **2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
 **2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
 **2332**|[**GenericDigitalInputConfigurationOnBoardFour**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
-**2333**|**EconomizerLiquidTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**2334**|**EvaporatorVaporTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**2334**|[**EvaporatorVaporTemperatureSensor**](## "Actual temperature avaporator inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 **2335**|**BatteryModuleCoulombCounters**|RawCodec|8||ro||
 **2336**|**ControllerBoardTemperatureSensor**|*O3EComplexType*|9||ro||
@@ -5200,16 +5198,16 @@ A list of all presently known data points is available [below](#all-presently-kn
 **2342**|**NominalThermalCapacityHeating**|O3EInt32|4||ro||
 **2343**|**NominalThermalCapacityCooling**|O3EInt32|4||ro||
 **2344**|**CombustionAirInterlockSettings**|RawCodec|1||ro||
-**2345**|**CompressorSetpointPercent**|O3EInt8|1||**rw**||
-**2346**|**CompressorSpeedPercent**|O3EInt8|1||ro||
+**2345**|[**CompressorSetpointPercent**](## "Setpoint of speed of heat pump compressor")|O3EInt8|1|%|**rw**||
+**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
 **2348**|**PhotovoltaicsActivePowerLimitationEnergyManagementSystem**|RawCodec|8||ro||
 **2349**|**PhotovoltaicsActivePowerLimitationFallbackEnergyManagementSystem**|RawCodec|8||ro||
 **2350**|**EnergyManagmentSystemResultingControlState**|O3EByteVal|1||ro||
-**2351**|**HeatPumpCompressor**|*O3EComplexType*|2||ro||
-| |- PowerState|O3EByteVal|1||||
+**2351**|[**HeatPumpCompressor**](## "Actual state of the heat pump compressor")|*O3EComplexType*|2||ro||
+| |- [PowerState](## "{0: Off, 1: On, 2: Out of range}")|O3EEnum|1||||
 | |- ErrorState|O3EByteVal|1||||
-**2352**|**AdditionalElectricHeater**|*O3EComplexType*|2||ro||
-| |- PowerState|O3EByteVal|1||||
+**2352**|[**AdditionalElectricHeater**](## "Actual state of the electric auxiliary heating")|*O3EComplexType*|2||ro||
+| |- [PowerState](## "{0: Off, 1: On, 2: Out of range}")|O3EEnum|1||||
 | |- ErrorState|O3EByteVal|1||||
 **2353**|**TargetDemandHeatProducer**|*O3EComplexType*|4||**rw**||
 | |- StateHeating|O3EByteVal|1||||
@@ -5219,17 +5217,17 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Sensor1|O3EInt16|2||||
 | |- Sensor2|O3EInt16|2||||
 **2356**|**CurrentSystemHeatingCoolingLevel**|O3EInt8|1||ro||
-**2369**|**HeatPumpCompressorStatistical**|*O3EComplexType*|14||ro||
+**2369**|[**HeatPumpCompressorStatistical**](## "Statistics for heat pump compressor starts")|*O3EComplexType*|14||ro||
 | |- Unknown1|RawCodec|6||||
-| |- starts|O3EInt16|2||||
+| |- [starts](## "Number of starts")|O3EInt16|2||||
 | |- Unknown2|RawCodec|2||||
-| |- hours|O3EInt16|2||||
+| |- [hours](## "Operating hours")|O3EInt16|2|h|||
 | |- Unknown3|RawCodec|2||||
 **2370**|**AdditionalElectricHeaterStatistical**|*O3EComplexType*|11||ro||
 | |- Unknown1|RawCodec|3||||
-| |- starts|O3EInt16|2||||
+| |- [starts](## "Number of starts")|O3EInt16|2||||
 | |- Unknown2|RawCodec|2||||
-| |- hours|O3EInt16|2||||
+| |- [hours](## "Operating hours")|O3EInt16|2|h|||
 | |- Unknown3|RawCodec|2||||
 **2371**|**VentilationControlMode**|*O3EComplexType*|2||ro||
 | |- Mode|O3EByteVal|1||||
@@ -5369,16 +5367,16 @@ A list of all presently known data points is available [below](#all-presently-kn
 **2481**|**MixerThreeCircuitRoomAirHumiditySensor**|RawCodec|5||ro||
 **2482**|**MixerFourCircuitRoomAirHumiditySensor**|RawCodec|5||ro||
 **2484**|**ElectricalPowerRangeMetaData**|RawCodec|8||ro||
-**2486**|**CurrentElectricalPowerConsumptionRefrigerantCircuit**|O3EInt32|4||ro||
-**2487**|**CurrentElectricalPowerConsumptionElectricHeater**|O3EInt32|4||ro||
-**2488**|**CurrentElectricalPowerConsumptionSystem**|O3EInt32|4||ro||
+**2486**|[**CurrentElectricalPowerConsumptionRefrigerantCircuit**](## "Actual electrical power consumption of the refrigeration circuit")|O3EInt32|4|W|ro||
+**2487**|[**CurrentElectricalPowerConsumptionElectricHeater**](## "Actual electrical power consumption of the auxiliary heater")|O3EInt32|4|W|ro||
+**2488**|[**CurrentElectricalPowerConsumptionSystem**](## "W")|O3EInt32|4||ro|Actual total electrical power consumption of the system|
 **2489**|**FrostProtectionStatus**|RawCodec|3||ro||
 **2490**|**StartUpWizardState**|RawCodec|1||ro||
 **2491**|**DomesticHotWaterDemandInput**|RawCodec|1||ro||
 **2493**|**VentilationBypassPosition**|RawCodec|2||ro||
-**2494**|**CurrentThermalCapacityRefrigerantCircuit**|O3EInt32|4||ro||
-**2495**|**CurrentThermalCapacityElectricHeater**|O3EInt32|4||ro||
-**2496**|**CurrentThermalCapacitySystem**|O3EInt32|4||ro||
+**2494**|[**CurrentThermalCapacityRefrigerantCircuit**](## "Actual thermal power output of the refrigeration circuit")|O3EInt32|4|W|ro||
+**2495**|[**CurrentThermalCapacityElectricHeater**](## "Actual thermal power output of the auxiliary heater")|O3EInt32|4|W|ro||
+**2496**|[**CurrentThermalCapacitySystem**](## "Actual thermal power output of the system")|O3EInt32|4|W|ro||
 **2497**|**ResetStatisticalValuesDate**|RawCodec|3||ro||
 **2498**|**CentralHeatingPumpType**|O3EByteVal|1||ro||
 **2499**|**MixerOneCircuitPumpType**|O3EByteVal|1||ro||
@@ -5743,7 +5741,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 **2566**|**VentilationSupplyFanRuntime**|O3EInt32|4||ro||
 **2567**|**VentilationExhaustFanRuntime**|O3EInt32|4||ro||
 **2568**|**RefrigerantType**|O3EInt8|1||ro||
-**2569**|**CompressorSpeedRps**|O3EInt16|2||ro||
+**2569**|[**CompressorSpeedRps**](## "Actual speed of the heat pump compressor")|O3EInt16|2|rps|ro||
 **2570**|**CompressorModulType**|O3EInt16|2||ro||
 **2571**|**CompressorSuctionSuperheat**|O3EInt16|2||ro||
 **2572**|**ActualCompressorInletMassflow**|RawCodec|4||ro||
@@ -5837,7 +5835,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 **2638**|**SupportedCountryCodes**|RawCodec|4||ro||
 **2643**|**MaximumRechargePower**|O3EInt16|2||ro||
 **2733**|**InstallationConfirmation**|RawCodec|3||ro||
-**2735**|**FourThreeWayValveValveCurrentPosition**|O3EByteVal|1||ro||
+**2735**|[**FourThreeWayValveValveCurrentPosition**](## "Current position of the four/three-way valve {0: Heating/Cooling, 1: Internal Buffer, 2: Domestic Hot Water, 3: Heating/Cooling and Internal Buffer, 4: Domestic Hot Water and Internal Buffer}")|O3EEnum|1||ro||
 **2741**|**ComfortEnsuringMode**|RawCodec|3||ro||
 **2742**|**DiagnosticHydraulicFilterInterval**|O3EInt8|1||ro||
 **2743**|**DiagnosticElectricalHeaterSafetyTemperatureLimiter**|O3EInt8|1||ro||
@@ -5898,9 +5896,9 @@ A list of all presently known data points is available [below](#all-presently-kn
 **2802**|**InverterSelfTestStatus**|RawCodec|6||ro||
 **2804**|**InverterSelfTestResultTwo**|RawCodec|151||ro||
 **2805**|**InverterSelfTestResultThree**|RawCodec|151||ro||
-**2806**|**RefrigerationCircuitOperationMode**|*O3EComplexType*|2||ro||
+**2806**|[**RefrigerationCircuitOperationMode**](## "Actual operating mode of the refrigeration circuit")|*O3EComplexType*|2||ro||
 | |- Mode|O3EByteVal|1||||
-| |- State|O3EByteVal|1||||
+| |- [State](## "{0: Off, 1: ShutDown, 2: Heating, 3: Cooling, 4: Manual, 5: De-icing, 6: Grid-lock}")|O3EEnum|1||||
 **2807**|**InverterHousingTemperature**|RawCodec|9||ro||
 **2808**|**InverterInternalPowerModuleTemperature**|RawCodec|9||ro||
 **2809**|**PumpMinSpeedConfiguration**|RawCodec|1||ro||
@@ -6042,11 +6040,11 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Maximum|O3EInt16|2||||
 | |- Average|O3EInt16|2||||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-**3016**|**HeatingBufferTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+**3016**|[**HeatingBufferTemperatureSensor**](## "Actual temperature of the heating buffer")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 **3017**|**CoolingBufferTemperatureSensor**|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2||||
