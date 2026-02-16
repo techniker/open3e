@@ -2396,6 +2396,15 @@ E3Enums = {
         2: "Postrun",
     },
 
+    "DomesticHotWaterOperationStates": {
+        0: "Off",
+        1: "Hot water",
+        2: "Parallel operation",
+        3: "Chimney sweep",
+        4: "Test mode",
+        5: "Automatic",
+    },
+
     "PowerStates": {
         0: "Off",
         1: "On",

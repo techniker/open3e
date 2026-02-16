@@ -97,8 +97,8 @@
           "id": "Count",
           "args": {
             "unit": "",
-            "desc": "",
-            "info": "Number of entries listed",
+            "desc": "Number of entries listed",
+            "info": "",
             "acc": ""
           }
         },
@@ -857,7 +857,7 @@
           }
         }
       ],
-      "desc": "Flow temperature in the primary circuit downstream from the heat generator.",
+      "desc": "Flow temperature in the primary circuit downstream from the heat generator",
       "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
       "acc": "ro"
     }
@@ -932,7 +932,7 @@
           }
         }
       ],
-      "desc": "Flow temperature in the primary circuit upstream from the heat generator.",
+      "desc": "Flow temperature in the primary circuit upstream from the heat generator",
       "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
       "acc": "ro"
     }
@@ -950,7 +950,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -963,7 +963,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -976,7 +976,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -989,7 +989,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1007,8 +1007,8 @@
           }
         }
       ],
-      "desc": "",
-      "info": "",
+      "desc": "Actual temperature domestic hot water buffer",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -2740,8 +2740,8 @@
           }
         }
       ],
-      "desc": "",
-      "info": "Actual pressure compressor outlet",
+      "desc": "Actual pressure compressor outlet",
+      "info": "",
       "acc": "ro"
     }
   },
@@ -6996,18 +6996,18 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "State",
           "args": {
-            "unit": "",
+            "listStr": "DomesticHotWaterOperationStates",
             "desc": "",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
+      "desc": "Operation state of domestic hot water preparation",
       "info": "",
       "acc": "rw"
     }
@@ -14291,7 +14291,7 @@
           "args": {
             "scale": 10.0,
             "signed": false,
-            "unit": "",
+            "unit": "l/h",
             "desc": "",
             "info": "",
             "acc": ""
@@ -14304,7 +14304,7 @@
           "args": {
             "scale": 10.0,
             "signed": false,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -14319,8 +14319,8 @@
           }
         }
       ],
-      "desc": "",
-      "info": "",
+      "desc": "Flow rate and temperature in the primary circuit of the heat generator",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -15243,7 +15243,7 @@
           "args": {
             "scale": 10.0,
             "signed": false,
-            "unit": "",
+            "unit": "kW",
             "desc": "",
             "info": "",
             "acc": ""
@@ -15258,7 +15258,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual thermal power output of the system",
       "info": "",
       "acc": "ro"
     }
@@ -43149,9 +43149,9 @@
     "args": {
       "scale": 1,
       "signed": true,
-      "unit": "",
-      "desc": "W",
-      "info": "Actual total electrical power consumption of the system",
+      "unit": "W",
+      "desc": "Actual total electrical power consumption of the system",
+      "info": "",
       "acc": "ro"
     }
   },

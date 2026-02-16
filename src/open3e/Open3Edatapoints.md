@@ -2,12 +2,21 @@
 - Version of general data points: 20260216
 - Version of variant data points: 20260215
 
-### Remarks:
+### Remarks
 * Information on write access to data points (column Access) is based on documents of Viessmann
   * ro => data point is read only
   * rw => data point is read and write. However, device my reject or ignore write access anyway
-## Frequently used data points
-A list of all presently known data points is available [below](#all-presently-known-data-points)
+
+### Content
+[Frequently used data points including subs](#frequently-used-data-points-including-subs)
+
+[Frequently used data points as compact list](#frequently-used-data-points-in-compact-format)
+
+[All presently known data points including subs](#all-presently-known-data-points-including-subs)
+
+[All presently known data points as compact list](#all-presently-known-data-points-in-compact-format)
+
+## Frequently used data points including subs
 |  Did | ID   | Codec | Length | Unit  |   Access | Further info |
 | ---: | :--- | :---  | ---:   | :---: |  :---:  | :---         |
 |**256**|[**BusIdentification**](## "Device infos")|*O3EComplexType*|36||ro||
@@ -19,7 +28,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- HW-Version|O3ESoftVers|8||||
 | |- VIN|O3EUtf8|16||||
 |**257**|[**StatusDtcList**](## "List of active status messages")|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2|||Number of entries listed|
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - State|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
@@ -70,23 +79,23 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- - Error|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-|**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator.")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "Actual state of sensor {0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**269**|[**ReturnTemperatureSensor**](## "Flow temperature in the primary circuit upstream from the heat generator.")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**269**|[**ReturnTemperatureSensor**](## "Flow temperature in the primary circuit upstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**271**|**DomesticHotWaterSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+|**271**|[**DomesticHotWaterSensor**](## "Actual temperature domestic hot water buffer")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**274**|[**OutsideTemperatureSensor**](## "Outside temperature value")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -136,7 +145,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**325**|**CompressorOutletPressureSensor**|*O3EComplexType*|9||ro|Actual pressure compressor outlet|
+|**325**|[**CompressorOutletPressureSensor**](## "Actual pressure compressor outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|hPa|||
 | |- Minimum|O3EInt16|2|hPa|||
 | |- Maximum|O3EInt16|2|hPa|||
@@ -165,9 +174,9 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- HeatingActive|O3EByteVal|1||||
 | |- CyclesPerHour|O3EByteVal|1||||
 | |- Cycles|O3EByteVal|1||||
-|**531**|**DomesticHotWaterOperationState**|*O3EComplexType*|2||**rw**||
+|**531**|[**DomesticHotWaterOperationState**](## "Operation state of domestic hot water preparation")|*O3EComplexType*|2||**rw**||
 | |- Mode|O3EByteVal|1||||
-| |- State|O3EByteVal|1||||
+| |- [State](## "{0: Off, 1: Hot water, 2: Parallel operation, 3: Chimney sweep, 4: Test mode, 5: Automatic}")|O3EEnum|1||||
 |**902**|[**MalfunctionIdentification**](## "Indicates whether faults are present")|O3EByteVal|1||ro||
 |**954**|[**BusTopologyMatrix**](## "Matrix of CAN bus topology")|*O3EList*|181||ro||
 | |- [Count](## "Number of list entries")|O3EInt8|1||||
@@ -180,54 +189,13 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- - HW-Version|O3ESoftVers|8||||
 | |- - VIN|O3EUtf8|16||||
 |**987**|[**MixerOneCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 1")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
-|**1043**|**AllengraSensor**|*O3EComplexType*|5||ro||
-| |- Actual|O3EInt16|2||||
-| |- Temperature|O3EInt16|2||||
+|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+| |- Actual|O3EInt16|2|l/h|||
+| |- Temperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Unknown|RawCodec|1||||
-|**1190**|**ThermalPower**|*O3EComplexType*|4||ro||
-| |- Power|O3EInt16|2||||
+|**1190**|[**ThermalPower**](## "Actual thermal power output of the system")|*O3EComplexType*|4||ro||
+| |- Power|O3EInt16|2|kW|||
 | |- Unknown|RawCodec|2||||
-|**1286**|**BusTopologyMatrixTwo**|*O3EList*|181||ro||
-| |- Count|O3EInt8|1||||
-| |- TopologyElement|*O3EComplexType*|36||||
-| |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- - DeviceProperty|O3EByteVal|1||||
-| |- - DeviceFunction|O3EByteVal|1||||
-| |- - SW-Version|O3ESoftVers|8||||
-| |- - HW-Version|O3ESoftVers|8||||
-| |- - VIN|O3EUtf8|16||||
-|**1287**|**BusTopologyMatrixThree**|*O3EList*|181||ro||
-| |- Count|O3EInt8|1||||
-| |- TopologyElement|*O3EComplexType*|36||||
-| |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- - DeviceProperty|O3EByteVal|1||||
-| |- - DeviceFunction|O3EByteVal|1||||
-| |- - SW-Version|O3ESoftVers|8||||
-| |- - HW-Version|O3ESoftVers|8||||
-| |- - VIN|O3EUtf8|16||||
-|**1288**|**BusTopologyMatrixFour**|*O3EList*|181||ro||
-| |- Count|O3EInt8|1||||
-| |- TopologyElement|*O3EComplexType*|36||||
-| |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- - DeviceProperty|O3EByteVal|1||||
-| |- - DeviceFunction|O3EByteVal|1||||
-| |- - SW-Version|O3ESoftVers|8||||
-| |- - HW-Version|O3ESoftVers|8||||
-| |- - VIN|O3EUtf8|16||||
-|**1289**|**BusTopologyMatrixFive**|*O3EList*|181||ro||
-| |- Count|O3EInt8|1||||
-| |- TopologyElement|*O3EComplexType*|36||||
-| |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- - DeviceProperty|O3EByteVal|1||||
-| |- - DeviceFunction|O3EByteVal|1||||
-| |- - SW-Version|O3ESoftVers|8||||
-| |- - HW-Version|O3ESoftVers|8||||
-| |- - VIN|O3EUtf8|16||||
-|**1290**|**DomesticHotWaterShiftLoadPump**|RawCodec|4||ro||
 |**1294**|[**EnergyConsumptionCentralHeatingMonthMatrix**](## "Energy Consumption Central Heating Per Month")|*O3EComplexType*|124||ro||
 | |- [CurrentMonth](## "Energy Consumption Central Heating Current Month")|*O3EList*|62||||
 | |- - 01|O3EInt16|2|kWh|||
@@ -754,7 +722,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Unknown3|RawCodec|2||||
 |**2486**|[**CurrentElectricalPowerConsumptionRefrigerantCircuit**](## "Actual electrical power consumption of the refrigeration circuit")|O3EInt32|4|W|ro||
 |**2487**|[**CurrentElectricalPowerConsumptionElectricHeater**](## "Actual electrical power consumption of the auxiliary heater")|O3EInt32|4|W|ro||
-|**2488**|[**CurrentElectricalPowerConsumptionSystem**](## "W")|O3EInt32|4||ro|Actual total electrical power consumption of the system|
+|**2488**|[**CurrentElectricalPowerConsumptionSystem**](## "Actual total electrical power consumption of the system")|O3EInt32|4|W|ro||
 |**2494**|[**CurrentThermalCapacityRefrigerantCircuit**](## "Actual thermal power output of the refrigeration circuit")|O3EInt32|4|W|ro||
 |**2495**|[**CurrentThermalCapacityElectricHeater**](## "Actual thermal power output of the auxiliary heater")|O3EInt32|4|W|ro||
 |**2496**|[**CurrentThermalCapacitySystem**](## "Actual thermal power output of the system")|O3EInt32|4|W|ro||
@@ -769,7 +737,113 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-## All presently known data points
+## Frequently used data points in compact format
+
+[Back to content](#content)
+
+|  Did | ID   | Codec | Length | Unit  |   Access | Further info |
+| ---: | :--- | :---  | ---:   | :---: |  :---:  | :---         |
+|**256**|[**BusIdentification**](## "Device infos")|*O3EComplexType*|36||ro||
+|**257**|[**StatusDtcList**](## "List of active status messages")|*O3EList*|122||ro||
+|**258**|[**StatusDtcHistory**](## "History of status messages")|*O3EList*|122||ro||
+|**259**|[**InfoDtcList**](## "List of active info messages")|*O3EList*|122||ro||
+|**260**|[**InfoDtcHistory**](## "History of info messages")|*O3EList*|122||ro||
+|**261**|[**ServiceDtcList**](## "List of active service messages")|*O3EList*|122||ro||
+|**262**|[**ServiceDtcHistory**](## "History of service messages")|*O3EList*|122||ro||
+|**263**|[**WarningDtcList**](## "List of active warning messages")|*O3EList*|122||ro||
+|**264**|[**WarningDtcHistory**](## "History of warning messages")|*O3EList*|124||ro||
+|**265**|[**ErrorDtcList**](## "List of active error messages")|*O3EList*|122||ro||
+|**266**|[**ErrorDtcHistory**](## "History of error messages")|*O3EList*|124||ro||
+|**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**269**|[**ReturnTemperatureSensor**](## "Flow temperature in the primary circuit upstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**271**|[**DomesticHotWaterSensor**](## "Actual temperature domestic hot water buffer")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**274**|[**OutsideTemperatureSensor**](## "Outside temperature value")|*O3EComplexType*|9||ro||
+|**282**|[**HydraulicSeparatorTemperatureSensor**](## "Actual flow temperature of the hydraulic switch")|*O3EComplexType*|9||ro||
+|**284**|[**MixerOneCircuitFlowTemperatureSensor**](## "Heating circuit 1: Actual flow temperature value")|*O3EComplexType*|9||ro||
+|**318**|[**WaterPressureSensor**](## "Actual pressure heat generator circulation")|*O3EComplexType*|9||ro||
+|**320**|[**PrimaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature primary heat exchanger inlet")|*O3EComplexType*|9||ro||
+|**321**|[**CompressorInletTemperatureSensor**](## "Actual temperature compressor inlet")|*O3EComplexType*|9||ro||
+|**322**|[**CompressorInletPressureSensor**](## "Actual pressure compressor inlet")|*O3EComplexType*|9||ro||
+|**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
+|**325**|[**CompressorOutletPressureSensor**](## "Actual pressure compressor outlet")|*O3EComplexType*|9||ro||
+|**355**|[**SecondaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature secondary heat exchanger outlet")|*O3EComplexType*|9||ro||
+|**381**|[**CentralHeatingPump**](## "Status of the primary circuit pump")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/discussions/212)|
+|**389**|[**ElectronicExpansionValveOneCurrentPositionPercent**](## "Actual position expansion valve one (secondary heat exchanger outlet)")|O3EInt8|1|%|ro||
+|**391**|[**ElectronicExpansionValveTwoCurrentPositionPercent**](## "Actual position expansion valve two (evaporator outlet)")|O3EInt8|1|%|ro||
+|**396**|[**DomesticHotWaterTemperatureSetpoint**](## "Teperature setpoint domestic hot water")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**491**|[**DomesticHotWaterCirculationPump**](## "Request for domestic hot water circulation pump")|*O3EComplexType*|2||**rw**||
+|**497**|[**DomesticHotWaterCirculationPumpMode**](## "Operation Mode of domestic hot water circulation pump")|*O3EComplexType*|5||**rw**|[See page 22f](https://static.viessmann-climatesolutions.com/resources/technical_documents/DE/de/VSA/6179923VSA00001_1.pdf?)|
+|**531**|[**DomesticHotWaterOperationState**](## "Operation state of domestic hot water preparation")|*O3EComplexType*|2||**rw**||
+|**902**|[**MalfunctionIdentification**](## "Indicates whether faults are present")|O3EByteVal|1||ro||
+|**954**|[**BusTopologyMatrix**](## "Matrix of CAN bus topology")|*O3EList*|181||ro||
+|**987**|[**MixerOneCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 1")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**1190**|[**ThermalPower**](## "Actual thermal power output of the system")|*O3EComplexType*|4||ro||
+|**1294**|[**EnergyConsumptionCentralHeatingMonthMatrix**](## "Energy Consumption Central Heating Per Month")|*O3EComplexType*|124||ro||
+|**1311**|[**EnergyConsumptionDomesticHotWaterMonthMatrix**](## "Energy Consumption Domestic Hot Water Per Month")|*O3EComplexType*|124||ro||
+|**1315**|[**GeneratedCentralHeatingOutputMonthMatrix**](## "Generated Central Heating Output Per Month")|*O3EComplexType*|124||ro||
+|**1316**|[**EnergyConsumptionCentralHeatingYearMatrix**](## "Energy Consumption Central Heating Per Year")|*O3EComplexType*|96||ro||
+|**1333**|[**EnergyConsumptionDomesticHotWaterYearMatrix**](## "Energy Consumption Domestic Hot Water Per Year")|*O3EComplexType*|96||ro||
+|**1337**|[**GeneratedCentralHeatingOutputYearMatrix**](## "Generated Central Heating Output Per Year")|*O3EComplexType*|96||ro||
+|**1339**|**MalfunctionHeatingUnitBlocked**|O3EByteVal|1||ro||
+|**1391**|**GeneratedDomesticHotWaterOutput**|*O3EComplexType*|24||ro||
+|**1392**|**GeneratedDomesticHotWaterOutputMonthMatrix**|*O3EComplexType*|124||ro||
+|**1393**|**GeneratedDomesticHotWaterOutputYearMatrix**|*O3EComplexType*|96||ro||
+|**1415**|**MixerOneCircuitOperationState**|*O3EComplexType*|2||**rw**||
+|**1552**|**ElectricalEnergyStorageOperationState**|RawCodec|7||**rw**||
+|**1590**|**ElectricalEnergySystemOperationState**|RawCodec|6||**rw**||
+|**1603**|**PointOfCommonCouplingPower**|*O3EComplexType*|4||ro||
+|**1603**|**PointOfCommonCouplingPower**|*O3EComplexType*|12||ro||
+|**1607**|**MalfunctionUnitBlocked**|O3EByteVal|1||ro||
+|**1643**|**MixerOneCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**1664**|**ElectricalEnergyStorageStateOfCharge**|O3EInt8|1||ro||
+|**1684**|**AmbientTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1690**|**ElectricalEnergySystemPhotovoltaicStatus**|*O3EComplexType*|17||ro||
+|**1770**|**SecondaryOutletTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1771**|**EngineRoomTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1772**|**CompressorOilTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1773**|**RefrigerantCircuitFourWayValve**|O3EByteVal|1||ro||
+|**1774**|**CompressorCrankCaseHeater**|O3EByteVal|1||ro||
+|**1775**|**PrimaryCircuitFanOne**|O3EByteVal|1||ro||
+|**1776**|**PrimaryCircuitFanTwo**|O3EByteVal|1||ro||
+|**1799**|**PrimaryCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**1801**|**ElectricalEnergyStorageEnergyTransferStatistic**|*O3EComplexType*|40||ro||
+|**1802**|**EnergyProductionPhotovoltaic**|*O3EComplexType*|80||ro||
+|**1815**|**ElectricalHeaterPhaseOne**|O3EInt8|1||ro||
+|**1816**|**ElectricalHeaterPhaseTwo**|O3EInt8|1||ro||
+|**1817**|**ElectricalHeaterPhaseThree**|O3EInt8|1||ro||
+|**1828**|**InverterElectricalEnergyStorageCurrentMaximumlChargePower**|*O3EComplexType*|4||ro||
+|**1830**|**InverterElectricalEnergyStorageCurrentMaximumlDishargePower**|*O3EComplexType*|4||ro||
+|**1831**|**PhotovoltaicCurrentStringPower**|*O3EComplexType*|12||ro||
+|**1832**|**PhotovoltaicStringCurrent**|*O3EComplexType*|12||ro||
+|**1833**|**PhotovoltaicStringVoltage**|*O3EComplexType*|12||ro||
+|**1834**|**ElectricalEnergyStorageStateOfEnergy**|*O3EComplexType*|4||ro||
+|**1836**|**ElectricalEnergyStorageCurrentPower**|O3EInt32|4||ro||
+|**1841**|**PointOfCommonCouplingOverview**|RawCodec|32||ro||
+|**1842**|**SecondaryCircuitFourThreeWayValve**|*O3EComplexType*|2||ro||
+|**2214**|[**BackupBoxConfiguration**](## "Configuration for Backup Box")|*O3EComplexType*|2||**rw**||
+|**2256**|[**DesiredThermalEnergyDefrost**](## "Target value of thermal energy to perform next defrosting")|O3EInt16|2|Wh|ro||
+|**2320**|[**DomesticHotWaterStatus**](## "Status of domestic hot water preparation {0: Idle, 1: Active, 2: Postrun}")|O3EEnum|1||ro||
+|**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2334**|[**EvaporatorVaporTemperatureSensor**](## "Actual temperature avaporator inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2351**|[**HeatPumpCompressor**](## "Actual state of the heat pump compressor")|*O3EComplexType*|2||ro||
+|**2352**|[**AdditionalElectricHeater**](## "Actual state of the electric auxiliary heating")|*O3EComplexType*|2||ro||
+|**2369**|[**HeatPumpCompressorStatistical**](## "Statistics for heat pump compressor starts")|*O3EComplexType*|14||ro||
+|**2486**|[**CurrentElectricalPowerConsumptionRefrigerantCircuit**](## "Actual electrical power consumption of the refrigeration circuit")|O3EInt32|4|W|ro||
+|**2487**|[**CurrentElectricalPowerConsumptionElectricHeater**](## "Actual electrical power consumption of the auxiliary heater")|O3EInt32|4|W|ro||
+|**2488**|[**CurrentElectricalPowerConsumptionSystem**](## "Actual total electrical power consumption of the system")|O3EInt32|4|W|ro||
+|**2494**|[**CurrentThermalCapacityRefrigerantCircuit**](## "Actual thermal power output of the refrigeration circuit")|O3EInt32|4|W|ro||
+|**2495**|[**CurrentThermalCapacityElectricHeater**](## "Actual thermal power output of the auxiliary heater")|O3EInt32|4|W|ro||
+|**2496**|[**CurrentThermalCapacitySystem**](## "Actual thermal power output of the system")|O3EInt32|4|W|ro||
+|**2569**|[**CompressorSpeedRps**](## "Actual speed of the heat pump compressor")|O3EInt16|2|rps|ro||
+|**2735**|[**FourThreeWayValveValveCurrentPosition**](## "Current position of the four/three-way valve {0: Heating/Cooling, 1: Internal Buffer, 2: Domestic Hot Water, 3: Heating/Cooling and Internal Buffer, 4: Domestic Hot Water and Internal Buffer}")|O3EEnum|1||ro||
+|**2806**|[**RefrigerationCircuitOperationMode**](## "Actual operating mode of the refrigeration circuit")|*O3EComplexType*|2||ro||
+|**3016**|[**HeatingBufferTemperatureSensor**](## "Actual temperature of the heating buffer")|*O3EComplexType*|9||ro||
+## All presently known data points including subs
+
+[Back to content](#content)
+
 |  Did | ID   | Codec | Length | Unit  |   Access | Further info |
 | ---: | :--- | :---  | ---:   | :---: |  :---:  | :---         |
 |**256**|[**BusIdentification**](## "Device infos")|*O3EComplexType*|36||ro||
@@ -781,7 +855,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- HW-Version|O3ESoftVers|8||||
 | |- VIN|O3EUtf8|16||||
 |**257**|[**StatusDtcList**](## "List of active status messages")|*O3EList*|122||ro||
-| |- Count|O3EByteVal|2|||Number of entries listed|
+| |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - State|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
@@ -832,23 +906,23 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- - Error|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-|**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator.")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "Actual state of sensor {0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**269**|[**ReturnTemperatureSensor**](## "Flow temperature in the primary circuit upstream from the heat generator.")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**269**|[**ReturnTemperatureSensor**](## "Flow temperature in the primary circuit upstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**271**|**DomesticHotWaterSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+|**271**|[**DomesticHotWaterSensor**](## "Actual temperature domestic hot water buffer")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**272**|**DomesticHotWaterFlowSensor**|RawCodec|10||ro||
 |**273**|[**SolarRoofTemperatureSensor**](## "Actual collector temperature value")|*O3EComplexType*|9||ro||
@@ -983,7 +1057,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**325**|**CompressorOutletPressureSensor**|*O3EComplexType*|9||ro|Actual pressure compressor outlet|
+|**325**|[**CompressorOutletPressureSensor**](## "Actual pressure compressor outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|hPa|||
 | |- Minimum|O3EInt16|2|hPa|||
 | |- Maximum|O3EInt16|2|hPa|||
@@ -1347,9 +1421,9 @@ A list of all presently known data points is available [below](#all-presently-kn
 |**526**|**ModulationCurrentValue**|O3EInt16|2||ro||
 |**527**|**FlowTemperatureTargetSetpoint**|O3EInt16|2||**rw**||
 |**528**|**ExternalTargetFlowTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**531**|**DomesticHotWaterOperationState**|*O3EComplexType*|2||**rw**||
+|**531**|[**DomesticHotWaterOperationState**](## "Operation state of domestic hot water preparation")|*O3EComplexType*|2||**rw**||
 | |- Mode|O3EByteVal|1||||
-| |- State|O3EByteVal|1||||
+| |- [State](## "{0: Off, 1: Hot water, 2: Parallel operation, 3: Chimney sweep, 4: Test mode, 5: Automatic}")|O3EEnum|1||||
 |**533**|**VentilationTargetOperationLevel**|*O3EComplexType*|2||**rw**||
 | |- Acutual|O3EByteVal|1||||
 | |- Unknown1|O3EByteVal|1||||
@@ -2063,9 +2137,9 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- Actual|O3EInt16|2||||
 | |- Unknown2|RawCodec|1||||
 |**1042**|**PrimaryHeatExchangerTemperatureSensor**|RawCodec|9||ro||
-|**1043**|**AllengraSensor**|*O3EComplexType*|5||ro||
-| |- Actual|O3EInt16|2||||
-| |- Temperature|O3EInt16|2||||
+|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+| |- Actual|O3EInt16|2|l/h|||
+| |- Temperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Unknown|RawCodec|1||||
 |**1044**|**SecondaryCentralHeatingPump**|RawCodec|2||ro||
 |**1047**|**TimeSeriesRecordedFlowTemperatureSensor**|RawCodec|11||ro||
@@ -2146,8 +2220,8 @@ A list of all presently known data points is available [below](#all-presently-kn
 |**1177**|**AcknowledgeServiceAlarmMessage**|O3EByteVal|1||ro||
 |**1178**|**AcknowledgeErrorAlarmMessage**|O3EByteVal|1||ro||
 |**1181**|**DisplayTestMode**|O3EInt8|1||ro||
-|**1190**|**ThermalPower**|*O3EComplexType*|4||ro||
-| |- Power|O3EInt16|2||||
+|**1190**|[**ThermalPower**](## "Actual thermal power output of the system")|*O3EComplexType*|4||ro||
+| |- Power|O3EInt16|2|kW|||
 | |- Unknown|RawCodec|2||||
 |**1191**|**FuelCellStatus**|RawCodec|1||ro||
 |**1192**|**MixerOneCircuitFlowTemperatureMinimumMaximumLimit**|*O3EComplexType*|10||**rw**||
@@ -5369,7 +5443,7 @@ A list of all presently known data points is available [below](#all-presently-kn
 |**2484**|**ElectricalPowerRangeMetaData**|RawCodec|8||ro||
 |**2486**|[**CurrentElectricalPowerConsumptionRefrigerantCircuit**](## "Actual electrical power consumption of the refrigeration circuit")|O3EInt32|4|W|ro||
 |**2487**|[**CurrentElectricalPowerConsumptionElectricHeater**](## "Actual electrical power consumption of the auxiliary heater")|O3EInt32|4|W|ro||
-|**2488**|[**CurrentElectricalPowerConsumptionSystem**](## "W")|O3EInt32|4||ro|Actual total electrical power consumption of the system|
+|**2488**|[**CurrentElectricalPowerConsumptionSystem**](## "Actual total electrical power consumption of the system")|O3EInt32|4|W|ro||
 |**2489**|**FrostProtectionStatus**|RawCodec|3||ro||
 |**2490**|**StartUpWizardState**|RawCodec|1||ro||
 |**2491**|**DomesticHotWaterDemandInput**|RawCodec|1||ro||
@@ -6259,4 +6333,1639 @@ A list of all presently known data points is available [below](#all-presently-kn
 |**3384**|**ElectricalActivePowerConsumptionLimitationDefaultValue**|*O3EComplexType*|4||ro||
 | |- Default|O3EInt16|2||||
 | |- CurrentValue|O3EInt16|2||||
+## All presently known data points in compact format
+
+[Back to content](#content)
+
+|  Did | ID   | Codec | Length | Unit  |   Access | Further info |
+| ---: | :--- | :---  | ---:   | :---: |  :---:  | :---         |
+|**256**|[**BusIdentification**](## "Device infos")|*O3EComplexType*|36||ro||
+|**257**|[**StatusDtcList**](## "List of active status messages")|*O3EList*|122||ro||
+|**258**|[**StatusDtcHistory**](## "History of status messages")|*O3EList*|122||ro||
+|**259**|[**InfoDtcList**](## "List of active info messages")|*O3EList*|122||ro||
+|**260**|[**InfoDtcHistory**](## "History of info messages")|*O3EList*|122||ro||
+|**261**|[**ServiceDtcList**](## "List of active service messages")|*O3EList*|122||ro||
+|**262**|[**ServiceDtcHistory**](## "History of service messages")|*O3EList*|122||ro||
+|**263**|[**WarningDtcList**](## "List of active warning messages")|*O3EList*|122||ro||
+|**264**|[**WarningDtcHistory**](## "History of warning messages")|*O3EList*|124||ro||
+|**265**|[**ErrorDtcList**](## "List of active error messages")|*O3EList*|122||ro||
+|**266**|[**ErrorDtcHistory**](## "History of error messages")|*O3EList*|124||ro||
+|**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**269**|[**ReturnTemperatureSensor**](## "Flow temperature in the primary circuit upstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**271**|[**DomesticHotWaterSensor**](## "Actual temperature domestic hot water buffer")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**272**|**DomesticHotWaterFlowSensor**|RawCodec|10||ro||
+|**273**|[**SolarRoofTemperatureSensor**](## "Actual collector temperature value")|*O3EComplexType*|9||ro||
+|**274**|[**OutsideTemperatureSensor**](## "Outside temperature value")|*O3EComplexType*|9||ro||
+|**275**|[**SolarBottomTemperatureSensor**](## "Actual collector return temperature value")|*O3EComplexType*|9||ro||
+|**277**|[**BufferBottomTemperatureSensor**](## "Actual buffer bottom temperature value")|*O3EComplexType*|9||ro||
+|**278**|[**BufferMidBottomTemperatureSensor**](## "Actual buffer mid bottom temperature value")|*O3EComplexType*|9||ro||
+|**279**|[**BufferMidTemperatureSensor**](## "Actual buffer mid temperature value")|*O3EComplexType*|9||ro||
+|**281**|[**BufferTopTemperatureSensor**](## "Actual buffer top temperature value")|*O3EComplexType*|9||ro||
+|**282**|[**HydraulicSeparatorTemperatureSensor**](## "Actual flow temperature of the hydraulic switch")|*O3EComplexType*|9||ro||
+|**283**|[**HydraulicSeparatorReturnTemperatureSensor**](## "Actual return temperature of the hydraulic switch")|*O3EComplexType*|9||ro||
+|**284**|[**MixerOneCircuitFlowTemperatureSensor**](## "Heating circuit 1: Actual flow temperature value")|*O3EComplexType*|9||ro||
+|**285**|[**MixerOneCircuitReturnTemperatureSensor**](## "Heating circuit 1: Actual return temperature value")|*O3EComplexType*|9||ro||
+|**286**|[**MixerTwoCircuitFlowTemperatureSensor**](## "Heating circuit 2: Actual flow temperature value")|*O3EComplexType*|9||ro||
+|**287**|[**MixerTwoCircuitReturnTemperatureSensor**](## "Heating circuit 2: Actual return temperature value")|*O3EComplexType*|9||ro||
+|**288**|[**MixerThreeCircuitFlowTemperatureSensor**](## "Heating circuit 3: Actual flow temperature value")|*O3EComplexType*|9||ro||
+|**289**|[**MixerThreeCircuitReturnTemperatureSensor**](## "Heating circuit 3: Actual return temperature value")|*O3EComplexType*|9||ro||
+|**290**|[**MixerFourCircuitFlowTemperatureSensor**](## "Heating circuit 4: Actual flow temperature value")|*O3EComplexType*|9||ro||
+|**291**|[**MixerFourCircuitReturnTemperatureSensor**](## "Heating circuit 4: Actual return temperature value")|*O3EComplexType*|9||ro||
+|**318**|[**WaterPressureSensor**](## "Actual pressure heat generator circulation")|*O3EComplexType*|9||ro||
+|**320**|[**PrimaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature primary heat exchanger inlet")|*O3EComplexType*|9||ro||
+|**321**|[**CompressorInletTemperatureSensor**](## "Actual temperature compressor inlet")|*O3EComplexType*|9||ro||
+|**322**|[**CompressorInletPressureSensor**](## "Actual pressure compressor inlet")|*O3EComplexType*|9||ro||
+|**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
+|**325**|[**CompressorOutletPressureSensor**](## "Actual pressure compressor outlet")|*O3EComplexType*|9||ro||
+|**327**|**OutdoorAirTemperatureSensor**|*O3EComplexType*|9||ro||
+|**328**|**SupplyAirTemperatureSensor**|*O3EComplexType*|9||ro||
+|**329**|**ExtractAirTemperatureSensor**|*O3EComplexType*|9||ro||
+|**330**|**ExhaustAirTemperatureSensor**|*O3EComplexType*|9||ro||
+|**331**|**FlueGasTemperatureSensor**|*O3EComplexType*|9||ro||
+|**323**|**EnhancedVapourInjectionTemperatureSensor**|RawCodec|9||ro||
+|**334**|**MixerOneCircuitRoomTemperatureSensor**|*O3EComplexType*|9||ro||
+|**335**|**MixerTwoCircuitRoomTemperatureSensor**|*O3EComplexType*|9||ro||
+|**336**|**MixerThreeCircuitRoomTemperatureSensor**|*O3EComplexType*|9||ro||
+|**337**|**MixerFourCircuitRoomTemperatureSensor**|*O3EComplexType*|9||ro||
+|**354**|**PrimaryHeatExchangerBaseHeater**|O3EByteVal|1||ro||
+|**355**|[**SecondaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature secondary heat exchanger outlet")|*O3EComplexType*|9||ro||
+|**356**|**MainPowerSupplyValue**|O3EInt16|2||ro||
+|**360**|**DomesticHotWaterOutletSensor**|*O3EComplexType*|9||ro||
+|**364**|**Flame**|*O3EComplexType*|6||ro||
+|**365**|**FlameStatistical**|*O3EComplexType*|42||ro||
+|**373**|**FanTargetSpeed**|O3EInt16|2||**rw**||
+|**374**|**FanCurrentSpeed**|O3EInt16|2||ro||
+|**376**|**MassFlowSensor**|*O3EComplexType*|9||ro||
+|**377**|**ViessmannIdentificationNumber**|O3EUtf8|16||ro||
+|**378**|**PointOfCommonCouplingPhaseOne**|*O3EComplexType*|4||ro||
+|**379**|**PointOfCommonCouplingPhaseTwo**|*O3EComplexType*|4||ro||
+|**380**|**PointOfCommonCouplingPhaseThree**|*O3EComplexType*|4||ro||
+|**381**|[**CentralHeatingPump**](## "Status of the primary circuit pump")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/discussions/212)|
+|**382**|**UnitsAndFormats**|*O3EComplexType*|5||ro||
+|**386**|**DiverterValveTargetPosition**|O3EByteVal|1||**rw**||
+|**388**|[**ElectronicExpansionValveOneTargetPositionPercent**](## "Target position expansion valve one (secondary heat exchanger outlet)")|O3EInt8|1|%|**rw**||
+|**389**|[**ElectronicExpansionValveOneCurrentPositionPercent**](## "Actual position expansion valve one (secondary heat exchanger outlet)")|O3EInt8|1|%|ro||
+|**390**|[**ElectronicExpansionValveTwoTargetPositionPercent**](## "Target position expansion valve two (evaporator outlet)")|O3EInt8|1|%|**rw**||
+|**391**|[**ElectronicExpansionValveTwoCurrentPositionPercent**](## "Actual position expansion valve two (evaporator outlet)")|O3EInt8|1|%|ro||
+|**392**|**DomesticHotWaterPump**|RawCodec|4||ro||
+|**395**|[**CentralHeatingTemperatureSetpoint**](## "Teperature setpoint central heating")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**396**|[**DomesticHotWaterTemperatureSetpoint**](## "Teperature setpoint domestic hot water")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**401**|**MixerOneCircuitPump**|*O3EComplexType*|5||ro||
+|**402**|**MixerTwoCircuitPump**|*O3EComplexType*|5||ro||
+|**403**|**MixerThreeCircuitPump**|*O3EComplexType*|5||ro||
+|**404**|**MixerFourCircuitPump**|*O3EComplexType*|5||ro||
+|**405**|**MixerFiveCircuitPump**|*O3EComplexType*|5||ro||
+|**406**|**MixerSixCircuitPump**|*O3EComplexType*|5||ro||
+|**407**|**MixerSevenCircuitPump**|*O3EComplexType*|5||ro||
+|**408**|**MixerEightCircuitPump**|*O3EComplexType*|5||ro||
+|**417**|**SolarCircuitPump**|*O3EComplexType*|5||ro||
+|**419**|**OutdoorAirHumiditySensor**|*O3EComplexType*|5||ro||
+|**420**|**SupplyAirHumiditySensor**|*O3EComplexType*|5||ro||
+|**421**|**ExtractAirHumiditySensor**|*O3EComplexType*|5||ro||
+|**422**|**ExhaustAirHumiditySensor**|*O3EComplexType*|5||ro||
+|**424**|**MixerOneCircuitRoomTemperatureSetpoint**|*O3EComplexType*|9||**rw**||
+|**426**|**MixerTwoCircuitRoomTemperatureSetpoint**|*O3EComplexType*|9||**rw**||
+|**428**|**MixerThreeCircuitRoomTemperatureSetpoint**|*O3EComplexType*|9||**rw**||
+|**429**|**ElectricalPreHeater**|RawCodec|4||ro||
+|**430**|**MixerFourCircuitRoomTemperatureSetpoint**|*O3EComplexType*|9||**rw**||
+|**431**|**SupplyAirVolumeFlowSensor**|*O3EComplexType*|9||ro||
+|**432**|**MixerFiveCircuitRoomTemperatureSetpoint**|*O3EComplexType*|9||**rw**||
+|**433**|**ExhaustAirVolumeFlowSensor**|*O3EComplexType*|9||ro||
+|**434**|**MixerSixCircuitRoomTemperatureSetpoint**|*O3EComplexType*|9||**rw**||
+|**435**|**VentilationStageTargetVolumeFlow**|*O3EComplexType*|8||**rw**||
+|**436**|**MixerSevenCircuitRoomTemperatureSetpoint**|*O3EComplexType*|9||**rw**||
+|**437**|**BypassOperationState**|*O3EComplexType*|2||**rw**||
+|**438**|**MixerEightCircuitRoomTemperatureSetpoint**|*O3EComplexType*|9||**rw**||
+|**439**|**BypassAvailableModes**|O3EByteVal|1||ro||
+|**449**|**ElectricalEnergyMatrix**|RawCodec|141||ro||
+|**451**|**ExternalAlternatingCurrentPowerSetpoint**|RawCodec|4||**rw**||
+|**475**|**MixerOneCircuitThreeWayValvePositionPercent**|*O3EComplexType*|2||ro||
+|**476**|**MixerTwoCircuitThreeWayValvePositionPercent**|*O3EComplexType*|2||ro||
+|**477**|**MixerThreeCircuitThreeWayValvePositionPercent**|*O3EComplexType*|2||ro||
+|**478**|**MixerFourCircuitThreeWayValvePositionPercent**|*O3EComplexType*|2||ro||
+|**491**|[**DomesticHotWaterCirculationPump**](## "Request for domestic hot water circulation pump")|*O3EComplexType*|2||**rw**||
+|**497**|[**DomesticHotWaterCirculationPumpMode**](## "Operation Mode of domestic hot water circulation pump")|*O3EComplexType*|5||**rw**|[See page 22f](https://static.viessmann-climatesolutions.com/resources/technical_documents/DE/de/VSA/6179923VSA00001_1.pdf?)|
+|**500**|**CentralHeatDemandExternalAc**|RawCodec|2||ro||
+|**503**|**ScaldProtection**|RawCodec|2||ro||
+|**504**|**DomesticHotWaterSetpointMetaData**|*O3EComplexType*|14||**rw**||
+|**505**|**Date**|O3ESdate|3||ro||
+|**506**|**Time**|O3EStime|3||ro||
+|**507**|**UniversalTimeCoordinated**|O3EUtc|4||ro||
+|**508**|**UniversalTimeCoordinatedOffset**|O3EByteVal|1||**rw**||
+|**510**|**Language**|O3EByteVal|1||ro||
+|**511**|**HolidayPhase**|*O3EComplexType*|8||ro||
+|**512**|**HolidayAtHomePhase**|*O3EComplexType*|8||ro||
+|**513**|**HolidayPhaseCircuitOne**|*O3EComplexType*|8||ro||
+|**514**|**HolidayAtHomePhaseCircuitOne**|*O3EComplexType*|8||ro||
+|**515**|**HolidayPhaseCircuitTwo**|*O3EComplexType*|8||ro||
+|**516**|**HolidayAtHomePhaseCircuitTwo**|*O3EComplexType*|8||ro||
+|**517**|**HolidayPhaseCircuitThree**|*O3EComplexType*|8||ro||
+|**518**|**HolidayAtHomePhaseCircuitThree**|*O3EComplexType*|8||ro||
+|**519**|**HolidayPhaseCircuitFour**|*O3EComplexType*|8||ro||
+|**520**|**HolidayAtHomePhaseCircuitFour**|*O3EComplexType*|8||ro||
+|**521**|**OperatingHoursTillService**|O3EInt16|2||ro||
+|**522**|**ServiceDateNext**|*O3EComplexType*|4||ro||
+|**523**|**ServiceDateLast**|O3ESdate|3||ro||
+|**524**|**ModulationTargetSetpoint**|O3EInt16|2||**rw**||
+|**525**|**ExternalModulationSetpoint**|O3EInt16|2||**rw**||
+|**526**|**ModulationCurrentValue**|O3EInt16|2||ro||
+|**527**|**FlowTemperatureTargetSetpoint**|O3EInt16|2||**rw**||
+|**528**|**ExternalTargetFlowTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**531**|[**DomesticHotWaterOperationState**](## "Operation state of domestic hot water preparation")|*O3EComplexType*|2||**rw**||
+|**533**|**VentilationTargetOperationLevel**|*O3EComplexType*|2||**rw**||
+|**534**|**DomesticHotWaterPumpPostRunTime**|RawCodec|2||ro||
+|**535**|**ObjectElectricalEnergyStatistical**|*O3EComplexType*|12||ro||
+|**537**|**ExternalMixerOneCircuitTargetOperationMode**|*O3EComplexType*|2||**rw**||
+|**538**|**ExternalDomesticHotWaterTargetOperationMode**|*O3EComplexType*|2||**rw**||
+|**543**|**SmartGridReadyConsolidator**|*O3EComplexType*|4||ro||
+|**544**|**GasConsumptionCentralHeating**|*O3EComplexType*|12||ro||
+|**545**|**GasConsumptionDomesticHotWater**|*O3EComplexType*|12||ro||
+|**548**|**EnergyConsumptionCentralHeating**|*O3EComplexType*|24||ro||
+|**565**|**EnergyConsumptionDomesticHotWater**|*O3EComplexType*|24||ro||
+|**566**|**EnergyConsumptionCooling**|*O3EComplexType*|24||ro||
+|**567**|**GeneratedElectricity**|*O3EComplexType*|24||ro||
+|**568**|**CoTwoSavings**|RawCodec|24||ro||
+|**569**|**ResetSensorMinMaxAverageStatistics**|O3EByteVal|1||ro||
+|**570**|**ResetStatistics**|RawCodec|1||ro||
+|**572**|**SetDefaultValuesDate**|RawCodec|3||ro||
+|**573**|**RemoteReset**|RawCodec|2||ro||
+|**575**|**SetDeliveryStatus**|O3EByteVal|1||ro||
+|**576**|**SetDeliveryStatusDate**|O3ESdate|3||ro||
+|**580**|**SoftwareVersion**|O3ESoftVers|8||ro||
+|**581**|**HardwareVersion**|O3ESoftVers|8||ro||
+|**589**|**VentilationOperationHours**|O3EInt32|4||ro||
+|**592**|**MacAddressLan**|O3EMacAddr|6||ro||
+|**593**|**GatewayMac**|O3EMacAddr|6||ro||
+|**596**|**CentralHeatingPartLoadPercent**|O3EByteVal|1||ro||
+|**597**|**DomesticHotWaterPartLoadPercent**|O3EByteVal|1||ro||
+|**600**|**FuelCellReset**|RawCodec|3||ro||
+|**602**|**GatewayRemoteLocalNetworkStatus**|O3EByteVal|1||ro||
+|**603**|**GatewayApEnable**|O3EByteVal|1||ro||
+|**604**|**GatewayApDataSet**|*O3EComplexType*|76||ro||
+|**607**|**GatewayRemoteIp**|*O3EComplexType*|20||ro||
+|**609**|**ProxyServer**|RawCodec|40||ro||
+|**610**|**ProxyPort**|RawCodec|2||ro||
+|**611**|**ProxyUser**|O3EUtf8|40||ro||
+|**613**|**ProxyEnabled**|O3EByteVal|1||ro||
+|**616**|**GatewayRemoteEnable**|O3EByteVal|1||ro||
+|**617**|**GatewayRemoteSsid**|O3EUtf8|72||ro||
+|**618**|**GatewayRemoteIpStatic**|O3EByteVal|1||ro||
+|**619**|**GatewayRemoteScanNetwork**|RawCodec|2||ro||
+|**620**|**DiagnosticServiceConnectionStatus**|O3EByteVal|1||ro||
+|**621**|**ObjectContactDetails**|*O3EComplexType*|181||ro||
+|**622**|**CustomerDetails**|*O3EComplexType*|181||ro||
+|**623**|**ServiceEngineer**|*O3EComplexType*|181||ro||
+|**624**|**TechnicalSupport**|*O3EComplexType*|181||ro||
+|**625**|**ObjectDetails**|*O3EComplexType*|26||ro||
+|**627**|**CentralHeatingOneCircuitName**|O3EUtf8|40||ro||
+|**627**|**CentralHeatingOneCircuitName**|O3EUtf8|12||ro||
+|**628**|**CentralHeatingTwoCircuitName**|O3EUtf8|40||ro||
+|**628**|**CentralHeatingTwoCircuitName**|O3EUtf8|12||ro||
+|**629**|**CentralHeatingThreeCircuitName**|O3EUtf8|40||ro||
+|**629**|**CentralHeatingThreeCircuitName**|O3EUtf8|12||ro||
+|**630**|**CentralHeatingFourCircuitName**|O3EUtf8|40||ro||
+|**630**|**CentralHeatingFourCircuitName**|O3EUtf8|12||ro||
+|**631**|**CentralHeatingFiveCircuitName**|O3EUtf8|12||ro||
+|**632**|**CentralHeatingSixCircuitName**|O3EUtf8|12||ro||
+|**633**|**CentralHeatingSevenCircuitName**|O3EUtf8|12||ro||
+|**634**|**CentralHeatingEightCircuitName**|O3EUtf8|12||ro||
+|**645**|**GenericAnalogDigitalAccessoryOneModulFunction**|O3EByteVal|1||ro||
+|**646**|**GenericAnalogDigitalAccessoryTwoModulFunction**|O3EByteVal|1||ro||
+|**647**|**GenericAnalogDigitalAccessoryThreeModulFunction**|O3EByteVal|1||ro||
+|**648**|**GenericAnalogDigitalAccessoryFourModulFunction**|O3EByteVal|1||ro||
+|**649**|**GenericAnalogDigitalAccessoryFiveModulFunction**|O3EByteVal|1||ro||
+|**650**|**GenericDigitalAccessoryOneModulFunction**|O3EByteVal|1||ro||
+|**651**|**GenericDigitalAccessoryTwoModulFunction**|O3EByteVal|1||ro||
+|**652**|**GenericDigitalAccessoryThreeModulFunction**|O3EByteVal|1||ro||
+|**653**|**GenericDigitalAccessoryFourModulFunction**|O3EByteVal|1||ro||
+|**654**|**GenericDigitalAccessoryFiveModulFunction**|O3EByteVal|1||ro||
+|**680**|**EnergyMeter**|RawCodec|123||ro||
+|**691**|**DomesticHotWaterTimeScheduleMonday**|*O3EList*|57||**rw**||
+|**692**|**DomesticHotWaterTimeScheduleTuesday**|*O3EList*|57||**rw**||
+|**693**|**DomesticHotWaterTimeScheduleWednesday**|*O3EList*|57||**rw**||
+|**694**|**DomesticHotWaterTimeScheduleThursday**|*O3EList*|57||**rw**||
+|**695**|**DomesticHotWaterTimeScheduleFriday**|*O3EList*|57||**rw**||
+|**696**|**DomesticHotWaterTimeScheduleSaturday**|*O3EList*|57||**rw**||
+|**697**|**DomesticHotWaterTimeScheduleSunday**|*O3EList*|57||**rw**||
+|**726**|**DomesticHotWaterCirculationTimeScheduleMonday**|*O3EList*|57||**rw**||
+|**727**|**DomesticHotWaterCirculationTimeScheduleTuesday**|*O3EList*|57||**rw**||
+|**728**|**DomesticHotWaterCirculationTimeScheduleWednesday**|*O3EList*|57||**rw**||
+|**729**|**DomesticHotWaterCirculationTimeScheduleThursday**|*O3EList*|57||**rw**||
+|**730**|**DomesticHotWaterCirculationTimeScheduleFriday**|*O3EList*|57||**rw**||
+|**731**|**DomesticHotWaterCirculationTimeScheduleSaturday**|*O3EList*|57||**rw**||
+|**732**|**DomesticHotWaterCirculationTimeScheduleSunday**|*O3EList*|57||**rw**||
+|**761**|**MixerOneCircuitTimeScheduleMonday**|*O3EList*|57||**rw**||
+|**762**|**MixerOneCircuitTimeScheduleTuesday**|*O3EList*|57||**rw**||
+|**763**|**MixerOneCircuitTimeScheduleWednesday**|*O3EList*|57||**rw**||
+|**764**|**MixerOneCircuitTimeScheduleThursday**|*O3EList*|57||**rw**||
+|**765**|**MixerOneCircuitTimeScheduleFriday**|*O3EList*|57||**rw**||
+|**766**|**MixerOneCircuitTimeScheduleSaturday**|*O3EList*|57||**rw**||
+|**767**|**MixerOneCircuitTimeScheduleSunday**|*O3EList*|57||**rw**||
+|**768**|**MixerTwoCircuitTimeScheduleMonday**|*O3EList*|57||**rw**||
+|**769**|**MixerTwoCircuitTimeScheduleTuesday**|*O3EList*|57||**rw**||
+|**770**|**MixerTwoCircuitTimeScheduleWednesday**|*O3EList*|57||**rw**||
+|**771**|**MixerTwoCircuitTimeScheduleThursday**|*O3EList*|57||**rw**||
+|**772**|**MixerTwoCircuitTimeScheduleFriday**|*O3EList*|57||**rw**||
+|**773**|**MixerTwoCircuitTimeScheduleSaturday**|*O3EList*|57||**rw**||
+|**774**|**MixerTwoCircuitTimeScheduleSunday**|*O3EList*|57||**rw**||
+|**775**|**MixerThreeCircuitTimeScheduleMonday**|*O3EList*|57||**rw**||
+|**776**|**MixerThreeCircuitTimeScheduleTuesday**|*O3EList*|57||**rw**||
+|**777**|**MixerThreeCircuitTimeScheduleWednesday**|*O3EList*|57||**rw**||
+|**778**|**MixerThreeCircuitTimeScheduleThursday**|*O3EList*|57||**rw**||
+|**779**|**MixerThreeCircuitTimeScheduleFriday**|*O3EList*|57||**rw**||
+|**780**|**MixerThreeCircuitTimeScheduleSaturday**|*O3EList*|57||**rw**||
+|**781**|**MixerThreeCircuitTimeScheduleSunday**|*O3EList*|57||**rw**||
+|**782**|**MixerFourCircuitTimeScheduleMonday**|*O3EList*|57||**rw**||
+|**783**|**MixerFourCircuitTimeScheduleTuesday**|*O3EList*|57||**rw**||
+|**784**|**MixerFourCircuitTimeScheduleWednesday**|*O3EList*|57||**rw**||
+|**785**|**MixerFourCircuitTimeScheduleThursday**|*O3EList*|57||**rw**||
+|**786**|**MixerFourCircuitTimeScheduleFriday**|*O3EList*|57||**rw**||
+|**787**|**MixerFourCircuitTimeScheduleSaturday**|*O3EList*|57||**rw**||
+|**788**|**MixerFourCircuitTimeScheduleSunday**|*O3EList*|57||**rw**||
+|**873**|**LegionellaProtectionActivation**|*O3EComplexType*|2||ro||
+|**874**|**LegionellaProtectionTargetTemperatureSetpoint**|*O3EComplexType*|3||**rw**||
+|**875**|**LegionellaProtectionStartTime**|O3EStime|2||ro||
+|**876**|**LegionellaProtectionWeekday**|O3EByteVal|1||ro||
+|**877**|**LegionellaProtectionLastSuccessfulStartTime**|O3EStime|3||ro||
+|**878**|**LegionellaProtectionLastSuccessfulWeekday**|O3EByteVal|1||ro||
+|**880**|**MixerOneCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**881**|**MixerTwoCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**882**|**MixerThreeCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**883**|**MixerFourCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**884**|**MixerFiveCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**885**|**MixerSixCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**886**|**MixerSevenCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**887**|**MixerEightCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**896**|**OutsideTemperatureOffset**|O3EInt16|2||**rw**||
+|**897**|**ScreedDryingProfileActivation**|O3EByteVal|1||ro||
+|**898**|**RemainingFloorDryingDays**|O3EByteVal|1||ro||
+|**900**|**GatewayRemoteSignalStrength**|O3EByteVal|1||ro||
+|**901**|**ServiceManagerIsRequired**|O3EByteVal|1||ro||
+|**902**|[**MalfunctionIdentification**](## "Indicates whether faults are present")|O3EByteVal|1||ro||
+|**903**|**DisplaySettings**|RawCodec|4||ro||
+|**905**|**ElectricalPostHeater**|RawCodec|4||ro||
+|**906**|**ExhaustFlap**|RawCodec|3||ro||
+|**907**|**UserInterfaceDefaultHomeScreen**|O3EByteVal|1||ro||
+|**908**|**ExternalFaultSignal**|O3EByteVal|1||ro||
+|**909**|**ExternalFaultSignalInput**|O3EByteVal|1||ro||
+|**912**|**DaylightSavingTimeActive**|RawCodec|5||ro||
+|**915**|**LastBackupDate**|O3ESdate|3||ro||
+|**917**|**RemoteWeatherService**|RawCodec|20||ro||
+|**918**|**TradeFairMode**|O3EByteVal|1||ro||
+|**919**|**OutsideTemperatureDampingFactor**|O3EInt16|2||ro||
+|**920**|**ThreeAxisAccelerationSensor**|RawCodec|36||ro||
+|**921**|**ExternalAccessInProgress**|*O3EComplexType*|2||ro||
+|**922**|**ProductionTraceabilityByte**|O3EInt16|2||ro||
+|**923**|**RealTimeClockStatus**|RawCodec|8||ro||
+|**924**|**StartUpWizard**|O3EByteVal|1||ro||
+|**925**|**FillingVenting**|RawCodec|5||ro||
+|**927**|[**BuildingType**](## "Type of building {0: OneFamily, 1: MultiFamilyOnlyHeating, 2: MultiFamilyHeatingDomesticHotWater, 3: TownHouse}")|O3EEnum|1||ro||
+|**928**|**ElectronicTraceabilityNumber**|O3EUtf8|16||ro||
+|**929**|[**GasType**](## "{1: LLGas, 2: EGas, 3: LiquidGas}")|O3EEnum|1||ro||
+|**930**|**ExternalTargetCentralHeatingFlowSetpointMetaData**|RawCodec|10||**rw**||
+|**931**|**DomesticHotWaterFlowSetpointMetaData**|RawCodec|10||**rw**||
+|**933**|**MixerOneCircuitProperty**|*O3EComplexType*|9||ro||
+|**934**|**MixerTwoCircuitProperty**|*O3EComplexType*|9||ro||
+|**935**|**MixerThreeCircuitProperty**|*O3EComplexType*|9||ro||
+|**936**|**MixerFourCircuitProperty**|*O3EComplexType*|9||ro||
+|**937**|**MixerFiveCircuitProperty**|*O3EComplexType*|9||ro||
+|**938**|**MixerSixCircuitProperty**|*O3EComplexType*|9||ro||
+|**939**|**MixerSevenCircuitProperty**|*O3EComplexType*|9||ro||
+|**940**|**MixerEightCircuitProperty**|*O3EComplexType*|9||ro||
+|**950**|**SolarCircuitWaterFlowRate**|*O3EComplexType*|4||ro||
+|**951**|**SolarCircuitExtendedFunctions**|RawCodec|8||ro||
+|**952**|**HydraulicMatrix**|RawCodec|51||ro||
+|**953**|**SolarEnergyYield**|RawCodec|24||ro||
+|**954**|[**BusTopologyMatrix**](## "Matrix of CAN bus topology")|*O3EList*|181||ro||
+|**960**|**ExhaustPipeType**|O3EByteVal|1||ro||
+|**961**|**SecurityAlgorithmNumber**|RawCodec|2||ro||
+|**962**|**BootLoaderVersion**|O3ESoftVers|8||ro||
+|**963**|**SparePartNumber**|O3EUtf8|16||ro||
+|**964**|[**ActiveDiagnosticSession**](## "{0: NotSet, 1: Default, 2: ProgrammingSession, 3: ExtendedDiagnosticSession, 4: SafetySystemDiagnosticSession, 64: ManufacturerProgramming, 65: ManufacturerDiagnostic, 96: SystemSupplier(VEG)Programming, 97: SystemSupplier(VEG)Diagnostic}")|O3EEnum|1||ro||
+|**987**|[**MixerOneCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 1")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**988**|[**MixerTwoCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 2")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**989**|[**MixerThreeCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 3")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**990**|[**MixerFourCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 4")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**1004**|[**CentralHeatingRegulationMode**](## "{0: Nothing, 1: ConstantControlled, 4: WeatherByOutsideSensorControlled, 7: WeatherByOutsideSensorAndRoomCorrectionControlled, 10: ConstantControlledWithExternalThermostat, 13: WeatherByOutsideAndZones, 15: WeatherByOutsideSensorAndAutomaticAdaptationControlled}")|O3EEnum|1||ro||
+|**1006**|[**TargetQuickMode**](## "External request for one-time charging of domestic hot water (0: off, 2: one-time request)")|*O3EComplexType*|4||**rw**|[Link](https://github.com/open3e/open3e/discussions/318)|
+|**1006**|[**TargetQuickMode**](## "External request for one-time charging of domestic hot water (0: off, 2: one-time request)")|*O3EComplexType*|3||**rw**|[Link](https://github.com/open3e/open3e/discussions/318)|
+|**1007**|[**CurrentQuickMode**](## "State of external request for one-time charging of domestic hot water (0: off, 2: on)")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/discussions/318)|
+|**1007**|[**CurrentQuickMode**](## "State of external request for one-time charging of domestic hot water (0: off, 2: on)")|*O3EComplexType*|3||ro|[Link](https://github.com/open3e/open3e/discussions/318)|
+|**1008**|**MixerOneCircuitTargetQuickMode**|RawCodec|4||**rw**||
+|**1008**|**MixerOneCircuitTargetQuickMode**|*O3EComplexType*|3||**rw**||
+|**1009**|**MixerTwoCircuitTargetQuickMode**|RawCodec|4||**rw**||
+|**1009**|**MixerTwoCircuitTargetQuickMode**|*O3EComplexType*|3||**rw**||
+|**1010**|**MixerThreeCircuitTargetQuickMode**|RawCodec|4||**rw**||
+|**1010**|**MixerThreeCircuitTargetQuickMode**|*O3EComplexType*|3||**rw**||
+|**1011**|**MixerFourCircuitTargetQuickMode**|RawCodec|4||**rw**||
+|**1011**|**MixerFourCircuitTargetQuickMode**|*O3EComplexType*|3||**rw**||
+|**1024**|**MixerOneCircuitCurrentQuickMode**|RawCodec|4||ro||
+|**1024**|**MixerOneCircuitCurrentQuickMode**|*O3EComplexType*|3||ro||
+|**1025**|**MixerTwoCircuitCurrentQuickMode**|RawCodec|4||ro||
+|**1025**|**MixerTwoCircuitCurrentQuickMode**|*O3EComplexType*|3||ro||
+|**1026**|**MixerThreeCircuitCurrentQuickMode**|RawCodec|4||ro||
+|**1026**|**MixerThreeCircuitCurrentQuickMode**|*O3EComplexType*|3||ro||
+|**1027**|**MixerFourCircuitCurrentQuickMode**|RawCodec|4||ro||
+|**1027**|**MixerFourCircuitCurrentQuickMode**|*O3EComplexType*|3||ro||
+|**1040**|**SupplyAirFan**|*O3EComplexType*|6||ro||
+|**1041**|**ExhaustAirFan**|*O3EComplexType*|6||ro||
+|**1042**|**PrimaryHeatExchangerTemperatureSensor**|RawCodec|9||ro||
+|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**1044**|**SecondaryCentralHeatingPump**|RawCodec|2||ro||
+|**1047**|**TimeSeriesRecordedFlowTemperatureSensor**|RawCodec|11||ro||
+|**1084**|**FlowTemperatureMinimumMaximumLimit**|RawCodec|4||**rw**||
+|**1085**|**DomesticHotWaterHysteresis**|*O3EComplexType*|4||ro||
+|**1087**|**MaximumDomesticHotWaterLoadingTime**|*O3EComplexType*|2||ro||
+|**1088**|**OutsideAirBypass**|O3EByteVal|1||ro||
+|**1089**|**InsideAirBypass**|O3EByteVal|1||ro||
+|**1090**|**EnvironmentAirQuality**|RawCodec|9||ro||
+|**1093**|**ExhaustPipeLength**|RawCodec|2||ro||
+|**1096**|**ResetEnergyManagerDataCollector**|O3EByteVal|1||ro||
+|**1097**|**ElectricityPrice**|*O3EComplexType*|20||ro||
+|**1098**|**GasProperties**|*O3EComplexType*|20||ro||
+|**1100**|**CentralHeatingPumpMinimumMaximumLimit**|*O3EComplexType*|3||**rw**||
+|**1101**|**DomesticHotWaterPumpMinimumMaximumLimit**|*O3EComplexType*|3||**rw**||
+|**1102**|**MixerOneCircuitPumpMinimumMaximumLimit**|*O3EComplexType*|3||**rw**||
+|**1103**|**MixerTwoCircuitPumpMinimumMaximumLimit**|*O3EComplexType*|3||**rw**||
+|**1104**|**MixerThreeCircuitPumpMinimumMaximumLimit**|*O3EComplexType*|3||**rw**||
+|**1105**|**MixerFourCircuitPumpMinimumMaximumLimit**|*O3EComplexType*|3||**rw**||
+|**1118**|**SolarCircuitPumpMinimumMaximumLimit**|*O3EComplexType*|3||**rw**||
+|**1125**|**SolarMaximumLoadingTemperature**|O3EInt16|2||ro||
+|**1128**|**SolarStagnationHours**|O3EInt16|2||ro||
+|**1132**|**ViessmannIdentificationNumberListInternal**|*O3EComplexType*|97||ro||
+|**1136**|**SolarProperty**|RawCodec|4||ro||
+|**1137**|**ServiceModeActivation**|O3EByteVal|1||ro||
+|**1138**|**AccentLedBar**|RawCodec|1||ro||
+|**1139**|**CentralHeatingCurveAdaptionParameter**|*O3EComplexType*|7||ro||
+|**1165**|**BackendConnectionStatus**|O3EByteVal|1||ro||
+|**1166**|**ResetDtcHistory**|RawCodec|5||ro||
+|**1167**|**ExternalDomesticHotWaterTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**1172**|**SolarCircuitPumpStatistical**|RawCodec|14||ro||
+|**1175**|**AcknowledgeInfoAlarmMessage**|O3EByteVal|1||ro||
+|**1176**|**AcknowledgeWarningAlarmMessage**|O3EByteVal|1||ro||
+|**1177**|**AcknowledgeServiceAlarmMessage**|O3EByteVal|1||ro||
+|**1178**|**AcknowledgeErrorAlarmMessage**|O3EByteVal|1||ro||
+|**1181**|**DisplayTestMode**|O3EInt8|1||ro||
+|**1190**|[**ThermalPower**](## "Actual thermal power output of the system")|*O3EComplexType*|4||ro||
+|**1191**|**FuelCellStatus**|RawCodec|1||ro||
+|**1192**|**MixerOneCircuitFlowTemperatureMinimumMaximumLimit**|*O3EComplexType*|10||**rw**||
+|**1193**|**MixerTwoCircuitFlowTemperatureMinimumMaximumLimit**|*O3EComplexType*|10||**rw**||
+|**1194**|**MixerThreeCircuitFlowTemperatureMinimumMaximumLimit**|*O3EComplexType*|10||**rw**||
+|**1195**|**MixerFourCircuitFlowTemperatureMinimumMaximumLimit**|*O3EComplexType*|10||**rw**||
+|**1196**|**MixerFiveCircuitFlowTemperatureMinimumMaximumLimit**|*O3EComplexType*|10||**rw**||
+|**1197**|**MixerSixCircuitFlowTemperatureMinimumMaximumLimit**|*O3EComplexType*|10||**rw**||
+|**1198**|**MixerSevenCircuitFlowTemperatureMinimumMaximumLimit**|*O3EComplexType*|10||**rw**||
+|**1199**|**MixerEightCircuitFlowTemperatureMinimumMaximumLimit**|*O3EComplexType*|10||**rw**||
+|**1210**|**FuelCellStatistical**|RawCodec|13||ro||
+|**1211**|**GeneratedCentralHeatingOutput**|*O3EComplexType*|24||ro||
+|**1214**|**ElectricalPowerOutput**|O3EInt16|2||ro||
+|**1215**|**FuelCellState**|RawCodec|1||ro||
+|**1216**|**FuelCellStateTwo**|RawCodec|1||ro||
+|**1217**|**FuelCellGenerationMode**|RawCodec|1||ro||
+|**1218**|**FuelCellInstruction**|RawCodec|1||ro||
+|**1220**|**FuelCellMode**|RawCodec|1||ro||
+|**1221**|**FuelCellModeResult**|RawCodec|1||ro||
+|**1222**|**FuelCellRunRequest**|RawCodec|1||ro||
+|**1223**|**FuelCellRunRequestResult**|RawCodec|1||ro||
+|**1224**|**FuelCellStopRequest**|RawCodec|1||ro||
+|**1226**|**FuelCellProcessNumber**|RawCodec|1||ro||
+|**1227**|**FuelCellRequestAction**|RawCodec|1||ro||
+|**1228**|**FuelCellCompletionNotification**|RawCodec|1||ro||
+|**1229**|**FuelCellGasTypeSetting**|RawCodec|1||ro||
+|**1230**|**FuelCellCountrySetting**|RawCodec|1||ro||
+|**1231**|**FuelCellPrimaryPump**|RawCodec|4||ro||
+|**1232**|[**GenericDigitalInputConfigurationOnBoardOne**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
+|**1233**|**GatewayRemoteVisibleOneTwo**|RawCodec|68||ro||
+|**1234**|**GatewayRemoteVisibleThreeFour**|RawCodec|68||ro||
+|**1235**|**GatewayRemoteVisibleFiveSix**|RawCodec|68||ro||
+|**1236**|**GatewayRemoteVisibleSevenEight**|RawCodec|68||ro||
+|**1237**|**GatewayRemoteVisibleNineTen**|RawCodec|68||ro||
+|**1238**|**AvailableActorSensorComponents**|RawCodec|31||ro||
+|**1239**|**ActorSensorTest**|RawCodec|2||ro||
+|**1240**|**CentralHeatingPumpMode**|O3EByteVal|1||ro||
+|**1241**|**MixerOneCircuitPumpMode**|O3EByteVal|1||ro||
+|**1242**|**MixerTwoCircuitPumpMode**|O3EByteVal|1||ro||
+|**1243**|**MixerThreeCircuitPumpMode**|O3EByteVal|1||ro||
+|**1244**|**MixerFourCircuitPumpMode**|O3EByteVal|1||ro||
+|**1263**|**DiverterValveBoilerHydraulicTower**|RawCodec|2||ro||
+|**1264**|**DiverterValveFuelCellHydraulicTower**|RawCodec|2||ro||
+|**1265**|**FanTargetSpeedMeta**|RawCodec|8||**rw**||
+|**1266**|**DiverterValveStatistical**|*O3EComplexType*|8||ro||
+|**1286**|**BusTopologyMatrixTwo**|*O3EList*|181||ro||
+|**1287**|**BusTopologyMatrixThree**|*O3EList*|181||ro||
+|**1288**|**BusTopologyMatrixFour**|*O3EList*|181||ro||
+|**1289**|**BusTopologyMatrixFive**|*O3EList*|181||ro||
+|**1290**|**DomesticHotWaterShiftLoadPump**|RawCodec|4||ro||
+|**1294**|[**EnergyConsumptionCentralHeatingMonthMatrix**](## "Energy Consumption Central Heating Per Month")|*O3EComplexType*|124||ro||
+|**1311**|[**EnergyConsumptionDomesticHotWaterMonthMatrix**](## "Energy Consumption Domestic Hot Water Per Month")|*O3EComplexType*|124||ro||
+|**1312**|[**EnergyConsumptionCoolingMonthMatrix**](## "Energy Consumption Cooling Per Month")|*O3EComplexType*|124||ro||
+|**1313**|[**GeneratedElectricityMonthMatrix**](## "Generated Electricity Per Month")|*O3EComplexType*|124||ro||
+|**1314**|[**SolarEnergyYieldMonthMatrix**](## "Solar Energy Yield Per Month")|*O3EComplexType*|124||ro||
+|**1315**|[**GeneratedCentralHeatingOutputMonthMatrix**](## "Generated Central Heating Output Per Month")|*O3EComplexType*|124||ro||
+|**1316**|[**EnergyConsumptionCentralHeatingYearMatrix**](## "Energy Consumption Central Heating Per Year")|*O3EComplexType*|96||ro||
+|**1333**|[**EnergyConsumptionDomesticHotWaterYearMatrix**](## "Energy Consumption Domestic Hot Water Per Year")|*O3EComplexType*|96||ro||
+|**1334**|[**EnergyConsumptionCoolingYearMatrix**](## "Energy Consumption Cooling Per Year")|*O3EComplexType*|96||ro||
+|**1335**|[**GeneratedElectricityYearMatrix**](## "Generated Electricity Per Year")|*O3EComplexType*|96||ro||
+|**1336**|[**SolarEnergyYieldYearMatrix**](## "Solar Energy Yield Per Month")|*O3EComplexType*|96||ro||
+|**1337**|[**GeneratedCentralHeatingOutputYearMatrix**](## "Generated Central Heating Output Per Year")|*O3EComplexType*|96||ro||
+|**1338**|**ScreedDryingProfileDefinition**|RawCodec|31||ro||
+|**1339**|**MalfunctionHeatingUnitBlocked**|O3EByteVal|1||ro||
+|**1340**|**FuelCellGeneratedHeatOutputMonthMatrix**|*O3EComplexType*|124||ro||
+|**1341**|**FuelCellGeneratedHeatOutputYearMatrix**|*O3EComplexType*|96||ro||
+|**1342**|**GasConsumptionCentralHeatingMonthMatrix**|*O3EComplexType*|124||ro||
+|**1343**|**GasConsumptionCentralHeatingYearMatrix**|*O3EComplexType*|48||ro||
+|**1344**|**GasConsumptionDomesticHotWaterMonthMatrix**|*O3EComplexType*|124||ro||
+|**1345**|**GasConsumptionDomesticHotWaterYearMatrix**|*O3EComplexType*|48||ro||
+|**1346**|**HeatEngineStatistical**|*O3EComplexType*|12||ro||
+|**1347**|**ObjectElectricalEnergyStatus**|RawCodec|10||ro||
+|**1348**|**FuelCellGasConsumption**|*O3EComplexType*|12||ro||
+|**1349**|**FuelCellGasConsumptionMonthMatrix**|RawCodec|124||ro||
+|**1350**|**FuelCellGasConsumptionYearMatrix**|RawCodec|48||ro||
+|**1351**|**FeedInEnergy**|RawCodec|24||ro||
+|**1352**|**FeedInEnergyMonthMatrix**|RawCodec|124||ro||
+|**1353**|**FeedInEnergyYearMatrix**|RawCodec|96||ro||
+|**1354**|**ProductionCoverageRate**|RawCodec|6||ro||
+|**1355**|**ProductionCoverageRateMonthMatrix**|RawCodec|62||ro||
+|**1356**|**ProductionCoverageRateYearMatrix**|RawCodec|24||ro||
+|**1357**|**FuelCellOperationTime**|RawCodec|11||ro||
+|**1358**|**FuelCellOperationTimeMonthMatrix**|RawCodec|124||ro||
+|**1359**|**FuelCellOperationTimeYearMatrix**|RawCodec|48||ro||
+|**1360**|**FuelCellRunTime**|RawCodec|11||ro||
+|**1361**|**FuelCellRunTimeMonthMatrix**|RawCodec|124||ro||
+|**1362**|**FuelCellRunTimeYearMatrix**|RawCodec|48||ro||
+|**1363**|**FuelCellTargetOperationMode**|RawCodec|1||**rw**||
+|**1364**|**GenericSdioAccessoryOneModulFunction**|O3EByteVal|1||ro||
+|**1367**|**FuelCellThermalPower**|O3EInt16|2||ro||
+|**1371**|**DemandCoverageRate**|RawCodec|6||ro||
+|**1372**|**DemandCoverageRateMonthMatrix**|RawCodec|62||ro||
+|**1373**|**DemandCoverageRateYearMatrix**|RawCodec|24||ro||
+|**1383**|**FuelCellBreakdownRate**|RawCodec|11||ro||
+|**1384**|**FuelCellBreakdownRateMonthMatrix**|RawCodec|124||ro||
+|**1385**|**FuelCellBreakdownRateYearMatrix**|RawCodec|48||ro||
+|**1389**|**CoTwoSavingsMonthMatrix**|RawCodec|124||ro||
+|**1390**|**CoTwoSavingsYearMatrix**|RawCodec|96||ro||
+|**1391**|**GeneratedDomesticHotWaterOutput**|*O3EComplexType*|24||ro||
+|**1392**|**GeneratedDomesticHotWaterOutputMonthMatrix**|*O3EComplexType*|124||ro||
+|**1393**|**GeneratedDomesticHotWaterOutputYearMatrix**|*O3EComplexType*|96||ro||
+|**1394**|**SolarChargingDomesticHotWaterSetpoint**|O3EInt16|2||**rw**||
+|**1395**|**MixerOneCircuitSummerSavingTemperatureThreshold**|*O3EComplexType*|3||ro||
+|**1396**|**MixerTwoCircuitSummerSavingTemperatureThreshold**|*O3EComplexType*|3||ro||
+|**1397**|**MixerThreeCircuitSummerSavingTemperatureThreshold**|*O3EComplexType*|3||ro||
+|**1398**|**MixerFourCircuitSummerSavingTemperatureThreshold**|*O3EComplexType*|3||ro||
+|**1411**|**ResetServiceInterval**|O3EByteVal|1||ro||
+|**1415**|**MixerOneCircuitOperationState**|*O3EComplexType*|2||**rw**||
+|**1416**|**MixerTwoCircuitOperationState**|*O3EComplexType*|2||**rw**||
+|**1417**|**MixerThreeCircuitOperationState**|*O3EComplexType*|2||**rw**||
+|**1418**|**MixerFourCircuitOperationState**|*O3EComplexType*|2||**rw**||
+|**1419**|**MixerFiveCircuitOperationState**|*O3EComplexType*|2||**rw**||
+|**1420**|**MixerSixCircuitOperationState**|*O3EComplexType*|2||**rw**||
+|**1421**|**MixerSevenCircuitOperationState**|*O3EComplexType*|2||**rw**||
+|**1422**|**MixerEightCircuitOperationState**|*O3EComplexType*|2||**rw**||
+|**1431**|**CarbonEmissionSettings**|RawCodec|8||ro||
+|**1432**|**CentralHeatingPumpPerformance**|*O3EComplexType*|4||ro||
+|**1434**|**ResetFuelCellStatistics**|RawCodec|1||ro||
+|**1435**|**FluelCellFlowTemperatueSensor**|*O3EComplexType*|9||ro||
+|**1436**|**FuelCellReturnTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1439**|**NoiseReductionTimeScheduleMonday**|RawCodec|41||**rw**||
+|**1440**|**NoiseReductionTimeScheduleTuesday**|RawCodec|41||**rw**||
+|**1441**|**NoiseReductionTimeScheduleWednesday**|RawCodec|41||**rw**||
+|**1442**|**NoiseReductionTimeScheduleThursday**|RawCodec|41||**rw**||
+|**1443**|**NoiseReductionTimeScheduleFriday**|RawCodec|41||**rw**||
+|**1444**|**NoiseReductionTimeScheduleSaturday**|RawCodec|41||**rw**||
+|**1445**|**NoiseReductionTimeScheduleSunday**|RawCodec|41||**rw**||
+|**1451**|**ApplicationChecksum**|RawCodec|4||ro||
+|**1467**|**SafetyRelevantRemoteUnlock**|RawCodec|2||ro||
+|**1468**|**FuelCellGasPressure**|RawCodec|9||ro||
+|**1469**|**SensorActuatorTestGroupHeatEngine**|RawCodec|31||ro||
+|**1470**|**SensorActuatorTestGroupDomesticHotWater**|RawCodec|31||ro||
+|**1471**|**SensorActuatorTestGroupFuelCell**|RawCodec|31||ro||
+|**1472**|**SensorActuatorTestGroupHeatingCircuit**|RawCodec|31||ro||
+|**1473**|**SensorActuatorTestGroupSolar**|RawCodec|31||ro||
+|**1492**|**SolarCircuitPumpHysteresis**|RawCodec|4||ro||
+|**1493**|**HeatEnginePerformanceStatistics**|*O3EComplexType*|16||ro||
+|**1494**|**OemProductVersion**|O3ESoftVers|8||ro||
+|**1503**|**MinimumLoadPercent**|RawCodec|1||ro||
+|**1504**|[**TimeSettingSource**](## "{0: Local, 1: SuperordinateSystem, 2: NetworkTimeProtocol, 3: TCU}")|O3EEnum|1||ro||
+|**1505**|**SolarStagnationTemperatureOffset**|RawCodec|2||**rw**||
+|**1529**|**SolarRechargeSuppressionImpact**|O3EByteVal|1||ro||
+|**1533**|**InstallationWizardInProgress**|RawCodec|2||ro||
+|**1535**|**FlueGasSensorTestMode**|RawCodec|3||ro||
+|**1536**|**PrimaryCircuitWaterFlowTestMode**|RawCodec|3||ro||
+|**1537**|**ChimneySweeperTestMode**|RawCodec|3||ro||
+|**1538**|**ZigbeeEnable**|O3EByteVal|1||ro||
+|**1539**|**ZigbeeStatus**|O3EByteVal|1||ro||
+|**1540**|**ZigbeeIdentification**|RawCodec|26||ro||
+|**1541**|**LegionellaProtectionPump**|RawCodec|5||ro||
+|**1549**|**HydraulicMatrixConfiguration**|RawCodec|97||ro||
+|**1550**|**FunctionMatrix**|RawCodec|22||ro||
+|**1551**|**FuelCellExternalControl**|RawCodec|1||ro||
+|**1552**|**ElectricalEnergyStorageOperationState**|RawCodec|7||**rw**||
+|**1553**|**ElectronicControlUnitOdxVersion**|RawCodec|6||ro||
+|**1554**|**HeatingSupport**|RawCodec|2||ro||
+|**1555**|**MixerOneCircuitFixedValueFlowTemperatureSetpoint**|RawCodec|6||**rw**||
+|**1556**|**MixerTwoCircuitFixedValueFlowTemperatureSetpoint**|RawCodec|6||**rw**||
+|**1557**|**MixerThreeCircuitFixedValueFlowTemperatureSetpoint**|RawCodec|6||**rw**||
+|**1558**|**MixerFourCircuitFixedValueFlowTemperatureSetpoint**|RawCodec|6||**rw**||
+|**1559**|**MixerFiveCircuitFixedValueFlowTemperatureSetpoint**|RawCodec|6||**rw**||
+|**1560**|**MixerSixCircuitFixedValueFlowTemperatureSetpoint**|RawCodec|6||**rw**||
+|**1561**|**MixerSevenCircuitFixedValueFlowTemperatureSetpoint**|RawCodec|6||**rw**||
+|**1562**|**MixerEightCircuitFixedValueFlowTemperatureSetpoint**|RawCodec|6||**rw**||
+|**1573**|**SystemReturnTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1577**|**ElectricalEnergyStorageModuleOneOperatingData**|RawCodec|139||ro||
+|**1578**|**ElectricalEnergyStorageModuleTwoOperatingData**|RawCodec|139||ro||
+|**1579**|**ElectricalEnergyStorageModuleThreeOperatingData**|RawCodec|139||ro||
+|**1580**|**ElectricalEnergyStorageModuleFourOperatingData**|RawCodec|139||ro||
+|**1581**|**ElectricalEnergyStorageModuleFiveOperatingData**|RawCodec|139||ro||
+|**1582**|**ElectricalEnergyStorageModuleSixOperatingData**|RawCodec|139||ro||
+|**1585**|**IncreasedReturnTemperatureSetpoint**|RawCodec|2||**rw**||
+|**1587**|**ExternalAlternatingCurrentPowerSetpointMetaData**|RawCodec|4||**rw**||
+|**1588**|**AlternatingCurrentPowerSetpoint**|RawCodec|4||**rw**||
+|**1589**|**AlternatingCurrentPowerSetpointMetaData**|RawCodec|4||**rw**||
+|**1590**|**ElectricalEnergySystemOperationState**|RawCodec|6||**rw**||
+|**1591**|**ElectricalEnergyInverterOperationState**|RawCodec|6||**rw**||
+|**1592**|**ElectricalEnergyInverterPath**|RawCodec|1||ro||
+|**1593**|**BufferHysteresis**|RawCodec|4||ro||
+|**1594**|**LastApplicationUpdate**|O3ESdate|3||ro||
+|**1595**|**ParameterIdentificationVersionFactory**|RawCodec|8||ro||
+|**1596**|**IncreasedReturnTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1598**|**SolarStaticTemperatureControlHysteresis**|RawCodec|4||ro||
+|**1599**|**SolarSecondaryDeltaTemperatureHysteresis**|RawCodec|4||ro||
+|**1600**|**BufferDischargeFunctionThreeWayValvePositionPercent**|RawCodec|2||ro||
+|**1601**|**FuelCellCondition**|RawCodec|1||ro||
+|**1603**|**PointOfCommonCouplingPower**|*O3EComplexType*|4||ro||
+|**1603**|**PointOfCommonCouplingPower**|*O3EComplexType*|12||ro||
+|**1604**|**GatewayExternalTargetFlowTemperatureSetpoint**|RawCodec|2||**rw**||
+|**1605**|**GatewayExternalHeatEngineTargetOperationMode**|*O3EComplexType*|2||**rw**||
+|**1606**|**IntervalStrategyProperties**|*O3EComplexType*|8||ro||
+|**1607**|**MalfunctionUnitBlocked**|O3EByteVal|1||ro||
+|**1608**|**DifferentialTemperatureControllerHeatSourceTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1609**|**DifferentialTemperatureControllerHeatSinkTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1610**|**HeatingSupportBufferTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1611**|**PreheatingReferenceTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1612**|**ExternalMixerTwoCircuitTargetOperationMode**|*O3EComplexType*|2||**rw**||
+|**1613**|**ExternalMixerThreeCircuitTargetOperationMode**|*O3EComplexType*|2||**rw**||
+|**1614**|**ExternalMixerFourCircuitTargetOperationMode**|*O3EComplexType*|2||**rw**||
+|**1627**|**ExternalMixerOneCircuitFixedValueTargetTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**1628**|**ExternalMixerTwoCircuitFixedValueTargetTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**1629**|**ExternalMixerThreeCircuitFixedValueTargetTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**1630**|**ExternalMixerFourCircuitFixedValueTargetTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**1643**|**MixerOneCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**1644**|**MixerTwoCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**1645**|**MixerThreeCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**1646**|**MixerFourCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**1659**|**EndResultDomesticHotWaterTemperatureSetpoint**|*O3EComplexType*|3||**rw**||
+|**1660**|**SupportedFeatures**|RawCodec|16||ro||
+|**1661**|**SolarSecondaryTransferPump**|RawCodec|5||ro||
+|**1662**|**HeatingSupportBufferThreeWayValvePositionPercent**|RawCodec|2||ro||
+|**1663**|**TestStatus**|RawCodec|41||ro||
+|**1664**|**ElectricalEnergyStorageStateOfCharge**|O3EInt8|1||ro||
+|**1667**|**MixerOneCircuitPumpOscillationTime**|RawCodec|2||ro||
+|**1668**|**MixerTwoCircuitPumpOscillationTime**|RawCodec|2||ro||
+|**1669**|**MixerThreeCircuitPumpOscillationTime**|RawCodec|2||ro||
+|**1670**|**MixerFourCircuitPumpOscillationTime**|RawCodec|2||ro||
+|**1684**|**AmbientTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1685**|**ElectricalEnergyInverterDCConfiguration**|RawCodec|3||ro||
+|**1686**|**ElectricalEnergySystemPhotovoltaicLimitation**|RawCodec|3||ro||
+|**1687**|**ElectricalEnergySystemPhotovoltaicConfiguration**|O3EInt16|2||ro||
+|**1690**|**ElectricalEnergySystemPhotovoltaicStatus**|*O3EComplexType*|17||ro||
+|**1691**|**BusTopologyScanStatus**|O3EByteVal|1||ro||
+|**1692**|**PowerGridCodeConfiguration**|RawCodec|1||ro||
+|**1693**|**GridOperatorConfigurationLock**|O3EByteVal|1||ro||
+|**1694**|**GatewayEthernetEnable**|O3EByteVal|1||ro||
+|**1695**|**GatewayEthernetConfig**|RawCodec|21||ro||
+|**1696**|**GatewayEthernetIp**|RawCodec|20||ro||
+|**1697**|**GatewayEthernetNetworkStatus**|O3EByteVal|1||ro||
+|**1698**|**SupportedFeaturesTelemetryControlUnit**|RawCodec|16||ro||
+|**1699**|**ActivatedFeaturesTelemetryControlUnit**|RawCodec|16||ro||
+|**1700**|**EebusDeviceList**|RawCodec|104||ro||
+|**1701**|**EebusOwnInfo**|RawCodec|104||ro||
+|**1702**|**EebusPartnerInfo**|RawCodec|104||ro||
+|**1703**|**EebusConnectionStatus**|RawCodec|1||ro||
+|**1706**|**GenericMZIOAccessoryTwoModuleFunction**|RawCodec|1||ro||
+|**1710**|**FunctionalSoftwareVersion**|O3ESoftVers|8||ro||
+|**1718**|**ElectricalEnergySystemConfiguration**|*O3EComplexType*|2||ro||
+|**1719**|**SolarIntervalFunction**|RawCodec|3||ro||
+|**1721**|**WaterPressureConfiguration**|RawCodec|8||ro||
+|**1728**|**ThermostatTerminalOneCircuitPump**|RawCodec|2||ro||
+|**1729**|**ThermostatTerminalTwoCircuitPump**|RawCodec|2||ro||
+|**1730**|**ThermostatTerminalThreeCircuitPump**|RawCodec|2||ro||
+|**1731**|**ExternalLockActive**|O3EByteVal|1||ro||
+|**1732**|**FixedRoomTemperatureSetpoint**|RawCodec|6||**rw**||
+|**1749**|**TimeSeriesRecordedModulationCurrentValueStepsAndDurationOne**|RawCodec|176||ro||
+|**1750**|**TimeSeriesRecordedModulationCurrentValueStepsAndDurationTwo**|RawCodec|176||ro||
+|**1751**|**TimeSeriesRecordedModulationCurrentValueStepsAndDurationThree**|RawCodec|132||ro||
+|**1752**|**TimeSeriesRecordedFlowTemperatureSensorStepsAndDurationOne**|RawCodec|176||ro||
+|**1753**|**TimeSeriesRecordedFlowTemperatureSensorStepsAndDurationTwo**|RawCodec|176||ro||
+|**1754**|**TimeSeriesRecordedFlowTemperatureSensorStepsAndDurationThree**|RawCodec|132||ro||
+|**1759**|**TimeSeriesRecordedDomesticHotWaterOutletTemperature**|RawCodec|40||ro||
+|**1760**|**TimeSeriesRecordedCombustionAirInletTemperature**|RawCodec|40||ro||
+|**1761**|**TimeSeriesRecordedCentralHeatingPumpSpeed**|RawCodec|40||ro||
+|**1762**|**LowWaterCutOffSignalInput**|RawCodec|1||ro||
+|**1763**|**LowGasPressureSignalInput**|RawCodec|1||ro||
+|**1764**|**HighGasPressureSignalInput**|RawCodec|1||ro||
+|**1765**|**CombustionAirInterlock**|RawCodec|2||ro||
+|**1766**|**ElectricalEnergyStorageModuleOperatingData**|RawCodec|141||ro||
+|**1768**|**ReceiverTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1769**|**PrimaryInletTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1770**|**SecondaryOutletTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1771**|**EngineRoomTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1772**|**CompressorOilTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1773**|**RefrigerantCircuitFourWayValve**|O3EByteVal|1||ro||
+|**1774**|**CompressorCrankCaseHeater**|O3EByteVal|1||ro||
+|**1775**|**PrimaryCircuitFanOne**|O3EByteVal|1||ro||
+|**1776**|**PrimaryCircuitFanTwo**|O3EByteVal|1||ro||
+|**1777**|**TimeSeriesRecordedFlueGasTemperatureSensorStepsAndDurationOne**|RawCodec|176||ro||
+|**1778**|**TimeSeriesRecordedFlueGasTemperatureSensorStepsAndDurationTwo**|RawCodec|176||ro||
+|**1779**|**TimeSeriesRecordedFlueGasTemperatureSensorStepsAndDurationThree**|RawCodec|132||ro||
+|**1780**|**TimeSeriesRecordedIgnitionTimeSteps**|RawCodec|80||ro||
+|**1781**|**TimeSeriesRecordedCalibrationCount**|RawCodec|16||ro||
+|**1782**|**TimeSeriesRecordedMonitoringIonizationMaximum**|RawCodec|56||ro||
+|**1783**|**TimeSeriesRecordedHeatingBurnerStopEvents**|RawCodec|120||ro||
+|**1784**|**TimeSeriesRecordedDomesticHotWaterBurnerStopEvents**|RawCodec|120||ro||
+|**1785**|**TimeSeriesRecordedFlameLossModulation**|RawCodec|40||ro||
+|**1786**|**TimeSeriesRecordedWaterPressureStagnation**|RawCodec|52||ro||
+|**1787**|**TimeSeriesRecordedWaterPressurePeaks**|RawCodec|32||ro||
+|**1788**|**CanInterfaceVersion**|RawCodec|8||ro||
+|**1791**|**DiverterValveDefaultPositionConfiguration**|O3EByteVal|1||ro||
+|**1792**|**ResetElectricalEnergyHistory**|RawCodec|1||ro||
+|**1793**|**BurnerPreconditions**|RawCodec|1||ro||
+|**1794**|**HeatingCircuitHeatDeficit**|RawCodec|4||ro||
+|**1795**|**FuelCellRuntimePrediction**|O3EInt8|1||ro||
+|**1796**|**DomesticElectricalEnergyConsumption**|RawCodec|2||ro||
+|**1797**|**PredictionDomesticElectricalEnergyConsumptionNextHour**|RawCodec|2||ro||
+|**1798**|**FuelCellHoursTillNextStart**|O3EInt8|1||ro||
+|**1799**|**PrimaryCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**1800**|**ResetTimeSeriesRecordingGroups**|RawCodec|4||ro||
+|**1801**|**ElectricalEnergyStorageEnergyTransferStatistic**|*O3EComplexType*|40||ro||
+|**1802**|**EnergyProductionPhotovoltaic**|*O3EComplexType*|80||ro||
+|**1807**|**ElectricalEnergyInverterDcInputOne**|RawCodec|10||ro||
+|**1808**|**ElectricalEnergyInverterDcInputTwo**|RawCodec|10||ro||
+|**1809**|**ElectricalEnergyInverterDcInputThree**|RawCodec|10||ro||
+|**1810**|**ElectricalEnergyInverterPowerAc**|*O3EComplexType*|4||ro||
+|**1811**|**ElectricalEnergyStorageModuleSetUpCheck**|RawCodec|1||ro||
+|**1812**|**PointOfCommonCouplingConfiguredEnergyMeter**|RawCodec|2||ro||
+|**1813**|**EnhancedVapourInjectionValve**|O3EInt8|1||ro||
+|**1814**|**ReceiverLiquidLevelSensor**|RawCodec|5||ro||
+|**1815**|**ElectricalHeaterPhaseOne**|O3EInt8|1||ro||
+|**1816**|**ElectricalHeaterPhaseTwo**|O3EInt8|1||ro||
+|**1817**|**ElectricalHeaterPhaseThree**|O3EInt8|1||ro||
+|**1819**|**SolarPumpConfigurationSelection**|O3EByteVal|1||ro||
+|**1822**|**ThreePhaseInverterCurrent**|RawCodec|51||ro||
+|**1823**|**ThreePhaseInverterVoltage**|RawCodec|27||ro||
+|**1824**|**ThreePhaseInverterCurrentPower**|*O3EComplexType*|16||ro||
+|**1825**|**ThreePhaseInverterCurrentApparentPower**|*O3EComplexType*|16||ro||
+|**1826**|**ThreePhaseInverterMaximunNominalPower**|*O3EComplexType*|4||ro||
+|**1827**|**InverterElectricalEnergyStorageMaximumNominalChargePower**|*O3EComplexType*|4||ro||
+|**1828**|**InverterElectricalEnergyStorageCurrentMaximumlChargePower**|*O3EComplexType*|4||ro||
+|**1829**|**InverterElectricalEnergyStorageMaximumNominalDischargePower**|*O3EComplexType*|4||ro||
+|**1830**|**InverterElectricalEnergyStorageCurrentMaximumlDishargePower**|*O3EComplexType*|4||ro||
+|**1831**|**PhotovoltaicCurrentStringPower**|*O3EComplexType*|12||ro||
+|**1832**|**PhotovoltaicStringCurrent**|*O3EComplexType*|12||ro||
+|**1833**|**PhotovoltaicStringVoltage**|*O3EComplexType*|12||ro||
+|**1834**|**ElectricalEnergyStorageStateOfEnergy**|*O3EComplexType*|4||ro||
+|**1835**|**ManufacturerProperties**|RawCodec|20||ro||
+|**1836**|**ElectricalEnergyStorageCurrentPower**|O3EInt32|4||ro||
+|**1837**|**ElectricalEnergyStorageCurrent**|*O3EComplexType*|4||ro||
+|**1838**|**ElectricalEnergyStorageVoltage**|O3EInt16|2||ro||
+|**1839**|**ElectricalEnergyStorageUsableEnergy**|RawCodec|4||ro||
+|**1840**|**ElectricalEnergyStorageUsableNominalEnergy**|RawCodec|4||ro||
+|**1841**|**PointOfCommonCouplingOverview**|RawCodec|32||ro||
+|**1842**|**SecondaryCircuitFourThreeWayValve**|*O3EComplexType*|2||ro||
+|**1843**|**MixerOneCircuitHumidityProtection**|RawCodec|2||ro||
+|**1844**|**MixerTwoCircuitHumidityProtection**|RawCodec|2||ro||
+|**1845**|**HeatPumpCompressorEnvelope**|RawCodec|36||ro||
+|**1846**|**HeatPumpCompressorCurrentOperatingPoint**|RawCodec|4||ro||
+|**1847**|**CustomerDetailsExtensions**|RawCodec|81||ro||
+|**1848**|**ApartmentOneProperty**|RawCodec|27||ro||
+|**1849**|**ApartmentOneSetpoints**|RawCodec|50||**rw**||
+|**1850**|**ApartmentOneTimeScheduleMonday**|RawCodec|57||**rw**||
+|**1851**|**ApartmentOneTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**1852**|**ApartmentOneTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**1853**|**ApartmentOneTimeScheduleThursday**|RawCodec|57||**rw**||
+|**1854**|**ApartmentOneTimeScheduleFriday**|RawCodec|57||**rw**||
+|**1855**|**ApartmentOneTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**1856**|**ApartmentOneTimeScheduleSunday**|RawCodec|57||**rw**||
+|**1884**|**RoomOneProperty**|RawCodec|84||ro||
+|**1884**|**RoomOneProperty**|*O3EComplexType*|85||ro||
+|**1885**|**RoomOneSetpoints**|RawCodec|30||**rw**||
+|**1886**|**RoomOneCurrentValues**|RawCodec|46||ro||
+|**1887**|**RoomTwoProperty**|RawCodec|84||ro||
+|**1887**|**RoomTwoProperty**|*O3EComplexType*|85||ro||
+|**1888**|**RoomTwoSetpoints**|RawCodec|30||**rw**||
+|**1889**|**RoomTwoCurrentValues**|RawCodec|46||ro||
+|**1890**|**RoomThreeProperty**|RawCodec|84||ro||
+|**1890**|**RoomThreeProperty**|*O3EComplexType*|85||ro||
+|**1891**|**RoomThreeSetpoints**|RawCodec|30||**rw**||
+|**1892**|**RoomThreeCurrentValues**|RawCodec|46||ro||
+|**1893**|**RoomFourProperty**|RawCodec|84||ro||
+|**1893**|**RoomFourProperty**|*O3EComplexType*|85||ro||
+|**1894**|**RoomFourSetpoints**|RawCodec|30||**rw**||
+|**1895**|**RoomFourCurrentValues**|RawCodec|46||ro||
+|**1896**|**RoomFiveProperty**|RawCodec|84||ro||
+|**1896**|**RoomFiveProperty**|*O3EComplexType*|85||ro||
+|**1897**|**RoomFiveSetpoints**|RawCodec|30||**rw**||
+|**1898**|**RoomFiveCurrentValues**|RawCodec|46||ro||
+|**1899**|**RoomSixProperty**|RawCodec|84||ro||
+|**1899**|**RoomSixProperty**|*O3EComplexType*|85||ro||
+|**1900**|**RoomSixSetpoints**|RawCodec|30||**rw**||
+|**1901**|**RoomSixCurrentValues**|RawCodec|46||ro||
+|**1902**|**RoomSevenProperty**|RawCodec|84||ro||
+|**1902**|**RoomSevenProperty**|*O3EComplexType*|85||ro||
+|**1903**|**RoomSevenSetpoints**|RawCodec|30||**rw**||
+|**1904**|**RoomSevenCurrentValues**|RawCodec|46||ro||
+|**1905**|**RoomEightProperty**|RawCodec|84||ro||
+|**1905**|**RoomEightProperty**|*O3EComplexType*|85||ro||
+|**1906**|**RoomEightSetpoints**|RawCodec|30||**rw**||
+|**1907**|**RoomEightCurrentValues**|RawCodec|46||ro||
+|**1908**|**RoomNineProperty**|RawCodec|84||ro||
+|**1908**|**RoomNineProperty**|*O3EComplexType*|85||ro||
+|**1909**|**RoomNineSetpoints**|RawCodec|30||**rw**||
+|**1910**|**RoomNineCurrentValues**|RawCodec|46||ro||
+|**1911**|**RoomTenProperty**|RawCodec|84||ro||
+|**1911**|**RoomTenProperty**|*O3EComplexType*|85||ro||
+|**1912**|**RoomTenSetpoints**|RawCodec|30||**rw**||
+|**1913**|**RoomTenCurrentValues**|RawCodec|46||ro||
+|**1914**|**RoomElevenProperty**|RawCodec|84||ro||
+|**1915**|**RoomElevenSetpoints**|RawCodec|30||**rw**||
+|**1916**|**RoomElevenCurrentValues**|RawCodec|46||ro||
+|**1917**|**RoomTwelveProperty**|RawCodec|84||ro||
+|**1918**|**RoomTwelveSetpoints**|RawCodec|30||**rw**||
+|**1919**|**RoomTwelveCurrentValues**|RawCodec|46||ro||
+|**1920**|**RoomThirteenProperty**|RawCodec|84||ro||
+|**1920**|**RoomThirteenProperty**|*O3EComplexType*|85||ro||
+|**1921**|**RoomThirteenSetpoints**|RawCodec|30||**rw**||
+|**1922**|**RoomThirteenCurrentValues**|RawCodec|46||ro||
+|**1923**|**RoomFourteenProperty**|RawCodec|84||ro||
+|**1923**|**RoomFourteenProperty**|*O3EComplexType*|85||ro||
+|**1924**|**RoomFourteenSetpoints**|RawCodec|30||**rw**||
+|**1925**|**RoomFourteenCurrentValues**|RawCodec|46||ro||
+|**1926**|**RoomFifteenProperty**|RawCodec|84||ro||
+|**1926**|**RoomFifteenProperty**|*O3EComplexType*|85||ro||
+|**1927**|**RoomFifteenSetpoints**|RawCodec|30||**rw**||
+|**1928**|**RoomFifteenCurrentValues**|RawCodec|46||ro||
+|**1929**|**RoomSixteenProperty**|RawCodec|84||ro||
+|**1929**|**RoomSixteenProperty**|*O3EComplexType*|85||ro||
+|**1930**|**RoomSixteenSetpoints**|RawCodec|30||**rw**||
+|**1931**|**RoomSixteenCurrentValues**|RawCodec|46||ro||
+|**1932**|**RoomSeventeenProperty**|RawCodec|84||ro||
+|**1932**|**RoomSeventeenProperty**|*O3EComplexType*|85||ro||
+|**1933**|**RoomSeventeenSetpoints**|RawCodec|30||**rw**||
+|**1934**|**RoomSeventeenCurrentValues**|RawCodec|46||ro||
+|**1935**|**RoomEighteenProperty**|RawCodec|84||ro||
+|**1935**|**RoomEightteenProperty**|*O3EComplexType*|85||ro||
+|**1936**|**RoomEighteenSetpoints**|RawCodec|30||**rw**||
+|**1937**|**RoomEighteenCurrentValues**|RawCodec|46||ro||
+|**1938**|**RoomNineteenProperty**|RawCodec|84||ro||
+|**1938**|**RoomNineteenProperty**|*O3EComplexType*|85||ro||
+|**1939**|**RoomNineteenSetpoints**|RawCodec|30||**rw**||
+|**1940**|**RoomNineteenCurrentValues**|RawCodec|46||ro||
+|**1941**|**RoomTwentyProperty**|RawCodec|84||ro||
+|**1941**|**RoomTwentyProperty**|*O3EComplexType*|85||ro||
+|**1942**|**RoomTwentySetpoints**|RawCodec|30||**rw**||
+|**1943**|**RoomTwentyCurrentValues**|RawCodec|46||ro||
+|**1944**|**RoomOneTimeScheduleMonday**|RawCodec|57||**rw**||
+|**1945**|**RoomOneTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**1946**|**RoomOneTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**1947**|**RoomOneTimeScheduleThursday**|RawCodec|57||**rw**||
+|**1948**|**RoomOneTimeScheduleFriday**|RawCodec|57||**rw**||
+|**1949**|**RoomOneTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**1950**|**RoomOneTimeScheduleSunday**|RawCodec|57||**rw**||
+|**1951**|**RoomTwoTimeScheduleMonday**|RawCodec|57||**rw**||
+|**1952**|**RoomTwoTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**1953**|**RoomTwoTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**1954**|**RoomTwoTimeScheduleThursday**|RawCodec|57||**rw**||
+|**1955**|**RoomTwoTimeScheduleFriday**|RawCodec|57||**rw**||
+|**1956**|**RoomTwoTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**1957**|**RoomTwoTimeScheduleSunday**|RawCodec|57||**rw**||
+|**1958**|**RoomThreeTimeScheduleMonday**|RawCodec|57||**rw**||
+|**1959**|**RoomThreeTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**1960**|**RoomThreeTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**1961**|**RoomThreeTimeScheduleThursday**|RawCodec|57||**rw**||
+|**1962**|**RoomThreeTimeScheduleFriday**|RawCodec|57||**rw**||
+|**1963**|**RoomThreeTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**1964**|**RoomThreeTimeScheduleSunday**|RawCodec|57||**rw**||
+|**1965**|**RoomFourTimeScheduleMonday**|RawCodec|57||**rw**||
+|**1966**|**RoomFourTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**1967**|**RoomFourTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**1968**|**RoomFourTimeScheduleThursday**|RawCodec|57||**rw**||
+|**1969**|**RoomFourTimeScheduleFriday**|RawCodec|57||**rw**||
+|**1970**|**RoomFourTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**1971**|**RoomFourTimeScheduleSunday**|RawCodec|57||**rw**||
+|**1972**|**RoomFiveTimeScheduleMonday**|RawCodec|57||**rw**||
+|**1973**|**RoomFiveTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**1974**|**RoomFiveTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**1975**|**RoomFiveTimeScheduleThursday**|RawCodec|57||**rw**||
+|**1976**|**RoomFiveTimeScheduleFriday**|RawCodec|57||**rw**||
+|**1977**|**RoomFiveTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**1978**|**RoomFiveTimeScheduleSunday**|RawCodec|57||**rw**||
+|**1979**|**RoomSixTimeScheduleMonday**|RawCodec|57||**rw**||
+|**1980**|**RoomSixTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**1981**|**RoomSixTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**1982**|**RoomSixTimeScheduleThursday**|RawCodec|57||**rw**||
+|**1983**|**RoomSixTimeScheduleFriday**|RawCodec|57||**rw**||
+|**1984**|**RoomSixTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**1985**|**RoomSixTimeScheduleSunday**|RawCodec|57||**rw**||
+|**1986**|**RoomSevenTimeScheduleMonday**|RawCodec|57||**rw**||
+|**1987**|**RoomSevenTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**1988**|**RoomSevenTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**1989**|**RoomSevenTimeScheduleThursday**|RawCodec|57||**rw**||
+|**1990**|**RoomSevenTimeScheduleFriday**|RawCodec|57||**rw**||
+|**1991**|**RoomSevenTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**1992**|**RoomSevenTimeScheduleSunday**|RawCodec|57||**rw**||
+|**1993**|**RoomEightTimeScheduleMonday**|RawCodec|57||**rw**||
+|**1994**|**RoomEightTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**1995**|**RoomEightTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**1996**|**RoomEightTimeScheduleThursday**|RawCodec|57||**rw**||
+|**1997**|**RoomEightTimeScheduleFriday**|RawCodec|57||**rw**||
+|**1998**|**RoomEightTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**1999**|**RoomEightTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2000**|**RoomNineTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2001**|**RoomNineTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2002**|**RoomNineTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2003**|**RoomNineTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2004**|**RoomNineTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2005**|**RoomNineTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2006**|**RoomNineTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2007**|**RoomTenTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2008**|**RoomTenTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2009**|**RoomTenTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2010**|**RoomTenTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2011**|**RoomTenTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2012**|**RoomTenTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2013**|**RoomTenTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2014**|**RoomElevenTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2015**|**RoomElevenTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2016**|**RoomElevenTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2017**|**RoomElevenTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2018**|**RoomElevenTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2019**|**RoomElevenTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2020**|**RoomElevenTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2021**|**RoomTwelveTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2022**|**RoomTwelveTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2023**|**RoomTwelveTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2024**|**RoomTwelveTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2025**|**RoomTwelveTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2026**|**RoomTwelveTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2027**|**RoomTwelveTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2028**|**RoomThirteenTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2029**|**RoomThirteenTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2030**|**RoomThirteenTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2031**|**RoomThirteenTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2032**|**RoomThirteenTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2033**|**RoomThirteenTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2034**|**RoomThirteenTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2035**|**RoomFourteenTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2036**|**RoomFourteenTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2037**|**RoomFourteenTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2038**|**RoomFourteenTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2039**|**RoomFourteenTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2040**|**RoomFourteenTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2041**|**RoomFourteenTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2042**|**RoomFifteenTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2043**|**RoomFifteenTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2044**|**RoomFifteenTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2045**|**RoomFifteenTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2046**|**RoomFifteenTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2047**|**RoomFifteenTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2048**|**RoomFifteenTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2049**|**RoomSixteenTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2050**|**RoomSixteenTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2051**|**RoomSixteenTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2052**|**RoomSixteenTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2053**|**RoomSixteenTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2054**|**RoomSixteenTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2055**|**RoomSixteenTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2056**|**RoomSeventeenTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2057**|**RoomSeventeenTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2058**|**RoomSeventeenTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2059**|**RoomSeventeenTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2060**|**RoomSeventeenTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2061**|**RoomSeventeenTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2062**|**RoomSeventeenTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2063**|**RoomEighteenTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2064**|**RoomEighteenTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2065**|**RoomEighteenTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2066**|**RoomEighteenTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2067**|**RoomEighteenTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2068**|**RoomEighteenTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2069**|**RoomEighteenTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2070**|**RoomNineteenTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2071**|**RoomNineteenTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2072**|**RoomNineteenTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2073**|**RoomNineteenTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2074**|**RoomNineteenTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2075**|**RoomNineteenTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2076**|**RoomNineteenTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2077**|**RoomTwentyTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2078**|**RoomTwentyTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2079**|**RoomTwentyTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2080**|**RoomTwentyTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2081**|**RoomTwentyTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2082**|**RoomTwentyTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2083**|**RoomTwentyTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2084**|**ZigBeeOneDeviceProperty**|*O3EComplexType*|84||ro||
+|**2085**|**ZigBeeOneDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2086**|**ZigBeeOneDeviceCurrentValues**|RawCodec|57||ro||
+|**2086**|**ZigBeeOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2087**|**ZigBeeTwoDeviceProperty**|*O3EComplexType*|84||ro||
+|**2088**|**ZigBeeTwoDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2089**|**ZigBeeTwoDeviceCurrentValues**|RawCodec|57||ro||
+|**2089**|**ZigBeeTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2090**|**ZigBeeThreeDeviceProperty**|*O3EComplexType*|84||ro||
+|**2091**|**ZigBeeThreeDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2092**|**ZigBeeThreeDeviceCurrentValues**|RawCodec|57||ro||
+|**2092**|**ZigBeeThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2093**|**ZigBeeFourDeviceProperty**|*O3EComplexType*|84||ro||
+|**2094**|**ZigBeeFourDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2095**|**ZigBeeFourDeviceCurrentValues**|RawCodec|57||ro||
+|**2095**|**ZigBeeFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2096**|**ZigBeeFiveDeviceProperty**|*O3EComplexType*|84||ro||
+|**2097**|**ZigBeeFiveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2098**|**ZigBeeFiveDeviceCurrentValues**|RawCodec|57||ro||
+|**2098**|**ZigBeeFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2099**|**ZigBeeSixDeviceProperty**|*O3EComplexType*|84||ro||
+|**2100**|**ZigBeeSixDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2101**|**ZigBeeSixDeviceCurrentValues**|RawCodec|57||ro||
+|**2101**|**ZigBeeSixDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2102**|**ZigBeeSevenDeviceProperty**|*O3EComplexType*|84||ro||
+|**2103**|**ZigBeeSevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2104**|**ZigBeeSevenDeviceCurrentValues**|RawCodec|57||ro||
+|**2104**|**ZigBeeSevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2105**|**ZigBeeEightDeviceProperty**|*O3EComplexType*|84||ro||
+|**2106**|**ZigBeeEightDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2107**|**ZigBeeEightDeviceCurrentValues**|RawCodec|57||ro||
+|**2107**|**ZigBeeEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2108**|**ZigBeeNineDeviceProperty**|*O3EComplexType*|84||ro||
+|**2109**|**ZigBeeNineDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2110**|**ZigBeeNineDeviceCurrentValues**|RawCodec|57||ro||
+|**2110**|**ZigBeeNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2111**|**ZigBeeTenDeviceProperty**|*O3EComplexType*|84||ro||
+|**2112**|**ZigBeeTenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2113**|**ZigBeeTenDeviceCurrentValues**|RawCodec|57||ro||
+|**2113**|**ZigBeeTenDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2114**|**ZigBeeElevenDeviceProperty**|*O3EComplexType*|84||ro||
+|**2115**|**ZigBeeElevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2116**|**ZigBeeElevenDeviceCurrentValues**|RawCodec|57||ro||
+|**2116**|**ZigBeeElevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2117**|**ZigBeeTwelveDeviceProperty**|*O3EComplexType*|84||ro||
+|**2118**|**ZigBeeTwelveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2119**|**ZigBeeTwelveDeviceCurrentValues**|RawCodec|57||ro||
+|**2119**|**ZigBeeTwelveDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2120**|**ZigBeeThirteenDeviceProperty**|*O3EComplexType*|84||ro||
+|**2121**|**ZigBeeThirteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2122**|**ZigBeeThirteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2122**|**ZigBeeThirteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2123**|**ZigBeeFourteenDeviceProperty**|*O3EComplexType*|84||ro||
+|**2124**|**ZigBeeFourteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2125**|**ZigBeeFourteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2125**|**ZigBeeFourteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2126**|**ZigBeeFifteenDeviceProperty**|*O3EComplexType*|84||ro||
+|**2127**|**ZigBeeFifteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2128**|**ZigBeeFifteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2128**|**ZigBeeFifteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2129**|**ZigBeeSixteenDeviceProperty**|*O3EComplexType*|84||ro||
+|**2130**|**ZigBeeSixteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2131**|**ZigBeeSixteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2131**|**ZigBeeSixteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2132**|**ZigBeeSeventeenDeviceProperty**|*O3EComplexType*|84||ro||
+|**2133**|**ZigBeeSeventeenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2134**|**ZigBeeSeventeenDeviceCurrentValues**|RawCodec|57||ro||
+|**2134**|**ZigBeeSeventeenDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2135**|**ZigBeeEighteenDeviceProperty**|*O3EComplexType*|84||ro||
+|**2136**|**ZigBeeEighteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2137**|**ZigBeeEighteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2137**|**ZigBeeEighteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2138**|**ZigBeeNineteenDeviceProperty**|*O3EComplexType*|84||ro||
+|**2139**|**ZigBeeNineteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2140**|**ZigBeeNineteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2140**|**ZigBeeNineteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2141**|**ZigBeeTwentyDeviceProperty**|*O3EComplexType*|84||ro||
+|**2142**|**ZigBeeTwentyDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2143**|**ZigBeeTwentyDeviceCurrentValues**|RawCodec|57||ro||
+|**2143**|**ZigBeeTwentyDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2144**|**PointOfCommonCouplingAcActiveCurrent**|RawCodec|16||ro||
+|**2145**|**ObjectTopology**|RawCodec|38||ro||
+|**2146**|**ZigBeeApartmentOneProperty**|RawCodec|8||ro||
+|**2147**|**ZigBeeApartmentOneTopology**|RawCodec|106||ro||
+|**2158**|**ActivatedFeatures**|RawCodec|16||ro||
+|**2159**|**ApartmentOneCurrentValues**|RawCodec|84||ro||
+|**2164**|**DeviceDigitalInputSixValue**|O3EByteVal|1||ro||
+|**2165**|**DevicePwmOutputThreeValue**|O3EInt8|1||ro||
+|**2166**|**MixerOneCircuitExternalHookupDemandInput**|RawCodec|1||ro||
+|**2167**|**MixerTwoCircuitExternalHookupDemandInput**|RawCodec|1||ro||
+|**2168**|**MixerThreeCircuitExternalHookupDemandInput**|RawCodec|1||ro||
+|**2169**|**MixerFourCircuitExternalHookupDemandInput**|RawCodec|1||ro||
+|**2182**|**SupportedApartmentFeatures**|RawCodec|15||ro||
+|**2183**|**ActivatedApartmentFeatures**|RawCodec|15||ro||
+|**2184**|**BackupBoxTest**|RawCodec|2||ro||
+|**2185**|**BatteryStateOfChargeHistogram**|RawCodec|40||ro||
+|**2188**|**PointOfCommonCouplingSetActivePowerTotal**|RawCodec|6||ro||
+|**2189**|**EebusDeviceListTwo**|RawCodec|104||ro||
+|**2190**|**EebusDeviceListThree**|RawCodec|104||ro||
+|**2191**|**EebusDeviceListFour**|RawCodec|104||ro||
+|**2192**|**EebusDeviceListFive**|RawCodec|104||ro||
+|**2193**|**ApartmentOneSupplyChannelTwoTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2194**|**ApartmentOneSupplyChannelTwoTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2195**|**ApartmentOneSupplyChannelTwoTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2196**|**ApartmentOneSupplyChannelTwoTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2197**|**ApartmentOneSupplyChannelTwoTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2198**|**ApartmentOneSupplyChannelTwoTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2199**|**ApartmentOneSupplyChannelTwoTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2200**|**ApartmentOneSupplyChannelThreeTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2201**|**ApartmentOneSupplyChannelThreeTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2202**|**ApartmentOneSupplyChannelThreeTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2203**|**ApartmentOneSupplyChannelThreeTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2204**|**ApartmentOneSupplyChannelThreeTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2205**|**ApartmentOneSupplyChannelThreeTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2206**|**ApartmentOneSupplyChannelThreeTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2207**|**ApartmentOneSupplyChannelFourTimeScheduleMonday**|RawCodec|57||**rw**||
+|**2208**|**ApartmentOneSupplyChannelFourTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**2209**|**ApartmentOneSupplyChannelFourTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**2210**|**ApartmentOneSupplyChannelFourTimeScheduleThursday**|RawCodec|57||**rw**||
+|**2211**|**ApartmentOneSupplyChannelFourTimeScheduleFriday**|RawCodec|57||**rw**||
+|**2212**|**ApartmentOneSupplyChannelFourTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**2213**|**ApartmentOneSupplyChannelFourTimeScheduleSunday**|RawCodec|57||**rw**||
+|**2214**|[**BackupBoxConfiguration**](## "Configuration for Backup Box")|*O3EComplexType*|2||**rw**||
+|**2217**|**InputDemandSideManagementlReceiver**|RawCodec|1||ro||
+|**2218**|**RemoteLimitValueDemandSideManagement**|RawCodec|4||ro||
+|**2219**|**BatteryCalibration**|RawCodec|1||ro||
+|**2220**|**BatteryReactivePowerMode**|RawCodec|1||ro||
+|**2221**|**BatteryReactivePowerFixCosinusPhi**|RawCodec|3||ro||
+|**2222**|**BatteryReactivePower**|RawCodec|18||ro||
+|**2223**|**BatteryReactivePowerCosinusPhi**|RawCodec|15||ro||
+|**2224**|**PhotovoltaicsActivePowerLimitation**|RawCodec|16||ro||
+|**2225**|**ElectricEnergyStorageSetpoint**|RawCodec|12||**rw**||
+|**2226**|**ElectricEnergyStorageMaximum**|RawCodec|12||ro||
+|**2229**|**ThermostatTerminalOneFunction**|RawCodec|1||ro||
+|**2230**|**ThermostatTerminalTwoFunction**|RawCodec|1||ro||
+|**2231**|**ThermostatTerminalThreeFunction**|RawCodec|1||ro||
+|**2233**|**PersistentStorageStatus**|O3EByteVal|1||ro||
+|**2234**|**PowerGridCodeSettingsNormOne**|RawCodec|27||ro||
+|**2235**|**CascadeSystemConfiguration**|RawCodec|65||ro||
+|**2236**|**CascadeDeviceSetpoint**|RawCodec|10||**rw**||
+|**2237**|**CascadeDeviceStatus**|RawCodec|18||ro||
+|**2239**|**ElectricEnergyStorageControlMode**|RawCodec|1||ro||
+|**2240**|**BatteryTemperatureSensor**|*O3EComplexType*|9||ro||
+|**2241**|**OutsideTemperatureSensorSource**|RawCodec|1||ro||
+|**2242**|**PowerGridCodeSettingsNormTwo**|RawCodec|27||ro||
+|**2244**|**PowerGridCodeSettingsNormFour**|RawCodec|27||ro||
+|**2246**|**FixReactivePowerIn**|RawCodec|26||ro||
+|**2247**|**FilterRuntime**|*O3EComplexType*|12||ro||
+|**2248**|**CurrentVentilationHeatRecovery**|O3EByteVal|1||ro||
+|**2249**|**DigitalSwitchSettingOne**|RawCodec|8||ro||
+|**2250**|**DigitalSwitchSettingTwo**|RawCodec|8||ro||
+|**2251**|**LedStatusOne**|RawCodec|8||ro||
+|**2252**|**LedStatusTwo**|RawCodec|8||ro||
+|**2253**|**DeviceDigitalInputSevenValue**|O3EByteVal|1||ro||
+|**2254**|**PowerGridCodeSettingConfiguration**|RawCodec|1||ro||
+|**2255**|**MinimumSecondaryReturnTemperatureRefrigerantCircuit**|O3EInt16|2||ro||
+|**2256**|[**DesiredThermalEnergyDefrost**](## "Target value of thermal energy to perform next defrosting")|O3EInt16|2|Wh|ro||
+|**2257**|**DomesticHotWaterTemperatureSetpointOffset**|O3EInt16|2||**rw**||
+|**2259**|**RefrigerationCircuitStatus**|O3EByteVal|1||ro||
+|**2260**|**ZigBeeTwentyOneDeviceProperty**|*O3EComplexType*|84||ro||
+|**2261**|**ZigBeeTwentyOneDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2262**|**ZigBeeTwentyOneDeviceCurrentValues**|RawCodec|57||ro||
+|**2262**|**ZigBeeTwentyOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2263**|**ZigBeeTwentyTwoDeviceProperty**|*O3EComplexType*|84||ro||
+|**2264**|**ZigBeeTwentyTwoDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2265**|**ZigBeeTwentyTwoDeviceCurrentValues**|RawCodec|57||ro||
+|**2265**|**ZigBeeTwentyTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2266**|**ZigBeeTwentyThreeDeviceProperty**|*O3EComplexType*|84||ro||
+|**2267**|**ZigBeeTwentyThreeDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2268**|**ZigBeeTwentyThreeDeviceCurrentValues**|RawCodec|57||ro||
+|**2268**|**ZigBeeTwentyThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2269**|**ZigBeeTwentyFourDeviceProperty**|*O3EComplexType*|84||ro||
+|**2270**|**ZigBeeTwentyFourDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2271**|**ZigBeeTwentyFourDeviceCurrentValues**|RawCodec|57||ro||
+|**2271**|**ZigBeeTwentyFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2272**|**ZigBeeTwentyFiveDeviceProperty**|*O3EComplexType*|84||ro||
+|**2273**|**ZigBeeTwentyFiveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2274**|**ZigBeeTwentyFiveDeviceCurrentValues**|RawCodec|57||ro||
+|**2274**|**ZigBeeTwentyFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2275**|**ZigBeeTwentySixDeviceProperty**|*O3EComplexType*|84||ro||
+|**2276**|**ZigBeeTwentySixDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2277**|**ZigBeeTwentySixDeviceCurrentValues**|RawCodec|57||ro||
+|**2277**|**ZigBeeTwentySixDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2278**|**ZigBeeTwentySevenDeviceProperty**|*O3EComplexType*|84||ro||
+|**2279**|**ZigBeeTwentySevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2280**|**ZigBeeTwentySevenDeviceCurrentValues**|RawCodec|57||ro||
+|**2280**|**ZigBeeTwentySevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2281**|**ZigBeeTwentyEightDeviceProperty**|*O3EComplexType*|84||ro||
+|**2282**|**ZigBeeTwentyEightDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2283**|**ZigBeeTwentyEightDeviceCurrentValues**|RawCodec|57||ro||
+|**2283**|**ZigBeeTwentyEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2284**|**ZigBeeTwentyNineDeviceProperty**|*O3EComplexType*|84||ro||
+|**2285**|**ZigBeeTwentyNineDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2286**|**ZigBeeTwentyNineDeviceCurrentValues**|RawCodec|57||ro||
+|**2286**|**ZigBeeTwentyNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2287**|**ZigBeeThirtyDeviceProperty**|*O3EComplexType*|84||ro||
+|**2288**|**ZigBeeThirtyDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2289**|**ZigBeeThirtyDeviceCurrentValues**|RawCodec|57||ro||
+|**2289**|**ZigBeeThirtyDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2290**|**ZigBeeThirtyOneDeviceProperty**|*O3EComplexType*|84||ro||
+|**2291**|**ZigBeeThirtyOneDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2292**|**ZigBeeThirtyOneDeviceCurrentValues**|RawCodec|57||ro||
+|**2292**|**ZigBeeThirtyOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2293**|**ZigBeeThirtyTwoDeviceProperty**|*O3EComplexType*|84||ro||
+|**2294**|**ZigBeeThirtyTwoDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2295**|**ZigBeeThirtyTwoDeviceCurrentValues**|RawCodec|57||ro||
+|**2295**|**ZigBeeThirtyTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2296**|**ZigBeeThirtyThreeDeviceProperty**|*O3EComplexType*|84||ro||
+|**2297**|**ZigBeeThirtyThreeDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2298**|**ZigBeeThirtyThreeDeviceCurrentValues**|RawCodec|57||ro||
+|**2298**|**ZigBeeThirtyThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2299**|**ZigBeeThirtyFourDeviceProperty**|*O3EComplexType*|84||ro||
+|**2300**|**ZigBeeThirtyFourDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2301**|**ZigBeeThirtyFourDeviceCurrentValues**|RawCodec|57||ro||
+|**2301**|**ZigBeeThirtyFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2302**|**ZigBeeThirtyFiveDeviceProperty**|*O3EComplexType*|84||ro||
+|**2303**|**ZigBeeThirtyFiveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2304**|**ZigBeeThirtyFiveDeviceCurrentValues**|RawCodec|57||ro||
+|**2304**|**ZigBeeThirtyFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2305**|**ZigBeeThirtySixDeviceProperty**|*O3EComplexType*|84||ro||
+|**2306**|**ZigBeeThirtySixDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2307**|**ZigBeeThirtySixDeviceCurrentValues**|RawCodec|57||ro||
+|**2307**|**ZigBeeThirtySixDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2308**|**ZigBeeThirtySevenDeviceProperty**|*O3EComplexType*|84||ro||
+|**2309**|**ZigBeeThirtySevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2310**|**ZigBeeThirtySevenDeviceCurrentValues**|RawCodec|57||ro||
+|**2310**|**ZigBeeThirtySevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2311**|**ZigBeeThirtyEightDeviceProperty**|*O3EComplexType*|84||ro||
+|**2312**|**ZigBeeThirtyEightDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2313**|**ZigBeeThirtyEightDeviceCurrentValues**|RawCodec|57||ro||
+|**2313**|**ZigBeeThirtyEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2314**|**ZigBeeThirtyNineDeviceProperty**|*O3EComplexType*|84||ro||
+|**2315**|**ZigBeeThirtyNineDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2316**|**ZigBeeThirtyNineDeviceCurrentValues**|RawCodec|57||ro||
+|**2316**|**ZigBeeThirtyNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2317**|**ZigBeeFourtyDeviceProperty**|*O3EComplexType*|84||ro||
+|**2318**|**ZigBeeFourtyDeviceSetpoint**|*O3EComplexType*|13||**rw**||
+|**2319**|**ZigBeeFourtyDeviceCurrentValues**|RawCodec|57||ro||
+|**2319**|**ZigBeeFourtyDeviceCurrentValues**|*O3EComplexType*|68||ro||
+|**2320**|[**DomesticHotWaterStatus**](## "Status of domestic hot water preparation {0: Idle, 1: Active, 2: Postrun}")|O3EEnum|1||ro||
+|**2321**|**ZigBeeApartmentOneDecoupleList**|RawCodec|91||ro||
+|**2327**|**VentilationTargetVolumeFlow**|*O3EComplexType*|4||**rw**||
+|**2328**|**VentilationCurrentVolumeFlow**|*O3EComplexType*|4||ro||
+|**2329**|**BatteryEnergyUsedAverage**|RawCodec|14||ro||
+|**2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
+|**2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
+|**2332**|[**GenericDigitalInputConfigurationOnBoardFour**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
+|**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2334**|[**EvaporatorVaporTemperatureSensor**](## "Actual temperature avaporator inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2335**|**BatteryModuleCoulombCounters**|RawCodec|8||ro||
+|**2336**|**ControllerBoardTemperatureSensor**|*O3EComplexType*|9||ro||
+|**2337**|**UltraLowNitroOxideStatusActive**|RawCodec|1||ro||
+|**2338**|**HighLimitTestMode**|RawCodec|3||ro||
+|**2339**|**SafetyLimiterThresholdTemperature**|RawCodec|2||ro||
+|**2340**|**ElectricalHeaterConfiguration**|RawCodec|2||ro||
+|**2341**|**CoefficientOfPerformanceConfiguration**|RawCodec|4||ro||
+|**2342**|**NominalThermalCapacityHeating**|O3EInt32|4||ro||
+|**2343**|**NominalThermalCapacityCooling**|O3EInt32|4||ro||
+|**2344**|**CombustionAirInterlockSettings**|RawCodec|1||ro||
+|**2345**|[**CompressorSetpointPercent**](## "Setpoint of speed of heat pump compressor")|O3EInt8|1|%|**rw**||
+|**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2348**|**PhotovoltaicsActivePowerLimitationEnergyManagementSystem**|RawCodec|8||ro||
+|**2349**|**PhotovoltaicsActivePowerLimitationFallbackEnergyManagementSystem**|RawCodec|8||ro||
+|**2350**|**EnergyManagmentSystemResultingControlState**|O3EByteVal|1||ro||
+|**2351**|[**HeatPumpCompressor**](## "Actual state of the heat pump compressor")|*O3EComplexType*|2||ro||
+|**2352**|[**AdditionalElectricHeater**](## "Actual state of the electric auxiliary heating")|*O3EComplexType*|2||ro||
+|**2353**|**TargetDemandHeatProducer**|*O3EComplexType*|4||**rw**||
+|**2355**|**MinimumVentilationSupplyAirTemperature**|*O3EComplexType*|4||ro||
+|**2356**|**CurrentSystemHeatingCoolingLevel**|O3EInt8|1||ro||
+|**2369**|[**HeatPumpCompressorStatistical**](## "Statistics for heat pump compressor starts")|*O3EComplexType*|14||ro||
+|**2370**|**AdditionalElectricHeaterStatistical**|*O3EComplexType*|11||ro||
+|**2371**|**VentilationControlMode**|*O3EComplexType*|2||ro||
+|**2372**|**VentilationControllerOperationState**|*O3EComplexType*|2||**rw**||
+|**2373**|**VentilationAirVolumeFlowBalancingOffset**|RawCodec|2||**rw**||
+|**2374**|**VentilationExternalLockFunctionSetting**|O3EByteVal|1||ro||
+|**2375**|**NarrowBandInternetOfThingsConfiguration**|RawCodec|7||ro||
+|**2376**|**NarrowBandInternetOfThingsRadio**|RawCodec|132||ro||
+|**2377**|**EvolvedUniversalTerrestrialRadioAccessDataLinkInfo**|RawCodec|45||ro||
+|**2378**|**EvolvedUniversalTerrestrialRadioAccessNeighborCells**|RawCodec|48||ro||
+|**2379**|**EvolvedUniversalTerrestrialRadioAccessServingCellInfo**|RawCodec|22||ro||
+|**2380**|**EvolvedUniversalTerrestrialRadioAccessServingCellMeasurements**|RawCodec|17||ro||
+|**2382**|**PaddleSwitch**|RawCodec|2||ro||
+|**2403**|**BypassOperationLevel**|O3EInt8|1||ro||
+|**2404**|**BivalenceControlMode**|*O3EComplexType*|6||ro||
+|**2405**|**MixerOneCircuitConstantFlowSetTemperatureCooling**|*O3EComplexType*|6||ro||
+|**2406**|**MixerTwoCircuitConstantFlowSetTemperatureCooling**|*O3EComplexType*|6||ro||
+|**2407**|**MixerThreeCircuitConstantFlowSetTemperatureCooling**|*O3EComplexType*|6||ro||
+|**2408**|**MixerFourCircuitConstantFlowSetTemperatureCooling**|*O3EComplexType*|6||ro||
+|**2409**|**MixerOneCircuitMinimumMaximumFlowSetTemperatureCooling**|RawCodec|12||ro||
+|**2410**|**MixerTwoCircuitMinimumMaximumFlowSetTemperatureCooling**|RawCodec|12||ro||
+|**2411**|**MixerThreeCircuitMinimumMaximumFlowSetTemperatureCooling**|RawCodec|12||ro||
+|**2412**|**MixerFourCircuitMinimumMaximumFlowSetTemperatureCooling**|RawCodec|12||ro||
+|**2413**|**MixerOneCircuitThresholdCooling**|*O3EComplexType*|4||ro||
+|**2414**|**MixerTwoCircuitThresholdCooling**|*O3EComplexType*|4||ro||
+|**2415**|**MixerThreeCircuitThresholdCooling**|*O3EComplexType*|4||ro||
+|**2416**|**MixerFourCircuitThresholdCooling**|*O3EComplexType*|4||ro||
+|**2417**|**MixerOneCircuitTargetValueRelativeHumidityCooling**|RawCodec|6||**rw**||
+|**2418**|**MixerTwoCircuitTargetValueRelativeHumidityCooling**|RawCodec|6||**rw**||
+|**2419**|**MixerThreeCircuitTargetValueRelativeHumidityCooling**|RawCodec|6||**rw**||
+|**2420**|**MixerFourCircuitTargetValueRelativeHumidityCooling**|RawCodec|6||**rw**||
+|**2421**|**MixerOneCircuitTemperatureOffsetCooling**|RawCodec|2||**rw**||
+|**2422**|**MixerTwoCircuitTemperatureOffsetCooling**|RawCodec|2||**rw**||
+|**2423**|**MixerThreeCircuitTemperatureOffsetCooling**|RawCodec|2||**rw**||
+|**2424**|**MixerFourCircuitTemperatureOffsetCooling**|RawCodec|2||**rw**||
+|**2425**|**BatteryModuleTypeId**|RawCodec|2||ro||
+|**2426**|**MixerOneCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||ro||
+|**2427**|**MixerTwoCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||ro||
+|**2428**|**MixerThreeCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||ro||
+|**2429**|**MixerFourCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||ro||
+|**2442**|**HeatPumpFrostProtection**|O3EInt8|1||ro||
+|**2444**|**LogLevelEmbbededApplication**|O3EInt8|1||ro||
+|**2445**|**SupplementalHeatEngineConfiguration**|RawCodec|2||ro||
+|**2446**|**HmiWakeupTrigger**|RawCodec|4||ro||
+|**2447**|**SupplyAirVolumeFlowDeviceLimit**|*O3EComplexType*|4||ro||
+|**2448**|**ExhaustAirVolumeFlowDeviceLimit**|*O3EComplexType*|4||ro||
+|**2449**|**CustomerSpecificDeviceName**|RawCodec|2||ro||
+|**2450**|**CascadeSequenceCurrentBoiler**|RawCodec|16||ro||
+|**2451**|**CascadeEmergencyOperationMode**|RawCodec|3||ro||
+|**2452**|**MixerOneCircuitRoomTemperatureThresholdCooling**|*O3EComplexType*|4||ro||
+|**2453**|**MixerTwoCircuitRoomTemperatureThresholdCooling**|*O3EComplexType*|4||ro||
+|**2454**|**MixerThreeCircuitRoomTemperatureThresholdCooling**|*O3EComplexType*|4||ro||
+|**2455**|**MixerFourCircuitRoomTemperatureThresholdCooling**|*O3EComplexType*|4||ro||
+|**2457**|**CalculatedOutsideTemperature**|*O3EComplexType*|9||ro||
+|**2458**|**CascadeDeviceStatusLead**|RawCodec|18||ro||
+|**2459**|**CascadeDeviceStatusLagOne**|RawCodec|18||ro||
+|**2460**|**CascadeDeviceStatusLagTwo**|RawCodec|18||ro||
+|**2461**|**CascadeDeviceStatusLagThree**|RawCodec|18||ro||
+|**2462**|**CascadeDeviceStatusLagFour**|RawCodec|18||ro||
+|**2463**|**CascadeDeviceStatusLagFive**|RawCodec|18||ro||
+|**2464**|**CascadeDeviceStatusLagSix**|RawCodec|18||ro||
+|**2465**|**CascadeDeviceStatusLagSeven**|RawCodec|18||ro||
+|**2466**|**CascadeDeviceStatusLagEight**|RawCodec|18||ro||
+|**2467**|**CascadeDeviceStatusLagNine**|RawCodec|18||ro||
+|**2468**|**CascadeDeviceStatusLagTen**|RawCodec|18||ro||
+|**2469**|**CascadeDeviceStatusLagEleven**|RawCodec|18||ro||
+|**2470**|**CascadeDeviceStatusLagTwelve**|RawCodec|18||ro||
+|**2471**|**CascadeDeviceStatusLagThirteen**|RawCodec|18||ro||
+|**2472**|**CascadeDeviceStatusLagFourteen**|RawCodec|18||ro||
+|**2473**|**CascadeDeviceStatusLagFifteen**|RawCodec|18||ro||
+|**2474**|**CascadeCommonFlowTemperatureSensor**|RawCodec|9||ro||
+|**2475**|**CascadeCommonFlowCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**2476**|**EnvironmentAirQualityTargetValues**|RawCodec|21||**rw**||
+|**2477**|**EnvironmentAirQualitySensor**|O3EByteVal|1||ro||
+|**2479**|**MixerOneCircuitRoomAirHumiditySensor**|RawCodec|5||ro||
+|**2480**|**MixerTwoCircuitRoomAirHumiditySensor**|RawCodec|5||ro||
+|**2481**|**MixerThreeCircuitRoomAirHumiditySensor**|RawCodec|5||ro||
+|**2482**|**MixerFourCircuitRoomAirHumiditySensor**|RawCodec|5||ro||
+|**2484**|**ElectricalPowerRangeMetaData**|RawCodec|8||ro||
+|**2486**|[**CurrentElectricalPowerConsumptionRefrigerantCircuit**](## "Actual electrical power consumption of the refrigeration circuit")|O3EInt32|4|W|ro||
+|**2487**|[**CurrentElectricalPowerConsumptionElectricHeater**](## "Actual electrical power consumption of the auxiliary heater")|O3EInt32|4|W|ro||
+|**2488**|[**CurrentElectricalPowerConsumptionSystem**](## "Actual total electrical power consumption of the system")|O3EInt32|4|W|ro||
+|**2489**|**FrostProtectionStatus**|RawCodec|3||ro||
+|**2490**|**StartUpWizardState**|RawCodec|1||ro||
+|**2491**|**DomesticHotWaterDemandInput**|RawCodec|1||ro||
+|**2493**|**VentilationBypassPosition**|RawCodec|2||ro||
+|**2494**|[**CurrentThermalCapacityRefrigerantCircuit**](## "Actual thermal power output of the refrigeration circuit")|O3EInt32|4|W|ro||
+|**2495**|[**CurrentThermalCapacityElectricHeater**](## "Actual thermal power output of the auxiliary heater")|O3EInt32|4|W|ro||
+|**2496**|[**CurrentThermalCapacitySystem**](## "Actual thermal power output of the system")|O3EInt32|4|W|ro||
+|**2497**|**ResetStatisticalValuesDate**|RawCodec|3||ro||
+|**2498**|**CentralHeatingPumpType**|O3EByteVal|1||ro||
+|**2499**|**MixerOneCircuitPumpType**|O3EByteVal|1||ro||
+|**2500**|**MixerTwoCircuitPumpType**|O3EByteVal|1||ro||
+|**2501**|**MixerThreeCircuitPumpType**|O3EByteVal|1||ro||
+|**2502**|**MixerFourCircuitPumpType**|O3EByteVal|1||ro||
+|**2515**|**EnergyConsumptionDomesticHotWaterMonthMatrixElectricHeater**|*O3EComplexType*|124||ro||
+|**2516**|**EnergyConsumptionDomesticHotWaterYearMatrixElectricHeater**|*O3EComplexType*|96||ro||
+|**2517**|**EnergyConsumptionDomesticHotWaterElectricHeater**|*O3EComplexType*|24||ro||
+|**2524**|**EnergyConsumptionCentralHeatingMonthMatrixElectricHeater**|*O3EComplexType*|124||ro||
+|**2525**|**EnergyConsumptionCentralHeatingYearMatrixElectricHeater**|*O3EComplexType*|96||ro||
+|**2526**|**EnergyConsumptionCentralHeatingElectricHeater**|*O3EComplexType*|24||ro||
+|**2527**|**GeneratedCoolingOutputMonthMatrix**|*O3EComplexType*|124||ro||
+|**2528**|**GeneratedCoolingOutputYearMatrix**|*O3EComplexType*|96||ro||
+|**2529**|**GeneratedCoolingOutput**|*O3EComplexType*|24||ro||
+|**2533**|**PowerGridCodeSettingsNormSix**|RawCodec|27||ro||
+|**2534**|**BusTopologyMatrixSix**|RawCodec|181||ro||
+|**2535**|**BusTopologyMatrixSeven**|RawCodec|181||ro||
+|**2536**|**BusTopologyMatrixEight**|RawCodec|181||ro||
+|**2537**|**BusTopologyMatrixNine**|RawCodec|181||ro||
+|**2538**|**BusTopologyMatrixTen**|RawCodec|181||ro||
+|**2539**|**AlternatingCurrentEnergyStatistic**|RawCodec|40||ro||
+|**2540**|**NoiseReductionSettings**|RawCodec|6||ro||
+|**2541**|**SupplyAirVolumeFlowConfigurationLimit**|*O3EComplexType*|4||ro||
+|**2542**|**ExhaustAirVolumeFlowConfigurationLimit**|*O3EComplexType*|4||ro||
+|**2543**|**SmartGridTemperatureOffsets**|*O3EComplexType*|10||**rw**||
+|**2544**|**EnableElectricalHeaterSmartGridLock**|O3EByteVal|1||ro||
+|**2545**|**EnableElectricalHeaterSmartGridIncreaseMaxDemand**|O3EByteVal|1||ro||
+|**2546**|**MixerOneCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
+|**2547**|**MixerTwoCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
+|**2548**|**MixerThreeCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
+|**2549**|**MixerFourCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
+|**2551**|**FlameBurnerTwo**|RawCodec|6||ro||
+|**2552**|**ModulationCurrentValueBurnerTwo**|RawCodec|2||ro||
+|**2553**|**HeatEngineStatisticalBurnerTwo**|RawCodec|12||ro||
+|**2554**|**CellularModemIdentification**|RawCodec|62||ro||
+|**2555**|**ElectricalPowerSetPoint**|RawCodec|4||**rw**||
+|**2556**|**ElectricalEnergyRemainingCapacity**|RawCodec|4||ro||
+|**2557**|**HeatPumpState**|O3EByteVal|1||ro||
+|**2558**|**HeatPumpSupportedStates**|RawCodec|3||ro||
+|**2559**|**VentilationFanModbusId**|RawCodec|2||ro||
+|**2560**|**SmartGridFeatureSelection**|O3EByteVal|1||ro||
+|**2563**|**ZigBeeDeviceDecoupleList**|RawCodec|91||ro||
+|**2564**|**HydraulicFlapState**|RawCodec|1||ro||
+|**2566**|**VentilationSupplyFanRuntime**|O3EInt32|4||ro||
+|**2567**|**VentilationExhaustFanRuntime**|O3EInt32|4||ro||
+|**2568**|**RefrigerantType**|O3EInt8|1||ro||
+|**2569**|[**CompressorSpeedRps**](## "Actual speed of the heat pump compressor")|O3EInt16|2|rps|ro||
+|**2570**|**CompressorModulType**|O3EInt16|2||ro||
+|**2571**|**CompressorSuctionSuperheat**|O3EInt16|2||ro||
+|**2572**|**ActualCompressorInletMassflow**|RawCodec|4||ro||
+|**2573**|**CompressorOnTimer**|RawCodec|2||ro||
+|**2574**|**NominalPowerElectricalHeater**|*O3EComplexType*|8||ro||
+|**2575**|**RefrigerationCycleApplicationState**|O3EInt16|2||ro||
+|**2576**|**FuelCellTestModeOne**|RawCodec|2||ro||
+|**2577**|**FuelCellTestModeTwo**|RawCodec|6||ro||
+|**2578**|**RefrigerationCircuitDesiredOperatingMode**|O3EInt8|1||ro||
+|**2579**|**CompressorMinMaxAllowedPrimaryTemperatureHeating**|RawCodec|4||ro||
+|**2580**|**CompressorSetpointRps**|O3EInt16|2||**rw**||
+|**2581**|**CompressorCalculatedSetpointRps**|O3EInt16|2||**rw**||
+|**2582**|**CompressorOffTimer**|RawCodec|2||ro||
+|**2583**|**OxygenProbeProcessValuesBurnerOne**|RawCodec|15||ro||
+|**2584**|**OxygenProbeProcessValuesBurnerTwo**|RawCodec|15||ro||
+|**2586**|**DigitalOutputCooling**|RawCodec|2||ro||
+|**2587**|**BatteryModuleWarrantyDataListLastEntry**|RawCodec|5||ro||
+|**2588**|**BatteryModuleWarrantyDataListOne**|RawCodec|197||ro||
+|**2589**|**BatteryModuleWarrantyDataListTwo**|RawCodec|197||ro||
+|**2590**|**HeatPumpCommonSettingsHeating**|RawCodec|8||ro||
+|**2591**|**HeatPumpCommonSettingsCooling**|RawCodec|8||ro||
+|**2592**|**ExpansionValveTheoreticalSetpoint**|RawCodec|4||**rw**||
+|**2593**|**ProductMatrix**|*O3EList*|181||ro||
+|**2594**|**ElectricalPreHeaterMonthMatrix**|RawCodec|124||ro||
+|**2595**|**ElectricalPreHeaterYearMatrix**|RawCodec|96||ro||
+|**2598**|**VentilationFanAssignmentAvailable**|O3EByteVal|1||ro||
+|**2599**|**VentilationFanAssignmentSwitch**|O3EByteVal|1||ro||
+|**2600**|**ElectricalHeaterActivation**|RawCodec|2||ro||
+|**2601**|**ElectricalHeaterVentilationConfiguration**|RawCodec|2||ro||
+|**2602**|**PrimaryHeatExchangerStatus**|RawCodec|10||ro||
+|**2603**|**PrimaryHeatExchangerCommonSettings**|RawCodec|4||ro||
+|**2604**|**LevelSwitchActivation**|O3EByteVal|1||ro||
+|**2605**|**QuickModeRuntime**|*O3EComplexType*|4||ro||
+|**2606**|**ExternalTriggerActivation**|O3EByteVal|1||ro||
+|**2607**|**ExternalTriggerSettings**|O3EByteVal|1||ro||
+|**2608**|**FilterSettings**|RawCodec|28||ro||
+|**2609**|**CommissioningStatus**|RawCodec|6||ro||
+|**2610**|**SetDeliveryStateExpert**|RawCodec|1||ro||
+|**2611**|**NominalThermalCapacityIndoorUnit**|O3EInt32|4||ro||
+|**2612**|**PrimarySourceCommonSettingsHeating**|*O3EComplexType*|7||ro||
+|**2613**|**PrimarySourceCommonSettingsCooling**|*O3EComplexType*|7||ro||
+|**2621**|**MaximumOperatingPressureActualTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**2622**|**SeasonalCoefficientOfPerformanceHeating**|*O3EComplexType*|9||ro||
+|**2623**|**SeasonalEnergyEfficiencyRatioCooling**|*O3EComplexType*|9||ro||
+|**2624**|**SeasonalCoefficientOfPerformanceDomesticHotWater**|*O3EComplexType*|9||ro||
+|**2625**|**SeasonalCoefficientOfPerformanceHeatingAndDomesticHotWater**|*O3EComplexType*|9||ro||
+|**2626**|**MaximumPowerElectricalHeater**|O3EInt32|4||ro||
+|**2627**|**CompressorStartUpTimer**|O3EInt16|2||ro||
+|**2629**|**DesiredThermalCapacity**|O3EInt32|4||ro||
+|**2630**|**CompressorMinMaxSpeedHeating**|*O3EComplexType*|4||ro||
+|**2631**|**CompressorMinMaxSpeedCooling**|*O3EComplexType*|4||ro||
+|**2632**|**CompressorMinMaxSpeedDefrost**|*O3EComplexType*|4||ro||
+|**2633**|**MaxSpeedNoiseReductionMode**|RawCodec|12||ro||
+|**2634**|**NoiseReductionMode**|O3EByteVal|1||ro||
+|**2635**|**BurnerProcessDataFlags**|RawCodec|8||ro||
+|**2636**|**BurnerTwoProcessDataFlags**|RawCodec|8||ro||
+|**2637**|**BurnerThreeProcessDataFlags**|RawCodec|8||ro||
+|**2638**|**SupportedCountryCodes**|RawCodec|4||ro||
+|**2643**|**MaximumRechargePower**|O3EInt16|2||ro||
+|**2733**|**InstallationConfirmation**|RawCodec|3||ro||
+|**2735**|[**FourThreeWayValveValveCurrentPosition**](## "Current position of the four/three-way valve {0: Heating/Cooling, 1: Internal Buffer, 2: Domestic Hot Water, 3: Heating/Cooling and Internal Buffer, 4: Domestic Hot Water and Internal Buffer}")|O3EEnum|1||ro||
+|**2741**|**ComfortEnsuringMode**|RawCodec|3||ro||
+|**2742**|**DiagnosticHydraulicFilterInterval**|O3EInt8|1||ro||
+|**2743**|**DiagnosticElectricalHeaterSafetyTemperatureLimiter**|O3EInt8|1||ro||
+|**2744**|**DiagnosticSecondaryFourThreeWayValve**|O3EInt8|1||ro||
+|**2745**|**DiagnosticHydraulicFilterContamination**|O3EInt8|1||ro||
+|**2746**|**DiagnosticHydraulicSafetyValve**|O3EInt8|1||ro||
+|**2748**|**DiagnosticControlledLowPressureShutDown**|O3EInt8|1||ro||
+|**2749**|**DiagnosticControlledHighPressureShutDown**|O3EInt8|1||ro||
+|**2750**|**DiagnosticHydraulicTemperatureSensors**|O3EInt8|1||ro||
+|**2751**|**DiagnosticElectronicExpansionValve**|O3EInt8|1||ro||
+|**2752**|**DiagnosticFanOperation**|O3EInt8|1||ro||
+|**2753**|**DiagnosticHeatExchangerConstraints**|O3EInt8|1||ro||
+|**2758**|**GasPressureSwitchErrorReaction**|RawCodec|1||ro||
+|**2759**|**EnergyRecoveredCrossHeatExchanger**|RawCodec|24||ro||
+|**2760**|**EnergyOwnConsumption**|RawCodec|24||ro||
+|**2767**|**DiagnosticMonitoringPressureDrop**|O3EInt8|1||ro||
+|**2768**|**DiagnosticMonitoringPressurePeaks**|O3EInt8|1||ro||
+|**2772**|**EnergyRecoveredCrossHeatExchangerMonthMatrix**|RawCodec|124||ro||
+|**2773**|**EnergyRecoveredCrossHeatExchangerYearMatrix**|RawCodec|96||ro||
+|**2774**|**EnergyOwnConsumptionMonthMatrix**|RawCodec|124||ro||
+|**2775**|**EnergyOwnConsumptionYearMatrix**|RawCodec|96||ro||
+|**2776**|**ProductMatrixTwo**|RawCodec|181||ro||
+|**2777**|**PrimaryBootLoaderVersion**|RawCodec|8||ro||
+|**2778**|**ErrorMessageInputSelection**|RawCodec|2||ro||
+|**2779**|**DeltaTemperaturePumpControlSetpoint**|RawCodec|2||**rw**||
+|**2780**|**DomesticHotWaterFlowRangeDwellDuration**|RawCodec|1||ro||
+|**2781**|**AirVolumeFlowSetpoint**|RawCodec|7||**rw**||
+|**2782**|**AirVolumeFlowStatus**|RawCodec|24||ro||
+|**2783**|**VentilationSelfCheckDuration**|RawCodec|4||ro||
+|**2784**|**SecondaryHeatExchangerVaporPressureSensor**|*O3EComplexType*|9||ro||
+|**2785**|**ElectricalHeaterStarts**|RawCodec|16||ro||
+|**2786**|**ElectricalPreheaterCurrentPowerConsumption**|RawCodec|2||ro||
+|**2791**|**CentralHeatingPumpStatus**|*O3EComplexType*|5||ro||
+|**2792**|**MixerOneCircuitPumpStatus**|*O3EComplexType*|5||ro||
+|**2793**|**MixerTwoCircuitPumpStatus**|*O3EComplexType*|5||ro||
+|**2794**|**MixerThreeCircuitPumpStatus**|*O3EComplexType*|5||ro||
+|**2795**|**MixerFourCircuitPumpStatus**|*O3EComplexType*|5||ro||
+|**2796**|**ExternalHeaterConfiguration**|*O3EComplexType*|2||ro||
+|**2797**|**VentilationBypassFlapAvailableCount**|O3EByteVal|1||ro||
+|**2798**|**RelativeHumiditySensorSelection**|O3EByteVal|1||ro||
+|**2799**|**ElectricalHeatersShutdownDelay**|O3EByteVal|1||ro||
+|**2800**|**VentilationHeatExchangerType**|O3EByteVal|1||ro||
+|**2801**|**VentilationFanAssignmentSwitchManufacturing**|O3EByteVal|1||ro||
+|**2802**|**InverterSelfTestStatus**|RawCodec|6||ro||
+|**2804**|**InverterSelfTestResultTwo**|RawCodec|151||ro||
+|**2805**|**InverterSelfTestResultThree**|RawCodec|151||ro||
+|**2806**|[**RefrigerationCircuitOperationMode**](## "Actual operating mode of the refrigeration circuit")|*O3EComplexType*|2||ro||
+|**2807**|**InverterHousingTemperature**|RawCodec|9||ro||
+|**2808**|**InverterInternalPowerModuleTemperature**|RawCodec|9||ro||
+|**2809**|**PumpMinSpeedConfiguration**|RawCodec|1||ro||
+|**2810**|**CentralHeatingPumpFeedbackSignalHandlingMode**|RawCodec|1||ro||
+|**2826**|**FuelCellNetworkSystemProtectionErrorHistory**|RawCodec|40||ro||
+|**2827**|**FuelCellNetworkSystemProtectionParameters**|RawCodec|48||ro||
+|**2828**|**FuelCellSdCardRecording**|RawCodec|2||ro||
+|**2829**|**ProductIdentification**|RawCodec|20||ro||
+|**2830**|**EmergencyMode**|RawCodec|1||ro||
+|**2831**|**BivalenceControlAlternativeTemperature**|O3EInt16|2||ro||
+|**2832**|**BaseHeaterTimer**|RawCodec|4||ro||
+|**2833**|**BaseHeaterTimerMode**|O3EInt8|1||ro||
+|**2834**|**BaseHeaterTimerDuration**|O3EInt16|2||ro||
+|**2835**|**BaseHeaterTemperatureThreshold**|O3EInt16|2||ro||
+|**2836**|**SecondaryHeatExchangerMinimumVolumeFlowThreshold**|O3EInt16|2||ro||
+|**2837**|**SecondaryHeatExchangerOptimumTemperatureSpreadExponent**|O3EInt16|2||ro||
+|**2838**|**SecondaryHeatExchangerOptimumTemperatureSpreadHeating**|RawCodec|4||ro||
+|**2839**|**SecondaryHeatExchangerOptimumTemperatureSpreadCooling**|RawCodec|4||ro||
+|**2840**|**SecondaryHeatExchangerOptimumVolumeFlowDefrost**|O3EInt16|2||ro||
+|**2842**|**SecondaryHeatExchangerHxSubcooling**|O3EInt16|2||ro||
+|**2843**|**SecondaryHeatExchangerMinimumVolumeFlow**|O3EInt16|2||ro||
+|**2844**|**SecondaryHeatExchangerMinimumOutletTemperature**|O3EInt16|2||ro||
+|**2845**|**SecondaryHeatExchangerMaximumOutletTemperature**|O3EInt16|2||ro||
+|**2847**|**CrankCaseHeaterStatistics**|RawCodec|8||ro||
+|**2848**|**CrankCaseHeaterTemperatureStatistics**|O3EInt16|2||ro||
+|**2849**|**CrankCaseHeaterOnTimer**|RawCodec|27||ro||
+|**2850**|**InstalledHeater**|*O3EComplexType*|3||ro||
+|**2851**|**PreStartDuration**|O3EInt16|2||ro||
+|**2852**|**FanDuctHeater**|O3EByteVal|1||ro||
+|**2853**|**ExternalHeaterTimeIntegralThershold**|O3EInt16|2||ro||
+|**2855**|**MixerOneCircuitFrostProtectionConfiguration**|*O3EComplexType*|3||ro||
+|**2856**|**MixerTwoCircuitFrostProtectionConfiguration**|*O3EComplexType*|3||ro||
+|**2857**|**MixerThreeCircuitFrostProtectionConfiguration**|*O3EComplexType*|3||ro||
+|**2858**|**MixerFourCircuitFrostProtectionConfiguration**|*O3EComplexType*|3||ro||
+|**2874**|**PrimarySourceRpsOne**|O3EInt16|2||ro||
+|**2875**|**PrimarySourceRpsTwo**|O3EInt16|2||ro||
+|**2876**|**PrimaryPumpCommonSetpoint**|O3EInt16|2||**rw**||
+|**2877**|**SuctionSuperheatSetpoint**|O3EInt16|2||**rw**||
+|**2878**|**SubcoolingSetpoint**|O3EInt16|2||**rw**||
+|**2879**|**MixerOneCircuitHeatingBlocked**|RawCodec|2||ro||
+|**2880**|**MixerTwoCircuitHeatingBlocked**|RawCodec|2||ro||
+|**2881**|**ExpansionValveOneTimer**|RawCodec|4||ro||
+|**2882**|**ExpansionValveTwoTimer**|RawCodec|4||ro||
+|**2883**|**ExpansionValveMaximumOperatingPressureTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**2884**|**ExpansionValveOneStatus**|O3EInt16|2||ro||
+|**2885**|**ExpansionValveTwoStatus**|O3EInt16|2||ro||
+|**2886**|**RefrigerantCyclePostStopDuration**|O3EInt16|2||ro||
+|**2887**|**RefrigerantCycleAlarmPauseDuration**|O3EInt16|2||ro||
+|**2888**|**RefrigerantCyclePumpdownStoppingDelay**|O3EInt16|2||ro||
+|**2889**|**RefrigerantCycleTimers**|RawCodec|6||ro||
+|**2890**|**RefrigerantCyclePumpdownHoldTimer**|O3EInt16|2||ro||
+|**2891**|**RefrigerantCycleDefrostTimers**|RawCodec|6||ro||
+|**2892**|**RefrigerantCycleTransitionToHeatingTimer**|O3EInt16|2||ro||
+|**2893**|**RefrigerantCycleTransitionToCoolingTimer**|O3EInt16|2||ro||
+|**2894**|**RefrigerantCycleAvailability**|O3EByteVal|1||ro||
+|**2895**|**PrimaryPumpSettings**|RawCodec|5||ro||
+|**2896**|**PrimaryPumpOneStatus**|O3EInt8|1||ro||
+|**2897**|**PrimaryPumpTwoStatus**|O3EInt8|1||ro||
+|**2908**|**InverterModuleType**|O3EInt8|1||ro||
+|**2909**|**CompressorMinMaxRequestedSecondaryReturnTemperatureCooling**|RawCodec|4||ro||
+|**2910**|**CompressorMinMaxRequestedSecondaryReturnTemperaturePreStartDefrost**|RawCodec|4||ro||
+|**2911**|**CompressorMaximumRequestedSecondaryReturnTempDefrost**|O3EInt16|2||ro||
+|**2912**|**CompressorMaximumDischargeTemperature**|O3EInt16|2||ro||
+|**2913**|**CompressorMinimumAllowedSecondaryOutletTemperatureHeating**|O3EInt16|2||ro||
+|**2914**|**CompressorMinMaxAllowedPrimaryTemperatureCooling**|RawCodec|4||ro||
+|**2915**|**CompressorMaximumCondensingPressure**|O3EInt16|2||ro||
+|**2916**|**CompressorMaximumEvaporatingPressure**|O3EInt16|2||ro||
+|**2917**|**CompressorMinimumEvaporatingPressureHeating**|O3EInt16|2||ro||
+|**2918**|**CompressorMinimumEvaporatingPressureCooling**|O3EInt16|2||ro||
+|**2920**|**ExternalHeaterSpecification**|RawCodec|2||ro||
+|**2921**|**DiagnosticHydraulicFilterIntervalSettings**|RawCodec|2||ro||
+|**2922**|**DiagnosticHydraulicFilterIntervalTemporalSettings**|RawCodec|2||ro||
+|**2923**|**DiagnosticSecondaryFourThreeWayValveSettings**|RawCodec|6||ro||
+|**2924**|**DiagnosticHydraulicFilterContaminationSettings**|RawCodec|4||ro||
+|**2925**|**DiagnosticMonitoringPressurePeaksSettings**|RawCodec|2||ro||
+|**2926**|**DiagnosticMonitoringPressureDropSettings**|RawCodec|6||ro||
+|**2927**|**DiagnosticElectronicExpansionValveSettings**|O3EInt8|1||ro||
+|**2928**|**DiagnosticHeatExchangerConstraintsSettings**|O3EInt16|2||ro||
+|**2929**|**DiagnosticRefrigerantCircuitPressureSensors**|O3EInt8|1||ro||
+|**2930**|**DiagnosticRefrigerantCircuitFourTwoWayValve**|O3EInt8|1||ro||
+|**2931**|**DiagnosticRefrigerantCircuitTemperatureSensors**|O3EInt8|1||ro||
+|**2932**|**TimeCounterSinceLastReset**|RawCodec|4||ro||
+|**2934**|**CurrentElectricalSystemPowerSetpoint**|O3EInt32|4||**rw**||
+|**2936**|**ElectricalEnergyStorageSystemState**|RawCodec|3||ro||
+|**2937**|**SystemPumpConfiguration**|RawCodec|2||ro||
+|**2938**|**CascadeSystemPump**|RawCodec|4||ro||
+|**2939**|**PrimaryHeatExchangerLowEvaporatingTemperatureAlarmDelay**|O3EInt16|2||ro||
+|**2940**|**ExternalHeaterDelayTimer**|*O3EComplexType*|3||ro||
+|**2942**|**ListOfLayerSettingServiceDevices**|RawCodec|137||ro||
+|**2944**|**NodeIdOnExternalCan**|O3EByteVal|1||ro||
+|**2945**|**PointOfCommonCouplingEnergyMeterConnectedPhases**|RawCodec|1||ro||
+|**2946**|**EnergyConsumptionElectricalPreHeater**|RawCodec|24||ro||
+|**2947**|**SleepModePrevention**|RawCodec|5||ro||
+|**2952**|**ListOfLayerSettingServiceDevicesTwo**|RawCodec|137||ro||
+|**2953**|**CascadeSystemConfigurationArray**|RawCodec|10||ro||
+|**2956**|**DeviceDigitalInputEightValue**|O3EInt8|1||ro||
+|**2957**|**DeviceDigitalInputNineValue**|O3EInt8|1||ro||
+|**2969**|**ElectronicControlUnitSafeStateStatus**|O3EByteVal|1||ro||
+|**2985**|**ExternalHeaterTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**2986**|**ExternalHeaterOperationState**|O3EByteVal|1||**rw**||
+|**2987**|**RefrigerantCycleUnlock**|O3EInt8|1||ro||
+|**2996**|**BatteryAmbientTemperatureHistogramTwoPointFour**|RawCodec|40||ro||
+|**2997**|**BatteryTemperatureHistogramTwoPointFour**|RawCodec|56||ro||
+|**2998**|**HardwareSignalCheckCsc**|RawCodec|8||ro||
+|**2999**|**ElectricalHeatersOperationHours**|RawCodec|16||ro||
+|**3000**|**EcuResetInformationList**|RawCodec|115||ro||
+|**3001**|**LowEvaporatingLowCondensingDriveDuration**|RawCodec|196||ro||
+|**3002**|**MidEvaporatingLowCondensingDriveDuration**|RawCodec|196||ro||
+|**3003**|**HighEvaporatingLowCondensingDriveDuration**|RawCodec|196||ro||
+|**3004**|**LowEvaporatingHighCondensingDriveDuration**|RawCodec|196||ro||
+|**3005**|**MidEvaporatingHighCondensingDriveDuration**|RawCodec|196||ro||
+|**3006**|**HighEvaporatingHighCondensingDriveDuration**|RawCodec|196||ro||
+|**3008**|**FanDuctHeaterOnDuration**|O3EInt16|2||ro||
+|**3009**|**FanDuctHeaterOnTimer**|RawCodec|4||ro||
+|**3013**|**MixerHybridThreeWayValvePositionPercent**|RawCodec|2||ro||
+|**3014**|**OutdoorMiddleCoilTemperatureSensor**|*O3EComplexType*|9||ro||
+|**3015**|**HeatSinkTemperatureSensor**|*O3EComplexType*|9||ro||
+|**3016**|[**HeatingBufferTemperatureSensor**](## "Actual temperature of the heating buffer")|*O3EComplexType*|9||ro||
+|**3017**|**CoolingBufferTemperatureSensor**|*O3EComplexType*|9||ro||
+|**3018**|**HeatingCoolingBufferTemperatureSensor**|*O3EComplexType*|9||ro||
+|**3019**|**CompressorOutletTargetTemperature**|*O3EComplexType*|9||**rw**||
+|**3029**|**DomesticHotWaterEfficiencyMode**|O3EByteVal|1||ro||
+|**3030**|**DomesticHotWaterEfficiencyModeAvailability**|RawCodec|2||ro||
+|**3031**|**ExternalHeater**|RawCodec|2||ro||
+|**3032**|**PrimaryEnergyFactorElectricity**|O3EInt16|2||ro||
+|**3034**|**DomesticHotWaterReturnTemperaturTankLoadSystem**|*O3EComplexType*|9||ro||
+|**3035**|**DomesticHotWaterFlowTemperaturTankLoadSystem**|*O3EComplexType*|9||ro||
+|**3036**|**PrimaryEnergyFactorExternalHeater**|O3EInt16|2||ro||
+|**3037**|**ElectricityPriceTimeScheduleMonday**|RawCodec|57||**rw**||
+|**3038**|**ElectricityPriceTimeScheduleTuesday**|RawCodec|57||**rw**||
+|**3039**|**ElectricityPriceTimeScheduleWednesday**|RawCodec|57||**rw**||
+|**3040**|**ElectricityPriceTimeScheduleThursday**|RawCodec|57||**rw**||
+|**3041**|**ElectricityPriceTimeScheduleFriday**|RawCodec|57||**rw**||
+|**3042**|**ElectricityPriceTimeScheduleSaturday**|RawCodec|57||**rw**||
+|**3043**|**ElectricityPriceTimeScheduleSunday**|RawCodec|57||**rw**||
+|**3056**|**NarrowBandInternetOfThingsNetworkStatus**|O3EInt8|1||ro||
+|**3057**|**NarrowBandInternetOfThingsCloudStatus**|O3EInt8|1||ro||
+|**3066**|**DomesticHotWaterHighDemandDetection**|RawCodec|4||ro||
+|**3067**|**AirVolumeFlowValue**|RawCodec|9||ro||
+|**3068**|**DomesticHotWaterTemperatureSetpointComfort**|RawCodec|2||**rw**||
+|**3069**|**DomesticHotWaterSensorForDemand**|O3EByteVal|1||ro||
+|**3070**|**BufferTargetOperationMode**|O3EByteVal|1||**rw**||
+|**3085**|**ElectricalEnergyStorageModuleOneInformation**|RawCodec|18||ro||
+|**3086**|**ElectricalEnergyStorageModuleTwoInformation**|RawCodec|18||ro||
+|**3087**|**ElectricalEnergyStorageModuleThreeInformation**|RawCodec|18||ro||
+|**3088**|**ElectricalEnergyStorageModuleFourInformation**|RawCodec|18||ro||
+|**3089**|**ElectricalEnergyStorageModuleFiveInformation**|RawCodec|18||ro||
+|**3090**|**ElectricalEnergyStorageModuleSixInformation**|RawCodec|18||ro||
+|**3091**|**GatewayEthernetTwoEnable**|O3EByteVal|1||ro||
+|**3092**|**GatewayEthernetTwoConfig**|RawCodec|21||ro||
+|**3093**|**GatewayEthernetTwoIp**|RawCodec|20||ro||
+|**3094**|**GatewayEthernetTwoNetworkStatus**|O3EByteVal|1||ro||
+|**3095**|**MacAddressLanTwo**|RawCodec|6||ro||
+|**3096**|**GatewayWifiStationEnable**|O3EByteVal|1||ro||
+|**3097**|**GatewayInternetAccess**|O3EByteVal|1||ro||
+|**3098**|**ExternalHeaterTemperatureOffset**|*O3EComplexType*|2||**rw**||
+|**3103**|**IsCountryModeLoadInformation**|RawCodec|6||ro||
+|**3106**|**BufferMinimumMaximumSetTemperature**|*O3EComplexType*|4||**rw**||
+|**3107**|**BatteryModuleExchangeAssistent**|RawCodec|7||ro||
+|**3108**|**PhotovoltaicsActivePowerLimitationRampRate**|RawCodec|9||ro||
+|**3109**|**PrimaryHeatExchangerBaseHeaterStatistical**|RawCodec|8||ro||
+|**3113**|**DeviceDigitalOutputOneValueStatistical**|RawCodec|8||ro||
+|**3114**|**DeviceDigitalOutputTwoValueStatistical**|RawCodec|8||ro||
+|**3115**|**DeviceDigitalOutputThreeValueStatistical**|RawCodec|8||ro||
+|**3116**|**DeviceDigitalOutputFourValueStatistical**|RawCodec|8||ro||
+|**3117**|**DeviceDigitalOutputFiveValueStatistical**|RawCodec|8||ro||
+|**3119**|**RefrigerantCircuitFourWayValveStatistical**|RawCodec|8||ro||
+|**3120**|**CompressorCrankCaseHeaterStatistical**|RawCodec|8||ro||
+|**3129**|**FanDuctHeaterStatistical**|RawCodec|8||ro||
+|**3134**|**DomesticHotWaterCirculationPumpStatistical**|RawCodec|8||**rw**||
+|**3146**|**ElectricalHeaterPhaseOneStatistical**|RawCodec|8||ro||
+|**3147**|**ElectricalHeaterPhaseTwoStatistical**|RawCodec|8||ro||
+|**3148**|**ElectricalHeaterPhaseThreeStatistical**|RawCodec|8||ro||
+|**3155**|**DomesticHotWaterShiftLoadPumpStatus**|RawCodec|5||ro||
+|**3156**|**DomesticHotWaterShiftLoadPumpType**|O3EByteVal|1||ro||
+|**3190**|**RefrigerantCircuitFourWayValvePosition**|O3EByteVal|1||ro||
+|**3191**|**ExtendedEventLoggingHistory**|RawCodec|199||ro||
+|**3212**|**BivalentMixerDomesticHotWaterTemperatureOffset**|*O3EComplexType*|2||**rw**||
+|**3213**|**ExternalHeaterTemperatureSensor**|*O3EComplexType*|9||ro||
+|**3215**|**ExternalHeaterSeparatorTemperatureSensor**|*O3EComplexType*|9||ro||
+|**3228**|**EnergyMeterOne**|*O3EComplexType*|73||ro||
+|**3229**|**EnergyMeterTwo**|*O3EComplexType*|73||ro||
+|**3230**|**EnergyMeterThree**|*O3EComplexType*|73||ro||
+|**3231**|**EnergyMeterFour**|*O3EComplexType*|73||ro||
+|**3234**|**DomesticHotWaterBufferTopTemperatureSensor**|*O3EComplexType*|9||ro||
+|**3335**|**HeatingCoolingHysteresisHeatingCircuitOne**|*O3EComplexType*|8||ro||
+|**3336**|**HeatingCoolingHysteresisHeatingCircuitTwo**|*O3EComplexType*|8||ro||
+|**3337**|**HeatingCoolingHysteresisHeatingCircuitThree**|*O3EComplexType*|8||ro||
+|**3338**|**HeatingCoolingHysteresisHeatingCircuitFour**|*O3EComplexType*|8||ro||
+|**3366**|**ElectricalActivePowerStatusReport**|*O3EComplexType*|16||ro||
+|**3384**|**ElectricalActivePowerConsumptionLimitationDefaultValue**|*O3EComplexType*|4||ro||
 

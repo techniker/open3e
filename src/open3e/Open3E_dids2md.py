@@ -36,8 +36,8 @@ tool_version_string = '0.1.0'
 
 DoI_default = [256,257,258,259,260,261,262,263,264,265,266,268,     # Frequently used Dids
                269,271,274,282,284,318,320,321,322,324,325,355,
-               381,389,391,396,491,497,531,902,954,987,1043,1190,1286,
-               1287,1288,1289,1290,1294,1311,1315,1316,1333,1337,
+               381,389,391,396,491,497,531,902,954,987,1043,1190,
+               1294,1311,1315,1316,1333,1337,
                1339,1391,1392,1393,1415,1552,1590,1603,1607,1643,
                1664,1684,1690,1770,1771,1772,1773,1774,1775,1776,
                1799,1801,1802,1815,1816,1817,1828,1830,1831,1832,
@@ -129,7 +129,7 @@ def codec2md(codecs, prefix='', accessStr=''):
     if not (codecs['id'] in ignored_ids):
         # skip json helper ids
         md += F'{prefix}{getIdStr(codecs['id'], codecs, prefix)}|{getCodecStr(codecs['codec'])}|{str(codecs['len'])}|{getUniStr(codecs)}|{getDescStrTableColumn(codecs)}{accessStr}|{getInfoStr(codecs)}'
-    if not args.nosubs:
+    if not args.compact:
         if 'subTypes' in codecs['args']:
             for codec in codecs['args']['subTypes']:
                 if not (codec['id'] in ignored_ids):
@@ -176,10 +176,10 @@ def get_package_version_string():
 
 help_version_string = get_package_version_string()
 
-parser = argparse.ArgumentParser(epilog=f'open3e_dids2md {help_version_string}')
+parser = argparse.ArgumentParser(fromfile_prefix_chars='@', epilog=f'open3e_dids2md {help_version_string}')
 parser.add_argument("-d", "--dids", type=str, help="list specified dids only, e.g. 256,268,269")
-#parser.add_argument("-f", "--filename", type=str, help="send result to file instead of stdout")
-parser.add_argument("-n", "--nosubs", action='store_true', help="list main data points only, don't list subs")
+parser.add_argument("-f", "--filename", type=str, help="send result to file instead of stdout")
+parser.add_argument("-c", "--compact", action='store_true', help="list main data points only, don't list subs")
 parser.add_argument("-s", "--showdesc", action='store_true', help="list description as an extra column")
 args = parser.parse_args()
 
@@ -226,14 +226,18 @@ md += '# Open3E - List of data points\n'
 md += '- Version of general data points: ' + didsDict['Version'] + '\n'
 md += '- Version of variant data points: ' + didsDictVars['Version'] + '\n\n'
 
-md += '### Remarks:\n'
+md += '### Remarks\n'
 md += '* Information on write access to data points (column Access) is based on documents of Viessmann\n'
 md += '  * ro => data point is read only\n'
-md += '  * rw => data point is read and write. However, device my reject or ignore write access anyway\n'
+md += '  * rw => data point is read and write. However, device my reject or ignore write access anyway\n\n'
 
 if args.dids == None:
-    md += '## Frequently used data points\n'
-    md += 'A list of all presently known data points is available [below](#all-presently-known-data-points)\n'
+    md += '### Content\n'
+    md += '[Frequently used data points including subs](#frequently-used-data-points-including-subs)\n\n'
+    md += '[Frequently used data points as compact list](#frequently-used-data-points-in-compact-format)\n\n'
+    md += '[All presently known data points including subs](#all-presently-known-data-points-including-subs)\n\n'
+    md += '[All presently known data points as compact list](#all-presently-known-data-points-in-compact-format)\n\n'
+    md += '## Frequently used data points including subs\n'
 else:
     md += '## User defined list of data points\n'
 
@@ -252,11 +256,25 @@ for did in dids:
             md += did2md(int(did), didsDictVars[int(did)][variant])
 
 if args.dids != None:
+    # User specified list of dids. Just print the list and exit:
     print(md)
     import sys
     sys.exit(0)
 
-md += '## All presently known data points\n'
+args.compact = True
+md += '## Frequently used data points in compact format\n\n'
+md += '[Back to content](#content)\n\n'
+md += table_header
+for did in dids:
+    if int(did) in didsDict:
+        md += did2md(int(did), didsDict[int(did)])
+    if int(did) in didsDictVars:
+        for variant in didsDictVars[int(did)]:
+            md += did2md(int(did), didsDictVars[int(did)][variant])
+
+args.compact = False
+md += '## All presently known data points including subs\n\n'
+md += '[Back to content](#content)\n\n'
 md += table_header
 
 for key in didsDict:
@@ -267,4 +285,21 @@ for key in didsDict:
             for variant in didsDictVars[did]:
                 md += did2md(did, didsDictVars[did][variant])
 
-print(md)
+args.compact = True
+md += '## All presently known data points in compact format\n\n'
+md += '[Back to content](#content)\n\n'
+md += table_header
+
+for key in didsDict:
+    if key != 'Version':
+        did = int(key)
+        md += did2md(did, didsDict[did])
+        if did in didsDictVars:
+            for variant in didsDictVars[did]:
+                md += did2md(did, didsDictVars[did][variant])
+
+if args.filename != None:
+    with open(args.filename, 'w') as txt_file:
+        print(md, file=txt_file)
+else:
+    print(md)
