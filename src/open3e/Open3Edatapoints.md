@@ -1,6 +1,6 @@
 # Open3E - List of data points
-- Version of general data points: 20260213
-- Version of variant data points: 20260211
+- Version of general data points: 20260215
+- Version of variant data points: 20260215
 
 ### Remarks:
 * Information on write access to data points (column Access) is based on documents of Viessmann
@@ -749,9 +749,9 @@ A list of all presently known data points is available [below](#all-presently-kn
 | |- ErrorState|O3EByteVal|1||||
 |**2369**|**HeatPumpCompressorStatistical**|*O3EComplexType*|14||ro||
 | |- Unknown1|RawCodec|6||||
-| |- starts|O3EInt16|2||||
+| |- [starts](## "Number of starts")|O3EInt16|2||||
 | |- Unknown2|RawCodec|2||||
-| |- hours|O3EInt16|2||||
+| |- [hours](## "Operating hours")|O3EInt16|2|h|||
 | |- Unknown3|RawCodec|2||||
 |**2486**|**CurrentElectricalPowerConsumptionRefrigerantCircuit**|O3EInt32|4||ro||
 |**2487**|**CurrentElectricalPowerConsumptionElectricHeater**|O3EInt32|4||ro||
@@ -5221,15 +5221,15 @@ A list of all presently known data points is available [below](#all-presently-kn
 |**2356**|**CurrentSystemHeatingCoolingLevel**|O3EInt8|1||ro||
 |**2369**|**HeatPumpCompressorStatistical**|*O3EComplexType*|14||ro||
 | |- Unknown1|RawCodec|6||||
-| |- starts|O3EInt16|2||||
+| |- [starts](## "Number of starts")|O3EInt16|2||||
 | |- Unknown2|RawCodec|2||||
-| |- hours|O3EInt16|2||||
+| |- [hours](## "Operating hours")|O3EInt16|2|h|||
 | |- Unknown3|RawCodec|2||||
 |**2370**|**AdditionalElectricHeaterStatistical**|*O3EComplexType*|11||ro||
 | |- Unknown1|RawCodec|3||||
-| |- starts|O3EInt16|2||||
+| |- [starts](## "Number of starts")|O3EInt16|2||||
 | |- Unknown2|RawCodec|2||||
-| |- hours|O3EInt16|2||||
+| |- [hours](## "Operating hours")|O3EInt16|2|h|||
 | |- Unknown3|RawCodec|2||||
 |**2371**|**VentilationControlMode**|*O3EComplexType*|2||ro||
 | |- Mode|O3EByteVal|1||||
