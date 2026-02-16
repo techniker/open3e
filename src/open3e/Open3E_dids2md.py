@@ -139,7 +139,7 @@ def codec2md(codecs, prefix='', accessStr=''):
     return md
 
 def did2md(did, codecs):
-    return f'**{str(did)}**|{codec2md(codecs, '', getAccesStr(codecs))}|\n'
+    return f'|**{str(did)}**|{codec2md(codecs, '', getAccesStr(codecs))}|\n'
 
 def printListOfDoI(DoI):
     dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers)
