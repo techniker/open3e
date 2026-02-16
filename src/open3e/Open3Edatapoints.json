@@ -14078,8 +14078,8 @@
           }
         }
       ],
-      "desc": "",
-      "info": "",
+      "desc": "External request for one-time charging of domestic hot water (0: off, 2: one-time request)",
+      "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
       "acc": "rw"
     }
   },
@@ -14119,8 +14119,8 @@
           }
         }
       ],
-      "desc": "",
-      "info": "",
+      "desc": "State of external request for one-time charging of domestic hot water (0: off, 2: on)",
+      "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
       "acc": "ro"
     }
   },
@@ -37952,8 +37952,8 @@
           "args": {
             "scale": 1,
             "signed": false,
-            "unit": "",
-            "desc": "",
+            "unit": "%",
+            "desc": "Discharge limit of battery",
             "info": "",
             "acc": ""
           }
@@ -37972,7 +37972,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Configuration for Backup Box",
       "info": "",
       "acc": "rw"
     }
@@ -38372,8 +38372,8 @@
     "args": {
       "scale": 10.0,
       "signed": false,
-      "unit": "",
-      "desc": "",
+      "unit": "Wh",
+      "desc": "Target value of thermal energy to perform next defrosting",
       "info": "",
       "acc": "ro"
     }
@@ -40883,12 +40883,12 @@
     }
   },
   "2320": {
-    "codec": "O3EByteVal",
+    "codec": "O3EEnum",
     "len": 1,
     "id": "DomesticHotWaterStatus",
     "args": {
-      "unit": "",
-      "desc": "",
+      "listStr": "DomesticHotWaterPreparationStates",
+      "desc": "Status of domestic hot water preparation",
       "info": "",
       "acc": "ro"
     }
@@ -41031,7 +41031,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41044,7 +41044,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41057,7 +41057,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41070,7 +41070,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41088,8 +41088,8 @@
           }
         }
       ],
-      "desc": "",
-      "info": "",
+      "desc": "Actual temperature economizer inlet",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -41106,7 +41106,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41119,7 +41119,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41132,7 +41132,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41145,7 +41145,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41163,8 +41163,8 @@
           }
         }
       ],
-      "desc": "",
-      "info": "",
+      "desc": "Actual temperature avaporator inlet",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -41303,8 +41303,8 @@
     "args": {
       "scale": 1.0,
       "signed": false,
-      "unit": "",
-      "desc": "",
+      "unit": "%",
+      "desc": "Setpoint of speed of heat pump compressor",
       "info": "",
       "acc": "rw"
     }
@@ -41316,9 +41316,9 @@
     "args": {
       "scale": 1.0,
       "signed": false,
-      "unit": "",
-      "desc": "",
-      "info": "",
+      "unit": "%",
+      "desc": "Actual speed of heat pump compressor",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -41356,11 +41356,11 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "PowerState",
           "args": {
-            "unit": "",
+            "listStr": "PowerStates",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41378,7 +41378,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual state of the heat pump compressor",
       "info": "",
       "acc": "ro"
     }
@@ -41390,11 +41390,11 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "PowerState",
           "args": {
-            "unit": "",
+            "listStr": "PowerStates",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41412,7 +41412,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual state of the electric auxiliary heating",
       "info": "",
       "acc": "ro"
     }
@@ -41537,7 +41537,7 @@
             "scale": 1,
             "signed": false,
             "unit": "",
-            "desc": "",
+            "desc": "Number of starts",
             "info": "",
             "acc": ""
           }
@@ -41557,8 +41557,8 @@
           "args": {
             "scale": 1,
             "signed": false,
-            "unit": "",
-            "desc": "",
+            "unit": "h",
+            "desc": "Operating hours",
             "info": "",
             "acc": ""
           }
@@ -41572,7 +41572,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Statistics for heat pump compressor starts",
       "info": "",
       "acc": "ro"
     }
@@ -41599,7 +41599,7 @@
             "scale": 1,
             "signed": false,
             "unit": "",
-            "desc": "",
+            "desc": "Number of starts",
             "info": "",
             "acc": ""
           }
@@ -41619,8 +41619,8 @@
           "args": {
             "scale": 1,
             "signed": false,
-            "unit": "",
-            "desc": "",
+            "unit": "h",
+            "desc": "Operating hours",
             "info": "",
             "acc": ""
           }
@@ -43123,8 +43123,8 @@
     "args": {
       "scale": 1,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "W",
+      "desc": "Actual electrical power consumption of the refrigeration circuit",
       "info": "",
       "acc": "ro"
     }
@@ -43136,8 +43136,8 @@
     "args": {
       "scale": 1,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "W",
+      "desc": "Actual electrical power consumption of the auxiliary heater",
       "info": "",
       "acc": "ro"
     }
@@ -43150,8 +43150,8 @@
       "scale": 1,
       "signed": true,
       "unit": "",
-      "desc": "",
-      "info": "",
+      "desc": "W",
+      "info": "Actual total electrical power consumption of the system",
       "acc": "ro"
     }
   },
@@ -43194,8 +43194,8 @@
     "args": {
       "scale": 1,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "W",
+      "desc": "Actual thermal power output of the refrigeration circuit",
       "info": "",
       "acc": "ro"
     }
@@ -43207,8 +43207,8 @@
     "args": {
       "scale": 1,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "W",
+      "desc": "Actual thermal power output of the auxiliary heater",
       "info": "",
       "acc": "ro"
     }
@@ -43220,8 +43220,8 @@
     "args": {
       "scale": 1,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "W",
+      "desc": "Actual thermal power output of the system",
       "info": "",
       "acc": "ro"
     }
@@ -47816,8 +47816,8 @@
     "args": {
       "scale": 10,
       "signed": false,
-      "unit": "",
-      "desc": "",
+      "unit": "rps",
+      "desc": "Actual speed of the heat pump compressor",
       "info": "",
       "acc": "ro"
     }
@@ -48853,12 +48853,12 @@
     }
   },
   "2735": {
-    "codec": "O3EByteVal",
+    "codec": "O3EEnum",
     "len": 1,
     "id": "FourThreeWayValveValveCurrentPosition",
     "args": {
-      "unit": "",
-      "desc": "",
+      "listStr": "FourThreeWayValveModes",
+      "desc": "Current position of the four/three-way valve",
       "info": "",
       "acc": "ro"
     }
@@ -49503,18 +49503,18 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "State",
           "args": {
-            "unit": "",
+            "listStr": "RefrigerationCircuitOperationModes",
             "desc": "",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual operating mode of the refrigeration circuit",
       "info": "",
       "acc": "ro"
     }
@@ -51059,7 +51059,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -51072,7 +51072,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -51085,7 +51085,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -51098,7 +51098,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -51116,7 +51116,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual temperature of the heating buffer",
       "info": "",
       "acc": "ro"
     }
@@ -53590,5 +53590,5 @@
       "acc": "ro"
     }
   },
-  "Version": "20260213"
+  "Version": "20260216"
 }
