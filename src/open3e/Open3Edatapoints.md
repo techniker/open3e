@@ -7,7 +7,7 @@
   * ro => data point is read only
   * rw => data point is read and write. However, device my reject or ignore write access anyway
 
-### Content
+### List of content
 [Frequently used data points including subs](#frequently-used-data-points-including-subs)
 
 [Frequently used data points as compact list](#frequently-used-data-points-in-compact-format)
@@ -739,7 +739,7 @@
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 ## Frequently used data points in compact format
 
-[Back to content](#content)
+[Back to list of content](#list-of-content)
 
 |  Did | ID   | Codec | Length | Unit  |   Access | Further info |
 | ---: | :--- | :---  | ---:   | :---: |  :---:  | :---         |
@@ -842,7 +842,7 @@
 |**3016**|[**HeatingBufferTemperatureSensor**](## "Actual temperature of the heating buffer")|*O3EComplexType*|9||ro||
 ## All presently known data points including subs
 
-[Back to content](#content)
+[Back to list of content](#list-of-content)
 
 |  Did | ID   | Codec | Length | Unit  |   Access | Further info |
 | ---: | :--- | :---  | ---:   | :---: |  :---:  | :---         |
@@ -6335,7 +6335,7 @@
 | |- CurrentValue|O3EInt16|2||||
 ## All presently known data points in compact format
 
-[Back to content](#content)
+[Back to list of content](#list-of-content)
 
 |  Did | ID   | Codec | Length | Unit  |   Access | Further info |
 | ---: | :--- | :---  | ---:   | :---: |  :---:  | :---         |
