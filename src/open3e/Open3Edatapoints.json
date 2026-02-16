@@ -54,7 +54,7 @@
           "len": 8,
           "id": "SW-Version",
           "args": {
-            "desc": "",
+            "desc": "??.???.YYcw.ver",
             "info": "",
             "acc": ""
           }
@@ -80,7 +80,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Device infos",
       "info": "",
       "acc": "ro"
     }
@@ -98,7 +98,7 @@
           "args": {
             "unit": "",
             "desc": "",
-            "info": "",
+            "info": "Number of entries listed",
             "acc": ""
           }
         },
@@ -125,7 +125,7 @@
                 "id": "DateTime",
                 "args": {
                   "timeformat": "VM",
-                  "desc": "",
+                  "desc": "Date of event",
                   "info": "",
                   "acc": ""
                 }
@@ -148,7 +148,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "List of active status messages",
       "info": "",
       "acc": "ro"
     }
@@ -165,7 +165,7 @@
           "id": "Count",
           "args": {
             "unit": "",
-            "desc": "",
+            "desc": "Number of entries listed",
             "info": "",
             "acc": ""
           }
@@ -193,7 +193,7 @@
                 "id": "DateTime",
                 "args": {
                   "timeformat": "VM",
-                  "desc": "",
+                  "desc": "Date of event",
                   "info": "",
                   "acc": ""
                 }
@@ -216,7 +216,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "History of status messages",
       "info": "",
       "acc": "ro"
     }
@@ -233,7 +233,7 @@
           "id": "Count",
           "args": {
             "unit": "",
-            "desc": "",
+            "desc": "Number of entries listed",
             "info": "",
             "acc": ""
           }
@@ -261,7 +261,7 @@
                 "id": "DateTime",
                 "args": {
                   "timeformat": "VM",
-                  "desc": "",
+                  "desc": "Date of event",
                   "info": "",
                   "acc": ""
                 }
@@ -284,7 +284,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "List of active info messages",
       "info": "",
       "acc": "ro"
     }
@@ -301,7 +301,7 @@
           "id": "Count",
           "args": {
             "unit": "",
-            "desc": "",
+            "desc": "Number of entries listed",
             "info": "",
             "acc": ""
           }
@@ -329,7 +329,7 @@
                 "id": "DateTime",
                 "args": {
                   "timeformat": "VM",
-                  "desc": "",
+                  "desc": "Date of event",
                   "info": "",
                   "acc": ""
                 }
@@ -352,7 +352,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "History of info messages",
       "info": "",
       "acc": "ro"
     }
@@ -369,7 +369,7 @@
           "id": "Count",
           "args": {
             "unit": "",
-            "desc": "",
+            "desc": "Number of entries listed",
             "info": "",
             "acc": ""
           }
@@ -397,7 +397,7 @@
                 "id": "DateTime",
                 "args": {
                   "timeformat": "VM",
-                  "desc": "",
+                  "desc": "Date of event",
                   "info": "",
                   "acc": ""
                 }
@@ -420,7 +420,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "List of active service messages",
       "info": "",
       "acc": "ro"
     }
@@ -437,7 +437,7 @@
           "id": "Count",
           "args": {
             "unit": "",
-            "desc": "",
+            "desc": "Number of entries listed",
             "info": "",
             "acc": ""
           }
@@ -465,7 +465,7 @@
                 "id": "DateTime",
                 "args": {
                   "timeformat": "VM",
-                  "desc": "",
+                  "desc": "Date of event",
                   "info": "",
                   "acc": ""
                 }
@@ -488,7 +488,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "History of service messages",
       "info": "",
       "acc": "ro"
     }
@@ -505,7 +505,7 @@
           "id": "Count",
           "args": {
             "unit": "",
-            "desc": "",
+            "desc": "Number of entries listed",
             "info": "",
             "acc": ""
           }
@@ -533,7 +533,7 @@
                 "id": "DateTime",
                 "args": {
                   "timeformat": "VM",
-                  "desc": "",
+                  "desc": "Date of event",
                   "info": "",
                   "acc": ""
                 }
@@ -556,7 +556,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "List of active warning messages",
       "info": "",
       "acc": "ro"
     }
@@ -573,7 +573,7 @@
           "id": "Count",
           "args": {
             "unit": "",
-            "desc": "",
+            "desc": "Number of entries listed",
             "info": "",
             "acc": ""
           }
@@ -584,7 +584,7 @@
           "id": "GrandTotal",
           "args": {
             "unit": "",
-            "desc": "",
+            "desc": "Total number of entries",
             "info": "",
             "acc": ""
           }
@@ -612,7 +612,7 @@
                 "id": "DateTime",
                 "args": {
                   "timeformat": "VM",
-                  "desc": "",
+                  "desc": "Date of event",
                   "info": "",
                   "acc": ""
                 }
@@ -635,7 +635,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "History of warning messages",
       "info": "",
       "acc": "ro"
     }
@@ -652,7 +652,7 @@
           "id": "Count",
           "args": {
             "unit": "",
-            "desc": "",
+            "desc": "Number of entries listed",
             "info": "",
             "acc": ""
           }
@@ -680,7 +680,7 @@
                 "id": "DateTime",
                 "args": {
                   "timeformat": "VM",
-                  "desc": "",
+                  "desc": "Date of event",
                   "info": "",
                   "acc": ""
                 }
@@ -703,7 +703,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "List of active error messages",
       "info": "",
       "acc": "ro"
     }
@@ -720,7 +720,7 @@
           "id": "Count",
           "args": {
             "unit": "",
-            "desc": "",
+            "desc": "Number of entries listed",
             "info": "",
             "acc": ""
           }
@@ -731,7 +731,7 @@
           "id": "GrandTotal",
           "args": {
             "unit": "",
-            "desc": "",
+            "desc": "Total number of entries",
             "info": "",
             "acc": ""
           }
@@ -759,7 +759,7 @@
                 "id": "DateTime",
                 "args": {
                   "timeformat": "VM",
-                  "desc": "",
+                  "desc": "Date of event",
                   "info": "",
                   "acc": ""
                 }
@@ -782,7 +782,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "History of error messages",
       "info": "",
       "acc": "ro"
     }
@@ -1033,7 +1033,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1046,7 +1046,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1059,7 +1059,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1072,7 +1072,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1090,7 +1090,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual collector temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -1108,7 +1108,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1121,7 +1121,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1134,7 +1134,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1147,7 +1147,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1165,7 +1165,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Outside temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -1183,7 +1183,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1196,7 +1196,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1209,7 +1209,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1222,7 +1222,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1240,7 +1240,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual collector return temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -1258,7 +1258,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1271,7 +1271,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1284,7 +1284,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1297,7 +1297,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1315,7 +1315,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual buffer bottom temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -1333,7 +1333,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1346,7 +1346,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1359,7 +1359,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1372,7 +1372,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1390,7 +1390,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual buffer mid bottom temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -1409,7 +1409,7 @@
             "scale": 10.0,
             "signed": true,
             "unit": "",
-            "desc": "",
+            "desc": "\u00b0C",
             "info": "",
             "acc": ""
           }
@@ -1421,7 +1421,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1434,7 +1434,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1447,7 +1447,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1465,7 +1465,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual buffer mid temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -1484,7 +1484,7 @@
             "scale": 10.0,
             "signed": true,
             "unit": "",
-            "desc": "",
+            "desc": "\u00b0C",
             "info": "",
             "acc": ""
           }
@@ -1496,7 +1496,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1509,7 +1509,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1522,7 +1522,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1540,7 +1540,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual buffer top temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -1558,7 +1558,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1571,7 +1571,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1584,7 +1584,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1597,7 +1597,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1615,7 +1615,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual flow temperature of the hydraulic switch",
       "info": "",
       "acc": "ro"
     }
@@ -1633,7 +1633,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1646,7 +1646,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1659,7 +1659,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1672,7 +1672,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1690,7 +1690,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual return temperature of the hydraulic switch",
       "info": "",
       "acc": "ro"
     }
@@ -1708,7 +1708,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1721,7 +1721,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1734,7 +1734,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1747,7 +1747,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1765,7 +1765,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Heating circuit 1: Actual flow temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -1783,7 +1783,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1796,7 +1796,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1809,7 +1809,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1822,7 +1822,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1840,7 +1840,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Heating circuit 1: Actual return temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -1858,7 +1858,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1871,7 +1871,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1884,7 +1884,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1897,7 +1897,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1915,7 +1915,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Heating circuit 2: Actual flow temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -1933,7 +1933,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1946,7 +1946,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1959,7 +1959,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1972,7 +1972,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -1990,7 +1990,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Heating circuit 2: Actual return temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -2008,7 +2008,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2021,7 +2021,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2034,7 +2034,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2047,7 +2047,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2065,7 +2065,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Heating circuit 3: Actual flow temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -2083,7 +2083,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2096,7 +2096,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2109,7 +2109,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2122,7 +2122,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2140,7 +2140,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Heating circuit 3: Actual return temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -2158,7 +2158,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2171,7 +2171,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2184,7 +2184,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2197,7 +2197,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2215,7 +2215,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Heating circuit 4: Actual flow temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -2233,7 +2233,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2246,7 +2246,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2259,7 +2259,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2272,7 +2272,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2290,7 +2290,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Heating circuit 4: Actual return temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -2308,7 +2308,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "hPa",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2321,7 +2321,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "hPa",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2334,7 +2334,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "hPa",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2347,7 +2347,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "hPa",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2365,7 +2365,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual pressure heat generator circulation",
       "info": "",
       "acc": "ro"
     }
@@ -2383,7 +2383,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2396,7 +2396,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2409,7 +2409,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2422,7 +2422,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2440,7 +2440,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual temperature primary heat exchanger inlet",
       "info": "",
       "acc": "ro"
     }
@@ -2458,7 +2458,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2471,7 +2471,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2484,7 +2484,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2497,7 +2497,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "hPa",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2515,7 +2515,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual temperature compressor inlet",
       "info": "",
       "acc": "ro"
     }
@@ -2533,7 +2533,7 @@
           "args": {
             "scale": 100,
             "signed": false,
-            "unit": "",
+            "unit": "hPa",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2546,7 +2546,7 @@
           "args": {
             "scale": 100,
             "signed": false,
-            "unit": "",
+            "unit": "hPa",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2559,7 +2559,7 @@
           "args": {
             "scale": 100,
             "signed": false,
-            "unit": "",
+            "unit": "hPa",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2572,7 +2572,7 @@
           "args": {
             "scale": 100,
             "signed": false,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2590,7 +2590,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual pressure compressor inlet",
       "info": "",
       "acc": "ro"
     }
@@ -2608,7 +2608,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2621,7 +2621,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2634,7 +2634,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2647,7 +2647,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2665,7 +2665,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual temperature compressor outlet",
       "info": "",
       "acc": "ro"
     }
@@ -2683,7 +2683,7 @@
           "args": {
             "scale": 100,
             "signed": false,
-            "unit": "",
+            "unit": "hPa",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2696,7 +2696,7 @@
           "args": {
             "scale": 100,
             "signed": false,
-            "unit": "",
+            "unit": "hPa",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2709,7 +2709,7 @@
           "args": {
             "scale": 100,
             "signed": false,
-            "unit": "",
+            "unit": "hPa",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2722,7 +2722,7 @@
           "args": {
             "scale": 100,
             "signed": false,
-            "unit": "",
+            "unit": "hPa",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2741,7 +2741,7 @@
         }
       ],
       "desc": "",
-      "info": "",
+      "info": "Actual pressure compressor outlet",
       "acc": "ro"
     }
   },
@@ -3452,7 +3452,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -3465,7 +3465,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -3478,7 +3478,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -3491,7 +3491,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -3509,7 +3509,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual temperature secondary heat exchanger outlet",
       "info": "",
       "acc": "ro"
     }
@@ -3972,8 +3972,8 @@
           }
         }
       ],
-      "desc": "",
-      "info": "",
+      "desc": "Status of the primary circuit pump",
+      "info": "[Link](https://github.com/open3e/open3e/discussions/212)",
       "acc": "ro"
     }
   },
@@ -4062,8 +4062,8 @@
     "args": {
       "scale": 1.0,
       "signed": false,
-      "unit": "",
-      "desc": "",
+      "unit": "%",
+      "desc": "Target position expansion valve one (secondary heat exchanger outlet)",
       "info": "",
       "acc": "rw"
     }
@@ -4075,8 +4075,8 @@
     "args": {
       "scale": 1.0,
       "signed": false,
-      "unit": "",
-      "desc": "",
+      "unit": "%",
+      "desc": "Actual position expansion valve one (secondary heat exchanger outlet)",
       "info": "",
       "acc": "ro"
     }
@@ -4088,8 +4088,8 @@
     "args": {
       "scale": 1.0,
       "signed": false,
-      "unit": "",
-      "desc": "",
+      "unit": "%",
+      "desc": "Target position expansion valve two (evaporator outlet)",
       "info": "",
       "acc": "rw"
     }
@@ -4101,8 +4101,8 @@
     "args": {
       "scale": 1.0,
       "signed": false,
-      "unit": "",
-      "desc": "",
+      "unit": "%",
+      "desc": "Actual position expansion valve two (evaporator outlet)",
       "info": "",
       "acc": "ro"
     }
@@ -4122,8 +4122,8 @@
     "args": {
       "scale": 10.0,
       "signed": false,
-      "unit": "",
-      "desc": "",
+      "unit": "\u00b0C",
+      "desc": "Teperature setpoint central heating",
       "info": "",
       "acc": "rw"
     }
@@ -4135,8 +4135,8 @@
     "args": {
       "scale": 10.0,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "\u00b0C",
+      "desc": "Teperature setpoint domestic hot water",
       "info": "",
       "acc": "rw"
     }
@@ -6074,7 +6074,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Request for domestic hot water circulation pump",
       "info": "",
       "acc": "rw"
     }
@@ -6141,8 +6141,8 @@
           }
         }
       ],
-      "desc": "",
-      "info": "",
+      "desc": "Operation Mode of domestic hot water circulation pump",
+      "info": "[See page 22f](https://static.viessmann-climatesolutions.com/resources/technical_documents/DE/de/VSA/6179923VSA00001_1.pdf?)",
       "acc": "rw"
     }
   },
@@ -12703,7 +12703,7 @@
     "id": "MalfunctionIdentification",
     "args": {
       "unit": "",
-      "desc": "",
+      "desc": "Indicates whether faults are present",
       "info": "",
       "acc": "ro"
     }
@@ -13832,7 +13832,7 @@
             "scale": 1.0,
             "signed": false,
             "unit": "",
-            "desc": "",
+            "desc": "Number of list entries",
             "info": "",
             "acc": ""
           }
@@ -13924,7 +13924,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Matrix of CAN bus topology",
       "info": "",
       "acc": "ro"
     }
@@ -13986,8 +13986,8 @@
     "args": {
       "scale": 10.0,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "\u00b0C",
+      "desc": "Temperature setpoint heating curcuit 1",
       "info": "",
       "acc": "rw"
     }
@@ -13999,8 +13999,8 @@
     "args": {
       "scale": 10.0,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "\u00b0C",
+      "desc": "Temperature setpoint heating curcuit 2",
       "info": "",
       "acc": "rw"
     }
@@ -14012,8 +14012,8 @@
     "args": {
       "scale": 10.0,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "\u00b0C",
+      "desc": "Temperature setpoint heating curcuit 3",
       "info": "",
       "acc": "rw"
     }
@@ -14025,8 +14025,8 @@
     "args": {
       "scale": 10.0,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "\u00b0C",
+      "desc": "Temperature setpoint heating curcuit 4",
       "info": "",
       "acc": "rw"
     }
@@ -14078,8 +14078,8 @@
           }
         }
       ],
-      "desc": "",
-      "info": "",
+      "desc": "External request for one-time charging of domestic hot water (0: off, 2: one-time request)",
+      "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
       "acc": "rw"
     }
   },
@@ -14119,8 +14119,8 @@
           }
         }
       ],
-      "desc": "",
-      "info": "",
+      "desc": "State of external request for one-time charging of domestic hot water (0: off, 2: on)",
+      "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
       "acc": "ro"
     }
   },
@@ -16520,7 +16520,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16533,7 +16533,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16546,7 +16546,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16559,7 +16559,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16572,7 +16572,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16585,7 +16585,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16598,7 +16598,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16611,7 +16611,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16624,7 +16624,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16637,7 +16637,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16650,7 +16650,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16663,7 +16663,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16676,7 +16676,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16689,7 +16689,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16702,7 +16702,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16715,7 +16715,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16728,7 +16728,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16741,7 +16741,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16754,7 +16754,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16767,7 +16767,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16780,7 +16780,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16793,7 +16793,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16806,7 +16806,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16819,7 +16819,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16832,7 +16832,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16845,7 +16845,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16858,7 +16858,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16871,7 +16871,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16884,7 +16884,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16897,7 +16897,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16910,14 +16910,14 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
                 }
               }
             ],
-            "desc": "",
+            "desc": "Energy Consumption Central Heating Current Month",
             "info": "",
             "acc": ""
           }
@@ -16925,7 +16925,7 @@
         {
           "codec": "O3EList",
           "len": 62,
-          "id": "LastMonth",
+          "id": "PreviousMonth",
           "args": {
             "subTypes": [
               {
@@ -16935,7 +16935,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16948,7 +16948,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16961,7 +16961,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16974,7 +16974,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -16987,7 +16987,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17000,7 +17000,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17013,7 +17013,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17026,7 +17026,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17039,7 +17039,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17052,7 +17052,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17065,7 +17065,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17078,7 +17078,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17091,7 +17091,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17104,7 +17104,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17117,7 +17117,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17130,7 +17130,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17143,7 +17143,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17156,7 +17156,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17169,7 +17169,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17182,7 +17182,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17195,7 +17195,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17208,7 +17208,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17221,7 +17221,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17234,7 +17234,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17247,7 +17247,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17260,7 +17260,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17273,7 +17273,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17286,7 +17286,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17299,7 +17299,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17312,7 +17312,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17325,20 +17325,20 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
                 }
               }
             ],
-            "desc": "",
+            "desc": "Energy Consumption Central Heating Previous Month",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
+      "desc": "Energy Consumption Central Heating Per Month",
       "info": "",
       "acc": "ro"
     }
@@ -17362,7 +17362,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17375,7 +17375,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17388,7 +17388,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17401,7 +17401,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17414,7 +17414,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17427,7 +17427,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17440,7 +17440,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17453,7 +17453,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17466,7 +17466,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17479,7 +17479,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17492,7 +17492,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17505,7 +17505,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17518,7 +17518,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17531,7 +17531,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17544,7 +17544,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17557,7 +17557,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17570,7 +17570,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17583,7 +17583,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17596,7 +17596,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17609,7 +17609,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17622,7 +17622,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17635,7 +17635,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17648,7 +17648,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17661,7 +17661,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17674,7 +17674,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17687,7 +17687,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17700,7 +17700,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17713,7 +17713,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17726,7 +17726,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17739,7 +17739,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17752,14 +17752,14 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
                 }
               }
             ],
-            "desc": "",
+            "desc": "Energy Consumption Domestic Hot Water Current Month",
             "info": "",
             "acc": ""
           }
@@ -17767,7 +17767,7 @@
         {
           "codec": "O3EList",
           "len": 62,
-          "id": "LastMonth",
+          "id": "PreviousMonth",
           "args": {
             "subTypes": [
               {
@@ -17777,7 +17777,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17790,7 +17790,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17803,7 +17803,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17816,7 +17816,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17829,7 +17829,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17842,7 +17842,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17855,7 +17855,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17868,7 +17868,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17881,7 +17881,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17894,7 +17894,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17907,7 +17907,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17920,7 +17920,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17933,7 +17933,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17946,7 +17946,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17959,7 +17959,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17972,7 +17972,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17985,7 +17985,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -17998,7 +17998,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18011,7 +18011,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18024,7 +18024,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18037,7 +18037,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18050,7 +18050,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18063,7 +18063,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18076,7 +18076,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18089,7 +18089,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18102,7 +18102,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18115,7 +18115,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18128,7 +18128,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18141,7 +18141,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18154,7 +18154,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18167,20 +18167,20 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
                 }
               }
             ],
-            "desc": "",
+            "desc": "Energy Consumption Domestic Hot Water Previous Month",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
+      "desc": "Energy Consumption Domestic Hot Water Per Month",
       "info": "",
       "acc": "ro"
     }
@@ -18204,7 +18204,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18217,7 +18217,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18230,7 +18230,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18243,7 +18243,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18256,7 +18256,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18269,7 +18269,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18282,7 +18282,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18295,7 +18295,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18308,7 +18308,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18321,7 +18321,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18334,7 +18334,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18347,7 +18347,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18360,7 +18360,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18373,7 +18373,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18386,7 +18386,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18399,7 +18399,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18412,7 +18412,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18425,7 +18425,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18438,7 +18438,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18451,7 +18451,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18464,7 +18464,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18477,7 +18477,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18490,7 +18490,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18503,7 +18503,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18516,7 +18516,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18529,7 +18529,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18542,7 +18542,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18555,7 +18555,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18568,7 +18568,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18581,7 +18581,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18594,14 +18594,14 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
                 }
               }
             ],
-            "desc": "",
+            "desc": "Energy Consumption Cooling Current Month",
             "info": "",
             "acc": ""
           }
@@ -18609,7 +18609,7 @@
         {
           "codec": "O3EList",
           "len": 62,
-          "id": "LastMonth",
+          "id": "PreviousMonth",
           "args": {
             "subTypes": [
               {
@@ -18619,7 +18619,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18632,7 +18632,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18645,7 +18645,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18658,7 +18658,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18671,7 +18671,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18684,7 +18684,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18697,7 +18697,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18710,7 +18710,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18723,7 +18723,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18736,7 +18736,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18749,7 +18749,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18762,7 +18762,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18775,7 +18775,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18788,7 +18788,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18801,7 +18801,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18814,7 +18814,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18827,7 +18827,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18840,7 +18840,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18853,7 +18853,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18866,7 +18866,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18879,7 +18879,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18892,7 +18892,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18905,7 +18905,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18918,7 +18918,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18931,7 +18931,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18944,7 +18944,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18957,7 +18957,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18970,7 +18970,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18983,7 +18983,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -18996,7 +18996,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19009,20 +19009,20 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
                 }
               }
             ],
-            "desc": "",
+            "desc": "Energy Consumption Cooling Previous Matrix",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
+      "desc": "Energy Consumption Cooling Per Month",
       "info": "",
       "acc": "ro"
     }
@@ -19046,7 +19046,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19059,7 +19059,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19072,7 +19072,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19085,7 +19085,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19098,7 +19098,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19111,7 +19111,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19124,7 +19124,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19137,7 +19137,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19150,7 +19150,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19163,7 +19163,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19176,7 +19176,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19189,7 +19189,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19202,7 +19202,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19215,7 +19215,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19228,7 +19228,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19241,7 +19241,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19254,7 +19254,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19267,7 +19267,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19280,7 +19280,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19293,7 +19293,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19306,7 +19306,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19319,7 +19319,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19332,7 +19332,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19345,7 +19345,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19358,7 +19358,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19371,7 +19371,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19384,7 +19384,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19397,7 +19397,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19410,7 +19410,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19423,7 +19423,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19436,14 +19436,14 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
                 }
               }
             ],
-            "desc": "",
+            "desc": "Generated Electricity Current Month",
             "info": "",
             "acc": ""
           }
@@ -19451,7 +19451,7 @@
         {
           "codec": "O3EList",
           "len": 62,
-          "id": "LastMonth",
+          "id": "PreviousMonth",
           "args": {
             "subTypes": [
               {
@@ -19461,7 +19461,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19474,7 +19474,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19487,7 +19487,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19500,7 +19500,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19513,7 +19513,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19526,7 +19526,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19539,7 +19539,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19552,7 +19552,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19565,7 +19565,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19578,7 +19578,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19591,7 +19591,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19604,7 +19604,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19617,7 +19617,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19630,7 +19630,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19643,7 +19643,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19656,7 +19656,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19669,7 +19669,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19682,7 +19682,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19695,7 +19695,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19708,7 +19708,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19721,7 +19721,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19734,7 +19734,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19747,7 +19747,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19760,7 +19760,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19773,7 +19773,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19786,7 +19786,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19799,7 +19799,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19812,7 +19812,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19825,7 +19825,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19838,7 +19838,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19851,20 +19851,20 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
                 }
               }
             ],
-            "desc": "",
+            "desc": "Generated Electricity Previous Month",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
+      "desc": "Generated Electricity Per Month",
       "info": "",
       "acc": "ro"
     }
@@ -19888,7 +19888,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19901,7 +19901,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19914,7 +19914,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19927,7 +19927,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19940,7 +19940,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19953,7 +19953,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19966,7 +19966,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19979,7 +19979,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -19992,7 +19992,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20005,7 +20005,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20018,7 +20018,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20031,7 +20031,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20044,7 +20044,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20057,7 +20057,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20070,7 +20070,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20083,7 +20083,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20096,7 +20096,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20109,7 +20109,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20122,7 +20122,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20135,7 +20135,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20148,7 +20148,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20161,7 +20161,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20174,7 +20174,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20187,7 +20187,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20200,7 +20200,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20213,7 +20213,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20226,7 +20226,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20239,7 +20239,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20252,7 +20252,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20265,7 +20265,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20278,14 +20278,14 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
                 }
               }
             ],
-            "desc": "",
+            "desc": "Solar Energy Yield Current Month",
             "info": "",
             "acc": ""
           }
@@ -20293,7 +20293,7 @@
         {
           "codec": "O3EList",
           "len": 62,
-          "id": "LastMonth",
+          "id": "PreviousMonth",
           "args": {
             "subTypes": [
               {
@@ -20303,7 +20303,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20316,7 +20316,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20329,7 +20329,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20342,7 +20342,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20355,7 +20355,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20368,7 +20368,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20381,7 +20381,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20394,7 +20394,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20407,7 +20407,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20420,7 +20420,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20433,7 +20433,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20446,7 +20446,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20459,7 +20459,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20472,7 +20472,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20485,7 +20485,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20498,7 +20498,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20511,7 +20511,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20524,7 +20524,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20537,7 +20537,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20550,7 +20550,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20563,7 +20563,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20576,7 +20576,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20589,7 +20589,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20602,7 +20602,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20615,7 +20615,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20628,7 +20628,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20641,7 +20641,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20654,7 +20654,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20667,7 +20667,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20680,7 +20680,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20693,20 +20693,20 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
                 }
               }
             ],
-            "desc": "",
+            "desc": "Solar Energy Yield Previous Month",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
+      "desc": "Solar Energy Yield Per Month",
       "info": "",
       "acc": "ro"
     }
@@ -20730,7 +20730,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20743,7 +20743,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20756,7 +20756,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20769,7 +20769,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20782,7 +20782,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20795,7 +20795,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20808,7 +20808,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20821,7 +20821,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20834,7 +20834,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20847,7 +20847,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20860,7 +20860,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20873,7 +20873,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20886,7 +20886,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20899,7 +20899,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20912,7 +20912,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20925,7 +20925,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20938,7 +20938,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20951,7 +20951,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20964,7 +20964,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20977,7 +20977,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -20990,7 +20990,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21003,7 +21003,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21016,7 +21016,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21029,7 +21029,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21042,7 +21042,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21055,7 +21055,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21068,7 +21068,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21081,7 +21081,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21094,7 +21094,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21107,7 +21107,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21120,14 +21120,14 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
                 }
               }
             ],
-            "desc": "",
+            "desc": "Generated Central Heating Output Current Month",
             "info": "",
             "acc": ""
           }
@@ -21135,7 +21135,7 @@
         {
           "codec": "O3EList",
           "len": 62,
-          "id": "LastMonth",
+          "id": "PreviousMonth",
           "args": {
             "subTypes": [
               {
@@ -21145,7 +21145,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21158,7 +21158,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21171,7 +21171,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21184,7 +21184,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21197,7 +21197,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21210,7 +21210,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21223,7 +21223,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21236,7 +21236,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21249,7 +21249,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21262,7 +21262,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21275,7 +21275,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21288,7 +21288,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21301,7 +21301,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21314,7 +21314,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21327,7 +21327,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21340,7 +21340,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21353,7 +21353,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21366,7 +21366,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21379,7 +21379,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21392,7 +21392,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21405,7 +21405,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21418,7 +21418,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21431,7 +21431,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21444,7 +21444,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21457,7 +21457,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21470,7 +21470,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21483,7 +21483,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21496,7 +21496,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21509,7 +21509,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21522,7 +21522,7 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21535,20 +21535,20 @@
                 "args": {
                   "scale": 10.0,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
                 }
               }
             ],
-            "desc": "",
+            "desc": "Generated Central Heating Output Previous Month",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
+      "desc": "Generated Central Heating Output Per Month",
       "info": "",
       "acc": "ro"
     }
@@ -21572,7 +21572,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21585,7 +21585,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21598,7 +21598,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21611,7 +21611,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21624,7 +21624,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21637,7 +21637,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21650,7 +21650,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21663,7 +21663,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21676,7 +21676,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21689,7 +21689,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21702,7 +21702,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21715,14 +21715,14 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
                 }
               }
             ],
-            "desc": "",
+            "desc": "Energy Consumption Central Heating Current Year",
             "info": "",
             "acc": ""
           }
@@ -21740,7 +21740,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21753,7 +21753,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21766,7 +21766,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21779,7 +21779,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21792,7 +21792,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21805,7 +21805,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21818,7 +21818,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21831,7 +21831,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21844,7 +21844,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21857,7 +21857,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21870,7 +21870,7 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -21883,20 +21883,20 @@
                 "args": {
                   "scale": 10,
                   "signed": false,
-                  "unit": "",
+                  "unit": "kWh",
                   "desc": "",
                   "info": "",
                   "acc": ""
                 }
               }
             ],
-            "desc": "",
+            "desc": "Energy Consumption Central Heating Last Year",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
+      "desc": "Energy Consumption Central Heating Per Year",
       "info": "",
       "acc": "ro"
     }
@@ -22070,7 +22070,7 @@
                 }
               }
             ],
-            "desc": "",
+            "desc": "Energy Consumption Domestic Hot Water Current Year",
             "info": "",
             "acc": ""
           }
@@ -22238,13 +22238,13 @@
                 }
               }
             ],
-            "desc": "",
+            "desc": "Energy Consumption Domestic Hot Water Last Year",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
+      "desc": "Energy Consumption Domestic Hot Water Per Year",
       "info": "",
       "acc": "ro"
     }
@@ -22418,7 +22418,7 @@
                 }
               }
             ],
-            "desc": "",
+            "desc": "Energy Consumption Cooling Current Year",
             "info": "",
             "acc": ""
           }
@@ -22586,13 +22586,13 @@
                 }
               }
             ],
-            "desc": "",
+            "desc": "Energy Consumption Cooling Last Year",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
+      "desc": "Energy Consumption Cooling Per Year",
       "info": "",
       "acc": "ro"
     }
@@ -22760,7 +22760,7 @@
                   "scale": 10,
                   "signed": false,
                   "unit": "",
-                  "desc": "",
+                  "desc": "Generated Electricity Current Year",
                   "info": "",
                   "acc": ""
                 }
@@ -22928,7 +22928,7 @@
                   "scale": 10,
                   "signed": false,
                   "unit": "",
-                  "desc": "",
+                  "desc": "Generated Electricity Last Year",
                   "info": "",
                   "acc": ""
                 }
@@ -22940,7 +22940,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Generated Electricity Per Year",
       "info": "",
       "acc": "ro"
     }
@@ -23114,7 +23114,7 @@
                 }
               }
             ],
-            "desc": "",
+            "desc": "Solar Energy Yield Current Year",
             "info": "",
             "acc": ""
           }
@@ -23282,13 +23282,13 @@
                 }
               }
             ],
-            "desc": "",
+            "desc": "Solar Energy Yield Last Year",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
+      "desc": "Solar Energy Yield Per Month",
       "info": "",
       "acc": "ro"
     }
@@ -23462,7 +23462,7 @@
                 }
               }
             ],
-            "desc": "",
+            "desc": "Generated Central Heating Output Current Year",
             "info": "",
             "acc": ""
           }
@@ -23630,13 +23630,13 @@
                 }
               }
             ],
-            "desc": "",
+            "desc": "Generated Central Heating Output Last Year",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
+      "desc": "Generated Central Heating Output Per Year",
       "info": "",
       "acc": "ro"
     }
@@ -24084,7 +24084,7 @@
         {
           "codec": "O3EList",
           "len": 62,
-          "id": "LastMonth",
+          "id": "PreviousMonth",
           "args": {
             "subTypes": [
               {
@@ -25274,7 +25274,7 @@
         {
           "codec": "O3EList",
           "len": 62,
-          "id": "LastMonth",
+          "id": "PreviousMonth",
           "args": {
             "subTypes": [
               {
@@ -26464,7 +26464,7 @@
         {
           "codec": "O3EList",
           "len": 62,
-          "id": "LastMonth",
+          "id": "PreviousMonth",
           "args": {
             "subTypes": [
               {
@@ -28101,7 +28101,7 @@
         {
           "codec": "O3EList",
           "len": 62,
-          "id": "LastMonth",
+          "id": "PreviousMonth",
           "args": {
             "subTypes": [
               {
@@ -37952,8 +37952,8 @@
           "args": {
             "scale": 1,
             "signed": false,
-            "unit": "",
-            "desc": "",
+            "unit": "%",
+            "desc": "Discharge limit of battery",
             "info": "",
             "acc": ""
           }
@@ -37972,7 +37972,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Configuration for Backup Box",
       "info": "",
       "acc": "rw"
     }
@@ -38372,8 +38372,8 @@
     "args": {
       "scale": 10.0,
       "signed": false,
-      "unit": "",
-      "desc": "",
+      "unit": "Wh",
+      "desc": "Target value of thermal energy to perform next defrosting",
       "info": "",
       "acc": "ro"
     }
@@ -40883,12 +40883,12 @@
     }
   },
   "2320": {
-    "codec": "O3EByteVal",
+    "codec": "O3EEnum",
     "len": 1,
     "id": "DomesticHotWaterStatus",
     "args": {
-      "unit": "",
-      "desc": "",
+      "listStr": "DomesticHotWaterPreparationStates",
+      "desc": "Status of domestic hot water preparation",
       "info": "",
       "acc": "ro"
     }
@@ -41031,7 +41031,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41044,7 +41044,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41057,7 +41057,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41070,7 +41070,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41088,8 +41088,8 @@
           }
         }
       ],
-      "desc": "",
-      "info": "",
+      "desc": "Actual temperature economizer inlet",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -41106,7 +41106,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41119,7 +41119,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41132,7 +41132,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41145,7 +41145,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41163,8 +41163,8 @@
           }
         }
       ],
-      "desc": "",
-      "info": "",
+      "desc": "Actual temperature avaporator inlet",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -41303,8 +41303,8 @@
     "args": {
       "scale": 1.0,
       "signed": false,
-      "unit": "",
-      "desc": "",
+      "unit": "%",
+      "desc": "Setpoint of speed of heat pump compressor",
       "info": "",
       "acc": "rw"
     }
@@ -41316,9 +41316,9 @@
     "args": {
       "scale": 1.0,
       "signed": false,
-      "unit": "",
-      "desc": "",
-      "info": "",
+      "unit": "%",
+      "desc": "Actual speed of heat pump compressor",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -41356,11 +41356,11 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "PowerState",
           "args": {
-            "unit": "",
+            "listStr": "PowerStates",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41378,7 +41378,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual state of the heat pump compressor",
       "info": "",
       "acc": "ro"
     }
@@ -41390,11 +41390,11 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "PowerState",
           "args": {
-            "unit": "",
+            "listStr": "PowerStates",
             "desc": "",
             "info": "",
             "acc": ""
@@ -41412,7 +41412,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual state of the electric auxiliary heating",
       "info": "",
       "acc": "ro"
     }
@@ -41537,7 +41537,7 @@
             "scale": 1,
             "signed": false,
             "unit": "",
-            "desc": "",
+            "desc": "Number of starts",
             "info": "",
             "acc": ""
           }
@@ -41557,8 +41557,8 @@
           "args": {
             "scale": 1,
             "signed": false,
-            "unit": "",
-            "desc": "",
+            "unit": "h",
+            "desc": "Operating hours",
             "info": "",
             "acc": ""
           }
@@ -41572,7 +41572,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Statistics for heat pump compressor starts",
       "info": "",
       "acc": "ro"
     }
@@ -41599,7 +41599,7 @@
             "scale": 1,
             "signed": false,
             "unit": "",
-            "desc": "",
+            "desc": "Number of starts",
             "info": "",
             "acc": ""
           }
@@ -41619,8 +41619,8 @@
           "args": {
             "scale": 1,
             "signed": false,
-            "unit": "",
-            "desc": "",
+            "unit": "h",
+            "desc": "Operating hours",
             "info": "",
             "acc": ""
           }
@@ -43123,8 +43123,8 @@
     "args": {
       "scale": 1,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "W",
+      "desc": "Actual electrical power consumption of the refrigeration circuit",
       "info": "",
       "acc": "ro"
     }
@@ -43136,8 +43136,8 @@
     "args": {
       "scale": 1,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "W",
+      "desc": "Actual electrical power consumption of the auxiliary heater",
       "info": "",
       "acc": "ro"
     }
@@ -43150,8 +43150,8 @@
       "scale": 1,
       "signed": true,
       "unit": "",
-      "desc": "",
-      "info": "",
+      "desc": "W",
+      "info": "Actual total electrical power consumption of the system",
       "acc": "ro"
     }
   },
@@ -43194,8 +43194,8 @@
     "args": {
       "scale": 1,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "W",
+      "desc": "Actual thermal power output of the refrigeration circuit",
       "info": "",
       "acc": "ro"
     }
@@ -43207,8 +43207,8 @@
     "args": {
       "scale": 1,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "W",
+      "desc": "Actual thermal power output of the auxiliary heater",
       "info": "",
       "acc": "ro"
     }
@@ -43220,8 +43220,8 @@
     "args": {
       "scale": 1,
       "signed": true,
-      "unit": "",
-      "desc": "",
+      "unit": "W",
+      "desc": "Actual thermal power output of the system",
       "info": "",
       "acc": "ro"
     }
@@ -43713,7 +43713,7 @@
         {
           "codec": "O3EList",
           "len": 62,
-          "id": "LastMonth",
+          "id": "PreviousMonth",
           "args": {
             "subTypes": [
               {
@@ -44993,7 +44993,7 @@
         {
           "codec": "O3EList",
           "len": 62,
-          "id": "LastMonth",
+          "id": "PreviousMonth",
           "args": {
             "subTypes": [
               {
@@ -46273,7 +46273,7 @@
         {
           "codec": "O3EList",
           "len": 62,
-          "id": "LastMonth",
+          "id": "PreviousMonth",
           "args": {
             "subTypes": [
               {
@@ -47816,8 +47816,8 @@
     "args": {
       "scale": 10,
       "signed": false,
-      "unit": "",
-      "desc": "",
+      "unit": "rps",
+      "desc": "Actual speed of the heat pump compressor",
       "info": "",
       "acc": "ro"
     }
@@ -48853,12 +48853,12 @@
     }
   },
   "2735": {
-    "codec": "O3EByteVal",
+    "codec": "O3EEnum",
     "len": 1,
     "id": "FourThreeWayValveValveCurrentPosition",
     "args": {
-      "unit": "",
-      "desc": "",
+      "listStr": "FourThreeWayValveModes",
+      "desc": "Current position of the four/three-way valve",
       "info": "",
       "acc": "ro"
     }
@@ -49503,18 +49503,18 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "State",
           "args": {
-            "unit": "",
+            "listStr": "RefrigerationCircuitOperationModes",
             "desc": "",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual operating mode of the refrigeration circuit",
       "info": "",
       "acc": "ro"
     }
@@ -51059,7 +51059,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -51072,7 +51072,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -51085,7 +51085,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -51098,7 +51098,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -51116,7 +51116,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual temperature of the heating buffer",
       "info": "",
       "acc": "ro"
     }
@@ -53590,5 +53590,5 @@
       "acc": "ro"
     }
   },
-  "Version": "20260211"
+  "Version": "20260216"
 }

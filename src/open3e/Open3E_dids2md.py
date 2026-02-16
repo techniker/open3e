@@ -22,6 +22,7 @@
 # 07.02.2026: Initial version
 #
 
+import argparse
 import json
 from datetime import date
 
@@ -31,23 +32,23 @@ import open3e.Open3EdatapointsVariants
 
 from open3e.Open3Ecodecs import *
 
+tool_version_string = '0.1.0'
+
 DoI_default = [256,257,258,259,260,261,262,263,264,265,266,268,     # Frequently used Dids
                269,271,274,282,284,318,320,321,322,324,325,355,
-               381,389,391,396,491,531,902,954,987,1043,1190,1286,
+               381,389,391,396,491,497,531,902,954,987,1043,1190,1286,
                1287,1288,1289,1290,1294,1311,1315,1316,1333,1337,
                1339,1391,1392,1393,1415,1552,1590,1603,1607,1643,
                1664,1684,1690,1770,1771,1772,1773,1774,1775,1776,
                1799,1801,1802,1815,1816,1817,1828,1830,1831,1832,
-               1833,1834,1836,1841,1842,2144,2214,2256,2320,2333,
+               1833,1834,1836,1841,1842,2214,2256,2320,2333,
                2334,2346,2351,2352,2369,2486,2487,2488,2494,2495,
-               2496,2539,2569,2735,2806,3016]
+               2496,2569,2735,2806,3016]
 md_indent = '- '                                                    # Indentation of sub codecs
 meta_codecs = ['O3EList','O3EComplexType']                          # List of meta codecs, show in italic
 ignored_ids = ['ListEntries']                                       # List of ids to be ignored (helper ids for json format)
 enums = dict(open3e.Open3Eenums.E3Enums)                            # Enumerations known to open3e
 enums_excluded = ['Errors','Warnings','States','Infos','Country']   # Do NOT list the entries of enumerations for those keys
-
-table_header =  '|  Did | ID   | Codec | Length | Unit | Access | Further info |\n| ---: | :--- | :--- | ---: | :---: | :---: | :--- |\n'
 
 def addMouseOver(txt, mouse_over):
     if len(txt) > 0 and txt[0] == '[' and '##' in txt:
@@ -57,7 +58,15 @@ def addMouseOver(txt, mouse_over):
         md = f'[{txt}](## "{mouse_over}")'
     return md
 
-def getDescStr(codecs):
+def getDescStrTableColumn(codecs):
+    if args.showdesc == False:
+        return ''
+    if 'args' in codecs and 'desc' in codecs['args']:
+        return f'{codecs['args']['desc']}|'
+    else:
+        return ''
+
+def getDescStrMouseOver(codecs):
     if 'args' in codecs and 'desc' in codecs['args']:
         return codecs['args']['desc']
     else:
@@ -71,11 +80,19 @@ def getIdStr(id, codecs, prefix):
     if codecs['codec'] == 'O3EEnum' and codecs['args']['listStr'] in enums and not (codecs['args']['listStr'] in enums_excluded):
         # Add list if enums as mouse over
         id_str = addMouseOver(id_str, json.dumps(enums[codecs['args']['listStr']],indent=None).replace('"',''))
-    desc = getDescStr(codecs)
+    desc = getDescStrMouseOver(codecs)
     if desc != '':
         # Add description as mouse over
         id_str = addMouseOver(id_str, desc)
     return id_str
+
+def getDescTableHeader(txt):
+    if args.showdesc == False:
+        return ''
+    if txt:
+        return ' Description |'
+    else:
+        return ' :--- |'
 
 def getCodecStr(codec_str):
     if codec_str in meta_codecs:
@@ -111,17 +128,18 @@ def codec2md(codecs, prefix='', accessStr=''):
     md = ''
     if not (codecs['id'] in ignored_ids):
         # skip json helper ids
-        md += F'{prefix}{getIdStr(codecs['id'], codecs, prefix)}|{getCodecStr(codecs['codec'])}|{str(codecs['len'])}|{getUniStr(codecs)}|{accessStr}|{getInfoStr(codecs)}'
-    if 'subTypes' in codecs['args']:
-        for codec in codecs['args']['subTypes']:
-            if not (codec['id'] in ignored_ids):
-                md += f'|\n| |{codec2md(codec, prefix+md_indent, '')}'
-            else:
-                md += f'{codec2md(codec, prefix+md_indent, '')}'
+        md += F'{prefix}{getIdStr(codecs['id'], codecs, prefix)}|{getCodecStr(codecs['codec'])}|{str(codecs['len'])}|{getUniStr(codecs)}|{getDescStrTableColumn(codecs)}{accessStr}|{getInfoStr(codecs)}'
+    if not args.nosubs:
+        if 'subTypes' in codecs['args']:
+            for codec in codecs['args']['subTypes']:
+                if not (codec['id'] in ignored_ids):
+                    md += f'|\n| |{codec2md(codec, prefix+md_indent, '')}'
+                else:
+                    md += f'{codec2md(codec, prefix+md_indent, '')}'
     return md
 
 def did2md(did, codecs):
-    return f'**{str(did)}**|{codec2md(codecs, '', getAccesStr(codecs))}|\n'
+    return f'|**{str(did)}**|{codec2md(codecs, '', getAccesStr(codecs))}|\n'
 
 def printListOfDoI(DoI):
     dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers)
@@ -134,76 +152,119 @@ def printListOfDoI(DoI):
     print(f'{cntDoI} elements.')
     return
 
-def main():
+def get_package_version_string():
+    package_name = "open3e"
 
-    # # Print list of default DoI:
-    # import sys
-    # printListOfDoI(DoI_default)
-    # sys.exit(0)
+    try:
+        from importlib.metadata import version
+        package_version = version(package_name)
+    except ImportError:
+        package_version = "unknown"
 
-    dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers)
-    variants = dict(open3e.Open3EdatapointsVariants.dataIdentifiers)
+    try:
+        from open3e import _scm_version as scm_version
+        git_ref = scm_version.git_ref
+    except ImportError:
+        git_ref = "unknown"
 
-    didsDict = {}
-    didsDictVars = {}
+    return f'{tool_version_string} based on open3e {package_version} ({git_ref})'
 
-    cntDps = 0
-    cntVars = 0
-    cntWrt = 0
 
-    # Convert list of general datapoints to json
+#~~~~~~~~~~~~~~~~~~~~~~
+# Main
+#~~~~~~~~~~~~~~~~~~~~~~
 
-    for dp in dataIdentifiers["dids"]:
-        didsDict[dp] = dataIdentifiers["dids"][dp].getCodecInfo()
-        cntDps += 1
+help_version_string = get_package_version_string()
 
-    didsDict['Version'] = dataIdentifiers['Version']
+parser = argparse.ArgumentParser(epilog=f'open3e_dids2md {help_version_string}')
+parser.add_argument("-d", "--dids", type=str, help="list specified dids only, e.g. 256,268,269")
+#parser.add_argument("-f", "--filename", type=str, help="send result to file instead of stdout")
+parser.add_argument("-n", "--nosubs", action='store_true', help="list main data points only, don't list subs")
+parser.add_argument("-s", "--showdesc", action='store_true', help="list description as an extra column")
+args = parser.parse_args()
 
-    # Convert list of variant datapoints to json
+# # Print list of default DoI:
+# import sys
+# printListOfDoI(DoI_default)
+# sys.exit(0)
 
-    for dp in variants["dids"]:
-        didsDictVars[dp] = {}
-        for v in variants["dids"][dp]:
-            didsDictVars[dp][v] = variants["dids"][dp][v].getCodecInfo()
-        cntVars += 1
+dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers)
+variants = dict(open3e.Open3EdatapointsVariants.dataIdentifiers)
 
-    didsDictVars['Version'] = variants["Version"]
+didsDict = {}
+didsDictVars = {}
 
-    # Create markdonw formatted version of data points
+cntDps = 0
+cntVars = 0
+cntWrt = 0
 
-    md = ''
-    md += '# Open3E - List of data points\n'
-    md += '- Version of general data points: ' + didsDict['Version'] + '\n'
-    md += '- Version of variant data points: ' + didsDictVars['Version'] + '\n\n'
+table_header =  f'|  Did | ID   | Codec | Length | Unit  | {getDescTableHeader(True)}  Access | Further info |\n'
+table_header += f'| ---: | :--- | :---  | ---:   | :---: | {getDescTableHeader(False)} :---:  | :---         |\n'
 
-    md += '### Remarks:\n'
-    md += '* Information on write access to data points (column Access) is based on documents of Viessmann\n'
-    md += '  * ro => data point is read only\n'
-    md += '  * rw => data point is read and write. However, device my reject or ignore write access anyway\n'
+# Convert list of general datapoints to json
 
+for dp in dataIdentifiers["dids"]:
+    didsDict[dp] = dataIdentifiers["dids"][dp].getCodecInfo()
+    cntDps += 1
+
+didsDict['Version'] = dataIdentifiers['Version']
+
+# Convert list of variant datapoints to json
+
+for dp in variants["dids"]:
+    didsDictVars[dp] = {}
+    for v in variants["dids"][dp]:
+        didsDictVars[dp][v] = variants["dids"][dp][v].getCodecInfo()
+    cntVars += 1
+
+didsDictVars['Version'] = variants["Version"]
+
+# Create markdonw formatted version of data points
+
+md = ''
+md += '# Open3E - List of data points\n'
+md += '- Version of general data points: ' + didsDict['Version'] + '\n'
+md += '- Version of variant data points: ' + didsDictVars['Version'] + '\n\n'
+
+md += '### Remarks:\n'
+md += '* Information on write access to data points (column Access) is based on documents of Viessmann\n'
+md += '  * ro => data point is read only\n'
+md += '  * rw => data point is read and write. However, device my reject or ignore write access anyway\n'
+
+if args.dids == None:
     md += '## Frequently used data points\n'
     md += 'A list of all presently known data points is available [below](#all-presently-known-data-points)\n'
-    md += table_header
+else:
+    md += '## User defined list of data points\n'
 
-    for did in DoI_default:
-        if did in didsDict:
-            md += did2md(did, didsDict[did])
+md += table_header
+
+if args.dids != None:
+    dids = list(args.dids.replace(' ','').split(','))
+else:
+    dids = DoI_default
+
+for did in dids:
+    if int(did) in didsDict:
+        md += did2md(int(did), didsDict[int(did)])
+    if int(did) in didsDictVars:
+        for variant in didsDictVars[int(did)]:
+            md += did2md(int(did), didsDictVars[int(did)][variant])
+
+if args.dids != None:
+    print(md)
+    import sys
+    sys.exit(0)
+
+md += '## All presently known data points\n'
+md += table_header
+
+for key in didsDict:
+    if key != 'Version':
+        did = int(key)
+        md += did2md(did, didsDict[did])
         if did in didsDictVars:
             for variant in didsDictVars[did]:
                 md += did2md(did, didsDictVars[did][variant])
 
-    md += '## All presently known data points\n'
-    md += table_header
-
-    for key in didsDict:
-        if key != 'Version':
-            did = int(key)
-            md += did2md(did, didsDict[did])
-            if did in didsDictVars:
-                for variant in didsDictVars[did]:
-                    md += did2md(did, didsDictVars[did][variant])
-
-    print(md)
-
-if __name__ == "__main__":
-    main()
+print(md)

@@ -85,8 +85,8 @@
             }
           }
         ],
-        "desc": "",
-        "info": "",
+        "desc": "External request for one-time charging of domestic hot water (0: off, 2: one-time request)",
+        "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
         "acc": "rw"
       }
     }
@@ -129,8 +129,8 @@
             }
           }
         ],
-        "desc": "",
-        "info": "",
+        "desc": "State of external request for one-time charging of domestic hot water (0: off, 2: on)",
+        "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
         "acc": "ro"
       }
     }
@@ -7999,5 +7999,5 @@
       }
     }
   },
-  "Version": "20260211"
+  "Version": "20260215"
 }
