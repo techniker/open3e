@@ -1,8 +1,8 @@
-**_New: List of data points now available as [table](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md)**
+**_New: List of data points now available as [table](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md)_**
 
-**_New: Tool `open3e_dids2md` can create your own list of data points in markdown format. `open3e_dids2md -h` for options.**
+**_New: Tool `open3e_dids2md` can create your own list of data points in markdown format. `open3e_dids2md -h` for options._**
 
-**_New: All info about data points available as json files [general dids](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md) and [variant dids](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3EdatapointsVariants.md)**
+**_New: All info about data points available as json files for [general dids](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md) and [variant dids](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3EdatapointsVariants.md)_**
 
 <BR>
 
