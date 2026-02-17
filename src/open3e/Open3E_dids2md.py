@@ -232,7 +232,7 @@ md += '  * ro => data point is read only\n'
 md += '  * rw => data point is read and write. However, device my reject or ignore write access anyway\n\n'
 
 if args.dids == None:
-    md += '### List of content\n'
+    md += '### Table of contents\n'
     md += '[Frequently used data points including subs](#frequently-used-data-points-including-subs)\n\n'
     md += '[Frequently used data points as compact list](#frequently-used-data-points-in-compact-format)\n\n'
     md += '[All presently known data points including subs](#all-presently-known-data-points-including-subs)\n\n'
@@ -263,7 +263,7 @@ if args.dids != None:
 
 args.compact = True
 md += '## Frequently used data points in compact format\n\n'
-md += '[Back to list of content](#list-of-content)\n\n'
+md += '[Back to table of contents](#table-of-contents)\n\n'
 md += table_header
 for did in dids:
     if int(did) in didsDict:
@@ -274,7 +274,7 @@ for did in dids:
 
 args.compact = False
 md += '## All presently known data points including subs\n\n'
-md += '[Back to list of content](#list-of-content)\n\n'
+md += '[Back to table of contents](#table-of-contents)\n\n'
 md += table_header
 
 for key in didsDict:
@@ -287,7 +287,7 @@ for key in didsDict:
 
 args.compact = True
 md += '## All presently known data points in compact format\n\n'
-md += '[Back to list of content](#list-of-content)\n\n'
+md += '[Back to table of contents](#table-of-contents)\n\n'
 md += table_header
 
 for key in didsDict:
