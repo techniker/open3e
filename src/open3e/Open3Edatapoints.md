@@ -1,6 +1,6 @@
 # Open3E - List of data points
-- Version of general data points: 20260216
-- Version of variant data points: 20260215
+- Version of general data points: 20260217
+- Version of variant data points: 20260217
 
 ### Remarks
 * Information on write access to data points (column Access) is based on documents of Viessmann
@@ -176,7 +176,7 @@
 | |- Cycles|O3EByteVal|1||||
 |**531**|[**DomesticHotWaterOperationState**](## "Operation state of domestic hot water preparation")|*O3EComplexType*|2||**rw**||
 | |- Mode|O3EByteVal|1||||
-| |- [State](## "{0: Off, 1: Hot water, 2: Parallel operation, 3: Chimney sweep, 4: Test mode, 5: Automatic}")|O3EEnum|1||||
+| |- [State](## "{0: Off, 1: Hot water, 2: Parallel operation, 3: Chimney sweep, 4: Test mode, 5: External temperature setpoint, 6: External modulation setpoint, 7: Hygiene function, 8: Automatic}")|O3EEnum|1||||
 |**902**|[**MalfunctionIdentification**](## "Indicates whether faults are present")|O3EByteVal|1||ro||
 |**954**|[**BusTopologyMatrix**](## "Matrix of CAN bus topology")|*O3EList*|181||ro||
 | |- [Count](## "Number of list entries")|O3EInt8|1||||
@@ -472,224 +472,208 @@
 | |- - 10_October|O3EInt32|4||||
 | |- - 11_November|O3EInt32|4||||
 | |- - 12_December|O3EInt32|4||||
-|**1339**|**MalfunctionHeatingUnitBlocked**|O3EByteVal|1||ro||
-|**1391**|**GeneratedDomesticHotWaterOutput**|*O3EComplexType*|24||ro||
-| |- Today|O3EInt32|4||||
-| |- Past7Days|O3EInt32|4||||
-| |- CurrentMonth|O3EInt32|4||||
-| |- PastMonth|O3EInt32|4||||
-| |- CurrentYear|O3EInt32|4||||
-| |- PastYear|O3EInt32|4||||
-|**1392**|**GeneratedDomesticHotWaterOutputMonthMatrix**|*O3EComplexType*|124||ro||
-| |- CurrentMonth|*O3EList*|62||||
-| |- - 01|O3EInt16|2||||
-| |- - 02|O3EInt16|2||||
-| |- - 03|O3EInt16|2||||
-| |- - 04|O3EInt16|2||||
-| |- - 05|O3EInt16|2||||
-| |- - 06|O3EInt16|2||||
-| |- - 07|O3EInt16|2||||
-| |- - 08|O3EInt16|2||||
-| |- - 09|O3EInt16|2||||
-| |- - 10|O3EInt16|2||||
-| |- - 11|O3EInt16|2||||
-| |- - 12|O3EInt16|2||||
-| |- - 13|O3EInt16|2||||
-| |- - 14|O3EInt16|2||||
-| |- - 15|O3EInt16|2||||
-| |- - 16|O3EInt16|2||||
-| |- - 17|O3EInt16|2||||
-| |- - 18|O3EInt16|2||||
-| |- - 19|O3EInt16|2||||
-| |- - 20|O3EInt16|2||||
-| |- - 21|O3EInt16|2||||
-| |- - 22|O3EInt16|2||||
-| |- - 23|O3EInt16|2||||
-| |- - 24|O3EInt16|2||||
-| |- - 25|O3EInt16|2||||
-| |- - 26|O3EInt16|2||||
-| |- - 27|O3EInt16|2||||
-| |- - 28|O3EInt16|2||||
-| |- - 29|O3EInt16|2||||
-| |- - 30|O3EInt16|2||||
-| |- - 31|O3EInt16|2||||
-| |- PreviousMonth|*O3EList*|62||||
-| |- - 01|O3EInt16|2||||
-| |- - 02|O3EInt16|2||||
-| |- - 03|O3EInt16|2||||
-| |- - 04|O3EInt16|2||||
-| |- - 05|O3EInt16|2||||
-| |- - 06|O3EInt16|2||||
-| |- - 07|O3EInt16|2||||
-| |- - 08|O3EInt16|2||||
-| |- - 09|O3EInt16|2||||
-| |- - 10|O3EInt16|2||||
-| |- - 11|O3EInt16|2||||
-| |- - 12|O3EInt16|2||||
-| |- - 13|O3EInt16|2||||
-| |- - 14|O3EInt16|2||||
-| |- - 15|O3EInt16|2||||
-| |- - 16|O3EInt16|2||||
-| |- - 17|O3EInt16|2||||
-| |- - 18|O3EInt16|2||||
-| |- - 19|O3EInt16|2||||
-| |- - 20|O3EInt16|2||||
-| |- - 21|O3EInt16|2||||
-| |- - 22|O3EInt16|2||||
-| |- - 23|O3EInt16|2||||
-| |- - 24|O3EInt16|2||||
-| |- - 25|O3EInt16|2||||
-| |- - 26|O3EInt16|2||||
-| |- - 27|O3EInt16|2||||
-| |- - 28|O3EInt16|2||||
-| |- - 29|O3EInt16|2||||
-| |- - 30|O3EInt16|2||||
-| |- - 31|O3EInt16|2||||
-|**1393**|**GeneratedDomesticHotWaterOutputYearMatrix**|*O3EComplexType*|96||ro||
-| |- CurrentYear|*O3EList*|48||||
-| |- - 01_January|O3EInt32|4||||
-| |- - 02_February|O3EInt32|4||||
-| |- - 03_March|O3EInt32|4||||
-| |- - 04_April|O3EInt32|4||||
-| |- - 05_May|O3EInt32|4||||
-| |- - 06_June|O3EInt32|4||||
-| |- - 07_July|O3EInt32|4||||
-| |- - 08_August|O3EInt32|4||||
-| |- - 09_September|O3EInt32|4||||
-| |- - 10_October|O3EInt32|4||||
-| |- - 11_November|O3EInt32|4||||
-| |- - 12_December|O3EInt32|4||||
-| |- LastYear|*O3EList*|48||||
-| |- - 01_January|O3EInt32|4||||
-| |- - 02_February|O3EInt32|4||||
-| |- - 03_March|O3EInt32|4||||
-| |- - 04_April|O3EInt32|4||||
-| |- - 05_May|O3EInt32|4||||
-| |- - 06_June|O3EInt32|4||||
-| |- - 07_July|O3EInt32|4||||
-| |- - 08_August|O3EInt32|4||||
-| |- - 09_September|O3EInt32|4||||
-| |- - 10_October|O3EInt32|4||||
-| |- - 11_November|O3EInt32|4||||
-| |- - 12_December|O3EInt32|4||||
-|**1415**|**MixerOneCircuitOperationState**|*O3EComplexType*|2||**rw**||
-| |- [Mode](## "{0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
-|**1552**|**ElectricalEnergyStorageOperationState**|RawCodec|7||**rw**||
-|**1590**|**ElectricalEnergySystemOperationState**|RawCodec|6||**rw**||
-|**1603**|**PointOfCommonCouplingPower**|*O3EComplexType*|4||ro||
-| |- ActivePower|O3EInt16|2||||
-| |- ReactivePower|O3EInt16|2||||
-|**1603**|**PointOfCommonCouplingPower**|*O3EComplexType*|12||ro||
-| |- ActivePower|O3EInt16|2||||
-| |- ReactivePower|O3EInt16|2||||
-| |- ActivePowerDup|O3EInt16|2||||
+|**1391**|[**GeneratedDomesticHotWaterOutput**](## "Generated Domestic Hot Water Output per specific period")|*O3EComplexType*|24||ro||
+| |- Today|O3EInt32|4|kWh|||
+| |- Past7Days|O3EInt32|4|kWh|||
+| |- CurrentMonth|O3EInt32|4|kWh|||
+| |- PastMonth|O3EInt32|4|kWh|||
+| |- CurrentYear|O3EInt32|4|kWh|||
+| |- PastYear|O3EInt32|4|kWh|||
+|**1392**|[**GeneratedDomesticHotWaterOutputMonthMatrix**](## "Generated Domestic Hot Water Output Per Month")|*O3EComplexType*|124||ro||
+| |- [CurrentMonth](## "Generated Domestic Hot Water Output Current Month")|*O3EList*|62||||
+| |- - 01|O3EInt16|2|kWh|||
+| |- - 02|O3EInt16|2|kWh|||
+| |- - 03|O3EInt16|2|kWh|||
+| |- - 04|O3EInt16|2|kWh|||
+| |- - 05|O3EInt16|2|kWh|||
+| |- - 06|O3EInt16|2|kWh|||
+| |- - 07|O3EInt16|2|kWh|||
+| |- - 08|O3EInt16|2|kWh|||
+| |- - 09|O3EInt16|2|kWh|||
+| |- - 10|O3EInt16|2|kWh|||
+| |- - 11|O3EInt16|2|kWh|||
+| |- - 12|O3EInt16|2|kWh|||
+| |- - 13|O3EInt16|2|kWh|||
+| |- - 14|O3EInt16|2|kWh|||
+| |- - 15|O3EInt16|2|kWh|||
+| |- - 16|O3EInt16|2|kWh|||
+| |- - 17|O3EInt16|2|kWh|||
+| |- - 18|O3EInt16|2|kWh|||
+| |- - 19|O3EInt16|2|kWh|||
+| |- - 20|O3EInt16|2|kWh|||
+| |- - 21|O3EInt16|2|kWh|||
+| |- - 22|O3EInt16|2|kWh|||
+| |- - 23|O3EInt16|2|kWh|||
+| |- - 24|O3EInt16|2|kWh|||
+| |- - 25|O3EInt16|2|kWh|||
+| |- - 26|O3EInt16|2|kWh|||
+| |- - 27|O3EInt16|2|kWh|||
+| |- - 28|O3EInt16|2|kWh|||
+| |- - 29|O3EInt16|2|kWh|||
+| |- - 30|O3EInt16|2|kWh|||
+| |- - 31|O3EInt16|2|kWh|||
+| |- [PreviousMonth](## "Generated Domestic Hot Water Output Previous Month")|*O3EList*|62||||
+| |- - 01|O3EInt16|2|kWh|||
+| |- - 02|O3EInt16|2|kWh|||
+| |- - 03|O3EInt16|2|kWh|||
+| |- - 04|O3EInt16|2|kWh|||
+| |- - 05|O3EInt16|2|kWh|||
+| |- - 06|O3EInt16|2|kWh|||
+| |- - 07|O3EInt16|2|kWh|||
+| |- - 08|O3EInt16|2|kWh|||
+| |- - 09|O3EInt16|2|kWh|||
+| |- - 10|O3EInt16|2|kWh|||
+| |- - 11|O3EInt16|2|kWh|||
+| |- - 12|O3EInt16|2|kWh|||
+| |- - 13|O3EInt16|2|kWh|||
+| |- - 14|O3EInt16|2|kWh|||
+| |- - 15|O3EInt16|2|kWh|||
+| |- - 16|O3EInt16|2|kWh|||
+| |- - 17|O3EInt16|2|kWh|||
+| |- - 18|O3EInt16|2|kWh|||
+| |- - 19|O3EInt16|2|kWh|||
+| |- - 20|O3EInt16|2|kWh|||
+| |- - 21|O3EInt16|2|kWh|||
+| |- - 22|O3EInt16|2|kWh|||
+| |- - 23|O3EInt16|2|kWh|||
+| |- - 24|O3EInt16|2|kWh|||
+| |- - 25|O3EInt16|2|kWh|||
+| |- - 26|O3EInt16|2|kWh|||
+| |- - 27|O3EInt16|2|kWh|||
+| |- - 28|O3EInt16|2|kWh|||
+| |- - 29|O3EInt16|2|kWh|||
+| |- - 30|O3EInt16|2|kWh|||
+| |- - 31|O3EInt16|2|kWh|||
+|**1393**|[**GeneratedDomesticHotWaterOutputYearMatrix**](## "Generated Domestic Hot Water Output Per Year")|*O3EComplexType*|96||ro||
+| |- [CurrentYear](## "Generated Domestic Hot Water Output Current Year")|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4|kWh|||
+| |- - 02_February|O3EInt32|4|kWh|||
+| |- - 03_March|O3EInt32|4|kWh|||
+| |- - 04_April|O3EInt32|4|kWh|||
+| |- - 05_May|O3EInt32|4|kWh|||
+| |- - 06_June|O3EInt32|4|kWh|||
+| |- - 07_July|O3EInt32|4|kWh|||
+| |- - 08_August|O3EInt32|4|kWh|||
+| |- - 09_September|O3EInt32|4|kWh|||
+| |- - 10_October|O3EInt32|4|kWh|||
+| |- - 11_November|O3EInt32|4|kWh|||
+| |- - 12_December|O3EInt32|4|kWh|||
+| |- [LastYear](## "Generated Domestic Hot Water Output Last Year")|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4|kWh|||
+| |- - 02_February|O3EInt32|4|kWh|||
+| |- - 03_March|O3EInt32|4|kWh|||
+| |- - 04_April|O3EInt32|4|kWh|||
+| |- - 05_May|O3EInt32|4|kWh|||
+| |- - 06_June|O3EInt32|4|kWh|||
+| |- - 07_July|O3EInt32|4|kWh|||
+| |- - 08_August|O3EInt32|4|kWh|||
+| |- - 09_September|O3EInt32|4|kWh|||
+| |- - 10_October|O3EInt32|4|kWh|||
+| |- - 11_November|O3EInt32|4|kWh|||
+| |- - 12_December|O3EInt32|4|kWh|||
+|**1415**|[**MixerOneCircuitOperationState**](## "Heating curcuit 1: Operating Mode")|*O3EComplexType*|2||**rw**||
+| |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|4||ro||
+| |- [ActivePower](## "Active Power")|O3EInt16|2|W|||
+| |- [ReactivePower](## "Reactive Power")|O3EInt16|2|VA|||
+|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|12||ro||
+| |- [ActivePower](## "Active Power")|O3EInt16|2|W|||
+| |- [ReactivePower](## "Reactive Power")|O3EInt16|2|VA|||
+| |- [ActivePowerDup](## "Active Power Duplicate")|O3EInt16|2|W|||
 | |- PadZeros|O3EInt16|2||||
-| |- ReactivePowerDup|O3EInt16|2||||
+| |- [ReactivePowerDup](## "Reactive Power Duplicate")|O3EInt16|2|VA|||
 | |- PadOnes|O3EInt16|2||||
-|**1607**|**MalfunctionUnitBlocked**|O3EByteVal|1||ro||
-|**1643**|**MixerOneCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**1664**|**ElectricalEnergyStorageStateOfCharge**|O3EInt8|1||ro||
-|**1684**|**AmbientTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+|**1643**|[**MixerOneCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 1: Flow or Room Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**1664**|[**ElectricalEnergyStorageStateOfCharge**](## "SoC of Battery")|O3EInt8|1|%|ro||
+|**1684**|[**AmbientTemperatureSensor**](## "Actual Ambient Temperature")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**1690**|**ElectricalEnergySystemPhotovoltaicStatus**|*O3EComplexType*|17||ro||
-| |- ActivePower cumulated|O3EInt16|2||||
-| |- RectivePower cumulated|O3EInt16|2||||
-| |- ActivePower String C|O3EInt16|2||||
-| |- RectivePower String C|O3EInt16|2||||
-| |- ActivePower String B|O3EInt16|2||||
-| |- RectivePower String B|O3EInt16|2||||
-| |- ActivePower String A|O3EInt16|2||||
-| |- RectivePower String A|O3EInt16|2||||
+|**1690**|[**ElectricalEnergySystemPhotovoltaicStatus**](## "Actual Power of Photovoltaic")|*O3EComplexType*|17||ro||
+| |- ActivePower cumulated|O3EInt16|2|W|||
+| |- RectivePower cumulated|O3EInt16|2|VA|||
+| |- ActivePower String C|O3EInt16|2|W|||
+| |- RectivePower String C|O3EInt16|2|VA|||
+| |- ActivePower String B|O3EInt16|2|W|||
+| |- RectivePower String B|O3EInt16|2|VA|||
+| |- ActivePower String A|O3EInt16|2|W|||
+| |- RectivePower String A|O3EInt16|2|VA|||
 | |- OpMode|O3EInt8|1||||
-|**1770**|**SecondaryOutletTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+|**1771**|[**EngineRoomTemperatureSensor**](## "Actual Temperature at Engine Room")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**1771**|**EngineRoomTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+|**1772**|[**CompressorOilTemperatureSensor**](## "Actual Compressor Oil Temperature")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**1772**|**CompressorOilTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
-| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**1773**|**RefrigerantCircuitFourWayValve**|O3EByteVal|1||ro||
-|**1774**|**CompressorCrankCaseHeater**|O3EByteVal|1||ro||
-|**1775**|**PrimaryCircuitFanOne**|O3EByteVal|1||ro||
-|**1776**|**PrimaryCircuitFanTwo**|O3EByteVal|1||ro||
-|**1799**|**PrimaryCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**1801**|**ElectricalEnergyStorageEnergyTransferStatistic**|*O3EComplexType*|40||ro||
-| |- BatteryChargeToday|O3EInt32|4||||
-| |- BatteryChargeWeek|O3EInt32|4||||
-| |- BatteryChargeMonth|O3EInt32|4||||
-| |- BatteryChargeYear|O3EInt32|4||||
-| |- BatteryChargeTotal|O3EInt32|4||||
-| |- BatteryDischargeToday|O3EInt32|4||||
-| |- BatteryDischargeWeek|O3EInt32|4||||
-| |- BatteryDischargeMonth|O3EInt32|4||||
-| |- BatteryDischargeYear|O3EInt32|4||||
-| |- BatteryDischargeTotal|O3EInt32|4||||
-|**1802**|**EnergyProductionPhotovoltaic**|*O3EComplexType*|80||ro||
-| |- PhotovoltaicProductionToday|O3EInt32|4||||
-| |- PhotovoltaicProductionWeek|O3EInt32|4||||
-| |- PhotovoltaicProductionMonth|O3EInt32|4||||
-| |- PhotovoltaicProductionYear|O3EInt32|4||||
-| |- PhotovoltaicProductionTotal|O3EInt32|4||||
-| |- PhotovoltaicProductionToday1|O3EInt32|4||||
-| |- PhotovoltaicProductionWeek1|O3EInt32|4||||
-| |- PhotovoltaicProductionMonth1|O3EInt32|4||||
-| |- PhotovoltaicProductionYear1|O3EInt32|4||||
-| |- PhotovoltaicProductionTotal1|O3EInt32|4||||
-| |- PhotovoltaicProductionToday2|O3EInt32|4||||
-| |- PhotovoltaicProductionWeek2|O3EInt32|4||||
-| |- PhotovoltaicProductionMonth2|O3EInt32|4||||
-| |- PhotovoltaicProductionYear2|O3EInt32|4||||
-| |- PhotovoltaicProductionTotal2|O3EInt32|4||||
-| |- PhotovoltaicProductionToday3|O3EInt32|4||||
-| |- PhotovoltaicProductionWeek3|O3EInt32|4||||
-| |- PhotovoltaicProductionMonth3|O3EInt32|4||||
-| |- PhotovoltaicProductionYear3|O3EInt32|4||||
-| |- PhotovoltaicProductionTotal3|O3EInt32|4||||
-|**1815**|**ElectricalHeaterPhaseOne**|O3EInt8|1||ro||
-|**1816**|**ElectricalHeaterPhaseTwo**|O3EInt8|1||ro||
-|**1817**|**ElectricalHeaterPhaseThree**|O3EInt8|1||ro||
-|**1828**|**InverterElectricalEnergyStorageCurrentMaximumlChargePower**|*O3EComplexType*|4||ro||
-| |- Power|O3EInt16|2||||
+|**1775**|[**PrimaryCircuitFanOne**](## "Speed of Fan 1")|O3EByteVal|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
+|**1776**|[**PrimaryCircuitFanTwo**](## "Speed of Fan 2")|O3EByteVal|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
+|**1799**|[**PrimaryCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 1: Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**1801**|[**ElectricalEnergyStorageEnergyTransferStatistic**](## "Statistics of Transfered Electrical Energy")|*O3EComplexType*|40||ro||
+| |- BatteryChargeToday|O3EInt32|4|Wh|||
+| |- BatteryChargeWeek|O3EInt32|4|Wh|||
+| |- BatteryChargeMonth|O3EInt32|4|Wh|||
+| |- BatteryChargeYear|O3EInt32|4|Wh|||
+| |- BatteryChargeTotal|O3EInt32|4|Wh|||
+| |- BatteryDischargeToday|O3EInt32|4|Wh|||
+| |- BatteryDischargeWeek|O3EInt32|4|Wh|||
+| |- BatteryDischargeMonth|O3EInt32|4|Wh|||
+| |- BatteryDischargeYear|O3EInt32|4|Wh|||
+| |- BatteryDischargeTotal|O3EInt32|4|Wh|||
+|**1802**|[**EnergyProductionPhotovoltaic**](## "Statistics of Photovoltaic Production")|*O3EComplexType*|80||ro||
+| |- PhotovoltaicProductionToday|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionWeek|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionMonth|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionYear|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionTotal|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionToday1|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionWeek1|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionMonth1|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionYear1|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionTotal1|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionToday2|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionWeek2|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionMonth2|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionYear2|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionTotal2|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionToday3|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionWeek3|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionMonth3|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionYear3|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionTotal3|O3EInt32|4|Wh|||
+|**1828**|[**InverterElectricalEnergyStorageCurrentMaximumlChargePower**](## "Maximum Electrical Power of Inverter for Charging")|*O3EComplexType*|4||ro||
+| |- Power|O3EInt16|2|W|||
 | |- Unknown|RawCodec|2||||
-|**1830**|**InverterElectricalEnergyStorageCurrentMaximumlDishargePower**|*O3EComplexType*|4||ro||
-| |- Power|O3EInt16|2||||
+|**1830**|[**InverterElectricalEnergyStorageCurrentMaximumlDishargePower**](## "Maximum Electrical Power of Inverter for Discharging")|*O3EComplexType*|4||ro||
+| |- Power|O3EInt16|2|W|||
 | |- Unknown|RawCodec|2||||
-|**1831**|**PhotovoltaicCurrentStringPower**|*O3EComplexType*|12||ro||
-| |- String1|O3EInt32|4||||
-| |- String2|O3EInt32|4||||
-| |- String3|O3EInt32|4||||
-|**1832**|**PhotovoltaicStringCurrent**|*O3EComplexType*|12||ro||
-| |- String1|O3EInt32|4||||
-| |- String2|O3EInt32|4||||
-| |- String3|O3EInt32|4||||
-|**1833**|**PhotovoltaicStringVoltage**|*O3EComplexType*|12||ro||
-| |- String1|O3EInt32|4||||
-| |- String2|O3EInt32|4||||
-| |- String3|O3EInt32|4||||
-|**1834**|**ElectricalEnergyStorageStateOfEnergy**|*O3EComplexType*|4||ro||
-| |- StateOfEnergy|O3EInt16|2||||
+|**1831**|[**PhotovoltaicCurrentStringPower**](## "Current Photovoltaic Power per String")|*O3EComplexType*|12||ro||
+| |- String1|O3EInt32|4|W|||
+| |- String2|O3EInt32|4|W|||
+| |- String3|O3EInt32|4|W|||
+|**1832**|[**PhotovoltaicStringCurrent**](## "Current Photovoltaic Current per String (resolution is 1 Ampere)")|*O3EComplexType*|12||ro||
+| |- String1|O3EInt32|4|A|||
+| |- String2|O3EInt32|4|A|||
+| |- String3|O3EInt32|4|V|||
+|**1833**|[**PhotovoltaicStringVoltage**](## "Current Photovoltaic Voltage per String")|*O3EComplexType*|12||ro||
+| |- String1|O3EInt32|4|V|||
+| |- String2|O3EInt32|4|V|||
+| |- String3|O3EInt32|4|V|||
+|**1834**|[**ElectricalEnergyStorageStateOfEnergy**](## "SoC of Battery")|*O3EComplexType*|4||ro||
+| |- StateOfEnergy|O3EInt16|2|Wh|||
 | |- Unknown|O3EInt16|2||||
-|**1836**|**ElectricalEnergyStorageCurrentPower**|O3EInt32|4||ro||
-|**1841**|**PointOfCommonCouplingOverview**|RawCodec|32||ro||
-|**1842**|**SecondaryCircuitFourThreeWayValve**|*O3EComplexType*|2||ro||
-| |- Setpoint|O3EInt8|1||||
-| |- CurrentPosition|O3EInt8|1||||
+|**1836**|[**ElectricalEnergyStorageCurrentPower**](## "Current Power for Battery Discharging (positive values) and Charging (negative values)")|O3EInt32|4|W|ro||
+|**1842**|[**SecondaryCircuitFourThreeWayValve**](## "Circuit 2: Position of Four Three Way Valve")|*O3EComplexType*|2||ro||
+| |- Setpoint|O3EInt8|1|%|||
+| |- CurrentPosition|O3EInt8|1|%|||
 |**2214**|[**BackupBoxConfiguration**](## "Configuration for Backup Box")|*O3EComplexType*|2||**rw**||
 | |- [DischargeLimit](## "Discharge limit of battery")|O3EInt8|1|%|||
 | |- Unknown|O3EInt8|1||||
@@ -785,42 +769,31 @@
 |**1316**|[**EnergyConsumptionCentralHeatingYearMatrix**](## "Energy Consumption Central Heating Per Year")|*O3EComplexType*|96||ro||
 |**1333**|[**EnergyConsumptionDomesticHotWaterYearMatrix**](## "Energy Consumption Domestic Hot Water Per Year")|*O3EComplexType*|96||ro||
 |**1337**|[**GeneratedCentralHeatingOutputYearMatrix**](## "Generated Central Heating Output Per Year")|*O3EComplexType*|96||ro||
-|**1339**|**MalfunctionHeatingUnitBlocked**|O3EByteVal|1||ro||
-|**1391**|**GeneratedDomesticHotWaterOutput**|*O3EComplexType*|24||ro||
-|**1392**|**GeneratedDomesticHotWaterOutputMonthMatrix**|*O3EComplexType*|124||ro||
-|**1393**|**GeneratedDomesticHotWaterOutputYearMatrix**|*O3EComplexType*|96||ro||
-|**1415**|**MixerOneCircuitOperationState**|*O3EComplexType*|2||**rw**||
-|**1552**|**ElectricalEnergyStorageOperationState**|RawCodec|7||**rw**||
-|**1590**|**ElectricalEnergySystemOperationState**|RawCodec|6||**rw**||
-|**1603**|**PointOfCommonCouplingPower**|*O3EComplexType*|4||ro||
-|**1603**|**PointOfCommonCouplingPower**|*O3EComplexType*|12||ro||
-|**1607**|**MalfunctionUnitBlocked**|O3EByteVal|1||ro||
-|**1643**|**MixerOneCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**1664**|**ElectricalEnergyStorageStateOfCharge**|O3EInt8|1||ro||
-|**1684**|**AmbientTemperatureSensor**|*O3EComplexType*|9||ro||
-|**1690**|**ElectricalEnergySystemPhotovoltaicStatus**|*O3EComplexType*|17||ro||
-|**1770**|**SecondaryOutletTemperatureSensor**|*O3EComplexType*|9||ro||
-|**1771**|**EngineRoomTemperatureSensor**|*O3EComplexType*|9||ro||
-|**1772**|**CompressorOilTemperatureSensor**|*O3EComplexType*|9||ro||
-|**1773**|**RefrigerantCircuitFourWayValve**|O3EByteVal|1||ro||
-|**1774**|**CompressorCrankCaseHeater**|O3EByteVal|1||ro||
-|**1775**|**PrimaryCircuitFanOne**|O3EByteVal|1||ro||
-|**1776**|**PrimaryCircuitFanTwo**|O3EByteVal|1||ro||
-|**1799**|**PrimaryCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**1801**|**ElectricalEnergyStorageEnergyTransferStatistic**|*O3EComplexType*|40||ro||
-|**1802**|**EnergyProductionPhotovoltaic**|*O3EComplexType*|80||ro||
-|**1815**|**ElectricalHeaterPhaseOne**|O3EInt8|1||ro||
-|**1816**|**ElectricalHeaterPhaseTwo**|O3EInt8|1||ro||
-|**1817**|**ElectricalHeaterPhaseThree**|O3EInt8|1||ro||
-|**1828**|**InverterElectricalEnergyStorageCurrentMaximumlChargePower**|*O3EComplexType*|4||ro||
-|**1830**|**InverterElectricalEnergyStorageCurrentMaximumlDishargePower**|*O3EComplexType*|4||ro||
-|**1831**|**PhotovoltaicCurrentStringPower**|*O3EComplexType*|12||ro||
-|**1832**|**PhotovoltaicStringCurrent**|*O3EComplexType*|12||ro||
-|**1833**|**PhotovoltaicStringVoltage**|*O3EComplexType*|12||ro||
-|**1834**|**ElectricalEnergyStorageStateOfEnergy**|*O3EComplexType*|4||ro||
-|**1836**|**ElectricalEnergyStorageCurrentPower**|O3EInt32|4||ro||
-|**1841**|**PointOfCommonCouplingOverview**|RawCodec|32||ro||
-|**1842**|**SecondaryCircuitFourThreeWayValve**|*O3EComplexType*|2||ro||
+|**1391**|[**GeneratedDomesticHotWaterOutput**](## "Generated Domestic Hot Water Output per specific period")|*O3EComplexType*|24||ro||
+|**1392**|[**GeneratedDomesticHotWaterOutputMonthMatrix**](## "Generated Domestic Hot Water Output Per Month")|*O3EComplexType*|124||ro||
+|**1393**|[**GeneratedDomesticHotWaterOutputYearMatrix**](## "Generated Domestic Hot Water Output Per Year")|*O3EComplexType*|96||ro||
+|**1415**|[**MixerOneCircuitOperationState**](## "Heating curcuit 1: Operating Mode")|*O3EComplexType*|2||**rw**||
+|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|4||ro||
+|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|12||ro||
+|**1643**|[**MixerOneCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 1: Flow or Room Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**1664**|[**ElectricalEnergyStorageStateOfCharge**](## "SoC of Battery")|O3EInt8|1|%|ro||
+|**1684**|[**AmbientTemperatureSensor**](## "Actual Ambient Temperature")|*O3EComplexType*|9||ro||
+|**1690**|[**ElectricalEnergySystemPhotovoltaicStatus**](## "Actual Power of Photovoltaic")|*O3EComplexType*|17||ro||
+|**1771**|[**EngineRoomTemperatureSensor**](## "Actual Temperature at Engine Room")|*O3EComplexType*|9||ro||
+|**1772**|[**CompressorOilTemperatureSensor**](## "Actual Compressor Oil Temperature")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
+|**1775**|[**PrimaryCircuitFanOne**](## "Speed of Fan 1")|O3EByteVal|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
+|**1776**|[**PrimaryCircuitFanTwo**](## "Speed of Fan 2")|O3EByteVal|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
+|**1799**|[**PrimaryCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 1: Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**1801**|[**ElectricalEnergyStorageEnergyTransferStatistic**](## "Statistics of Transfered Electrical Energy")|*O3EComplexType*|40||ro||
+|**1802**|[**EnergyProductionPhotovoltaic**](## "Statistics of Photovoltaic Production")|*O3EComplexType*|80||ro||
+|**1828**|[**InverterElectricalEnergyStorageCurrentMaximumlChargePower**](## "Maximum Electrical Power of Inverter for Charging")|*O3EComplexType*|4||ro||
+|**1830**|[**InverterElectricalEnergyStorageCurrentMaximumlDishargePower**](## "Maximum Electrical Power of Inverter for Discharging")|*O3EComplexType*|4||ro||
+|**1831**|[**PhotovoltaicCurrentStringPower**](## "Current Photovoltaic Power per String")|*O3EComplexType*|12||ro||
+|**1832**|[**PhotovoltaicStringCurrent**](## "Current Photovoltaic Current per String (resolution is 1 Ampere)")|*O3EComplexType*|12||ro||
+|**1833**|[**PhotovoltaicStringVoltage**](## "Current Photovoltaic Voltage per String")|*O3EComplexType*|12||ro||
+|**1834**|[**ElectricalEnergyStorageStateOfEnergy**](## "SoC of Battery")|*O3EComplexType*|4||ro||
+|**1836**|[**ElectricalEnergyStorageCurrentPower**](## "Current Power for Battery Discharging (positive values) and Charging (negative values)")|O3EInt32|4|W|ro||
+|**1842**|[**SecondaryCircuitFourThreeWayValve**](## "Circuit 2: Position of Four Three Way Valve")|*O3EComplexType*|2||ro||
 |**2214**|[**BackupBoxConfiguration**](## "Configuration for Backup Box")|*O3EComplexType*|2||**rw**||
 |**2256**|[**DesiredThermalEnergyDefrost**](## "Target value of thermal energy to perform next defrosting")|O3EInt16|2|Wh|ro||
 |**2320**|[**DomesticHotWaterStatus**](## "Status of domestic hot water preparation {0: Idle, 1: Active, 2: Postrun}")|O3EEnum|1||ro||
@@ -1423,7 +1396,7 @@
 |**528**|**ExternalTargetFlowTemperatureSetpoint**|O3EInt16|2||**rw**||
 |**531**|[**DomesticHotWaterOperationState**](## "Operation state of domestic hot water preparation")|*O3EComplexType*|2||**rw**||
 | |- Mode|O3EByteVal|1||||
-| |- [State](## "{0: Off, 1: Hot water, 2: Parallel operation, 3: Chimney sweep, 4: Test mode, 5: Automatic}")|O3EEnum|1||||
+| |- [State](## "{0: Off, 1: Hot water, 2: Parallel operation, 3: Chimney sweep, 4: Test mode, 5: External temperature setpoint, 6: External modulation setpoint, 7: Hygiene function, 8: Automatic}")|O3EEnum|1||||
 |**533**|**VentilationTargetOperationLevel**|*O3EComplexType*|2||**rw**||
 | |- Acutual|O3EByteVal|1||||
 | |- Unknown1|O3EByteVal|1||||
@@ -3207,105 +3180,105 @@
 |**1385**|**FuelCellBreakdownRateYearMatrix**|RawCodec|48||ro||
 |**1389**|**CoTwoSavingsMonthMatrix**|RawCodec|124||ro||
 |**1390**|**CoTwoSavingsYearMatrix**|RawCodec|96||ro||
-|**1391**|**GeneratedDomesticHotWaterOutput**|*O3EComplexType*|24||ro||
-| |- Today|O3EInt32|4||||
-| |- Past7Days|O3EInt32|4||||
-| |- CurrentMonth|O3EInt32|4||||
-| |- PastMonth|O3EInt32|4||||
-| |- CurrentYear|O3EInt32|4||||
-| |- PastYear|O3EInt32|4||||
-|**1392**|**GeneratedDomesticHotWaterOutputMonthMatrix**|*O3EComplexType*|124||ro||
-| |- CurrentMonth|*O3EList*|62||||
-| |- - 01|O3EInt16|2||||
-| |- - 02|O3EInt16|2||||
-| |- - 03|O3EInt16|2||||
-| |- - 04|O3EInt16|2||||
-| |- - 05|O3EInt16|2||||
-| |- - 06|O3EInt16|2||||
-| |- - 07|O3EInt16|2||||
-| |- - 08|O3EInt16|2||||
-| |- - 09|O3EInt16|2||||
-| |- - 10|O3EInt16|2||||
-| |- - 11|O3EInt16|2||||
-| |- - 12|O3EInt16|2||||
-| |- - 13|O3EInt16|2||||
-| |- - 14|O3EInt16|2||||
-| |- - 15|O3EInt16|2||||
-| |- - 16|O3EInt16|2||||
-| |- - 17|O3EInt16|2||||
-| |- - 18|O3EInt16|2||||
-| |- - 19|O3EInt16|2||||
-| |- - 20|O3EInt16|2||||
-| |- - 21|O3EInt16|2||||
-| |- - 22|O3EInt16|2||||
-| |- - 23|O3EInt16|2||||
-| |- - 24|O3EInt16|2||||
-| |- - 25|O3EInt16|2||||
-| |- - 26|O3EInt16|2||||
-| |- - 27|O3EInt16|2||||
-| |- - 28|O3EInt16|2||||
-| |- - 29|O3EInt16|2||||
-| |- - 30|O3EInt16|2||||
-| |- - 31|O3EInt16|2||||
-| |- PreviousMonth|*O3EList*|62||||
-| |- - 01|O3EInt16|2||||
-| |- - 02|O3EInt16|2||||
-| |- - 03|O3EInt16|2||||
-| |- - 04|O3EInt16|2||||
-| |- - 05|O3EInt16|2||||
-| |- - 06|O3EInt16|2||||
-| |- - 07|O3EInt16|2||||
-| |- - 08|O3EInt16|2||||
-| |- - 09|O3EInt16|2||||
-| |- - 10|O3EInt16|2||||
-| |- - 11|O3EInt16|2||||
-| |- - 12|O3EInt16|2||||
-| |- - 13|O3EInt16|2||||
-| |- - 14|O3EInt16|2||||
-| |- - 15|O3EInt16|2||||
-| |- - 16|O3EInt16|2||||
-| |- - 17|O3EInt16|2||||
-| |- - 18|O3EInt16|2||||
-| |- - 19|O3EInt16|2||||
-| |- - 20|O3EInt16|2||||
-| |- - 21|O3EInt16|2||||
-| |- - 22|O3EInt16|2||||
-| |- - 23|O3EInt16|2||||
-| |- - 24|O3EInt16|2||||
-| |- - 25|O3EInt16|2||||
-| |- - 26|O3EInt16|2||||
-| |- - 27|O3EInt16|2||||
-| |- - 28|O3EInt16|2||||
-| |- - 29|O3EInt16|2||||
-| |- - 30|O3EInt16|2||||
-| |- - 31|O3EInt16|2||||
-|**1393**|**GeneratedDomesticHotWaterOutputYearMatrix**|*O3EComplexType*|96||ro||
-| |- CurrentYear|*O3EList*|48||||
-| |- - 01_January|O3EInt32|4||||
-| |- - 02_February|O3EInt32|4||||
-| |- - 03_March|O3EInt32|4||||
-| |- - 04_April|O3EInt32|4||||
-| |- - 05_May|O3EInt32|4||||
-| |- - 06_June|O3EInt32|4||||
-| |- - 07_July|O3EInt32|4||||
-| |- - 08_August|O3EInt32|4||||
-| |- - 09_September|O3EInt32|4||||
-| |- - 10_October|O3EInt32|4||||
-| |- - 11_November|O3EInt32|4||||
-| |- - 12_December|O3EInt32|4||||
-| |- LastYear|*O3EList*|48||||
-| |- - 01_January|O3EInt32|4||||
-| |- - 02_February|O3EInt32|4||||
-| |- - 03_March|O3EInt32|4||||
-| |- - 04_April|O3EInt32|4||||
-| |- - 05_May|O3EInt32|4||||
-| |- - 06_June|O3EInt32|4||||
-| |- - 07_July|O3EInt32|4||||
-| |- - 08_August|O3EInt32|4||||
-| |- - 09_September|O3EInt32|4||||
-| |- - 10_October|O3EInt32|4||||
-| |- - 11_November|O3EInt32|4||||
-| |- - 12_December|O3EInt32|4||||
+|**1391**|[**GeneratedDomesticHotWaterOutput**](## "Generated Domestic Hot Water Output per specific period")|*O3EComplexType*|24||ro||
+| |- Today|O3EInt32|4|kWh|||
+| |- Past7Days|O3EInt32|4|kWh|||
+| |- CurrentMonth|O3EInt32|4|kWh|||
+| |- PastMonth|O3EInt32|4|kWh|||
+| |- CurrentYear|O3EInt32|4|kWh|||
+| |- PastYear|O3EInt32|4|kWh|||
+|**1392**|[**GeneratedDomesticHotWaterOutputMonthMatrix**](## "Generated Domestic Hot Water Output Per Month")|*O3EComplexType*|124||ro||
+| |- [CurrentMonth](## "Generated Domestic Hot Water Output Current Month")|*O3EList*|62||||
+| |- - 01|O3EInt16|2|kWh|||
+| |- - 02|O3EInt16|2|kWh|||
+| |- - 03|O3EInt16|2|kWh|||
+| |- - 04|O3EInt16|2|kWh|||
+| |- - 05|O3EInt16|2|kWh|||
+| |- - 06|O3EInt16|2|kWh|||
+| |- - 07|O3EInt16|2|kWh|||
+| |- - 08|O3EInt16|2|kWh|||
+| |- - 09|O3EInt16|2|kWh|||
+| |- - 10|O3EInt16|2|kWh|||
+| |- - 11|O3EInt16|2|kWh|||
+| |- - 12|O3EInt16|2|kWh|||
+| |- - 13|O3EInt16|2|kWh|||
+| |- - 14|O3EInt16|2|kWh|||
+| |- - 15|O3EInt16|2|kWh|||
+| |- - 16|O3EInt16|2|kWh|||
+| |- - 17|O3EInt16|2|kWh|||
+| |- - 18|O3EInt16|2|kWh|||
+| |- - 19|O3EInt16|2|kWh|||
+| |- - 20|O3EInt16|2|kWh|||
+| |- - 21|O3EInt16|2|kWh|||
+| |- - 22|O3EInt16|2|kWh|||
+| |- - 23|O3EInt16|2|kWh|||
+| |- - 24|O3EInt16|2|kWh|||
+| |- - 25|O3EInt16|2|kWh|||
+| |- - 26|O3EInt16|2|kWh|||
+| |- - 27|O3EInt16|2|kWh|||
+| |- - 28|O3EInt16|2|kWh|||
+| |- - 29|O3EInt16|2|kWh|||
+| |- - 30|O3EInt16|2|kWh|||
+| |- - 31|O3EInt16|2|kWh|||
+| |- [PreviousMonth](## "Generated Domestic Hot Water Output Previous Month")|*O3EList*|62||||
+| |- - 01|O3EInt16|2|kWh|||
+| |- - 02|O3EInt16|2|kWh|||
+| |- - 03|O3EInt16|2|kWh|||
+| |- - 04|O3EInt16|2|kWh|||
+| |- - 05|O3EInt16|2|kWh|||
+| |- - 06|O3EInt16|2|kWh|||
+| |- - 07|O3EInt16|2|kWh|||
+| |- - 08|O3EInt16|2|kWh|||
+| |- - 09|O3EInt16|2|kWh|||
+| |- - 10|O3EInt16|2|kWh|||
+| |- - 11|O3EInt16|2|kWh|||
+| |- - 12|O3EInt16|2|kWh|||
+| |- - 13|O3EInt16|2|kWh|||
+| |- - 14|O3EInt16|2|kWh|||
+| |- - 15|O3EInt16|2|kWh|||
+| |- - 16|O3EInt16|2|kWh|||
+| |- - 17|O3EInt16|2|kWh|||
+| |- - 18|O3EInt16|2|kWh|||
+| |- - 19|O3EInt16|2|kWh|||
+| |- - 20|O3EInt16|2|kWh|||
+| |- - 21|O3EInt16|2|kWh|||
+| |- - 22|O3EInt16|2|kWh|||
+| |- - 23|O3EInt16|2|kWh|||
+| |- - 24|O3EInt16|2|kWh|||
+| |- - 25|O3EInt16|2|kWh|||
+| |- - 26|O3EInt16|2|kWh|||
+| |- - 27|O3EInt16|2|kWh|||
+| |- - 28|O3EInt16|2|kWh|||
+| |- - 29|O3EInt16|2|kWh|||
+| |- - 30|O3EInt16|2|kWh|||
+| |- - 31|O3EInt16|2|kWh|||
+|**1393**|[**GeneratedDomesticHotWaterOutputYearMatrix**](## "Generated Domestic Hot Water Output Per Year")|*O3EComplexType*|96||ro||
+| |- [CurrentYear](## "Generated Domestic Hot Water Output Current Year")|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4|kWh|||
+| |- - 02_February|O3EInt32|4|kWh|||
+| |- - 03_March|O3EInt32|4|kWh|||
+| |- - 04_April|O3EInt32|4|kWh|||
+| |- - 05_May|O3EInt32|4|kWh|||
+| |- - 06_June|O3EInt32|4|kWh|||
+| |- - 07_July|O3EInt32|4|kWh|||
+| |- - 08_August|O3EInt32|4|kWh|||
+| |- - 09_September|O3EInt32|4|kWh|||
+| |- - 10_October|O3EInt32|4|kWh|||
+| |- - 11_November|O3EInt32|4|kWh|||
+| |- - 12_December|O3EInt32|4|kWh|||
+| |- [LastYear](## "Generated Domestic Hot Water Output Last Year")|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4|kWh|||
+| |- - 02_February|O3EInt32|4|kWh|||
+| |- - 03_March|O3EInt32|4|kWh|||
+| |- - 04_April|O3EInt32|4|kWh|||
+| |- - 05_May|O3EInt32|4|kWh|||
+| |- - 06_June|O3EInt32|4|kWh|||
+| |- - 07_July|O3EInt32|4|kWh|||
+| |- - 08_August|O3EInt32|4|kWh|||
+| |- - 09_September|O3EInt32|4|kWh|||
+| |- - 10_October|O3EInt32|4|kWh|||
+| |- - 11_November|O3EInt32|4|kWh|||
+| |- - 12_December|O3EInt32|4|kWh|||
 |**1394**|**SolarChargingDomesticHotWaterSetpoint**|O3EInt16|2||**rw**||
 |**1395**|**MixerOneCircuitSummerSavingTemperatureThreshold**|*O3EComplexType*|3||ro||
 | |- State|O3EByteVal|1||||
@@ -3320,30 +3293,30 @@
 | |- State|O3EByteVal|1||||
 | |- Temperature|O3EInt16|2||||
 |**1411**|**ResetServiceInterval**|O3EByteVal|1||ro||
-|**1415**|**MixerOneCircuitOperationState**|*O3EComplexType*|2||**rw**||
-| |- [Mode](## "{0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
-|**1416**|**MixerTwoCircuitOperationState**|*O3EComplexType*|2||**rw**||
-| |- [Mode](## "{0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
-|**1417**|**MixerThreeCircuitOperationState**|*O3EComplexType*|2||**rw**||
-| |- [Mode](## "{0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
-|**1418**|**MixerFourCircuitOperationState**|*O3EComplexType*|2||**rw**||
-| |- [Mode](## "{0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
-|**1419**|**MixerFiveCircuitOperationState**|*O3EComplexType*|2||**rw**||
-| |- [Mode](## "{0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
-|**1420**|**MixerSixCircuitOperationState**|*O3EComplexType*|2||**rw**||
-| |- [Mode](## "{0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
-|**1421**|**MixerSevenCircuitOperationState**|*O3EComplexType*|2||**rw**||
-| |- [Mode](## "{0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
-|**1422**|**MixerEightCircuitOperationState**|*O3EComplexType*|2||**rw**||
-| |- [Mode](## "{0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+|**1415**|[**MixerOneCircuitOperationState**](## "Heating curcuit 1: Operating Mode")|*O3EComplexType*|2||**rw**||
+| |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+|**1416**|[**MixerTwoCircuitOperationState**](## "Heating curcuit 2: Operating Mode")|*O3EComplexType*|2||**rw**||
+| |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+|**1417**|[**MixerThreeCircuitOperationState**](## "Heating curcuit 3: Operating Mode")|*O3EComplexType*|2||**rw**||
+| |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+|**1418**|[**MixerFourCircuitOperationState**](## "Heating curcuit 4: Operating Mode")|*O3EComplexType*|2||**rw**||
+| |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+|**1419**|[**MixerFiveCircuitOperationState**](## "Heating curcuit 5: Operating Mode")|*O3EComplexType*|2||**rw**||
+| |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+|**1420**|[**MixerSixCircuitOperationState**](## "Heating curcuit 6: Operating Mode")|*O3EComplexType*|2||**rw**||
+| |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+|**1421**|[**MixerSevenCircuitOperationState**](## "Heating curcuit 7: Operating Mode")|*O3EComplexType*|2||**rw**||
+| |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+|**1422**|[**MixerEightCircuitOperationState**](## "Heating curcuit 8: Operating Mode")|*O3EComplexType*|2||**rw**||
+| |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
 |**1431**|**CarbonEmissionSettings**|RawCodec|8||ro||
 |**1432**|**CentralHeatingPumpPerformance**|*O3EComplexType*|4||ro||
 | |- Unknown|RawCodec|2||||
@@ -3442,15 +3415,15 @@
 |**1599**|**SolarSecondaryDeltaTemperatureHysteresis**|RawCodec|4||ro||
 |**1600**|**BufferDischargeFunctionThreeWayValvePositionPercent**|RawCodec|2||ro||
 |**1601**|**FuelCellCondition**|RawCodec|1||ro||
-|**1603**|**PointOfCommonCouplingPower**|*O3EComplexType*|4||ro||
-| |- ActivePower|O3EInt16|2||||
-| |- ReactivePower|O3EInt16|2||||
-|**1603**|**PointOfCommonCouplingPower**|*O3EComplexType*|12||ro||
-| |- ActivePower|O3EInt16|2||||
-| |- ReactivePower|O3EInt16|2||||
-| |- ActivePowerDup|O3EInt16|2||||
+|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|4||ro||
+| |- [ActivePower](## "Active Power")|O3EInt16|2|W|||
+| |- [ReactivePower](## "Reactive Power")|O3EInt16|2|VA|||
+|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|12||ro||
+| |- [ActivePower](## "Active Power")|O3EInt16|2|W|||
+| |- [ReactivePower](## "Reactive Power")|O3EInt16|2|VA|||
+| |- [ActivePowerDup](## "Active Power Duplicate")|O3EInt16|2|W|||
 | |- PadZeros|O3EInt16|2||||
-| |- ReactivePowerDup|O3EInt16|2||||
+| |- [ReactivePowerDup](## "Reactive Power Duplicate")|O3EInt16|2|VA|||
 | |- PadOnes|O3EInt16|2||||
 |**1604**|**GatewayExternalTargetFlowTemperatureSetpoint**|RawCodec|2||**rw**||
 |**1605**|**GatewayExternalHeatEngineTargetOperationMode**|*O3EComplexType*|2||**rw**||
@@ -3500,40 +3473,40 @@
 |**1628**|**ExternalMixerTwoCircuitFixedValueTargetTemperatureSetpoint**|O3EInt16|2||**rw**||
 |**1629**|**ExternalMixerThreeCircuitFixedValueTargetTemperatureSetpoint**|O3EInt16|2||**rw**||
 |**1630**|**ExternalMixerFourCircuitFixedValueTargetTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**1643**|**MixerOneCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**1644**|**MixerTwoCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**1645**|**MixerThreeCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**1646**|**MixerFourCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**1659**|**EndResultDomesticHotWaterTemperatureSetpoint**|*O3EComplexType*|3||**rw**||
-| |- Setpoint|O3EInt16|2||||
-| |- Unknown|RawCodec|1||||
+|**1643**|[**MixerOneCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 1: Flow or Room Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**1644**|[**MixerTwoCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 2: Flow or Room Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**1645**|[**MixerThreeCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 3: Flow or Room Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**1646**|[**MixerFourCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 4: Flow or Room Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**1659**|[**EndResultDomesticHotWaterTemperatureSetpoint**](## "Resulting Setpoint for and Actual State of Domestic Hot Water Preparation (probably READ ONLY)")|*O3EComplexType*|3||ro|[Link](https://github.com/open3e/open3e/discussions/214)|
+| |- Setpoint|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- [State](## "Actual Operating State {0: Off, 1: Hot water, 2: Parallel operation, 3: Chimney sweep, 4: Test mode, 5: External temperature setpoint, 6: External modulation setpoint, 7: Hygiene function, 8: Automatic}")|O3EEnum|1||||
 |**1660**|**SupportedFeatures**|RawCodec|16||ro||
 |**1661**|**SolarSecondaryTransferPump**|RawCodec|5||ro||
 |**1662**|**HeatingSupportBufferThreeWayValvePositionPercent**|RawCodec|2||ro||
 |**1663**|**TestStatus**|RawCodec|41||ro||
-|**1664**|**ElectricalEnergyStorageStateOfCharge**|O3EInt8|1||ro||
+|**1664**|[**ElectricalEnergyStorageStateOfCharge**](## "SoC of Battery")|O3EInt8|1|%|ro||
 |**1667**|**MixerOneCircuitPumpOscillationTime**|RawCodec|2||ro||
 |**1668**|**MixerTwoCircuitPumpOscillationTime**|RawCodec|2||ro||
 |**1669**|**MixerThreeCircuitPumpOscillationTime**|RawCodec|2||ro||
 |**1670**|**MixerFourCircuitPumpOscillationTime**|RawCodec|2||ro||
-|**1684**|**AmbientTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+|**1684**|[**AmbientTemperatureSensor**](## "Actual Ambient Temperature")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**1685**|**ElectricalEnergyInverterDCConfiguration**|RawCodec|3||ro||
 |**1686**|**ElectricalEnergySystemPhotovoltaicLimitation**|RawCodec|3||ro||
 |**1687**|**ElectricalEnergySystemPhotovoltaicConfiguration**|O3EInt16|2||ro||
-|**1690**|**ElectricalEnergySystemPhotovoltaicStatus**|*O3EComplexType*|17||ro||
-| |- ActivePower cumulated|O3EInt16|2||||
-| |- RectivePower cumulated|O3EInt16|2||||
-| |- ActivePower String C|O3EInt16|2||||
-| |- RectivePower String C|O3EInt16|2||||
-| |- ActivePower String B|O3EInt16|2||||
-| |- RectivePower String B|O3EInt16|2||||
-| |- ActivePower String A|O3EInt16|2||||
-| |- RectivePower String A|O3EInt16|2||||
+|**1690**|[**ElectricalEnergySystemPhotovoltaicStatus**](## "Actual Power of Photovoltaic")|*O3EComplexType*|17||ro||
+| |- ActivePower cumulated|O3EInt16|2|W|||
+| |- RectivePower cumulated|O3EInt16|2|VA|||
+| |- ActivePower String C|O3EInt16|2|W|||
+| |- RectivePower String C|O3EInt16|2|VA|||
+| |- ActivePower String B|O3EInt16|2|W|||
+| |- RectivePower String B|O3EInt16|2|VA|||
+| |- ActivePower String A|O3EInt16|2|W|||
+| |- RectivePower String A|O3EInt16|2|VA|||
 | |- OpMode|O3EInt8|1||||
 |**1691**|**BusTopologyScanStatus**|O3EByteVal|1||ro||
 |**1692**|**PowerGridCodeConfiguration**|RawCodec|1||ro||
@@ -3575,39 +3548,39 @@
 |**1765**|**CombustionAirInterlock**|RawCodec|2||ro||
 |**1766**|**ElectricalEnergyStorageModuleOperatingData**|RawCodec|141||ro||
 |**1768**|**ReceiverTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**1769**|**PrimaryInletTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+|**1769**|[**PrimaryInletTemperatureSensor**](## "Temperature at Primary Inlet of Heat Pump")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**1770**|**SecondaryOutletTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**1771**|**EngineRoomTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+|**1771**|[**EngineRoomTemperatureSensor**](## "Actual Temperature at Engine Room")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**1772**|**CompressorOilTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+|**1772**|[**CompressorOilTemperatureSensor**](## "Actual Compressor Oil Temperature")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**1773**|**RefrigerantCircuitFourWayValve**|O3EByteVal|1||ro||
 |**1774**|**CompressorCrankCaseHeater**|O3EByteVal|1||ro||
-|**1775**|**PrimaryCircuitFanOne**|O3EByteVal|1||ro||
-|**1776**|**PrimaryCircuitFanTwo**|O3EByteVal|1||ro||
+|**1775**|[**PrimaryCircuitFanOne**](## "Speed of Fan 1")|O3EByteVal|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
+|**1776**|[**PrimaryCircuitFanTwo**](## "Speed of Fan 2")|O3EByteVal|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
 |**1777**|**TimeSeriesRecordedFlueGasTemperatureSensorStepsAndDurationOne**|RawCodec|176||ro||
 |**1778**|**TimeSeriesRecordedFlueGasTemperatureSensorStepsAndDurationTwo**|RawCodec|176||ro||
 |**1779**|**TimeSeriesRecordedFlueGasTemperatureSensorStepsAndDurationThree**|RawCodec|132||ro||
@@ -3628,40 +3601,40 @@
 |**1796**|**DomesticElectricalEnergyConsumption**|RawCodec|2||ro||
 |**1797**|**PredictionDomesticElectricalEnergyConsumptionNextHour**|RawCodec|2||ro||
 |**1798**|**FuelCellHoursTillNextStart**|O3EInt8|1||ro||
-|**1799**|**PrimaryCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**1799**|[**PrimaryCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 1: Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 |**1800**|**ResetTimeSeriesRecordingGroups**|RawCodec|4||ro||
-|**1801**|**ElectricalEnergyStorageEnergyTransferStatistic**|*O3EComplexType*|40||ro||
-| |- BatteryChargeToday|O3EInt32|4||||
-| |- BatteryChargeWeek|O3EInt32|4||||
-| |- BatteryChargeMonth|O3EInt32|4||||
-| |- BatteryChargeYear|O3EInt32|4||||
-| |- BatteryChargeTotal|O3EInt32|4||||
-| |- BatteryDischargeToday|O3EInt32|4||||
-| |- BatteryDischargeWeek|O3EInt32|4||||
-| |- BatteryDischargeMonth|O3EInt32|4||||
-| |- BatteryDischargeYear|O3EInt32|4||||
-| |- BatteryDischargeTotal|O3EInt32|4||||
-|**1802**|**EnergyProductionPhotovoltaic**|*O3EComplexType*|80||ro||
-| |- PhotovoltaicProductionToday|O3EInt32|4||||
-| |- PhotovoltaicProductionWeek|O3EInt32|4||||
-| |- PhotovoltaicProductionMonth|O3EInt32|4||||
-| |- PhotovoltaicProductionYear|O3EInt32|4||||
-| |- PhotovoltaicProductionTotal|O3EInt32|4||||
-| |- PhotovoltaicProductionToday1|O3EInt32|4||||
-| |- PhotovoltaicProductionWeek1|O3EInt32|4||||
-| |- PhotovoltaicProductionMonth1|O3EInt32|4||||
-| |- PhotovoltaicProductionYear1|O3EInt32|4||||
-| |- PhotovoltaicProductionTotal1|O3EInt32|4||||
-| |- PhotovoltaicProductionToday2|O3EInt32|4||||
-| |- PhotovoltaicProductionWeek2|O3EInt32|4||||
-| |- PhotovoltaicProductionMonth2|O3EInt32|4||||
-| |- PhotovoltaicProductionYear2|O3EInt32|4||||
-| |- PhotovoltaicProductionTotal2|O3EInt32|4||||
-| |- PhotovoltaicProductionToday3|O3EInt32|4||||
-| |- PhotovoltaicProductionWeek3|O3EInt32|4||||
-| |- PhotovoltaicProductionMonth3|O3EInt32|4||||
-| |- PhotovoltaicProductionYear3|O3EInt32|4||||
-| |- PhotovoltaicProductionTotal3|O3EInt32|4||||
+|**1801**|[**ElectricalEnergyStorageEnergyTransferStatistic**](## "Statistics of Transfered Electrical Energy")|*O3EComplexType*|40||ro||
+| |- BatteryChargeToday|O3EInt32|4|Wh|||
+| |- BatteryChargeWeek|O3EInt32|4|Wh|||
+| |- BatteryChargeMonth|O3EInt32|4|Wh|||
+| |- BatteryChargeYear|O3EInt32|4|Wh|||
+| |- BatteryChargeTotal|O3EInt32|4|Wh|||
+| |- BatteryDischargeToday|O3EInt32|4|Wh|||
+| |- BatteryDischargeWeek|O3EInt32|4|Wh|||
+| |- BatteryDischargeMonth|O3EInt32|4|Wh|||
+| |- BatteryDischargeYear|O3EInt32|4|Wh|||
+| |- BatteryDischargeTotal|O3EInt32|4|Wh|||
+|**1802**|[**EnergyProductionPhotovoltaic**](## "Statistics of Photovoltaic Production")|*O3EComplexType*|80||ro||
+| |- PhotovoltaicProductionToday|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionWeek|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionMonth|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionYear|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionTotal|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionToday1|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionWeek1|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionMonth1|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionYear1|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionTotal1|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionToday2|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionWeek2|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionMonth2|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionYear2|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionTotal2|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionToday3|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionWeek3|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionMonth3|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionYear3|O3EInt32|4|Wh|||
+| |- PhotovoltaicProductionTotal3|O3EInt32|4|Wh|||
 |**1807**|**ElectricalEnergyInverterDcInputOne**|RawCodec|10||ro||
 |**1808**|**ElectricalEnergyInverterDcInputTwo**|RawCodec|10||ro||
 |**1809**|**ElectricalEnergyInverterDcInputThree**|RawCodec|10||ro||
@@ -3691,35 +3664,35 @@
 |**1826**|**ThreePhaseInverterMaximunNominalPower**|*O3EComplexType*|4||ro||
 | |- Power|O3EInt16|2||||
 | |- Unknown|RawCodec|2||||
-|**1827**|**InverterElectricalEnergyStorageMaximumNominalChargePower**|*O3EComplexType*|4||ro||
-| |- Power|O3EInt16|2||||
+|**1827**|[**InverterElectricalEnergyStorageMaximumNominalChargePower**](## "Nominal Electrical Power of Inverter for Charging")|*O3EComplexType*|4||ro||
+| |- Power|O3EInt16|2|W|||
 | |- Unknown|RawCodec|2||||
-|**1828**|**InverterElectricalEnergyStorageCurrentMaximumlChargePower**|*O3EComplexType*|4||ro||
-| |- Power|O3EInt16|2||||
+|**1828**|[**InverterElectricalEnergyStorageCurrentMaximumlChargePower**](## "Maximum Electrical Power of Inverter for Charging")|*O3EComplexType*|4||ro||
+| |- Power|O3EInt16|2|W|||
 | |- Unknown|RawCodec|2||||
-|**1829**|**InverterElectricalEnergyStorageMaximumNominalDischargePower**|*O3EComplexType*|4||ro||
-| |- Power|O3EInt16|2||||
+|**1829**|[**InverterElectricalEnergyStorageMaximumNominalDischargePower**](## "Nominal Electrical Power of Inverter for Discharging")|*O3EComplexType*|4||ro||
+| |- Power|O3EInt16|2|W|||
 | |- Unknown|RawCodec|2||||
-|**1830**|**InverterElectricalEnergyStorageCurrentMaximumlDishargePower**|*O3EComplexType*|4||ro||
-| |- Power|O3EInt16|2||||
+|**1830**|[**InverterElectricalEnergyStorageCurrentMaximumlDishargePower**](## "Maximum Electrical Power of Inverter for Discharging")|*O3EComplexType*|4||ro||
+| |- Power|O3EInt16|2|W|||
 | |- Unknown|RawCodec|2||||
-|**1831**|**PhotovoltaicCurrentStringPower**|*O3EComplexType*|12||ro||
-| |- String1|O3EInt32|4||||
-| |- String2|O3EInt32|4||||
-| |- String3|O3EInt32|4||||
-|**1832**|**PhotovoltaicStringCurrent**|*O3EComplexType*|12||ro||
-| |- String1|O3EInt32|4||||
-| |- String2|O3EInt32|4||||
-| |- String3|O3EInt32|4||||
-|**1833**|**PhotovoltaicStringVoltage**|*O3EComplexType*|12||ro||
-| |- String1|O3EInt32|4||||
-| |- String2|O3EInt32|4||||
-| |- String3|O3EInt32|4||||
-|**1834**|**ElectricalEnergyStorageStateOfEnergy**|*O3EComplexType*|4||ro||
-| |- StateOfEnergy|O3EInt16|2||||
+|**1831**|[**PhotovoltaicCurrentStringPower**](## "Current Photovoltaic Power per String")|*O3EComplexType*|12||ro||
+| |- String1|O3EInt32|4|W|||
+| |- String2|O3EInt32|4|W|||
+| |- String3|O3EInt32|4|W|||
+|**1832**|[**PhotovoltaicStringCurrent**](## "Current Photovoltaic Current per String (resolution is 1 Ampere)")|*O3EComplexType*|12||ro||
+| |- String1|O3EInt32|4|A|||
+| |- String2|O3EInt32|4|A|||
+| |- String3|O3EInt32|4|V|||
+|**1833**|[**PhotovoltaicStringVoltage**](## "Current Photovoltaic Voltage per String")|*O3EComplexType*|12||ro||
+| |- String1|O3EInt32|4|V|||
+| |- String2|O3EInt32|4|V|||
+| |- String3|O3EInt32|4|V|||
+|**1834**|[**ElectricalEnergyStorageStateOfEnergy**](## "SoC of Battery")|*O3EComplexType*|4||ro||
+| |- StateOfEnergy|O3EInt16|2|Wh|||
 | |- Unknown|O3EInt16|2||||
 |**1835**|**ManufacturerProperties**|RawCodec|20||ro||
-|**1836**|**ElectricalEnergyStorageCurrentPower**|O3EInt32|4||ro||
+|**1836**|[**ElectricalEnergyStorageCurrentPower**](## "Current Power for Battery Discharging (positive values) and Charging (negative values)")|O3EInt32|4|W|ro||
 |**1837**|**ElectricalEnergyStorageCurrent**|*O3EComplexType*|4||ro||
 | |- Current|O3EInt16|2||||
 | |- Unknown|RawCodec|2||||
@@ -3727,9 +3700,9 @@
 |**1839**|**ElectricalEnergyStorageUsableEnergy**|RawCodec|4||ro||
 |**1840**|**ElectricalEnergyStorageUsableNominalEnergy**|RawCodec|4||ro||
 |**1841**|**PointOfCommonCouplingOverview**|RawCodec|32||ro||
-|**1842**|**SecondaryCircuitFourThreeWayValve**|*O3EComplexType*|2||ro||
-| |- Setpoint|O3EInt8|1||||
-| |- CurrentPosition|O3EInt8|1||||
+|**1842**|[**SecondaryCircuitFourThreeWayValve**](## "Circuit 2: Position of Four Three Way Valve")|*O3EComplexType*|2||ro||
+| |- Setpoint|O3EInt8|1|%|||
+| |- CurrentPosition|O3EInt8|1|%|||
 |**1843**|**MixerOneCircuitHumidityProtection**|RawCodec|2||ro||
 |**1844**|**MixerTwoCircuitHumidityProtection**|RawCodec|2||ro||
 |**1845**|**HeatPumpCompressorEnvelope**|RawCodec|36||ro||
@@ -6804,23 +6777,23 @@
 |**1385**|**FuelCellBreakdownRateYearMatrix**|RawCodec|48||ro||
 |**1389**|**CoTwoSavingsMonthMatrix**|RawCodec|124||ro||
 |**1390**|**CoTwoSavingsYearMatrix**|RawCodec|96||ro||
-|**1391**|**GeneratedDomesticHotWaterOutput**|*O3EComplexType*|24||ro||
-|**1392**|**GeneratedDomesticHotWaterOutputMonthMatrix**|*O3EComplexType*|124||ro||
-|**1393**|**GeneratedDomesticHotWaterOutputYearMatrix**|*O3EComplexType*|96||ro||
+|**1391**|[**GeneratedDomesticHotWaterOutput**](## "Generated Domestic Hot Water Output per specific period")|*O3EComplexType*|24||ro||
+|**1392**|[**GeneratedDomesticHotWaterOutputMonthMatrix**](## "Generated Domestic Hot Water Output Per Month")|*O3EComplexType*|124||ro||
+|**1393**|[**GeneratedDomesticHotWaterOutputYearMatrix**](## "Generated Domestic Hot Water Output Per Year")|*O3EComplexType*|96||ro||
 |**1394**|**SolarChargingDomesticHotWaterSetpoint**|O3EInt16|2||**rw**||
 |**1395**|**MixerOneCircuitSummerSavingTemperatureThreshold**|*O3EComplexType*|3||ro||
 |**1396**|**MixerTwoCircuitSummerSavingTemperatureThreshold**|*O3EComplexType*|3||ro||
 |**1397**|**MixerThreeCircuitSummerSavingTemperatureThreshold**|*O3EComplexType*|3||ro||
 |**1398**|**MixerFourCircuitSummerSavingTemperatureThreshold**|*O3EComplexType*|3||ro||
 |**1411**|**ResetServiceInterval**|O3EByteVal|1||ro||
-|**1415**|**MixerOneCircuitOperationState**|*O3EComplexType*|2||**rw**||
-|**1416**|**MixerTwoCircuitOperationState**|*O3EComplexType*|2||**rw**||
-|**1417**|**MixerThreeCircuitOperationState**|*O3EComplexType*|2||**rw**||
-|**1418**|**MixerFourCircuitOperationState**|*O3EComplexType*|2||**rw**||
-|**1419**|**MixerFiveCircuitOperationState**|*O3EComplexType*|2||**rw**||
-|**1420**|**MixerSixCircuitOperationState**|*O3EComplexType*|2||**rw**||
-|**1421**|**MixerSevenCircuitOperationState**|*O3EComplexType*|2||**rw**||
-|**1422**|**MixerEightCircuitOperationState**|*O3EComplexType*|2||**rw**||
+|**1415**|[**MixerOneCircuitOperationState**](## "Heating curcuit 1: Operating Mode")|*O3EComplexType*|2||**rw**||
+|**1416**|[**MixerTwoCircuitOperationState**](## "Heating curcuit 2: Operating Mode")|*O3EComplexType*|2||**rw**||
+|**1417**|[**MixerThreeCircuitOperationState**](## "Heating curcuit 3: Operating Mode")|*O3EComplexType*|2||**rw**||
+|**1418**|[**MixerFourCircuitOperationState**](## "Heating curcuit 4: Operating Mode")|*O3EComplexType*|2||**rw**||
+|**1419**|[**MixerFiveCircuitOperationState**](## "Heating curcuit 5: Operating Mode")|*O3EComplexType*|2||**rw**||
+|**1420**|[**MixerSixCircuitOperationState**](## "Heating curcuit 6: Operating Mode")|*O3EComplexType*|2||**rw**||
+|**1421**|[**MixerSevenCircuitOperationState**](## "Heating curcuit 7: Operating Mode")|*O3EComplexType*|2||**rw**||
+|**1422**|[**MixerEightCircuitOperationState**](## "Heating curcuit 8: Operating Mode")|*O3EComplexType*|2||**rw**||
 |**1431**|**CarbonEmissionSettings**|RawCodec|8||ro||
 |**1432**|**CentralHeatingPumpPerformance**|*O3EComplexType*|4||ro||
 |**1434**|**ResetFuelCellStatistics**|RawCodec|1||ro||
@@ -6892,8 +6865,8 @@
 |**1599**|**SolarSecondaryDeltaTemperatureHysteresis**|RawCodec|4||ro||
 |**1600**|**BufferDischargeFunctionThreeWayValvePositionPercent**|RawCodec|2||ro||
 |**1601**|**FuelCellCondition**|RawCodec|1||ro||
-|**1603**|**PointOfCommonCouplingPower**|*O3EComplexType*|4||ro||
-|**1603**|**PointOfCommonCouplingPower**|*O3EComplexType*|12||ro||
+|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|4||ro||
+|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|12||ro||
 |**1604**|**GatewayExternalTargetFlowTemperatureSetpoint**|RawCodec|2||**rw**||
 |**1605**|**GatewayExternalHeatEngineTargetOperationMode**|*O3EComplexType*|2||**rw**||
 |**1606**|**IntervalStrategyProperties**|*O3EComplexType*|8||ro||
@@ -6909,25 +6882,25 @@
 |**1628**|**ExternalMixerTwoCircuitFixedValueTargetTemperatureSetpoint**|O3EInt16|2||**rw**||
 |**1629**|**ExternalMixerThreeCircuitFixedValueTargetTemperatureSetpoint**|O3EInt16|2||**rw**||
 |**1630**|**ExternalMixerFourCircuitFixedValueTargetTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**1643**|**MixerOneCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**1644**|**MixerTwoCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**1645**|**MixerThreeCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**1646**|**MixerFourCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
-|**1659**|**EndResultDomesticHotWaterTemperatureSetpoint**|*O3EComplexType*|3||**rw**||
+|**1643**|[**MixerOneCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 1: Flow or Room Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**1644**|[**MixerTwoCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 2: Flow or Room Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**1645**|[**MixerThreeCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 3: Flow or Room Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**1646**|[**MixerFourCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 4: Flow or Room Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**1659**|[**EndResultDomesticHotWaterTemperatureSetpoint**](## "Resulting Setpoint for and Actual State of Domestic Hot Water Preparation (probably READ ONLY)")|*O3EComplexType*|3||ro|[Link](https://github.com/open3e/open3e/discussions/214)|
 |**1660**|**SupportedFeatures**|RawCodec|16||ro||
 |**1661**|**SolarSecondaryTransferPump**|RawCodec|5||ro||
 |**1662**|**HeatingSupportBufferThreeWayValvePositionPercent**|RawCodec|2||ro||
 |**1663**|**TestStatus**|RawCodec|41||ro||
-|**1664**|**ElectricalEnergyStorageStateOfCharge**|O3EInt8|1||ro||
+|**1664**|[**ElectricalEnergyStorageStateOfCharge**](## "SoC of Battery")|O3EInt8|1|%|ro||
 |**1667**|**MixerOneCircuitPumpOscillationTime**|RawCodec|2||ro||
 |**1668**|**MixerTwoCircuitPumpOscillationTime**|RawCodec|2||ro||
 |**1669**|**MixerThreeCircuitPumpOscillationTime**|RawCodec|2||ro||
 |**1670**|**MixerFourCircuitPumpOscillationTime**|RawCodec|2||ro||
-|**1684**|**AmbientTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1684**|[**AmbientTemperatureSensor**](## "Actual Ambient Temperature")|*O3EComplexType*|9||ro||
 |**1685**|**ElectricalEnergyInverterDCConfiguration**|RawCodec|3||ro||
 |**1686**|**ElectricalEnergySystemPhotovoltaicLimitation**|RawCodec|3||ro||
 |**1687**|**ElectricalEnergySystemPhotovoltaicConfiguration**|O3EInt16|2||ro||
-|**1690**|**ElectricalEnergySystemPhotovoltaicStatus**|*O3EComplexType*|17||ro||
+|**1690**|[**ElectricalEnergySystemPhotovoltaicStatus**](## "Actual Power of Photovoltaic")|*O3EComplexType*|17||ro||
 |**1691**|**BusTopologyScanStatus**|O3EByteVal|1||ro||
 |**1692**|**PowerGridCodeConfiguration**|RawCodec|1||ro||
 |**1693**|**GridOperatorConfigurationLock**|O3EByteVal|1||ro||
@@ -6966,14 +6939,14 @@
 |**1765**|**CombustionAirInterlock**|RawCodec|2||ro||
 |**1766**|**ElectricalEnergyStorageModuleOperatingData**|RawCodec|141||ro||
 |**1768**|**ReceiverTemperatureSensor**|*O3EComplexType*|9||ro||
-|**1769**|**PrimaryInletTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1769**|[**PrimaryInletTemperatureSensor**](## "Temperature at Primary Inlet of Heat Pump")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
 |**1770**|**SecondaryOutletTemperatureSensor**|*O3EComplexType*|9||ro||
-|**1771**|**EngineRoomTemperatureSensor**|*O3EComplexType*|9||ro||
-|**1772**|**CompressorOilTemperatureSensor**|*O3EComplexType*|9||ro||
+|**1771**|[**EngineRoomTemperatureSensor**](## "Actual Temperature at Engine Room")|*O3EComplexType*|9||ro||
+|**1772**|[**CompressorOilTemperatureSensor**](## "Actual Compressor Oil Temperature")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
 |**1773**|**RefrigerantCircuitFourWayValve**|O3EByteVal|1||ro||
 |**1774**|**CompressorCrankCaseHeater**|O3EByteVal|1||ro||
-|**1775**|**PrimaryCircuitFanOne**|O3EByteVal|1||ro||
-|**1776**|**PrimaryCircuitFanTwo**|O3EByteVal|1||ro||
+|**1775**|[**PrimaryCircuitFanOne**](## "Speed of Fan 1")|O3EByteVal|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
+|**1776**|[**PrimaryCircuitFanTwo**](## "Speed of Fan 2")|O3EByteVal|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
 |**1777**|**TimeSeriesRecordedFlueGasTemperatureSensorStepsAndDurationOne**|RawCodec|176||ro||
 |**1778**|**TimeSeriesRecordedFlueGasTemperatureSensorStepsAndDurationTwo**|RawCodec|176||ro||
 |**1779**|**TimeSeriesRecordedFlueGasTemperatureSensorStepsAndDurationThree**|RawCodec|132||ro||
@@ -6994,10 +6967,10 @@
 |**1796**|**DomesticElectricalEnergyConsumption**|RawCodec|2||ro||
 |**1797**|**PredictionDomesticElectricalEnergyConsumptionNextHour**|RawCodec|2||ro||
 |**1798**|**FuelCellHoursTillNextStart**|O3EInt8|1||ro||
-|**1799**|**PrimaryCircuitCurrentTemperatureSetpoint**|O3EInt16|2||**rw**||
+|**1799**|[**PrimaryCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 1: Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 |**1800**|**ResetTimeSeriesRecordingGroups**|RawCodec|4||ro||
-|**1801**|**ElectricalEnergyStorageEnergyTransferStatistic**|*O3EComplexType*|40||ro||
-|**1802**|**EnergyProductionPhotovoltaic**|*O3EComplexType*|80||ro||
+|**1801**|[**ElectricalEnergyStorageEnergyTransferStatistic**](## "Statistics of Transfered Electrical Energy")|*O3EComplexType*|40||ro||
+|**1802**|[**EnergyProductionPhotovoltaic**](## "Statistics of Photovoltaic Production")|*O3EComplexType*|80||ro||
 |**1807**|**ElectricalEnergyInverterDcInputOne**|RawCodec|10||ro||
 |**1808**|**ElectricalEnergyInverterDcInputTwo**|RawCodec|10||ro||
 |**1809**|**ElectricalEnergyInverterDcInputThree**|RawCodec|10||ro||
@@ -7015,22 +6988,22 @@
 |**1824**|**ThreePhaseInverterCurrentPower**|*O3EComplexType*|16||ro||
 |**1825**|**ThreePhaseInverterCurrentApparentPower**|*O3EComplexType*|16||ro||
 |**1826**|**ThreePhaseInverterMaximunNominalPower**|*O3EComplexType*|4||ro||
-|**1827**|**InverterElectricalEnergyStorageMaximumNominalChargePower**|*O3EComplexType*|4||ro||
-|**1828**|**InverterElectricalEnergyStorageCurrentMaximumlChargePower**|*O3EComplexType*|4||ro||
-|**1829**|**InverterElectricalEnergyStorageMaximumNominalDischargePower**|*O3EComplexType*|4||ro||
-|**1830**|**InverterElectricalEnergyStorageCurrentMaximumlDishargePower**|*O3EComplexType*|4||ro||
-|**1831**|**PhotovoltaicCurrentStringPower**|*O3EComplexType*|12||ro||
-|**1832**|**PhotovoltaicStringCurrent**|*O3EComplexType*|12||ro||
-|**1833**|**PhotovoltaicStringVoltage**|*O3EComplexType*|12||ro||
-|**1834**|**ElectricalEnergyStorageStateOfEnergy**|*O3EComplexType*|4||ro||
+|**1827**|[**InverterElectricalEnergyStorageMaximumNominalChargePower**](## "Nominal Electrical Power of Inverter for Charging")|*O3EComplexType*|4||ro||
+|**1828**|[**InverterElectricalEnergyStorageCurrentMaximumlChargePower**](## "Maximum Electrical Power of Inverter for Charging")|*O3EComplexType*|4||ro||
+|**1829**|[**InverterElectricalEnergyStorageMaximumNominalDischargePower**](## "Nominal Electrical Power of Inverter for Discharging")|*O3EComplexType*|4||ro||
+|**1830**|[**InverterElectricalEnergyStorageCurrentMaximumlDishargePower**](## "Maximum Electrical Power of Inverter for Discharging")|*O3EComplexType*|4||ro||
+|**1831**|[**PhotovoltaicCurrentStringPower**](## "Current Photovoltaic Power per String")|*O3EComplexType*|12||ro||
+|**1832**|[**PhotovoltaicStringCurrent**](## "Current Photovoltaic Current per String (resolution is 1 Ampere)")|*O3EComplexType*|12||ro||
+|**1833**|[**PhotovoltaicStringVoltage**](## "Current Photovoltaic Voltage per String")|*O3EComplexType*|12||ro||
+|**1834**|[**ElectricalEnergyStorageStateOfEnergy**](## "SoC of Battery")|*O3EComplexType*|4||ro||
 |**1835**|**ManufacturerProperties**|RawCodec|20||ro||
-|**1836**|**ElectricalEnergyStorageCurrentPower**|O3EInt32|4||ro||
+|**1836**|[**ElectricalEnergyStorageCurrentPower**](## "Current Power for Battery Discharging (positive values) and Charging (negative values)")|O3EInt32|4|W|ro||
 |**1837**|**ElectricalEnergyStorageCurrent**|*O3EComplexType*|4||ro||
 |**1838**|**ElectricalEnergyStorageVoltage**|O3EInt16|2||ro||
 |**1839**|**ElectricalEnergyStorageUsableEnergy**|RawCodec|4||ro||
 |**1840**|**ElectricalEnergyStorageUsableNominalEnergy**|RawCodec|4||ro||
 |**1841**|**PointOfCommonCouplingOverview**|RawCodec|32||ro||
-|**1842**|**SecondaryCircuitFourThreeWayValve**|*O3EComplexType*|2||ro||
+|**1842**|[**SecondaryCircuitFourThreeWayValve**](## "Circuit 2: Position of Four Three Way Valve")|*O3EComplexType*|2||ro||
 |**1843**|**MixerOneCircuitHumidityProtection**|RawCodec|2||ro||
 |**1844**|**MixerTwoCircuitHumidityProtection**|RawCodec|2||ro||
 |**1845**|**HeatPumpCompressorEnvelope**|RawCodec|36||ro||

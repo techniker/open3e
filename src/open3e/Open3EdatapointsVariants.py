@@ -7,7 +7,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "variants", 
-    "Version": "20260215",
+    "Version": "20260217",
     "dids" : 
     {
          627 : { 12: O3EUtf8(12, "CentralHeatingOneCircuitName", acc="ro")},
@@ -24,7 +24,7 @@ dataIdentifiers = {
         1025 : { 3: O3EComplexType(3, "MixerTwoCircuitCurrentQuickMode", [O3EByteVal(1, "ModeParty"), O3EByteVal(1, "State"), RawCodec(1, "Unknown")], acc="ro")},
         1026 : { 3: O3EComplexType(3, "MixerThreeCircuitCurrentQuickMode", [O3EByteVal(1, "ModeParty"), O3EByteVal(1, "State"), RawCodec(1, "Unknown")], acc="ro")},
         1027 : { 3: O3EComplexType(3, "MixerFourCircuitCurrentQuickMode", [O3EByteVal(1, "ModeParty"), O3EByteVal(1, "State"), RawCodec(1, "Unknown")], acc="ro")},
-        1603 : { 12: O3EComplexType(12, "PointOfCommonCouplingPower", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True), O3EInt16(2, "ActivePowerDup", scale=1.0, signed=True), O3EInt16(2, "PadZeros", scale=1.0, signed=True), O3EInt16(2, "ReactivePowerDup", scale=1.0, signed=True), O3EInt16(2, "PadOnes", scale=1.0, signed=True)], acc="ro"), # MyHomeMyData, see discussion #315
+        1603 : { 12: O3EComplexType(12, "PointOfCommonCouplingPower", [O3EInt16(2, "ActivePower", scale=1.0, signed=True, unit="W", desc="Active Power"), O3EInt16(2, "ReactivePower", scale=1.0, signed=True, unit="VA", desc="Reactive Power"), O3EInt16(2, "ActivePowerDup", scale=1.0, signed=True, unit="W", desc="Active Power Duplicate"), O3EInt16(2, "PadZeros", scale=1.0, signed=True), O3EInt16(2, "ReactivePowerDup", scale=1.0, signed=True, unit="VA", desc="Reactive Power Duplicate"), O3EInt16(2, "PadOnes", scale=1.0, signed=True)], desc="Actual Power at Point of Common Coupling", acc="ro"), # MyHomeMyData, see discussion #315
             },
         1884 : { 85: O3EComplexType(85, "RoomOneProperty", [O3EUtf8(39, "Roomname"), RawCodec(4, "Unknown1"), O3EEnum(1, "Roomtype", "Roomtypes"), RawCodec(1, "Unknown2"), O3EEnum(1, "TemperatureControl", "TemperatureControlLevels"), RawCodec(29, "Unknown3"), O3EEnum(1, "WindowDetection", "WindowDetectionStates"), RawCodec(9, "Unknown4")], acc="ro"), # (str, "name"); (o5cVar, "roomType"); (h5cVar, "lockMode"); (c5cVar, "roomControlAlgorithmType"); (list, "supplyChannel"); (list2, "roomDevices");
             },

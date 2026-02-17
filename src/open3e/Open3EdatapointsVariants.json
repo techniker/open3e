@@ -501,8 +501,8 @@
             "args": {
               "scale": 1.0,
               "signed": true,
-              "unit": "",
-              "desc": "",
+              "unit": "W",
+              "desc": "Active Power",
               "info": "",
               "acc": ""
             }
@@ -514,8 +514,8 @@
             "args": {
               "scale": 1.0,
               "signed": true,
-              "unit": "",
-              "desc": "",
+              "unit": "VA",
+              "desc": "Reactive Power",
               "info": "",
               "acc": ""
             }
@@ -527,8 +527,8 @@
             "args": {
               "scale": 1.0,
               "signed": true,
-              "unit": "",
-              "desc": "",
+              "unit": "W",
+              "desc": "Active Power Duplicate",
               "info": "",
               "acc": ""
             }
@@ -553,8 +553,8 @@
             "args": {
               "scale": 1.0,
               "signed": true,
-              "unit": "",
-              "desc": "",
+              "unit": "VA",
+              "desc": "Reactive Power Duplicate",
               "info": "",
               "acc": ""
             }
@@ -573,7 +573,7 @@
             }
           }
         ],
-        "desc": "",
+        "desc": "Actual Power at Point of Common Coupling",
         "info": "",
         "acc": "ro"
       }
@@ -7999,5 +7999,5 @@
       }
     }
   },
-  "Version": "20260215"
+  "Version": "20260217"
 }

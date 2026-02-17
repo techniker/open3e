@@ -2402,7 +2402,10 @@ E3Enums = {
         2: "Parallel operation",
         3: "Chimney sweep",
         4: "Test mode",
-        5: "Automatic",
+        5: "External temperature setpoint",
+        6: "External modulation setpoint",
+        7: "Hygiene function",
+        8: "Automatic",
     },
 
     "PowerStates": {
