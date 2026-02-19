@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20260217
+- Version of general data points: 20260219
 - Version of variant data points: 20260217
 
 ### Remarks
@@ -711,6 +711,13 @@
 |**2495**|[**CurrentThermalCapacityElectricHeater**](## "Actual thermal power output of the auxiliary heater")|O3EInt32|4|W|ro||
 |**2496**|[**CurrentThermalCapacitySystem**](## "Actual thermal power output of the system")|O3EInt32|4|W|ro||
 |**2569**|[**CompressorSpeedRps**](## "Actual speed of the heat pump compressor")|O3EInt16|2|rps|ro||
+|**2760**|[**EnergyOwnConsumption**](## "Own Energy Consumption")|*O3EComplexType*|24||ro||
+| |- Today|O3EInt32|4|kWh|||
+| |- Past7Days|O3EInt32|4|kWh|||
+| |- CurrentMonth|O3EInt32|4|kWh|||
+| |- PastMonth|O3EInt32|4|kWh|||
+| |- CurrentYear|O3EInt32|4|kWh|||
+| |- PastYear|O3EInt32|4|kWh|||
 |**2735**|[**FourThreeWayValveValveCurrentPosition**](## "Current position of the four/three-way valve {0: Heating/Cooling, 1: Internal Buffer, 2: Domestic Hot Water, 3: Heating/Cooling and Internal Buffer, 4: Domestic Hot Water and Internal Buffer}")|O3EEnum|1||ro||
 |**2806**|[**RefrigerationCircuitOperationMode**](## "Actual operating mode of the refrigeration circuit")|*O3EComplexType*|2||ro||
 | |- Mode|O3EByteVal|1||||
@@ -810,6 +817,7 @@
 |**2495**|[**CurrentThermalCapacityElectricHeater**](## "Actual thermal power output of the auxiliary heater")|O3EInt32|4|W|ro||
 |**2496**|[**CurrentThermalCapacitySystem**](## "Actual thermal power output of the system")|O3EInt32|4|W|ro||
 |**2569**|[**CompressorSpeedRps**](## "Actual speed of the heat pump compressor")|O3EInt16|2|rps|ro||
+|**2760**|[**EnergyOwnConsumption**](## "Own Energy Consumption")|*O3EComplexType*|24||ro||
 |**2735**|[**FourThreeWayValveValveCurrentPosition**](## "Current position of the four/three-way valve {0: Heating/Cooling, 1: Internal Buffer, 2: Domestic Hot Water, 3: Heating/Cooling and Internal Buffer, 4: Domestic Hot Water and Internal Buffer}")|O3EEnum|1||ro||
 |**2806**|[**RefrigerationCircuitOperationMode**](## "Actual operating mode of the refrigeration circuit")|*O3EComplexType*|2||ro||
 |**3016**|[**HeatingBufferTemperatureSensor**](## "Actual temperature of the heating buffer")|*O3EComplexType*|9||ro||
@@ -5897,7 +5905,13 @@
 |**2753**|**DiagnosticHeatExchangerConstraints**|O3EInt8|1||ro||
 |**2758**|**GasPressureSwitchErrorReaction**|RawCodec|1||ro||
 |**2759**|**EnergyRecoveredCrossHeatExchanger**|RawCodec|24||ro||
-|**2760**|**EnergyOwnConsumption**|RawCodec|24||ro||
+|**2760**|[**EnergyOwnConsumption**](## "Own Energy Consumption")|*O3EComplexType*|24||ro||
+| |- Today|O3EInt32|4|kWh|||
+| |- Past7Days|O3EInt32|4|kWh|||
+| |- CurrentMonth|O3EInt32|4|kWh|||
+| |- PastMonth|O3EInt32|4|kWh|||
+| |- CurrentYear|O3EInt32|4|kWh|||
+| |- PastYear|O3EInt32|4|kWh|||
 |**2767**|**DiagnosticMonitoringPressureDrop**|O3EInt8|1||ro||
 |**2768**|**DiagnosticMonitoringPressurePeaks**|O3EInt8|1||ro||
 |**2772**|**EnergyRecoveredCrossHeatExchangerMonthMatrix**|RawCodec|124||ro||
@@ -7717,7 +7731,7 @@
 |**2753**|**DiagnosticHeatExchangerConstraints**|O3EInt8|1||ro||
 |**2758**|**GasPressureSwitchErrorReaction**|RawCodec|1||ro||
 |**2759**|**EnergyRecoveredCrossHeatExchanger**|RawCodec|24||ro||
-|**2760**|**EnergyOwnConsumption**|RawCodec|24||ro||
+|**2760**|[**EnergyOwnConsumption**](## "Own Energy Consumption")|*O3EComplexType*|24||ro||
 |**2767**|**DiagnosticMonitoringPressureDrop**|O3EInt8|1||ro||
 |**2768**|**DiagnosticMonitoringPressurePeaks**|O3EInt8|1||ro||
 |**2772**|**EnergyRecoveredCrossHeatExchangerMonthMatrix**|RawCodec|124||ro||

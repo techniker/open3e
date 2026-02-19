@@ -43,7 +43,7 @@ DoI_default = [256,257,258,259,260,261,262,263,264,265,266,268,     # Frequently
                1799,1801,1802,1828,1830,1831,1832,
                1833,1834,1836,1842,2214,2256,2320,2333,
                2334,2346,2351,2352,2369,2486,2487,2488,2494,2495,
-               2496,2569,2735,2806,3016]
+               2496,2569,2760,2735,2806,3016]
 md_indent = '- '                                                    # Indentation of sub codecs
 meta_codecs = ['O3EList','O3EComplexType']                          # List of meta codecs, show in italic
 ignored_ids = ['ListEntries']                                       # List of ids to be ignored (helper ids for json format)

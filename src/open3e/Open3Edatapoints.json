@@ -49034,10 +49034,92 @@
     }
   },
   "2760": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 24,
     "id": "EnergyOwnConsumption",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Today",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Past7Days",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "CurrentMonth",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PastMonth",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "CurrentYear",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PastYear",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
+      "desc": "Own Energy Consumption",
+      "info": "",
       "acc": "ro"
     }
   },
@@ -53593,5 +53675,5 @@
       "acc": "ro"
     }
   },
-  "Version": "20260217"
+  "Version": "20260219"
 }
