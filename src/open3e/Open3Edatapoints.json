@@ -858,7 +858,7 @@
         }
       ],
       "desc": "Flow temperature in the primary circuit downstream from the heat generator",
-      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -933,7 +933,7 @@
         }
       ],
       "desc": "Flow temperature in the primary circuit upstream from the heat generator",
-      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -1008,7 +1008,7 @@
         }
       ],
       "desc": "Actual temperature domestic hot water buffer",
-      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -7067,7 +7067,7 @@
           "args": {
             "scale": 10,
             "signed": false,
-            "unit": "",
+            "unit": "kWh",
             "desc": "",
             "info": "",
             "acc": ""
@@ -7080,7 +7080,7 @@
           "args": {
             "scale": 10,
             "signed": false,
-            "unit": "",
+            "unit": "kWh",
             "desc": "",
             "info": "",
             "acc": ""
@@ -7093,15 +7093,15 @@
           "args": {
             "scale": 10,
             "signed": false,
-            "unit": "",
+            "unit": "kWh",
             "desc": "",
             "info": "",
             "acc": ""
           }
         }
       ],
-      "desc": "",
-      "info": "",
+      "desc": "Cumulative Grid Energy Statistics",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)",
       "acc": "ro"
     }
   },
@@ -14320,7 +14320,7 @@
         }
       ],
       "desc": "Flow rate and temperature in the primary circuit of the heat generator",
-      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -30283,7 +30283,7 @@
         }
       ],
       "desc": "Actual Power at Point of Common Coupling",
-      "info": "",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)",
       "acc": "ro"
     }
   },
@@ -30993,7 +30993,7 @@
       "signed": false,
       "unit": "%",
       "desc": "SoC of Battery",
-      "info": "",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)",
       "acc": "ro"
     }
   },
@@ -31258,7 +31258,7 @@
         }
       ],
       "desc": "Actual Power of Photovoltaic",
-      "info": "",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)",
       "acc": "ro"
     }
   },
@@ -32352,7 +32352,7 @@
         }
       ],
       "desc": "Statistics of Transfered Electrical Energy",
-      "info": "",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)",
       "acc": "ro"
     }
   },
@@ -32624,7 +32624,7 @@
         }
       ],
       "desc": "Statistics of Photovoltaic Production",
-      "info": "",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)",
       "acc": "ro"
     }
   },
@@ -33235,7 +33235,7 @@
         }
       ],
       "desc": "Current Photovoltaic Voltage per String",
-      "info": "",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)",
       "acc": "ro"
     }
   },
@@ -41092,7 +41092,7 @@
         }
       ],
       "desc": "Actual temperature economizer inlet",
-      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -41167,7 +41167,7 @@
         }
       ],
       "desc": "Actual temperature avaporator inlet",
-      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -41321,7 +41321,7 @@
       "signed": false,
       "unit": "%",
       "desc": "Actual speed of heat pump compressor",
-      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)",
+      "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)",
       "acc": "ro"
     }
   },
@@ -53675,5 +53675,5 @@
       "acc": "ro"
     }
   },
-  "Version": "20260219"
+  "Version": "20260220"
 }

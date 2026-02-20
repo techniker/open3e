@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20260219
+- Version of general data points: 20260220
 - Version of variant data points: 20260217
 
 ### Remarks
@@ -79,19 +79,19 @@
 | |- - Error|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-|**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "Actual state of sensor {0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**269**|[**ReturnTemperatureSensor**](## "Flow temperature in the primary circuit upstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**269**|[**ReturnTemperatureSensor**](## "Flow temperature in the primary circuit upstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**271**|[**DomesticHotWaterSensor**](## "Actual temperature domestic hot water buffer")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**271**|[**DomesticHotWaterSensor**](## "Actual temperature domestic hot water buffer")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -177,6 +177,10 @@
 |**531**|[**DomesticHotWaterOperationState**](## "Operation state of domestic hot water preparation")|*O3EComplexType*|2||**rw**||
 | |- Mode|O3EByteVal|1||||
 | |- [State](## "{0: Off, 1: Hot water, 2: Parallel operation, 3: Chimney sweep, 4: Test mode, 5: External temperature setpoint, 6: External modulation setpoint, 7: Hygiene function, 8: Automatic}")|O3EEnum|1||||
+|**535**|[**ObjectElectricalEnergyStatistical**](## "Cumulative Grid Energy Statistics")|*O3EComplexType*|12||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
+| |- GridFeedInEnergy|O3EInt32|4|kWh|||
+| |- GridSuppliedEnergy|O3EInt32|4|kWh|||
+| |- ProducedEnergy|O3EInt32|4|kWh|||
 |**902**|[**MalfunctionIdentification**](## "Indicates whether faults are present")|O3EByteVal|1||ro||
 |**954**|[**BusTopologyMatrix**](## "Matrix of CAN bus topology")|*O3EList*|181||ro||
 | |- [Count](## "Number of list entries")|O3EInt8|1||||
@@ -189,7 +193,7 @@
 | |- - HW-Version|O3ESoftVers|8||||
 | |- - VIN|O3EUtf8|16||||
 |**987**|[**MixerOneCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 1")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
-|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|l/h|||
 | |- Temperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Unknown|RawCodec|1||||
@@ -574,7 +578,7 @@
 |**1415**|[**MixerOneCircuitOperationState**](## "Heating curcuit 1: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
 | |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
-|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|4||ro||
+|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 | |- [ActivePower](## "Active Power")|O3EInt16|2|W|||
 | |- [ReactivePower](## "Reactive Power")|O3EInt16|2|VA|||
 |**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|12||ro||
@@ -585,14 +589,14 @@
 | |- [ReactivePowerDup](## "Reactive Power Duplicate")|O3EInt16|2|VA|||
 | |- PadOnes|O3EInt16|2||||
 |**1643**|[**MixerOneCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 1: Flow or Room Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
-|**1664**|[**ElectricalEnergyStorageStateOfCharge**](## "SoC of Battery")|O3EInt8|1|%|ro||
+|**1664**|[**ElectricalEnergyStorageStateOfCharge**](## "SoC of Battery")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**1684**|[**AmbientTemperatureSensor**](## "Actual Ambient Temperature")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**1690**|[**ElectricalEnergySystemPhotovoltaicStatus**](## "Actual Power of Photovoltaic")|*O3EComplexType*|17||ro||
+|**1690**|[**ElectricalEnergySystemPhotovoltaicStatus**](## "Actual Power of Photovoltaic")|*O3EComplexType*|17||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 | |- ActivePower cumulated|O3EInt16|2|W|||
 | |- RectivePower cumulated|O3EInt16|2|VA|||
 | |- ActivePower String C|O3EInt16|2|W|||
@@ -617,7 +621,7 @@
 |**1775**|[**PrimaryCircuitFanOne**](## "Speed of Fan 1")|O3EByteVal|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
 |**1776**|[**PrimaryCircuitFanTwo**](## "Speed of Fan 2")|O3EByteVal|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
 |**1799**|[**PrimaryCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 1: Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
-|**1801**|[**ElectricalEnergyStorageEnergyTransferStatistic**](## "Statistics of Transfered Electrical Energy")|*O3EComplexType*|40||ro||
+|**1801**|[**ElectricalEnergyStorageEnergyTransferStatistic**](## "Statistics of Transfered Electrical Energy")|*O3EComplexType*|40||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 | |- BatteryChargeToday|O3EInt32|4|Wh|||
 | |- BatteryChargeWeek|O3EInt32|4|Wh|||
 | |- BatteryChargeMonth|O3EInt32|4|Wh|||
@@ -628,7 +632,7 @@
 | |- BatteryDischargeMonth|O3EInt32|4|Wh|||
 | |- BatteryDischargeYear|O3EInt32|4|Wh|||
 | |- BatteryDischargeTotal|O3EInt32|4|Wh|||
-|**1802**|[**EnergyProductionPhotovoltaic**](## "Statistics of Photovoltaic Production")|*O3EComplexType*|80||ro||
+|**1802**|[**EnergyProductionPhotovoltaic**](## "Statistics of Photovoltaic Production")|*O3EComplexType*|80||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 | |- PhotovoltaicProductionToday|O3EInt32|4|Wh|||
 | |- PhotovoltaicProductionWeek|O3EInt32|4|Wh|||
 | |- PhotovoltaicProductionMonth|O3EInt32|4|Wh|||
@@ -663,7 +667,7 @@
 | |- String1|O3EInt32|4|A|||
 | |- String2|O3EInt32|4|A|||
 | |- String3|O3EInt32|4|V|||
-|**1833**|[**PhotovoltaicStringVoltage**](## "Current Photovoltaic Voltage per String")|*O3EComplexType*|12||ro||
+|**1833**|[**PhotovoltaicStringVoltage**](## "Current Photovoltaic Voltage per String")|*O3EComplexType*|12||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 | |- String1|O3EInt32|4|V|||
 | |- String2|O3EInt32|4|V|||
 | |- String3|O3EInt32|4|V|||
@@ -679,19 +683,19 @@
 | |- Unknown|O3EInt8|1||||
 |**2256**|[**DesiredThermalEnergyDefrost**](## "Target value of thermal energy to perform next defrosting")|O3EInt16|2|Wh|ro||
 |**2320**|[**DomesticHotWaterStatus**](## "Status of domestic hot water preparation {0: Idle, 1: Active, 2: Postrun}")|O3EEnum|1||ro||
-|**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**2334**|[**EvaporatorVaporTemperatureSensor**](## "Actual temperature avaporator inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2334**|[**EvaporatorVaporTemperatureSensor**](## "Actual temperature avaporator inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**2351**|[**HeatPumpCompressor**](## "Actual state of the heat pump compressor")|*O3EComplexType*|2||ro||
 | |- [PowerState](## "{0: Off, 1: On, 2: Out of range}")|O3EEnum|1||||
 | |- ErrorState|O3EByteVal|1||||
@@ -711,6 +715,7 @@
 |**2495**|[**CurrentThermalCapacityElectricHeater**](## "Actual thermal power output of the auxiliary heater")|O3EInt32|4|W|ro||
 |**2496**|[**CurrentThermalCapacitySystem**](## "Actual thermal power output of the system")|O3EInt32|4|W|ro||
 |**2569**|[**CompressorSpeedRps**](## "Actual speed of the heat pump compressor")|O3EInt16|2|rps|ro||
+|**2735**|[**FourThreeWayValveValveCurrentPosition**](## "Current position of the four/three-way valve {0: Heating/Cooling, 1: Internal Buffer, 2: Domestic Hot Water, 3: Heating/Cooling and Internal Buffer, 4: Domestic Hot Water and Internal Buffer}")|O3EEnum|1||ro||
 |**2760**|[**EnergyOwnConsumption**](## "Own Energy Consumption")|*O3EComplexType*|24||ro||
 | |- Today|O3EInt32|4|kWh|||
 | |- Past7Days|O3EInt32|4|kWh|||
@@ -718,7 +723,6 @@
 | |- PastMonth|O3EInt32|4|kWh|||
 | |- CurrentYear|O3EInt32|4|kWh|||
 | |- PastYear|O3EInt32|4|kWh|||
-|**2735**|[**FourThreeWayValveValveCurrentPosition**](## "Current position of the four/three-way valve {0: Heating/Cooling, 1: Internal Buffer, 2: Domestic Hot Water, 3: Heating/Cooling and Internal Buffer, 4: Domestic Hot Water and Internal Buffer}")|O3EEnum|1||ro||
 |**2806**|[**RefrigerationCircuitOperationMode**](## "Actual operating mode of the refrigeration circuit")|*O3EComplexType*|2||ro||
 | |- Mode|O3EByteVal|1||||
 | |- [State](## "{0: Off, 1: ShutDown, 2: Heating, 3: Cooling, 4: Manual, 5: De-icing, 6: Grid-lock}")|O3EEnum|1||||
@@ -745,9 +749,9 @@
 |**264**|[**WarningDtcHistory**](## "History of warning messages")|*O3EList*|124||ro||
 |**265**|[**ErrorDtcList**](## "List of active error messages")|*O3EList*|122||ro||
 |**266**|[**ErrorDtcHistory**](## "History of error messages")|*O3EList*|124||ro||
-|**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
-|**269**|[**ReturnTemperatureSensor**](## "Flow temperature in the primary circuit upstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
-|**271**|[**DomesticHotWaterSensor**](## "Actual temperature domestic hot water buffer")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
+|**269**|[**ReturnTemperatureSensor**](## "Flow temperature in the primary circuit upstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
+|**271**|[**DomesticHotWaterSensor**](## "Actual temperature domestic hot water buffer")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**274**|[**OutsideTemperatureSensor**](## "Outside temperature value")|*O3EComplexType*|9||ro||
 |**282**|[**HydraulicSeparatorTemperatureSensor**](## "Actual flow temperature of the hydraulic switch")|*O3EComplexType*|9||ro||
 |**284**|[**MixerOneCircuitFlowTemperatureSensor**](## "Heating circuit 1: Actual flow temperature value")|*O3EComplexType*|9||ro||
@@ -765,10 +769,11 @@
 |**491**|[**DomesticHotWaterCirculationPump**](## "Request for domestic hot water circulation pump")|*O3EComplexType*|2||**rw**||
 |**497**|[**DomesticHotWaterCirculationPumpMode**](## "Operation Mode of domestic hot water circulation pump")|*O3EComplexType*|5||**rw**|[See page 22f](https://static.viessmann-climatesolutions.com/resources/technical_documents/DE/de/VSA/6179923VSA00001_1.pdf?)|
 |**531**|[**DomesticHotWaterOperationState**](## "Operation state of domestic hot water preparation")|*O3EComplexType*|2||**rw**||
+|**535**|[**ObjectElectricalEnergyStatistical**](## "Cumulative Grid Energy Statistics")|*O3EComplexType*|12||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**902**|[**MalfunctionIdentification**](## "Indicates whether faults are present")|O3EByteVal|1||ro||
 |**954**|[**BusTopologyMatrix**](## "Matrix of CAN bus topology")|*O3EList*|181||ro||
 |**987**|[**MixerOneCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 1")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
-|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**1190**|[**ThermalPower**](## "Actual thermal power output of the system")|*O3EComplexType*|4||ro||
 |**1294**|[**EnergyConsumptionCentralHeatingMonthMatrix**](## "Energy Consumption Central Heating Per Month")|*O3EComplexType*|124||ro||
 |**1311**|[**EnergyConsumptionDomesticHotWaterMonthMatrix**](## "Energy Consumption Domestic Hot Water Per Month")|*O3EComplexType*|124||ro||
@@ -780,33 +785,33 @@
 |**1392**|[**GeneratedDomesticHotWaterOutputMonthMatrix**](## "Generated Domestic Hot Water Output Per Month")|*O3EComplexType*|124||ro||
 |**1393**|[**GeneratedDomesticHotWaterOutputYearMatrix**](## "Generated Domestic Hot Water Output Per Year")|*O3EComplexType*|96||ro||
 |**1415**|[**MixerOneCircuitOperationState**](## "Heating curcuit 1: Operating Mode")|*O3EComplexType*|2||**rw**||
-|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|4||ro||
+|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|12||ro||
 |**1643**|[**MixerOneCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 1: Flow or Room Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
-|**1664**|[**ElectricalEnergyStorageStateOfCharge**](## "SoC of Battery")|O3EInt8|1|%|ro||
+|**1664**|[**ElectricalEnergyStorageStateOfCharge**](## "SoC of Battery")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**1684**|[**AmbientTemperatureSensor**](## "Actual Ambient Temperature")|*O3EComplexType*|9||ro||
-|**1690**|[**ElectricalEnergySystemPhotovoltaicStatus**](## "Actual Power of Photovoltaic")|*O3EComplexType*|17||ro||
+|**1690**|[**ElectricalEnergySystemPhotovoltaicStatus**](## "Actual Power of Photovoltaic")|*O3EComplexType*|17||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**1771**|[**EngineRoomTemperatureSensor**](## "Actual Temperature at Engine Room")|*O3EComplexType*|9||ro||
 |**1772**|[**CompressorOilTemperatureSensor**](## "Actual Compressor Oil Temperature")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
 |**1775**|[**PrimaryCircuitFanOne**](## "Speed of Fan 1")|O3EByteVal|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
 |**1776**|[**PrimaryCircuitFanTwo**](## "Speed of Fan 2")|O3EByteVal|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest)|
 |**1799**|[**PrimaryCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 1: Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
-|**1801**|[**ElectricalEnergyStorageEnergyTransferStatistic**](## "Statistics of Transfered Electrical Energy")|*O3EComplexType*|40||ro||
-|**1802**|[**EnergyProductionPhotovoltaic**](## "Statistics of Photovoltaic Production")|*O3EComplexType*|80||ro||
+|**1801**|[**ElectricalEnergyStorageEnergyTransferStatistic**](## "Statistics of Transfered Electrical Energy")|*O3EComplexType*|40||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
+|**1802**|[**EnergyProductionPhotovoltaic**](## "Statistics of Photovoltaic Production")|*O3EComplexType*|80||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**1828**|[**InverterElectricalEnergyStorageCurrentMaximumlChargePower**](## "Maximum Electrical Power of Inverter for Charging")|*O3EComplexType*|4||ro||
 |**1830**|[**InverterElectricalEnergyStorageCurrentMaximumlDishargePower**](## "Maximum Electrical Power of Inverter for Discharging")|*O3EComplexType*|4||ro||
 |**1831**|[**PhotovoltaicCurrentStringPower**](## "Current Photovoltaic Power per String")|*O3EComplexType*|12||ro||
 |**1832**|[**PhotovoltaicStringCurrent**](## "Current Photovoltaic Current per String (resolution is 1 Ampere)")|*O3EComplexType*|12||ro||
-|**1833**|[**PhotovoltaicStringVoltage**](## "Current Photovoltaic Voltage per String")|*O3EComplexType*|12||ro||
+|**1833**|[**PhotovoltaicStringVoltage**](## "Current Photovoltaic Voltage per String")|*O3EComplexType*|12||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**1834**|[**ElectricalEnergyStorageStateOfEnergy**](## "SoC of Battery")|*O3EComplexType*|4||ro||
 |**1836**|[**ElectricalEnergyStorageCurrentPower**](## "Current Power for Battery Discharging (positive values) and Charging (negative values)")|O3EInt32|4|W|ro||
 |**1842**|[**SecondaryCircuitFourThreeWayValve**](## "Circuit 2: Position of Four Three Way Valve")|*O3EComplexType*|2||ro||
 |**2214**|[**BackupBoxConfiguration**](## "Configuration for Backup Box")|*O3EComplexType*|2||**rw**||
 |**2256**|[**DesiredThermalEnergyDefrost**](## "Target value of thermal energy to perform next defrosting")|O3EInt16|2|Wh|ro||
 |**2320**|[**DomesticHotWaterStatus**](## "Status of domestic hot water preparation {0: Idle, 1: Active, 2: Postrun}")|O3EEnum|1||ro||
-|**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
-|**2334**|[**EvaporatorVaporTemperatureSensor**](## "Actual temperature avaporator inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
-|**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
+|**2334**|[**EvaporatorVaporTemperatureSensor**](## "Actual temperature avaporator inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
+|**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**2351**|[**HeatPumpCompressor**](## "Actual state of the heat pump compressor")|*O3EComplexType*|2||ro||
 |**2352**|[**AdditionalElectricHeater**](## "Actual state of the electric auxiliary heating")|*O3EComplexType*|2||ro||
 |**2369**|[**HeatPumpCompressorStatistical**](## "Statistics for heat pump compressor starts")|*O3EComplexType*|14||ro||
@@ -817,8 +822,8 @@
 |**2495**|[**CurrentThermalCapacityElectricHeater**](## "Actual thermal power output of the auxiliary heater")|O3EInt32|4|W|ro||
 |**2496**|[**CurrentThermalCapacitySystem**](## "Actual thermal power output of the system")|O3EInt32|4|W|ro||
 |**2569**|[**CompressorSpeedRps**](## "Actual speed of the heat pump compressor")|O3EInt16|2|rps|ro||
-|**2760**|[**EnergyOwnConsumption**](## "Own Energy Consumption")|*O3EComplexType*|24||ro||
 |**2735**|[**FourThreeWayValveValveCurrentPosition**](## "Current position of the four/three-way valve {0: Heating/Cooling, 1: Internal Buffer, 2: Domestic Hot Water, 3: Heating/Cooling and Internal Buffer, 4: Domestic Hot Water and Internal Buffer}")|O3EEnum|1||ro||
+|**2760**|[**EnergyOwnConsumption**](## "Own Energy Consumption")|*O3EComplexType*|24||ro||
 |**2806**|[**RefrigerationCircuitOperationMode**](## "Actual operating mode of the refrigeration circuit")|*O3EComplexType*|2||ro||
 |**3016**|[**HeatingBufferTemperatureSensor**](## "Actual temperature of the heating buffer")|*O3EComplexType*|9||ro||
 ## All presently known data points including subs
@@ -887,19 +892,19 @@
 | |- - Error|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
 | |- - Unknown|O3EByteVal|2||||
-|**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "Actual state of sensor {0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**269**|[**ReturnTemperatureSensor**](## "Flow temperature in the primary circuit upstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**269**|[**ReturnTemperatureSensor**](## "Flow temperature in the primary circuit upstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**271**|[**DomesticHotWaterSensor**](## "Actual temperature domestic hot water buffer")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**271**|[**DomesticHotWaterSensor**](## "Actual temperature domestic hot water buffer")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1409,10 +1414,10 @@
 | |- Acutual|O3EByteVal|1||||
 | |- Unknown1|O3EByteVal|1||||
 |**534**|**DomesticHotWaterPumpPostRunTime**|RawCodec|2||ro||
-|**535**|**ObjectElectricalEnergyStatistical**|*O3EComplexType*|12||ro||
-| |- GridFeedInEnergy|O3EInt32|4||||
-| |- GridSuppliedEnergy|O3EInt32|4||||
-| |- ProducedEnergy|O3EInt32|4||||
+|**535**|[**ObjectElectricalEnergyStatistical**](## "Cumulative Grid Energy Statistics")|*O3EComplexType*|12||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
+| |- GridFeedInEnergy|O3EInt32|4|kWh|||
+| |- GridSuppliedEnergy|O3EInt32|4|kWh|||
+| |- ProducedEnergy|O3EInt32|4|kWh|||
 |**537**|**ExternalMixerOneCircuitTargetOperationMode**|*O3EComplexType*|2||**rw**||
 | |- Mode|O3EByteVal|1||||
 | |- State|O3EByteVal|1||||
@@ -2118,7 +2123,7 @@
 | |- Actual|O3EInt16|2||||
 | |- Unknown2|RawCodec|1||||
 |**1042**|**PrimaryHeatExchangerTemperatureSensor**|RawCodec|9||ro||
-|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|l/h|||
 | |- Temperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Unknown|RawCodec|1||||
@@ -3423,7 +3428,7 @@
 |**1599**|**SolarSecondaryDeltaTemperatureHysteresis**|RawCodec|4||ro||
 |**1600**|**BufferDischargeFunctionThreeWayValvePositionPercent**|RawCodec|2||ro||
 |**1601**|**FuelCellCondition**|RawCodec|1||ro||
-|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|4||ro||
+|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 | |- [ActivePower](## "Active Power")|O3EInt16|2|W|||
 | |- [ReactivePower](## "Reactive Power")|O3EInt16|2|VA|||
 |**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|12||ro||
@@ -3492,7 +3497,7 @@
 |**1661**|**SolarSecondaryTransferPump**|RawCodec|5||ro||
 |**1662**|**HeatingSupportBufferThreeWayValvePositionPercent**|RawCodec|2||ro||
 |**1663**|**TestStatus**|RawCodec|41||ro||
-|**1664**|[**ElectricalEnergyStorageStateOfCharge**](## "SoC of Battery")|O3EInt8|1|%|ro||
+|**1664**|[**ElectricalEnergyStorageStateOfCharge**](## "SoC of Battery")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**1667**|**MixerOneCircuitPumpOscillationTime**|RawCodec|2||ro||
 |**1668**|**MixerTwoCircuitPumpOscillationTime**|RawCodec|2||ro||
 |**1669**|**MixerThreeCircuitPumpOscillationTime**|RawCodec|2||ro||
@@ -3506,7 +3511,7 @@
 |**1685**|**ElectricalEnergyInverterDCConfiguration**|RawCodec|3||ro||
 |**1686**|**ElectricalEnergySystemPhotovoltaicLimitation**|RawCodec|3||ro||
 |**1687**|**ElectricalEnergySystemPhotovoltaicConfiguration**|O3EInt16|2||ro||
-|**1690**|[**ElectricalEnergySystemPhotovoltaicStatus**](## "Actual Power of Photovoltaic")|*O3EComplexType*|17||ro||
+|**1690**|[**ElectricalEnergySystemPhotovoltaicStatus**](## "Actual Power of Photovoltaic")|*O3EComplexType*|17||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 | |- ActivePower cumulated|O3EInt16|2|W|||
 | |- RectivePower cumulated|O3EInt16|2|VA|||
 | |- ActivePower String C|O3EInt16|2|W|||
@@ -3611,7 +3616,7 @@
 |**1798**|**FuelCellHoursTillNextStart**|O3EInt8|1||ro||
 |**1799**|[**PrimaryCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 1: Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 |**1800**|**ResetTimeSeriesRecordingGroups**|RawCodec|4||ro||
-|**1801**|[**ElectricalEnergyStorageEnergyTransferStatistic**](## "Statistics of Transfered Electrical Energy")|*O3EComplexType*|40||ro||
+|**1801**|[**ElectricalEnergyStorageEnergyTransferStatistic**](## "Statistics of Transfered Electrical Energy")|*O3EComplexType*|40||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 | |- BatteryChargeToday|O3EInt32|4|Wh|||
 | |- BatteryChargeWeek|O3EInt32|4|Wh|||
 | |- BatteryChargeMonth|O3EInt32|4|Wh|||
@@ -3622,7 +3627,7 @@
 | |- BatteryDischargeMonth|O3EInt32|4|Wh|||
 | |- BatteryDischargeYear|O3EInt32|4|Wh|||
 | |- BatteryDischargeTotal|O3EInt32|4|Wh|||
-|**1802**|[**EnergyProductionPhotovoltaic**](## "Statistics of Photovoltaic Production")|*O3EComplexType*|80||ro||
+|**1802**|[**EnergyProductionPhotovoltaic**](## "Statistics of Photovoltaic Production")|*O3EComplexType*|80||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 | |- PhotovoltaicProductionToday|O3EInt32|4|Wh|||
 | |- PhotovoltaicProductionWeek|O3EInt32|4|Wh|||
 | |- PhotovoltaicProductionMonth|O3EInt32|4|Wh|||
@@ -3692,7 +3697,7 @@
 | |- String1|O3EInt32|4|A|||
 | |- String2|O3EInt32|4|A|||
 | |- String3|O3EInt32|4|V|||
-|**1833**|[**PhotovoltaicStringVoltage**](## "Current Photovoltaic Voltage per String")|*O3EComplexType*|12||ro||
+|**1833**|[**PhotovoltaicStringVoltage**](## "Current Photovoltaic Voltage per String")|*O3EComplexType*|12||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 | |- String1|O3EInt32|4|V|||
 | |- String2|O3EInt32|4|V|||
 | |- String3|O3EInt32|4|V|||
@@ -5228,13 +5233,13 @@
 |**2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
 |**2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
 |**2332**|[**GenericDigitalInputConfigurationOnBoardFour**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
-|**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**2334**|[**EvaporatorVaporTemperatureSensor**](## "Actual temperature avaporator inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2334**|[**EvaporatorVaporTemperatureSensor**](## "Actual temperature avaporator inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -5254,7 +5259,7 @@
 |**2343**|**NominalThermalCapacityCooling**|O3EInt32|4||ro||
 |**2344**|**CombustionAirInterlockSettings**|RawCodec|1||ro||
 |**2345**|[**CompressorSetpointPercent**](## "Setpoint of speed of heat pump compressor")|O3EInt8|1|%|**rw**||
-|**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**2348**|**PhotovoltaicsActivePowerLimitationEnergyManagementSystem**|RawCodec|8||ro||
 |**2349**|**PhotovoltaicsActivePowerLimitationFallbackEnergyManagementSystem**|RawCodec|8||ro||
 |**2350**|**EnergyManagmentSystemResultingControlState**|O3EByteVal|1||ro||
@@ -6337,9 +6342,9 @@
 |**264**|[**WarningDtcHistory**](## "History of warning messages")|*O3EList*|124||ro||
 |**265**|[**ErrorDtcList**](## "List of active error messages")|*O3EList*|122||ro||
 |**266**|[**ErrorDtcHistory**](## "History of error messages")|*O3EList*|124||ro||
-|**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
-|**269**|[**ReturnTemperatureSensor**](## "Flow temperature in the primary circuit upstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
-|**271**|[**DomesticHotWaterSensor**](## "Actual temperature domestic hot water buffer")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
+|**269**|[**ReturnTemperatureSensor**](## "Flow temperature in the primary circuit upstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
+|**271**|[**DomesticHotWaterSensor**](## "Actual temperature domestic hot water buffer")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**272**|**DomesticHotWaterFlowSensor**|RawCodec|10||ro||
 |**273**|[**SolarRoofTemperatureSensor**](## "Actual collector temperature value")|*O3EComplexType*|9||ro||
 |**274**|[**OutsideTemperatureSensor**](## "Outside temperature value")|*O3EComplexType*|9||ro||
@@ -6461,7 +6466,7 @@
 |**531**|[**DomesticHotWaterOperationState**](## "Operation state of domestic hot water preparation")|*O3EComplexType*|2||**rw**||
 |**533**|**VentilationTargetOperationLevel**|*O3EComplexType*|2||**rw**||
 |**534**|**DomesticHotWaterPumpPostRunTime**|RawCodec|2||ro||
-|**535**|**ObjectElectricalEnergyStatistical**|*O3EComplexType*|12||ro||
+|**535**|[**ObjectElectricalEnergyStatistical**](## "Cumulative Grid Energy Statistics")|*O3EComplexType*|12||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**537**|**ExternalMixerOneCircuitTargetOperationMode**|*O3EComplexType*|2||**rw**||
 |**538**|**ExternalDomesticHotWaterTargetOperationMode**|*O3EComplexType*|2||**rw**||
 |**543**|**SmartGridReadyConsolidator**|*O3EComplexType*|4||ro||
@@ -6657,7 +6662,7 @@
 |**1040**|**SupplyAirFan**|*O3EComplexType*|6||ro||
 |**1041**|**ExhaustAirFan**|*O3EComplexType*|6||ro||
 |**1042**|**PrimaryHeatExchangerTemperatureSensor**|RawCodec|9||ro||
-|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**1044**|**SecondaryCentralHeatingPump**|RawCodec|2||ro||
 |**1047**|**TimeSeriesRecordedFlowTemperatureSensor**|RawCodec|11||ro||
 |**1084**|**FlowTemperatureMinimumMaximumLimit**|RawCodec|4||**rw**||
@@ -6879,7 +6884,7 @@
 |**1599**|**SolarSecondaryDeltaTemperatureHysteresis**|RawCodec|4||ro||
 |**1600**|**BufferDischargeFunctionThreeWayValvePositionPercent**|RawCodec|2||ro||
 |**1601**|**FuelCellCondition**|RawCodec|1||ro||
-|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|4||ro||
+|**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|12||ro||
 |**1604**|**GatewayExternalTargetFlowTemperatureSetpoint**|RawCodec|2||**rw**||
 |**1605**|**GatewayExternalHeatEngineTargetOperationMode**|*O3EComplexType*|2||**rw**||
@@ -6905,7 +6910,7 @@
 |**1661**|**SolarSecondaryTransferPump**|RawCodec|5||ro||
 |**1662**|**HeatingSupportBufferThreeWayValvePositionPercent**|RawCodec|2||ro||
 |**1663**|**TestStatus**|RawCodec|41||ro||
-|**1664**|[**ElectricalEnergyStorageStateOfCharge**](## "SoC of Battery")|O3EInt8|1|%|ro||
+|**1664**|[**ElectricalEnergyStorageStateOfCharge**](## "SoC of Battery")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**1667**|**MixerOneCircuitPumpOscillationTime**|RawCodec|2||ro||
 |**1668**|**MixerTwoCircuitPumpOscillationTime**|RawCodec|2||ro||
 |**1669**|**MixerThreeCircuitPumpOscillationTime**|RawCodec|2||ro||
@@ -6914,7 +6919,7 @@
 |**1685**|**ElectricalEnergyInverterDCConfiguration**|RawCodec|3||ro||
 |**1686**|**ElectricalEnergySystemPhotovoltaicLimitation**|RawCodec|3||ro||
 |**1687**|**ElectricalEnergySystemPhotovoltaicConfiguration**|O3EInt16|2||ro||
-|**1690**|[**ElectricalEnergySystemPhotovoltaicStatus**](## "Actual Power of Photovoltaic")|*O3EComplexType*|17||ro||
+|**1690**|[**ElectricalEnergySystemPhotovoltaicStatus**](## "Actual Power of Photovoltaic")|*O3EComplexType*|17||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**1691**|**BusTopologyScanStatus**|O3EByteVal|1||ro||
 |**1692**|**PowerGridCodeConfiguration**|RawCodec|1||ro||
 |**1693**|**GridOperatorConfigurationLock**|O3EByteVal|1||ro||
@@ -6983,8 +6988,8 @@
 |**1798**|**FuelCellHoursTillNextStart**|O3EInt8|1||ro||
 |**1799**|[**PrimaryCircuitCurrentTemperatureSetpoint**](## "Heating Circuit 1: Temperature Setpoint")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 |**1800**|**ResetTimeSeriesRecordingGroups**|RawCodec|4||ro||
-|**1801**|[**ElectricalEnergyStorageEnergyTransferStatistic**](## "Statistics of Transfered Electrical Energy")|*O3EComplexType*|40||ro||
-|**1802**|[**EnergyProductionPhotovoltaic**](## "Statistics of Photovoltaic Production")|*O3EComplexType*|80||ro||
+|**1801**|[**ElectricalEnergyStorageEnergyTransferStatistic**](## "Statistics of Transfered Electrical Energy")|*O3EComplexType*|40||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
+|**1802**|[**EnergyProductionPhotovoltaic**](## "Statistics of Photovoltaic Production")|*O3EComplexType*|80||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**1807**|**ElectricalEnergyInverterDcInputOne**|RawCodec|10||ro||
 |**1808**|**ElectricalEnergyInverterDcInputTwo**|RawCodec|10||ro||
 |**1809**|**ElectricalEnergyInverterDcInputThree**|RawCodec|10||ro||
@@ -7008,7 +7013,7 @@
 |**1830**|[**InverterElectricalEnergyStorageCurrentMaximumlDishargePower**](## "Maximum Electrical Power of Inverter for Discharging")|*O3EComplexType*|4||ro||
 |**1831**|[**PhotovoltaicCurrentStringPower**](## "Current Photovoltaic Power per String")|*O3EComplexType*|12||ro||
 |**1832**|[**PhotovoltaicStringCurrent**](## "Current Photovoltaic Current per String (resolution is 1 Ampere)")|*O3EComplexType*|12||ro||
-|**1833**|[**PhotovoltaicStringVoltage**](## "Current Photovoltaic Voltage per String")|*O3EComplexType*|12||ro||
+|**1833**|[**PhotovoltaicStringVoltage**](## "Current Photovoltaic Voltage per String")|*O3EComplexType*|12||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**1834**|[**ElectricalEnergyStorageStateOfEnergy**](## "SoC of Battery")|*O3EComplexType*|4||ro||
 |**1835**|**ManufacturerProperties**|RawCodec|20||ro||
 |**1836**|[**ElectricalEnergyStorageCurrentPower**](## "Current Power for Battery Discharging (positive values) and Charging (negative values)")|O3EInt32|4|W|ro||
@@ -7497,8 +7502,8 @@
 |**2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
 |**2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
 |**2332**|[**GenericDigitalInputConfigurationOnBoardFour**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
-|**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
-|**2334**|[**EvaporatorVaporTemperatureSensor**](## "Actual temperature avaporator inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
+|**2334**|[**EvaporatorVaporTemperatureSensor**](## "Actual temperature avaporator inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**2335**|**BatteryModuleCoulombCounters**|RawCodec|8||ro||
 |**2336**|**ControllerBoardTemperatureSensor**|*O3EComplexType*|9||ro||
 |**2337**|**UltraLowNitroOxideStatusActive**|RawCodec|1||ro||
@@ -7510,7 +7515,7 @@
 |**2343**|**NominalThermalCapacityCooling**|O3EInt32|4||ro||
 |**2344**|**CombustionAirInterlockSettings**|RawCodec|1||ro||
 |**2345**|[**CompressorSetpointPercent**](## "Setpoint of speed of heat pump compressor")|O3EInt8|1|%|**rw**||
-|**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest#data-points-relevant-for-heat-pump-curcuit-of-vitocal-250)|
+|**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**2348**|**PhotovoltaicsActivePowerLimitationEnergyManagementSystem**|RawCodec|8||ro||
 |**2349**|**PhotovoltaicsActivePowerLimitationFallbackEnergyManagementSystem**|RawCodec|8||ro||
 |**2350**|**EnergyManagmentSystemResultingControlState**|O3EByteVal|1||ro||
