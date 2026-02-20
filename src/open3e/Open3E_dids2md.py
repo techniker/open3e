@@ -257,7 +257,11 @@ for did in dids:
 
 if args.dids != None:
     # User specified list of dids. Just print the list and exit:
-    print(md)
+    if args.filename != None:
+        with open(args.filename, 'w') as txt_file:
+            print(md, file=txt_file)
+    else:
+        print(md)
     import sys
     sys.exit(0)
 
