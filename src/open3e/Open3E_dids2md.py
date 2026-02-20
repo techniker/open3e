@@ -248,6 +248,8 @@ if args.dids != None:
 else:
     dids = DoI_default
 
+dids.sort()     # Sort data points in ascending order
+
 for did in dids:
     if int(did) in didsDict:
         md += did2md(int(did), didsDict[int(did)])
