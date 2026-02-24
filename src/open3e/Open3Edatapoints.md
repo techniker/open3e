@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20260220
+- Version of general data points: 20260224
 - Version of variant data points: 20260217
 
 ### Remarks
@@ -233,7 +233,7 @@
 | |- - 29|O3EInt16|2|kWh|||
 | |- - 30|O3EInt16|2|kWh|||
 | |- - 31|O3EInt16|2|kWh|||
-| |- [PreviousMonth](## "Energy Consumption Central Heating Previous Month")|*O3EList*|62||||
+| |- [LastMonth](## "Energy Consumption Central Heating Previous Month")|*O3EList*|62||||
 | |- - 01|O3EInt16|2|kWh|||
 | |- - 02|O3EInt16|2|kWh|||
 | |- - 03|O3EInt16|2|kWh|||
@@ -298,7 +298,7 @@
 | |- - 29|O3EInt16|2|kWh|||
 | |- - 30|O3EInt16|2|kWh|||
 | |- - 31|O3EInt16|2|kWh|||
-| |- [PreviousMonth](## "Energy Consumption Domestic Hot Water Previous Month")|*O3EList*|62||||
+| |- [LastMonth](## "Energy Consumption Domestic Hot Water Previous Month")|*O3EList*|62||||
 | |- - 01|O3EInt16|2|kWh|||
 | |- - 02|O3EInt16|2|kWh|||
 | |- - 03|O3EInt16|2|kWh|||
@@ -363,7 +363,7 @@
 | |- - 29|O3EInt16|2|kWh|||
 | |- - 30|O3EInt16|2|kWh|||
 | |- - 31|O3EInt16|2|kWh|||
-| |- [PreviousMonth](## "Generated Central Heating Output Previous Month")|*O3EList*|62||||
+| |- [LastMonth](## "Generated Central Heating Output Previous Month")|*O3EList*|62||||
 | |- - 01|O3EInt16|2|kWh|||
 | |- - 02|O3EInt16|2|kWh|||
 | |- - 03|O3EInt16|2|kWh|||
@@ -516,7 +516,7 @@
 | |- - 29|O3EInt16|2|kWh|||
 | |- - 30|O3EInt16|2|kWh|||
 | |- - 31|O3EInt16|2|kWh|||
-| |- [PreviousMonth](## "Generated Domestic Hot Water Output Previous Month")|*O3EList*|62||||
+| |- [LastMonth](## "Generated Domestic Hot Water Output Previous Month")|*O3EList*|62||||
 | |- - 01|O3EInt16|2|kWh|||
 | |- - 02|O3EInt16|2|kWh|||
 | |- - 03|O3EInt16|2|kWh|||
@@ -2359,7 +2359,7 @@
 | |- - 29|O3EInt16|2|kWh|||
 | |- - 30|O3EInt16|2|kWh|||
 | |- - 31|O3EInt16|2|kWh|||
-| |- [PreviousMonth](## "Energy Consumption Central Heating Previous Month")|*O3EList*|62||||
+| |- [LastMonth](## "Energy Consumption Central Heating Previous Month")|*O3EList*|62||||
 | |- - 01|O3EInt16|2|kWh|||
 | |- - 02|O3EInt16|2|kWh|||
 | |- - 03|O3EInt16|2|kWh|||
@@ -2424,7 +2424,7 @@
 | |- - 29|O3EInt16|2|kWh|||
 | |- - 30|O3EInt16|2|kWh|||
 | |- - 31|O3EInt16|2|kWh|||
-| |- [PreviousMonth](## "Energy Consumption Domestic Hot Water Previous Month")|*O3EList*|62||||
+| |- [LastMonth](## "Energy Consumption Domestic Hot Water Previous Month")|*O3EList*|62||||
 | |- - 01|O3EInt16|2|kWh|||
 | |- - 02|O3EInt16|2|kWh|||
 | |- - 03|O3EInt16|2|kWh|||
@@ -2489,7 +2489,7 @@
 | |- - 29|O3EInt16|2|kWh|||
 | |- - 30|O3EInt16|2|kWh|||
 | |- - 31|O3EInt16|2|kWh|||
-| |- [PreviousMonth](## "Energy Consumption Cooling Previous Matrix")|*O3EList*|62||||
+| |- [LastMonth](## "Energy Consumption Cooling Previous Matrix")|*O3EList*|62||||
 | |- - 01|O3EInt16|2|kWh|||
 | |- - 02|O3EInt16|2|kWh|||
 | |- - 03|O3EInt16|2|kWh|||
@@ -2554,7 +2554,7 @@
 | |- - 29|O3EInt16|2|kWh|||
 | |- - 30|O3EInt16|2|kWh|||
 | |- - 31|O3EInt16|2|kWh|||
-| |- [PreviousMonth](## "Generated Electricity Previous Month")|*O3EList*|62||||
+| |- [LastMonth](## "Generated Electricity Previous Month")|*O3EList*|62||||
 | |- - 01|O3EInt16|2|kWh|||
 | |- - 02|O3EInt16|2|kWh|||
 | |- - 03|O3EInt16|2|kWh|||
@@ -2619,7 +2619,7 @@
 | |- - 29|O3EInt16|2|kWh|||
 | |- - 30|O3EInt16|2|kWh|||
 | |- - 31|O3EInt16|2|kWh|||
-| |- [PreviousMonth](## "Solar Energy Yield Previous Month")|*O3EList*|62||||
+| |- [LastMonth](## "Solar Energy Yield Previous Month")|*O3EList*|62||||
 | |- - 01|O3EInt16|2|kWh|||
 | |- - 02|O3EInt16|2|kWh|||
 | |- - 03|O3EInt16|2|kWh|||
@@ -2684,7 +2684,7 @@
 | |- - 29|O3EInt16|2|kWh|||
 | |- - 30|O3EInt16|2|kWh|||
 | |- - 31|O3EInt16|2|kWh|||
-| |- [PreviousMonth](## "Generated Central Heating Output Previous Month")|*O3EList*|62||||
+| |- [LastMonth](## "Generated Central Heating Output Previous Month")|*O3EList*|62||||
 | |- - 01|O3EInt16|2|kWh|||
 | |- - 02|O3EInt16|2|kWh|||
 | |- - 03|O3EInt16|2|kWh|||
@@ -2913,7 +2913,7 @@
 | |- - 29|O3EInt16|2||||
 | |- - 30|O3EInt16|2||||
 | |- - 31|O3EInt16|2||||
-| |- PreviousMonth|*O3EList*|62||||
+| |- LastMonth|*O3EList*|62||||
 | |- - 01|O3EInt16|2||||
 | |- - 02|O3EInt16|2||||
 | |- - 03|O3EInt16|2||||
@@ -3005,7 +3005,7 @@
 | |- - 29|O3EInt16|2||||
 | |- - 30|O3EInt16|2||||
 | |- - 31|O3EInt16|2||||
-| |- PreviousMonth|*O3EList*|62||||
+| |- LastMonth|*O3EList*|62||||
 | |- - 01|O3EInt16|2||||
 | |- - 02|O3EInt16|2||||
 | |- - 03|O3EInt16|2||||
@@ -3097,7 +3097,7 @@
 | |- - 29|O3EInt16|2||||
 | |- - 30|O3EInt16|2||||
 | |- - 31|O3EInt16|2||||
-| |- PreviousMonth|*O3EList*|62||||
+| |- LastMonth|*O3EList*|62||||
 | |- - 01|O3EInt16|2||||
 | |- - 02|O3EInt16|2||||
 | |- - 03|O3EInt16|2||||
@@ -3233,7 +3233,7 @@
 | |- - 29|O3EInt16|2|kWh|||
 | |- - 30|O3EInt16|2|kWh|||
 | |- - 31|O3EInt16|2|kWh|||
-| |- [PreviousMonth](## "Generated Domestic Hot Water Output Previous Month")|*O3EList*|62||||
+| |- [LastMonth](## "Generated Domestic Hot Water Output Previous Month")|*O3EList*|62||||
 | |- - 01|O3EInt16|2|kWh|||
 | |- - 02|O3EInt16|2|kWh|||
 | |- - 03|O3EInt16|2|kWh|||
@@ -5476,7 +5476,7 @@
 | |- - 29|O3EInt16|2||||
 | |- - 30|O3EInt16|2||||
 | |- - 31|O3EInt16|2||||
-| |- PreviousMonth|*O3EList*|62||||
+| |- LastMonth|*O3EList*|62||||
 | |- - 01|O3EInt16|2||||
 | |- - 02|O3EInt16|2||||
 | |- - 03|O3EInt16|2||||
@@ -5575,7 +5575,7 @@
 | |- - 29|O3EInt16|2||||
 | |- - 30|O3EInt16|2||||
 | |- - 31|O3EInt16|2||||
-| |- PreviousMonth|*O3EList*|62||||
+| |- LastMonth|*O3EList*|62||||
 | |- - 01|O3EInt16|2||||
 | |- - 02|O3EInt16|2||||
 | |- - 03|O3EInt16|2||||
@@ -5674,7 +5674,7 @@
 | |- - 29|O3EInt16|2||||
 | |- - 30|O3EInt16|2||||
 | |- - 31|O3EInt16|2||||
-| |- PreviousMonth|*O3EList*|62||||
+| |- LastMonth|*O3EList*|62||||
 | |- - 01|O3EInt16|2||||
 | |- - 02|O3EInt16|2||||
 | |- - 03|O3EInt16|2||||
