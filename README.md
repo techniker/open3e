@@ -1,4 +1,8 @@
-**_New: Handling of data points with length different from common data point via open3e_depictSystem_**
+**_New: List of data points now available as [table](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md)_**
+
+**_New: Tool `open3e_dids2md` can create your own list of data points in markdown format. `open3e_dids2md -h` for options._**
+
+**_New: All info about data points available as json files for [general dids](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md) and [variant dids](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3EdatapointsVariants.md)_**
 
 <BR>
 
@@ -74,6 +78,8 @@ New naming will also be used for paramter `{device}`within MQTT topics (see belo
 Further information is available [here](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments).
 
 The depicting scans take several minutes (usually 10..20) - please be patient!
+
+Infos about data points are available [here](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md).
 
 # Usage
 
@@ -283,6 +289,15 @@ open3e_dids2json
 to convert common list of data points (Open3Edatapoints.py, Open3EdatapointsVariants.py) to json format.
 This tool converts data points for use in the ioBroker adapter ioBroker.e3oncan. It is not used by open3e.
 
+# Convert list of data points to markdown format
+Use
+```
+open3e_dids2md -h
+```
+to see the options for creating your own list of data points. Use a viewer for markdown format to view it.
+
+**Hint**: Choose a viewer supporting mouser-over feature of markdown.
+
 # For developers
 
 If you want to work on the codebase you can clone the repository and work in "editable" mode as follows. The editable mode allows you to modify and test changes in the source code without the need of a re-installation.
@@ -294,6 +309,12 @@ If you want to work on the codebase you can clone the repository and work in "ed
 **Hint: If you get an error like "A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build." you are running an old pip version. Editable mode requires pip version >= 21.1.**
 
 # Changelog
+
+### 0.6.1 (2026-02-24)
+* Introduced list of data points in markdown format.
+* Added meta data to several data points, e.g. description, unit, link to further info
+* Added tool to create user defined list of data points in markdown format
+* Added meta data to json formated data points as well
 
 ### 0.6.0 (2026-02-07)
 * Introduced list of data points (Open3EdatapointsVariants.py) with lengths different from common data points. Via open3e_depictSystem open3e can handle those device specific data points.

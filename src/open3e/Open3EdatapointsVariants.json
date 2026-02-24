@@ -4,7 +4,11 @@
       "codec": "O3EUtf8",
       "len": 12,
       "id": "CentralHeatingOneCircuitName",
-      "args": {}
+      "args": {
+        "desc": "",
+        "info": "",
+        "acc": "ro"
+      }
     }
   },
   "628": {
@@ -12,7 +16,11 @@
       "codec": "O3EUtf8",
       "len": 12,
       "id": "CentralHeatingTwoCircuitName",
-      "args": {}
+      "args": {
+        "desc": "",
+        "info": "",
+        "acc": "ro"
+      }
     }
   },
   "629": {
@@ -20,7 +28,11 @@
       "codec": "O3EUtf8",
       "len": 12,
       "id": "CentralHeatingThreeCircuitName",
-      "args": {}
+      "args": {
+        "desc": "",
+        "info": "",
+        "acc": "ro"
+      }
     }
   },
   "630": {
@@ -28,7 +40,11 @@
       "codec": "O3EUtf8",
       "len": 12,
       "id": "CentralHeatingFourCircuitName",
-      "args": {}
+      "args": {
+        "desc": "",
+        "info": "",
+        "acc": "ro"
+      }
     }
   },
   "1006": {
@@ -42,21 +58,36 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "SetModeOneTimesHotWater",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "External request for one-time charging of domestic hot water (0: off, 2: one-time request)",
+        "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
+        "acc": "rw"
       }
     }
   },
@@ -71,21 +102,36 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "ModeOneTimesHotWater",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "State of external request for one-time charging of domestic hot water (0: off, 2: on)",
+        "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
+        "acc": "ro"
       }
     }
   },
@@ -100,21 +146,36 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "SetModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "rw"
       }
     }
   },
@@ -129,21 +190,36 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "SetModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "rw"
       }
     }
   },
@@ -158,21 +234,36 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "SetModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "rw"
       }
     }
   },
@@ -187,21 +278,36 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "SetModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "rw"
       }
     }
   },
@@ -216,21 +322,36 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "ModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -245,21 +366,36 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "ModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -274,21 +410,36 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "ModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -303,21 +454,36 @@
             "codec": "O3EByteVal",
             "len": 1,
             "id": "ModeParty",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "O3EByteVal",
             "len": 1,
             "id": "State",
-            "args": {}
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -334,7 +500,11 @@
             "id": "ActivePower",
             "args": {
               "scale": 1.0,
-              "signed": true
+              "signed": true,
+              "unit": "W",
+              "desc": "Active Power",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -343,7 +513,11 @@
             "id": "ReactivePower",
             "args": {
               "scale": 1.0,
-              "signed": true
+              "signed": true,
+              "unit": "VA",
+              "desc": "Reactive Power",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -352,7 +526,11 @@
             "id": "ActivePowerDup",
             "args": {
               "scale": 1.0,
-              "signed": true
+              "signed": true,
+              "unit": "W",
+              "desc": "Active Power Duplicate",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -361,7 +539,11 @@
             "id": "PadZeros",
             "args": {
               "scale": 1.0,
-              "signed": true
+              "signed": true,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -370,7 +552,11 @@
             "id": "ReactivePowerDup",
             "args": {
               "scale": 1.0,
-              "signed": true
+              "signed": true,
+              "unit": "VA",
+              "desc": "Reactive Power Duplicate",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -379,10 +565,17 @@
             "id": "PadOnes",
             "args": {
               "scale": 1.0,
-              "signed": true
+              "signed": true,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           }
-        ]
+        ],
+        "desc": "Actual Power at Point of Common Coupling",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -397,57 +590,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -462,57 +679,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -527,57 +768,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -592,57 +857,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -657,57 +946,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -722,57 +1035,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -787,57 +1124,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -852,57 +1213,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -917,57 +1302,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -982,57 +1391,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1047,57 +1480,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1112,57 +1569,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1177,57 +1658,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1242,57 +1747,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1307,57 +1836,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1372,57 +1925,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1437,57 +2014,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1502,57 +2103,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1567,57 +2192,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1632,57 +2281,81 @@
             "codec": "O3EUtf8",
             "len": 39,
             "id": "Roomname",
-            "args": {}
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "Roomtype",
             "args": {
-              "listStr": "Roomtypes"
+              "listStr": "Roomtypes",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 1,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "TemperatureControl",
             "args": {
-              "listStr": "TemperatureControlLevels"
+              "listStr": "TemperatureControlLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 29,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "WindowDetection",
             "args": {
-              "listStr": "WindowDetectionState"
+              "listStr": "WindowDetectionStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 9,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1697,7 +2370,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -1705,14 +2380,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -1720,7 +2401,11 @@
             "id": "ValveType",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -1729,7 +2414,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -1738,35 +2427,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -1775,16 +2478,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1799,7 +2511,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -1807,14 +2521,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -1822,7 +2542,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -1831,7 +2555,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -1840,35 +2568,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -1877,16 +2619,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -1901,7 +2652,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -1909,14 +2662,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -1924,7 +2683,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -1933,7 +2696,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -1942,35 +2709,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -1979,16 +2760,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2003,7 +2793,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2011,14 +2803,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2026,7 +2824,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2035,7 +2837,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2044,35 +2850,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2081,16 +2901,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2105,7 +2934,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2113,14 +2944,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2128,7 +2965,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2137,7 +2978,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2146,35 +2991,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2183,16 +3042,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2207,7 +3075,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2215,14 +3085,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2230,7 +3106,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2239,7 +3119,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2248,35 +3132,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2285,16 +3183,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2309,7 +3216,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2317,14 +3226,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2332,7 +3247,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2341,7 +3260,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2350,35 +3273,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2387,16 +3324,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2411,7 +3357,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2419,14 +3367,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2434,7 +3388,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2443,7 +3401,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2452,35 +3414,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2489,16 +3465,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2513,7 +3498,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2521,14 +3508,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2536,7 +3529,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2545,7 +3542,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2554,35 +3555,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2591,16 +3606,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2615,7 +3639,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2623,14 +3649,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2638,7 +3670,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2647,7 +3683,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2656,35 +3696,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2693,16 +3747,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2717,7 +3780,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2725,14 +3790,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2740,7 +3811,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2749,7 +3824,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2758,35 +3837,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2795,16 +3888,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2819,7 +3921,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2827,14 +3931,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2842,7 +3952,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2851,7 +3965,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2860,35 +3978,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2897,16 +4029,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -2921,7 +4062,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2929,14 +4072,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -2944,7 +4093,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2953,7 +4106,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2962,35 +4119,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -2999,16 +4170,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3023,7 +4203,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3031,14 +4213,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3046,7 +4234,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3055,7 +4247,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3064,35 +4260,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3101,16 +4311,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3125,7 +4344,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3133,14 +4354,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3148,7 +4375,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3157,7 +4388,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3166,35 +4401,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3203,16 +4452,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3227,7 +4485,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3235,14 +4495,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3250,7 +4516,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3259,7 +4529,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3268,35 +4542,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3305,16 +4593,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3329,7 +4626,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3337,14 +4636,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3352,7 +4657,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3361,7 +4670,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3370,35 +4683,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3407,16 +4734,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3431,7 +4767,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3439,14 +4777,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3454,7 +4798,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3463,7 +4811,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3472,35 +4824,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3509,16 +4875,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3533,7 +4908,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3541,14 +4918,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3556,7 +4939,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3565,7 +4952,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3574,35 +4965,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3611,16 +5016,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3635,7 +5049,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3643,14 +5059,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3658,7 +5080,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3667,7 +5093,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3676,35 +5106,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3713,16 +5157,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3737,7 +5190,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3745,14 +5200,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3760,7 +5221,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3769,7 +5234,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3778,35 +5247,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3815,16 +5298,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3839,7 +5331,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3847,14 +5341,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3862,7 +5362,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3871,7 +5375,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3880,35 +5388,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3917,16 +5439,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -3941,7 +5472,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3949,14 +5482,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -3964,7 +5503,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3973,7 +5516,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -3982,35 +5529,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4019,16 +5580,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4043,7 +5613,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4051,14 +5623,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4066,7 +5644,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4075,7 +5657,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4084,35 +5670,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4121,16 +5721,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4145,7 +5754,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4153,14 +5764,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4168,7 +5785,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4177,7 +5798,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4186,35 +5811,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4223,16 +5862,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4247,7 +5895,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4255,14 +5905,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4270,7 +5926,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4279,7 +5939,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4288,35 +5952,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4325,16 +6003,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4349,7 +6036,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4357,14 +6046,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4372,7 +6067,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4381,7 +6080,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4390,35 +6093,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4427,16 +6144,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4451,7 +6177,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4459,14 +6187,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4474,7 +6208,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4483,7 +6221,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4492,35 +6234,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4529,16 +6285,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4553,7 +6318,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4561,14 +6328,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4576,7 +6349,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4585,7 +6362,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4594,35 +6375,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4631,16 +6426,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4655,7 +6459,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4663,14 +6469,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4678,7 +6490,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4687,7 +6503,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4696,35 +6516,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4733,16 +6567,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4757,7 +6600,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4765,14 +6610,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4780,7 +6631,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4789,7 +6644,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4798,35 +6657,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4835,16 +6708,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4859,7 +6741,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4867,14 +6751,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4882,7 +6772,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4891,7 +6785,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4900,35 +6798,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4937,16 +6849,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -4961,7 +6882,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4969,14 +6892,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -4984,7 +6913,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -4993,7 +6926,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5002,35 +6939,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5039,16 +6990,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5063,7 +7023,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5071,14 +7033,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5086,7 +7054,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5095,7 +7067,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5104,35 +7080,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5141,16 +7131,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5165,7 +7164,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5173,14 +7174,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5188,7 +7195,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5197,7 +7208,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5206,35 +7221,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5243,16 +7272,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5267,7 +7305,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5275,14 +7315,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5290,7 +7336,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5299,7 +7349,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5308,35 +7362,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5345,16 +7413,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5369,7 +7446,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5377,14 +7456,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5392,7 +7477,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5401,7 +7490,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5410,35 +7503,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5447,16 +7554,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5471,7 +7587,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5479,14 +7597,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5494,7 +7618,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5503,7 +7631,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5512,35 +7644,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5549,16 +7695,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5573,7 +7728,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5581,14 +7738,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5596,7 +7759,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5605,7 +7772,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5614,35 +7785,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5651,16 +7836,25 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
@@ -5675,7 +7869,9 @@
             "codec": "RawCodec",
             "len": 2,
             "id": "Unknown1",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5683,14 +7879,20 @@
             "id": "BatteryLevel",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 38,
             "id": "Unknown2",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EInt8",
@@ -5698,7 +7900,11 @@
             "id": "Valve Type",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5707,7 +7913,11 @@
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5716,35 +7926,49 @@
             "id": "OperatingStatus",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 4,
             "id": "Unknown3",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceDisplayTurned",
             "args": {
-              "listStr": "DeviceDisplayModeStates"
+              "listStr": "DeviceDisplayModeStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 5,
             "id": "Unknown4",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           },
           {
             "codec": "O3EEnum",
             "len": 1,
             "id": "DeviceChildLockActive",
             "args": {
-              "listStr": "DeviceChildLockStates"
+              "listStr": "DeviceChildLockStates",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
@@ -5753,18 +7977,27 @@
             "id": "DeviceTemperatureSetpoint",
             "args": {
               "scale": 1.0,
-              "signed": false
+              "signed": false,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
             }
           },
           {
             "codec": "RawCodec",
             "len": 12,
             "id": "Unknown5",
-            "args": {}
+            "args": {
+              "acc": ""
+            }
           }
-        ]
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
       }
     }
   },
-  "Version": "20260207"
+  "Version": "20260217"
 }
