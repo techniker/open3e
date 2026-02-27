@@ -21,7 +21,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "general", 
-    "Version": "20260227Rev01",
+    "Version": "20260227",
     "dids" : 
     {
         256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress", unit="", desc="", info=""), O3EEnum(1, "BusType", "BusTypes", desc="", info=""), O3EEnum(1, "DeviceProperty", "Devices", desc="", info=""), O3EEnum(1, "DeviceFunction", "Devices", desc="", info=""), O3ESoftVers(8, "SW-Version", desc="??.???.YYcw.ver", info=""), O3ESoftVers(8, "HW-Version", desc="", info=""), O3EUtf8(16, "VIN", desc="", info="")], desc="Device infos", info="", acc="ro"),

@@ -164,7 +164,7 @@
 | |- Unknown|RawCodec|1||||
 |**389**|[**ElectronicExpansionValveOneCurrentPositionPercent**](## "Actual position expansion valve one (secondary heat exchanger outlet)")|O3EInt8|1|%|ro||
 |**391**|[**ElectronicExpansionValveTwoCurrentPositionPercent**](## "Actual position expansion valve two (evaporator outlet)")|O3EInt8|1|%|ro||
-|**396**|[**DomesticHotWaterTemperatureSetpoint**](## "Teperature setpoint domestic hot water")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**396**|[**DomesticHotWaterTemperatureSetpoint**](## "Temperature setpoint domestic hot water")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 |**491**|[**DomesticHotWaterCirculationPump**](## "Request for domestic hot water circulation pump")|*O3EComplexType*|2||**rw**||
 | |- State|O3EByteVal|1||||
 | |- Unknown|O3EByteVal|1||||
@@ -765,7 +765,7 @@
 |**381**|[**CentralHeatingPump**](## "Status of the primary circuit pump")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/discussions/212)|
 |**389**|[**ElectronicExpansionValveOneCurrentPositionPercent**](## "Actual position expansion valve one (secondary heat exchanger outlet)")|O3EInt8|1|%|ro||
 |**391**|[**ElectronicExpansionValveTwoCurrentPositionPercent**](## "Actual position expansion valve two (evaporator outlet)")|O3EInt8|1|%|ro||
-|**396**|[**DomesticHotWaterTemperatureSetpoint**](## "Teperature setpoint domestic hot water")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**396**|[**DomesticHotWaterTemperatureSetpoint**](## "Temperature setpoint domestic hot water")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 |**491**|[**DomesticHotWaterCirculationPump**](## "Request for domestic hot water circulation pump")|*O3EComplexType*|2||**rw**||
 |**497**|[**DomesticHotWaterCirculationPumpMode**](## "Operation Mode of domestic hot water circulation pump")|*O3EComplexType*|5||**rw**|[See page 22f](https://static.viessmann-climatesolutions.com/resources/technical_documents/DE/de/VSA/6179923VSA00001_1.pdf?)|
 |**531**|[**DomesticHotWaterOperationState**](## "Operation state of domestic hot water preparation")|*O3EComplexType*|2||**rw**||
@@ -1162,8 +1162,8 @@
 |**390**|[**ElectronicExpansionValveTwoTargetPositionPercent**](## "Target position expansion valve two (evaporator outlet)")|O3EInt8|1|%|**rw**||
 |**391**|[**ElectronicExpansionValveTwoCurrentPositionPercent**](## "Actual position expansion valve two (evaporator outlet)")|O3EInt8|1|%|ro||
 |**392**|**DomesticHotWaterPump**|RawCodec|4||ro||
-|**395**|[**CentralHeatingTemperatureSetpoint**](## "Teperature setpoint central heating")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
-|**396**|[**DomesticHotWaterTemperatureSetpoint**](## "Teperature setpoint domestic hot water")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**395**|[**CentralHeatingTemperatureSetpoint**](## "Temperature setpoint central heating")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**396**|[**DomesticHotWaterTemperatureSetpoint**](## "Temperature setpoint domestic hot water")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 |**401**|**MixerOneCircuitPump**|*O3EComplexType*|5||ro||
 | |- TargetPowerState|O3EByteVal|1||||
 | |- TargetValue|O3EInt8|1||||
@@ -6158,7 +6158,7 @@
 |**3057**|**NarrowBandInternetOfThingsCloudStatus**|O3EInt8|1||ro||
 |**3066**|**DomesticHotWaterHighDemandDetection**|RawCodec|4||ro||
 |**3067**|**AirVolumeFlowValue**|RawCodec|9||ro||
-|**3068**|**DomesticHotWaterTemperatureSetpointComfort**|RawCodec|2||**rw**||
+|**3068**|[**DomesticHotWaterTemperatureSetpointComfort**](## "Temperature setpoint domestic hot water comfort")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 |**3069**|**DomesticHotWaterSensorForDemand**|O3EByteVal|1||ro||
 |**3070**|**BufferTargetOperationMode**|O3EByteVal|1||**rw**||
 |**3085**|**ElectricalEnergyStorageModuleOneInformation**|RawCodec|18||ro||
@@ -6291,24 +6291,26 @@
 | |- CurrentL3|O3EInt16|2||||
 | |- PowerFactor|O3EInt16|2||||
 | |- Unknown3|RawCodec|3||||
-|**3232**|[**DomesticHotWaterBufferBottomTemperatureSensor**](## "Actual domestic hot water buffer bottom temperature value")|*O3EComplexType*|9||ro||
+|**3232**|**DomesticHotWaterBufferBottomTemperatureSensor**|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**3233**|[**DomesticHotWaterBufferMidTemperatureSensor**](## "Actual domestic hot water buffer mid temperature value")|*O3EComplexType*|9||ro||
+|**3233**|**DomesticHotWaterBufferMidTemperatureSensor**|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**3234**|[**DomesticHotWaterBufferTopTemperatureSensor**](## "Actual domestic hot water buffer top temperature value")|*O3EComplexType*|9||ro||
+|**3234**|**DomesticHotWaterBufferTopTemperatureSensor**|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2||||
+| |- Maximum|O3EInt16|2||||
+| |- Average|O3EInt16|2||||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+|**3235**|**BufferLoadingTimeLimit**|O3EInt16|2||**rw**||
+|**3282**|**DomesticHotWaterMinimumComfortTemperatureSetpoint**|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 |**3335**|**HeatingCoolingHysteresisHeatingCircuitOne**|*O3EComplexType*|8||ro||
 | |- TurnOnHysteresis_Heating|O3EInt16|2||||
 | |- TurnOffHysteresis_Heating|O3EInt16|2||||
@@ -6412,8 +6414,8 @@
 |**390**|[**ElectronicExpansionValveTwoTargetPositionPercent**](## "Target position expansion valve two (evaporator outlet)")|O3EInt8|1|%|**rw**||
 |**391**|[**ElectronicExpansionValveTwoCurrentPositionPercent**](## "Actual position expansion valve two (evaporator outlet)")|O3EInt8|1|%|ro||
 |**392**|**DomesticHotWaterPump**|RawCodec|4||ro||
-|**395**|[**CentralHeatingTemperatureSetpoint**](## "Teperature setpoint central heating")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
-|**396**|[**DomesticHotWaterTemperatureSetpoint**](## "Teperature setpoint domestic hot water")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**395**|[**CentralHeatingTemperatureSetpoint**](## "Temperature setpoint central heating")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
+|**396**|[**DomesticHotWaterTemperatureSetpoint**](## "Temperature setpoint domestic hot water")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 |**401**|**MixerOneCircuitPump**|*O3EComplexType*|5||ro||
 |**402**|**MixerTwoCircuitPump**|*O3EComplexType*|5||ro||
 |**403**|**MixerThreeCircuitPump**|*O3EComplexType*|5||ro||
@@ -7920,7 +7922,7 @@
 |**3057**|**NarrowBandInternetOfThingsCloudStatus**|O3EInt8|1||ro||
 |**3066**|**DomesticHotWaterHighDemandDetection**|RawCodec|4||ro||
 |**3067**|**AirVolumeFlowValue**|RawCodec|9||ro||
-|**3068**|**DomesticHotWaterTemperatureSetpointComfort**|RawCodec|2||**rw**||
+|**3068**|[**DomesticHotWaterTemperatureSetpointComfort**](## "Temperature setpoint domestic hot water comfort")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 |**3069**|**DomesticHotWaterSensorForDemand**|O3EByteVal|1||ro||
 |**3070**|**BufferTargetOperationMode**|O3EByteVal|1||**rw**||
 |**3085**|**ElectricalEnergyStorageModuleOneInformation**|RawCodec|18||ro||
@@ -7965,9 +7967,11 @@
 |**3229**|**EnergyMeterTwo**|*O3EComplexType*|73||ro||
 |**3230**|**EnergyMeterThree**|*O3EComplexType*|73||ro||
 |**3231**|**EnergyMeterFour**|*O3EComplexType*|73||ro||
-|**3232**|[**DomesticHotWaterBufferBottomTemperatureSensor**](## "Actual domestic hot water buffer bottom temperature value")|*O3EComplexType*|9||ro||
-|**3233**|[**DomesticHotWaterBufferMidTemperatureSensor**](## "Actual domestic hot water buffer mid temperature value")|*O3EComplexType*|9||ro||
-|**3234**|[**DomesticHotWaterBufferTopTemperatureSensor**](## "Actual domestic hot water buffer top temperature value")|*O3EComplexType*|9||ro||
+|**3232**|**DomesticHotWaterBufferBottomTemperatureSensor**|*O3EComplexType*|9||ro||
+|**3233**|**DomesticHotWaterBufferMidTemperatureSensor**|*O3EComplexType*|9||ro||
+|**3234**|**DomesticHotWaterBufferTopTemperatureSensor**|*O3EComplexType*|9||ro||
+|**3235**|**BufferLoadingTimeLimit**|O3EInt16|2||**rw**||
+|**3282**|**DomesticHotWaterMinimumComfortTemperatureSetpoint**|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 |**3335**|**HeatingCoolingHysteresisHeatingCircuitOne**|*O3EComplexType*|8||ro||
 |**3336**|**HeatingCoolingHysteresisHeatingCircuitTwo**|*O3EComplexType*|8||ro||
 |**3337**|**HeatingCoolingHysteresisHeatingCircuitThree**|*O3EComplexType*|8||ro||

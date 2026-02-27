@@ -4123,7 +4123,7 @@
       "scale": 10.0,
       "signed": false,
       "unit": "\u00b0C",
-      "desc": "Teperature setpoint central heating",
+      "desc": "Temperature setpoint central heating",
       "info": "",
       "acc": "rw"
     }
@@ -4136,7 +4136,7 @@
       "scale": 10.0,
       "signed": true,
       "unit": "\u00b0C",
-      "desc": "Teperature setpoint domestic hot water",
+      "desc": "Temperature setpoint domestic hot water",
       "info": "",
       "acc": "rw"
     }
@@ -51733,10 +51733,15 @@
     }
   },
   "3068": {
-    "codec": "RawCodec",
+    "codec": "O3EInt16",
     "len": 2,
     "id": "DomesticHotWaterTemperatureSetpointComfort",
     "args": {
+      "scale": 10.0,
+      "signed": true,
+      "unit": "\u00b0C",
+      "desc": "Temperature setpoint domestic hot water comfort",
+      "info": "",
       "acc": "rw"
     }
   },
@@ -53268,7 +53273,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "\u00b0C",
+            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -53281,7 +53286,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "\u00b0C",
+            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -53294,7 +53299,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "\u00b0C",
+            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -53312,7 +53317,7 @@
           }
         }
       ],
-      "desc": "Actual domestic hot water buffer bottom temperature value",
+      "desc": "",
       "info": "",
       "acc": "ro"
     }
@@ -53343,7 +53348,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "\u00b0C",
+            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -53356,7 +53361,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "\u00b0C",
+            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -53369,7 +53374,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "\u00b0C",
+            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -53387,7 +53392,7 @@
           }
         }
       ],
-      "desc": "Actual domestic hot water buffer mid temperature value",
+      "desc": "",
       "info": "",
       "acc": "ro"
     }
@@ -53418,7 +53423,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "\u00b0C",
+            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -53431,7 +53436,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "\u00b0C",
+            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -53444,7 +53449,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "\u00b0C",
+            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -53462,9 +53467,35 @@
           }
         }
       ],
-      "desc": "Actual domestic hot water buffer top temperature value",
+      "desc": "",
       "info": "",
       "acc": "ro"
+    }
+  },
+  "3235": {
+    "codec": "O3EInt16",
+    "len": 2,
+    "id": "BufferLoadingTimeLimit",
+    "args": {
+      "scale": 10.0,
+      "signed": false,
+      "unit": "",
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "3282": {
+    "codec": "O3EInt16",
+    "len": 2,
+    "id": "DomesticHotWaterMinimumComfortTemperatureSetpoint",
+    "args": {
+      "scale": 10.0,
+      "signed": false,
+      "unit": "\u00b0C",
+      "desc": "",
+      "info": "",
+      "acc": "rw"
     }
   },
   "3335": {
