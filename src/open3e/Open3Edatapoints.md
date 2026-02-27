@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20260224
+- Version of general data points: 20260227
 - Version of variant data points: 20260217
 
 ### Remarks
@@ -6291,11 +6291,23 @@
 | |- CurrentL3|O3EInt16|2||||
 | |- PowerFactor|O3EInt16|2||||
 | |- Unknown3|RawCodec|3||||
-|**3234**|**DomesticHotWaterBufferTopTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+|**3232**|[**DomesticHotWaterBufferBottomTemperatureSensor**](## "Actual domestic hot water buffer bottom temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+|**3233**|[**DomesticHotWaterBufferMidTemperatureSensor**](## "Actual domestic hot water buffer mid temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
+|**3234**|[**DomesticHotWaterBufferTopTemperatureSensor**](## "Actual domestic hot water buffer top temperature value")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**3335**|**HeatingCoolingHysteresisHeatingCircuitOne**|*O3EComplexType*|8||ro||
 | |- TurnOnHysteresis_Heating|O3EInt16|2||||
@@ -7953,7 +7965,9 @@
 |**3229**|**EnergyMeterTwo**|*O3EComplexType*|73||ro||
 |**3230**|**EnergyMeterThree**|*O3EComplexType*|73||ro||
 |**3231**|**EnergyMeterFour**|*O3EComplexType*|73||ro||
-|**3234**|**DomesticHotWaterBufferTopTemperatureSensor**|*O3EComplexType*|9||ro||
+|**3232**|[**DomesticHotWaterBufferBottomTemperatureSensor**](## "Actual domestic hot water buffer bottom temperature value")|*O3EComplexType*|9||ro||
+|**3233**|[**DomesticHotWaterBufferMidTemperatureSensor**](## "Actual domestic hot water buffer mid temperature value")|*O3EComplexType*|9||ro||
+|**3234**|[**DomesticHotWaterBufferTopTemperatureSensor**](## "Actual domestic hot water buffer top temperature value")|*O3EComplexType*|9||ro||
 |**3335**|**HeatingCoolingHysteresisHeatingCircuitOne**|*O3EComplexType*|8||ro||
 |**3336**|**HeatingCoolingHysteresisHeatingCircuitTwo**|*O3EComplexType*|8||ro||
 |**3337**|**HeatingCoolingHysteresisHeatingCircuitThree**|*O3EComplexType*|8||ro||

@@ -53242,10 +53242,10 @@
       "acc": "ro"
     }
   },
-  "3234": {
+  "3232": {
     "codec": "O3EComplexType",
     "len": 9,
-    "id": "DomesticHotWaterBufferTopTemperatureSensor",
+    "id": "DomesticHotWaterBufferBottomTemperatureSensor",
     "args": {
       "subTypes": [
         {
@@ -53255,7 +53255,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -53268,7 +53268,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -53281,7 +53281,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -53294,7 +53294,7 @@
           "args": {
             "scale": 10.0,
             "signed": true,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -53312,7 +53312,157 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Actual domestic hot water buffer bottom temperature value",
+      "info": "",
+      "acc": "ro"
+    }
+  },
+  "3233": {
+    "codec": "O3EComplexType",
+    "len": 9,
+    "id": "DomesticHotWaterBufferMidTemperatureSensor",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
+      "desc": "Actual domestic hot water buffer mid temperature value",
+      "info": "",
+      "acc": "ro"
+    }
+  },
+  "3234": {
+    "codec": "O3EComplexType",
+    "len": 9,
+    "id": "DomesticHotWaterBufferTopTemperatureSensor",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
+      "desc": "Actual domestic hot water buffer top temperature value",
       "info": "",
       "acc": "ro"
     }
@@ -53675,5 +53825,5 @@
       "acc": "ro"
     }
   },
-  "Version": "20260224"
+  "Version": "20260227"
 }
