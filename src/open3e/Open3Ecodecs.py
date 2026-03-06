@@ -23,9 +23,11 @@ flag_rawmode = True
 flag_binary = False
 
 class RawCodec(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str, acc:str=''):
+    def __init__(self, string_len: int, idStr: str, desc:str='', info:str='', acc:str=''):
         self.string_len = string_len
         self.id = idStr
+        self.desc = desc
+        self.info = info
         self.acc = acc
 
     def encode(self, string_ascii: Any) -> bytes:
@@ -45,10 +47,10 @@ class RawCodec(udsoncan.DidCodec):
         return string_ascii
 
     def getCodecInfo(self):
-        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"acc":self.acc}})
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"desc":self.desc, "info":self.info, "acc":self.acc}})
 
     def getCodecString(self):
-        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}")')
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}", desc="{self.desc}", info="{self.info}", acc="{self.acc}")')
 
     def __len__(self) -> int:
         return self.string_len
