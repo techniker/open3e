@@ -13,12 +13,15 @@ NOT thread-safe; serialising every access through one thread makes it safe.
 
 from __future__ import annotations
 
+import logging
 import os
 import queue
 import subprocess
 import threading
-from enum import Enum, auto
+from enum import Enum
 from typing import Any, Callable, Dict, List, Optional
+
+logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
 # Public constants (also importable by tests)
@@ -246,8 +249,10 @@ class CanEngine:
                 self._cycle = (self._cycle + 1) % CYCLE_LENGTH
 
         except Exception as exc:
+            logger.error("Engine thread crashed: %s", exc, exc_info=True)
             self._emit_data({"type": "engine_error", "error": str(exc)})
         finally:
+            logger.info("Engine thread exiting, running=%s", self._running)
             self._cleanup()
             self._set_state(EngineState.IDLE)
 
