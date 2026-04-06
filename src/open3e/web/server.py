@@ -242,6 +242,14 @@ def create_app(store: ConfigStore) -> FastAPI:
     async def api_can_interfaces():
         return discover_can_interfaces()
 
+    @app.get("/api/can/status")
+    async def api_can_status():
+        from open3e.web.can_discovery import get_can_status
+        iface = await store.get_setting("can_interface", "")
+        if iface:
+            return get_can_status(iface)
+        return {"available": False, "interface": ""}
+
     # -----------------------------------------------------------------------
     # API: ECUs
     # -----------------------------------------------------------------------

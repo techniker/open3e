@@ -152,16 +152,11 @@
         btnStart.appendChild(document.createTextNode(' Start Scan'));
 
         if (success) {
-            var loadBtn = document.createElement('button');
-            loadBtn.className = 'btn btn-success ms-2';
-            loadBtn.id = 'btn-load-results';
-            loadBtn.type = 'button';
-            var loadIcon = document.createElement('i');
-            loadIcon.className = 'bi bi-cloud-download';
-            loadBtn.appendChild(loadIcon);
-            loadBtn.appendChild(document.createTextNode(' Load Results'));
-            loadBtn.addEventListener('click', loadResults);
-            btnStart.parentNode.insertBefore(loadBtn, btnStart.nextSibling);
+            // Auto-load results into database
+            appendConsole('\nLoading scan results into database...');
+            loadResults().then(function() {
+                appendConsole('Results loaded. Go to Datapoints to see discovered data.');
+            });
         }
     };
 
