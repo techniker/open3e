@@ -346,12 +346,16 @@ class ConfigStore:
     # ------------------------------------------------------------------
 
     async def create_backup(self) -> str:
-        """VACUUM INTO a timestamped copy in the backup dir; return filename."""
+        """Create a backup copy of the database; return filename."""
+        import shutil
         self._backup_dir.mkdir(parents=True, exist_ok=True)
         timestamp = time.strftime("%Y%m%d_%H%M%S")
         filename = f"open3e_backup_{timestamp}.db"
         dest = self._backup_dir / filename
-        await self._db.execute(f"VACUUM INTO '{dest}'")
+        # Flush any pending writes
+        await self._db.commit()
+        # Use shutil.copy2 — safe since SQLite in WAL mode or after commit
+        shutil.copy2(self._db_path, str(dest))
         return filename
 
     async def list_backups(self) -> list[str]:
