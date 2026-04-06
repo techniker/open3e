@@ -69,10 +69,11 @@ def main() -> None:
     """Main entry point for the open3e web UI."""
     # Create and initialize ConfigStore
     store = ConfigStore(DEFAULT_DB_PATH)
-    asyncio.run(store.initialize())
+    loop = asyncio.new_event_loop()
+    loop.run_until_complete(store.initialize())
 
     # Read web_port setting from DB (default 8080 if not set)
-    preferred_port = asyncio.run(store.get_setting("web_port", DEFAULT_PORT))
+    preferred_port = loop.run_until_complete(store.get_setting("web_port", DEFAULT_PORT))
     try:
         preferred_port = int(preferred_port)
     except (ValueError, TypeError):
