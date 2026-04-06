@@ -78,9 +78,19 @@ def build_discovery_payload(
             obj_parts.append(sub.lower())
         object_id = "_".join(obj_parts)
 
-    # State topic — matches the MQTT data publish topic
+    # State topic — must match the actual MQTT data publish topic
     dp_name = entity.get("dp_name") or entity.get("name") or "DID_" + str(did)
-    state_topic = "{}/{}_{}/{}".format(topic_prefix, did, dp_name, sub) if sub else "{}/{}_{}".format(topic_prefix, did, dp_name)
+    base_topic = "{}/{}_{}".format(topic_prefix, did, dp_name)
+
+    # For ComplexType sensors (unique_id ending in _actual), the split-mode data
+    # goes to .../Actual sub-topic. Detect from unique_id.
+    is_actual = object_id.endswith("_actual")
+    if is_actual:
+        state_topic = base_topic + "/Actual"
+    elif sub:
+        state_topic = base_topic + "/" + sub
+    else:
+        state_topic = base_topic
 
     # Discovery topic
     topic = "{}/{}/{}/config".format(ha_prefix, component, object_id)
@@ -94,7 +104,6 @@ def build_discovery_payload(
             "name": "{} ({})".format(ecu_name, "0x" + ecu_hex),
             "manufacturer": "Viessmann",
             "model": ecu_prop or "Unknown",
-            "via_device": "open3e",
         },
     }
     if sw_version:
