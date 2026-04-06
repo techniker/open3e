@@ -125,6 +125,39 @@ def create_app(store: ConfigStore) -> FastAPI:
             {"writables": writables, "active_page": "write"},
         )
 
+    @app.get("/system", response_class=HTMLResponse)
+    async def system_page(request: Request):
+        import sys as _sys
+        try:
+            from importlib.metadata import version
+            o3e_ver = version("open3e")
+        except Exception:
+            o3e_ver = "unknown"
+
+        can_iface = await store.get_setting("can_interface", "")
+        can_status_data = {"available": False, "interface": can_iface}
+        if can_iface:
+            from open3e.web.can_discovery import get_can_status
+            can_status_data = get_can_status(can_iface)
+
+        engine = getattr(app.state, "engine", None)
+        engine_status = engine.get_status() if engine else {
+            "state": "idle", "cycle": 0, "ecus_connected": 0, "datapoints_configured": 0
+        }
+
+        ecus = await store.get_ecus()
+
+        return templates.TemplateResponse(
+            request, "system.html",
+            {
+                "status": {"open3e_version": o3e_ver, "python_version": _sys.version},
+                "can_status": can_status_data,
+                "engine_status": engine_status,
+                "ecus": ecus,
+                "active_page": "system",
+            },
+        )
+
     @app.post("/api/write")
     async def write_value(request: Request):
         body = await request.json()
