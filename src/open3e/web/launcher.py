@@ -4,8 +4,9 @@ This module provides the main() function that:
 1. Creates and initializes a ConfigStore
 2. Finds an available port
 3. Creates the FastAPI app
-4. Prints startup information
-5. Runs uvicorn
+4. Creates and wires the CAN engine
+5. Prints startup information
+6. Runs uvicorn
 """
 
 from __future__ import annotations
@@ -16,6 +17,7 @@ import sys
 
 import uvicorn
 
+from open3e.web.can_engine import CanEngine
 from open3e.web.config_store import ConfigStore
 from open3e.web.server import create_app
 
@@ -85,6 +87,28 @@ def main() -> None:
     # Create the FastAPI app
     app = create_app(store)
 
+    # Create the CAN engine and attach it to app state
+    engine = CanEngine(store)
+    app.state.engine = engine
+
+    # Read CAN settings for auto-start
+    can_interface = loop.run_until_complete(store.get_setting("can_interface"))
+    can_bitrate = loop.run_until_complete(store.get_setting("can_bitrate", 500000))
+    ecus_rows = loop.run_until_complete(store.get_ecus())
+    datapoints_rows = loop.run_until_complete(store.get_datapoints())
+
+    try:
+        can_bitrate = int(can_bitrate)
+    except (ValueError, TypeError):
+        can_bitrate = 500000
+
+    # Convert DB rows to the dicts expected by CanEngine.start()
+    ecus = [dict(row) for row in ecus_rows] if ecus_rows else []
+    datapoints = {row["id"]: dict(row) for row in datapoints_rows} if datapoints_rows else {}
+
+    # Determine CAN status for startup message
+    can_status = f"CAN: {can_interface}" if can_interface and ecus else "CAN: not configured"
+
     # Print startup info
     local_ip = _get_local_ip()
     local_url = f"http://127.0.0.1:{port}"
@@ -92,9 +116,41 @@ def main() -> None:
     print(f"Starting open3e web UI", file=sys.stdout)
     print(f"Local:   {local_url}", file=sys.stdout)
     print(f"Network: {network_url}", file=sys.stdout)
+    print(f"{can_status}", file=sys.stdout)
 
-    # Run uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=port, log_level="warning")
+    # Run uvicorn with an explicit event loop so the engine bridge can schedule
+    # async coroutines onto it from the background engine thread.
+    _main_loop = None
+
+    def on_engine_data(msg: dict) -> None:
+        """Bridge: deliver engine data to the WebSocket manager on the uvicorn loop."""
+        ws_mgr = app.state.ws_manager
+        if msg.get("type") == "did_value":
+            coro = ws_mgr.broadcast_did_value(msg)
+        else:
+            coro = ws_mgr.broadcast_state(msg)
+        asyncio.run_coroutine_threadsafe(coro, _main_loop)
+
+    engine._on_data = on_engine_data
+
+    # Auto-start engine if CAN interface and ECUs are configured
+    if can_interface and ecus:
+        engine.start(
+            can_interface=can_interface,
+            can_bitrate=can_bitrate,
+            datapoints=datapoints,
+            ecus=ecus,
+        )
+
+    config = uvicorn.Config(app, host="0.0.0.0", port=port, log_level="warning")
+    server = uvicorn.Server(config)
+
+    async def _serve():
+        nonlocal _main_loop
+        _main_loop = asyncio.get_running_loop()
+        await server.serve()
+
+    asyncio.run(_serve())
 
 
 if __name__ == "__main__":
