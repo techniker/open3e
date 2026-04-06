@@ -294,7 +294,30 @@ def create_app(store: ConfigStore) -> FastAPI:
 
     @app.post("/api/ha/apply-defaults")
     async def api_ha_apply_defaults():
-        return {"ok": True, "message": "HA defaults applied (stub)"}
+        from open3e.web.ha_discovery import infer_ha_entity
+        datapoints = await store.get_datapoints()
+        created = 0
+        for dp in datapoints:
+            result = infer_ha_entity(
+                dp["name"], dp.get("codec_type", ""), dp.get("is_writable", False)
+            )
+            if result:
+                await store.upsert_ha_entity(
+                    dp["id"], result.get("sub_field"),
+                    result["ha_component"], result.get("device_class"),
+                    result.get("unit"), result.get("icon"),
+                    result.get("entity_name"),
+                )
+                created += 1
+        # Trigger HA discovery publish if publisher exists
+        publisher = getattr(app.state, "mqtt_publisher", None)
+        if publisher and publisher.connected:
+            entities = await store.get_ha_entities(enabled=True)
+            ecus = await store.get_ecus()
+            tp = await store.get_setting("mqtt_topic_prefix", "open3e")
+            hp = await store.get_setting("ha_discovery_prefix", "homeassistant")
+            publisher.publish_ha_discovery(entities, ecus, tp, hp)
+        return {"status": "ok", "entities_created": created}
 
     # -----------------------------------------------------------------------
     # API: MQTT mappings
