@@ -3,61 +3,648 @@
 {% block title %}Settings — open3e{% endblock %}
 
 {% block content %}
-<div class="p-4">
+<div class="p-4 settings-content">
     <h4 class="mb-4"><i class="bi bi-gear"></i> Settings</h4>
 
-    <!-- CAN Interfaces -->
-    <div class="card mb-4">
-        <div class="card-header">CAN Interfaces</div>
-        <div class="card-body">
-            {% if can_interfaces %}
-            <ul class="list-group list-group-flush">
-                {% for iface in can_interfaces %}
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    {{ iface.name }}
-                    <span class="badge bg-{% if iface.state == 'up' %}success{% else %}secondary{% endif %}">{{ iface.state }}</span>
-                </li>
-                {% endfor %}
-            </ul>
-            {% else %}
-            <p class="text-muted mb-0">No CAN interfaces detected.</p>
-            {% endif %}
-        </div>
-    </div>
+    <!-- Tab Navigation -->
+    <ul class="nav nav-tabs mb-0" id="settingsTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="can-tab" data-bs-toggle="tab" data-bs-target="#can-pane"
+                    type="button" role="tab" aria-controls="can-pane" aria-selected="true">
+                <i class="bi bi-plug"></i> CAN
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="mqtt-tab" data-bs-toggle="tab" data-bs-target="#mqtt-pane"
+                    type="button" role="tab" aria-controls="mqtt-pane" aria-selected="false">
+                <i class="bi bi-broadcast"></i> MQTT
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="ha-tab" data-bs-toggle="tab" data-bs-target="#ha-pane"
+                    type="button" role="tab" aria-controls="ha-pane" aria-selected="false">
+                <i class="bi bi-house"></i> Home Assistant
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="system-tab" data-bs-toggle="tab" data-bs-target="#system-pane"
+                    type="button" role="tab" aria-controls="system-pane" aria-selected="false">
+                <i class="bi bi-wrench"></i> System
+            </button>
+        </li>
+    </ul>
 
-    <!-- Settings -->
-    <div class="card mb-4">
-        <div class="card-header">General Settings</div>
-        <div class="card-body">
-            {% if settings %}
-            <table class="table table-sm">
-                <thead><tr><th>Key</th><th>Value</th></tr></thead>
-                <tbody>
-                    {% for key, value in settings.items() %}
-                    <tr><td>{{ key }}</td><td>{{ value }}</td></tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            {% else %}
-            <p class="text-muted mb-0">No settings configured.</p>
-            {% endif %}
-        </div>
-    </div>
+    <div class="tab-content border border-top-0 rounded-bottom p-4 bg-body-tertiary" id="settingsTabContent">
 
-    <!-- Backups -->
-    <div class="card mb-4">
-        <div class="card-header">Backups</div>
-        <div class="card-body">
-            {% if backups %}
-            <ul class="list-group list-group-flush">
-                {% for b in backups %}
-                <li class="list-group-item">{{ b }}</li>
-                {% endfor %}
-            </ul>
-            {% else %}
-            <p class="text-muted mb-0">No backups available.</p>
-            {% endif %}
+        <!-- ===== CAN TAB ===== -->
+        <div class="tab-pane fade show active" id="can-pane" role="tabpanel" aria-labelledby="can-tab">
+            <h5 class="mb-3">CAN Interface</h5>
+
+            <!-- Detected Interfaces -->
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span><i class="bi bi-search"></i> Detected Interfaces</span>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="refreshCanInterfaces()">
+                        <i class="bi bi-arrow-clockwise"></i> Refresh
+                    </button>
+                </div>
+                <div class="card-body" id="can-interfaces-list">
+                    {% if can_interfaces %}
+                        {% for iface in can_interfaces %}
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="can_interface_detected"
+                                   id="iface-{{ loop.index }}" value="{{ iface.name }}"
+                                   {% if settings.can_interface == iface.name %}checked{% endif %}
+                                   onchange="document.getElementById('can-interface-manual').value = this.value">
+                            <label class="form-check-label" for="iface-{{ loop.index }}">
+                                <code>{{ iface.name }}</code>
+                                <span class="badge ms-2
+                                    {% if iface.state == 'UP' %}bg-success
+                                    {% elif iface.state == 'DOWN' %}bg-danger
+                                    {% else %}bg-secondary{% endif %}">
+                                    {{ iface.state }}
+                                </span>
+                            </label>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-muted mb-0"><small>No CAN interfaces detected. Check that your CAN adapter is connected.</small></p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Interface Name -->
+            <div class="mb-3">
+                <label for="can-interface-manual" class="form-label">Interface Name</label>
+                <input type="text" class="form-control" id="can-interface-manual"
+                       value="{{ settings.can_interface or '' }}"
+                       placeholder="e.g. can0">
+                <div class="form-text">Manually enter or select from detected interfaces above.</div>
+            </div>
+
+            <!-- Bitrate -->
+            <div class="mb-3">
+                <label for="can-bitrate" class="form-label">Bitrate (bps)</label>
+                <input type="number" class="form-control" id="can-bitrate"
+                       value="{{ settings.can_bitrate or 250000 }}"
+                       placeholder="250000">
+            </div>
+
+            <!-- Advanced Collapsible -->
+            <div class="mb-4">
+                <button class="btn btn-outline-secondary btn-sm" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#can-advanced"
+                        aria-expanded="false" aria-controls="can-advanced">
+                    <i class="bi bi-chevron-down"></i> Advanced
+                </button>
+                <div class="collapse mt-3" id="can-advanced">
+                    <div class="card card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="can-restart-ms" class="form-label">Restart-ms</label>
+                                <input type="number" class="form-control" id="can-restart-ms"
+                                       value="{{ advanced_can.restart_ms if advanced_can else '' }}"
+                                       placeholder="100">
+                                <div class="form-text">Auto-restart delay in milliseconds (0 = disabled).</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="can-txqueue" class="form-label">TX Queue Length</label>
+                                <input type="number" class="form-control" id="can-txqueue"
+                                       value="{{ advanced_can.txqueue if advanced_can else '' }}"
+                                       placeholder="1000">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="can-sample-point" class="form-label">Sample Point</label>
+                                <input type="text" class="form-control" id="can-sample-point"
+                                       value="{{ advanced_can.sample_point if advanced_can else '' }}"
+                                       placeholder="0.875">
+                                <div class="form-text">E.g. 0.875 for 87.5%.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="can-sjw" class="form-label">SJW</label>
+                                <input type="number" class="form-control" id="can-sjw"
+                                       value="{{ advanced_can.sjw if advanced_can else '' }}"
+                                       placeholder="1">
+                                <div class="form-text">Synchronisation Jump Width.</div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="can-listen-only"
+                                           {% if advanced_can and advanced_can.listen_only %}checked{% endif %}>
+                                    <label class="form-check-label" for="can-listen-only">Listen-only mode</label>
+                                </div>
+                                <div class="form-check form-switch mt-2">
+                                    <input class="form-check-input" type="checkbox" id="can-loopback"
+                                           {% if advanced_can and advanced_can.loopback %}checked{% endif %}>
+                                    <label class="form-check-label" for="can-loopback">Loopback mode</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" onclick="saveCanSettings()">
+                <i class="bi bi-check-lg"></i> Apply &amp; Connect
+            </button>
+        </div>
+
+        <!-- ===== MQTT TAB ===== -->
+        <div class="tab-pane fade" id="mqtt-pane" role="tabpanel" aria-labelledby="mqtt-tab">
+            <h5 class="mb-3">MQTT Broker</h5>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-8">
+                    <label for="mqtt-host" class="form-label">Host</label>
+                    <input type="text" class="form-control" id="mqtt-host"
+                           value="{{ settings.mqtt_host or '' }}"
+                           placeholder="localhost">
+                </div>
+                <div class="col-md-4">
+                    <label for="mqtt-port" class="form-label">Port</label>
+                    <input type="number" class="form-control" id="mqtt-port"
+                           value="{{ settings.mqtt_port or 1883 }}"
+                           placeholder="1883">
+                </div>
+                <div class="col-md-6">
+                    <label for="mqtt-username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="mqtt-username"
+                           value="{{ settings.mqtt_username or '' }}"
+                           placeholder="(optional)">
+                </div>
+                <div class="col-md-6">
+                    <label for="mqtt-password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="mqtt-password"
+                           value="{{ settings.mqtt_password or '' }}"
+                           placeholder="(optional)">
+                </div>
+            </div>
+
+            <!-- TLS -->
+            <div class="mb-4">
+                <div class="form-check form-switch mb-2">
+                    <input class="form-check-input" type="checkbox" id="mqtt-tls"
+                           {% if settings.mqtt_tls %}checked{% endif %}
+                           onchange="document.getElementById('mqtt-tls-area').classList.toggle('d-none', !this.checked)">
+                    <label class="form-check-label" for="mqtt-tls">Enable TLS</label>
+                </div>
+                <div id="mqtt-tls-area" class="{% if not settings.mqtt_tls %}d-none{% endif %}">
+                    <label for="mqtt-ca-cert" class="form-label">CA Certificate File</label>
+                    <input type="file" class="form-control" id="mqtt-ca-cert" accept=".pem,.crt,.cer">
+                    <div class="form-text">Upload a PEM-encoded CA certificate to verify the broker.</div>
+                </div>
+            </div>
+
+            <h5 class="mb-3">Topics</h5>
+            <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                    <label for="mqtt-topic-prefix" class="form-label">Topic Prefix</label>
+                    <input type="text" class="form-control" id="mqtt-topic-prefix"
+                           value="{{ settings.mqtt_topic_prefix or 'open3e' }}"
+                           oninput="updateMqttPreview()">
+                </div>
+                <div class="col-md-4">
+                    <label for="mqtt-format" class="form-label">Format String</label>
+                    <input type="text" class="form-control" id="mqtt-format"
+                           value="{{ settings.mqtt_format or '{didName}' }}"
+                           oninput="updateMqttPreview()">
+                    <div class="form-text">Placeholders: <code>{didName}</code>, <code>{didId}</code>, <code>{ecu}</code></div>
+                </div>
+                <div class="col-md-4">
+                    <label for="mqtt-client-id" class="form-label">Client ID</label>
+                    <input type="text" class="form-control" id="mqtt-client-id"
+                           value="{{ settings.mqtt_client_id or '' }}"
+                           placeholder="open3e">
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Topic Preview</label>
+                    <div class="form-control bg-body-secondary font-monospace small" id="mqtt-preview">
+                        {{ settings.mqtt_topic_prefix or 'open3e' }}/{{ settings.mqtt_format or '{didName}' }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-secondary" onclick="testMqtt()">
+                    <i class="bi bi-wifi"></i> Test Connection
+                </button>
+                <button class="btn btn-primary" onclick="saveMqttSettings()">
+                    <i class="bi bi-check-lg"></i> Save &amp; Reconnect
+                </button>
+            </div>
+        </div>
+
+        <!-- ===== HOME ASSISTANT TAB ===== -->
+        <div class="tab-pane fade" id="ha-pane" role="tabpanel" aria-labelledby="ha-tab">
+            <h5 class="mb-3">Home Assistant Discovery</h5>
+
+            <div class="row g-3 mb-4">
+                <div class="col-12">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="ha-enabled"
+                               {% if settings.ha_discovery_enabled %}checked{% endif %}>
+                        <label class="form-check-label" for="ha-enabled">Enable MQTT Discovery</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="ha-discovery-prefix" class="form-label">Discovery Prefix</label>
+                    <input type="text" class="form-control" id="ha-discovery-prefix"
+                           value="{{ settings.ha_discovery_prefix or 'homeassistant' }}"
+                           placeholder="homeassistant">
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <button class="btn btn-outline-secondary btn-sm" onclick="applyHaDefaults()">
+                    <i class="bi bi-magic"></i> Apply Suggested Defaults
+                </button>
+            </div>
+
+            <!-- HA Entities Table -->
+            <h6 class="mb-2">Entities</h6>
+            <div class="table-responsive mb-4">
+                <table class="table table-sm table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th>Enabled</th>
+                            <th>ECU</th>
+                            <th>DID</th>
+                            <th>Name</th>
+                            <th>Sub-field</th>
+                            <th>Component</th>
+                            <th>Device Class</th>
+                            <th>Unit</th>
+                            <th>Icon</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if ha_entities %}
+                            {% for entity in ha_entities %}
+                            <tr>
+                                <td>
+                                    <div class="form-check form-switch mb-0">
+                                        <input class="form-check-input" type="checkbox"
+                                               id="ha-entity-{{ entity.id }}"
+                                               {% if entity.enabled %}checked{% endif %}
+                                               onchange="toggleHaEntity({{ entity.id }}, this.checked)">
+                                    </div>
+                                </td>
+                                <td><code>{{ entity.ecu }}</code></td>
+                                <td><code>{{ entity.did }}</code></td>
+                                <td>{{ entity.name }}</td>
+                                <td>{{ entity.sub_field or '—' }}</td>
+                                <td>{{ entity.component }}</td>
+                                <td>{{ entity.device_class or '—' }}</td>
+                                <td>{{ entity.unit or '—' }}</td>
+                                <td>{% if entity.icon %}<i class="bi {{ entity.icon }}"></i>{% else %}—{% endif %}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-secondary" title="Edit">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="10" class="text-center text-muted">
+                                    No entities configured. Click "Apply Suggested Defaults" to auto-populate.
+                                </td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+
+            <button class="btn btn-primary" onclick="saveHaSettings()">
+                <i class="bi bi-check-lg"></i> Save
+            </button>
+        </div>
+
+        <!-- ===== SYSTEM TAB ===== -->
+        <div class="tab-pane fade" id="system-pane" role="tabpanel" aria-labelledby="system-tab">
+
+            <!-- Database / Backup Section -->
+            <h5 class="mb-3">Database</h5>
+            <div class="mb-4">
+                <div class="d-flex gap-2 mb-3">
+                    <button class="btn btn-outline-secondary" onclick="createBackup()">
+                        <i class="bi bi-download"></i> Create Backup
+                    </button>
+                    <div class="d-flex align-items-center gap-2">
+                        <input type="file" class="form-control form-control-sm" id="restore-file"
+                               accept=".db,.sqlite,.zip" style="max-width: 260px;">
+                        <button class="btn btn-outline-warning btn-sm" onclick="restoreBackup()">
+                            <i class="bi bi-upload"></i> Restore
+                        </button>
+                    </div>
+                </div>
+
+                <h6 class="mb-2">Backups</h6>
+                <div class="table-responsive">
+                    <table class="table table-sm table-hover">
+                        <thead>
+                            <tr>
+                                <th>Filename</th>
+                                <th>Size</th>
+                                <th>Created</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if backups %}
+                                {% for backup in backups %}
+                                <tr>
+                                    <td><code>{{ backup.filename }}</code></td>
+                                    <td>{{ backup.size }}</td>
+                                    <td>{{ backup.created }}</td>
+                                    <td>
+                                        <a href="/api/backups/{{ backup.filename }}/download"
+                                           class="btn btn-sm btn-outline-secondary me-1" title="Download">
+                                            <i class="bi bi-download"></i>
+                                        </a>
+                                        <button class="btn btn-sm btn-outline-danger"
+                                                onclick="deleteBackup('{{ backup.filename }}')" title="Delete">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            {% else %}
+                                <tr>
+                                    <td colspan="4" class="text-center text-muted">No backups found.</td>
+                                </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Authentication Section -->
+            <h5 class="mb-3">Authentication</h5>
+            <div class="mb-4">
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="auth-enabled"
+                           {% if settings.auth_enabled %}checked{% endif %}>
+                    <label class="form-check-label" for="auth-enabled">Enable password protection</label>
+                </div>
+                <div class="row g-2 align-items-end" style="max-width: 400px;">
+                    <div class="col">
+                        <label for="auth-password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="auth-password"
+                               placeholder="Enter new password">
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-primary" onclick="saveAuthSettings()">
+                            <i class="bi bi-check-lg"></i> Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Web Server Section -->
+            <h5 class="mb-3">Web Server</h5>
+            <div class="row g-2 align-items-end" style="max-width: 300px;">
+                <div class="col">
+                    <label for="web-port" class="form-label">Port</label>
+                    <input type="number" class="form-control" id="web-port"
+                           value="{{ settings.web_port or 8080 }}"
+                           placeholder="8080">
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-primary" onclick="saveWebSettings()">
+                        <i class="bi bi-check-lg"></i> Save
+                    </button>
+                </div>
+            </div>
+            <div class="form-text mt-1">A restart is required for port changes to take effect.</div>
+
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// ---------------------------------------------------------------------------
+// CAN helpers
+// ---------------------------------------------------------------------------
+
+function getSelectedCanInterface() {
+    const radio = document.querySelector('input[name="can_interface_detected"]:checked');
+    if (radio) return radio.value;
+    return document.getElementById('can-interface-manual').value.trim();
+}
+
+async function refreshCanInterfaces() {
+    try {
+        await apiCall('/api/can/interfaces', 'GET');
+        location.reload();
+    } catch (e) {
+        // error toast already shown by apiCall
+    }
+}
+
+async function saveCanSettings() {
+    const iface = getSelectedCanInterface();
+    if (!iface) {
+        showToast('Please specify a CAN interface name.', 'warning');
+        return;
+    }
+
+    const payload = {
+        can_interface: iface,
+        can_bitrate: parseInt(document.getElementById('can-bitrate').value, 10) || 250000,
+        advanced_can: {
+            restart_ms: document.getElementById('can-restart-ms').value
+                ? parseInt(document.getElementById('can-restart-ms').value, 10) : null,
+            txqueue: document.getElementById('can-txqueue').value
+                ? parseInt(document.getElementById('can-txqueue').value, 10) : null,
+            sample_point: document.getElementById('can-sample-point').value.trim() || null,
+            sjw: document.getElementById('can-sjw').value
+                ? parseInt(document.getElementById('can-sjw').value, 10) : null,
+            listen_only: document.getElementById('can-listen-only').checked,
+            loopback: document.getElementById('can-loopback').checked,
+        },
+    };
+
+    try {
+        await apiCall('/api/settings', 'PATCH', payload);
+        showToast('CAN settings saved. Connecting…', 'success');
+    } catch (e) {
+        // error toast already shown
+    }
+}
+
+// ---------------------------------------------------------------------------
+// MQTT helpers
+// ---------------------------------------------------------------------------
+
+function updateMqttPreview() {
+    const prefix = document.getElementById('mqtt-topic-prefix').value.trim();
+    const fmt = document.getElementById('mqtt-format').value.trim();
+    document.getElementById('mqtt-preview').textContent = prefix + '/' + fmt;
+}
+
+async function testMqtt() {
+    try {
+        await apiCall('/api/settings/test-mqtt', 'POST');
+        showToast('MQTT connection successful.', 'success');
+    } catch (e) {
+        // error toast already shown
+    }
+}
+
+async function saveMqttSettings() {
+    const tlsEnabled = document.getElementById('mqtt-tls').checked;
+    const caCertFile = document.getElementById('mqtt-ca-cert').files[0];
+
+    const buildPayload = (caCertB64) => ({
+        mqtt_host: document.getElementById('mqtt-host').value.trim(),
+        mqtt_port: parseInt(document.getElementById('mqtt-port').value, 10) || 1883,
+        mqtt_username: document.getElementById('mqtt-username').value,
+        mqtt_password: document.getElementById('mqtt-password').value,
+        mqtt_tls: tlsEnabled,
+        mqtt_ca_cert: caCertB64 || null,
+        mqtt_topic_prefix: document.getElementById('mqtt-topic-prefix').value.trim(),
+        mqtt_format: document.getElementById('mqtt-format').value.trim(),
+        mqtt_client_id: document.getElementById('mqtt-client-id').value.trim(),
+    });
+
+    const doSave = async (caCertB64) => {
+        try {
+            await apiCall('/api/settings', 'PATCH', buildPayload(caCertB64));
+            showToast('MQTT settings saved. Reconnecting…', 'success');
+        } catch (e) {
+            // error toast already shown
+        }
+    };
+
+    if (tlsEnabled && caCertFile) {
+        const reader = new FileReader();
+        reader.onload = async (e) => {
+            // Strip the data-URI prefix and keep only the base64 payload
+            const b64 = e.target.result.split(',')[1];
+            await doSave(b64);
+        };
+        reader.readAsDataURL(caCertFile);
+    } else {
+        await doSave(null);
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Home Assistant helpers
+// ---------------------------------------------------------------------------
+
+async function applyHaDefaults() {
+    try {
+        await apiCall('/api/ha/apply-defaults', 'POST');
+        showToast('Defaults applied.', 'success');
+        location.reload();
+    } catch (e) {
+        // error toast already shown
+    }
+}
+
+async function toggleHaEntity(id, enabled) {
+    try {
+        await apiCall('/api/ha/entities/' + id, 'PATCH', { enabled: enabled });
+    } catch (e) {
+        // Revert checkbox on failure
+        const cb = document.getElementById('ha-entity-' + id);
+        if (cb) cb.checked = !enabled;
+    }
+}
+
+async function saveHaSettings() {
+    const payload = {
+        ha_discovery_enabled: document.getElementById('ha-enabled').checked,
+        ha_discovery_prefix: document.getElementById('ha-discovery-prefix').value.trim() || 'homeassistant',
+    };
+    try {
+        await apiCall('/api/settings', 'PATCH', payload);
+        showToast('Home Assistant settings saved.', 'success');
+    } catch (e) {
+        // error toast already shown
+    }
+}
+
+// ---------------------------------------------------------------------------
+// System helpers
+// ---------------------------------------------------------------------------
+
+async function createBackup() {
+    try {
+        await apiCall('/api/backups', 'POST');
+        showToast('Backup created.', 'success');
+        location.reload();
+    } catch (e) {
+        // error toast already shown
+    }
+}
+
+async function deleteBackup(filename) {
+    if (!confirm('Delete backup "' + filename + '"?')) return;
+    try {
+        await apiCall('/api/backups/' + encodeURIComponent(filename), 'DELETE');
+        showToast('Backup deleted.', 'success');
+        location.reload();
+    } catch (e) {
+        // error toast already shown
+    }
+}
+
+async function restoreBackup() {
+    const fileInput = document.getElementById('restore-file');
+    if (!fileInput.files.length) {
+        showToast('Please select a backup file first.', 'warning');
+        return;
+    }
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+        const b64 = e.target.result.split(',')[1];
+        try {
+            await apiCall('/api/backups/restore', 'POST', { filename: file.name, data: b64 });
+            showToast('Backup restored. Reloading…', 'success');
+            setTimeout(() => location.reload(), 2000);
+        } catch (err) {
+            // error toast already shown
+        }
+    };
+    reader.readAsDataURL(file);
+}
+
+async function saveAuthSettings() {
+    const payload = {
+        auth_enabled: document.getElementById('auth-enabled').checked,
+        auth_password: document.getElementById('auth-password').value,
+    };
+    try {
+        await apiCall('/api/settings', 'PATCH', payload);
+        showToast('Authentication settings saved.', 'success');
+    } catch (e) {
+        // error toast already shown
+    }
+}
+
+async function saveWebSettings() {
+    const port = parseInt(document.getElementById('web-port').value, 10);
+    if (!port || port < 1 || port > 65535) {
+        showToast('Please enter a valid port number (1–65535).', 'warning');
+        return;
+    }
+    try {
+        await apiCall('/api/settings', 'PATCH', { web_port: port });
+        showToast('Web server port saved. Restart required.', 'success');
+    } catch (e) {
+        // error toast already shown
+    }
+}
+</script>
 {% endblock %}
