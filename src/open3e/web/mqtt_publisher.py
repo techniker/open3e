@@ -118,6 +118,8 @@ class MqttPublisher:
             self.start()
 
     def _emit_status(self, connected: bool) -> None:
+        if connected == self._connected:
+            return  # no change, don't spam WebSocket
         self._connected = connected
         if self._on_status:
             try:

@@ -154,8 +154,15 @@ function openWebSocket() {
  * Update sidebar status indicator dots based on an engine state message.
  * @param {object} msg - Message with a "state" property
  */
+var _lastEngineState = null;
+var _lastMqttState = null;
+var _lastCanState = null;
+
 function updateStatusIndicators(msg) {
     var state = msg.state;
+    if (state === _lastEngineState) { return; }
+    _lastEngineState = state;
+
     var engineDot = document.getElementById("status-engine");
     var engineText = document.getElementById("status-engine-text");
     var canDot = document.getElementById("status-can");
@@ -197,10 +204,12 @@ function updateStatusIndicators(msg) {
 }
 
 function updateCanIndicator(msg) {
+    var state = msg.state || "";
+    if (state === _lastCanState) { return; }
+    _lastCanState = state;
     var dot = document.getElementById("status-can");
     var text = document.getElementById("status-can-text");
     if (!dot || !text) { return; }
-    var state = msg.state || "";
     if (state === "up" || state === "connected") {
         dot.className = "status-dot green";
         text.textContent = "connected";
@@ -217,6 +226,8 @@ function updateCanIndicator(msg) {
 }
 
 function updateMqttIndicator(connected) {
+    if (connected === _lastMqttState) { return; }
+    _lastMqttState = connected;
     var dot = document.getElementById("status-mqtt");
     var text = document.getElementById("status-mqtt-text");
     if (!dot || !text) { return; }
