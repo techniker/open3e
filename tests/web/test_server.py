@@ -164,3 +164,35 @@ class TestBackupApi:
         # Verify it's gone from the list
         resp3 = get(app, "/api/backups")
         assert filename not in resp3.json()
+
+
+# ---------------------------------------------------------------------------
+# Integration tests
+# ---------------------------------------------------------------------------
+
+class TestIntegration:
+    def test_full_settings_roundtrip(self, app):
+        """Save CAN + MQTT settings, reload settings page, verify values."""
+        # Save settings via API
+        resp = patch(app, "/api/settings", json={
+            "can_interface": "can0",
+            "can_bitrate": "250000",
+            "mqtt_host": "192.168.1.100",
+            "mqtt_port": "1883",
+            "mqtt_topic_prefix": "open3e",
+            "ha_discovery_enabled": "1",
+            "ha_discovery_prefix": "homeassistant",
+        })
+        assert resp.status_code == 200
+
+        # Read back via API
+        resp = get(app, "/api/settings")
+        data = resp.json()
+        assert data["can_interface"] == "can0"
+        assert data["mqtt_host"] == "192.168.1.100"
+        assert data["ha_discovery_enabled"] == "1"
+
+        # Load settings page — should render without error
+        resp = get(app, "/settings")
+        assert resp.status_code == 200
+        assert "192.168.1.100" in resp.text
