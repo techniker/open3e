@@ -267,7 +267,8 @@ class ConfigStore:
         self, enabled: int | None = None
     ) -> list[aiosqlite.Row]:
         query = (
-            "SELECT ha_entities.*, datapoints.name AS dp_name"
+            "SELECT ha_entities.*, datapoints.name AS dp_name,"
+            " datapoints.ecu_address, datapoints.did"
             " FROM ha_entities"
             " JOIN datapoints ON datapoints.id = ha_entities.dp_id"
             " WHERE 1=1"

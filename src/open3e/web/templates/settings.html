@@ -280,16 +280,13 @@
                 <table class="table table-sm table-hover align-middle">
                     <thead>
                         <tr>
-                            <th>Enabled</th>
-                            <th>ECU</th>
-                            <th>DID</th>
+                            <th style="width:50px">On</th>
+                            <th style="width:50px">ECU</th>
+                            <th style="width:40px">DID</th>
                             <th>Name</th>
-                            <th>Sub-field</th>
-                            <th>Component</th>
-                            <th>Device Class</th>
-                            <th>Unit</th>
-                            <th>Icon</th>
-                            <th></th>
+                            <th style="width:90px">Type</th>
+                            <th style="width:90px">Class</th>
+                            <th style="width:50px">Unit</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -304,25 +301,18 @@
                                                onchange="toggleHaEntity({{ entity.id }}, this.checked)">
                                     </div>
                                 </td>
-                                <td><code>{{ entity.ecu }}</code></td>
-                                <td><code>{{ entity.did }}</code></td>
-                                <td>{{ entity.name }}</td>
-                                <td>{{ entity.sub_field or '—' }}</td>
-                                <td>{{ entity.component }}</td>
-                                <td>{{ entity.device_class or '—' }}</td>
-                                <td>{{ entity.unit or '—' }}</td>
-                                <td>{% if entity.icon %}<i class="bi {{ entity.icon }}"></i>{% else %}—{% endif %}</td>
-                                <td>
-                                    <button class="btn btn-sm btn-outline-secondary" title="Edit">
-                                        <i class="bi bi-pencil"></i>
-                                    </button>
-                                </td>
+                                <td><code class="small">{{ '%03x' % entity.ecu_address }}</code></td>
+                                <td><code class="small">{{ entity.did }}</code></td>
+                                <td class="text-truncate" style="max-width:250px" title="{{ entity.dp_name or entity.name or '' }}">{{ entity.dp_name or entity.name or '—' }}</td>
+                                <td><small>{{ entity.entity_type }}</small></td>
+                                <td><small>{{ entity.device_class or '—' }}</small></td>
+                                <td><small>{{ entity.unit or '—' }}</small></td>
                             </tr>
                             {% endfor %}
                         {% else %}
                             <tr>
-                                <td colspan="10" class="text-center text-muted">
-                                    No entities configured. Click "Apply Suggested Defaults" to auto-populate.
+                                <td colspan="7" class="text-center text-muted">
+                                    No entities configured. Click "Apply Suggested Defaults" to auto-populate from your poll-enabled datapoints.
                                 </td>
                             </tr>
                         {% endif %}
@@ -646,23 +636,26 @@ async function deleteBackup(filename) {
 }
 
 async function restoreBackup() {
-    const fileInput = document.getElementById('restore-file');
+    var fileInput = document.getElementById('restore-file');
     if (!fileInput.files.length) {
         showToast('Please select a backup file first.', 'warning');
         return;
     }
-    const file = fileInput.files[0];
-    const reader = new FileReader();
-    reader.onload = async (e) => {
-        const b64 = e.target.result.split(',')[1];
-        try {
-            await apiCall('/api/backup/restore', 'POST', { filename: file.name, data: b64 });
-            showToast('Backup restored. Reloading…', 'success');
-            setTimeout(() => location.reload(), 2000);
-        } catch (err) {
-            // error toast already shown
+    if (!confirm('This will replace all current settings and data. Continue?')) return;
+    var formData = new FormData();
+    formData.append('file', fileInput.files[0]);
+    try {
+        var resp = await fetch('/api/backup/restore', { method: 'POST', body: formData });
+        var data = await resp.json();
+        if (resp.ok) {
+            showToast('Backup restored. Reloading...', 'success');
+            setTimeout(function() { location.hash = '#system-pane'; location.reload(); }, 2000);
+        } else {
+            showToast('Restore failed: ' + (data.detail || 'unknown error'), 'danger');
         }
-    };
+    } catch (err) {
+        showToast('Restore failed: ' + err.message, 'danger');
+    }
     reader.readAsDataURL(file);
 }
 
@@ -674,6 +667,42 @@ async function saveAuthSettings() {
     try {
         await apiCall('/api/settings', 'PATCH', payload);
         showToast('Authentication settings saved.', 'success');
+    } catch (e) {
+        // error toast already shown
+    }
+}
+
+// ---------------------------------------------------------------------------
+// HA helpers
+// ---------------------------------------------------------------------------
+
+async function applyHaDefaults() {
+    try {
+        var result = await apiCall('/api/ha/apply-defaults', 'POST');
+        showToast('Created ' + (result.entities_created || 0) + ' HA entity defaults.', 'success');
+        location.hash = '#ha-pane';
+        location.reload();
+    } catch (e) {
+        // error toast already shown
+    }
+}
+
+async function toggleHaEntity(entityId, enabled) {
+    try {
+        await apiCall('/api/ha/entities/' + entityId, 'PATCH', { enabled: enabled ? 1 : 0 });
+    } catch (e) {
+        var cb = document.getElementById('ha-entity-' + entityId);
+        if (cb) cb.checked = !enabled;
+    }
+}
+
+async function saveHaSettings() {
+    try {
+        await apiCall('/api/settings', 'PATCH', {
+            ha_discovery_enabled: document.getElementById('ha-enabled').checked ? '1' : '0',
+            ha_discovery_prefix: document.getElementById('ha-discovery-prefix').value.trim() || 'homeassistant',
+        });
+        showToast('HA settings saved.', 'success');
     } catch (e) {
         // error toast already shown
     }

@@ -221,13 +221,15 @@ class TestBackup:
         filename = run(store.create_backup())
         assert filename.endswith(".db")
         backups = run(store.list_backups())
-        assert filename in backups
+        filenames = [b["filename"] for b in backups]
+        assert filename in filenames
 
     def test_delete(self, store):
         filename = run(store.create_backup())
         run(store.delete_backup(filename))
         backups = run(store.list_backups())
-        assert filename not in backups
+        filenames = [b["filename"] for b in backups]
+        assert filename not in filenames
 
     def test_backup_path(self, store):
         filename = run(store.create_backup())

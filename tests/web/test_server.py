@@ -141,7 +141,8 @@ class TestBackupApi:
         assert resp2.status_code == 200
         backups = resp2.json()
         assert isinstance(backups, list)
-        assert data["filename"] in backups
+        filenames = [b["filename"] for b in backups]
+        assert data["filename"] in filenames
 
     def test_download(self, app):
         # Create a backup first

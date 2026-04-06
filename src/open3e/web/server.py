@@ -394,28 +394,33 @@ def create_app(store: ConfigStore) -> FastAPI:
     @app.post("/api/ha/apply-defaults")
     async def api_ha_apply_defaults():
         from open3e.web.ha_discovery import infer_ha_entity
+        # Only create HA entities for poll-enabled datapoints with priority > 0
         datapoints = await store.get_datapoints()
+        active_dps = [dp for dp in datapoints if dp["poll_enabled"] and dp["poll_priority"] > 0]
         created = 0
-        for dp in datapoints:
+        for dp in active_dps:
             result = infer_ha_entity(
                 dp["name"], dp["codec"] or "", False
             )
             if result:
+                ecu_hex = format(dp["ecu_address"], "03x")
+                sub = result.get("sub_field") or ""
+                uid_parts = ["open3e", ecu_hex, str(dp["did"])]
+                if sub:
+                    uid_parts.append(sub.lower())
+                unique_id = "_".join(uid_parts)
+                entity_name = result.get("entity_name") or dp["name"]
                 await store.upsert_ha_entity(
-                    dp["id"], result.get("sub_field"),
-                    result["ha_component"], result.get("device_class"),
-                    result.get("unit"), result.get("icon"),
-                    result.get("entity_name"),
+                    dp_id=dp["id"],
+                    entity_type=result["ha_component"],
+                    unique_id=unique_id,
+                    name=entity_name,
+                    device_class=result.get("device_class"),
+                    unit=result.get("unit"),
+                    enabled=0,  # default disabled, user enables what they want
                 )
                 created += 1
-        # Trigger HA discovery publish if publisher exists
-        publisher = getattr(app.state, "mqtt_publisher", None)
-        if publisher and publisher.connected:
-            entities = await store.get_ha_entities(enabled=True)
-            ecus = await store.get_ecus()
-            tp = await store.get_setting("mqtt_topic_prefix", "open3e")
-            hp = await store.get_setting("ha_discovery_prefix", "homeassistant")
-            publisher.publish_ha_discovery(entities, ecus, tp, hp)
+        return {"status": "ok", "entities_created": created}
         return {"status": "ok", "entities_created": created}
 
     # -----------------------------------------------------------------------
