@@ -203,6 +203,32 @@ def main() -> None:
 
         _main_loop.create_task(_emit_initial_status())
 
+        # Periodic HA discovery republish every 60 seconds
+        async def _ha_discovery_loop():
+            while True:
+                await asyncio.sleep(60)
+                try:
+                    ha_enabled = await store.get_setting("ha_discovery_enabled")
+                    if ha_enabled != "1":
+                        continue
+                    if not publisher.connected:
+                        continue
+                    entities = await store.get_ha_entities(enabled=1)
+                    if not entities:
+                        continue
+                    ecus = await store.get_ecus()
+                    tp = await store.get_setting("mqtt_topic_prefix", "vcal") or "vcal"
+                    hp = await store.get_setting("ha_discovery_prefix", "homeassistant") or "homeassistant"
+                    publisher.publish_ha_discovery(
+                        [dict(e) for e in entities],
+                        [dict(e) for e in ecus],
+                        tp, hp,
+                    )
+                except Exception as exc:
+                    logger.warning("HA discovery periodic publish failed: %s", exc)
+
+        _main_loop.create_task(_ha_discovery_loop())
+
         await server.serve()
 
     asyncio.run(_serve())
