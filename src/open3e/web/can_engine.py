@@ -287,12 +287,14 @@ class CanEngine:
             value, idstr, _ = o3e.readByDid(did, raw=False)
             cache_key = f"{ecu_addr}:{did}"
             self._last_values[cache_key] = value
+            import time as _time
             self._emit_data({
                 "type": "did_value",
                 "ecu": ecu_addr,
                 "did": did,
                 "name": dp.get("name", idstr),
                 "value": value,
+                "ts": int(_time.time()),
             })
         except Exception as exc:
             self._emit_data({

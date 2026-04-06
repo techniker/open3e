@@ -59,7 +59,7 @@
             >
                 <div class="card-body">
                     <div class="text-muted small mb-1">{{ dp.name }}</div>
-                    <div class="text-muted small mb-2">ECU {{ dp.ecu_address }} &middot; DID {{ dp.did }}</div>
+                    <div class="text-muted small mb-2">{{ '%03x' % dp.ecu_address }} &middot; DID {{ dp.did }}</div>
                     <div class="card-value">--</div>
                     <div class="card-ts">&nbsp;</div>
                 </div>
