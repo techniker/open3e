@@ -188,12 +188,10 @@ class ConfigStore:
             "   (ecu_address, did, name, codec, poll_priority, poll_enabled, unit, description)"
             " VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
             " ON CONFLICT(ecu_address, did) DO UPDATE SET"
-            "   name          = excluded.name,"
-            "   codec         = excluded.codec,"
-            "   poll_priority = excluded.poll_priority,"
-            "   poll_enabled  = excluded.poll_enabled,"
-            "   unit          = excluded.unit,"
-            "   description   = excluded.description",
+            "   name  = excluded.name,"
+            "   codec = excluded.codec,"
+            "   unit  = COALESCE(excluded.unit, unit),"
+            "   description = COALESCE(excluded.description, description)",
             (ecu_address, did, name, codec, poll_priority, poll_enabled, unit, description),
         ) as cur:
             rowid = cur.lastrowid

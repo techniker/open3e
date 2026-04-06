@@ -169,7 +169,7 @@
                 <div class="col-md-6">
                     <label for="mqtt-username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="mqtt-username"
-                           value="{{ settings.mqtt_username or '' }}"
+                           value="{{ settings.mqtt_user or '' }}"
                            placeholder="(optional)">
                 </div>
                 <div class="col-md-6">
@@ -491,11 +491,22 @@ function updateMqttPreview() {
 }
 
 async function testMqtt() {
+    var host = document.getElementById('mqtt-host').value.trim();
+    if (!host) { showToast('Enter an MQTT host first.', 'warning'); return; }
     try {
-        await apiCall('/api/settings/test-mqtt', 'POST');
-        showToast('MQTT connection successful.', 'success');
+        var result = await apiCall('/api/settings/test-mqtt', 'POST', {
+            mqtt_host: host,
+            mqtt_port: document.getElementById('mqtt-port').value || '1883',
+            mqtt_user: document.getElementById('mqtt-username').value,
+            mqtt_password: document.getElementById('mqtt-password').value,
+        });
+        if (result.ok) {
+            showToast(result.message || 'MQTT connection successful.', 'success');
+        } else {
+            showToast('MQTT test failed: ' + (result.error || 'unknown'), 'danger');
+        }
     } catch (e) {
-        // error toast already shown
+        // error toast already shown by apiCall
     }
 }
 
@@ -506,12 +517,12 @@ async function saveMqttSettings() {
     const buildPayload = (caCertB64) => ({
         mqtt_host: document.getElementById('mqtt-host').value.trim(),
         mqtt_port: String(parseInt(document.getElementById('mqtt-port').value, 10) || 1883),
-        mqtt_user: document.getElementById('mqtt-username') ? document.getElementById('mqtt-username').value : (document.getElementById('mqtt-user') ? document.getElementById('mqtt-user').value : ''),
+        mqtt_user: document.getElementById('mqtt-username').value,
         mqtt_password: document.getElementById('mqtt-password').value,
         mqtt_tls_enabled: tlsEnabled ? '1' : '0',
         mqtt_ca_cert: caCertB64 || '',
-        mqtt_topic_prefix: document.getElementById('mqtt-topic-prefix') ? document.getElementById('mqtt-topic-prefix').value.trim() : (document.getElementById('mqtt-prefix') ? document.getElementById('mqtt-prefix').value.trim() : 'open3e'),
-        mqtt_format_string: document.getElementById('mqtt-format') ? document.getElementById('mqtt-format').value.trim() : (document.getElementById('mqtt-format-string') ? document.getElementById('mqtt-format-string').value.trim() : '{didName}'),
+        mqtt_topic_prefix: document.getElementById('mqtt-topic-prefix').value.trim() || 'open3e',
+        mqtt_format_string: document.getElementById('mqtt-format').value.trim() || '{didName}',
         mqtt_client_id: document.getElementById('mqtt-client-id').value.trim(),
     });
 

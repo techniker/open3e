@@ -353,21 +353,51 @@ def create_app(store: ConfigStore) -> FastAPI:
         return [dict(m) for m in mappings]
 
     @app.post("/api/settings/test-mqtt")
-    async def api_test_mqtt():
-        import paho.mqtt.client as mqtt
+    async def api_test_mqtt(request: Request):
+        import paho.mqtt.client as paho_test
+        import threading
 
-        settings = await store.get_all_settings()
-        host = settings.get("mqtt_host", "localhost")
+        body = await request.json()
+        host = body.get("mqtt_host", "").strip()
+        if not host:
+            return {"ok": False, "error": "No MQTT host specified"}
         try:
-            port = int(settings.get("mqtt_port", 1883))
+            port = int(body.get("mqtt_port", 1883))
         except (ValueError, TypeError):
             port = 1883
 
-        client = mqtt.Client()
+        result = {"connected": False, "error": None}
+        event = threading.Event()
+
+        def on_connect(client, userdata, flags, reason_code, properties=None):
+            result["connected"] = True
+            event.set()
+
+        def on_connect_fail(client, userdata):
+            result["error"] = "Connection refused"
+            event.set()
+
         try:
+            client = paho_test.Client(paho_test.CallbackAPIVersion.VERSION2, "open3e_test_" + str(int(__import__("time").time())))
+            client.on_connect = on_connect
+
+            user = body.get("mqtt_user", "")
+            pw = body.get("mqtt_password", "")
+            if user:
+                client.username_pw_set(user, pw)
+
             client.connect(host, port, keepalive=5)
+            client.loop_start()
+
+            # Wait up to 5 seconds for the connection callback
+            event.wait(timeout=5)
+            client.loop_stop()
             client.disconnect()
-            return {"ok": True, "message": f"Connected to {host}:{port}"}
+
+            if result["connected"]:
+                return {"ok": True, "message": "Connected to {}:{}".format(host, port)}
+            else:
+                return {"ok": False, "error": result["error"] or "Connection timed out after 5 seconds"}
         except Exception as exc:
             return {"ok": False, "error": str(exc)}
 
