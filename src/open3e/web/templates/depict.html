@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block title %}System Depiction — open3e{% endblock %}
+
+{% block content %}
+<div class="p-4">
+    <h4 class="mb-4"><i class="bi bi-diagram-3"></i> System Depiction</h4>
+
+    <!-- Description card -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Scan the CAN bus for connected ECUs</h5>
+            <p class="card-text text-muted mb-3">
+                System depiction scans the CAN bus to discover all connected Viessmann ECUs and
+                their supported datapoints. The scan typically takes <strong>10–20 minutes</strong>
+                to complete. During the scan the CAN engine will be paused and no live polling
+                will occur.
+            </p>
+
+            <div class="row g-3 align-items-end" style="max-width: 520px;">
+                <div class="col">
+                    <label for="can-interface-input" class="form-label">CAN Interface</label>
+                    <input type="text" class="form-control" id="can-interface-input"
+                           value="{{ can_interface or '' }}"
+                           placeholder="e.g. can0">
+                    <div class="form-text">The CAN interface to use for the scan.</div>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-primary" id="btn-start-scan" onclick="startScan()">
+                        <i class="bi bi-play-fill"></i> Start Scan
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <span id="scan-status" class="text-muted small"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Console output card -->
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span><i class="bi bi-terminal"></i> Scan Output</span>
+            <button class="btn btn-sm btn-outline-secondary" onclick="clearConsole()">
+                <i class="bi bi-trash"></i> Clear
+            </button>
+        </div>
+        <div class="card-body p-0">
+            <pre id="depict-console"
+                 style="background:#1a1a1a;color:#d4d4d4;height:400px;overflow-y:auto;
+                        margin:0;padding:1rem;font-family:monospace;font-size:0.85rem;
+                        border-radius:0 0 var(--bs-card-border-radius) var(--bs-card-border-radius);
+                        white-space:pre-wrap;word-break:break-all;"></pre>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+    var ws = openWebSocket();
+
+    ws.onDepictProgress = function (msg) {
+        appendConsole(msg.line || '');
+    };
+
+    ws.onDepictComplete = function (msg) {
+        var success = msg.success !== false;
+        var statusEl = document.getElementById('scan-status');
+        var btnStart = document.getElementById('btn-start-scan');
+
+        statusEl.textContent = success
+            ? 'Scan completed successfully.'
+            : 'Scan failed. See output above for details.';
+        statusEl.className = success ? 'text-success small' : 'text-danger small';
+
+        btnStart.disabled = false;
+        btnStart.textContent = '';
+        var icon = document.createElement('i');
+        icon.className = 'bi bi-play-fill';
+        btnStart.appendChild(icon);
+        btnStart.appendChild(document.createTextNode(' Start Scan'));
+
+        if (success) {
+            var loadBtn = document.createElement('button');
+            loadBtn.className = 'btn btn-success ms-2';
+            loadBtn.id = 'btn-load-results';
+            loadBtn.type = 'button';
+            var loadIcon = document.createElement('i');
+            loadIcon.className = 'bi bi-cloud-download';
+            loadBtn.appendChild(loadIcon);
+            loadBtn.appendChild(document.createTextNode(' Load Results'));
+            loadBtn.addEventListener('click', loadResults);
+            btnStart.parentNode.insertBefore(loadBtn, btnStart.nextSibling);
+        }
+    };
+
+    window.startScan = async function () {
+        var iface = document.getElementById('can-interface-input').value.trim();
+        if (!iface) {
+            showToast('Please enter a CAN interface name.', 'warning');
+            return;
+        }
+
+        var existing = document.getElementById('btn-load-results');
+        if (existing) { existing.remove(); }
+
+        var btnStart = document.getElementById('btn-start-scan');
+        var statusEl = document.getElementById('scan-status');
+
+        btnStart.disabled = true;
+        btnStart.textContent = '';
+        var spinner = document.createElement('span');
+        spinner.className = 'spinner-border spinner-border-sm me-2';
+        spinner.setAttribute('role', 'status');
+        btnStart.appendChild(spinner);
+        btnStart.appendChild(document.createTextNode('Scanning…'));
+
+        statusEl.textContent = 'Scan in progress…';
+        statusEl.className = 'text-warning small';
+
+        clearConsole();
+
+        try {
+            await apiCall('/api/depict/start', 'POST', { can_interface: iface });
+        } catch (e) {
+            btnStart.disabled = false;
+            btnStart.textContent = '';
+            var icon = document.createElement('i');
+            icon.className = 'bi bi-play-fill';
+            btnStart.appendChild(icon);
+            btnStart.appendChild(document.createTextNode(' Start Scan'));
+            statusEl.textContent = 'Failed to start scan.';
+            statusEl.className = 'text-danger small';
+        }
+    };
+
+    window.loadResults = async function () {
+        try {
+            var data = await apiCall('/api/depict/load', 'POST');
+            showToast('Loaded ' + data.devices_loaded + ' device(s) from scan results.', 'success');
+        } catch (e) {
+            // error toast already shown by apiCall
+        }
+    };
+
+    window.appendConsole = function (text) {
+        var pre = document.getElementById('depict-console');
+        pre.textContent += text + '\n';
+        pre.scrollTop = pre.scrollHeight;
+    };
+
+    window.clearConsole = function () {
+        document.getElementById('depict-console').textContent = '';
+    };
+}());
+</script>
+{% endblock %}
