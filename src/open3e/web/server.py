@@ -220,7 +220,11 @@ def create_app(store: ConfigStore) -> FastAPI:
     async def api_patch_settings(request: Request):
         body = await request.json()
         for key, value in body.items():
-            await store.set_setting(key, value)
+            # Ensure all values are stored as strings
+            if isinstance(value, (dict, list)):
+                await store.set_setting(key, json.dumps(value))
+            else:
+                await store.set_setting(key, str(value))
         # Reconfigure MQTT if settings changed
         mqtt_keys = {"mqtt_host", "mqtt_port", "mqtt_user", "mqtt_password", "mqtt_tls_enabled", "mqtt_topic_prefix", "mqtt_format_string", "mqtt_client_id"}
         if mqtt_keys.intersection(body.keys()):

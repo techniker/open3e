@@ -408,7 +408,7 @@ class CanEngine:
     # Depiction support
     # -----------------------------------------------------------------------
 
-    def start_depiction(self, can_interface: str, on_line: Callable[[str], None]) -> None:
+    def start_depiction(self, can_interface: str, on_line: Optional[Callable[[str], None]] = None) -> None:
         """Run ``open3e_depictSystem`` as a subprocess.
 
         Reads stdout in a dedicated reader thread.  Emits:
