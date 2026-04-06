@@ -410,18 +410,21 @@ def create_app(store: ConfigStore) -> FastAPI:
         datapoints = await store.get_datapoints()
         active_dps = [dp for dp in datapoints if dp["poll_enabled"] and dp["poll_priority"] > 0]
         created = 0
+        from open3e.web.ha_discovery import _humanize
         for dp in active_dps:
             result = infer_ha_entity(
                 dp["name"], dp["codec"] or "", False
             )
+            ecu_hex = format(dp["ecu_address"], "03x")
+
             if result:
-                ecu_hex = format(dp["ecu_address"], "03x")
+                # Smart default matched — use inferred type
                 sub = result.get("sub_field") or ""
                 uid_parts = ["open3e", ecu_hex, str(dp["did"])]
                 if sub:
                     uid_parts.append(sub.lower())
                 unique_id = "_".join(uid_parts)
-                entity_name = result.get("entity_name") or dp["name"]
+                entity_name = result.get("entity_name") or _humanize(dp["name"])
                 await store.upsert_ha_entity(
                     dp_id=dp["id"],
                     entity_type=result["ha_component"],
@@ -429,9 +432,22 @@ def create_app(store: ConfigStore) -> FastAPI:
                     name=entity_name,
                     device_class=result.get("device_class"),
                     unit=result.get("unit"),
-                    enabled=0,  # default disabled, user enables what they want
+                    enabled=0,
                 )
-                created += 1
+            else:
+                # No rule matched — create generic sensor
+                unique_id = "open3e_{}_{}".format(ecu_hex, dp["did"])
+                entity_name = _humanize(dp["name"])
+                await store.upsert_ha_entity(
+                    dp_id=dp["id"],
+                    entity_type="sensor",
+                    unique_id=unique_id,
+                    name=entity_name,
+                    device_class=None,
+                    unit=None,
+                    enabled=0,
+                )
+            created += 1
         return {"status": "ok", "entities_created": created}
 
     @app.post("/api/ha/publish")

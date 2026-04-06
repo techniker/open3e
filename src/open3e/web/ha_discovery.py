@@ -5,15 +5,56 @@ from typing import Optional
 
 INFERENCE_RULES = [
     # (name_pattern, codec_types, ha_component, device_class, unit, icon)
+    # Temperature sensors (ComplexType with Actual or Int16 scalars)
     ("*Temperature*", ["O3EComplexType", "O3EInt16"], "sensor", "temperature", "\u00b0C", "mdi:thermometer"),
+    ("*Sensor", ["O3EComplexType"], "sensor", "temperature", "\u00b0C", "mdi:thermometer"),
+    # Pressure sensors
     ("*Pressure*", ["O3EComplexType", "O3EInt16"], "sensor", "pressure", "bar", "mdi:gauge"),
-    ("*Energy*", ["O3EInt32", "O3EInt64"], "sensor", "energy", "kWh", "mdi:lightning-bolt"),
-    ("*FlowMeter*", ["O3EInt32"], "sensor", "water", "L", "mdi:water"),
-    ("*Power*", ["O3EInt16", "O3EInt32"], "sensor", "power", "W", "mdi:flash"),
-    ("*OperationMode*", ["O3EEnum"], "select", None, None, "mdi:cog"),
-    ("*OperationState*", ["O3EEnum"], "select", None, None, "mdi:toggle-switch"),
-    ("*Setpoint*", ["O3EComplexType", "O3EInt16"], "number", "temperature", "\u00b0C", "mdi:thermostat"),
-    ("*Pump*", ["O3EBool"], "binary_sensor", None, None, "mdi:pump"),
+    # Energy consumption and generation
+    ("*EnergyConsumption*", ["O3EComplexType"], "sensor", "energy", "kWh", "mdi:lightning-bolt"),
+    ("*GeneratedOutput*", ["O3EComplexType"], "sensor", "energy", "kWh", "mdi:solar-power"),
+    ("*Generated*Output*", ["O3EComplexType"], "sensor", "energy", "kWh", "mdi:solar-power"),
+    ("*Energy*", ["O3EInt32", "O3EInt64", "O3EComplexType"], "sensor", "energy", "kWh", "mdi:lightning-bolt"),
+    # Power
+    ("*Power*", ["O3EInt16", "O3EInt32", "O3EComplexType"], "sensor", "power", "W", "mdi:flash"),
+    ("*ThermalPower*", ["O3EComplexType"], "sensor", "power", "W", "mdi:fire"),
+    # Flow and water
+    ("*FlowMeter*", ["O3EInt32", "O3EComplexType"], "sensor", "water", "L", "mdi:water"),
+    ("*Allegra*", ["O3EComplexType"], "sensor", None, "L/h", "mdi:water-pump"),
+    # Voltage, current, photovoltaic
+    ("*Voltage*", ["O3EComplexType", "O3EInt16"], "sensor", "voltage", "V", "mdi:flash"),
+    ("*Current*", ["O3EComplexType", "O3EInt16"], "sensor", "current", "A", "mdi:current-ac"),
+    ("*Photovoltaic*Power*", ["O3EComplexType"], "sensor", "power", "W", "mdi:solar-panel"),
+    ("*Photovoltaic*", ["O3EComplexType"], "sensor", None, None, "mdi:solar-panel"),
+    ("*StateOfCharge*", ["O3EInt8", "O3EByteVal"], "sensor", "battery", "%", "mdi:battery"),
+    # Pumps
+    ("*Pump*", ["O3EComplexType", "O3EBool", "O3EByteVal"], "sensor", None, None, "mdi:pump"),
+    # Valves
+    ("*Valve*", ["O3EComplexType", "O3EInt8", "O3EByteVal"], "sensor", None, "%", "mdi:valve"),
+    # Setpoints (writable)
+    ("*Setpoint*", ["O3EComplexType", "O3EInt16"], "sensor", "temperature", "\u00b0C", "mdi:thermostat"),
+    ("*Hysteresis*", ["O3EComplexType"], "sensor", "temperature", "\u00b0C", "mdi:thermostat"),
+    # Operation modes and states
+    ("*OperationMode*", ["O3EEnum", "O3EComplexType"], "sensor", None, None, "mdi:cog"),
+    ("*OperationState*", ["O3EEnum", "O3EComplexType"], "sensor", None, None, "mdi:toggle-switch"),
+    ("*QuickMode*", ["O3EComplexType"], "sensor", None, None, "mdi:flash"),
+    # Heating curves
+    ("*HeatingCurve*", ["O3EComplexType"], "sensor", None, None, "mdi:chart-line"),
+    ("*CurveAdaption*", ["O3EComplexType"], "sensor", None, None, "mdi:chart-line"),
+    # Software/Hardware/Identity
+    ("*Version*", ["O3ESoftVers"], "sensor", None, None, "mdi:information"),
+    ("*MacAddress*", ["O3EMacAddr"], "sensor", None, None, "mdi:ethernet"),
+    ("*Identification*", ["O3EComplexType", "O3EUtf8", "O3EByteVal"], "sensor", None, None, "mdi:card-account-details"),
+    # Time and schedule
+    ("*TimeSchedule*", ["O3EList"], "sensor", None, None, "mdi:clock-outline"),
+    ("*Date*", ["O3ESdate"], "sensor", None, None, "mdi:calendar"),
+    ("*Time*", ["O3EStime"], "sensor", None, None, "mdi:clock"),
+    # Enum/status values
+    ("*", ["O3EEnum"], "sensor", None, None, "mdi:information"),
+    # Byte values (generic numeric)
+    ("*", ["O3EByteVal", "O3EInt8"], "sensor", None, None, "mdi:numeric"),
+    # Int16/Int32 values (generic numeric)
+    ("*", ["O3EInt16", "O3EInt32", "O3EInt64"], "sensor", None, None, "mdi:numeric"),
 ]
 
 
