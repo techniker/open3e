@@ -14,14 +14,21 @@ document.addEventListener("DOMContentLoaded", function () {
 function formatValue(value) {
     if (value === null || value === undefined) { return "--"; }
     if (typeof value !== "object") { return String(value); }
-    if (value.Actual !== undefined) { return String(value.Actual); }
+    // For ComplexType with Actual — show just the Actual value prominently
+    if (value.Actual !== undefined) {
+        return String(value.Actual);
+    }
+    // Show all sub-fields compactly: "String1:0 String2:2065 String3:3632"
+    var parts = [];
     var keys = Object.keys(value);
     for (var i = 0; i < keys.length; i++) {
-        if (typeof value[keys[i]] === "number") {
-            return String(value[keys[i]]);
-        }
+        var k = keys[i];
+        var v = value[k];
+        if (v === null || v === undefined) continue;
+        if (typeof v === "object") continue; // skip nested
+        parts.push(k + ":" + v);
     }
-    return JSON.stringify(value);
+    return parts.join(" | ");
 }
 
 function handleDidValue(msg) {
