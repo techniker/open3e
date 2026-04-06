@@ -184,11 +184,11 @@
             <div class="mb-4">
                 <div class="form-check form-switch mb-2">
                     <input class="form-check-input" type="checkbox" id="mqtt-tls"
-                           {% if settings.mqtt_tls %}checked{% endif %}
+                           {% if settings.mqtt_tls_enabled == '1' %}checked{% endif %}
                            onchange="document.getElementById('mqtt-tls-area').classList.toggle('d-none', !this.checked)">
                     <label class="form-check-label" for="mqtt-tls">Enable TLS</label>
                 </div>
-                <div id="mqtt-tls-area" class="{% if not settings.mqtt_tls %}d-none{% endif %}">
+                <div id="mqtt-tls-area" class="{% if settings.mqtt_tls_enabled != '1' %}d-none{% endif %}">
                     <label for="mqtt-ca-cert" class="form-label">CA Certificate File</label>
                     <input type="file" class="form-control" id="mqtt-ca-cert" accept=".pem,.crt,.cer">
                     <div class="form-text">Upload a PEM-encoded CA certificate to verify the broker.</div>
@@ -505,13 +505,13 @@ async function saveMqttSettings() {
 
     const buildPayload = (caCertB64) => ({
         mqtt_host: document.getElementById('mqtt-host').value.trim(),
-        mqtt_port: parseInt(document.getElementById('mqtt-port').value, 10) || 1883,
-        mqtt_username: document.getElementById('mqtt-username').value,
+        mqtt_port: String(parseInt(document.getElementById('mqtt-port').value, 10) || 1883),
+        mqtt_user: document.getElementById('mqtt-username') ? document.getElementById('mqtt-username').value : (document.getElementById('mqtt-user') ? document.getElementById('mqtt-user').value : ''),
         mqtt_password: document.getElementById('mqtt-password').value,
-        mqtt_tls: tlsEnabled,
-        mqtt_ca_cert: caCertB64 || null,
-        mqtt_topic_prefix: document.getElementById('mqtt-topic-prefix').value.trim(),
-        mqtt_format: document.getElementById('mqtt-format').value.trim(),
+        mqtt_tls_enabled: tlsEnabled ? '1' : '0',
+        mqtt_ca_cert: caCertB64 || '',
+        mqtt_topic_prefix: document.getElementById('mqtt-topic-prefix') ? document.getElementById('mqtt-topic-prefix').value.trim() : (document.getElementById('mqtt-prefix') ? document.getElementById('mqtt-prefix').value.trim() : 'open3e'),
+        mqtt_format_string: document.getElementById('mqtt-format') ? document.getElementById('mqtt-format').value.trim() : (document.getElementById('mqtt-format-string') ? document.getElementById('mqtt-format-string').value.trim() : '{didName}'),
         mqtt_client_id: document.getElementById('mqtt-client-id').value.trim(),
     });
 

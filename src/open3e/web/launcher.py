@@ -142,9 +142,16 @@ def main() -> None:
 
     def on_mqtt_status(msg: dict) -> None:
         """Bridge: deliver MQTT status to the WebSocket manager on the uvicorn loop."""
-        ws_mgr = app.state.ws_manager
+        if _main_loop is None:
+            return
+        ws_mgr = getattr(app.state, "ws_manager", None)
+        if ws_mgr is None:
+            return
         coro = ws_mgr.broadcast_state(msg)
-        asyncio.run_coroutine_threadsafe(coro, _main_loop)
+        try:
+            asyncio.run_coroutine_threadsafe(coro, _main_loop)
+        except RuntimeError:
+            pass
 
     publisher._on_status = on_mqtt_status
 

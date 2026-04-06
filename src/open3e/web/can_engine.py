@@ -449,7 +449,7 @@ class CanEngine:
         # Server-side log buffer for page refresh persistence
         self._depict_log: list[str] = []
         self._depict_returncode: Optional[int] = None
-        self._depict_progress = {"phase": "starting", "percent": 0, "detail": ""}
+        self._depict_progress = {"phase": "starting", "percent": 0, "detail": "", "checklist": []}
 
         # Known scan ranges for progress calculation
         COB_START, COB_END = 0x680, 0x6ff
@@ -460,56 +460,108 @@ class CanEngine:
         import re
         _re_cob_scan = re.compile(r"^scan COB-IDs")
         _re_cob_addr = re.compile(r"^0x([0-9a-fA-F]+)\s*$")
-        _re_cob_found = re.compile(r"^ECU found:")
+        _re_cob_found = re.compile(r"^ECU found:\s*(0x[0-9a-fA-F]+)\s*:\s*(.*)")
         _re_cob_done = re.compile(r"(\d+) responding COB-IDs found")
         _re_did_scan = re.compile(r"^scan ([0-9a-fA-F]+) for DIDs (\d+) to (\d+)")
         _re_did_num = re.compile(r"^(\d+)\s*$")
         _re_did_found = re.compile(r"^found (\d+):(\d+):")
         _re_did_done = re.compile(r"(\d+) DIDs found on")
+        _re_write_file = re.compile(r"^write (\S+ file \S+|devices\.json)")
+        _re_done = re.compile(r"^done\.$")
+        _re_read_enums = re.compile(r"^read DID enums")
         ecus_found_count = [0]  # mutable for closure
+        ecus_scanned_count = [0]  # how many ECU DID scans completed
+        current_ecu_hex = [""]
 
         def _parse_progress(text: str) -> None:
             """Parse depict output lines to update progress."""
             p = self._depict_progress
-            if _re_cob_scan.match(text):
-                p["phase"] = "cob_scan"
+            cl = p["checklist"]
+
+            if _re_read_enums.match(text):
+                p["phase"] = "init"
                 p["percent"] = 0
-                p["detail"] = "Scanning for ECUs..."
+                p["detail"] = "Reading DID enums..."
+
+            elif _re_cob_scan.match(text):
+                p["phase"] = "cob_scan"
+                p["percent"] = 1
+                p["detail"] = "Phase 1/3: Scanning for ECUs on CAN bus..."
+
             elif _re_cob_addr.match(text):
                 m = _re_cob_addr.match(text)
                 addr = int(m.group(1), 16)
                 done = addr - COB_START + 1
-                # COB scan is 30% of total
-                p["percent"] = int(30 * done / COB_COUNT)
-                p["detail"] = "Scanning COB-ID 0x{:03x} ({}/{})".format(addr, done, COB_COUNT)
+                # COB scan is 20% of total
+                p["percent"] = max(p["percent"], int(20 * done / COB_COUNT))
+                p["detail"] = "Phase 1/3: Scanning COB-ID 0x{:03x} ({}/{})".format(addr, done, COB_COUNT)
+
             elif _re_cob_found.match(text):
                 ecus_found_count[0] += 1
-                p["detail"] = text
+                m = _re_cob_found.match(text)
+                if m:
+                    p["detail"] = "ECU found: {} ({})".format(m.group(1), m.group(2))
+
             elif _re_cob_done.match(text):
                 p["phase"] = "cob_done"
-                p["percent"] = 30
+                p["percent"] = 20
                 p["detail"] = text
+                # Add devices.json to checklist
+                cl.append({"file": "devices.json", "done": False})
+
             elif _re_did_scan.match(text):
+                m = _re_did_scan.match(text)
+                ecu_hex = m.group(1)
+                current_ecu_hex[0] = ecu_hex
                 p["phase"] = "did_scan"
-                p["detail"] = text
+                p["detail"] = "Phase 2/3: Scanning DIDs on ECU 0x{} ...".format(ecu_hex)
+                # Add datapoints file to checklist
+                dp_file = "Open3Edatapoints_{}.py".format(ecu_hex)
+                if not any(item["file"] == dp_file for item in cl):
+                    cl.append({"file": dp_file, "done": False})
+
             elif _re_did_num.match(text):
                 m = _re_did_num.match(text)
                 did = int(m.group(1))
                 done = did - DID_START + 1
-                # DID scan is 70% of total (30-100%), split across ECUs
+                # DID scan is 60% of total (20-80%), split evenly across ECUs
                 ecu_count = max(ecus_found_count[0], 1)
-                per_ecu = 70 / ecu_count
-                p["percent"] = min(99, 30 + int(per_ecu * done / DID_COUNT))
-                p["detail"] = "Scanning DID {} ({}/{})".format(did, done, DID_COUNT)
+                base = 20 + int(60 * ecus_scanned_count[0] / ecu_count)
+                per_ecu_range = 60 / ecu_count
+                new_pct = min(80, base + int(per_ecu_range * done / DID_COUNT))
+                p["percent"] = max(p["percent"], new_pct)  # never go backwards
+                p["detail"] = "Phase 2/3: ECU 0x{} — DID {} ({}/{})".format(
+                    current_ecu_hex[0], did, done, DID_COUNT)
+
             elif _re_did_found.match(text):
-                p["detail"] = text
+                pass  # don't update detail for individual finds, too noisy
+
             elif _re_did_done.match(text):
-                p["percent"] = min(99, p["percent"] + 1)
+                ecus_scanned_count[0] += 1
+                # Mark datapoints file as done
+                dp_file = "Open3Edatapoints_{}.py".format(current_ecu_hex[0])
+                for item in cl:
+                    if item["file"] == dp_file:
+                        item["done"] = True
                 p["detail"] = text
-            elif "done" in text.lower() and "write" not in text.lower():
-                p["percent"] = 100
-                p["phase"] = "complete"
-                p["detail"] = "Scan complete"
+
+            elif _re_write_file.match(text):
+                p["phase"] = "writing"
+                p["percent"] = max(p["percent"], 85)
+                p["detail"] = "Phase 3/3: Writing files..."
+                # Mark devices.json as done when written
+                if "devices.json" in text:
+                    for item in cl:
+                        if item["file"] == "devices.json":
+                            item["done"] = True
+
+            elif _re_done.match(text):
+                # "done." after a write — mark the last pending checklist item
+                for item in reversed(cl):
+                    if not item["done"]:
+                        item["done"] = True
+                        break
+                p["percent"] = max(p["percent"], 90)
 
         def _reader():
             assert proc.stdout is not None
@@ -558,6 +610,18 @@ class CanEngine:
         """Return True if a depiction subprocess is currently running."""
         with self._depict_lock:
             return self._depict_proc is not None and self._depict_proc.poll() is None
+
+    def cancel_depiction(self) -> bool:
+        """Cancel a running depiction subprocess. Returns True if cancelled."""
+        with self._depict_lock:
+            if self._depict_proc is not None and self._depict_proc.poll() is None:
+                self._depict_proc.terminate()
+                self._depict_log.append("=== Scan cancelled by user ===")
+                self._depict_progress["detail"] = "Cancelled by user"
+                self._depict_progress["phase"] = "cancelled"
+                self._emit_data({"type": "depict_progress", "line": "=== Scan cancelled by user ===", "progress": dict(self._depict_progress)})
+                return True
+        return False
 
     def get_depict_state(self) -> dict:
         """Return current depiction state including log buffer for page refresh."""

@@ -68,7 +68,7 @@ async function setPriority(dpId, priority) {
 
 async function togglePolling(dpId, enabled) {
     try {
-        await apiCall("/api/datapoints/" + dpId, "PATCH", { enabled: enabled });
+        await apiCall("/api/datapoints/" + dpId, "PATCH", { poll_enabled: enabled });
     } catch (e) {
         // Revert toggle on failure
         var toggle = document.getElementById("poll-" + dpId);
