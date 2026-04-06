@@ -291,7 +291,14 @@ def create_app(store: ConfigStore) -> FastAPI:
         engine = getattr(app.state, "engine", None)
         if not engine:
             return {}
-        return dict(engine._last_values)
+        # Extract just the values from the cache entries {key: {"value": v, "ts": t}}
+        result = {}
+        for k, entry in engine._last_values.items():
+            if isinstance(entry, dict) and "value" in entry:
+                result[k] = entry["value"]
+            else:
+                result[k] = entry  # backward compat
+        return result
 
     @app.post("/api/engine/reload-schedule")
     async def api_reload_schedule():

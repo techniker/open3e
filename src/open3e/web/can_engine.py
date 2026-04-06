@@ -292,17 +292,30 @@ class CanEngine:
         try:
             value, idstr, _ = o3e.readByDid(did, raw=False)
             cache_key = f"{ecu_addr}:{did}"
-            old_value = self._last_values.get(cache_key)
-            changed = (old_value != value)
-            self._last_values[cache_key] = value
+            old_entry = self._last_values.get(cache_key)
             import time as _time
+            now = int(_time.time())
+
+            if old_entry is None:
+                # First read — always publish
+                changed = True
+            elif old_entry.get("value") != value:
+                # Value changed
+                changed = True
+            elif now - old_entry.get("ts", 0) >= 60:
+                # Unchanged but 60 seconds since last publish — re-publish
+                changed = True
+            else:
+                changed = False
+
+            self._last_values[cache_key] = {"value": value, "ts": now}
             self._emit_data({
                 "type": "did_value",
                 "ecu": ecu_addr,
                 "did": did,
                 "name": dp.get("name", idstr),
                 "value": value,
-                "ts": int(_time.time()),
+                "ts": now,
                 "changed": changed,
             })
         except Exception as exc:
