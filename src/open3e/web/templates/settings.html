@@ -585,14 +585,7 @@ async function applyHaDefaults() {
     }
 }
 
-async function toggleHaEntity(id, enabled) {
-    try {
-        await apiCall('/api/ha/entities/' + id, 'PATCH', { enabled: enabled });
-    } catch (e) {
-        // Revert checkbox on failure
-        const cb = document.getElementById('ha-entity-' + id);
-        if (cb) cb.checked = !enabled;
-    }
+// toggleHaEntity defined in HA helpers section below
 }
 
 async function saveHaSettings() {

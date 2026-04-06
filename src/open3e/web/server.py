@@ -380,15 +380,27 @@ def create_app(store: ConfigStore) -> FastAPI:
             await store.update_ha_entity(ha_id, **body)
         except ValueError as exc:
             raise HTTPException(status_code=400, detail=str(exc))
+        except Exception as exc:
+            import logging
+            logging.getLogger(__name__).error("HA entity update failed: %s", exc, exc_info=True)
+            raise HTTPException(status_code=500, detail=str(exc))
+        # Optionally re-publish HA discovery (best-effort, don't fail the request)
         if "enabled" in body:
-            publisher = getattr(app.state, "mqtt_publisher", None)
-            if publisher and publisher.connected:
-                # Re-publish all enabled entities
-                entities = await store.get_ha_entities(enabled=True)
-                ecus = await store.get_ecus()
-                tp = await store.get_setting("mqtt_topic_prefix", "open3e")
-                hp = await store.get_setting("ha_discovery_prefix", "homeassistant")
-                publisher.publish_ha_discovery(entities, ecus, tp, hp)
+            try:
+                publisher = getattr(app.state, "mqtt_publisher", None)
+                if publisher and publisher.connected:
+                    entities = await store.get_ha_entities(enabled=1)
+                    ecus = await store.get_ecus()
+                    tp = await store.get_setting("mqtt_topic_prefix", "vcal")
+                    hp = await store.get_setting("ha_discovery_prefix", "homeassistant")
+                    publisher.publish_ha_discovery(
+                        [dict(e) for e in entities],
+                        [dict(e) for e in ecus],
+                        tp or "vcal", hp or "homeassistant"
+                    )
+            except Exception as exc:
+                import logging
+                logging.getLogger(__name__).warning("HA discovery publish failed: %s", exc)
         return {"ok": True}
 
     @app.post("/api/ha/apply-defaults")
