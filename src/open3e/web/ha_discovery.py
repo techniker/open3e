@@ -61,6 +61,9 @@ INFERENCE_RULES = [
     # --- Flow and water ---
     ("*FlowMeter*", ["O3EInt32", "O3EComplexType"], "sensor", "water", "L", "mdi:water"),
 
+    # --- Signal strength ---
+    ("*SignalStrength*", ["O3EByteVal", "O3EInt8", "O3EInt16"], "sensor", "signal_strength", "dBm", "mdi:signal"),
+
     # --- Frequency ---
     ("*Frequency*", ["O3EInt16", "O3EInt32", "O3EComplexType"], "sensor", "frequency", "Hz", "mdi:sine-wave"),
     ("*Speed*", ["O3EInt16", "O3EInt32"], "sensor", None, "rpm", "mdi:fan"),
