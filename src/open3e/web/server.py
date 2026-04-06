@@ -81,6 +81,15 @@ def create_app(store: ConfigStore) -> FastAPI:
             {"ecus": [dict(e) for e in ecus], "pinned": [dict(dp) for dp in pinned], "active_page": "dashboard"},
         )
 
+    @app.get("/datapoints", response_class=HTMLResponse)
+    async def datapoints_page(request: Request):
+        ecus = await store.get_ecus()
+        datapoints = await store.get_datapoints()
+        return templates.TemplateResponse(
+            request, "datapoints.html",
+            {"ecus": ecus, "datapoints": datapoints, "active_page": "datapoints"},
+        )
+
     @app.get("/settings", response_class=HTMLResponse)
     async def settings_page(request: Request):
         settings = await store.get_all_settings()
