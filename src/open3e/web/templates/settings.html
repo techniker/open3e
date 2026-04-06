@@ -373,7 +373,7 @@
                                     <td>{{ backup.size }}</td>
                                     <td>{{ backup.created }}</td>
                                     <td>
-                                        <a href="/api/backups/{{ backup.filename }}/download"
+                                        <a href="/api/backup/{{ backup.filename }}"
                                            class="btn btn-sm btn-outline-secondary me-1" title="Download">
                                             <i class="bi bi-download"></i>
                                         </a>
@@ -606,7 +606,7 @@ async function saveHaSettings() {
 
 async function createBackup() {
     try {
-        await apiCall('/api/backups', 'POST');
+        await apiCall('/api/backup', 'POST');
         showToast('Backup created.', 'success');
         location.reload();
     } catch (e) {
@@ -617,7 +617,7 @@ async function createBackup() {
 async function deleteBackup(filename) {
     if (!confirm('Delete backup "' + filename + '"?')) return;
     try {
-        await apiCall('/api/backups/' + encodeURIComponent(filename), 'DELETE');
+        await apiCall('/api/backup/' + encodeURIComponent(filename), 'DELETE');
         showToast('Backup deleted.', 'success');
         location.reload();
     } catch (e) {
@@ -636,7 +636,7 @@ async function restoreBackup() {
     reader.onload = async (e) => {
         const b64 = e.target.result.split(',')[1];
         try {
-            await apiCall('/api/backups/restore', 'POST', { filename: file.name, data: b64 });
+            await apiCall('/api/backup/restore', 'POST', { filename: file.name, data: b64 });
             showToast('Backup restored. Reloading…', 'success');
             setTimeout(() => location.reload(), 2000);
         } catch (err) {
