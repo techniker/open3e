@@ -28,7 +28,11 @@ _scm_version.py
 .DS_Store
 # open3e-web runtime files
 open3e_web.db
+open3e_web.db-shm
+open3e_web.db-wal
+open3e-web.log
 backups/
 # session/hook artifacts
 .remember/
 .superpowers/
+.claude/
