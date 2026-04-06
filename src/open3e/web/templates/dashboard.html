@@ -9,17 +9,36 @@
     .dashboard-card {
         cursor: pointer;
         transition: border-color 0.15s ease-in-out;
+        overflow: hidden;
     }
     .dashboard-card:hover {
         border-color: #4dabf7 !important;
     }
+    .dashboard-card .card-body {
+        padding: 0.5rem 0.75rem;
+        overflow: hidden;
+    }
+    .card-label {
+        font-size: 0.7rem;
+        color: #adb5bd;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .card-sublabel {
+        font-size: 0.6rem;
+        color: #6c757d;
+    }
     .card-value {
-        font-size: 2rem;
+        font-size: 1.25rem;
         font-weight: 600;
         font-variant-numeric: tabular-nums;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     .card-ts {
-        font-size: 0.75rem;
+        font-size: 0.6rem;
         color: #6c757d;
     }
     .chart-container {
@@ -32,7 +51,7 @@
 <div class="p-4">
     <div class="d-flex align-items-center mb-4 gap-3">
         <h2 class="mb-0">Dashboard</h2>
-        <span id="engine-state-badge" class="badge bg-secondary">unknown</span>
+        <span id="engine-state-badge" class="badge bg-secondary">loading...</span>
     </div>
 
     {% if not ecus %}
@@ -48,9 +67,9 @@
         Go to <a href="/datapoints" class="alert-link">Datapoints</a> and set the priority to <strong>3 (pinned)</strong> for the values you want to monitor here.
     </div>
     {% else %}
-    <div class="row g-3">
+    <div class="row g-2">
         {% for dp in pinned %}
-        <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+        <div class="col-6 col-sm-4 col-md-3 col-xl-2">
             <div
                 id="card-{{ dp.ecu_address }}_{{ dp.did }}"
                 class="card dashboard-card border"
@@ -58,8 +77,8 @@
                 title="Click to toggle chart"
             >
                 <div class="card-body">
-                    <div class="text-muted small mb-1">{{ dp.name }}</div>
-                    <div class="text-muted small mb-2">{{ '%03x' % dp.ecu_address }} &middot; DID {{ dp.did }}</div>
+                    <div class="card-label" title="{{ dp.name }}">{{ dp.name }}</div>
+                    <div class="card-sublabel">{{ '%03x' % dp.ecu_address }}.{{ dp.did }}</div>
                     <div class="card-value">--</div>
                     <div class="card-ts">&nbsp;</div>
                 </div>
