@@ -281,6 +281,15 @@ def create_app(store: ConfigStore) -> FastAPI:
             await store.update_ha_entity(ha_id, **body)
         except ValueError as exc:
             raise HTTPException(status_code=400, detail=str(exc))
+        if "enabled" in body:
+            publisher = getattr(app.state, "mqtt_publisher", None)
+            if publisher and publisher.connected:
+                # Re-publish all enabled entities
+                entities = await store.get_ha_entities(enabled=True)
+                ecus = await store.get_ecus()
+                tp = await store.get_setting("mqtt_topic_prefix", "open3e")
+                hp = await store.get_setting("ha_discovery_prefix", "homeassistant")
+                publisher.publish_ha_discovery(entities, ecus, tp, hp)
         return {"ok": True}
 
     @app.post("/api/ha/apply-defaults")

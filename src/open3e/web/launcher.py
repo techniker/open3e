@@ -19,6 +19,7 @@ import uvicorn
 
 from open3e.web.can_engine import CanEngine
 from open3e.web.config_store import ConfigStore
+from open3e.web.mqtt_publisher import MqttPublisher
 from open3e.web.server import create_app
 
 DEFAULT_DB_PATH = "open3e_web.db"
@@ -109,6 +110,19 @@ def main() -> None:
     # Determine CAN status for startup message
     can_status = f"CAN: {can_interface}" if can_interface and ecus else "CAN: not configured"
 
+    # Create MQTT publisher
+    publisher = MqttPublisher(store, on_status=None)  # on_status wired below after _main_loop is set
+    configured = loop.run_until_complete(publisher.configure())
+    if configured:
+        mqtt_host = loop.run_until_complete(store.get_setting("mqtt_host", "localhost"))
+        mqtt_port = loop.run_until_complete(store.get_setting("mqtt_port", 1883))
+        try:
+            mqtt_port = int(mqtt_port)
+        except (ValueError, TypeError):
+            mqtt_port = 1883
+        publisher.start()
+    app.state.mqtt_publisher = publisher
+
     # Print startup info
     local_ip = _get_local_ip()
     local_url = f"http://127.0.0.1:{port}"
@@ -117,16 +131,30 @@ def main() -> None:
     print(f"Local:   {local_url}", file=sys.stdout)
     print(f"Network: {network_url}", file=sys.stdout)
     print(f"{can_status}", file=sys.stdout)
+    if configured:
+        print(f"  MQTT:    {mqtt_host}:{mqtt_port}", file=sys.stdout)
+    else:
+        print(f"  MQTT:    Not configured", file=sys.stdout)
 
     # Run uvicorn with an explicit event loop so the engine bridge can schedule
     # async coroutines onto it from the background engine thread.
     _main_loop = None
+
+    def on_mqtt_status(msg: dict) -> None:
+        """Bridge: deliver MQTT status to the WebSocket manager on the uvicorn loop."""
+        ws_mgr = app.state.ws_manager
+        coro = ws_mgr.broadcast_state(msg)
+        asyncio.run_coroutine_threadsafe(coro, _main_loop)
+
+    publisher._on_status = on_mqtt_status
 
     def on_engine_data(msg: dict) -> None:
         """Bridge: deliver engine data to the WebSocket manager on the uvicorn loop."""
         ws_mgr = app.state.ws_manager
         if msg.get("type") == "did_value":
             coro = ws_mgr.broadcast_did_value(msg)
+            # Also publish to MQTT
+            publisher.publish_did_value(msg["ecu"], msg["did"], msg.get("name", ""), msg.get("value"))
         else:
             coro = ws_mgr.broadcast_state(msg)
         asyncio.run_coroutine_threadsafe(coro, _main_loop)
