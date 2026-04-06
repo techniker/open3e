@@ -358,15 +358,20 @@ class ConfigStore:
         shutil.copy2(self._db_path, str(dest))
         return filename
 
-    async def list_backups(self) -> list[str]:
-        """Return sorted list of backup filenames (newest first)."""
+    async def list_backups(self) -> list:
+        """Return sorted list of backup info dicts (newest first)."""
         if not self._backup_dir.exists():
             return []
-        files = sorted(
-            (p.name for p in self._backup_dir.glob("*.db")),
-            reverse=True,
-        )
-        return files
+        import datetime
+        result = []
+        for p in sorted(self._backup_dir.glob("*.db"), key=lambda x: x.stat().st_mtime, reverse=True):
+            st = p.stat()
+            result.append({
+                "filename": p.name,
+                "size": f"{st.st_size / 1024:.1f} KB",
+                "created": datetime.datetime.fromtimestamp(st.st_mtime).strftime("%Y-%m-%d %H:%M:%S"),
+            })
+        return result
 
     async def get_backup_path(self, filename: str) -> pathlib.Path:
         """Validate *filename* and return its absolute Path."""

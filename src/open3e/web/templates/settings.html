@@ -444,6 +444,24 @@
 
 {% block scripts %}
 <script>
+// Restore active tab from URL hash on page load
+(function() {
+    var hash = location.hash;
+    if (hash) {
+        var tabBtn = document.querySelector('[data-bs-target="' + hash + '"]');
+        if (tabBtn) {
+            var tab = new bootstrap.Tab(tabBtn);
+            tab.show();
+        }
+    }
+    // Update hash when any tab is clicked
+    document.querySelectorAll('[data-bs-toggle="tab"]').forEach(function(btn) {
+        btn.addEventListener('shown.bs.tab', function(e) {
+            location.hash = e.target.getAttribute('data-bs-target');
+        });
+    });
+})();
+
 // ---------------------------------------------------------------------------
 // CAN helpers
 // ---------------------------------------------------------------------------
@@ -608,6 +626,7 @@ async function createBackup() {
     try {
         await apiCall('/api/backup', 'POST');
         showToast('Backup created.', 'success');
+        location.hash = '#system-pane';
         location.reload();
     } catch (e) {
         // error toast already shown
@@ -619,6 +638,7 @@ async function deleteBackup(filename) {
     try {
         await apiCall('/api/backup/' + encodeURIComponent(filename), 'DELETE');
         showToast('Backup deleted.', 'success');
+        location.hash = '#system-pane';
         location.reload();
     } catch (e) {
         // error toast already shown
