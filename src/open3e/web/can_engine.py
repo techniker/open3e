@@ -387,6 +387,7 @@ class CanEngine:
 
     def _handle_write(self, cmd: Dict) -> None:
         """Execute a DID write via O3Eclass.writeByDid."""
+        import time as _time
         prev_state = self.state
         self._set_state(EngineState.EXECUTING_COMMAND)
 
@@ -394,22 +395,43 @@ class CanEngine:
         did = cmd.get("did")
         val = cmd.get("value")
         raw = cmd.get("raw", False)
+        sub = cmd.get("sub")
         o3e = self._ecus.get(ecu_addr)
 
         if o3e is None:
-            self._emit_data({"type": "cmd_error", "cmd": cmd, "error": "ECU not connected"})
+            self._emit_data({"type": "write_result", "ecu": ecu_addr, "did": did,
+                             "success": False, "error": "ECU not connected"})
         else:
+            # Brief pause to let CAN bus settle before write
+            _time.sleep(0.1)
             try:
-                succ, code = o3e.writeByDid(did, val, raw)
+                succ, code = o3e.writeByDid(did, val, raw, sub=sub)
+                logger.info("Write DID %s on ECU %s: val=%s success=%s code=%s",
+                            did, hex(ecu_addr), val, succ, code)
                 self._emit_data({
                     "type": "write_result",
                     "ecu": ecu_addr,
                     "did": did,
                     "success": succ,
-                    "code": code,
+                    "code": str(code),
                 })
+                # Read back the value to confirm
+                _time.sleep(0.05)
+                try:
+                    new_val, idstr, _ = o3e.readByDid(did, raw=False)
+                    cache_key = f"{ecu_addr}:{did}"
+                    self._last_values[cache_key] = {"value": new_val, "ts": int(_time.time())}
+                    self._emit_data({
+                        "type": "did_value", "ecu": ecu_addr, "did": did,
+                        "name": idstr, "value": new_val, "ts": int(_time.time()),
+                        "changed": True,
+                    })
+                except Exception:
+                    pass  # read-back failed, not critical
             except Exception as exc:
-                self._emit_data({"type": "cmd_error", "cmd": cmd, "error": str(exc)})
+                logger.error("Write failed DID %s on ECU %s: %s", did, hex(ecu_addr), exc)
+                self._emit_data({"type": "write_result", "ecu": ecu_addr, "did": did,
+                                 "success": False, "error": str(exc)})
 
         self._set_state(prev_state)
 
