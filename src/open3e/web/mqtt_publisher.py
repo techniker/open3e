@@ -32,7 +32,9 @@ class MqttPublisher:
 
     @property
     def connected(self) -> bool:
-        return self._connected
+        if self._client:
+            return self._client.is_connected()
+        return False
 
     @property
     def messages_published(self) -> int:
