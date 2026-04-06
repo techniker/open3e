@@ -150,14 +150,21 @@ def main() -> None:
 
     def on_engine_data(msg: dict) -> None:
         """Bridge: deliver engine data to the WebSocket manager on the uvicorn loop."""
-        ws_mgr = app.state.ws_manager
+        if _main_loop is None:
+            return  # Server not ready yet
+        ws_mgr = getattr(app.state, "ws_manager", None)
+        if ws_mgr is None:
+            return
         if msg.get("type") == "did_value":
             coro = ws_mgr.broadcast_did_value(msg)
             # Also publish to MQTT
             publisher.publish_did_value(msg["ecu"], msg["did"], msg.get("name", ""), msg.get("value"))
         else:
             coro = ws_mgr.broadcast_state(msg)
-        asyncio.run_coroutine_threadsafe(coro, _main_loop)
+        try:
+            asyncio.run_coroutine_threadsafe(coro, _main_loop)
+        except RuntimeError:
+            pass  # Loop closed
 
     engine._on_data = on_engine_data
 

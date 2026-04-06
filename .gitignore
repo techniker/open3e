@@ -26,3 +26,9 @@ _scm_version.py
 #testing
 .coverage*
 .DS_Store
+# open3e-web runtime files
+open3e_web.db
+backups/
+# session/hook artifacts
+.remember/
+.superpowers/

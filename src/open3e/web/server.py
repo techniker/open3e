@@ -446,9 +446,15 @@ def create_app(store: ConfigStore) -> FastAPI:
     @app.get("/depict", response_class=HTMLResponse)
     async def depict_page(request: Request):
         can_interface = await store.get_setting("can_interface")
+        engine = getattr(app.state, "engine", None)
+        depict_state = engine.get_depict_state() if engine else {"running": False, "log": [], "returncode": None}
         return templates.TemplateResponse(
             request, "depict.html",
-            {"can_interface": can_interface, "active_page": "depict"},
+            {
+                "can_interface": can_interface,
+                "active_page": "depict",
+                "depict_state": depict_state,
+            },
         )
 
     # -----------------------------------------------------------------------
@@ -470,8 +476,8 @@ def create_app(store: ConfigStore) -> FastAPI:
     async def depict_status():
         engine = getattr(app.state, "engine", None)
         if not engine:
-            return {"running": False}
-        return {"running": engine.depict_running}
+            return {"running": False, "log": [], "returncode": None}
+        return engine.get_depict_state()
 
     @app.post("/api/depict/load")
     async def load_depict_results():

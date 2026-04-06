@@ -13,6 +13,7 @@ NOT thread-safe; serialising every access through one thread makes it safe.
 
 from __future__ import annotations
 
+import os
 import queue
 import subprocess
 import threading
@@ -88,6 +89,8 @@ class CanEngine:
         # Depiction subprocess support
         self._depict_proc: Optional[subprocess.Popen] = None
         self._depict_lock = threading.Lock()
+        self._depict_log: list[str] = []
+        self._depict_returncode: Optional[int] = None
 
     # -----------------------------------------------------------------------
     # State property
@@ -422,24 +425,37 @@ class CanEngine:
                 return
 
             try:
+                # Use sys.executable to ensure we run within the same venv
+                # -u forces unbuffered stdout so lines stream in real time
+                import sys as _sys
+                env = dict(os.environ, PYTHONUNBUFFERED="1")
                 proc = subprocess.Popen(
-                    ["open3e_depictSystem", "--can", can_interface],
+                    [_sys.executable, "-u", "-m", "open3e.Open3E_depictSystem", "-c", can_interface],
                     stdout=subprocess.PIPE,
                     stderr=subprocess.STDOUT,
                     text=True,
+                    bufsize=1,
+                    env=env,
                 )
                 self._depict_proc = proc
             except Exception as exc:
                 self._emit_data({"type": "depict_error", "error": str(exc)})
                 return
 
+        # Server-side log buffer for page refresh persistence
+        self._depict_log: list[str] = []
+        self._depict_returncode: Optional[int] = None
+
         def _reader():
             assert proc.stdout is not None
             for line in proc.stdout:
                 stripped = line.rstrip("\n")
-                on_line(stripped)
+                self._depict_log.append(stripped)
+                if on_line is not None:
+                    on_line(stripped)
                 self._emit_data({"type": "depict_progress", "line": stripped})
             proc.wait()
+            self._depict_returncode = proc.returncode
             with self._depict_lock:
                 self._depict_proc = None
             self._emit_data({"type": "depict_complete", "returncode": proc.returncode})
@@ -452,6 +468,14 @@ class CanEngine:
         """Return True if a depiction subprocess is currently running."""
         with self._depict_lock:
             return self._depict_proc is not None and self._depict_proc.poll() is None
+
+    def get_depict_state(self) -> dict:
+        """Return current depiction state including log buffer for page refresh."""
+        return {
+            "running": self.depict_running,
+            "log": getattr(self, "_depict_log", []),
+            "returncode": getattr(self, "_depict_returncode", None),
+        }
 
     # -----------------------------------------------------------------------
     # Status

@@ -60,6 +60,36 @@
 {% block scripts %}
 <script>
 (function () {
+    // Restore log and state from server on page load
+    var serverState = {{ depict_state | tojson }};
+    if (serverState.log && serverState.log.length > 0) {
+        var pre = document.getElementById('depict-console');
+        pre.textContent = serverState.log.join('\n') + '\n';
+        pre.scrollTop = pre.scrollHeight;
+    }
+    if (serverState.running) {
+        var btnStart = document.getElementById('btn-start-scan');
+        var statusEl = document.getElementById('scan-status');
+        btnStart.disabled = true;
+        btnStart.textContent = '';
+        var spinner = document.createElement('span');
+        spinner.className = 'spinner-border spinner-border-sm me-2';
+        spinner.setAttribute('role', 'status');
+        btnStart.appendChild(spinner);
+        btnStart.appendChild(document.createTextNode('Scanning\u2026'));
+        statusEl.textContent = 'Scan in progress\u2026';
+        statusEl.className = 'text-warning small';
+    } else if (serverState.returncode !== null) {
+        var statusEl = document.getElementById('scan-status');
+        if (serverState.returncode === 0) {
+            statusEl.textContent = 'Scan completed successfully.';
+            statusEl.className = 'text-success small';
+        } else {
+            statusEl.textContent = 'Scan failed (exit code ' + serverState.returncode + ')';
+            statusEl.className = 'text-danger small';
+        }
+    }
+
     var ws = openWebSocket();
 
     ws.onDepictProgress = function (msg) {
