@@ -135,7 +135,7 @@ class MqttPublisher:
         client.subscribe(self._topic_prefix + "/+/set")
 
     def _on_disconnect(self, client, userdata, flags, reason_code, properties):
-        logger.info("MQTT disconnected: %s", reason_code)
+        logger.warning("MQTT disconnected: reason_code=%s flags=%s", reason_code, flags)
         self._emit_status(False)
 
     def _on_message(self, client, userdata, msg):
