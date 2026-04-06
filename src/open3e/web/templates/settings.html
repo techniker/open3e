@@ -200,13 +200,13 @@
                 <div class="col-md-4">
                     <label for="mqtt-topic-prefix" class="form-label">Topic Prefix</label>
                     <input type="text" class="form-control" id="mqtt-topic-prefix"
-                           value="{{ settings.mqtt_topic_prefix or 'open3e' }}"
+                           value="{{ settings.mqtt_topic_prefix or 'vcal' }}"
                            oninput="updateMqttPreview()">
                 </div>
                 <div class="col-md-4">
                     <label for="mqtt-format" class="form-label">Format String</label>
                     <input type="text" class="form-control" id="mqtt-format"
-                           value="{{ settings.mqtt_format or '{didName}' }}"
+                           value="{{ settings.mqtt_format or '{didNumber}_{didName}' }}"
                            oninput="updateMqttPreview()">
                     <div class="form-text">Placeholders: <code>{didName}</code>, <code>{didId}</code>, <code>{ecu}</code></div>
                 </div>
@@ -219,8 +219,22 @@
                 <div class="col-12">
                     <label class="form-label">Topic Preview</label>
                     <div class="form-control bg-body-secondary font-monospace small" id="mqtt-preview">
-                        {{ settings.mqtt_topic_prefix or 'open3e' }}/{{ settings.mqtt_format or '{didName}' }}
+                        {{ settings.mqtt_topic_prefix or 'vcal' }}/{{ settings.mqtt_format_string or '{didNumber}_{didName}' }}
                     </div>
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Publish Format</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="mqtt-publish-mode" id="mqtt-json" value="json"
+                               {% if settings.mqtt_publish_json != '0' %}checked{% endif %}>
+                        <label class="form-check-label" for="mqtt-json">JSON (single message per DID)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="mqtt-publish-mode" id="mqtt-raw" value="raw"
+                               {% if settings.mqtt_publish_json == '0' %}checked{% endif %}>
+                        <label class="form-check-label" for="mqtt-raw">Split (sub-topics per field)</label>
+                    </div>
+                    <div class="form-text">JSON sends one message per DID. Split creates sub-topics like <code>FlowTemp/Actual</code>, <code>FlowTemp/Minimum</code>, etc.</div>
                 </div>
             </div>
 
@@ -522,8 +536,9 @@ async function saveMqttSettings() {
         mqtt_tls_enabled: tlsEnabled ? '1' : '0',
         mqtt_ca_cert: caCertB64 || '',
         mqtt_topic_prefix: document.getElementById('mqtt-topic-prefix').value.trim() || 'open3e',
-        mqtt_format_string: document.getElementById('mqtt-format').value.trim() || '{didName}',
+        mqtt_format_string: document.getElementById('mqtt-format').value.trim() || '{didNumber}_{didName}',
         mqtt_client_id: document.getElementById('mqtt-client-id').value.trim(),
+        mqtt_publish_json: document.getElementById('mqtt-json').checked ? '1' : '0',
     });
 
     const doSave = async (caCertB64) => {

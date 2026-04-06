@@ -48,9 +48,10 @@ class MqttPublisher:
         self._password = await self.store.get_setting("mqtt_password")
         self._tls_enabled = (await self.store.get_setting("mqtt_tls_enabled")) == "1"
         self._ca_cert_b64 = await self.store.get_setting("mqtt_ca_cert")
-        self._topic_prefix = await self.store.get_setting("mqtt_topic_prefix", "open3e") or "open3e"
-        self._format_string = await self.store.get_setting("mqtt_format_string", "{didName}") or "{didName}"
+        self._topic_prefix = await self.store.get_setting("mqtt_topic_prefix", "vcal") or "vcal"
+        self._format_string = await self.store.get_setting("mqtt_format_string", "{didNumber}_{didName}") or "{didNumber}_{didName}"
         self._client_id = await self.store.get_setting("mqtt_client_id") or ("open3e_" + str(int(time.time() * 1000)))
+        self._publish_json = (await self.store.get_setting("mqtt_publish_json", "1")) != "0"
 
         # Load MQTT mappings
         mappings = await self.store.get_mqtt_mappings(enabled=True)
@@ -163,7 +164,7 @@ class MqttPublisher:
 
         mapping = self._mappings.get(key, {})
         custom_topic = mapping.get("custom_topic")
-        publish_json = mapping.get("publish_json", True)
+        publish_json = self._publish_json
 
         if custom_topic:
             topic = custom_topic
