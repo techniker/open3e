@@ -433,7 +433,26 @@ def create_app(store: ConfigStore) -> FastAPI:
                 )
                 created += 1
         return {"status": "ok", "entities_created": created}
-        return {"status": "ok", "entities_created": created}
+
+    @app.post("/api/ha/publish")
+    async def api_ha_publish():
+        """Publish HA discovery messages for all enabled entities."""
+        publisher = getattr(app.state, "mqtt_publisher", None)
+        if not publisher or not publisher.connected:
+            raise HTTPException(status_code=503, detail="MQTT not connected")
+        entities = await store.get_ha_entities(enabled=1)
+        ecus = await store.get_ecus()
+        tp = await store.get_setting("mqtt_topic_prefix", "vcal") or "vcal"
+        hp = await store.get_setting("ha_discovery_prefix", "homeassistant") or "homeassistant"
+        try:
+            publisher.publish_ha_discovery(
+                [dict(e) for e in entities],
+                [dict(e) for e in ecus],
+                tp, hp
+            )
+            return {"ok": True, "published": len(entities)}
+        except Exception as exc:
+            raise HTTPException(status_code=500, detail=str(exc))
 
     # -----------------------------------------------------------------------
     # API: MQTT mappings

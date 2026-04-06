@@ -588,16 +588,9 @@ async function applyHaDefaults() {
 // toggleHaEntity defined in HA helpers section below
 }
 
-async function saveHaSettings() {
-    const payload = {
-        ha_discovery_enabled: document.getElementById('ha-enabled').checked,
-        ha_discovery_prefix: document.getElementById('ha-discovery-prefix').value.trim() || 'homeassistant',
-    };
-    try {
-        await apiCall('/api/settings', 'PATCH', payload);
-        showToast('Home Assistant settings saved.', 'success');
-    } catch (e) {
-        // error toast already shown
+// saveHaSettings — see HA helpers section below
+if (false) {
+    // removed duplicate
     }
 }
 
@@ -690,12 +683,19 @@ async function toggleHaEntity(entityId, enabled) {
 }
 
 async function saveHaSettings() {
+    var enabled = document.getElementById('ha-enabled').checked;
     try {
         await apiCall('/api/settings', 'PATCH', {
-            ha_discovery_enabled: document.getElementById('ha-enabled').checked ? '1' : '0',
+            ha_discovery_enabled: enabled ? '1' : '0',
             ha_discovery_prefix: document.getElementById('ha-discovery-prefix').value.trim() || 'homeassistant',
         });
-        showToast('HA settings saved.', 'success');
+        if (enabled) {
+            // Trigger HA discovery publish
+            await apiCall('/api/ha/publish', 'POST');
+            showToast('HA discovery enabled and published.', 'success');
+        } else {
+            showToast('HA discovery disabled.', 'success');
+        }
     } catch (e) {
         // error toast already shown
     }
