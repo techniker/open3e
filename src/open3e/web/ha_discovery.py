@@ -98,12 +98,18 @@ def build_discovery_payload(
     payload = {
         "name": entity.get("entity_name") or entity.get("name") or dp_name,
         "unique_id": object_id,
+        "object_id": object_id,
         "state_topic": state_topic,
         "device": {
             "identifiers": ["open3e_" + ecu_hex],
             "name": "{} ({})".format(ecu_name, "0x" + ecu_hex),
             "manufacturer": "Viessmann",
             "model": ecu_prop or "Unknown",
+        },
+        "origin": {
+            "name": "open3e",
+            "sw_version": sw_version or "0.5.10",
+            "support_url": "https://github.com/open3e/open3e",
         },
     }
     if sw_version:
