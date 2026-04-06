@@ -111,6 +111,11 @@ def build_discovery_payload(
             "sw_version": sw_version or "0.5.10",
             "support_url": "https://github.com/open3e/open3e",
         },
+        "availability": [{
+            "topic": topic_prefix + "/LWT",
+            "payload_available": "online",
+            "payload_not_available": "offline",
+        }],
     }
     if sw_version:
         payload["device"]["sw_version"] = sw_version
