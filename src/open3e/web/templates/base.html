@@ -100,10 +100,15 @@
     <!-- Initial status check on every page -->
     <script>
     (function() {
-        fetch("/api/can/status").then(function(r) { return r.json(); }).then(function(data) {
-            if (data.available && data.state === "up") {
+        fetch("/api/live-status").then(function(r) { return r.json(); }).then(function(data) {
+            // CAN
+            if (data.can && data.can.available && data.can.state === "up") {
                 updateCanIndicator({state: "up"});
             }
+            // MQTT
+            updateMqttIndicator(data.mqtt_connected);
+            // Engine
+            updateStatusIndicators({state: data.engine_state});
         }).catch(function() {});
     })();
     </script>

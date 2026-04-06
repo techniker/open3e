@@ -244,8 +244,11 @@ def create_app(store: ConfigStore) -> FastAPI:
             if publisher:
                 try:
                     await publisher.reconfigure()
-                except Exception:
-                    pass
+                    import logging
+                    logging.getLogger(__name__).info("MQTT reconfigured, connected=%s", publisher.connected)
+                except Exception as e:
+                    import logging
+                    logging.getLogger(__name__).error("MQTT reconfigure failed: %s", e)
 
         # Auto-restart CAN engine if CAN settings changed
         can_keys = {"can_interface", "can_bitrate"}
@@ -281,6 +284,20 @@ def create_app(store: ConfigStore) -> FastAPI:
         if iface:
             return get_can_status(iface)
         return {"available": False, "interface": ""}
+
+    @app.get("/api/live-status")
+    async def api_live_status():
+        """Return current status of CAN, MQTT, and engine for sidebar indicators."""
+        from open3e.web.can_discovery import get_can_status
+        engine = getattr(app.state, "engine", None)
+        publisher = getattr(app.state, "mqtt_publisher", None)
+        iface = await store.get_setting("can_interface", "")
+        can = get_can_status(iface) if iface else {"available": False}
+        return {
+            "can": can,
+            "mqtt_connected": publisher.connected if publisher else False,
+            "engine_state": engine.state.value if engine else "idle",
+        }
 
     # -----------------------------------------------------------------------
     # API: ECUs

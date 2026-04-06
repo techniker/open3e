@@ -35,11 +35,11 @@ INTER_DID_DELAY: float = 0.02
 # ---------------------------------------------------------------------------
 
 class EngineState(Enum):
-    IDLE = auto()
-    CONNECTING = auto()
-    POLLING = auto()
-    PAUSED = auto()
-    EXECUTING_COMMAND = auto()
+    IDLE = "idle"
+    CONNECTING = "connecting"
+    POLLING = "polling"
+    PAUSED = "paused"
+    EXECUTING_COMMAND = "executing_command"
 
 
 # ---------------------------------------------------------------------------
@@ -286,6 +286,8 @@ class CanEngine:
         try:
             value, idstr, _ = o3e.readByDid(did, raw=False)
             cache_key = f"{ecu_addr}:{did}"
+            old_value = self._last_values.get(cache_key)
+            changed = (old_value != value)
             self._last_values[cache_key] = value
             import time as _time
             self._emit_data({
@@ -295,6 +297,7 @@ class CanEngine:
                 "name": dp.get("name", idstr),
                 "value": value,
                 "ts": int(_time.time()),
+                "changed": changed,
             })
         except Exception as exc:
             self._emit_data({
