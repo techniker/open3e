@@ -27,6 +27,8 @@ class MqttPublisher:
         self._format_string = "{didName}"
         self._mappings: dict = {}  # (ecu, did) -> mapping dict
         self._ca_cert_path: Optional[str] = None
+        self._last_published: dict = {}  # (ecu, did) -> {"value": ..., "ts": ...}
+        self._republish_interval = 60  # seconds
 
     @property
     def connected(self) -> bool:
@@ -162,6 +164,13 @@ class MqttPublisher:
         if self._mappings and key not in self._mappings:
             return
 
+        # Change detection: only publish if value changed or republish interval passed
+        now = time.time()
+        prev = self._last_published.get(key)
+        if prev is not None:
+            if prev["value"] == value and (now - prev["ts"]) < self._republish_interval:
+                return  # unchanged and not time to re-publish yet
+
         mapping = self._mappings.get(key, {})
         custom_topic = mapping.get("custom_topic")
         publish_json = self._publish_json
@@ -181,6 +190,7 @@ class MqttPublisher:
             else:
                 self._publish_split(topic, value)
             self._messages_published += 1
+            self._last_published[key] = {"value": value, "ts": now}
         except Exception as e:
             logger.warning("MQTT publish error: %s", e)
 

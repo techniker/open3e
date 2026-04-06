@@ -99,8 +99,8 @@ def main() -> None:
 
     def on_engine_data(msg: dict) -> None:
         _bridge_to_ws(msg)
-        # Publish DID values to MQTT only when value changed
-        if msg.get("type") == "did_value" and msg.get("changed", True):
+        # Publish all DID values to MQTT — publisher handles its own change detection
+        if msg.get("type") == "did_value":
             pub = getattr(app.state, "mqtt_publisher", None)
             if pub:
                 pub.publish_did_value(
