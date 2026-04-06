@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 CYCLE_LENGTH: int = 12
 MEDIUM_INTERVAL: int = 4
 LOW_INTERVAL: int = 12
-INTER_DID_DELAY: float = 0.02
+INTER_DID_DELAY: float = 0.05  # 50ms between UDS requests to avoid CAN bus saturation
 
 
 # ---------------------------------------------------------------------------
@@ -108,8 +108,11 @@ class CanEngine:
     def _set_state(self, state: EngineState) -> None:
         """Set engine state and emit an engine_state message."""
         with self._state_lock:
+            prev = self._state
             self._state = state
-        self._emit_data({"type": "engine_state", "state": state.name})
+        # Only broadcast meaningful state changes (skip transient EXECUTING_COMMAND)
+        if state != EngineState.EXECUTING_COMMAND and state != prev:
+            self._emit_data({"type": "engine_state", "state": state.value})
 
     # -----------------------------------------------------------------------
     # Data emission
@@ -291,6 +294,9 @@ class CanEngine:
 
         try:
             value, idstr, _ = o3e.readByDid(did, raw=False)
+            # Skip error strings from UDS exceptions (UnexpectedResponseException etc.)
+            if isinstance(value, str) and ("service execution" in value or "ERR/" in idstr):
+                return  # silently skip — will retry next cycle
             cache_key = f"{ecu_addr}:{did}"
             old_entry = self._last_values.get(cache_key)
             import time as _time
