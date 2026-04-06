@@ -107,6 +107,30 @@ def create_app(store: ConfigStore) -> FastAPI:
             },
         )
 
+    @app.get("/write", response_class=HTMLResponse)
+    async def write_page(request: Request):
+        writables = await store.get_datapoints()
+        writables = [dp for dp in writables if dp.get("is_writable")]
+        return templates.TemplateResponse(
+            request, "write.html",
+            {"writables": writables, "active_page": "write"},
+        )
+
+    @app.post("/api/write")
+    async def write_value(request: Request):
+        body = await request.json()
+        engine = getattr(app.state, "engine", None)
+        if not engine:
+            raise HTTPException(status_code=503, detail="CAN engine not running")
+        engine.send_command({
+            "action": "write_did",
+            "ecu": body["ecu"],
+            "did": body["did"],
+            "value": body["value"],
+            "sub": body.get("sub"),
+        })
+        return {"status": "queued"}
+
     # -----------------------------------------------------------------------
     # API: settings
     # -----------------------------------------------------------------------
