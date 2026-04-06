@@ -677,6 +677,8 @@ async function applyHaDefaults() {
 async function toggleHaEntity(entityId, enabled) {
     try {
         await apiCall('/api/ha/entities/' + entityId, 'PATCH', { enabled: enabled ? 1 : 0 });
+        // Immediately republish HA discovery so HA picks up the change
+        await apiCall('/api/ha/publish', 'POST');
     } catch (e) {
         var cb = document.getElementById('ha-entity-' + entityId);
         if (cb) cb.checked = !enabled;
