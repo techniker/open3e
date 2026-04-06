@@ -215,16 +215,22 @@ class MqttPublisher:
 
         ecu_map = {e["address"]: e for e in ecus}
 
+        published = 0
         for entity in entities:
-            ecu_addr = entity["ecu_address"]
+            ecu_addr = entity.get("ecu_address", 0)
             ecu_info = ecu_map.get(ecu_addr, {})
-            topic, payload = build_discovery_payload(
-                entity, ecu_addr,
-                ecu_info.get("name", hex(ecu_addr)),
-                ecu_info.get("device_prop", ""),
-                topic_prefix, ha_prefix,
-            )
-            self._client.publish(topic, json.dumps(payload), retain=True)
+            try:
+                topic, payload = build_discovery_payload(
+                    entity, ecu_addr,
+                    ecu_info.get("name", hex(ecu_addr)),
+                    ecu_info.get("device_prop", ""),
+                    topic_prefix, ha_prefix,
+                )
+                self._client.publish(topic, json.dumps(payload), retain=True)
+                published += 1
+            except Exception as e:
+                logger.warning("HA discovery publish failed for entity %s: %s", entity.get("unique_id"), e)
+        logger.info("Published %d HA discovery messages", published)
 
     def remove_ha_entity(self, entity: dict, ecu_address: int, ha_prefix: str = "homeassistant") -> None:
         """Remove an entity from HA by publishing empty payload."""

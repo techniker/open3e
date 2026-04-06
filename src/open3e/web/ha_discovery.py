@@ -65,28 +65,28 @@ def build_discovery_payload(
 
     Returns: (topic_str, payload_dict)
     """
-    component = entity["ha_component"]
+    component = entity.get("ha_component") or entity.get("entity_type") or "sensor"
     did = entity["did"]
     sub = entity.get("sub_field") or ""
     ecu_hex = format(ecu_address, "03x")
 
-    # Build unique object ID
-    obj_parts = ["open3e", ecu_hex, str(did)]
-    if sub:
-        obj_parts.append(sub.lower())
-    object_id = "_".join(obj_parts)
+    # Use unique_id from DB if available, otherwise build it
+    object_id = entity.get("unique_id")
+    if not object_id:
+        obj_parts = ["open3e", ecu_hex, str(did)]
+        if sub:
+            obj_parts.append(sub.lower())
+        object_id = "_".join(obj_parts)
 
-    # State topic
-    state_topic_parts = [topic_prefix, entity.get("dp_name", "DID_" + str(did))]
-    if sub:
-        state_topic_parts.append(sub)
-    state_topic = "/".join(state_topic_parts)
+    # State topic — matches the MQTT data publish topic
+    dp_name = entity.get("dp_name") or entity.get("name") or "DID_" + str(did)
+    state_topic = "{}/{}_{}/{}".format(topic_prefix, did, dp_name, sub) if sub else "{}/{}_{}".format(topic_prefix, did, dp_name)
 
     # Discovery topic
     topic = "{}/{}/{}/config".format(ha_prefix, component, object_id)
 
     payload = {
-        "name": entity.get("entity_name") or entity.get("dp_name", "DID_" + str(did)),
+        "name": entity.get("entity_name") or entity.get("name") or dp_name,
         "unique_id": object_id,
         "state_topic": state_topic,
         "device": {
@@ -115,7 +115,7 @@ def build_discovery_payload(
 
 def build_removal_payload(entity: dict, ecu_address: int, ha_prefix: str = "homeassistant") -> tuple:
     """Build empty payload to remove entity from HA."""
-    component = entity["ha_component"]
+    component = entity.get("ha_component") or entity.get("entity_type") or "sensor"
     did = entity["did"]
     sub = entity.get("sub_field") or ""
     ecu_hex = format(ecu_address, "03x")
