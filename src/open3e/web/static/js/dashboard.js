@@ -12,10 +12,30 @@ document.addEventListener("DOMContentLoaded", function () {
     wsApi.onDidValue = handleDidValue;
     wsApi.onEngineState = handleEngineState;
 
-    // Wait for socket to open, then subscribe to all DIDs
-    wsApi.socket.addEventListener("open", function () {
+    // Subscribe to all DIDs — handle both "already open" and "not yet open"
+    if (wsApi.socket.readyState === WebSocket.OPEN) {
         wsApi.subscribe("*");
-    });
+    } else {
+        wsApi.socket.addEventListener("open", function () {
+            wsApi.subscribe("*");
+        });
+    }
+
+    // Fallback: poll last known values every 5 seconds via REST
+    // This ensures dashboard shows data even if WebSocket has issues
+    function pollValues() {
+        fetch("/api/engine/values").then(function(r) { return r.json(); }).then(function(values) {
+            for (var key in values) {
+                var parts = key.split(":");
+                if (parts.length === 2) {
+                    var msg = {ecu: parseInt(parts[0]), did: parseInt(parts[1]), value: values[key], ts: Math.floor(Date.now()/1000)};
+                    handleDidValue(msg);
+                }
+            }
+        }).catch(function() {});
+    }
+    setInterval(pollValues, 5000);
+    setTimeout(pollValues, 1000);  // first poll after 1 second
 });
 
 function handleDidValue(msg) {

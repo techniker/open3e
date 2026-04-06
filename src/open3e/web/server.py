@@ -285,6 +285,14 @@ def create_app(store: ConfigStore) -> FastAPI:
             return get_can_status(iface)
         return {"available": False, "interface": ""}
 
+    @app.get("/api/engine/values")
+    async def api_engine_values():
+        """Return all cached DID values from the CAN engine."""
+        engine = getattr(app.state, "engine", None)
+        if not engine:
+            return {}
+        return dict(engine._last_values)
+
     @app.get("/api/live-status")
     async def api_live_status():
         """Return current status of CAN, MQTT, and engine for sidebar indicators."""

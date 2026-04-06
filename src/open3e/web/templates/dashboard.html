@@ -73,5 +73,15 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="/static/js/dashboard.js"></script>
+<script src="/static/js/dashboard.js?v=2"></script>
+<script>
+// Debug: log first few WebSocket messages to console
+(function() {
+    var origHandler = window.handleDidValue;
+    var count = 0;
+    if (typeof wsApi !== 'undefined' && wsApi) {
+        console.log("wsApi exists, onDidValue:", typeof wsApi.onDidValue);
+    }
+})();
+</script>
 {% endblock %}
