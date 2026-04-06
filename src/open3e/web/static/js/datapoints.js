@@ -104,6 +104,25 @@ async function bulkSetPriority() {
     showToast("Priority updated for " + checked.length + " datapoint(s).", "success");
 }
 
+async function bulkSetPoll(enabled) {
+    var checked = document.querySelectorAll(".dp-check:checked");
+    if (checked.length === 0) {
+        showToast("No datapoints selected.", "warning");
+        return;
+    }
+    var promises = [];
+    checked.forEach(function (cb) {
+        promises.push(togglePolling(cb.value, enabled));
+    });
+    await Promise.all(promises);
+    // Update the inline switches
+    checked.forEach(function (cb) {
+        var sw = document.getElementById("poll-" + cb.value);
+        if (sw) { sw.checked = enabled; }
+    });
+    showToast("Polling " + (enabled ? "enabled" : "disabled") + " for " + checked.length + " datapoint(s).", "success");
+}
+
 function toggleSelectAll(master) {
     var checkboxes = document.querySelectorAll(".dp-check");
     checkboxes.forEach(function (cb) {

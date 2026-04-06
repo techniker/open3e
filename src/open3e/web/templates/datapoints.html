@@ -43,17 +43,17 @@
             </select>
         </div>
         <div class="col-md-4">
-            <div class="input-group">
+            <div class="input-group input-group-sm">
                 <select class="form-select" id="bulk-priority-select">
-                    <option value="">Bulk set priority…</option>
-                    <option value="0">0 — Off</option>
-                    <option value="1">1 — Low</option>
-                    <option value="2">2 — Medium</option>
-                    <option value="3">3 — High</option>
+                    <option value="">Set priority…</option>
+                    <option value="0">0-Off</option>
+                    <option value="1">1-Low</option>
+                    <option value="2">2-Med</option>
+                    <option value="3">3-High</option>
                 </select>
-                <button class="btn btn-outline-secondary" type="button" onclick="bulkSetPriority()">
-                    Apply
-                </button>
+                <button class="btn btn-outline-secondary" type="button" onclick="bulkSetPriority()">Apply</button>
+                <button class="btn btn-outline-success" type="button" onclick="bulkSetPoll(true)" title="Enable polling for selected">Poll On</button>
+                <button class="btn btn-outline-danger" type="button" onclick="bulkSetPoll(false)" title="Disable polling for selected">Poll Off</button>
             </div>
         </div>
     </div>
