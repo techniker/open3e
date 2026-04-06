@@ -293,6 +293,18 @@ def create_app(store: ConfigStore) -> FastAPI:
             return {}
         return dict(engine._last_values)
 
+    @app.post("/api/engine/reload-schedule")
+    async def api_reload_schedule():
+        """Reload the engine's polling schedule from the database."""
+        engine = getattr(app.state, "engine", None)
+        if not engine:
+            raise HTTPException(status_code=503, detail="Engine not running")
+        dp_rows = await store.get_datapoints()
+        datapoints = {row["id"]: dict(row) for row in dp_rows}
+        engine.send_command({"action": "update_schedule", "datapoints": datapoints})
+        enabled_count = sum(1 for dp in datapoints.values() if dp.get("poll_enabled") and dp.get("poll_priority", 0) > 0)
+        return {"ok": True, "total": len(datapoints), "polling": enabled_count}
+
     @app.get("/api/live-status")
     async def api_live_status():
         """Return current status of CAN, MQTT, and engine for sidebar indicators."""

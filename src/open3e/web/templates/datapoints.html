@@ -56,6 +56,12 @@
                 <button class="btn btn-outline-danger" type="button" onclick="bulkSetPoll(false)" title="Disable polling for selected">Poll Off</button>
             </div>
         </div>
+        <div class="col-md-12 mt-2">
+            <button class="btn btn-primary" id="btn-save-apply" onclick="saveAndApply()">
+                <i class="bi bi-check-lg"></i> Save &amp; Apply to Engine
+            </button>
+            <span id="save-status" class="ms-2 small"></span>
+        </div>
     </div>
 
     <!-- Datapoints table -->

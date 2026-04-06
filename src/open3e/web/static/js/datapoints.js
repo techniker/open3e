@@ -123,6 +123,24 @@ async function bulkSetPoll(enabled) {
     showToast("Polling " + (enabled ? "enabled" : "disabled") + " for " + checked.length + " datapoint(s).", "success");
 }
 
+async function saveAndApply() {
+    var btn = document.getElementById("btn-save-apply");
+    var status = document.getElementById("save-status");
+    btn.disabled = true;
+    status.textContent = "Applying...";
+    status.className = "ms-2 small text-warning";
+    try {
+        var result = await apiCall("/api/engine/reload-schedule", "POST");
+        status.textContent = "Applied: " + result.polling + " datapoints polling";
+        status.className = "ms-2 small text-success";
+        showToast("Engine schedule reloaded: " + result.polling + " datapoints active", "success");
+    } catch (e) {
+        status.textContent = "Failed to apply";
+        status.className = "ms-2 small text-danger";
+    }
+    btn.disabled = false;
+}
+
 function toggleSelectAll(master) {
     var checkboxes = document.querySelectorAll(".dp-check");
     checkboxes.forEach(function (cb) {
