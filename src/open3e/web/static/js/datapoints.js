@@ -57,12 +57,32 @@ function filterTable() {
     });
 }
 
+// Debounced engine schedule reload — waits 1 second after last change
+var _reloadTimer = null;
+function scheduleReload() {
+    if (_reloadTimer) clearTimeout(_reloadTimer);
+    _reloadTimer = setTimeout(function() { reloadEngineSchedule(); }, 1000);
+    var status = document.getElementById("save-status");
+    if (status) { status.textContent = "Changes pending..."; status.className = "ms-2 small text-warning"; }
+}
+
+async function reloadEngineSchedule() {
+    var status = document.getElementById("save-status");
+    try {
+        var result = await apiCall("/api/engine/reload-schedule", "POST");
+        if (status) { status.textContent = "Applied: " + result.polling + " polling"; status.className = "ms-2 small text-success"; }
+        showToast("Engine reloaded: " + result.polling + " datapoints active", "success");
+    } catch (e) {
+        if (status) { status.textContent = "Reload failed"; status.className = "ms-2 small text-danger"; }
+    }
+}
+
 async function setPriority(dpId, priority) {
     try {
         await apiCall("/api/datapoints/" + dpId, "PATCH", { poll_priority: parseInt(priority, 10) });
-        // Update data-priority attribute on the row for filter consistency
         var row = document.querySelector("tr[data-dp-id='" + dpId + "']");
         if (row) { row.dataset.priority = priority; }
+        scheduleReload();
     } catch (e) {
         // error toast already shown by apiCall
     }
@@ -71,8 +91,8 @@ async function setPriority(dpId, priority) {
 async function togglePolling(dpId, enabled) {
     try {
         await apiCall("/api/datapoints/" + dpId, "PATCH", { poll_enabled: enabled });
+        scheduleReload();
     } catch (e) {
-        // Revert toggle on failure
         var toggle = document.getElementById("poll-" + dpId);
         if (toggle) { toggle.checked = !enabled; }
     }
@@ -101,7 +121,8 @@ async function bulkSetPriority() {
         var row = document.querySelector("tr[data-dp-id='" + cb.value + "']");
         if (row) { row.dataset.priority = priority; }
     });
-    showToast("Priority updated for " + checked.length + " datapoint(s).", "success");
+    showToast("Priority updated for " + checked.length + " datapoint(s). Reloading engine...", "info");
+    await reloadEngineSchedule();
 }
 
 async function bulkSetPoll(enabled) {
@@ -120,24 +141,14 @@ async function bulkSetPoll(enabled) {
         var sw = document.getElementById("poll-" + cb.value);
         if (sw) { sw.checked = enabled; }
     });
-    showToast("Polling " + (enabled ? "enabled" : "disabled") + " for " + checked.length + " datapoint(s).", "success");
+    showToast("Polling " + (enabled ? "enabled" : "disabled") + " for " + checked.length + " datapoint(s). Reloading engine...", "info");
+    await reloadEngineSchedule();
 }
 
 async function saveAndApply() {
     var btn = document.getElementById("btn-save-apply");
-    var status = document.getElementById("save-status");
     btn.disabled = true;
-    status.textContent = "Applying...";
-    status.className = "ms-2 small text-warning";
-    try {
-        var result = await apiCall("/api/engine/reload-schedule", "POST");
-        status.textContent = "Applied: " + result.polling + " datapoints polling";
-        status.className = "ms-2 small text-success";
-        showToast("Engine schedule reloaded: " + result.polling + " datapoints active", "success");
-    } catch (e) {
-        status.textContent = "Failed to apply";
-        status.className = "ms-2 small text-danger";
-    }
+    await reloadEngineSchedule();
     btn.disabled = false;
 }
 
