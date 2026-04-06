@@ -72,6 +72,26 @@
 {% block scripts %}
 <script>
 (function () {
+    // Define updateProgress first so it can be used in restore
+    function updateProgress(progress) {
+        var section = document.getElementById('progress-section');
+        var bar = document.getElementById('progress-bar');
+        var detail = document.getElementById('progress-detail');
+        var pct = document.getElementById('progress-percent');
+        section.style.display = 'block';
+        bar.style.width = progress.percent + '%';
+        bar.setAttribute('aria-valuenow', progress.percent);
+        pct.textContent = progress.percent + '%';
+        if (progress.detail) {
+            detail.textContent = progress.detail;
+        }
+        if (progress.percent >= 100) {
+            bar.classList.remove('progress-bar-animated');
+            bar.classList.add('bg-success');
+        }
+    }
+    window.updateProgress = updateProgress;
+
     // Restore log and state from server on page load
     var serverState = {{ depict_state | tojson }};
     if (serverState.log && serverState.log.length > 0) {
@@ -199,23 +219,6 @@
         }
     };
 
-    window.updateProgress = function (progress) {
-        var section = document.getElementById('progress-section');
-        var bar = document.getElementById('progress-bar');
-        var detail = document.getElementById('progress-detail');
-        var percent = document.getElementById('progress-percent');
-        section.style.display = 'block';
-        bar.style.width = progress.percent + '%';
-        bar.setAttribute('aria-valuenow', progress.percent);
-        percent.textContent = progress.percent + '%';
-        if (progress.detail) {
-            detail.textContent = progress.detail;
-        }
-        if (progress.percent >= 100) {
-            bar.classList.remove('progress-bar-animated');
-            bar.classList.add('bg-success');
-        }
-    };
 
     window.appendConsole = function (text) {
         var pre = document.getElementById('depict-console');

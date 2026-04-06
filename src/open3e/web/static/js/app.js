@@ -94,6 +94,7 @@ function openWebSocket() {
                     break;
                 case "mqtt_status":
                     if (api.onMqttStatus) { api.onMqttStatus(msg); }
+                    updateMqttIndicator(msg.connected);
                     break;
                 case "depict_progress":
                     if (api.onDepictProgress) { api.onDepictProgress(msg); }
@@ -154,37 +155,57 @@ function openWebSocket() {
  */
 function updateStatusIndicators(msg) {
     var state = msg.state;
-    var dot = document.getElementById("engine-status-dot");
-    var label = document.getElementById("engine-status-label");
-    var canDot = document.getElementById("can-status-dot");
+    var engineDot = document.getElementById("status-engine");
+    var engineText = document.getElementById("status-engine-text");
+    var canDot = document.getElementById("status-can");
+    var canText = document.getElementById("status-can-text");
 
-    if (!dot || !label) { return; }
-
-    dot.className = "status-dot";
-    if (canDot) { canDot.className = "status-dot"; }
+    if (!engineDot || !engineText) { return; }
 
     switch (state) {
         case "polling":
-            dot.classList.add("status-green");
-            label.textContent = "Polling";
-            if (canDot) { canDot.classList.add("status-green"); }
+            engineDot.className = "status-dot green";
+            engineText.textContent = "running";
+            engineText.className = "text-success";
+            if (canDot) { canDot.className = "status-dot green"; }
+            if (canText) { canText.textContent = "connected"; canText.className = "text-success"; }
             break;
         case "connecting":
-            dot.classList.add("status-amber");
-            label.textContent = "Connecting";
+            engineDot.className = "status-dot amber";
+            engineText.textContent = "connecting";
+            engineText.className = "text-warning";
             break;
         case "paused":
-            dot.classList.add("status-amber");
-            label.textContent = "Paused";
+            engineDot.className = "status-dot amber";
+            engineText.textContent = "paused";
+            engineText.className = "text-warning";
             break;
         case "idle":
-            dot.classList.add("status-gray");
-            label.textContent = "Idle";
-            if (canDot) { canDot.classList.add("status-gray"); }
+            engineDot.className = "status-dot gray";
+            engineText.textContent = "not running";
+            engineText.className = "text-danger";
+            if (canDot) { canDot.className = "status-dot gray"; }
+            if (canText) { canText.textContent = "not connected"; canText.className = "text-danger"; }
             break;
         default:
-            dot.classList.add("status-gray");
-            label.textContent = state || "Unknown";
+            engineDot.className = "status-dot gray";
+            engineText.textContent = state || "unknown";
+            engineText.className = "text-muted";
             break;
+    }
+}
+
+function updateMqttIndicator(connected) {
+    var dot = document.getElementById("status-mqtt");
+    var text = document.getElementById("status-mqtt-text");
+    if (!dot || !text) { return; }
+    if (connected) {
+        dot.className = "status-dot green";
+        text.textContent = "connected";
+        text.className = "text-success";
+    } else {
+        dot.className = "status-dot gray";
+        text.textContent = "not connected";
+        text.className = "text-danger";
     }
 }
