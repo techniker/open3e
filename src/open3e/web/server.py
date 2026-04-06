@@ -11,7 +11,7 @@ import tempfile
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI, File, HTTPException, Request, UploadFile
+from fastapi import FastAPI, File, HTTPException, Request, UploadFile, WebSocket, WebSocketDisconnect
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -19,6 +19,7 @@ from fastapi.templating import Jinja2Templates
 from open3e.web.auth import hash_password
 from open3e.web.can_discovery import discover_can_interfaces
 from open3e.web.config_store import ConfigStore
+from open3e.web.ws_manager import WebSocketManager
 
 _HERE = Path(__file__).parent
 
@@ -37,6 +38,34 @@ def create_app(store: ConfigStore) -> FastAPI:
 
     # Store reference on app state
     app.state.store = store
+
+    ws_manager = WebSocketManager()
+    app.state.ws_manager = ws_manager
+
+    @app.websocket("/ws")
+    async def websocket_endpoint(ws: WebSocket):
+        await ws_manager.connect(ws)
+        try:
+            while True:
+                data = await ws.receive_json()
+                msg_type = data.get("type")
+                if msg_type == "subscribe":
+                    dids = data.get("dids", "*")
+                    ws_manager.subscribe(ws, dids)
+                elif msg_type == "write":
+                    engine = getattr(app.state, "engine", None)
+                    if engine:
+                        engine.send_command({
+                            "action": "write_did",
+                            "ecu": data["ecu"],
+                            "did": data["did"],
+                            "value": data["value"],
+                            "sub": data.get("sub"),
+                        })
+        except WebSocketDisconnect:
+            ws_manager.disconnect(ws)
+        except Exception:
+            ws_manager.disconnect(ws)
 
     # -----------------------------------------------------------------------
     # Page routes
