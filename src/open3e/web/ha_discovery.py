@@ -33,6 +33,10 @@ INFERENCE_RULES = [
     ("*Photovoltaic*Power*", ["O3EComplexType", "O3EInt32"], "sensor", "power", "W", "mdi:solar-panel"),
     ("*Photovoltaic*", ["O3EComplexType", "O3EInt32"], "sensor", None, None, "mdi:solar-panel"),
 
+    # --- Flow rate ---
+    ("*Allengra*", ["O3EComplexType"], "sensor", None, "L/h", "mdi:water-pump"),
+    ("*FlowRate*", ["O3EComplexType", "O3EInt16", "O3EInt32"], "sensor", None, "L/h", "mdi:water-pump"),
+
     # --- Pressure ---
     ("*Pressure*", ["O3EComplexType", "O3EInt16"], "sensor", "pressure", "bar", "mdi:gauge"),
 
@@ -54,7 +58,6 @@ INFERENCE_RULES = [
 
     # --- Flow and water ---
     ("*FlowMeter*", ["O3EInt32", "O3EComplexType"], "sensor", "water", "L", "mdi:water"),
-    ("*Allegra*", ["O3EComplexType"], "sensor", None, "L/h", "mdi:water-pump"),
 
     # --- Frequency ---
     ("*Frequency*", ["O3EInt16", "O3EInt32", "O3EComplexType"], "sensor", "frequency", "Hz", "mdi:sine-wave"),
