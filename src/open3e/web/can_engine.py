@@ -445,16 +445,101 @@ class CanEngine:
         # Server-side log buffer for page refresh persistence
         self._depict_log: list[str] = []
         self._depict_returncode: Optional[int] = None
+        self._depict_progress = {"phase": "starting", "percent": 0, "detail": ""}
+
+        # Known scan ranges for progress calculation
+        COB_START, COB_END = 0x680, 0x6ff
+        COB_COUNT = COB_END - COB_START + 1
+        DID_START, DID_END = 256, 3500
+        DID_COUNT = DID_END - DID_START + 1
+
+        import re
+        _re_cob_scan = re.compile(r"^scan COB-IDs")
+        _re_cob_addr = re.compile(r"^0x([0-9a-fA-F]+)\s*$")
+        _re_cob_found = re.compile(r"^ECU found:")
+        _re_cob_done = re.compile(r"(\d+) responding COB-IDs found")
+        _re_did_scan = re.compile(r"^scan ([0-9a-fA-F]+) for DIDs (\d+) to (\d+)")
+        _re_did_num = re.compile(r"^(\d+)\s*$")
+        _re_did_found = re.compile(r"^found (\d+):(\d+):")
+        _re_did_done = re.compile(r"(\d+) DIDs found on")
+        ecus_found_count = [0]  # mutable for closure
+
+        def _parse_progress(text: str) -> None:
+            """Parse depict output lines to update progress."""
+            p = self._depict_progress
+            if _re_cob_scan.match(text):
+                p["phase"] = "cob_scan"
+                p["percent"] = 0
+                p["detail"] = "Scanning for ECUs..."
+            elif _re_cob_addr.match(text):
+                m = _re_cob_addr.match(text)
+                addr = int(m.group(1), 16)
+                done = addr - COB_START + 1
+                # COB scan is 30% of total
+                p["percent"] = int(30 * done / COB_COUNT)
+                p["detail"] = "Scanning COB-ID 0x{:03x} ({}/{})".format(addr, done, COB_COUNT)
+            elif _re_cob_found.match(text):
+                ecus_found_count[0] += 1
+                p["detail"] = text
+            elif _re_cob_done.match(text):
+                p["phase"] = "cob_done"
+                p["percent"] = 30
+                p["detail"] = text
+            elif _re_did_scan.match(text):
+                p["phase"] = "did_scan"
+                p["detail"] = text
+            elif _re_did_num.match(text):
+                m = _re_did_num.match(text)
+                did = int(m.group(1))
+                done = did - DID_START + 1
+                # DID scan is 70% of total (30-100%), split across ECUs
+                ecu_count = max(ecus_found_count[0], 1)
+                per_ecu = 70 / ecu_count
+                p["percent"] = min(99, 30 + int(per_ecu * done / DID_COUNT))
+                p["detail"] = "Scanning DID {} ({}/{})".format(did, done, DID_COUNT)
+            elif _re_did_found.match(text):
+                p["detail"] = text
+            elif _re_did_done.match(text):
+                p["percent"] = min(99, p["percent"] + 1)
+                p["detail"] = text
+            elif "done" in text.lower() and "write" not in text.lower():
+                p["percent"] = 100
+                p["phase"] = "complete"
+                p["detail"] = "Scan complete"
 
         def _reader():
             assert proc.stdout is not None
-            for line in proc.stdout:
-                stripped = line.rstrip("\n")
-                self._depict_log.append(stripped)
-                if on_line is not None:
-                    on_line(stripped)
-                self._emit_data({"type": "depict_progress", "line": stripped})
+            # Read character-by-character to handle \r as line separator
+            buf = ""
+            while True:
+                ch = proc.stdout.read(1)
+                if not ch:
+                    break  # EOF
+                if ch in ("\n", "\r"):
+                    line = buf.strip()
+                    buf = ""
+                    if not line:
+                        continue
+                    _parse_progress(line)
+                    self._depict_log.append(line)
+                    if on_line is not None:
+                        on_line(line)
+                    self._emit_data({
+                        "type": "depict_progress",
+                        "line": line,
+                        "progress": dict(self._depict_progress),
+                    })
+                else:
+                    buf += ch
+            # Flush remaining buffer
+            if buf.strip():
+                line = buf.strip()
+                self._depict_log.append(line)
+                self._emit_data({"type": "depict_progress", "line": line, "progress": dict(self._depict_progress)})
+
             proc.wait()
+            self._depict_progress["percent"] = 100
+            self._depict_progress["phase"] = "complete"
             self._depict_returncode = proc.returncode
             with self._depict_lock:
                 self._depict_proc = None
@@ -475,6 +560,7 @@ class CanEngine:
             "running": self.depict_running,
             "log": getattr(self, "_depict_log", []),
             "returncode": getattr(self, "_depict_returncode", None),
+            "progress": getattr(self, "_depict_progress", {"phase": "idle", "percent": 0, "detail": ""}),
         }
 
     # -----------------------------------------------------------------------
