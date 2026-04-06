@@ -424,6 +424,10 @@ class CanEngine:
                 # Already running
                 return
 
+            # Emit CAN status so sidebar updates
+            self._emit_data({"type": "engine_state", "state": "paused"})
+            self._emit_data({"type": "can_status", "interface": can_interface, "state": "scanning"})
+
             try:
                 # Use sys.executable to ensure we run within the same venv
                 # -u forces unbuffered stdout so lines stream in real time
@@ -544,6 +548,7 @@ class CanEngine:
             with self._depict_lock:
                 self._depict_proc = None
             self._emit_data({"type": "depict_complete", "returncode": proc.returncode})
+            self._emit_data({"type": "engine_state", "state": "idle"})
 
         reader_thread = threading.Thread(target=_reader, daemon=True, name="DepictReader")
         reader_thread.start()

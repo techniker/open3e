@@ -91,6 +91,7 @@ function openWebSocket() {
                     break;
                 case "can_status":
                     if (api.onCanStatus) { api.onCanStatus(msg); }
+                    updateCanIndicator(msg);
                     break;
                 case "mqtt_status":
                     if (api.onMqttStatus) { api.onMqttStatus(msg); }
@@ -177,7 +178,7 @@ function updateStatusIndicators(msg) {
             break;
         case "paused":
             engineDot.className = "status-dot amber";
-            engineText.textContent = "paused";
+            engineText.textContent = "scanning";
             engineText.className = "text-warning";
             break;
         case "idle":
@@ -192,6 +193,26 @@ function updateStatusIndicators(msg) {
             engineText.textContent = state || "unknown";
             engineText.className = "text-muted";
             break;
+    }
+}
+
+function updateCanIndicator(msg) {
+    var dot = document.getElementById("status-can");
+    var text = document.getElementById("status-can-text");
+    if (!dot || !text) { return; }
+    var state = msg.state || "";
+    if (state === "up" || state === "connected") {
+        dot.className = "status-dot green";
+        text.textContent = "connected";
+        text.className = "text-success";
+    } else if (state === "scanning") {
+        dot.className = "status-dot amber";
+        text.textContent = "scanning";
+        text.className = "text-warning";
+    } else {
+        dot.className = "status-dot gray";
+        text.textContent = state || "not connected";
+        text.className = "text-danger";
     }
 }
 
