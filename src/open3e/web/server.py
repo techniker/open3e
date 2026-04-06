@@ -153,8 +153,20 @@ def create_app(store: ConfigStore) -> FastAPI:
 
     @app.get("/write", response_class=HTMLResponse)
     async def write_page(request: Request):
+        # Load writable DIDs list for filtering
+        writable_dids = set()
+        writable_path = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "..", "Open3Edatapoints_writables.json"
+        )
+        if os.path.isfile(writable_path):
+            try:
+                with open(writable_path) as wf:
+                    writable_dids = set(int(k) for k in json.load(wf).keys())
+            except Exception:
+                pass
         all_dps = await store.get_datapoints()
-        writables = [dp for dp in all_dps if dp["is_writable"]]
+        writables = [dp for dp in all_dps if dp["did"] in writable_dids]
         return templates.TemplateResponse(
             request, "write.html",
             {"writables": writables, "active_page": "write"},
@@ -311,7 +323,7 @@ def create_app(store: ConfigStore) -> FastAPI:
         created = 0
         for dp in datapoints:
             result = infer_ha_entity(
-                dp["name"], dp.get("codec_type", ""), dp.get("is_writable", False)
+                dp["name"], dp["codec"] or "", False
             )
             if result:
                 await store.upsert_ha_entity(
@@ -547,18 +559,16 @@ def create_app(store: ConfigStore) -> FastAPI:
                         if codec is None:
                             codec = general_dids.get(int(did))
                         if codec is None:
-                            # Still unknown — store as RawCodec placeholder
                             await store.upsert_datapoint(
-                                addr, int(did), "DID_" + str(did),
-                                "RawCodec", 0, int(did) in writable_dids
+                                ecu_address=addr, did=int(did),
+                                name="DID_" + str(did), codec="RawCodec",
                             )
                         else:
-                            codec_type = type(codec).__name__
-                            data_len = getattr(codec, "string_len", 0)
-                            name = getattr(codec, "id", "DID_" + str(did))
-                            is_writable = int(did) in writable_dids
+                            codec_type_name = type(codec).__name__
+                            dp_name = getattr(codec, "id", "DID_" + str(did))
                             await store.upsert_datapoint(
-                                addr, int(did), name, codec_type, data_len, is_writable
+                                ecu_address=addr, did=int(did),
+                                name=dp_name, codec=codec_type_name,
                             )
                         total_dps += 1
                 except Exception as e:
