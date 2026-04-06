@@ -576,25 +576,6 @@ async function saveMqttSettings() {
 // Home Assistant helpers
 // ---------------------------------------------------------------------------
 
-async function applyHaDefaults() {
-    try {
-        await apiCall('/api/ha/apply-defaults', 'POST');
-        showToast('Defaults applied.', 'success');
-        location.reload();
-    } catch (e) {
-        // error toast already shown
-    }
-}
-
-// toggleHaEntity defined in HA helpers section below
-}
-
-// saveHaSettings — see HA helpers section below
-if (false) {
-    // removed duplicate
-    }
-}
-
 // ---------------------------------------------------------------------------
 // System helpers
 // ---------------------------------------------------------------------------
