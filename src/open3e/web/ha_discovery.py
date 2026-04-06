@@ -34,6 +34,8 @@ INFERENCE_RULES = [
     ("*Photovoltaic*", ["O3EComplexType", "O3EInt32"], "sensor", None, None, "mdi:solar-panel"),
 
     # --- Flow rate ---
+    # AllengraSensor has sub-fields: Actual=flow rate, Temperature=temp of flow sensor
+    # The main entity uses Actual (flow rate). Temperature gets a separate entity via apply-defaults.
     ("*Allengra*", ["O3EComplexType"], "sensor", None, "L/h", "mdi:water-pump"),
     ("*FlowRate*", ["O3EComplexType", "O3EInt16", "O3EInt32"], "sensor", None, "L/h", "mdi:water-pump"),
 

@@ -255,8 +255,7 @@ class ConfigStore:
             "   entity_type  = excluded.entity_type,"
             "   name         = excluded.name,"
             "   device_class = excluded.device_class,"
-            "   unit         = excluded.unit,"
-            "   enabled      = excluded.enabled",
+            "   unit         = excluded.unit",
             (dp_id, entity_type, unique_id, name, device_class, unit, enabled),
         ) as cur:
             rowid = cur.lastrowid

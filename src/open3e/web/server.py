@@ -373,6 +373,14 @@ def create_app(store: ConfigStore) -> FastAPI:
         entities = await store.get_ha_entities(enabled=enabled)
         return [dict(e) for e in entities]
 
+    @app.post("/api/ha/entities/bulk-toggle")
+    async def api_bulk_toggle_ha_entities(request: Request):
+        body = await request.json()
+        enabled = int(body.get("enabled", 0))
+        await store._db.execute("UPDATE ha_entities SET enabled = ?", (enabled,))
+        await store._db.commit()
+        return {"ok": True}
+
     @app.patch("/api/ha/entities/{ha_id}")
     async def api_patch_ha_entity(ha_id: int, request: Request):
         body = await request.json()
@@ -432,7 +440,7 @@ def create_app(store: ConfigStore) -> FastAPI:
                     name=entity_name,
                     device_class=result.get("device_class"),
                     unit=result.get("unit"),
-                    enabled=0,
+                    enabled=1,  # enabled by default, user disables what they don't want
                 )
             else:
                 # No rule matched — create generic sensor
@@ -445,7 +453,7 @@ def create_app(store: ConfigStore) -> FastAPI:
                     name=entity_name,
                     device_class=None,
                     unit=None,
-                    enabled=0,
+                    enabled=1,  # enabled by default
                 )
             created += 1
         return {"status": "ok", "entities_created": created}

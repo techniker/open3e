@@ -269,9 +269,15 @@
                 </div>
             </div>
 
-            <div class="mb-4">
+            <div class="mb-4 d-flex gap-2">
                 <button class="btn btn-outline-secondary btn-sm" onclick="applyHaDefaults()">
                     <i class="bi bi-magic"></i> Apply Suggested Defaults
+                </button>
+                <button class="btn btn-outline-success btn-sm" onclick="bulkToggleHaEntities(true)">
+                    <i class="bi bi-check-all"></i> Enable All
+                </button>
+                <button class="btn btn-outline-danger btn-sm" onclick="bulkToggleHaEntities(false)">
+                    <i class="bi bi-x-lg"></i> Disable All
                 </button>
             </div>
 
@@ -652,6 +658,17 @@ async function applyHaDefaults() {
         location.reload();
     } catch (e) {
         // error toast already shown
+    }
+}
+
+async function bulkToggleHaEntities(enabled) {
+    try {
+        await apiCall('/api/ha/entities/bulk-toggle', 'POST', { enabled: enabled ? 1 : 0 });
+        showToast(enabled ? 'All entities enabled.' : 'All entities disabled.', 'success');
+        location.hash = '#ha-pane';
+        location.reload();
+    } catch (e) {
+        // error toast shown by apiCall
     }
 }
 
