@@ -6,43 +6,54 @@
 <script src="https://cdn.jsdelivr.net/npm/uplot@1.6.30/dist/uPlot.iife.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uplot@1.6.30/dist/uPlot.min.css">
 <style>
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 6px;
+    }
     .dashboard-card {
         cursor: pointer;
         transition: border-color 0.15s ease-in-out;
         overflow: hidden;
+        min-width: 0;
     }
     .dashboard-card:hover {
         border-color: #4dabf7 !important;
     }
     .dashboard-card .card-body {
-        padding: 0.5rem 0.75rem;
+        padding: 0.35rem 0.5rem;
         overflow: hidden;
     }
     .card-label {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         color: #adb5bd;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        line-height: 1.2;
     }
     .card-sublabel {
-        font-size: 0.6rem;
+        font-size: 0.55rem;
         color: #6c757d;
+        line-height: 1.2;
     }
     .card-value {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         font-weight: 600;
         font-variant-numeric: tabular-nums;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        line-height: 1.3;
     }
     .card-ts {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
         color: #6c757d;
+        line-height: 1.2;
     }
     .chart-container {
         display: none;
+        grid-column: 1 / -1;
     }
 </style>
 {% endblock %}
@@ -67,9 +78,9 @@
         Go to <a href="/datapoints" class="alert-link">Datapoints</a> and set the priority to <strong>3 (pinned)</strong> for the values you want to monitor here.
     </div>
     {% else %}
-    <div class="row g-2">
+    <div class="dashboard-grid">
         {% for dp in pinned %}
-        <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+        <div>
             <div
                 id="card-{{ dp.ecu_address }}_{{ dp.did }}"
                 class="card dashboard-card border"
