@@ -148,13 +148,16 @@ class MqttPublisher:
         self._command_handler = handler
 
     def publish_did_value(self, ecu: int, did: int, name: str, value: Any) -> None:
-        """Publish a datapoint value to MQTT if mapping is enabled."""
+        """Publish a datapoint value to MQTT.
+
+        Only publishes if MQTT mappings exist for this datapoint,
+        or if no mappings are configured (publishes all polled values).
+        """
         if not self._client or not self._connected:
             return
 
-        # Check if this datapoint has an enabled mapping
-        # If no mappings loaded yet, publish all by default
         key = (ecu, did)
+        # If explicit mappings exist, only publish mapped datapoints
         if self._mappings and key not in self._mappings:
             return
 

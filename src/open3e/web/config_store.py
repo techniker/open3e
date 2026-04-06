@@ -52,8 +52,8 @@ CREATE TABLE IF NOT EXISTS datapoints (
     did          INTEGER NOT NULL,
     name         TEXT    NOT NULL,
     codec        TEXT,
-    poll_priority INTEGER NOT NULL DEFAULT 1,
-    poll_enabled  INTEGER NOT NULL DEFAULT 1,
+    poll_priority INTEGER NOT NULL DEFAULT 0,
+    poll_enabled  INTEGER NOT NULL DEFAULT 0,
     unit         TEXT,
     description  TEXT,
     UNIQUE(ecu_address, did)
@@ -178,8 +178,8 @@ class ConfigStore:
         did: int,
         name: str,
         codec: str | None = None,
-        poll_priority: int = 1,
-        poll_enabled: int = 1,
+        poll_priority: int = 0,
+        poll_enabled: int = 0,
         unit: str | None = None,
         description: str | None = None,
     ) -> int:

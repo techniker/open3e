@@ -110,28 +110,11 @@ def main() -> None:
 
     engine._on_data = on_engine_data
 
-    def start_engine_from_db() -> bool:
-        """Read CAN config from DB and start the engine. Returns True if started."""
-        can_iface = loop.run_until_complete(store.get_setting("can_interface"))
-        if not can_iface:
-            logger.info("CAN interface not configured — engine not started")
+    def start_engine(can_iface: str, can_bitrate: int, ecus: list, datapoints: dict) -> bool:
+        """Start the CAN engine with given config. Thread-safe, no async."""
+        if not can_iface or not ecus:
+            logger.info("Cannot start engine: missing interface or ECUs")
             return False
-
-        can_bitrate_str = loop.run_until_complete(store.get_setting("can_bitrate", "250000"))
-        try:
-            can_bitrate = int(can_bitrate_str)
-        except (ValueError, TypeError):
-            can_bitrate = 250000
-
-        ecus_rows = loop.run_until_complete(store.get_ecus())
-        dp_rows = loop.run_until_complete(store.get_datapoints())
-
-        if not ecus_rows:
-            logger.info("No ECUs in database — engine not started (run System Depiction first)")
-            return False
-
-        ecus = [dict(row) for row in ecus_rows]
-        datapoints = {row["id"]: dict(row) for row in dp_rows}
 
         if engine._thread and engine._thread.is_alive():
             engine.stop()
@@ -146,8 +129,26 @@ def main() -> None:
                      can_iface, can_bitrate, len(ecus), len(datapoints))
         return True
 
-    # Make start_engine callable from the server (e.g., after depict load or settings change)
-    app.state.start_engine = start_engine_from_db
+    def start_engine_from_db_sync() -> bool:
+        """Read CAN config from DB and start engine. Only safe at startup (sync context)."""
+        can_iface = loop.run_until_complete(store.get_setting("can_interface"))
+        if not can_iface:
+            return False
+        can_bitrate_str = loop.run_until_complete(store.get_setting("can_bitrate", "250000"))
+        try:
+            can_bitrate = int(can_bitrate_str)
+        except (ValueError, TypeError):
+            can_bitrate = 250000
+        ecus_rows = loop.run_until_complete(store.get_ecus())
+        dp_rows = loop.run_until_complete(store.get_datapoints())
+        if not ecus_rows:
+            return False
+        ecus = [dict(row) for row in ecus_rows]
+        datapoints = {row["id"]: dict(row) for row in dp_rows}
+        return start_engine(can_iface, can_bitrate, ecus, datapoints)
+
+    # Expose the non-async start_engine for use from async server handlers
+    app.state.start_engine = start_engine
 
     # --- MQTT Publisher ---
 
@@ -169,7 +170,7 @@ def main() -> None:
 
     # --- Auto-start ---
 
-    engine_started = start_engine_from_db()
+    engine_started = start_engine_from_db_sync()
     mqtt_started = start_mqtt_from_db()
 
     # --- Print startup info ---
@@ -190,6 +191,18 @@ def main() -> None:
     async def _serve():
         nonlocal _main_loop
         _main_loop = asyncio.get_running_loop()
+
+        # Emit initial status now that the loop is available for bridging
+        async def _emit_initial_status():
+            await asyncio.sleep(1)  # wait for first WebSocket clients
+            ws_mgr = getattr(app.state, "ws_manager", None)
+            if ws_mgr:
+                if engine._state:
+                    await ws_mgr.broadcast_state({"type": "engine_state", "state": engine._state.value})
+                await ws_mgr.broadcast_state({"type": "mqtt_status", "connected": publisher.connected})
+
+        _main_loop.create_task(_emit_initial_status())
+
         await server.serve()
 
     asyncio.run(_serve())

@@ -250,10 +250,17 @@ def create_app(store: ConfigStore) -> FastAPI:
         # Auto-restart CAN engine if CAN settings changed
         can_keys = {"can_interface", "can_bitrate"}
         if can_keys.intersection(body.keys()):
-            start_engine = getattr(app.state, "start_engine", None)
-            if start_engine:
+            start_engine_fn = getattr(app.state, "start_engine", None)
+            if start_engine_fn:
                 try:
-                    start_engine()
+                    can_iface = await store.get_setting("can_interface")
+                    can_bitrate_str = await store.get_setting("can_bitrate", "250000")
+                    can_bitrate = int(can_bitrate_str) if can_bitrate_str else 250000
+                    ecus_list = await store.get_ecus()
+                    dp_list = await store.get_datapoints()
+                    ecus = [dict(row) for row in ecus_list]
+                    datapoints = {row["id"]: dict(row) for row in dp_list}
+                    start_engine_fn(can_iface, can_bitrate, ecus, datapoints)
                 except Exception:
                     pass
 
@@ -619,10 +626,17 @@ def create_app(store: ConfigStore) -> FastAPI:
                     logging.getLogger(__name__).warning("Error loading %s: %s", dp_file, e)
 
         # Auto-start CAN engine now that we have ECUs and datapoints
-        start_engine = getattr(app.state, "start_engine", None)
-        if start_engine:
+        start_engine_fn = getattr(app.state, "start_engine", None)
+        if start_engine_fn:
             try:
-                start_engine()
+                can_iface = await store.get_setting("can_interface")
+                can_bitrate_str = await store.get_setting("can_bitrate", "250000")
+                can_bitrate = int(can_bitrate_str) if can_bitrate_str else 250000
+                ecus_list = await store.get_ecus()
+                dp_list = await store.get_datapoints()
+                ecus = [dict(row) for row in ecus_list]
+                datapoints = {row["id"]: dict(row) for row in dp_list}
+                start_engine_fn(can_iface, can_bitrate, ecus, datapoints)
             except Exception as e:
                 import logging
                 logging.getLogger(__name__).warning("Auto-start engine failed: %s", e)
