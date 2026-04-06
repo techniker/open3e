@@ -28,7 +28,9 @@ function handleDidValue(msg) {
     var cellId = "val-" + msg.ecu + "_" + msg.did;
     var cell = document.getElementById(cellId);
     if (!cell) { return; }
-    cell.textContent = formatValue(msg.value);
+    var formatted = formatValue(msg.value);
+    cell.textContent = formatted;
+    cell.title = typeof msg.value === "object" ? JSON.stringify(msg.value, null, 2) : String(msg.value);
     cell.classList.remove("flash-green");
     // Force reflow so the animation restarts
     void cell.offsetWidth;

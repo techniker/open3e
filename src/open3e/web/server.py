@@ -237,13 +237,26 @@ def create_app(store: ConfigStore) -> FastAPI:
                 await store.set_setting(key, json.dumps(value))
             else:
                 await store.set_setting(key, str(value))
-        # Reconfigure MQTT if settings changed
+        # Auto-restart MQTT if MQTT settings changed
         mqtt_keys = {"mqtt_host", "mqtt_port", "mqtt_user", "mqtt_password", "mqtt_tls_enabled", "mqtt_topic_prefix", "mqtt_format_string", "mqtt_client_id"}
         if mqtt_keys.intersection(body.keys()):
             publisher = getattr(app.state, "mqtt_publisher", None)
             if publisher:
-                import asyncio
-                await publisher.reconfigure()
+                try:
+                    await publisher.reconfigure()
+                except Exception:
+                    pass
+
+        # Auto-restart CAN engine if CAN settings changed
+        can_keys = {"can_interface", "can_bitrate"}
+        if can_keys.intersection(body.keys()):
+            start_engine = getattr(app.state, "start_engine", None)
+            if start_engine:
+                try:
+                    start_engine()
+                except Exception:
+                    pass
+
         return {"ok": True}
 
     # -----------------------------------------------------------------------
@@ -604,6 +617,15 @@ def create_app(store: ConfigStore) -> FastAPI:
                 except Exception as e:
                     import logging
                     logging.getLogger(__name__).warning("Error loading %s: %s", dp_file, e)
+
+        # Auto-start CAN engine now that we have ECUs and datapoints
+        start_engine = getattr(app.state, "start_engine", None)
+        if start_engine:
+            try:
+                start_engine()
+            except Exception as e:
+                import logging
+                logging.getLogger(__name__).warning("Auto-start engine failed: %s", e)
 
         return {"status": "ok", "devices_loaded": len(devices), "datapoints_loaded": total_dps}
 

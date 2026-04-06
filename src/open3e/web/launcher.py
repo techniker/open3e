@@ -1,17 +1,13 @@
 """Launcher — single entry point for the open3e web UI.
 
-This module provides the main() function that:
-1. Creates and initializes a ConfigStore
-2. Finds an available port
-3. Creates the FastAPI app
-4. Creates and wires the CAN engine
-5. Prints startup information
-6. Runs uvicorn
+Starts the FastAPI web server with CAN engine and MQTT publisher.
+Auto-connects CAN and MQTT if previously configured.
 """
 
 from __future__ import annotations
 
 import asyncio
+import logging
 import socket
 import sys
 
@@ -26,12 +22,10 @@ DEFAULT_DB_PATH = "open3e_web.db"
 DEFAULT_PORT = 8080
 MAX_PORT_ATTEMPTS = 10
 
+logger = logging.getLogger("open3e.web")
+
 
 def _get_local_ip() -> str:
-    """Get the local IP address by connecting to a remote socket.
-
-    Falls back to 127.0.0.1 if unable to determine.
-    """
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sock.connect(("8.8.8.8", 80))
@@ -43,7 +37,6 @@ def _get_local_ip() -> str:
 
 
 def _port_available(port: int) -> bool:
-    """Check if a port is available by attempting to bind a TCP socket."""
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -55,134 +48,141 @@ def _port_available(port: int) -> bool:
 
 
 def _find_port(preferred: int) -> int:
-    """Find an available port starting from preferred, up to MAX_PORT_ATTEMPTS.
-
-    Returns the first available port found, or raises RuntimeError if none available.
-    """
     for offset in range(MAX_PORT_ATTEMPTS):
         candidate = preferred + offset
         if _port_available(candidate):
             return candidate
-    raise RuntimeError(
-        f"Could not find an available port in range {preferred}-{preferred + MAX_PORT_ATTEMPTS - 1}"
-    )
+    return preferred
 
 
 def main() -> None:
-    """Main entry point for the open3e web UI."""
-    # Create and initialize ConfigStore
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname)s %(message)s")
+
     store = ConfigStore(DEFAULT_DB_PATH)
     loop = asyncio.new_event_loop()
     loop.run_until_complete(store.initialize())
 
-    # Read web_port setting from DB (default 8080 if not set)
+    # Port
     preferred_port = loop.run_until_complete(store.get_setting("web_port", DEFAULT_PORT))
     try:
         preferred_port = int(preferred_port)
     except (ValueError, TypeError):
         preferred_port = DEFAULT_PORT
-
-    # Find an available port
     port = _find_port(preferred_port)
 
-    # Create the FastAPI app
+    # Create app
     app = create_app(store)
 
-    # Create the CAN engine and attach it to app state
-    engine = CanEngine(store)
-    app.state.engine = engine
-
-    # Read CAN settings for auto-start
-    can_interface = loop.run_until_complete(store.get_setting("can_interface"))
-    can_bitrate = loop.run_until_complete(store.get_setting("can_bitrate", 500000))
-    ecus_rows = loop.run_until_complete(store.get_ecus())
-    datapoints_rows = loop.run_until_complete(store.get_datapoints())
-
-    try:
-        can_bitrate = int(can_bitrate)
-    except (ValueError, TypeError):
-        can_bitrate = 500000
-
-    # Convert DB rows to the dicts expected by CanEngine.start()
-    ecus = [dict(row) for row in ecus_rows] if ecus_rows else []
-    datapoints = {row["id"]: dict(row) for row in datapoints_rows} if datapoints_rows else {}
-
-    # Determine CAN status for startup message
-    can_status = f"CAN: {can_interface}" if can_interface and ecus else "CAN: not configured"
-
-    # Create MQTT publisher
-    publisher = MqttPublisher(store, on_status=None)  # on_status wired below after _main_loop is set
-    configured = loop.run_until_complete(publisher.configure())
-    if configured:
-        mqtt_host = loop.run_until_complete(store.get_setting("mqtt_host", "localhost"))
-        mqtt_port = loop.run_until_complete(store.get_setting("mqtt_port", 1883))
-        try:
-            mqtt_port = int(mqtt_port)
-        except (ValueError, TypeError):
-            mqtt_port = 1883
-        publisher.start()
-    app.state.mqtt_publisher = publisher
-
-    # Print startup info
-    local_ip = _get_local_ip()
-    local_url = f"http://127.0.0.1:{port}"
-    network_url = f"http://{local_ip}:{port}"
-    print(f"Starting open3e web UI", file=sys.stdout)
-    print(f"Local:   {local_url}", file=sys.stdout)
-    print(f"Network: {network_url}", file=sys.stdout)
-    print(f"{can_status}", file=sys.stdout)
-    if configured:
-        print(f"  MQTT:    {mqtt_host}:{mqtt_port}", file=sys.stdout)
-    else:
-        print(f"  MQTT:    Not configured", file=sys.stdout)
-
-    # Run uvicorn with an explicit event loop so the engine bridge can schedule
-    # async coroutines onto it from the background engine thread.
+    # Shared mutable state for the cross-thread bridge
     _main_loop = None
 
-    def on_mqtt_status(msg: dict) -> None:
-        """Bridge: deliver MQTT status to the WebSocket manager on the uvicorn loop."""
+    def _bridge_to_ws(msg: dict) -> None:
+        """Send a message from any thread to WebSocket clients on the uvicorn loop."""
         if _main_loop is None:
             return
-        ws_mgr = getattr(app.state, "ws_manager", None)
-        if ws_mgr is None:
-            return
-        coro = ws_mgr.broadcast_state(msg)
-        try:
-            asyncio.run_coroutine_threadsafe(coro, _main_loop)
-        except RuntimeError:
-            pass
-
-    publisher._on_status = on_mqtt_status
-
-    def on_engine_data(msg: dict) -> None:
-        """Bridge: deliver engine data to the WebSocket manager on the uvicorn loop."""
-        if _main_loop is None:
-            return  # Server not ready yet
         ws_mgr = getattr(app.state, "ws_manager", None)
         if ws_mgr is None:
             return
         if msg.get("type") == "did_value":
             coro = ws_mgr.broadcast_did_value(msg)
-            # Also publish to MQTT
-            publisher.publish_did_value(msg["ecu"], msg["did"], msg.get("name", ""), msg.get("value"))
         else:
             coro = ws_mgr.broadcast_state(msg)
         try:
             asyncio.run_coroutine_threadsafe(coro, _main_loop)
         except RuntimeError:
-            pass  # Loop closed
+            pass
+
+    # --- CAN Engine ---
+
+    engine = CanEngine(store)
+    app.state.engine = engine
+
+    def on_engine_data(msg: dict) -> None:
+        _bridge_to_ws(msg)
+        # Also publish DID values to MQTT
+        if msg.get("type") == "did_value":
+            publisher = getattr(app.state, "mqtt_publisher", None)
+            if publisher:
+                publisher.publish_did_value(
+                    msg.get("ecu", 0), msg.get("did", 0),
+                    msg.get("name", ""), msg.get("value")
+                )
 
     engine._on_data = on_engine_data
 
-    # Auto-start engine if CAN interface and ECUs are configured
-    if can_interface and ecus:
+    def start_engine_from_db() -> bool:
+        """Read CAN config from DB and start the engine. Returns True if started."""
+        can_iface = loop.run_until_complete(store.get_setting("can_interface"))
+        if not can_iface:
+            logger.info("CAN interface not configured — engine not started")
+            return False
+
+        can_bitrate_str = loop.run_until_complete(store.get_setting("can_bitrate", "250000"))
+        try:
+            can_bitrate = int(can_bitrate_str)
+        except (ValueError, TypeError):
+            can_bitrate = 250000
+
+        ecus_rows = loop.run_until_complete(store.get_ecus())
+        dp_rows = loop.run_until_complete(store.get_datapoints())
+
+        if not ecus_rows:
+            logger.info("No ECUs in database — engine not started (run System Depiction first)")
+            return False
+
+        ecus = [dict(row) for row in ecus_rows]
+        datapoints = {row["id"]: dict(row) for row in dp_rows}
+
+        if engine._thread and engine._thread.is_alive():
+            engine.stop()
+
         engine.start(
-            can_interface=can_interface,
+            can_interface=can_iface,
             can_bitrate=can_bitrate,
             datapoints=datapoints,
             ecus=ecus,
         )
+        logger.info("CAN engine started on %s @ %d bps, %d ECUs, %d datapoints",
+                     can_iface, can_bitrate, len(ecus), len(datapoints))
+        return True
+
+    # Make start_engine callable from the server (e.g., after depict load or settings change)
+    app.state.start_engine = start_engine_from_db
+
+    # --- MQTT Publisher ---
+
+    publisher = MqttPublisher(store, on_status=lambda msg: _bridge_to_ws(msg))
+    app.state.mqtt_publisher = publisher
+
+    def start_mqtt_from_db() -> bool:
+        """Read MQTT config from DB and start the publisher. Called at startup only."""
+        configured = loop.run_until_complete(publisher.configure())
+        if configured:
+            publisher.start()
+            logger.info("MQTT publisher started")
+            return True
+        else:
+            logger.info("MQTT not configured — publisher not started")
+            return False
+
+    app.state.start_mqtt = start_mqtt_from_db
+
+    # --- Auto-start ---
+
+    engine_started = start_engine_from_db()
+    mqtt_started = start_mqtt_from_db()
+
+    # --- Print startup info ---
+
+    local_ip = _get_local_ip()
+    print("open3e-web starting...")
+    print(f"  Local:   http://127.0.0.1:{port}")
+    print(f"  Network: http://{local_ip}:{port}")
+    print(f"  CAN:     {'started' if engine_started else 'not started (configure via web UI)'}")
+    print(f"  MQTT:    {'started' if mqtt_started else 'not configured'}")
+    print()
+
+    # --- Run uvicorn ---
 
     config = uvicorn.Config(app, host="0.0.0.0", port=port, log_level="warning")
     server = uvicorn.Server(config)

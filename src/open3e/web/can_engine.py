@@ -257,7 +257,8 @@ class CanEngine:
 
         for ecu in ecus:
             address = ecu["address"]
-            dev = ecu.get("device_prop") or None
+            # O3Eclass expects dev= to be the datapoints file path (e.g., "Open3Edatapoints_680.py")
+            dev = ecu.get("dp_list") or None
             try:
                 o3e = O3Eclass(
                     ecutx=address,
