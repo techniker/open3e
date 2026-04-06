@@ -324,6 +324,17 @@ def create_app(store: ConfigStore) -> FastAPI:
             await store.update_datapoint(dp_id, **body)
         except ValueError as exc:
             raise HTTPException(status_code=400, detail=str(exc))
+
+        # If poll settings changed, reload the engine's schedule
+        if "poll_priority" in body or "poll_enabled" in body:
+            engine = getattr(app.state, "engine", None)
+            if engine and engine.state.value == "polling":
+                dp_rows = await store.get_datapoints()
+                engine.send_command({
+                    "action": "update_schedule",
+                    "datapoints": {row["id"]: dict(row) for row in dp_rows},
+                })
+
         return {"ok": True}
 
     # -----------------------------------------------------------------------
