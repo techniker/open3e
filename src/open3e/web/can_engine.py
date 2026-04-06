@@ -281,6 +281,7 @@ class CanEngine:
 
         o3e = self._ecus.get(ecu_addr)
         if o3e is None:
+            logger.warning("No ECU connection for address %s (did %s), connected ECUs: %s", ecu_addr, did, list(self._ecus.keys()))
             return
 
         try:
@@ -319,7 +320,7 @@ class CanEngine:
             except queue.Empty:
                 return False
 
-            cmd_type = cmd.get("type")
+            cmd_type = cmd.get("action") or cmd.get("type")
 
             if cmd_type == "stop":
                 return True
@@ -398,6 +399,12 @@ class CanEngine:
         """Replace the datapoints configuration (update polling schedule)."""
         new_datapoints = cmd.get("datapoints", {})
         self._datapoints = dict(new_datapoints)
+        # Count how many will actually be polled
+        active = [dp for dp in self._datapoints.values() if dp.get("poll_enabled") and dp.get("poll_priority", 0) > 0]
+        logger.info("Schedule updated: %d total, %d active (prio>0 & enabled)", len(self._datapoints), len(active))
+        if active:
+            sample = active[0]
+            logger.info("  Sample active DP: did=%s ecu=%s prio=%s enabled=%s", sample.get("did"), sample.get("ecu_address"), sample.get("poll_priority"), sample.get("poll_enabled"))
         self._emit_data({"type": "schedule_updated", "count": len(self._datapoints)})
 
     # -----------------------------------------------------------------------
