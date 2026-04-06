@@ -16,7 +16,7 @@ from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from open3e.web.auth import hash_password
+from open3e.web.auth import hash_password, verify_password, SessionManager, AuthMiddleware
 from open3e.web.can_discovery import discover_can_interfaces
 from open3e.web.config_store import ConfigStore
 from open3e.web.ws_manager import WebSocketManager
@@ -38,6 +38,11 @@ def create_app(store: ConfigStore) -> FastAPI:
 
     # Store reference on app state
     app.state.store = store
+
+    session_manager = SessionManager()
+    app.state.session_manager = session_manager
+    app.add_middleware(AuthMiddleware, store=store, session_manager=session_manager)
+    app.state.auth_middleware = None  # set after middleware is added
 
     ws_manager = WebSocketManager()
     app.state.ws_manager = ws_manager
@@ -66,6 +71,36 @@ def create_app(store: ConfigStore) -> FastAPI:
             ws_manager.disconnect(ws)
         except Exception:
             ws_manager.disconnect(ws)
+
+    # -----------------------------------------------------------------------
+    # Auth routes
+    # -----------------------------------------------------------------------
+
+    @app.get("/login", response_class=HTMLResponse)
+    async def login_page(request: Request):
+        return templates.TemplateResponse(request, "login.html", {"error": None})
+
+    @app.post("/login", response_class=HTMLResponse)
+    async def login_submit(request: Request):
+        form = await request.form()
+        password = form.get("password", "")
+        stored_hash = await store.get_setting("auth_password_hash")
+        if stored_hash and verify_password(password, stored_hash):
+            token = session_manager.create_session()
+            response = RedirectResponse("/", status_code=302)
+            response.set_cookie("open3e_session", token, httponly=True, samesite="lax")
+            return response
+        return templates.TemplateResponse(request, "login.html", {"error": "Invalid password"})
+
+    @app.post("/api/auth/logout")
+    async def logout(request: Request):
+        token = request.cookies.get("open3e_session")
+        if token:
+            session_manager.destroy_session(token)
+        from starlette.responses import JSONResponse
+        response = JSONResponse({"status": "ok"})
+        response.delete_cookie("open3e_session")
+        return response
 
     # -----------------------------------------------------------------------
     # Page routes
@@ -186,6 +221,13 @@ def create_app(store: ConfigStore) -> FastAPI:
         body = await request.json()
         for key, value in body.items():
             await store.set_setting(key, value)
+        # Reconfigure MQTT if settings changed
+        mqtt_keys = {"mqtt_host", "mqtt_port", "mqtt_user", "mqtt_password", "mqtt_tls_enabled", "mqtt_topic_prefix", "mqtt_format_string", "mqtt_client_id"}
+        if mqtt_keys.intersection(body.keys()):
+            publisher = getattr(app.state, "mqtt_publisher", None)
+            if publisher:
+                import asyncio
+                await publisher.reconfigure()
         return {"ok": True}
 
     # -----------------------------------------------------------------------
@@ -334,9 +376,16 @@ def create_app(store: ConfigStore) -> FastAPI:
         body = await request.json()
         if "auth_enabled" in body:
             await store.set_setting("auth_enabled", body["auth_enabled"])
-        if "password" in body and body["password"]:
+        if "auth_password" in body:
+            hashed = hash_password(body["auth_password"])
+            await store.set_setting("auth_password_hash", hashed)
+        elif "password" in body and body["password"]:
             hashed = hash_password(body["password"])
             await store.set_setting("auth_password_hash", hashed)
+        # Invalidate cached auth state
+        mw = getattr(app.state, "auth_middleware", None)
+        if mw:
+            mw.invalidate_cache()
         return {"ok": True}
 
     # -----------------------------------------------------------------------
