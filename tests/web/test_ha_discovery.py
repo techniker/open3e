@@ -27,22 +27,27 @@ class TestInferHaEntity:
     def test_infer_enum_operation_mode(self):
         result = infer_ha_entity("ExternalDomesticHotWaterTargetOperationMode", "O3EEnum", False)
         assert result is not None
-        assert result["ha_component"] == "select"
+        assert result["ha_component"] == "sensor"  # enums mapped as sensor
 
     def test_infer_pump(self):
         result = infer_ha_entity("DomesticHotWaterCirculationPump", "O3EBool", False)
         assert result is not None
-        assert result["ha_component"] == "binary_sensor"
+        assert result["ha_component"] == "sensor"  # pumps mapped as sensor with pump icon
 
     def test_infer_unknown_returns_none(self):
         result = infer_ha_entity("SomeRandomDatapoint", "RawCodec", False)
         assert result is None
 
     def test_infer_energy(self):
-        result = infer_ha_entity("ElectricalEnergyStorageStateOfCharge", "O3EInt32", False)
+        result = infer_ha_entity("EnergyConsumptionCentralHeating", "O3EComplexType", False)
         assert result is not None
         assert result["ha_component"] == "sensor"
         assert result["device_class"] == "energy"
+
+    def test_infer_battery(self):
+        result = infer_ha_entity("ElectricalEnergyStorageStateOfCharge", "O3EInt32", False)
+        assert result is not None
+        assert result["device_class"] == "battery"
 
 
 class TestBuildDiscoveryPayload:
@@ -60,7 +65,7 @@ class TestBuildDiscoveryPayload:
         topic, payload = build_discovery_payload(entity, 0x680, "vitocal", "HPMUMASTER")
         assert "homeassistant/sensor/open3e_680_268_actual/config" == topic
         assert payload["unique_id"] == "open3e_680_268_actual"
-        assert payload["state_topic"] == "open3e/FlowTemperatureSensor/Actual"
+        assert payload["state_topic"] == "open3e/268_FlowTemperatureSensor/Actual"
         assert payload["device"]["manufacturer"] == "Viessmann"
         assert payload["device"]["identifiers"] == ["open3e_680"]
         assert payload["device_class"] == "temperature"

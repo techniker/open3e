@@ -63,9 +63,9 @@ class TestEngineState:
         engine._set_state(EngineState.IDLE)
         assert engine.state == EngineState.IDLE
 
-        # Check that engine_state messages were emitted for each transition
+        # Check that engine_state messages were emitted (EXECUTING_COMMAND is suppressed)
         state_msgs = [m for m in received if m.get("type") == "engine_state"]
-        assert len(state_msgs) == 5
+        assert len(state_msgs) == 4  # CONNECTING, POLLING, PAUSED, IDLE (no EXECUTING_COMMAND)
 
     def test_state_thread_safety(self):
         """Multiple threads reading/writing state should not deadlock or corrupt."""
@@ -338,7 +338,7 @@ class TestDataQueue:
         engine._set_state(EngineState.POLLING)
 
         assert any(
-            m.get("type") == "engine_state" and m.get("state") == EngineState.POLLING.name
+            m.get("type") == "engine_state" and m.get("state") == EngineState.POLLING.value
             for m in received
         )
 
