@@ -413,29 +413,28 @@ class CanEngine:
         val = cmd.get("value")
         raw = cmd.get("raw", False)
         sub = cmd.get("sub")
+        result_event = cmd.get("_result_event")  # threading.Event for sync callers
+        result_holder = cmd.get("_result_holder")  # dict to store result
         o3e = self._ecus.get(ecu_addr)
 
+        result = {"type": "write_result", "ecu": ecu_addr, "did": did,
+                  "success": False, "error": None, "new_value": None}
+
         if o3e is None:
-            self._emit_data({"type": "write_result", "ecu": ecu_addr, "did": did,
-                             "success": False, "error": "ECU not connected"})
+            result["error"] = "ECU not connected"
         else:
-            # Brief pause to let CAN bus settle before write
             _time.sleep(0.1)
             try:
                 succ, code = o3e.writeByDid(did, val, raw, sub=sub)
                 logger.info("Write DID %s on ECU %s: val=%s success=%s code=%s",
                             did, hex(ecu_addr), val, succ, code)
-                self._emit_data({
-                    "type": "write_result",
-                    "ecu": ecu_addr,
-                    "did": did,
-                    "success": succ,
-                    "code": str(code),
-                })
+                result["success"] = succ
+                result["code"] = str(code)
                 # Read back the value to confirm
                 _time.sleep(0.05)
                 try:
                     new_val, idstr, _ = o3e.readByDid(did, raw=False)
+                    result["new_value"] = new_val
                     cache_key = f"{ecu_addr}:{did}"
                     self._last_values[cache_key] = {"value": new_val, "ts": int(_time.time())}
                     self._emit_data({
@@ -447,8 +446,16 @@ class CanEngine:
                     pass  # read-back failed, not critical
             except Exception as exc:
                 logger.error("Write failed DID %s on ECU %s: %s", did, hex(ecu_addr), exc)
-                self._emit_data({"type": "write_result", "ecu": ecu_addr, "did": did,
-                                 "success": False, "error": str(exc)})
+                result["error"] = str(exc)
+
+        # Emit via WebSocket (for any listening clients)
+        self._emit_data(result)
+
+        # Signal synchronous caller if present
+        if result_holder is not None:
+            result_holder.update(result)
+        if result_event is not None:
+            result_event.set()
 
         self._set_state(prev_state)
 

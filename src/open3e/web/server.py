@@ -226,18 +226,40 @@ def create_app(store: ConfigStore) -> FastAPI:
 
     @app.post("/api/write")
     async def write_value(request: Request):
+        import asyncio
+        import threading as _threading
+
         body = await request.json()
         engine = getattr(app.state, "engine", None)
         if not engine:
             raise HTTPException(status_code=503, detail="CAN engine not running")
+
+        # Create synchronization primitives so we can wait for the engine result
+        result_event = _threading.Event()
+        result_holder = {}
+
         engine.send_command({
             "action": "write_did",
             "ecu": body["ecu"],
             "did": body["did"],
             "value": body["value"],
             "sub": body.get("sub"),
+            "_result_event": result_event,
+            "_result_holder": result_holder,
         })
-        return {"status": "queued"}
+
+        # Wait for engine to complete (up to 10 seconds)
+        got_result = await asyncio.to_thread(result_event.wait, 10.0)
+
+        if not got_result:
+            raise HTTPException(status_code=504, detail="Write timed out — no response from CAN engine within 10 seconds")
+
+        return {
+            "success": result_holder.get("success", False),
+            "error": result_holder.get("error"),
+            "new_value": result_holder.get("new_value"),
+            "code": result_holder.get("code"),
+        }
 
     # -----------------------------------------------------------------------
     # API: settings

@@ -44,6 +44,8 @@
                     <td>
                         <button
                             class="btn btn-sm btn-warning"
+                            data-write-ecu="{{ dp.ecu_address }}"
+                            data-write-did="{{ dp.did }}"
                             onclick="confirmWrite({{ dp.ecu_address }}, {{ dp.did }}, {{ dp.name | tojson }})"
                         >
                             <i class="bi bi-pencil-fill"></i> Write
@@ -100,14 +102,6 @@
         }
     };
 
-    ws.onWriteResult = function (msg) {
-        if (msg.ok) {
-            showToast("Write successful: " + msg.ecu + "/" + msg.did, "success");
-        } else {
-            showToast("Write failed: " + (msg.error || "unknown error"), "danger");
-        }
-    };
-
     function confirmWrite(ecu, did, name) {
         var inputEl = document.getElementById("winput-" + ecu + "_" + did);
         if (!inputEl) { return; }
@@ -124,11 +118,10 @@
         modal.show();
 
         var confirmBtn = document.getElementById("writeConfirmBtn");
-        // Replace the button to clear any previous listener
         var newBtn = confirmBtn.cloneNode(true);
         confirmBtn.parentNode.replaceChild(newBtn, confirmBtn);
 
-        newBtn.addEventListener("click", function () {
+        newBtn.addEventListener("click", async function () {
             modal.hide();
 
             var parsedVal;
@@ -139,7 +132,43 @@
                 parsedVal = isNaN(n) ? rawValue : n;
             }
 
-            ws.write(ecu, did, parsedVal);
+            // Show writing feedback on the button
+            var writeBtn = document.querySelector("[data-write-ecu='" + ecu + "'][data-write-did='" + did + "']");
+            if (writeBtn) {
+                writeBtn.disabled = true;
+                writeBtn.textContent = "Writing...";
+            }
+
+            try {
+                var result = await apiCall("/api/write", "POST", {
+                    ecu: ecu, did: did, value: parsedVal
+                });
+
+                if (result.success) {
+                    var newVal = result.new_value;
+                    var display = (newVal !== null && newVal !== undefined)
+                        ? (typeof newVal === "object" ? JSON.stringify(newVal) : String(newVal))
+                        : "OK";
+                    showToast("Write successful. New value: " + display, "success");
+                    var cell = document.getElementById("wval-" + ecu + "_" + did);
+                    if (cell && newVal !== null) {
+                        cell.textContent = typeof newVal === "object" ? JSON.stringify(newVal) : String(newVal);
+                    }
+                } else {
+                    showToast("Write failed: " + (result.error || "unknown error"), "danger");
+                }
+            } catch (e) {
+                // apiCall already shows error toast
+            }
+
+            if (writeBtn) {
+                writeBtn.disabled = false;
+                writeBtn.textContent = "";
+                var icon = document.createElement("i");
+                icon.className = "bi bi-pencil-fill";
+                writeBtn.appendChild(icon);
+                writeBtn.appendChild(document.createTextNode(" Write"));
+            }
         });
     }
 
