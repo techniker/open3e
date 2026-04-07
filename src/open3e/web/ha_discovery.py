@@ -68,6 +68,9 @@ INFERENCE_RULES = [
     ("*Frequency*", ["O3EInt16", "O3EInt32", "O3EComplexType"], "sensor", "frequency", "Hz", "mdi:sine-wave"),
     ("*Speed*", ["O3EInt16", "O3EInt32"], "sensor", None, "rpm", "mdi:fan"),
 
+    # --- Fans ---
+    ("*Fan*", ["O3EByteVal", "O3EInt8", "O3EInt16", "O3EComplexType"], "sensor", None, "%", "mdi:fan"),
+
     # --- Pumps ---
     ("*Pump*", ["O3EComplexType", "O3EBool", "O3EByteVal"], "sensor", None, None, "mdi:pump"),
 
