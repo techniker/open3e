@@ -113,9 +113,9 @@ INFERENCE_RULES = [
 
 WRITABLE_ENTITIES = {
     # --- DHW Quick Action ---
-    "1006_quickmode": {"did": 1006, "component": "button", "name": "One-Time DHW Heating",
-                       "icon": "mdi:water-boiler", "group": "Hot Water",
-                       "payload_press": '{"OpMode": 2, "Required": "on", "Unknown": "0000"}'},
+    "1006_quickmode": {"did": 1006, "component": "switch", "sub_field": "Required",
+                       "name": "One-Time DHW Heating",
+                       "icon": "mdi:water-boiler", "group": "Hot Water"},
 
     # --- DHW Temperature ---
     396: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",

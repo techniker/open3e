@@ -170,6 +170,15 @@ def main() -> None:
         # DID 2214 (BackupBoxConfiguration) is on 0x6a1
         if did in (2214, 451, 1552, 1587, 1588, 1589, 1590, 1591):
             ecu = 0x6a1
+
+        # Special handling for DID 1006 (TargetQuickMode) — switch on/off
+        if did == 1006:
+            if value in ("on", "ON", True, 1, "1"):
+                value = {"OpMode": 2, "Required": "on", "Unknown": "0000"}
+            else:
+                value = {"OpMode": 0, "Required": "off", "Unknown": "0000"}
+            sub = None  # write full object
+
         engine.send_command({
             "action": "write_did",
             "ecu": ecu,
