@@ -183,8 +183,8 @@ def create_app(store: ConfigStore) -> FastAPI:
 
     @app.get("/write", response_class=HTMLResponse)
     async def write_page(request: Request):
-        # Load writable DIDs list for filtering
-        writable_dids = set()
+        # Load writable DIDs list
+        writable_dids = {}
         writable_path = os.path.join(
             os.path.dirname(os.path.abspath(__file__)),
             "..", "Open3Edatapoints_writables.json"
@@ -192,14 +192,100 @@ def create_app(store: ConfigStore) -> FastAPI:
         if os.path.isfile(writable_path):
             try:
                 with open(writable_path) as wf:
-                    writable_dids = set(int(k) for k in json.load(wf).keys())
+                    writable_dids = {int(k): v for k, v in json.load(wf).items()}
             except Exception:
                 pass
+
+        # Get codec metadata for each writable DID
+        try:
+            import open3e.Open3Edatapoints as dp_mod
+            general_dids = dp_mod.dataIdentifiers.get("dids", {})
+        except Exception:
+            general_dids = {}
+
         all_dps = await store.get_datapoints()
-        writables = [dp for dp in all_dps if dp["did"] in writable_dids]
+        ecus = await store.get_ecus()
+        ecu_map = {e["address"]: e for e in ecus}
+
+        # Build enriched writable list with codec info
+        writables = []
+        for dp in all_dps:
+            if dp["did"] not in writable_dids:
+                continue
+            codec = general_dids.get(dp["did"])
+            meta = {"codec_type": type(codec).__name__ if codec else "RawCodec"}
+
+            # Extract sub-fields for ComplexType
+            if codec and hasattr(codec, "subTypes"):
+                subs = []
+                for s in codec.subTypes:
+                    sub_info = {"name": s.id, "type": type(s).__name__}
+                    if hasattr(s, "listStr"):
+                        # Enum sub-field — get options
+                        try:
+                            import open3e.Open3Eenums
+                            enum_vals = open3e.Open3Eenums.E3Enums.get(s.listStr, {})
+                            sub_info["options"] = {str(k): v for k, v in enum_vals.items()}
+                        except Exception:
+                            pass
+                    sub_info["len"] = getattr(s, "string_len", 0)
+                    subs.append(sub_info)
+                meta["sub_fields"] = subs
+            else:
+                meta["sub_fields"] = []
+
+            # Categorize
+            name = dp["name"]
+            if "Setpoint" in name and "Temperature" in name:
+                meta["category"] = "temperature_setpoint"
+            elif "OperationState" in name or "OperationMode" in name:
+                meta["category"] = "operation_mode"
+            elif "QuickMode" in name:
+                meta["category"] = "quick_mode"
+            elif "HeatingCurve" in name:
+                meta["category"] = "heating_curve"
+            elif "Pump" in name and "Limit" in name:
+                meta["category"] = "pump_limit"
+            elif "TimeSchedule" in name:
+                meta["category"] = "schedule"
+            elif "Setpoint" in name:
+                meta["category"] = "setpoint"
+            else:
+                meta["category"] = "other"
+
+            ecu_info = ecu_map.get(dp["ecu_address"], {})
+            writables.append({
+                **dict(dp),
+                "meta": meta,
+                "ecu_name": ecu_info.get("name", hex(dp["ecu_address"])),
+            })
+
+        # Sort by category then name
+        cat_order = {"temperature_setpoint": 0, "operation_mode": 1, "quick_mode": 2,
+                     "heating_curve": 3, "setpoint": 4, "pump_limit": 5, "other": 6, "schedule": 7}
+        writables.sort(key=lambda w: (cat_order.get(w["meta"]["category"], 99), w["name"]))
+
+        # Group by category
+        categories = {}
+        cat_labels = {
+            "temperature_setpoint": "Temperature Setpoints",
+            "operation_mode": "Operation Modes",
+            "quick_mode": "Quick Modes",
+            "heating_curve": "Heating Curves",
+            "setpoint": "Other Setpoints",
+            "pump_limit": "Pump Limits",
+            "schedule": "Time Schedules",
+            "other": "Other Writable",
+        }
+        for w in writables:
+            cat = w["meta"]["category"]
+            if cat not in categories:
+                categories[cat] = {"label": cat_labels.get(cat, cat), "items": []}
+            categories[cat]["items"].append(w)
+
         return templates.TemplateResponse(
             request, "write.html",
-            {"writables": writables, "active_page": "write"},
+            {"categories": categories, "writables": writables, "active_page": "write"},
         )
 
     @app.get("/system", response_class=HTMLResponse)

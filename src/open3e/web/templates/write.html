@@ -12,46 +12,111 @@
         No writable datapoints found. Run <a href="/depict">System Depiction</a> first.
     </div>
     {% else %}
-    <div class="table-responsive">
-        <table class="table table-hover table-sm" style="table-layout:fixed;width:100%">
-            <thead>
-                <tr>
-                    <th style="width:55px">ECU</th>
-                    <th style="width:40px">DID</th>
-                    <th style="width:30%">Name</th>
-                    <th style="width:25%">Current Value</th>
-                    <th style="width:120px">New Value</th>
-                    <th style="width:80px"></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for dp in writables %}
-                <tr>
-                    <td><code class="small text-muted">{{ '%03x' % dp.ecu_address }}</code></td>
-                    <td><code class="small">{{ dp.did }}</code></td>
-                    <td class="text-truncate" title="{{ dp.name }}">{{ dp.name }}</td>
-                    <td class="text-truncate font-monospace small"
-                        id="wval-{{ dp.ecu_address }}_{{ dp.did }}"
-                        title="">--</td>
-                    <td>
-                        <input type="text" class="form-control form-control-sm"
-                               id="winput-{{ dp.ecu_address }}_{{ dp.did }}"
-                               placeholder="value">
-                    </td>
-                    <td>
-                        <button class="btn btn-sm btn-warning"
-                                data-write-ecu="{{ dp.ecu_address }}"
-                                data-write-did="{{ dp.did }}"
-                                data-write-name="{{ dp.name }}"
-                                onclick="doWrite(this)">
-                            <i class="bi bi-pencil-fill"></i> Write
-                        </button>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+
+    {% for cat_key, cat in categories.items() %}
+    <div class="card mb-3">
+        <div class="card-header py-2 d-flex justify-content-between align-items-center"
+             style="cursor:pointer"
+             data-bs-toggle="collapse" data-bs-target="#cat-{{ cat_key }}"
+             aria-expanded="{{ 'true' if cat_key in ('temperature_setpoint','operation_mode','quick_mode') else 'false' }}">
+            <strong>{{ cat.label }}</strong>
+            <span class="badge bg-secondary">{{ cat.items | length }}</span>
+        </div>
+        <div class="collapse {{ 'show' if cat_key in ('temperature_setpoint','operation_mode','quick_mode') else '' }}"
+             id="cat-{{ cat_key }}">
+            <div class="card-body p-0">
+                <table class="table table-sm table-hover mb-0" style="table-layout:fixed;width:100%">
+                    <thead>
+                        <tr>
+                            <th style="width:55px">ECU</th>
+                            <th style="width:40px">DID</th>
+                            <th style="width:30%">Name</th>
+                            <th>Current Value</th>
+                            <th style="width:30%">Set Value</th>
+                            <th style="width:80px"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for dp in cat.items %}
+                    <tr>
+                        <td><code class="small text-muted">{{ '%03x' % dp.ecu_address }}</code></td>
+                        <td><code class="small">{{ dp.did }}</code></td>
+                        <td class="text-truncate" title="{{ dp.name }}">{{ dp.name }}</td>
+                        <td class="text-truncate font-monospace small"
+                            id="wval-{{ dp.ecu_address }}_{{ dp.did }}" title="">--</td>
+                        <td>
+                            {% if dp.meta.codec_type in ('O3EInt16', 'O3EInt8', 'O3EInt32', 'O3EByteVal') %}
+                                {# Simple numeric input #}
+                                <input type="number" step="0.1" class="form-control form-control-sm"
+                                       id="winput-{{ dp.ecu_address }}_{{ dp.did }}"
+                                       placeholder="number">
+
+                            {% elif dp.meta.codec_type == 'O3EComplexType' and dp.meta.sub_fields | length > 0 %}
+                                {# Sub-field inputs #}
+                                {% for sub in dp.meta.sub_fields %}
+                                    {% if sub.name != 'Unknown' %}
+                                    <div class="input-group input-group-sm mb-1">
+                                        <span class="input-group-text" style="font-size:0.7rem;min-width:80px">{{ sub.name }}</span>
+                                        {% if sub.options is defined and sub.options %}
+                                            <select class="form-select form-select-sm"
+                                                    id="wsub-{{ dp.ecu_address }}_{{ dp.did }}_{{ sub.name }}">
+                                                <option value="">--</option>
+                                                {% for k, v in sub.options.items() %}
+                                                <option value="{{ k }}">{{ v }} ({{ k }})</option>
+                                                {% endfor %}
+                                            </select>
+                                        {% elif sub.type == 'O3EBool' %}
+                                            <select class="form-select form-select-sm"
+                                                    id="wsub-{{ dp.ecu_address }}_{{ dp.did }}_{{ sub.name }}">
+                                                <option value="">--</option>
+                                                <option value="on">on</option>
+                                                <option value="off">off</option>
+                                            </select>
+                                        {% elif sub.type in ('O3EInt16', 'O3EInt8', 'O3EByteVal') %}
+                                            <input type="number" step="0.1" class="form-control form-control-sm"
+                                                   id="wsub-{{ dp.ecu_address }}_{{ dp.did }}_{{ sub.name }}"
+                                                   placeholder="number">
+                                        {% else %}
+                                            <input type="text" class="form-control form-control-sm"
+                                                   id="wsub-{{ dp.ecu_address }}_{{ dp.did }}_{{ sub.name }}"
+                                                   placeholder="{{ sub.type }}">
+                                        {% endif %}
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+
+                            {% elif dp.meta.codec_type == 'RawCodec' %}
+                                <input type="text" class="form-control form-control-sm"
+                                       id="winput-{{ dp.ecu_address }}_{{ dp.did }}"
+                                       placeholder="hex (e.g. D601)">
+                                <small class="text-muted">Raw hex</small>
+
+                            {% else %}
+                                <input type="text" class="form-control form-control-sm"
+                                       id="winput-{{ dp.ecu_address }}_{{ dp.did }}"
+                                       placeholder="value">
+                            {% endif %}
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-warning"
+                                    data-write-ecu="{{ dp.ecu_address }}"
+                                    data-write-did="{{ dp.did }}"
+                                    data-write-name="{{ dp.name }}"
+                                    data-write-codec="{{ dp.meta.codec_type }}"
+                                    data-write-subs="{{ dp.meta.sub_fields | tojson | e }}"
+                                    onclick="doWrite(this)">
+                                <i class="bi bi-pencil-fill"></i> Write
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
+    {% endfor %}
+
     {% endif %}
 </div>
 {% endblock %}
@@ -68,54 +133,140 @@
 
     ws.onDidValue = function (msg) {
         var cell = document.getElementById("wval-" + msg.ecu + "_" + msg.did);
-        if (cell) {
-            var val = msg.value;
-            var display;
-            if (val === null || val === undefined) {
-                display = "--";
-            } else if (typeof val === "object") {
-                display = val.Actual !== undefined ? String(val.Actual) : JSON.stringify(val);
-            } else {
-                display = String(val);
+        if (!cell) return;
+        var val = msg.value;
+        var display;
+        if (val === null || val === undefined) {
+            display = "--";
+        } else if (typeof val === "object") {
+            // Show sub-fields compactly
+            var parts = [];
+            for (var k in val) {
+                if (val[k] !== null && typeof val[k] !== "object") {
+                    parts.push(k + ":" + val[k]);
+                }
             }
-            cell.textContent = display;
-            cell.title = typeof val === "object" ? JSON.stringify(val, null, 2) : display;
+            display = parts.join(" | ");
+
+            // Pre-fill sub-field inputs if they exist
+            for (var k in val) {
+                var subInput = document.getElementById("wsub-" + msg.ecu + "_" + msg.did + "_" + k);
+                if (subInput && subInput.value === "" && val[k] !== null) {
+                    if (subInput.tagName === "SELECT") {
+                        // Try to select by value
+                        for (var i = 0; i < subInput.options.length; i++) {
+                            if (subInput.options[i].value == String(val[k])) {
+                                subInput.selectedIndex = i;
+                                break;
+                            }
+                        }
+                    } else {
+                        subInput.placeholder = String(val[k]);
+                    }
+                }
+            }
+        } else {
+            display = String(val);
+            // Pre-fill simple input placeholder
+            var simpleInput = document.getElementById("winput-" + msg.ecu + "_" + msg.did);
+            if (simpleInput && simpleInput.placeholder === "number") {
+                simpleInput.placeholder = String(val);
+            }
         }
+        cell.textContent = display;
+        cell.title = typeof val === "object" ? JSON.stringify(val, null, 2) : display;
     };
 
     window.doWrite = async function (btn) {
         var ecu = parseInt(btn.dataset.writeEcu, 10);
         var did = parseInt(btn.dataset.writeDid, 10);
         var name = btn.dataset.writeName;
-        var inputEl = document.getElementById("winput-" + ecu + "_" + did);
-        if (!inputEl) return;
+        var codec = btn.dataset.writeCodec;
+        var subs = [];
+        try { subs = JSON.parse(btn.dataset.writeSubs); } catch(e) {}
 
-        var rawValue = inputEl.value.trim();
-        if (rawValue === "") {
-            showToast("Enter a value first.", "warning");
+        var writeVal = null;
+        var writeSub = null;
+        var raw = false;
+
+        if (codec === "RawCodec") {
+            // Raw hex write
+            var hexInput = document.getElementById("winput-" + ecu + "_" + did);
+            if (!hexInput || !hexInput.value.trim()) {
+                showToast("Enter a hex value.", "warning");
+                return;
+            }
+            writeVal = hexInput.value.trim();
+            raw = true;
+
+        } else if (subs.length > 0 && codec === "O3EComplexType") {
+            // ComplexType — collect sub-field values
+            var filledSubs = {};
+            var filledCount = 0;
+            for (var i = 0; i < subs.length; i++) {
+                var s = subs[i];
+                if (s.name === "Unknown") continue;
+                var el = document.getElementById("wsub-" + ecu + "_" + did + "_" + s.name);
+                if (el && el.value !== "" && el.value !== "--") {
+                    var v = el.value;
+                    // Parse numbers
+                    if (s.type !== "O3EBool" && s.type !== "O3EEnum" && !isNaN(Number(v))) {
+                        v = Number(v);
+                    }
+                    filledSubs[s.name] = v;
+                    filledCount++;
+                }
+            }
+
+            if (filledCount === 0) {
+                showToast("Fill in at least one sub-field.", "warning");
+                return;
+            }
+
+            // If only one sub-field filled, write as sub-field
+            if (filledCount === 1) {
+                var subName = Object.keys(filledSubs)[0];
+                writeVal = filledSubs[subName];
+                writeSub = subName;
+            } else {
+                // Multiple sub-fields — write as full JSON
+                // Need to include current values for unfilled fields
+                writeVal = filledSubs;
+            }
+
+        } else {
+            // Simple numeric input
+            var input = document.getElementById("winput-" + ecu + "_" + did);
+            if (!input || !input.value.trim()) {
+                showToast("Enter a value.", "warning");
+                return;
+            }
+            var v = input.value.trim();
+            try { writeVal = JSON.parse(v); }
+            catch(e) {
+                var n = Number(v);
+                writeVal = isNaN(n) ? v : n;
+            }
+        }
+
+        // Confirm
+        var desc = writeSub
+            ? name + "." + writeSub + " = " + JSON.stringify(writeVal)
+            : name + " = " + JSON.stringify(writeVal);
+        if (!confirm("Write " + desc + "?\n\nIncorrect values can affect your heating system.")) {
             return;
         }
 
-        if (!confirm('Write "' + name + '" (DID ' + did + ') = ' + rawValue + '?\n\nIncorrect values can affect your heating system.')) {
-            return;
-        }
-
-        // Parse value
-        var parsedVal;
-        try { parsedVal = JSON.parse(rawValue); }
-        catch (e) {
-            var n = Number(rawValue);
-            parsedVal = isNaN(n) ? rawValue : n;
-        }
-
-        // Show spinner
+        // Spinner
         btn.disabled = true;
         btn.textContent = "Writing...";
 
         try {
-            var result = await apiCall("/api/write", "POST", {
-                ecu: ecu, did: did, value: parsedVal
-            });
+            var payload = {ecu: ecu, did: did, value: writeVal};
+            if (writeSub) payload.sub = writeSub;
+            if (raw) payload.raw = true;
+
+            var result = await apiCall("/api/write", "POST", payload);
 
             if (result.success) {
                 var newVal = result.new_value;
@@ -127,7 +278,6 @@
                 if (cell && newVal !== null && newVal !== undefined) {
                     cell.textContent = typeof newVal === "object" ? JSON.stringify(newVal) : String(newVal);
                 }
-                inputEl.value = "";
             } else {
                 showToast("Write failed: " + (result.error || "unknown"), "danger");
             }
