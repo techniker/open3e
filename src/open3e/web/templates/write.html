@@ -57,11 +57,11 @@
                                     {% if sub.name != 'Unknown' %}
                                     <div class="input-group input-group-sm mb-1">
                                         <span class="input-group-text" style="font-size:0.7rem;min-width:80px">{{ sub.name }}</span>
-                                        {% if sub.options is defined and sub.options %}
+                                        {% if sub.get('options') %}
                                             <select class="form-select form-select-sm"
                                                     id="wsub-{{ dp.ecu_address }}_{{ dp.did }}_{{ sub.name }}">
                                                 <option value="">--</option>
-                                                {% for k, v in sub.options.items() %}
+                                                {% for k, v in sub.get('options', {}).items() %}
                                                 <option value="{{ k }}">{{ v }} ({{ k }})</option>
                                                 {% endfor %}
                                             </select>
