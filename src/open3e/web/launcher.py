@@ -162,6 +162,25 @@ def main() -> None:
     publisher = MqttPublisher(store, on_status=lambda msg: _bridge_to_ws(msg))
     app.state.mqtt_publisher = publisher
 
+    # Wire MQTT command handler to route HA writes to CAN engine
+    def on_mqtt_command(did, value, sub=None):
+        """Handle write commands from HA via MQTT."""
+        # Default ECU is 0x680 (1664). For specific DIDs, use the correct ECU.
+        ecu = 1664
+        # DID 2214 (BackupBoxConfiguration) is on 0x6a1
+        if did in (2214, 451, 1552, 1587, 1588, 1589, 1590, 1591):
+            ecu = 0x6a1
+        engine.send_command({
+            "action": "write_did",
+            "ecu": ecu,
+            "did": did,
+            "value": value,
+            "sub": sub,
+        })
+        logger.info("HA MQTT write: ECU=%s DID=%s sub=%s val=%s", hex(ecu), did, sub, value)
+
+    publisher.set_command_handler(on_mqtt_command)
+
     def start_mqtt_from_db() -> bool:
         """Read MQTT config from DB and start the publisher. Called at startup only."""
         configured = loop.run_until_complete(publisher.configure())

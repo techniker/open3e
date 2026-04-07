@@ -106,6 +106,109 @@ INFERENCE_RULES = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Writable entity definitions for HA (number, select, switch, button)
+# Each entry: did -> {component, sub_field, min, max, step, options, icon, group}
+# ---------------------------------------------------------------------------
+
+WRITABLE_ENTITIES = {
+    # --- DHW Quick Action ---
+    "1006_quickmode": {"did": 1006, "component": "button", "name": "One-Time DHW Heating",
+                       "icon": "mdi:water-boiler", "group": "Hot Water",
+                       "payload_press": '{"OpMode": 2, "Required": "on", "Unknown": "0000"}'},
+
+    # --- DHW Temperature ---
+    396: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",
+          "min": 10, "max": 60, "step": 0.5, "icon": "mdi:water-thermometer", "group": "Hot Water"},
+    2257: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",
+           "min": -10, "max": 10, "step": 0.5, "icon": "mdi:thermometer-plus", "group": "Hot Water"},
+    1167: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",
+           "min": 10, "max": 60, "step": 0.5, "icon": "mdi:water-thermometer", "group": "Hot Water"},
+    874: {"component": "number", "sub_field": "Setpoint", "device_class": "temperature", "unit": "\u00b0C",
+          "min": 50, "max": 70, "step": 0.5, "icon": "mdi:shield-bug", "group": "Hot Water"},
+
+    # --- DHW Operation ---
+    531: {"component": "select", "sub_field": "Mode", "icon": "mdi:water-boiler",
+          "options": ["0", "1"], "option_labels": {"0": "Off", "1": "On"}, "group": "Hot Water"},
+    538: {"component": "select", "sub_field": "Mode", "icon": "mdi:water-boiler",
+          "options": ["0", "1"], "option_labels": {"0": "Off", "1": "On"}, "group": "Hot Water"},
+
+    # --- DHW Pump ---
+    491: {"component": "select", "sub_field": "State", "icon": "mdi:pump",
+          "options": ["0", "1"], "option_labels": {"0": "Off", "1": "On"}, "group": "Hot Water"},
+    497: {"component": "select", "sub_field": "Mode", "icon": "mdi:pump",
+          "options": ["0", "1", "2"], "option_labels": {"0": "Off", "1": "Eco", "2": "Comfort"}, "group": "Hot Water"},
+
+    # --- DHW Pump Limits ---
+    1101: {"component": "number", "sub_field": "Setpoint", "unit": "%",
+           "min": 0, "max": 100, "step": 1, "icon": "mdi:pump", "group": "Hot Water"},
+
+    # --- DHW Setpoint MetaData ---
+    504: {"component": "number", "sub_field": "DefaultBufferTemperature", "device_class": "temperature", "unit": "\u00b0C",
+          "min": 10, "max": 60, "step": 0.5, "icon": "mdi:water-thermometer", "group": "Hot Water"},
+
+    # --- Heating Circuit 1 ---
+    424: {"component": "number", "sub_field": "Comfort", "device_class": "temperature", "unit": "\u00b0C",
+          "min": 5, "max": 30, "step": 0.5, "icon": "mdi:home-thermometer", "group": "Heating Circuit 1"},
+    "424_standard": {"did": 424, "component": "number", "sub_field": "Standard", "device_class": "temperature", "unit": "\u00b0C",
+                     "min": 5, "max": 30, "step": 0.5, "icon": "mdi:home-thermometer", "group": "Heating Circuit 1"},
+    "424_reduced": {"did": 424, "component": "number", "sub_field": "Reduced", "device_class": "temperature", "unit": "\u00b0C",
+                    "min": 5, "max": 30, "step": 0.5, "icon": "mdi:home-thermometer-outline", "group": "Heating Circuit 1"},
+    1643: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",
+           "min": 5, "max": 30, "step": 0.5, "icon": "mdi:thermostat", "group": "Heating Circuit 1"},
+    1102: {"component": "number", "sub_field": "Setpoint", "unit": "%",
+           "min": 0, "max": 100, "step": 1, "icon": "mdi:pump", "group": "Heating Circuit 1"},
+    2546: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",
+           "min": 18, "max": 30, "step": 0.5, "icon": "mdi:snowflake-thermometer", "group": "Heating Circuit 1"},
+
+    # --- Heating Circuit 2 ---
+    426: {"component": "number", "sub_field": "Comfort", "device_class": "temperature", "unit": "\u00b0C",
+          "min": 5, "max": 30, "step": 0.5, "icon": "mdi:home-thermometer", "group": "Heating Circuit 2"},
+    "426_standard": {"did": 426, "component": "number", "sub_field": "Standard", "device_class": "temperature", "unit": "\u00b0C",
+                     "min": 5, "max": 30, "step": 0.5, "icon": "mdi:home-thermometer", "group": "Heating Circuit 2"},
+    "426_reduced": {"did": 426, "component": "number", "sub_field": "Reduced", "device_class": "temperature", "unit": "\u00b0C",
+                    "min": 5, "max": 30, "step": 0.5, "icon": "mdi:home-thermometer-outline", "group": "Heating Circuit 2"},
+    1644: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",
+           "min": 5, "max": 30, "step": 0.5, "icon": "mdi:thermostat", "group": "Heating Circuit 2"},
+    988: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",
+          "min": 20, "max": 60, "step": 0.5, "icon": "mdi:thermostat", "group": "Heating Circuit 2"},
+    1103: {"component": "number", "sub_field": "Setpoint", "unit": "%",
+           "min": 0, "max": 100, "step": 1, "icon": "mdi:pump", "group": "Heating Circuit 2"},
+    2547: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",
+           "min": 18, "max": 30, "step": 0.5, "icon": "mdi:snowflake-thermometer", "group": "Heating Circuit 2"},
+
+    # --- Heating Circuit 3 ---
+    428: {"component": "number", "sub_field": "Comfort", "device_class": "temperature", "unit": "\u00b0C",
+          "min": 5, "max": 30, "step": 0.5, "icon": "mdi:home-thermometer", "group": "Heating Circuit 3"},
+    1104: {"component": "number", "sub_field": "Setpoint", "unit": "%",
+           "min": 0, "max": 100, "step": 1, "icon": "mdi:pump", "group": "Heating Circuit 3"},
+    2548: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",
+           "min": 18, "max": 30, "step": 0.5, "icon": "mdi:snowflake-thermometer", "group": "Heating Circuit 3"},
+
+    # --- Heating Circuit 4 ---
+    430: {"component": "number", "sub_field": "Comfort", "device_class": "temperature", "unit": "\u00b0C",
+          "min": 5, "max": 30, "step": 0.5, "icon": "mdi:home-thermometer", "group": "Heating Circuit 4"},
+    1105: {"component": "number", "sub_field": "Setpoint", "unit": "%",
+           "min": 0, "max": 100, "step": 1, "icon": "mdi:pump", "group": "Heating Circuit 4"},
+    2549: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",
+           "min": 18, "max": 30, "step": 0.5, "icon": "mdi:snowflake-thermometer", "group": "Heating Circuit 4"},
+
+    # --- System ---
+    1100: {"component": "number", "sub_field": "Setpoint", "unit": "%",
+           "min": 0, "max": 100, "step": 1, "icon": "mdi:pump", "group": "System"},
+    2543: {"component": "number", "sub_field": None, "device_class": "temperature", "unit": "\u00b0C",
+           "min": -10, "max": 10, "step": 0.5, "icon": "mdi:transmission-tower", "group": "System"},
+    2214: {"component": "number", "sub_field": "DischargeLimit", "unit": "%",
+           "min": 0, "max": 100, "step": 1, "icon": "mdi:battery-charging", "group": "System"},
+
+    # --- Flow Temperature Limits ---
+    1192: {"component": "number", "sub_field": "Maximum", "device_class": "temperature", "unit": "\u00b0C",
+           "min": 20, "max": 80, "step": 1, "icon": "mdi:thermometer-chevron-up", "group": "Heating Circuit 1"},
+    1193: {"component": "number", "sub_field": "Maximum", "device_class": "temperature", "unit": "\u00b0C",
+           "min": 20, "max": 80, "step": 1, "icon": "mdi:thermometer-chevron-up", "group": "Heating Circuit 2"},
+}
+
+
 def _humanize(name: str) -> str:
     """Convert CamelCase DID name to human-readable: 'FlowTemperatureSensor' -> 'Flow Temperature Sensor'."""
     import re
@@ -215,9 +318,32 @@ def build_discovery_payload(
     if entity.get("icon"):
         payload["icon"] = entity["icon"]
 
-    # Writable entities get a command topic
-    if component in ("number", "select"):
-        payload["command_topic"] = state_topic + "/set"
+    # Writable entities — add command_topic and type-specific fields
+    writable_cfg = entity.get("writable_cfg")
+    if writable_cfg or component in ("number", "select", "switch", "button"):
+        cmd_topic = state_topic + "/set"
+        payload["command_topic"] = cmd_topic
+
+        if component == "number":
+            if writable_cfg:
+                if "min" in writable_cfg:
+                    payload["min"] = writable_cfg["min"]
+                if "max" in writable_cfg:
+                    payload["max"] = writable_cfg["max"]
+                if "step" in writable_cfg:
+                    payload["step"] = writable_cfg["step"]
+
+        elif component == "select":
+            if writable_cfg and "options" in writable_cfg:
+                payload["options"] = writable_cfg["options"]
+
+        elif component == "button":
+            if writable_cfg and "payload_press" in writable_cfg:
+                payload["payload_press"] = writable_cfg["payload_press"]
+
+        elif component == "switch":
+            payload["payload_on"] = "on"
+            payload["payload_off"] = "off"
 
     return (topic, payload)
 

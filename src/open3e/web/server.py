@@ -601,6 +601,47 @@ def create_app(store: ConfigStore) -> FastAPI:
                     enabled=1,  # enabled by default
                 )
             created += 1
+
+        # Also create writable entities from WRITABLE_ENTITIES config
+        from open3e.web.ha_discovery import WRITABLE_ENTITIES
+        dp_by_did = {}
+        for dp in active_dps:
+            dp_by_did.setdefault(dp["did"], []).append(dp)
+
+        for key, cfg in WRITABLE_ENTITIES.items():
+            did = cfg.get("did", key if isinstance(key, int) else None)
+            if did is None:
+                continue
+            dps = dp_by_did.get(did, [])
+            if not dps:
+                continue
+            dp = dps[0]
+            ecu_hex = format(dp["ecu_address"], "03x")
+            sub = cfg.get("sub_field") or ""
+            uid_parts = ["open3e", ecu_hex, str(did)]
+            if sub:
+                uid_parts.append(sub.lower())
+            # For keyed entries like "424_standard", add the key suffix
+            if isinstance(key, str) and "_" in key:
+                suffix = key.split("_", 1)[1]
+                if suffix not in [s.lower() for s in uid_parts]:
+                    uid_parts.append(suffix)
+            unique_id = "_".join(uid_parts)
+            entity_name = cfg.get("name") or _humanize(dp["name"])
+            if sub and sub != "Actual":
+                entity_name += " " + sub
+
+            await store.upsert_ha_entity(
+                dp_id=dp["id"],
+                entity_type=cfg["component"],
+                unique_id=unique_id,
+                name=entity_name,
+                device_class=cfg.get("device_class"),
+                unit=cfg.get("unit"),
+                enabled=1,
+            )
+            created += 1
+
         return {"status": "ok", "entities_created": created}
 
     @app.post("/api/ha/publish")

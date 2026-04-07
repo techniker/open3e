@@ -134,19 +134,58 @@ class MqttPublisher:
         self._emit_status(True)
         client.publish(self._topic_prefix + "/LWT", "online", qos=0, retain=True)
         # Subscribe to command topics for writable entities
+        # Subscribe to command topics for writable entities
+        # +/set for direct DIDs, +/+/set for sub-field writes
         client.subscribe(self._topic_prefix + "/+/set")
+        client.subscribe(self._topic_prefix + "/+/+/set")
 
     def _on_disconnect(self, client, userdata, flags, reason_code, properties):
         logger.warning("MQTT disconnected: reason_code=%s flags=%s", reason_code, flags)
         self._emit_status(False)
 
     def _on_message(self, client, userdata, msg):
-        """Handle incoming messages (HA commands for writable entities)."""
-        # Topic format: open3e/<DIDName>/set
-        # This will be routed to the CAN engine in Task 3
-        logger.info("MQTT command received: %s = %s", msg.topic, msg.payload)
-        if self._command_handler:
-            self._command_handler(msg.topic, msg.payload)
+        """Handle incoming MQTT commands from HA for writable entities."""
+        topic = msg.topic
+        payload_str = msg.payload.decode("utf-8", errors="replace").strip()
+        logger.info("MQTT command: %s = %s", topic, payload_str[:100])
+
+        if not self._command_handler:
+            return
+
+        # Parse topic: {prefix}/{did}_{name}/set or {prefix}/{did}_{name}/{sub}/set
+        prefix = self._topic_prefix + "/"
+        if not topic.startswith(prefix) or not topic.endswith("/set"):
+            return
+
+        # Strip prefix and /set
+        path = topic[len(prefix):-4]  # e.g. "396_DomesticHotWaterTemperatureSetpoint" or "424_Mixer.../Comfort"
+        parts = path.split("/")
+
+        # Extract DID from first part: "396_Name" -> 396
+        did_part = parts[0]
+        try:
+            did = int(did_part.split("_")[0])
+        except (ValueError, IndexError):
+            logger.warning("Cannot parse DID from topic: %s", topic)
+            return
+
+        # Sub-field if present
+        sub = parts[1] if len(parts) > 1 else None
+
+        # Parse value
+        try:
+            value = json.loads(payload_str)
+        except (json.JSONDecodeError, ValueError):
+            # Try as number
+            try:
+                value = float(payload_str)
+                if value == int(value):
+                    value = int(value)
+            except ValueError:
+                value = payload_str  # string (e.g., "on"/"off")
+
+        logger.info("HA write: DID=%s sub=%s value=%s", did, sub, value)
+        self._command_handler(did, value, sub)
 
     _command_handler: Optional[Callable] = None
 
@@ -215,17 +254,46 @@ class MqttPublisher:
         if not self._client or not self._connected:
             return
 
-        from open3e.web.ha_discovery import build_discovery_payload
+        from open3e.web.ha_discovery import build_discovery_payload, WRITABLE_ENTITIES
 
         ecu_map = {e["address"]: e for e in ecus}
+
+        # Build writable lookup by DID for quick matching
+        writable_by_did = {}
+        for key, cfg in WRITABLE_ENTITIES.items():
+            did = cfg.get("did", key if isinstance(key, int) else None)
+            if did is not None:
+                writable_by_did.setdefault(did, []).append(cfg)
 
         published = 0
         for entity in entities:
             ecu_addr = entity.get("ecu_address", 0)
             ecu_info = ecu_map.get(ecu_addr, {})
+
+            # Check if this entity has a writable config
+            did = entity.get("did")
+            entity_type = entity.get("entity_type", "sensor")
+            writable_cfg = None
+            if did in writable_by_did and entity_type in ("number", "select", "switch", "button"):
+                for cfg in writable_by_did[did]:
+                    sub = cfg.get("sub_field") or ""
+                    # Match by sub_field if present
+                    uid = entity.get("unique_id", "")
+                    if sub and sub.lower() in uid:
+                        writable_cfg = cfg
+                        break
+                    elif not sub:
+                        writable_cfg = cfg
+                        break
+
+            # Attach writable config to entity for payload builder
+            entity_with_cfg = dict(entity)
+            if writable_cfg:
+                entity_with_cfg["writable_cfg"] = writable_cfg
+
             try:
                 topic, payload = build_discovery_payload(
-                    entity, ecu_addr,
+                    entity_with_cfg, ecu_addr,
                     ecu_info.get("name", hex(ecu_addr)),
                     ecu_info.get("device_prop", ""),
                     topic_prefix, ha_prefix,
