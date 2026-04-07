@@ -87,6 +87,7 @@ class CanEngine:
         # Engine control
         self._running: bool = False
         self._thread: Optional[threading.Thread] = None
+        self._poll_interval: float = 10.0  # seconds between poll cycles (default 10)
         self._cycle: int = 0
 
         # Depiction subprocess support
@@ -185,6 +186,7 @@ class CanEngine:
         can_bitrate: int,
         datapoints: Dict[int, Dict],
         ecus: List[Dict],
+        poll_interval: float = 10.0,
     ) -> None:
         """Start the engine background thread."""
         if self._running:
@@ -192,6 +194,7 @@ class CanEngine:
 
         self._running = True
         self._datapoints = dict(datapoints)
+        self._poll_interval = max(1.0, float(poll_interval))
 
         self._thread = threading.Thread(
             target=self._run,
@@ -250,6 +253,14 @@ class CanEngine:
                     time.sleep(INTER_DID_DELAY)
 
                 self._cycle = (self._cycle + 1) % CYCLE_LENGTH
+
+                # Pause between cycles — sleep in small increments to stay responsive to commands
+                wait_until = time.time() + self._poll_interval
+                while self._running and time.time() < wait_until:
+                    if self._process_commands():
+                        self._cleanup()
+                        return
+                    time.sleep(0.1)
 
         except Exception as exc:
             logger.error("Engine thread crashed: %s", exc, exc_info=True)
@@ -402,29 +413,28 @@ class CanEngine:
         val = cmd.get("value")
         raw = cmd.get("raw", False)
         sub = cmd.get("sub")
+        result_event = cmd.get("_result_event")  # threading.Event for sync callers
+        result_holder = cmd.get("_result_holder")  # dict to store result
         o3e = self._ecus.get(ecu_addr)
 
+        result = {"type": "write_result", "ecu": ecu_addr, "did": did,
+                  "success": False, "error": None, "new_value": None}
+
         if o3e is None:
-            self._emit_data({"type": "write_result", "ecu": ecu_addr, "did": did,
-                             "success": False, "error": "ECU not connected"})
+            result["error"] = "ECU not connected"
         else:
-            # Brief pause to let CAN bus settle before write
             _time.sleep(0.1)
             try:
                 succ, code = o3e.writeByDid(did, val, raw, sub=sub)
                 logger.info("Write DID %s on ECU %s: val=%s success=%s code=%s",
                             did, hex(ecu_addr), val, succ, code)
-                self._emit_data({
-                    "type": "write_result",
-                    "ecu": ecu_addr,
-                    "did": did,
-                    "success": succ,
-                    "code": str(code),
-                })
+                result["success"] = succ
+                result["code"] = str(code)
                 # Read back the value to confirm
                 _time.sleep(0.05)
                 try:
                     new_val, idstr, _ = o3e.readByDid(did, raw=False)
+                    result["new_value"] = new_val
                     cache_key = f"{ecu_addr}:{did}"
                     self._last_values[cache_key] = {"value": new_val, "ts": int(_time.time())}
                     self._emit_data({
@@ -436,8 +446,16 @@ class CanEngine:
                     pass  # read-back failed, not critical
             except Exception as exc:
                 logger.error("Write failed DID %s on ECU %s: %s", did, hex(ecu_addr), exc)
-                self._emit_data({"type": "write_result", "ecu": ecu_addr, "did": did,
-                                 "success": False, "error": str(exc)})
+                result["error"] = str(exc)
+
+        # Emit via WebSocket (for any listening clients)
+        self._emit_data(result)
+
+        # Signal synchronous caller if present
+        if result_holder is not None:
+            result_holder.update(result)
+        if result_event is not None:
+            result_event.set()
 
         self._set_state(prev_state)
 
@@ -445,12 +463,12 @@ class CanEngine:
         """Replace the datapoints configuration (update polling schedule)."""
         new_datapoints = cmd.get("datapoints", {})
         self._datapoints = dict(new_datapoints)
-        # Count how many will actually be polled
+        # Update poll interval if provided
+        if "poll_interval" in cmd:
+            self._poll_interval = max(1.0, float(cmd["poll_interval"]))
         active = [dp for dp in self._datapoints.values() if dp.get("poll_enabled") and dp.get("poll_priority", 0) > 0]
-        logger.info("Schedule updated: %d total, %d active (prio>0 & enabled)", len(self._datapoints), len(active))
-        if active:
-            sample = active[0]
-            logger.info("  Sample active DP: did=%s ecu=%s prio=%s enabled=%s", sample.get("did"), sample.get("ecu_address"), sample.get("poll_priority"), sample.get("poll_enabled"))
+        logger.info("Schedule updated: %d total, %d active, interval=%.1fs",
+                     len(self._datapoints), len(active), self._poll_interval)
         self._emit_data({"type": "schedule_updated", "count": len(self._datapoints)})
 
     # -----------------------------------------------------------------------
@@ -528,6 +546,8 @@ class CanEngine:
         _re_write_file = re.compile(r"^write (\S+ file \S+|devices\.json)")
         _re_done = re.compile(r"^done\.$")
         _re_read_enums = re.compile(r"^read DID enums")
+        _re_configuration = re.compile(r"^configuration:")
+        _re_run_open3e = re.compile(r"^run open3e")
         ecus_found_count = [0]  # mutable for closure
         ecus_scanned_count = [0]  # how many ECU DID scans completed
         current_ecu_hex = [""]
@@ -621,6 +641,16 @@ class CanEngine:
                         item["done"] = True
                         break
                 p["percent"] = max(p["percent"], 90)
+
+            elif _re_configuration.match(text):
+                p["phase"] = "finishing"
+                p["percent"] = 95
+                p["detail"] = "Writing configuration summary..."
+
+            elif _re_run_open3e.match(text):
+                p["percent"] = 100
+                p["phase"] = "complete"
+                p["detail"] = "Scan complete"
 
         def _reader():
             assert proc.stdout is not None
