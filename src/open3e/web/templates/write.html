@@ -13,28 +13,30 @@
     </div>
     {% else %}
     <div class="table-responsive">
-        <table class="table table-hover">
+        <table class="table table-hover table-sm" style="table-layout:fixed;width:100%">
             <thead>
                 <tr>
-                    <th>ECU (hex)</th>
-                    <th>DID</th>
-                    <th>Name</th>
-                    <th>Current Value</th>
-                    <th>New Value</th>
-                    <th></th>
+                    <th style="width:55px">ECU</th>
+                    <th style="width:40px">DID</th>
+                    <th style="width:30%">Name</th>
+                    <th style="width:25%">Current Value</th>
+                    <th style="width:120px">New Value</th>
+                    <th style="width:80px"></th>
                 </tr>
             </thead>
             <tbody>
                 {% for dp in writables %}
                 <tr>
-                    <td><code>0x{{ '%03x' % dp.ecu_address }}</code></td>
-                    <td>{{ dp.did }}</td>
-                    <td>{{ dp.name }}</td>
-                    <td id="wval-{{ dp.ecu_address }}_{{ dp.did }}" class="font-monospace">--</td>
+                    <td><code class="small text-muted">{{ '%03x' % dp.ecu_address }}</code></td>
+                    <td><code class="small">{{ dp.did }}</code></td>
+                    <td class="text-truncate" title="{{ dp.name }}">{{ dp.name }}</td>
+                    <td class="text-truncate font-monospace small"
+                        id="wval-{{ dp.ecu_address }}_{{ dp.did }}"
+                        title="">--</td>
                     <td>
                         <input type="text" class="form-control form-control-sm"
                                id="winput-{{ dp.ecu_address }}_{{ dp.did }}"
-                               placeholder="new value" style="width:150px">
+                               placeholder="value">
                     </td>
                     <td>
                         <button class="btn btn-sm btn-warning"
@@ -68,17 +70,16 @@
         var cell = document.getElementById("wval-" + msg.ecu + "_" + msg.did);
         if (cell) {
             var val = msg.value;
+            var display;
             if (val === null || val === undefined) {
-                cell.textContent = "--";
+                display = "--";
             } else if (typeof val === "object") {
-                if (val.Actual !== undefined) {
-                    cell.textContent = String(val.Actual);
-                } else {
-                    cell.textContent = JSON.stringify(val);
-                }
+                display = val.Actual !== undefined ? String(val.Actual) : JSON.stringify(val);
             } else {
-                cell.textContent = String(val);
+                display = String(val);
             }
+            cell.textContent = display;
+            cell.title = typeof val === "object" ? JSON.stringify(val, null, 2) : display;
         }
     };
 
