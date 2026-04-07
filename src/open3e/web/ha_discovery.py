@@ -292,6 +292,7 @@ def build_discovery_payload(
         "unique_id": object_id,
         "object_id": object_id,
         "state_topic": state_topic,
+        "enabled_by_default": True,
         "device": {
             "identifiers": ["open3e_" + ecu_hex],
             "name": "{} ({})".format(ecu_name, "0x" + ecu_hex),
