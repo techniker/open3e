@@ -118,7 +118,9 @@ WRITABLE_ENTITIES = {
     # --- DHW Quick Action ---
     "1006_quickmode": {"did": 1006, "component": "switch", "sub_field": "Required",
                        "name": "One-Time DHW Heating",
-                       "icon": "mdi:water-boiler", "group": "Hot Water"},
+                       "icon": "mdi:water-boiler", "group": "Hot Water",
+                       "state_on": "on", "state_off": "off",
+                       "payload_on": "ON", "payload_off": "OFF"},
 
     # --- DHW Temperature ---
     396: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",
@@ -346,8 +348,12 @@ def build_discovery_payload(
                 payload["payload_press"] = writable_cfg["payload_press"]
 
         elif component == "switch":
-            payload["payload_on"] = "on"
-            payload["payload_off"] = "off"
+            payload["payload_on"] = writable_cfg.get("payload_on", "ON") if writable_cfg else "ON"
+            payload["payload_off"] = writable_cfg.get("payload_off", "OFF") if writable_cfg else "OFF"
+            if writable_cfg and "state_on" in writable_cfg:
+                payload["state_on"] = writable_cfg["state_on"]
+            if writable_cfg and "state_off" in writable_cfg:
+                payload["state_off"] = writable_cfg["state_off"]
 
     return (topic, payload)
 
