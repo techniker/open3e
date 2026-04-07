@@ -282,7 +282,9 @@ def create_app(store: ConfigStore) -> FastAPI:
                     dp_list = await store.get_datapoints()
                     ecus = [dict(row) for row in ecus_list]
                     datapoints = {row["id"]: dict(row) for row in dp_list}
-                    start_engine_fn(can_iface, can_bitrate, ecus, datapoints)
+                    poll_str = await store.get_setting("poll_interval", "10")
+                    poll_interval = float(poll_str) if poll_str else 10.0
+                    start_engine_fn(can_iface, can_bitrate, ecus, datapoints, poll_interval)
                 except Exception:
                     pass
 
@@ -327,9 +329,11 @@ def create_app(store: ConfigStore) -> FastAPI:
             raise HTTPException(status_code=503, detail="Engine not running")
         dp_rows = await store.get_datapoints()
         datapoints = {row["id"]: dict(row) for row in dp_rows}
-        engine.send_command({"action": "update_schedule", "datapoints": datapoints})
+        poll_str = await store.get_setting("poll_interval", "10")
+        poll_interval = float(poll_str) if poll_str else 10.0
+        engine.send_command({"action": "update_schedule", "datapoints": datapoints, "poll_interval": poll_interval})
         enabled_count = sum(1 for dp in datapoints.values() if dp.get("poll_enabled") and dp.get("poll_priority", 0) > 0)
-        return {"ok": True, "total": len(datapoints), "polling": enabled_count}
+        return {"ok": True, "total": len(datapoints), "polling": enabled_count, "interval": poll_interval}
 
     @app.get("/api/live-status")
     async def api_live_status():
