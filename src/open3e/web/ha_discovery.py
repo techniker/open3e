@@ -124,11 +124,11 @@ WRITABLE_ENTITIES = {
 
     # --- DHW Temperature ---
     396: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",
-          "min": 10, "max": 60, "step": 0.5, "icon": "mdi:water-thermometer", "group": "Hot Water"},
+          "min": 0, "max": 60, "step": 0.5, "icon": "mdi:water-thermometer", "group": "Hot Water"},
     2257: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",
            "min": -10, "max": 10, "step": 0.5, "icon": "mdi:thermometer-plus", "group": "Hot Water"},
     1167: {"component": "number", "device_class": "temperature", "unit": "\u00b0C",
-           "min": 10, "max": 60, "step": 0.5, "icon": "mdi:water-thermometer", "group": "Hot Water"},
+           "min": 0, "max": 60, "step": 0.5, "icon": "mdi:water-thermometer", "group": "Hot Water"},
     874: {"component": "number", "sub_field": "Setpoint", "device_class": "temperature", "unit": "\u00b0C",
           "min": 50, "max": 70, "step": 0.5, "icon": "mdi:shield-bug", "group": "Hot Water"},
 
@@ -226,10 +226,13 @@ def infer_ha_entity(dp_name: str, codec_type: str, is_writable: bool) -> Optiona
     Returns dict with: ha_component, device_class, unit, icon, sub_field, entity_name
     Returns None if no rule matches.
     """
+    # RawCodec produces hex blobs that exceed HA's 255-char state limit — skip entirely
+    if codec_type == "RawCodec":
+        return None
+
     for pattern, codec_types, component, device_class, unit, icon in INFERENCE_RULES:
         if fnmatch.fnmatch(dp_name, pattern) and codec_type in codec_types:
             sub_field = "Actual" if codec_type == "O3EComplexType" else None
-            # Writable setpoints use "number" component
             if is_writable and component == "sensor":
                 component = "number"
             return {
@@ -270,7 +273,7 @@ def build_discovery_payload(
     # Use unique_id from DB if available, otherwise build it
     object_id = entity.get("unique_id")
     if not object_id:
-        obj_parts = ["open3e", ecu_hex, str(did)]
+        obj_parts = ["o3e", ecu_hex, str(did)]
         if sub:
             obj_parts.append(sub.lower())
         object_id = "_".join(obj_parts)
@@ -279,12 +282,8 @@ def build_discovery_payload(
     dp_name = entity.get("dp_name") or entity.get("name") or "DID_" + str(did)
     base_topic = "{}/{}_{}".format(topic_prefix, did, dp_name)
 
-    # For ComplexType sensors (unique_id ending in _actual), the split-mode data
-    # goes to .../Actual sub-topic. Detect from unique_id.
-    is_actual = object_id.endswith("_actual")
-    if is_actual:
-        state_topic = base_topic + "/Actual"
-    elif sub:
+    # Use stored sub_field for the state topic path
+    if sub:
         state_topic = base_topic + "/" + sub
     else:
         state_topic = base_topic
@@ -299,7 +298,7 @@ def build_discovery_payload(
         "state_topic": state_topic,
         "enabled_by_default": True,
         "device": {
-            "identifiers": ["open3e_" + ecu_hex],
+            "identifiers": ["o3e_" + ecu_hex],
             "name": "{} ({})".format(ecu_name, "0x" + ecu_hex),
             "manufacturer": "Viessmann",
             "model": ecu_prop or "Unknown",
@@ -365,7 +364,7 @@ def build_removal_payload(entity: dict, ecu_address: int, ha_prefix: str = "home
     sub = entity.get("sub_field") or ""
     ecu_hex = format(ecu_address, "03x")
 
-    obj_parts = ["open3e", ecu_hex, str(did)]
+    obj_parts = ["o3e", ecu_hex, str(did)]
     if sub:
         obj_parts.append(sub.lower())
     object_id = "_".join(obj_parts)

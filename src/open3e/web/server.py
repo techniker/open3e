@@ -558,12 +558,12 @@ def create_app(store: ConfigStore) -> FastAPI:
 
     @app.post("/api/ha/apply-defaults")
     async def api_ha_apply_defaults():
-        from open3e.web.ha_discovery import infer_ha_entity
+        from open3e.web.ha_discovery import infer_ha_entity, _humanize, WRITABLE_ENTITIES
+
         # Only create HA entities for poll-enabled datapoints with priority > 0
         datapoints = await store.get_datapoints()
         active_dps = [dp for dp in datapoints if dp["poll_enabled"] and dp["poll_priority"] > 0]
         created = 0
-        from open3e.web.ha_discovery import _humanize, WRITABLE_ENTITIES
 
         # Build set of DIDs that have explicit writable entity configs
         # These should only get the writable entity, not a generic sensor
@@ -573,20 +573,69 @@ def create_app(store: ConfigStore) -> FastAPI:
             if did and cfg.get("component") in ("switch", "button"):
                 writable_only_dids.add(did)
 
+        # Get cached engine values for sub-field discovery
+        engine = getattr(app.state, "engine", None)
+        cached_values = {}
+        if engine:
+            for k, entry in engine._last_values.items():
+                if isinstance(entry, dict) and "value" in entry:
+                    cached_values[k] = entry["value"]
+
         for dp in active_dps:
-            # Skip generic sensor for DIDs that have explicit switch/button writable config
             if dp["did"] in writable_only_dids:
                 continue
 
-            result = infer_ha_entity(
-                dp["name"], dp["codec"] or "", False
-            )
+            result = infer_ha_entity(dp["name"], dp["codec"] or "", False)
             ecu_hex = format(dp["ecu_address"], "03x")
+            ecu_addr = dp["ecu_address"]
 
-            if result:
-                # Smart default matched — use inferred type
+            # Check engine cache for actual data structure
+            cache_key = f"{ecu_addr}:{dp['did']}"
+            cached = cached_values.get(cache_key)
+
+            if result and result.get("sub_field") == "Actual" and isinstance(cached, dict):
+                # ComplexType with cached data — create entities per actual sub-field
+                if "Actual" in cached:
+                    # Standard sensor with Actual field — create single entity
+                    uid = "o3e_{}_{}_{}" .format(ecu_hex, dp["did"], "actual")
+                    await store.upsert_ha_entity(
+                        dp_id=dp["id"],
+                        entity_type=result["ha_component"],
+                        unique_id=uid,
+                        name=result.get("entity_name") or _humanize(dp["name"]),
+                        device_class=result.get("device_class"),
+                        unit=result.get("unit"),
+                        enabled=1,
+                        sub_field="Actual",
+                    )
+                    created += 1
+                else:
+                    # No "Actual" key — create one entity per scalar sub-field
+                    for field_name, field_val in cached.items():
+                        if field_name.startswith("Unknown"):
+                            continue
+                        # Skip long hex blobs (diagnostic data)
+                        if isinstance(field_val, str) and len(field_val) > 50:
+                            continue
+                        uid = "o3e_{}_{}_{}".format(ecu_hex, dp["did"], field_name.lower())
+                        human_name = _humanize(dp["name"]) + " " + _humanize(field_name)
+                        # Inherit device_class/unit from inference for known field types
+                        dc = result.get("device_class")
+                        unit = result.get("unit")
+                        await store.upsert_ha_entity(
+                            dp_id=dp["id"],
+                            entity_type=result["ha_component"],
+                            unique_id=uid,
+                            name=human_name,
+                            device_class=dc,
+                            unit=unit,
+                            enabled=1,
+                            sub_field=field_name,
+                        )
+                        created += 1
+            elif result:
                 sub = result.get("sub_field") or ""
-                uid_parts = ["open3e", ecu_hex, str(dp["did"])]
+                uid_parts = ["o3e", ecu_hex, str(dp["did"])]
                 if sub:
                     uid_parts.append(sub.lower())
                 unique_id = "_".join(uid_parts)
@@ -598,11 +647,12 @@ def create_app(store: ConfigStore) -> FastAPI:
                     name=entity_name,
                     device_class=result.get("device_class"),
                     unit=result.get("unit"),
-                    enabled=1,  # enabled by default, user disables what they don't want
+                    enabled=1,
+                    sub_field=sub or None,
                 )
+                created += 1
             else:
-                # No rule matched — create generic sensor
-                unique_id = "open3e_{}_{}".format(ecu_hex, dp["did"])
+                unique_id = "o3e_{}_{}".format(ecu_hex, dp["did"])
                 entity_name = _humanize(dp["name"])
                 await store.upsert_ha_entity(
                     dp_id=dp["id"],
@@ -611,12 +661,11 @@ def create_app(store: ConfigStore) -> FastAPI:
                     name=entity_name,
                     device_class=None,
                     unit=None,
-                    enabled=1,  # enabled by default
+                    enabled=1,
                 )
-            created += 1
+                created += 1
 
         # Also create writable entities from WRITABLE_ENTITIES config
-        from open3e.web.ha_discovery import WRITABLE_ENTITIES
         dp_by_did = {}
         for dp in active_dps:
             dp_by_did.setdefault(dp["did"], []).append(dp)
@@ -631,10 +680,9 @@ def create_app(store: ConfigStore) -> FastAPI:
             dp = dps[0]
             ecu_hex = format(dp["ecu_address"], "03x")
             sub = cfg.get("sub_field") or ""
-            uid_parts = ["open3e", ecu_hex, str(did)]
+            uid_parts = ["o3e", ecu_hex, str(did)]
             if sub:
                 uid_parts.append(sub.lower())
-            # For keyed entries like "424_standard", add the key suffix
             if isinstance(key, str) and "_" in key:
                 suffix = key.split("_", 1)[1]
                 if suffix not in [s.lower() for s in uid_parts]:
@@ -652,6 +700,7 @@ def create_app(store: ConfigStore) -> FastAPI:
                 device_class=cfg.get("device_class"),
                 unit=cfg.get("unit"),
                 enabled=1,
+                sub_field=sub or None,
             )
             created += 1
 

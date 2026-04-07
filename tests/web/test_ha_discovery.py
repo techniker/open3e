@@ -63,11 +63,11 @@ class TestBuildDiscoveryPayload:
             "dp_name": "FlowTemperatureSensor",
         }
         topic, payload = build_discovery_payload(entity, 0x680, "vitocal", "HPMUMASTER")
-        assert "homeassistant/sensor/open3e_680_268_actual/config" == topic
-        assert payload["unique_id"] == "open3e_680_268_actual"
+        assert "homeassistant/sensor/o3e_680_268_actual/config" == topic
+        assert payload["unique_id"] == "o3e_680_268_actual"
         assert payload["state_topic"] == "open3e/268_FlowTemperatureSensor/Actual"
         assert payload["device"]["manufacturer"] == "Viessmann"
-        assert payload["device"]["identifiers"] == ["open3e_680"]
+        assert payload["device"]["identifiers"] == ["o3e_680"]
         assert payload["device_class"] == "temperature"
         assert payload["unit_of_measurement"] == "\u00b0C"
 
@@ -91,5 +91,5 @@ class TestBuildRemovalPayload:
     def test_removal(self):
         entity = {"ha_component": "sensor", "did": 268, "sub_field": "Actual"}
         topic, payload = build_removal_payload(entity, 0x680)
-        assert "homeassistant/sensor/open3e_680_268_actual/config" == topic
+        assert "homeassistant/sensor/o3e_680_268_actual/config" == topic
         assert payload == b""
