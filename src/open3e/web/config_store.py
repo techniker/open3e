@@ -354,22 +354,28 @@ class ConfigStore:
         dest = self._backup_dir / filename
         # Flush any pending writes
         await self._db.commit()
-        # Use shutil.copy2 — safe since SQLite in WAL mode or after commit
-        shutil.copy2(self._db_path, str(dest))
+        # Use shutil.copy (not copy2) so the backup gets current mtime
+        shutil.copy(self._db_path, str(dest))
         return filename
 
     async def list_backups(self) -> list:
         """Return sorted list of backup info dicts (newest first)."""
         if not self._backup_dir.exists():
             return []
-        import datetime
+        import datetime, re
         result = []
-        for p in sorted(self._backup_dir.glob("*.db"), key=lambda x: x.stat().st_mtime, reverse=True):
+        for p in sorted(self._backup_dir.glob("*.db"), key=lambda x: x.name, reverse=True):
             st = p.stat()
+            # Parse timestamp from filename: open3e_backup_YYYYMMDD_HHMMSS.db
+            m = re.search(r"(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})", p.name)
+            if m:
+                created = "{}-{}-{} {}:{}:{}".format(*m.groups())
+            else:
+                created = datetime.datetime.fromtimestamp(st.st_mtime).strftime("%Y-%m-%d %H:%M:%S")
             result.append({
                 "filename": p.name,
                 "size": f"{st.st_size / 1024:.1f} KB",
-                "created": datetime.datetime.fromtimestamp(st.st_mtime).strftime("%Y-%m-%d %H:%M:%S"),
+                "created": created,
             })
         return result
 
