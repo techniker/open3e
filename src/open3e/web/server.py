@@ -280,8 +280,8 @@ def create_app(store: ConfigStore) -> FastAPI:
         for w in writables:
             cat = w["meta"]["category"]
             if cat not in categories:
-                categories[cat] = {"label": cat_labels.get(cat, cat), "items": []}
-            categories[cat]["items"].append(w)
+                categories[cat] = {"label": cat_labels.get(cat, cat), "dps": []}
+            categories[cat]["dps"].append(w)
 
         return templates.TemplateResponse(
             request, "write.html",

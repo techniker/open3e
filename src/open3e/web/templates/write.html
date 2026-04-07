@@ -20,7 +20,7 @@
              data-bs-toggle="collapse" data-bs-target="#cat-{{ cat_key }}"
              aria-expanded="{{ 'true' if cat_key in ('temperature_setpoint','operation_mode','quick_mode') else 'false' }}">
             <strong>{{ cat.label }}</strong>
-            <span class="badge bg-secondary">{{ cat.items | length }}</span>
+            <span class="badge bg-secondary">{{ cat.dps | length }}</span>
         </div>
         <div class="collapse {{ 'show' if cat_key in ('temperature_setpoint','operation_mode','quick_mode') else '' }}"
              id="cat-{{ cat_key }}">
@@ -37,7 +37,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    {% for dp in cat.items %}
+                    {% for dp in cat.dps %}
                     <tr>
                         <td><code class="small text-muted">{{ '%03x' % dp.ecu_address }}</code></td>
                         <td><code class="small">{{ dp.did }}</code></td>
