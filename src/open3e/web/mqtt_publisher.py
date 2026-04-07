@@ -229,7 +229,7 @@ class MqttPublisher:
 
         try:
             if publish_json:
-                self._client.publish(topic, json.dumps(value))
+                self._client.publish(topic, json.dumps(value), retain=True)
             else:
                 self._publish_split(topic, value)
             self._messages_published += 1
@@ -238,7 +238,7 @@ class MqttPublisher:
             logger.warning("MQTT publish error: %s", e)
 
     def _publish_split(self, base_topic: str, value: Any) -> None:
-        """Split complex values into scalar sub-topics."""
+        """Split complex values into scalar sub-topics (retained for HA state)."""
         if isinstance(value, dict):
             for k, v in value.items():
                 self._publish_split(base_topic + "/" + str(k), v)
@@ -246,7 +246,7 @@ class MqttPublisher:
             for i, v in enumerate(value):
                 self._publish_split(base_topic + "/" + str(i), v)
         else:
-            self._client.publish(base_topic, str(value))
+            self._client.publish(base_topic, str(value), retain=True)
 
     def publish_ha_discovery(self, entities: list, ecus: list,
                              topic_prefix: str, ha_prefix: str) -> None:
