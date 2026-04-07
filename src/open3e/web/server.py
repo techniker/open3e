@@ -205,7 +205,7 @@ def create_app(store: ConfigStore) -> FastAPI:
 
         all_dps = await store.get_datapoints()
         ecus = await store.get_ecus()
-        ecu_map = {e["address"]: e for e in ecus}
+        ecu_map = {e["address"]: dict(e) for e in ecus}
 
         # Build enriched writable list with codec info
         writables = []
