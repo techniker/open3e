@@ -13,7 +13,7 @@ from typing import Any
 
 import aiosqlite
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 # Only alphanumeric, hyphens, underscores and dots; must end with .db
 _BACKUP_FILENAME_RE = re.compile(r'^[\w\-]+\.db$')
@@ -84,7 +84,7 @@ _ALLOWED_DATAPOINT_FIELDS = frozenset({
 })
 
 _ALLOWED_HA_ENTITY_FIELDS = frozenset({
-    "entity_type", "unique_id", "name", "device_class", "unit", "enabled",
+    "entity_type", "unique_id", "name", "device_class", "unit", "enabled", "sub_field",
 })
 
 _ALLOWED_MQTT_MAPPING_FIELDS = frozenset({
@@ -105,12 +105,26 @@ class ConfigStore:
     # ------------------------------------------------------------------
 
     async def initialize(self) -> None:
-        """Open the database, create schema and set user_version."""
+        """Open the database, create schema and run migrations."""
         self._db = await aiosqlite.connect(self._db_path)
         self._db.row_factory = aiosqlite.Row
         await self._db.executescript(_DDL)
+        await self._migrate()
         await self._db.execute(f"PRAGMA user_version = {SCHEMA_VERSION}")
         await self._db.commit()
+
+    async def _migrate(self) -> None:
+        """Run schema migrations based on current user_version."""
+        cur = await self._db.execute("PRAGMA user_version")
+        row = await cur.fetchone()
+        version = row[0] if row else 0
+
+        if version < 2:
+            # Add sub_field column to ha_entities
+            try:
+                await self._db.execute("ALTER TABLE ha_entities ADD COLUMN sub_field TEXT")
+            except Exception:
+                pass  # column already exists
 
     async def close(self) -> None:
         """Close the database connection."""
@@ -245,18 +259,20 @@ class ConfigStore:
         device_class: str | None = None,
         unit: str | None = None,
         enabled: int = 1,
+        sub_field: str | None = None,
     ) -> int:
         async with self._db.execute(
             "INSERT INTO ha_entities"
-            "   (dp_id, entity_type, unique_id, name, device_class, unit, enabled)"
-            " VALUES (?, ?, ?, ?, ?, ?, ?)"
+            "   (dp_id, entity_type, unique_id, name, device_class, unit, enabled, sub_field)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
             " ON CONFLICT(unique_id) DO UPDATE SET"
             "   dp_id        = excluded.dp_id,"
             "   entity_type  = excluded.entity_type,"
             "   name         = excluded.name,"
             "   device_class = excluded.device_class,"
-            "   unit         = excluded.unit",
-            (dp_id, entity_type, unique_id, name, device_class, unit, enabled),
+            "   unit         = excluded.unit,"
+            "   sub_field    = excluded.sub_field",
+            (dp_id, entity_type, unique_id, name, device_class, unit, enabled, sub_field),
         ) as cur:
             rowid = cur.lastrowid
         await self._db.commit()

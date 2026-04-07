@@ -202,6 +202,10 @@ class MqttPublisher:
         if not self._client or not self._connected:
             return
 
+        # Skip long hex strings (RawCodec diagnostic data) — useless for HA
+        if isinstance(value, str) and len(value) > 255:
+            return
+
         key = (ecu, did)
         # If explicit mappings exist, only publish mapped datapoints
         if self._mappings and key not in self._mappings:

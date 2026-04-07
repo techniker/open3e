@@ -253,4 +253,4 @@ class TestBackup:
 class TestSchemaVersion:
     def test_initial_version(self, store):
         version = run(store.get_schema_version())
-        assert version == 1
+        assert version == 2
