@@ -7,14 +7,13 @@
     <h2 class="mb-4">Write Values</h2>
 
     {% if not writables %}
-    <div class="alert alert-info" role="alert">
-        <i class="bi bi-info-circle"></i>
-        <strong>No writable datapoints configured.</strong>
-        Run <a href="/depict" class="alert-link">System Depiction</a> to discover your heat pump's datapoints.
+    <div class="alert alert-info">
+        <i class="bi bi-info-circle me-1"></i>
+        No writable datapoints found. Run <a href="/depict">System Depiction</a> first.
     </div>
     {% else %}
     <div class="table-responsive">
-        <table class="table table-hover align-middle">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>ECU (hex)</th>
@@ -28,26 +27,21 @@
             <tbody>
                 {% for dp in writables %}
                 <tr>
-                    <td><code>0x{{ '%02X' % dp.ecu_address }}</code></td>
+                    <td><code>0x{{ '%03x' % dp.ecu_address }}</code></td>
                     <td>{{ dp.did }}</td>
                     <td>{{ dp.name }}</td>
                     <td id="wval-{{ dp.ecu_address }}_{{ dp.did }}" class="font-monospace">--</td>
                     <td>
-                        <input
-                            type="text"
-                            class="form-control form-control-sm"
-                            id="winput-{{ dp.ecu_address }}_{{ dp.did }}"
-                            placeholder="new value"
-                            style="min-width: 120px;"
-                        >
+                        <input type="text" class="form-control form-control-sm"
+                               id="winput-{{ dp.ecu_address }}_{{ dp.did }}"
+                               placeholder="new value" style="width:150px">
                     </td>
                     <td>
-                        <button
-                            class="btn btn-sm btn-warning"
-                            data-write-ecu="{{ dp.ecu_address }}"
-                            data-write-did="{{ dp.did }}"
-                            onclick="confirmWrite({{ dp.ecu_address }}, {{ dp.did }}, {{ dp.name | tojson }})"
-                        >
+                        <button class="btn btn-sm btn-warning"
+                                data-write-ecu="{{ dp.ecu_address }}"
+                                data-write-did="{{ dp.did }}"
+                                data-write-name="{{ dp.name }}"
+                                onclick="doWrite(this)">
                             <i class="bi bi-pencil-fill"></i> Write
                         </button>
                     </td>
@@ -58,122 +52,96 @@
     </div>
     {% endif %}
 </div>
-
-<!-- Confirmation Modal -->
-<div class="modal fade" id="writeConfirmModal" tabindex="-1" aria-labelledby="writeConfirmModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="writeConfirmModalLabel">Confirm Write</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p id="writeConfirmText"></p>
-                <div class="alert alert-warning mb-0" role="alert">
-                    <i class="bi bi-exclamation-triangle-fill"></i>
-                    <strong>Warning:</strong> Writing incorrect values may affect the operation of your heating system. Proceed only if you are sure about the value.
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-warning" id="writeConfirmBtn">
-                    <i class="bi bi-pencil-fill"></i> Write
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
 {% endblock %}
 
 {% block scripts %}
 <script>
 (function () {
     var ws = openWebSocket();
-
-    ws.socket.addEventListener("open", function () {
+    if (ws.socket.readyState === WebSocket.OPEN) {
         ws.subscribe("*");
-    });
+    } else {
+        ws.socket.addEventListener("open", function () { ws.subscribe("*"); });
+    }
 
     ws.onDidValue = function (msg) {
         var cell = document.getElementById("wval-" + msg.ecu + "_" + msg.did);
         if (cell) {
             var val = msg.value;
-            cell.textContent = (val !== null && val !== undefined) ? String(val) : "--";
+            if (val === null || val === undefined) {
+                cell.textContent = "--";
+            } else if (typeof val === "object") {
+                if (val.Actual !== undefined) {
+                    cell.textContent = String(val.Actual);
+                } else {
+                    cell.textContent = JSON.stringify(val);
+                }
+            } else {
+                cell.textContent = String(val);
+            }
         }
     };
 
-    function confirmWrite(ecu, did, name) {
+    window.doWrite = async function (btn) {
+        var ecu = parseInt(btn.dataset.writeEcu, 10);
+        var did = parseInt(btn.dataset.writeDid, 10);
+        var name = btn.dataset.writeName;
         var inputEl = document.getElementById("winput-" + ecu + "_" + did);
-        if (!inputEl) { return; }
+        if (!inputEl) return;
+
         var rawValue = inputEl.value.trim();
         if (rawValue === "") {
-            showToast("Please enter a value before writing.", "warning");
+            showToast("Enter a value first.", "warning");
             return;
         }
 
-        var confirmText = document.getElementById("writeConfirmText");
-        confirmText.textContent = 'Set "' + name + '" to ' + rawValue + "?";
+        if (!confirm('Write "' + name + '" (DID ' + did + ') = ' + rawValue + '?\n\nIncorrect values can affect your heating system.')) {
+            return;
+        }
 
-        var modal = new bootstrap.Modal(document.getElementById("writeConfirmModal"));
-        modal.show();
+        // Parse value
+        var parsedVal;
+        try { parsedVal = JSON.parse(rawValue); }
+        catch (e) {
+            var n = Number(rawValue);
+            parsedVal = isNaN(n) ? rawValue : n;
+        }
 
-        var confirmBtn = document.getElementById("writeConfirmBtn");
-        var newBtn = confirmBtn.cloneNode(true);
-        confirmBtn.parentNode.replaceChild(newBtn, confirmBtn);
+        // Show spinner
+        btn.disabled = true;
+        btn.textContent = "Writing...";
 
-        newBtn.addEventListener("click", async function () {
-            modal.hide();
+        try {
+            var result = await apiCall("/api/write", "POST", {
+                ecu: ecu, did: did, value: parsedVal
+            });
 
-            var parsedVal;
-            try {
-                parsedVal = JSON.parse(rawValue);
-            } catch (e) {
-                var n = Number(rawValue);
-                parsedVal = isNaN(n) ? rawValue : n;
-            }
-
-            // Show writing feedback on the button
-            var writeBtn = document.querySelector("[data-write-ecu='" + ecu + "'][data-write-did='" + did + "']");
-            if (writeBtn) {
-                writeBtn.disabled = true;
-                writeBtn.textContent = "Writing...";
-            }
-
-            try {
-                var result = await apiCall("/api/write", "POST", {
-                    ecu: ecu, did: did, value: parsedVal
-                });
-
-                if (result.success) {
-                    var newVal = result.new_value;
-                    var display = (newVal !== null && newVal !== undefined)
-                        ? (typeof newVal === "object" ? JSON.stringify(newVal) : String(newVal))
-                        : "OK";
-                    showToast("Write successful. New value: " + display, "success");
-                    var cell = document.getElementById("wval-" + ecu + "_" + did);
-                    if (cell && newVal !== null) {
-                        cell.textContent = typeof newVal === "object" ? JSON.stringify(newVal) : String(newVal);
-                    }
-                } else {
-                    showToast("Write failed: " + (result.error || "unknown error"), "danger");
+            if (result.success) {
+                var newVal = result.new_value;
+                var display = (newVal !== null && newVal !== undefined)
+                    ? (typeof newVal === "object" ? JSON.stringify(newVal) : String(newVal))
+                    : "OK";
+                showToast("Write successful. New value: " + display, "success");
+                var cell = document.getElementById("wval-" + ecu + "_" + did);
+                if (cell && newVal !== null && newVal !== undefined) {
+                    cell.textContent = typeof newVal === "object" ? JSON.stringify(newVal) : String(newVal);
                 }
-            } catch (e) {
-                // apiCall already shows error toast
+                inputEl.value = "";
+            } else {
+                showToast("Write failed: " + (result.error || "unknown"), "danger");
             }
+        } catch (e) {
+            // apiCall shows error toast
+        }
 
-            if (writeBtn) {
-                writeBtn.disabled = false;
-                writeBtn.textContent = "";
-                var icon = document.createElement("i");
-                icon.className = "bi bi-pencil-fill";
-                writeBtn.appendChild(icon);
-                writeBtn.appendChild(document.createTextNode(" Write"));
-            }
-        });
-    }
-
-    // Expose so onclick attributes can call it
-    window.confirmWrite = confirmWrite;
+        // Restore button
+        btn.disabled = false;
+        btn.textContent = "";
+        var icon = document.createElement("i");
+        icon.className = "bi bi-pencil-fill";
+        btn.appendChild(icon);
+        btn.appendChild(document.createTextNode(" Write"));
+    };
 })();
 </script>
 {% endblock %}
