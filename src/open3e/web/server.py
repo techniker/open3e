@@ -617,7 +617,8 @@ def create_app(store: ConfigStore) -> FastAPI:
                         # Skip long hex blobs (diagnostic data)
                         if isinstance(field_val, str) and len(field_val) > 50:
                             continue
-                        uid = "o3e_{}_{}_{}".format(ecu_hex, dp["did"], field_name.lower())
+                        safe_field = field_name.lower().replace(" ", "_")
+                        uid = "o3e_{}_{}_{}".format(ecu_hex, dp["did"], safe_field)
                         human_name = _humanize(dp["name"]) + " " + _humanize(field_name)
                         # Inherit device_class/unit from inference for known field types
                         dc = result.get("device_class")

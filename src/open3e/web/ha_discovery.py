@@ -275,8 +275,10 @@ def build_discovery_payload(
     if not object_id:
         obj_parts = ["o3e", ecu_hex, str(did)]
         if sub:
-            obj_parts.append(sub.lower())
+            obj_parts.append(sub.lower().replace(" ", "_"))
         object_id = "_".join(obj_parts)
+    # Sanitize: MQTT topics must not contain spaces or special chars
+    object_id = object_id.replace(" ", "_")
 
     # State topic — must match the actual MQTT data publish topic
     dp_name = entity.get("dp_name") or entity.get("name") or "DID_" + str(did)
