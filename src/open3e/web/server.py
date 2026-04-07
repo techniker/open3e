@@ -139,9 +139,20 @@ def create_app(store: ConfigStore) -> FastAPI:
     async def datapoints_page(request: Request):
         ecus = await store.get_ecus()
         datapoints = await store.get_datapoints()
+        # Group datapoints by ECU for collapsible sections
+        ecu_map = {e["address"]: dict(e) for e in ecus}
+        grouped = {}
+        for dp in datapoints:
+            addr = dp["ecu_address"]
+            if addr not in grouped:
+                ecu_info = ecu_map.get(addr, {"address": addr, "name": hex(addr)})
+                grouped[addr] = {"ecu": ecu_info, "datapoints": []}
+            grouped[addr]["datapoints"].append(dict(dp))
+        # Sort by ECU address
+        grouped_sorted = sorted(grouped.values(), key=lambda g: g["ecu"]["address"])
         return templates.TemplateResponse(
             request, "datapoints.html",
-            {"ecus": ecus, "datapoints": datapoints, "active_page": "datapoints"},
+            {"ecus": ecus, "grouped": grouped_sorted, "datapoints": datapoints, "active_page": "datapoints"},
         )
 
     @app.get("/settings", response_class=HTMLResponse)
