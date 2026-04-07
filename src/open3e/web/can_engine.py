@@ -528,6 +528,8 @@ class CanEngine:
         _re_write_file = re.compile(r"^write (\S+ file \S+|devices\.json)")
         _re_done = re.compile(r"^done\.$")
         _re_read_enums = re.compile(r"^read DID enums")
+        _re_configuration = re.compile(r"^configuration:")
+        _re_run_open3e = re.compile(r"^run open3e")
         ecus_found_count = [0]  # mutable for closure
         ecus_scanned_count = [0]  # how many ECU DID scans completed
         current_ecu_hex = [""]
@@ -621,6 +623,16 @@ class CanEngine:
                         item["done"] = True
                         break
                 p["percent"] = max(p["percent"], 90)
+
+            elif _re_configuration.match(text):
+                p["phase"] = "finishing"
+                p["percent"] = 95
+                p["detail"] = "Writing configuration summary..."
+
+            elif _re_run_open3e.match(text):
+                p["percent"] = 100
+                p["phase"] = "complete"
+                p["detail"] = "Scan complete"
 
         def _reader():
             assert proc.stdout is not None
