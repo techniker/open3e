@@ -188,6 +188,9 @@
         var btnStart = document.getElementById('btn-start-scan');
         var btnCancel = document.getElementById('btn-cancel-scan');
 
+        // Force progress bar to 100%
+        updateProgress({percent: 100, detail: success ? 'Scan complete' : 'Scan finished', checklist: []});
+
         statusEl.textContent = success
             ? 'Scan completed successfully.'
             : 'Scan finished (exit code ' + (msg.returncode || '?') + ')';

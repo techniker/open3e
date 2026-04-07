@@ -46,21 +46,34 @@ function handleDidValue(msg) {
 
 function filterTable() {
     var search = document.getElementById("dp-search").value.toLowerCase();
-    var ecuFilter = document.getElementById("dp-ecu-filter").value;
     var prioFilter = document.getElementById("dp-prio-filter").value;
 
-    var rows = document.querySelectorAll("#dp-table tbody tr");
-    rows.forEach(function (row) {
-        var name = (row.dataset.name || "").toLowerCase();
-        var did = (row.dataset.did || "").toLowerCase();
-        var ecu = row.dataset.ecu || "";
-        var priority = row.dataset.priority || "";
+    // Filter rows across all ECU group tables
+    document.querySelectorAll(".ecu-group").forEach(function (group) {
+        var visibleCount = 0;
+        group.querySelectorAll("tbody tr").forEach(function (row) {
+            var name = (row.dataset.name || "").toLowerCase();
+            var did = (row.dataset.did || "").toLowerCase();
+            var priority = row.dataset.priority || "";
 
-        var matchSearch = !search || name.indexOf(search) !== -1 || did.indexOf(search) !== -1;
-        var matchEcu = !ecuFilter || ecu === ecuFilter;
-        var matchPrio = !prioFilter || priority === prioFilter;
+            var matchSearch = !search || name.indexOf(search) !== -1 || did.indexOf(search) !== -1;
+            var matchPrio = !prioFilter || priority === prioFilter;
 
-        row.style.display = (matchSearch && matchEcu && matchPrio) ? "" : "none";
+            var visible = matchSearch && matchPrio;
+            row.style.display = visible ? "" : "none";
+            if (visible) visibleCount++;
+        });
+
+        // Hide entire ECU group if no rows match
+        group.style.display = visibleCount > 0 ? "" : "none";
+
+        // Auto-expand groups when searching
+        if (search || prioFilter) {
+            var collapse = group.querySelector(".collapse");
+            if (collapse && !collapse.classList.contains("show") && visibleCount > 0) {
+                new bootstrap.Collapse(collapse, {toggle: true});
+            }
+        }
     });
 }
 

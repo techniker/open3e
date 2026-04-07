@@ -110,7 +110,8 @@ def main() -> None:
 
     engine._on_data = on_engine_data
 
-    def start_engine(can_iface: str, can_bitrate: int, ecus: list, datapoints: dict) -> bool:
+    def start_engine(can_iface: str, can_bitrate: int, ecus: list, datapoints: dict,
+                     poll_interval: float = 10.0) -> bool:
         """Start the CAN engine with given config. Thread-safe, no async."""
         if not can_iface or not ecus:
             logger.info("Cannot start engine: missing interface or ECUs")
@@ -124,9 +125,10 @@ def main() -> None:
             can_bitrate=can_bitrate,
             datapoints=datapoints,
             ecus=ecus,
+            poll_interval=poll_interval,
         )
-        logger.info("CAN engine started on %s @ %d bps, %d ECUs, %d datapoints",
-                     can_iface, can_bitrate, len(ecus), len(datapoints))
+        logger.info("CAN engine started on %s @ %d bps, %d ECUs, %d datapoints, interval=%ds",
+                     can_iface, can_bitrate, len(ecus), len(datapoints), poll_interval)
         return True
 
     def start_engine_from_db_sync() -> bool:
@@ -139,13 +141,18 @@ def main() -> None:
             can_bitrate = int(can_bitrate_str)
         except (ValueError, TypeError):
             can_bitrate = 250000
+        poll_interval_str = loop.run_until_complete(store.get_setting("poll_interval", "10"))
+        try:
+            poll_interval = float(poll_interval_str)
+        except (ValueError, TypeError):
+            poll_interval = 10.0
         ecus_rows = loop.run_until_complete(store.get_ecus())
         dp_rows = loop.run_until_complete(store.get_datapoints())
         if not ecus_rows:
             return False
         ecus = [dict(row) for row in ecus_rows]
         datapoints = {row["id"]: dict(row) for row in dp_rows}
-        return start_engine(can_iface, can_bitrate, ecus, datapoints)
+        return start_engine(can_iface, can_bitrate, ecus, datapoints, poll_interval)
 
     # Expose the non-async start_engine for use from async server handlers
     app.state.start_engine = start_engine
@@ -154,6 +161,34 @@ def main() -> None:
 
     publisher = MqttPublisher(store, on_status=lambda msg: _bridge_to_ws(msg))
     app.state.mqtt_publisher = publisher
+
+    # Wire MQTT command handler to route HA writes to CAN engine
+    def on_mqtt_command(did, value, sub=None):
+        """Handle write commands from HA via MQTT."""
+        # Default ECU is 0x680 (1664). For specific DIDs, use the correct ECU.
+        ecu = 1664
+        # DID 2214 (BackupBoxConfiguration) is on 0x6a1
+        if did in (2214, 451, 1552, 1587, 1588, 1589, 1590, 1591):
+            ecu = 0x6a1
+
+        # Special handling for DID 1006 (TargetQuickMode) — switch on/off
+        if did == 1006:
+            if value in ("on", "ON", True, 1, "1"):
+                value = {"OpMode": 2, "Required": "on", "Unknown": "0000"}
+            else:
+                value = {"OpMode": 0, "Required": "off", "Unknown": "0000"}
+            sub = None  # write full object
+
+        engine.send_command({
+            "action": "write_did",
+            "ecu": ecu,
+            "did": did,
+            "value": value,
+            "sub": sub,
+        })
+        logger.info("HA MQTT write: ECU=%s DID=%s sub=%s val=%s", hex(ecu), did, sub, value)
+
+    publisher.set_command_handler(on_mqtt_command)
 
     def start_mqtt_from_db() -> bool:
         """Read MQTT config from DB and start the publisher. Called at startup only."""

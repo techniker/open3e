@@ -139,9 +139,20 @@ def create_app(store: ConfigStore) -> FastAPI:
     async def datapoints_page(request: Request):
         ecus = await store.get_ecus()
         datapoints = await store.get_datapoints()
+        # Group datapoints by ECU for collapsible sections
+        ecu_map = {e["address"]: dict(e) for e in ecus}
+        grouped = {}
+        for dp in datapoints:
+            addr = dp["ecu_address"]
+            if addr not in grouped:
+                ecu_info = ecu_map.get(addr, {"address": addr, "name": hex(addr)})
+                grouped[addr] = {"ecu": ecu_info, "datapoints": []}
+            grouped[addr]["datapoints"].append(dict(dp))
+        # Sort by ECU address
+        grouped_sorted = sorted(grouped.values(), key=lambda g: g["ecu"]["address"])
         return templates.TemplateResponse(
             request, "datapoints.html",
-            {"ecus": ecus, "datapoints": datapoints, "active_page": "datapoints"},
+            {"ecus": ecus, "grouped": grouped_sorted, "datapoints": datapoints, "active_page": "datapoints"},
         )
 
     @app.get("/settings", response_class=HTMLResponse)
@@ -172,8 +183,8 @@ def create_app(store: ConfigStore) -> FastAPI:
 
     @app.get("/write", response_class=HTMLResponse)
     async def write_page(request: Request):
-        # Load writable DIDs list for filtering
-        writable_dids = set()
+        # Load writable DIDs list
+        writable_dids = {}
         writable_path = os.path.join(
             os.path.dirname(os.path.abspath(__file__)),
             "..", "Open3Edatapoints_writables.json"
@@ -181,14 +192,100 @@ def create_app(store: ConfigStore) -> FastAPI:
         if os.path.isfile(writable_path):
             try:
                 with open(writable_path) as wf:
-                    writable_dids = set(int(k) for k in json.load(wf).keys())
+                    writable_dids = {int(k): v for k, v in json.load(wf).items()}
             except Exception:
                 pass
+
+        # Get codec metadata for each writable DID
+        try:
+            import open3e.Open3Edatapoints as dp_mod
+            general_dids = dp_mod.dataIdentifiers.get("dids", {})
+        except Exception:
+            general_dids = {}
+
         all_dps = await store.get_datapoints()
-        writables = [dp for dp in all_dps if dp["did"] in writable_dids]
+        ecus = await store.get_ecus()
+        ecu_map = {e["address"]: dict(e) for e in ecus}
+
+        # Build enriched writable list with codec info
+        writables = []
+        for dp in all_dps:
+            if dp["did"] not in writable_dids:
+                continue
+            codec = general_dids.get(dp["did"])
+            meta = {"codec_type": type(codec).__name__ if codec else "RawCodec"}
+
+            # Extract sub-fields for ComplexType
+            if codec and hasattr(codec, "subTypes"):
+                subs = []
+                for s in codec.subTypes:
+                    sub_info = {"name": s.id, "type": type(s).__name__}
+                    if hasattr(s, "listStr"):
+                        # Enum sub-field — get options
+                        try:
+                            import open3e.Open3Eenums
+                            enum_vals = open3e.Open3Eenums.E3Enums.get(s.listStr, {})
+                            sub_info["options"] = {str(k): v for k, v in enum_vals.items()}
+                        except Exception:
+                            pass
+                    sub_info["len"] = getattr(s, "string_len", 0)
+                    subs.append(sub_info)
+                meta["sub_fields"] = subs
+            else:
+                meta["sub_fields"] = []
+
+            # Categorize
+            name = dp["name"]
+            if "Setpoint" in name and "Temperature" in name:
+                meta["category"] = "temperature_setpoint"
+            elif "OperationState" in name or "OperationMode" in name:
+                meta["category"] = "operation_mode"
+            elif "QuickMode" in name:
+                meta["category"] = "quick_mode"
+            elif "HeatingCurve" in name:
+                meta["category"] = "heating_curve"
+            elif "Pump" in name and "Limit" in name:
+                meta["category"] = "pump_limit"
+            elif "TimeSchedule" in name:
+                meta["category"] = "schedule"
+            elif "Setpoint" in name:
+                meta["category"] = "setpoint"
+            else:
+                meta["category"] = "other"
+
+            ecu_info = ecu_map.get(dp["ecu_address"], {})
+            writables.append({
+                **dict(dp),
+                "meta": meta,
+                "ecu_name": ecu_info.get("name", hex(dp["ecu_address"])),
+            })
+
+        # Sort by category then name
+        cat_order = {"temperature_setpoint": 0, "operation_mode": 1, "quick_mode": 2,
+                     "heating_curve": 3, "setpoint": 4, "pump_limit": 5, "other": 6, "schedule": 7}
+        writables.sort(key=lambda w: (cat_order.get(w["meta"]["category"], 99), w["name"]))
+
+        # Group by category
+        categories = {}
+        cat_labels = {
+            "temperature_setpoint": "Temperature Setpoints",
+            "operation_mode": "Operation Modes",
+            "quick_mode": "Quick Modes",
+            "heating_curve": "Heating Curves",
+            "setpoint": "Other Setpoints",
+            "pump_limit": "Pump Limits",
+            "schedule": "Time Schedules",
+            "other": "Other Writable",
+        }
+        for w in writables:
+            cat = w["meta"]["category"]
+            if cat not in categories:
+                categories[cat] = {"label": cat_labels.get(cat, cat), "dps": []}
+            categories[cat]["dps"].append(w)
+
         return templates.TemplateResponse(
             request, "write.html",
-            {"writables": writables, "active_page": "write"},
+            {"categories": categories, "writables": writables, "active_page": "write"},
         )
 
     @app.get("/system", response_class=HTMLResponse)
@@ -226,18 +323,40 @@ def create_app(store: ConfigStore) -> FastAPI:
 
     @app.post("/api/write")
     async def write_value(request: Request):
+        import asyncio
+        import threading as _threading
+
         body = await request.json()
         engine = getattr(app.state, "engine", None)
         if not engine:
             raise HTTPException(status_code=503, detail="CAN engine not running")
+
+        # Create synchronization primitives so we can wait for the engine result
+        result_event = _threading.Event()
+        result_holder = {}
+
         engine.send_command({
             "action": "write_did",
             "ecu": body["ecu"],
             "did": body["did"],
             "value": body["value"],
             "sub": body.get("sub"),
+            "_result_event": result_event,
+            "_result_holder": result_holder,
         })
-        return {"status": "queued"}
+
+        # Wait for engine to complete (up to 10 seconds)
+        got_result = await asyncio.to_thread(result_event.wait, 10.0)
+
+        if not got_result:
+            raise HTTPException(status_code=504, detail="Write timed out — no response from CAN engine within 10 seconds")
+
+        return {
+            "success": result_holder.get("success", False),
+            "error": result_holder.get("error"),
+            "new_value": result_holder.get("new_value"),
+            "code": result_holder.get("code"),
+        }
 
     # -----------------------------------------------------------------------
     # API: settings
@@ -282,7 +401,9 @@ def create_app(store: ConfigStore) -> FastAPI:
                     dp_list = await store.get_datapoints()
                     ecus = [dict(row) for row in ecus_list]
                     datapoints = {row["id"]: dict(row) for row in dp_list}
-                    start_engine_fn(can_iface, can_bitrate, ecus, datapoints)
+                    poll_str = await store.get_setting("poll_interval", "10")
+                    poll_interval = float(poll_str) if poll_str else 10.0
+                    start_engine_fn(can_iface, can_bitrate, ecus, datapoints, poll_interval)
                 except Exception:
                     pass
 
@@ -327,9 +448,11 @@ def create_app(store: ConfigStore) -> FastAPI:
             raise HTTPException(status_code=503, detail="Engine not running")
         dp_rows = await store.get_datapoints()
         datapoints = {row["id"]: dict(row) for row in dp_rows}
-        engine.send_command({"action": "update_schedule", "datapoints": datapoints})
+        poll_str = await store.get_setting("poll_interval", "10")
+        poll_interval = float(poll_str) if poll_str else 10.0
+        engine.send_command({"action": "update_schedule", "datapoints": datapoints, "poll_interval": poll_interval})
         enabled_count = sum(1 for dp in datapoints.values() if dp.get("poll_enabled") and dp.get("poll_priority", 0) > 0)
-        return {"ok": True, "total": len(datapoints), "polling": enabled_count}
+        return {"ok": True, "total": len(datapoints), "polling": enabled_count, "interval": poll_interval}
 
     @app.get("/api/live-status")
     async def api_live_status():
@@ -440,8 +563,21 @@ def create_app(store: ConfigStore) -> FastAPI:
         datapoints = await store.get_datapoints()
         active_dps = [dp for dp in datapoints if dp["poll_enabled"] and dp["poll_priority"] > 0]
         created = 0
-        from open3e.web.ha_discovery import _humanize
+        from open3e.web.ha_discovery import _humanize, WRITABLE_ENTITIES
+
+        # Build set of DIDs that have explicit writable entity configs
+        # These should only get the writable entity, not a generic sensor
+        writable_only_dids = set()
+        for key, cfg in WRITABLE_ENTITIES.items():
+            did = cfg.get("did", key if isinstance(key, int) else None)
+            if did and cfg.get("component") in ("switch", "button"):
+                writable_only_dids.add(did)
+
         for dp in active_dps:
+            # Skip generic sensor for DIDs that have explicit switch/button writable config
+            if dp["did"] in writable_only_dids:
+                continue
+
             result = infer_ha_entity(
                 dp["name"], dp["codec"] or "", False
             )
@@ -478,6 +614,47 @@ def create_app(store: ConfigStore) -> FastAPI:
                     enabled=1,  # enabled by default
                 )
             created += 1
+
+        # Also create writable entities from WRITABLE_ENTITIES config
+        from open3e.web.ha_discovery import WRITABLE_ENTITIES
+        dp_by_did = {}
+        for dp in active_dps:
+            dp_by_did.setdefault(dp["did"], []).append(dp)
+
+        for key, cfg in WRITABLE_ENTITIES.items():
+            did = cfg.get("did", key if isinstance(key, int) else None)
+            if did is None:
+                continue
+            dps = dp_by_did.get(did, [])
+            if not dps:
+                continue
+            dp = dps[0]
+            ecu_hex = format(dp["ecu_address"], "03x")
+            sub = cfg.get("sub_field") or ""
+            uid_parts = ["open3e", ecu_hex, str(did)]
+            if sub:
+                uid_parts.append(sub.lower())
+            # For keyed entries like "424_standard", add the key suffix
+            if isinstance(key, str) and "_" in key:
+                suffix = key.split("_", 1)[1]
+                if suffix not in [s.lower() for s in uid_parts]:
+                    uid_parts.append(suffix)
+            unique_id = "_".join(uid_parts)
+            entity_name = cfg.get("name") or _humanize(dp["name"])
+            if sub and sub != "Actual":
+                entity_name += " " + sub
+
+            await store.upsert_ha_entity(
+                dp_id=dp["id"],
+                entity_type=cfg["component"],
+                unique_id=unique_id,
+                name=entity_name,
+                device_class=cfg.get("device_class"),
+                unit=cfg.get("unit"),
+                enabled=1,
+            )
+            created += 1
+
         return {"status": "ok", "entities_created": created}
 
     @app.post("/api/ha/publish")
