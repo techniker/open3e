@@ -563,8 +563,21 @@ def create_app(store: ConfigStore) -> FastAPI:
         datapoints = await store.get_datapoints()
         active_dps = [dp for dp in datapoints if dp["poll_enabled"] and dp["poll_priority"] > 0]
         created = 0
-        from open3e.web.ha_discovery import _humanize
+        from open3e.web.ha_discovery import _humanize, WRITABLE_ENTITIES
+
+        # Build set of DIDs that have explicit writable entity configs
+        # These should only get the writable entity, not a generic sensor
+        writable_only_dids = set()
+        for key, cfg in WRITABLE_ENTITIES.items():
+            did = cfg.get("did", key if isinstance(key, int) else None)
+            if did and cfg.get("component") in ("switch", "button"):
+                writable_only_dids.add(did)
+
         for dp in active_dps:
+            # Skip generic sensor for DIDs that have explicit switch/button writable config
+            if dp["did"] in writable_only_dids:
+                continue
+
             result = infer_ha_entity(
                 dp["name"], dp["codec"] or "", False
             )
