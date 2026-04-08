@@ -15,6 +15,7 @@ INFERENCE_RULES = [
     ("*PowerAc*", ["O3EComplexType", "O3EInt32"], "sensor", "power", "W", "mdi:flash"),
     ("*PowerDc*", ["O3EComplexType", "O3EInt32"], "sensor", "power", "W", "mdi:flash"),
     ("*ThermalPower*", ["O3EComplexType"], "sensor", "power", "W", "mdi:fire"),
+    ("*ThermalCapacity*", ["O3EComplexType", "O3EInt16", "O3EInt32"], "sensor", "power", "W", "mdi:fire"),
     ("*MaximumNominalPower*", ["O3EComplexType", "O3EInt32"], "sensor", "power", "W", "mdi:flash"),
     ("*CurrentMaximumPower*", ["O3EComplexType", "O3EInt32"], "sensor", "power", "W", "mdi:flash"),
 
@@ -114,6 +115,17 @@ INFERENCE_RULES = [
 # Each entry: did -> {component, sub_field, min, max, step, options, icon, group}
 # ---------------------------------------------------------------------------
 
+# Enum mappings: text → numeric ID (for MQTT command handler reverse lookup)
+# Corrected OpStates enum labels per open3e/open3e#145
+OPSTATES_ID_TO_TEXT = {
+    0: "Off", 1: "Heating Reduced", 2: "Heating Normal", 3: "Heating Comfort",
+    4: "Fixed Flow Temperature", 5: "Frost Protection",
+    6: "Energy Saving Reduced", 7: "Energy Saving Normal",
+    8: "Energy Saving Comfort", 9: "Cooling Reduced",
+    10: "Cooling Normal", 11: "Cooling Comfort", 255: "Unknown",
+}
+
+
 WRITABLE_ENTITIES = {
     # --- DHW Quick Action ---
     1006: {"component": "switch", "sub_field": "Required",
@@ -132,11 +144,41 @@ WRITABLE_ENTITIES = {
     874: {"component": "number", "sub_field": "Setpoint", "device_class": "temperature", "unit": "\u00b0C",
           "min": 50, "max": 70, "step": 0.5, "icon": "mdi:shield-bug", "group": "Hot Water"},
 
-    # --- DHW Operation ---
-    531: {"component": "select", "sub_field": "Mode", "icon": "mdi:water-boiler",
-          "options": ["0", "1"], "option_labels": {"0": "Off", "1": "On"}, "group": "Hot Water"},
-    538: {"component": "select", "sub_field": "Mode", "icon": "mdi:water-boiler",
-          "options": ["0", "1"], "option_labels": {"0": "Off", "1": "On"}, "group": "Hot Water"},
+    # --- Circuit Operation Mode (Heating / Off / Cooling) ---
+    # Writing Mode to OperationState DIDs changes the heating mode directly.
+    # State sub-field is read-only (computed from Mode + schedule).
+    "1415_mode": {"did": 1415, "component": "select", "sub_field": "Mode",
+                  "name": "Mixer 1 Operation Mode", "icon": "mdi:thermostat",
+                  "options": ["Off", "Heating", "Cooling"],
+                  "_id_to_text": {0: "Off", 1: "Heating", 5: "Cooling"},
+                  "group": "Heating Circuit 1"},
+    "1416_mode": {"did": 1416, "component": "select", "sub_field": "Mode",
+                  "name": "Mixer 2 Operation Mode", "icon": "mdi:thermostat",
+                  "options": ["Off", "Heating", "Cooling"],
+                  "_id_to_text": {0: "Off", 1: "Heating", 5: "Cooling"},
+                  "group": "Heating Circuit 2"},
+    "531_mode": {"did": 531, "component": "select", "sub_field": "Mode",
+                 "name": "DHW Operation Mode", "icon": "mdi:water-boiler",
+                 "options": ["Off", "Heating"],
+                 "_id_to_text": {0: "Off", 1: "Heating"},
+                 "group": "Hot Water"},
+
+    # --- External Target Operation Mode (enable/disable external control) ---
+    "537_mode": {"did": 537, "component": "switch", "sub_field": "Mode",
+                 "name": "Mixer 1 External Control", "icon": "mdi:thermostat",
+                 "state_on": "1", "state_off": "0",
+                 "payload_on": "1", "payload_off": "0",
+                 "group": "Heating Circuit 1"},
+    "538_mode": {"did": 538, "component": "switch", "sub_field": "Mode",
+                 "name": "DHW External Control", "icon": "mdi:water-boiler",
+                 "state_on": "1", "state_off": "0",
+                 "payload_on": "1", "payload_off": "0",
+                 "group": "Hot Water"},
+    "1612_mode": {"did": 1612, "component": "switch", "sub_field": "Mode",
+                  "name": "Mixer 2 External Control", "icon": "mdi:thermostat",
+                  "state_on": "1", "state_off": "0",
+                  "payload_on": "1", "payload_off": "0",
+                  "group": "Heating Circuit 2"},
 
     # --- DHW Pump ---
     491: {"component": "select", "sub_field": "State", "icon": "mdi:pump",
@@ -343,6 +385,15 @@ def build_discovery_payload(
         elif component == "select":
             if writable_cfg and "options" in writable_cfg:
                 payload["options"] = writable_cfg["options"]
+                # Add value_template to map integer enum values to text labels
+                id_to_text = writable_cfg.get("_id_to_text")
+                if id_to_text:
+                    pairs = ", ".join(
+                        "{}: '{}'".format(k, v.replace("'", "\\'"))
+                        for k, v in sorted(id_to_text.items())
+                    )
+                    tpl = "{% set m = {" + pairs + "} %}{{ m.get(value | int(-1), value) }}"
+                    payload["value_template"] = tpl
 
         elif component == "button":
             if writable_cfg and "payload_press" in writable_cfg:

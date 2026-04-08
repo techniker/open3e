@@ -244,6 +244,9 @@ class MqttPublisher:
     def _publish_split(self, base_topic: str, value: Any) -> None:
         """Split complex values into scalar sub-topics (retained for HA state)."""
         if isinstance(value, dict):
+            # Enum-like dicts {ID: x, Text: y} — publish Text at parent level for HA
+            if "Text" in value and "ID" in value and len(value) <= 3:
+                self._client.publish(base_topic, str(value["Text"]), retain=True)
             for k, v in value.items():
                 self._publish_split(base_topic + "/" + str(k), v)
         elif isinstance(value, list):
