@@ -81,7 +81,7 @@
                                                     id="wsub-{{ dp.ecu_address }}_{{ dp.did }}_{{ sub.name }}">
                                                 <option value="">--</option>
                                                 {% for k, v in sub.get('options', {}).items() %}
-                                                <option value="{{ k }}">{{ v }} ({{ k }})</option>
+                                                <option value="{{ v }}">{{ v }} ({{ k }})</option>
                                                 {% endfor %}
                                             </select>
                                         {% elif sub.type == 'O3EBool' %}
@@ -122,7 +122,7 @@
                                     data-write-did="{{ dp.did }}"
                                     data-write-name="{{ dp.name }}"
                                     data-write-codec="{{ dp.meta.codec_type }}"
-                                    data-write-subs="{{ dp.meta.sub_fields | tojson | e }}"
+                                    data-write-subs='{{ dp.meta.sub_fields | tojson }}'
                                     onclick="doWrite(this)">
                                 <i class="bi bi-pencil-fill"></i> Write
                             </button>
@@ -161,8 +161,12 @@
             // Show sub-fields compactly
             var parts = [];
             for (var k in val) {
-                if (val[k] !== null && typeof val[k] !== "object") {
-                    parts.push(k + ":" + val[k]);
+                var sv = val[k];
+                if (sv === null) continue;
+                if (typeof sv === "object" && sv.Text !== undefined) {
+                    parts.push(k + ":" + sv.Text);
+                } else if (typeof sv !== "object") {
+                    parts.push(k + ":" + sv);
                 }
             }
             display = parts.join(" | ");
@@ -170,17 +174,21 @@
             // Pre-fill sub-field inputs if they exist
             for (var k in val) {
                 var subInput = document.getElementById("wsub-" + msg.ecu + "_" + msg.did + "_" + k);
-                if (subInput && subInput.value === "" && val[k] !== null) {
+                var sv = val[k];
+                if (subInput && sv !== null) {
+                    // Match by Text for enum dicts {ID: x, Text: y}, or by raw value
+                    var matchVal = (typeof sv === "object" && sv.Text !== undefined) ? sv.Text
+                                 : (typeof sv === "object" && sv.ID !== undefined) ? String(sv.ID)
+                                 : String(sv);
                     if (subInput.tagName === "SELECT") {
-                        // Try to select by value
                         for (var i = 0; i < subInput.options.length; i++) {
-                            if (subInput.options[i].value == String(val[k])) {
+                            if (subInput.options[i].value == matchVal) {
                                 subInput.selectedIndex = i;
                                 break;
                             }
                         }
-                    } else {
-                        subInput.placeholder = String(val[k]);
+                    } else if (subInput.value === "") {
+                        subInput.placeholder = matchVal;
                     }
                 }
             }

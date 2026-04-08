@@ -417,7 +417,7 @@
             <div class="mb-4">
                 <div class="form-check form-switch mb-3">
                     <input class="form-check-input" type="checkbox" id="auth-enabled"
-                           {% if settings.auth_enabled %}checked{% endif %}>
+                           {% if settings.auth_enabled == "1" %}checked{% endif %}>
                     <label class="form-check-label" for="auth-enabled">Enable password protection</label>
                 </div>
                 <div class="row g-2 align-items-end" style="max-width: 400px;">
@@ -659,7 +659,7 @@ async function saveAuthSettings() {
         auth_password: document.getElementById('auth-password').value,
     };
     try {
-        await apiCall('/api/settings', 'PATCH', payload);
+        await apiCall('/api/auth/settings', 'PATCH', payload);
         showToast('Authentication settings saved.', 'success');
     } catch (e) {
         // error toast already shown

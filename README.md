@@ -1,3 +1,9 @@
+**_New: List of data points now available as [table](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md)_**
+
+**_New: Tool `open3e_dids2md` can create your own list of data points in markdown format. `open3e_dids2md -h` for options._**
+
+**_New: All info about data points available as json files for [general dids](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md) and [variant dids](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3EdatapointsVariants.md)_**
+
 **_New: Web UI for browser-based configuration and monitoring_**
 
 <BR>
@@ -93,7 +99,7 @@ You created your own extension based on open3e? Great! Please let us know! Just 
 # Installation
 There is a [Video Tutorial](https://youtu.be/u_fkwtIARug) (German languge) available from CRYDTEAM - thank you very much for it! Find the according web site [here](https://crydteam.de/2025/04/27/viessmann-vx3-in-homeassistant/). The final 1/3 is related to Home Assistant, but the first part shows the complete installation process of open3e and hardware very vividly.
 
-Hint: An installation guide is available also in [German language](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).
+For a **detailed step-by-step installation guide** (German language) see [Wiki, chapt. 030](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).
 
 <br>
 
@@ -126,9 +132,9 @@ https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-op
 # Depict System
 In advance of first time starting the client and after every firmware update, run 
     
-    open3e_depictSystem [-s]
+    open3e_depictSystem -s
     
-to scan the system and generate devices.json and Open3Edatapoints_678.py files.<br>
+to scan the system and generate devices.json and Open3Edatapoints_6yz.py files.<br>
 Use `open3e` with cmd line argument `-cnfg devices.json` afterwards.<br>
 Pls. make sure to use same working directory for `open3e` as used for running `open3e_depictSystem`.<br>
 By using the optional switch `-s` data files for simulation get created. 
@@ -143,6 +149,8 @@ New naming will also be used for paramter `{device}`within MQTT topics (see belo
 Further information is available [here](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments).
 
 The depicting scans take several minutes (usually 10..20) - please be patient!
+
+Infos about data points are available [here](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md).
 
 # Usage
 
@@ -349,8 +357,17 @@ Use
 ```
 open3e_dids2json
 ```
-to convert common list of data points (Open3Edatapoints.py) to json format.
-A white list of writable data points is also created by this tool.
+to convert common list of data points (Open3Edatapoints.py, Open3EdatapointsVariants.py) to json format.
+This tool converts data points for use in the ioBroker adapter ioBroker.e3oncan. It is not used by open3e.
+
+# Convert list of data points to markdown format
+Use
+```
+open3e_dids2md -h
+```
+to see the options for creating your own list of data points. Use a viewer for markdown format to view it.
+
+**Hint**: Choose a viewer supporting mouser-over feature of markdown.
 
 # For developers
 
@@ -364,13 +381,15 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
-### 0.6.0 (2026-04-06)
+### 0.7.0 (2026-04-07)
 * **New: Web UI** — browser-based management interface (`open3e-web`)
 * Dashboard with live data cards and uPlot time-series charts
 * Datapoints browser with search, filter, priority control, bulk actions
 * Priority-based CAN polling: High (every cycle), Medium (every 4th), Low (every 12th), Off
-* MQTT publishing with change detection, 60s re-publish, JSON/split mode toggle
-* Home Assistant MQTT auto-discovery with smart type inference (temperature, pressure, energy, power, etc.)
+* MQTT publishing with change detection, retained state messages, JSON/split mode
+* Home Assistant MQTT auto-discovery with smart type inference (100+ rules)
+* Per-sub-field HA entities for ComplexType DIDs
+* 50+ writable HA entities (number, select, switch, button)
 * CAN interface auto-discovery and configuration via web
 * System depiction with live progress bar, cancel, and auto-load results
 * Write values from the web UI with confirmation dialog
@@ -378,7 +397,15 @@ If you want to work on the codebase you can clone the repository and work in "ed
 * Optional password authentication
 * Docker Compose deployment with host networking for SocketCAN
 * Systemd service support for auto-start on boot
-* New dependencies (optional): fastapi, uvicorn, jinja2, aiosqlite, python-multipart
+
+### 0.6.1 (2026-02-24)
+* Introduced list of data points in markdown format.
+* Added meta data to several data points, e.g. description, unit, link to further info
+* Added tool to create user defined list of data points in markdown format
+* Added meta data to json formated data points as well
+
+### 0.6.0 (2026-02-07)
+* Introduced list of data points (Open3EdatapointsVariants.py) with lengths different from common data points. Via open3e_depictSystem open3e can handle those device specific data points.
 
 ### 0.5.10 (2025-12-10)
 * Added support for data points 511-520

@@ -25,7 +25,13 @@ function formatValue(value) {
         var k = keys[i];
         var v = value[k];
         if (v === null || v === undefined) continue;
-        if (typeof v === "object") continue; // skip nested
+        if (typeof v === "object") {
+            // Nested dict — show Text if available, else compact JSON
+            if (v.Text !== undefined) { parts.push(k + ":" + v.Text); }
+            else if (v.ID !== undefined) { parts.push(k + ":" + v.ID); }
+            else { parts.push(k + ":" + JSON.stringify(v)); }
+            continue;
+        }
         parts.push(k + ":" + v);
     }
     return parts.join(" | ");

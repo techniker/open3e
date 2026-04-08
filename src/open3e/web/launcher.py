@@ -179,6 +179,12 @@ def main() -> None:
                 value = {"OpMode": 0, "Required": "off", "Unknown": "0000"}
             sub = None  # write full object
 
+        # DIDs with O3EByteVal sub-fields need text→int mapping
+        # (O3EEnum DIDs like 1415/1416 accept text directly)
+        if did in (531, 538) and sub == "Mode" and isinstance(value, str):
+            _mode_map = {"Off": 0, "Heating": 1, "Cooling": 5}
+            value = _mode_map.get(value, value)
+
         engine.send_command({
             "action": "write_did",
             "ecu": ecu,

@@ -62,6 +62,25 @@ def create_app(store: ConfigStore) -> FastAPI:
     async def websocket_endpoint(ws: WebSocket):
         await ws_manager.connect(ws)
         try:
+            # Send cached values so the client immediately sees all known data
+            engine = getattr(app.state, "engine", None)
+            if engine:
+                for key, entry in engine._last_values.items():
+                    if isinstance(entry, dict) and "value" in entry:
+                        parts = key.split(":")
+                        ecu, did = int(parts[0]), int(parts[1])
+                        dp = engine._datapoints.get(next(
+                            (k for k, v in engine._datapoints.items()
+                             if v.get("ecu_address") == ecu and v.get("did") == did), None
+                        ), {})
+                        await ws.send_json({
+                            "type": "did_value",
+                            "ecu": ecu, "did": did,
+                            "name": dp.get("name", f"DID_{did}"),
+                            "value": entry["value"],
+                            "ts": entry.get("ts", 0),
+                            "changed": False,
+                        })
             while True:
                 data = await ws.receive_json()
                 msg_type = data.get("type")
@@ -619,7 +638,9 @@ def create_app(store: ConfigStore) -> FastAPI:
                             continue
                         safe_field = field_name.lower().replace(" ", "_")
                         uid = "o3e_{}_{}_{}".format(ecu_hex, dp["did"], safe_field)
-                        human_name = _humanize(dp["name"]) + " " + _humanize(field_name)
+                        base_name = _humanize(dp["name"])
+                        field_label = _humanize(field_name)
+                        human_name = base_name if field_label in base_name else base_name + " " + field_label
                         # Inherit device_class/unit from inference for known field types
                         dc = result.get("device_class")
                         unit = result.get("unit")
@@ -690,7 +711,8 @@ def create_app(store: ConfigStore) -> FastAPI:
                     uid_parts.append(suffix)
             unique_id = "_".join(uid_parts)
             entity_name = cfg.get("name") or _humanize(dp["name"])
-            if sub and sub != "Actual":
+            if sub and sub != "Actual" and sub not in entity_name \
+                    and cfg.get("component") not in ("switch", "button"):
                 entity_name += " " + sub
 
             await store.upsert_ha_entity(
@@ -845,7 +867,7 @@ def create_app(store: ConfigStore) -> FastAPI:
     async def api_patch_auth_settings(request: Request):
         body = await request.json()
         if "auth_enabled" in body:
-            await store.set_setting("auth_enabled", body["auth_enabled"])
+            await store.set_setting("auth_enabled", "1" if body["auth_enabled"] else "0")
         if "auth_password" in body:
             hashed = hash_password(body["auth_password"])
             await store.set_setting("auth_password_hash", hashed)
