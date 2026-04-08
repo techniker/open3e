@@ -4,6 +4,8 @@
 
 **_New: All info about data points available as json files for [general dids](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md) and [variant dids](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3EdatapointsVariants.md)_**
 
+**_New: Web UI for browser-based configuration and monitoring_**
+
 <BR>
 
 # Open3E interface
@@ -13,6 +15,75 @@
 * Listen to commands on mqtt
 * Write data points in raw and json data format
 * Experimental write support for service 77
+* **Web UI** for configuration, live monitoring, and Home Assistant integration
+
+# Web UI
+
+open3e now includes a browser-based management interface. All configuration (CAN interface, MQTT broker, Home Assistant discovery, datapoint polling) is done through the web UI — no CLI arguments needed.
+
+## Quick Start
+
+    pip install git+https://github.com/open3e/open3e.git[web]
+    open3e-web
+
+Then open `http://<ip>:8080` in your browser.
+
+## Features
+
+* **Dashboard** with live data cards and time-series charts (uPlot)
+* **Datapoints browser** with search, filter by ECU/priority, bulk enable/disable
+* **Priority-based polling** — High/Medium/Low/Off tiers with weighted scheduling
+* **Write values** with confirmation dialog
+* **MQTT publishing** with per-datapoint topic mapping, JSON or split mode, change detection
+* **Home Assistant MQTT auto-discovery** with smart type inference from datapoint names
+* **System depiction** (ECU/DID scan) with live progress bar and console output
+* **CAN interface discovery** and configuration (simple + advanced parameters)
+* **Database backup/restore** via web interface
+* **Optional password authentication**
+* **System status** with CAN bus counters, engine state, MQTT connection info
+
+## Docker Compose
+
+    cd open3e/docker
+    docker compose up -d
+
+Uses host networking for SocketCAN access. See `docker/docker-compose.yml` for details.
+
+## Systemd Service
+
+    sudo cp /tmp/open3e-web.service /etc/systemd/system/
+    sudo systemctl enable open3e-web
+    sudo systemctl start open3e-web
+
+Example service file:
+
+```ini
+[Unit]
+Description=open3e Web UI
+After=network-online.target
+
+[Service]
+Type=simple
+User=tec
+WorkingDirectory=/home/tec/open3e
+ExecStart=/home/tec/open3e/.venv/bin/open3e-web
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+```
+
+## First-Run Flow
+
+1. Run `open3e-web` — browser opens to dashboard
+2. Settings > CAN tab — select interface, set bitrate, apply
+3. System Depiction — scan for ECUs and datapoints (10-20 min)
+4. Datapoints — enable polling for the values you need, set priorities
+5. Settings > MQTT tab — configure broker, test connection, save
+6. Settings > Home Assistant tab — apply suggested defaults, enable entities
+
+After first run, everything auto-starts on next launch.
 
 # Smart Home Integrations and Add Ons
 
@@ -304,11 +375,28 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
     git clone https://github.com/open3e/open3e.git  
     cd open3e
-    pip install --editable .[dev]
+    pip install --editable ".[dev,web]"
 
 **Hint: If you get an error like "A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build." you are running an old pip version. Editable mode requires pip version >= 21.1.**
 
 # Changelog
+
+### 0.7.0 (2026-04-07)
+* **New: Web UI** — browser-based management interface (`open3e-web`)
+* Dashboard with live data cards and uPlot time-series charts
+* Datapoints browser with search, filter, priority control, bulk actions
+* Priority-based CAN polling: High (every cycle), Medium (every 4th), Low (every 12th), Off
+* MQTT publishing with change detection, retained state messages, JSON/split mode
+* Home Assistant MQTT auto-discovery with smart type inference (100+ rules)
+* Per-sub-field HA entities for ComplexType DIDs
+* 50+ writable HA entities (number, select, switch, button)
+* CAN interface auto-discovery and configuration via web
+* System depiction with live progress bar, cancel, and auto-load results
+* Write values from the web UI with confirmation dialog
+* Database backup/restore/download
+* Optional password authentication
+* Docker Compose deployment with host networking for SocketCAN
+* Systemd service support for auto-start on boot
 
 ### 0.6.1 (2026-02-24)
 * Introduced list of data points in markdown format.
