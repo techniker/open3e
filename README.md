@@ -19,43 +19,67 @@
 
 # Web UI
 
-open3e now includes a browser-based management interface. All configuration (CAN interface, MQTT broker, Home Assistant discovery, datapoint polling) is done through the web UI — no CLI arguments needed.
-
-## Quick Start
-
-    pip install git+https://github.com/open3e/open3e.git[web]
-    open3e-web
-
-Then open `http://<ip>:8080` in your browser.
+open3e includes a browser-based management interface for configuring and monitoring Viessmann heat pumps. All configuration (CAN interface, MQTT broker, Home Assistant discovery, datapoint polling) is done through the web UI — no CLI arguments needed.
 
 ## Features
 
 * **Dashboard** with live data cards and time-series charts (uPlot)
 * **Datapoints browser** with search, filter by ECU/priority, bulk enable/disable
-* **Priority-based polling** — High/Medium/Low/Off tiers with weighted scheduling
-* **Write values** with confirmation dialog
-* **MQTT publishing** with per-datapoint topic mapping, JSON or split mode, change detection
-* **Home Assistant MQTT auto-discovery** with smart type inference from datapoint names
+* **Priority-based polling** — High (every cycle), Medium (every 4th), Low (every 12th), Off
+* **Write values** with categorized DIDs, enum dropdowns, sub-field support
+* **MQTT publishing** with JSON or split mode, retained state messages, change detection
+* **Home Assistant MQTT auto-discovery** with 100+ typed entity inference rules
+* **Per-sub-field HA entities** for ComplexType DIDs (e.g., PowerState/ErrorState separately)
+* **50+ writable HA entities** — number sliders, select dropdowns, switches, buttons
+* **Operation Mode control** — set mixer circuits and DHW to Off/Heating/Cooling from HA
 * **System depiction** (ECU/DID scan) with live progress bar and console output
 * **CAN interface discovery** and configuration (simple + advanced parameters)
-* **Database backup/restore** via web interface
+* **Database backup/restore/download** via web interface
 * **Optional password authentication**
 * **System status** with CAN bus counters, engine state, MQTT connection info
 
-## Docker Compose
+## Installation
 
+### Prerequisites
+
+* Linux host with SocketCAN (Raspberry Pi, any Linux with CAN adapter)
+* Python 3.9+
+* CAN interface connected to the Viessmann heat pump's internal bus
+
+### Option 1: pip install (recommended)
+
+Create a virtual environment and install with web dependencies:
+
+    python3 -m venv .venv
+    source .venv/bin/activate
+    pip install git+https://github.com/open3e/open3e.git[web]
+
+### Option 2: From source (for development)
+
+    git clone https://github.com/open3e/open3e.git
+    cd open3e
+    python3 -m venv .venv
+    source .venv/bin/activate
+    pip install --editable ".[dev,web]"
+
+### Option 3: Docker Compose
+
+    git clone https://github.com/open3e/open3e.git
     cd open3e/docker
     docker compose up -d
 
 Uses host networking for SocketCAN access. See `docker/docker-compose.yml` for details.
 
-## Systemd Service
+## Starting the Web UI
 
-    sudo cp /tmp/open3e-web.service /etc/systemd/system/
-    sudo systemctl enable open3e-web
-    sudo systemctl start open3e-web
+    source .venv/bin/activate
+    open3e-web
 
-Example service file:
+The server starts on port 8080. Open `http://<your-ip>:8080` in your browser.
+
+## Auto-start with systemd
+
+Create `/etc/systemd/system/open3e-web.service`:
 
 ```ini
 [Unit]
@@ -64,9 +88,9 @@ After=network-online.target
 
 [Service]
 Type=simple
-User=tec
-WorkingDirectory=/home/tec/open3e
-ExecStart=/home/tec/open3e/.venv/bin/open3e-web
+User=<your-user>
+WorkingDirectory=/home/<your-user>/open3e
+ExecStart=/home/<your-user>/open3e/.venv/bin/open3e-web
 Restart=always
 RestartSec=5
 
@@ -74,16 +98,32 @@ RestartSec=5
 WantedBy=multi-user.target
 ```
 
-## First-Run Flow
+Replace `<your-user>` with your Linux username, then:
 
-1. Run `open3e-web` — browser opens to dashboard
-2. Settings > CAN tab — select interface, set bitrate, apply
-3. System Depiction — scan for ECUs and datapoints (10-20 min)
-4. Datapoints — enable polling for the values you need, set priorities
-5. Settings > MQTT tab — configure broker, test connection, save
-6. Settings > Home Assistant tab — apply suggested defaults, enable entities
+    sudo systemctl daemon-reload
+    sudo systemctl enable open3e-web
+    sudo systemctl start open3e-web
 
-After first run, everything auto-starts on next launch.
+## First-Run Setup
+
+1. **CAN interface** — Settings > CAN tab: select interface (e.g., `can0`), set bitrate (250000), apply
+2. **System Depiction** — scan for ECUs and datapoints (takes 10-20 minutes)
+3. **Datapoints** — enable polling for the values you need, set priorities (High/Medium/Low)
+4. **MQTT** (optional) — Settings > MQTT tab: configure broker host/port/credentials, test, save
+5. **Home Assistant** (optional) — Settings > HA tab: apply suggested defaults, publish discovery
+
+After first run, all settings are persisted in `open3e_web.db` and auto-restored on next launch.
+
+## Home Assistant Integration
+
+The web UI publishes MQTT auto-discovery messages that Home Assistant picks up automatically. Entities include:
+
+* **Sensors** — temperatures, pressures, energy, power, flow rates, compressor stats
+* **Number sliders** — temperature setpoints (Comfort/Standard/Reduced), pump limits
+* **Select dropdowns** — operation modes (Off/Heating/Cooling) for each mixer circuit and DHW
+* **Switches** — one-time DHW heating, external control enable
+
+All entity types, units, and icons are inferred from the datapoint names using 100+ pattern-matching rules. ComplexType DIDs get separate entities for each sub-field (e.g., `HeatPumpCompressor` splits into `PowerState` and `ErrorState`).
 
 # Smart Home Integrations and Add Ons
 
