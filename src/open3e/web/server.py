@@ -674,17 +674,44 @@ def create_app(store: ConfigStore) -> FastAPI:
                 )
                 created += 1
             else:
-                unique_id = "o3e_{}_{}".format(ecu_hex, dp["did"])
-                entity_name = _humanize(dp["name"])
-                await store.upsert_ha_entity(
-                    dp_id=dp["id"],
-                    entity_type="sensor",
-                    unique_id=unique_id,
-                    name=entity_name,
-                    device_class=None,
-                    unit=None,
-                    enabled=1,
-                )
+                # No inference rule matched — check cache for dict values
+                cache_key_fb = f"{ecu_addr}:{dp['did']}"
+                cached_fb = cached_values.get(cache_key_fb)
+                if isinstance(cached_fb, dict) and "Actual" not in cached_fb:
+                    # Create per-sub-field entities
+                    for field_name, field_val in cached_fb.items():
+                        if field_name.startswith("Unknown"):
+                            continue
+                        if isinstance(field_val, str) and len(field_val) > 50:
+                            continue
+                        safe_field = field_name.lower().replace(" ", "_")
+                        uid = "o3e_{}_{}_{}".format(ecu_hex, dp["did"], safe_field)
+                        base_name = _humanize(dp["name"])
+                        field_label = _humanize(field_name)
+                        human_name = base_name if field_label in base_name else base_name + " " + field_label
+                        await store.upsert_ha_entity(
+                            dp_id=dp["id"],
+                            entity_type="sensor",
+                            unique_id=uid,
+                            name=human_name,
+                            device_class=None,
+                            unit=None,
+                            enabled=1,
+                            sub_field=field_name,
+                        )
+                        created += 1
+                else:
+                    unique_id = "o3e_{}_{}".format(ecu_hex, dp["did"])
+                    entity_name = _humanize(dp["name"])
+                    await store.upsert_ha_entity(
+                        dp_id=dp["id"],
+                        entity_type="sensor",
+                        unique_id=unique_id,
+                        name=entity_name,
+                        device_class=None,
+                        unit=None,
+                        enabled=1,
+                    )
                 created += 1
 
         # Also create writable entities from WRITABLE_ENTITIES config
