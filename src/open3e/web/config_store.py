@@ -108,6 +108,9 @@ class ConfigStore:
         """Open the database, create schema and run migrations."""
         self._db = await aiosqlite.connect(self._db_path)
         self._db.row_factory = aiosqlite.Row
+        # Enable FK enforcement per SQLite docs — required for ON DELETE CASCADE.
+        # SQLite disables FKs by default for backwards compatibility.
+        await self._db.execute("PRAGMA foreign_keys = ON")
         await self._db.executescript(_DDL)
         await self._migrate()
         await self._db.execute(f"PRAGMA user_version = {SCHEMA_VERSION}")

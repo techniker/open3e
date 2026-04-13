@@ -59,6 +59,55 @@
         </div>
     </div>
 
+    <!-- Import existing configuration card -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Import existing configuration</h5>
+            <p class="card-text text-muted mb-3">
+                Already have a <code>devices.json</code> from a previous CLI run or another open3e
+                instance? Upload it here together with the referenced
+                <code>Open3Edatapoints_*.py</code> files. Polling preferences for DIDs that exist
+                in both the old and new configuration are preserved. Stale ECUs and DIDs are
+                removed from the database, and matching Home Assistant entities are cleaned up.
+            </p>
+
+            <div class="d-flex flex-wrap gap-2 mb-3">
+                <a href="/api/depict/devices" class="btn btn-outline-secondary"
+                   id="btn-download-devices" download>
+                    <i class="bi bi-download"></i> Download current devices.json
+                </a>
+            </div>
+
+            <div class="row g-3 align-items-end" style="max-width: 720px;">
+                <div class="col">
+                    <label for="import-files" class="form-label">
+                        Files to upload
+                    </label>
+                    <input type="file" class="form-control" id="import-files"
+                           multiple accept=".json,.py">
+                    <div class="form-text">
+                        Select <code>devices.json</code> and all referenced
+                        <code>Open3Edatapoints_*.py</code> files at once.
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-warning" id="btn-import" onclick="importDevices()">
+                        <i class="bi bi-upload"></i> Import & Apply
+                    </button>
+                </div>
+            </div>
+
+            <div class="alert alert-warning mt-3 mb-0 small" role="alert">
+                <i class="bi bi-exclamation-triangle me-1"></i>
+                Importing will briefly pause the CAN engine. The previous
+                <code>devices.json</code> is backed up automatically (with a timestamp suffix)
+                so you can roll back if needed.
+            </div>
+
+            <div id="import-result" class="mt-3 small" style="display:none;"></div>
+        </div>
+    </div>
+
     <!-- Console output card -->
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
@@ -269,6 +318,102 @@
             showToast('Loaded ' + data.devices_loaded + ' device(s) from scan results.', 'success');
         } catch (e) {
             // error toast already shown by apiCall
+        }
+    };
+
+    function appendResultLine(parent, label, value, isCode) {
+        var div = document.createElement('div');
+        var strong = document.createElement('strong');
+        strong.textContent = label + ': ';
+        div.appendChild(strong);
+        if (isCode) {
+            var code = document.createElement('code');
+            code.textContent = String(value);
+            div.appendChild(code);
+        } else {
+            div.appendChild(document.createTextNode(String(value)));
+        }
+        parent.appendChild(div);
+    }
+
+    window.importDevices = async function () {
+        var input = document.getElementById('import-files');
+        var resultBox = document.getElementById('import-result');
+        var btn = document.getElementById('btn-import');
+
+        if (!input.files || input.files.length === 0) {
+            showToast('Select devices.json and the Open3Edatapoints_*.py files first.', 'warning');
+            return;
+        }
+
+        var hasDevicesJson = false;
+        for (var i = 0; i < input.files.length; i++) {
+            if (input.files[i].name === 'devices.json') { hasDevicesJson = true; break; }
+        }
+        if (!hasDevicesJson) {
+            showToast('devices.json must be included in the upload.', 'warning');
+            return;
+        }
+
+        if (!confirm('Import this configuration?\n\nThe CAN engine will be paused, your existing devices.json will be backed up, and any DIDs no longer in the new configuration will be removed (their HA entities will be cleaned up too).')) {
+            return;
+        }
+
+        var fd = new FormData();
+        for (var i = 0; i < input.files.length; i++) {
+            fd.append('files', input.files[i]);
+        }
+
+        btn.disabled = true;
+        var origBtn = btn.textContent;
+        btn.textContent = 'Importing...';
+        resultBox.style.display = 'none';
+
+        try {
+            var resp = await fetch('/api/depict/import', { method: 'POST', body: fd });
+            var data = await resp.json();
+            if (!resp.ok) {
+                throw new Error(data.detail || resp.statusText);
+            }
+
+            var msg = 'Imported ' + data.ecus_in_config + ' ECU(s) and '
+                    + data.datapoints_in_config + ' datapoint(s).';
+            if (data.ecus_removed || data.datapoints_removed) {
+                msg += ' Removed ' + data.ecus_removed + ' stale ECU(s) and '
+                     + data.datapoints_removed + ' stale DID(s).';
+            }
+            if (data.ha_entities_cleared) {
+                msg += ' Cleared ' + data.ha_entities_cleared + ' HA entit'
+                     + (data.ha_entities_cleared === 1 ? 'y' : 'ies') + '.';
+            }
+            showToast(msg, 'success');
+
+            // Build result box safely (no innerHTML)
+            resultBox.className = 'mt-3 small alert alert-success';
+            resultBox.style.display = 'block';
+            while (resultBox.firstChild) { resultBox.removeChild(resultBox.firstChild); }
+            var header = document.createElement('div');
+            header.innerText = 'Import complete.';
+            header.style.fontWeight = 'bold';
+            resultBox.appendChild(header);
+            appendResultLine(resultBox, 'ECUs in new config', data.ecus_in_config);
+            appendResultLine(resultBox, 'Datapoints in new config', data.datapoints_in_config);
+            appendResultLine(resultBox, 'Stale ECUs removed', data.ecus_removed);
+            appendResultLine(resultBox, 'Stale DIDs removed', data.datapoints_removed);
+            appendResultLine(resultBox, 'HA entities cleared', data.ha_entities_cleared);
+            if (data.backup_file) {
+                appendResultLine(resultBox, 'Backup', data.backup_file, true);
+            }
+
+            input.value = '';
+        } catch (err) {
+            showToast('Import failed: ' + err.message, 'danger');
+            resultBox.className = 'mt-3 small alert alert-danger';
+            resultBox.style.display = 'block';
+            resultBox.textContent = 'Import failed: ' + err.message;
+        } finally {
+            btn.disabled = false;
+            btn.textContent = origBtn;
         }
     };
 
