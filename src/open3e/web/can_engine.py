@@ -32,6 +32,13 @@ MEDIUM_INTERVAL: int = 4
 LOW_INTERVAL: int = 12
 INTER_DID_DELAY: float = 0.05  # 50ms between UDS requests to avoid CAN bus saturation
 
+# An ECU that stops answering (unplugged, or two devices contesting one UDS
+# address) costs a full UDS timeout per DID.  With hundreds of DIDs behind it a
+# poll cycle stretches into tens of minutes and healthy ECUs stop updating, so
+# a repeatedly failing ECU is parked for a while instead.
+ECU_FAILURE_THRESHOLD: int = 3      # consecutive failures before suspending
+ECU_SUSPEND_SECONDS: float = 300.0  # how long to skip it before retrying
+
 
 # ---------------------------------------------------------------------------
 # EngineState
@@ -83,6 +90,11 @@ class CanEngine:
         self._ecus: Dict[int, Any] = {}           # address → O3Eclass instance
         self._datapoints: Dict[int, Dict] = {}    # dp_id  → datapoint dict
         self._last_values: Dict[str, Any] = {}    # "ecu:did" → last decoded value
+
+        # Per-ECU health: consecutive failures, and a monotonic deadline until
+        # which a failing ECU is skipped.
+        self._ecu_failures: Dict[int, int] = {}
+        self._ecu_suspended_until: Dict[int, float] = {}
 
         # Engine control
         self._running: bool = False
@@ -145,6 +157,51 @@ class CanEngine:
         return self._last_values.get(f"{ecu}:{did}")
 
     # -----------------------------------------------------------------------
+    # Per-ECU health
+    # -----------------------------------------------------------------------
+
+    @staticmethod
+    def _now() -> float:
+        """Monotonic clock, as a method so tests can substitute a fake one."""
+        import time
+        return time.monotonic()
+
+    def _ecu_suspended(self, ecu_addr: int) -> bool:
+        """True while *ecu_addr* is being skipped after repeated failures."""
+        until = self._ecu_suspended_until.get(ecu_addr)
+        if until is None:
+            return False
+        if self._now() >= until:
+            # Cooldown elapsed — retry it, so a repaired bus recovers on its own.
+            del self._ecu_suspended_until[ecu_addr]
+            return False
+        return True
+
+    def _record_ecu_result(self, ecu_addr: int, ok: bool) -> None:
+        """Record the outcome of one read and suspend the ECU if it keeps failing."""
+        if ok:
+            self._ecu_failures.pop(ecu_addr, None)
+            return
+
+        failures = self._ecu_failures.get(ecu_addr, 0) + 1
+        self._ecu_failures[ecu_addr] = failures
+        if failures < ECU_FAILURE_THRESHOLD:
+            return
+
+        self._ecu_failures[ecu_addr] = 0
+        self._ecu_suspended_until[ecu_addr] = self._now() + ECU_SUSPEND_SECONDS
+        logger.warning(
+            "ECU 0x%03x failed %d consecutive reads — skipping it for %.0fs",
+            ecu_addr, failures, ECU_SUSPEND_SECONDS,
+        )
+        self._emit_data({
+            "type": "ecu_suspended",
+            "ecu": ecu_addr,
+            "failures": failures,
+            "retry_in": ECU_SUSPEND_SECONDS,
+        })
+
+    # -----------------------------------------------------------------------
     # Priority scheduler
     # -----------------------------------------------------------------------
 
@@ -164,6 +221,8 @@ class CanEngine:
 
         for dp in self._datapoints.values():
             if not dp.get("poll_enabled", 1):
+                continue
+            if self._ecu_suspended(dp.get("ecu_address")):
                 continue
             priority = dp.get("poll_priority", 1)
             if priority == 3:
@@ -262,7 +321,10 @@ class CanEngine:
                         return
                     time.sleep(0.1)
 
-        except Exception as exc:
+        except BaseException as exc:
+            # BaseException, not Exception: a SystemExit raised anywhere in the
+            # UDS/codec stack would otherwise unwind this daemon thread silently,
+            # leaving the UI showing "Engine: not running" with nothing logged.
             logger.error("Engine thread crashed: %s", exc, exc_info=True)
             self._emit_data({"type": "engine_error", "error": str(exc)})
         finally:
@@ -270,9 +332,36 @@ class CanEngine:
             self._cleanup()
             self._set_state(EngineState.IDLE)
 
+    @staticmethod
+    def _restore_open3e_logging(previous_level: int) -> None:
+        """Undo the collateral damage of udsoncan.setup_logging().
+
+        O3Eclass.__init__ calls udsoncan.setup_logging(), which runs
+        logging.config.fileConfig().  That does two things to us:
+
+        1. disable_existing_loggers defaults to True, so every logger created at
+           import time — including this module's — is switched off outright;
+        2. the ROOT level is raised to ERROR, and since our loggers have no
+           level of their own they inherit it, hiding warnings and info.
+
+        Together these meant that from the first ECU connection onwards an
+        engine crash or ECU suspension left nothing in the journal.  Re-enable
+        our loggers and pin them to *previous_level* so they no longer depend on
+        root.  Other libraries' loggers are left exactly as udsoncan set them,
+        which keeps the isotp/udsoncan chatter suppressed.
+        """
+        for name, lg in logging.Logger.manager.loggerDict.items():
+            if name.startswith("open3e") and isinstance(lg, logging.Logger):
+                lg.disabled = False
+                if lg.level == logging.NOTSET:
+                    lg.setLevel(previous_level)
+
     def _connect_ecus(self, can_interface: str, ecus: List[Dict]) -> None:
         """Instantiate O3Eclass for each ECU in *ecus*."""
         from open3e.Open3Eclass import O3Eclass
+
+        # Captured before the first O3Eclass, which reconfigures logging globally.
+        previous_log_level = logging.getLogger().getEffectiveLevel()
 
         for ecu in ecus:
             address = ecu["address"]
@@ -293,10 +382,20 @@ class CanEngine:
                     "error": str(exc),
                 })
 
+        # Must run after the O3Eclass instances above, each of which
+        # reconfigures logging globally via udsoncan.setup_logging().
+        self._restore_open3e_logging(previous_log_level)
+
     def _poll_did(self, dp: Dict) -> None:
         """Read a single DID from its ECU and cache/emit the result."""
         ecu_addr = dp["ecu_address"]
         did = dp["did"]
+
+        # The poll list is built once per cycle, so it can name an ECU that was
+        # suspended partway through that same cycle. Re-check here, or the ECU
+        # keeps burning a UDS timeout per DID and re-suspends on every pass.
+        if self._ecu_suspended(ecu_addr):
+            return
 
         o3e = self._ecus.get(ecu_addr)
         if o3e is None:
@@ -307,7 +406,9 @@ class CanEngine:
             value, idstr, _ = o3e.readByDid(did, raw=False)
             # Skip error strings from UDS exceptions (UnexpectedResponseException etc.)
             if isinstance(value, str) and ("service execution" in value or "ERR/" in idstr):
-                return  # silently skip — will retry next cycle
+                self._record_ecu_result(ecu_addr, ok=False)
+                return  # will retry next cycle, unless the ECU gets suspended
+            self._record_ecu_result(ecu_addr, ok=True)
             cache_key = f"{ecu_addr}:{did}"
             old_entry = self._last_values.get(cache_key)
             import time as _time
@@ -336,6 +437,7 @@ class CanEngine:
                 "changed": changed,
             })
         except Exception as exc:
+            self._record_ecu_result(ecu_addr, ok=False)
             self._emit_data({
                 "type": "did_error",
                 "ecu": ecu_addr,
