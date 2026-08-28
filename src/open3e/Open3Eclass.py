@@ -112,6 +112,7 @@ class O3Eclass():
                 self.numdps = len(self.dataIdentifiers)
 
         # select CAN / DoIP ~~~~~~~~~~~~~~~~~~
+        self.bus = None   # set below for CAN; stays None in DoIP mode
         if(doip != None):
             self.conn = DoIPClientUDSConnector(DoIPClient(doip, ecutx))
         else:
@@ -135,6 +136,7 @@ class O3Eclass():
                 'listen_mode': False                    # Does not use the listen_mode which prevent transmission.
             }
             bus = SocketcanBus(channel=can, bitrate=250000)                                     # Link Layer (CAN protocol)
+            self.bus = bus                                                                      # keep a handle so close() can release the socket
             tp_addr = isotp.Address(isotp.AddressingMode.Normal_11bits, txid=ecutx, rxid=ecurx) # Network layer addressing scheme
             stack = isotp.CanStack(bus=bus, address=tp_addr, params=isotp_params)               # Network/Transport layer (IsoTP protocol)
             stack.set_sleep_timing(0.01, 0.01)                                                  # Balancing speed and load
@@ -377,3 +379,14 @@ class O3Eclass():
 
     def close(self):
         self.uds_client.close()
+        # udsoncan closes the ISO-TP layer but never the underlying python-can
+        # bus, leaking one raw CAN socket per ECU ("SocketcanBus was not
+        # properly shut down"). Release it here; cleared first so repeated
+        # close() calls stay idempotent.
+        bus = getattr(self, "bus", None)
+        if(bus != None):
+            self.bus = None
+            try:
+                bus.shutdown()
+            except Exception:
+                pass
